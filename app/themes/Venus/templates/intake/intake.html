@@ -1,0 +1,216 @@
+[% divclass = ( duplicates.ssn || duplicates.lname_dob || duplicates.lname_fname )
+    ? 'left' : 'center'
+%]
+
+<div id="[% divclass %]" class="client_box">
+
+    <h4>New Patient</h4>
+
+    <form name="intake_form" method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+
+        <dl class="inline">
+            [% INCLUDE util/input_text.html
+                name    = 'fname'
+                label   = 'First name'
+                value   = current.fname
+                dl      = 1
+                required = 1
+            %]
+
+            [% INCLUDE util/input_text.html
+                name    = 'mname'
+                label   = 'MI'
+                value   = current.mname
+                dl      = 1
+                required = 0
+                size = '1'
+            %]
+
+            [% INCLUDE util/input_text.html
+                name    = 'lname'
+                label   = 'Last name'
+                value   = current.lname
+                dl      = 1
+                required = 1
+            %]
+
+            <dt><label for='sex'>Gender:</label></dt>
+            [% INCLUDE util/choose_valid_data.html
+                name    = "sex"
+                table   = '_sex'
+                type    = 'select'
+                default = current.sex || 'Unknown'
+                wraptag = 'dd'
+            %]
+
+            <dt><label for="dob_facade">Birth date:</label></dt>
+            [% INCLUDE util/date_picker.html
+                name    = 'dob'
+                value   = current.dob
+                wraptag = 'dd'
+            %]
+
+            <!--
+            The following 2 template calls requre '|| phone'. Without it there
+            is a problem on duplicates. Basically when there is a duplicate
+            this template relies on current being a client object, though an
+            unsaved one. Because of this it can have no phone information
+            assoicated with it. Thus current.phone is empty, however it cannot
+            fallback, I am unclear on how the value fallback mechanism works,
+            so I cannot say why this occurs.
+            -->
+            [% INCLUDE util/input_text.html
+                name    = 'phone'
+                label   = 'Primary Phone'
+                value   = current.phone || phone
+                dl      = 1
+                required = 0
+            %]
+
+            [% INCLUDE util/input_text.html
+                name    = 'phone_2'
+                label   = 'Alternate Phone'
+                value   = current.phone_2 || phone_2
+                dl      = 1
+                required = 0
+            %]
+
+            <dt><label for="dont_call">Don't Call:</label></dt>
+            [% INCLUDE util/select_new.html
+                name    = 'dont_call'
+                table = '_dont_call'
+                wraptag = 'dd' 
+                values  = [
+                    { id  => 0, label => 'No', },
+                    { id  => 1, label => 'Yes', },
+                ]
+                default = current.dont_call || 0
+                keyname = 'id'
+                valname = 'label'
+            %]
+
+            [% INCLUDE util/input_text.html
+                name    = 'email'
+                label   = 'EMail'
+                value   = current.email
+                dl      = 1
+                required = 0
+            %]
+
+            [% INCLUDE util/input_text.html
+                name    = 'address1'
+                label   = 'Address'
+                value   = current.address.address1 || address1
+                dl      = 1
+                required = 0
+            %]
+
+            [% INCLUDE util/input_text.html
+                name    = 'address2'
+                label   = '&nbsp;'
+                value   = current.address.address2 || address2
+                dl      = 1
+                required = 0
+            %]
+
+            [% INCLUDE util/input_text.html
+                name    = 'city'
+                label   = 'City'
+                value   = current.address.city || city
+                dl      = 1
+                required = 0
+            %]
+
+            [% INCLUDE util/input_text.html
+                name    = 'state'
+                label   = 'State'
+                value   = current.address.state || state
+                dl      = 1
+                required = 0
+            %]
+
+            [% INCLUDE util/input_text.html
+                name    = 'post_code'
+                label   = 'Zip'
+                value   = current.address.post_code || post_code
+                dl      = 1
+                required = 0
+            %]
+
+        </dl>
+
+        <input type="hidden" name="event_date" id="event_date" value="1970-01-01">
+        <input type="hidden" name="intake_type" id="intake_type" value="Referral">
+        <input type="hidden" name="admission_program_id" id="admission_program_id" value="1">
+        <input type="hidden" name="referral_program_id" id="referral_program_id" value="1">
+        <input type="hidden" name="staff_id" id="staff_id" value="1">
+        <input type="hidden" name="level_of_care_id" id="level_of_care_id" value="1">
+        <input type="hidden" name="op" id="op" value="intake" />
+    
+
+        [% IF dupsok %]
+        <p class="save"><input type="submit" name="submit" value="Add patient, ignoring duplicates" /></p>
+        <input type="hidden" name="dupsok" id="dupsok" value="[% dupsok %]" />
+        [% ELSE %]
+        <p class="save"><input type="submit" name="submit" value="Add patient" /></p>
+        [% END %]
+    </form>
+
+</div>
+
+[% IF duplicates.ssn || duplicates.lname_dob || duplicates.lname_fname %]
+
+<div id="right" class="system_box">
+
+    <h4>Potential duplicates found</h4>
+
+    [% IF duplicates.ssn; dup = duplicates.ssn %]
+    <fieldset>
+        <legend>Duplicate SSN</legend>
+
+        <p>Duplicate SSNs are not allowed.  Either take action on the duplicate client or change the new client input.</p>
+        <hr />
+        <dl>
+            [% INCLUDE dup_client %]
+        </dl>
+    </fieldset>
+    [% END %]
+
+    [% IF duplicates.lname_dob or duplicates.lname_fname %]
+    <fieldset>
+        <legend>Duplicate names and/or birthdates</legend>
+        <p>Clients with the same last names and dates of birth, or with the same first and last name, are allowed, but please review them first to make sure they are not duplicates.  Once you've done so, you may click "Add client and ignore duplicates."</p>
+        <hr />
+    <dl>
+        [% FOR dup IN duplicates.lname_dob %]
+        [% INCLUDE dup_client %]
+        [% END %]
+        [% FOR dup IN duplicates.lname_fname %]
+        [% INCLUDE dup_client %]
+        [% END %]
+    <dl>
+    </fieldset>
+    [% END %]
+
+</div>
+
+[% END %]
+
+[% BLOCK dup_client %]
+        <p><strong>[% dup.fname %] [% dup.mname %] [% dup.lname %]</strong> ([% dup.ssn_f %]; [% dup.dob %]; [% dup.state %] ) <a href="/demographics.cgi?client_id=[% dup.client_id %]">view</a> [% INCLUDE pronoun %].</p>
+[% END %]
+
+[% BLOCK pronoun; dup.sex == 'Male' ? 'him' : 'her'; END %]
+
+[% BLOCK unused %]
+         <dt><strong>[% dup.fname %] [% dup.lname %]</strong> ([% dup.ssn_f %]; [% dup.dob %])</dt>
+        <dd>
+           [%- IF dup.placement.is_admitted %]
+            This client is currently admitted; you may <a href="/demographics.cgi?client_id=[% dup.client_id %]">view</a> [% INCLUDE pronoun %].
+            [%- ELSIF dup.placement.is_referral %]
+            This client is an active referral; you may <a href="/demographics.cgi?client_id=[% dup.client_id %]">view</a> [% INCLUDE pronoun %].
+            [%- ELSE %]
+            This client has been discharged; see client's <a href="placement.cgi?client_id=[% dup.client_id %]">placement screen</a> to reactivate [% INCLUDE pronoun %].
+            [%- END %]
+        </dd>
+[% END %]

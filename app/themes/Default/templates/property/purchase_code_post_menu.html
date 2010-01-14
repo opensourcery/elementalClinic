@@ -1,0 +1,50 @@
+[% IF confirm %]
+<h4><font color="blue">Your transaction was committed.</font></h4>
+[% END %]
+
+[% IF data %]
+
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+
+<b>&#149; Update An Existing Purchase Order Item/Code</b>
+<p />
+<table border="0">
+    <tr>
+        <td><b>Select Item/Code: </b></td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "item"
+    s_values  = data
+    s_size    = 10
+%]</td>
+    </tr>
+</table>
+<p />
+<input type="submit" name="go" value="Select" /><p />
+<div></div></form>
+
+[% END %]
+
+<b>&#149; Add A Purchase Order Item/Code</b>
+
+<p />
+
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+
+<table border="0">
+    <tr>
+        <td><b>Describe Item/Code/Service: </b></td>
+        <td><input type="text" name="item_category"  size="50" maxlength="255" /></td>
+    </tr>
+</table>
+
+<p />
+
+<input type="submit" name="go" value="Add" />
+<div>
+</div>
+</form>
+
+<p />
+
+<a href="purchase_order.cgi">Return to Purchase Orders</a>

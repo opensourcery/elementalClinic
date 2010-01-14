@@ -1,0 +1,71 @@
+[% INCLUDE global/client_head.html
+    navsec = 'clinical'
+    navpage = 'diagnosis'
+%]
+[% BASE_URI ="$script?client_id=$client.id;";
+    IF current_diagnosis.id;
+        BASE_URI = BASE_URI _ "diagnosis_id=$current_diagnosis.id;";
+    END
+%]
+[% title_prefix = '';
+    IF current_diagnosis;
+        IF op == 'clone'; title_prefix = 'Cloning'; END;
+        IF op == 'edit'; title_prefix = 'Editing'; END;
+        title_prefix = title_prefix _' ';
+    END
+%]
+
+<div id="center" class="client_box">
+
+    <div class="selector">
+        [% IF diagnoses %]
+            <ul class="selector">
+            [% FOR diagnosis IN diagnoses %]
+                [%- IF current_diagnosis.id == diagnosis.id %]
+                <li class="current">
+                    <strong>[% diagnosis.diagnosis_date.format_date_medium %]</strong>
+                </li>
+                [% ELSE %]
+                <li><a href="[% script %]?client_id=[% client.id %];diagnosis_id=[% diagnosis.id %];op=view">[% diagnosis.diagnosis_date.format_date_medium %]</a></li>
+                [% END %]
+            [% END %]
+            </ul>
+        [% END %]
+    </div>
+
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" name="diagnosis_form">
+        <div id="diagnosis" class="selectee">
+            <p class="new_this"><a href="[% BASE_URI _ 'op=create' %]">Create a new diagnosis</a></p>
+
+            [% IF current_diagnosis %]
+                <h4>
+                    <em>[% title_prefix %]Diagnosis:</em> [% current_diagnosis.diagnosis_date.format_date_medium %]</h4>    
+                </h4>
+            [% ELSIF op == 'create' %]
+                <h4>New Diagnosis</h4>
+            [% END %]
+
+            [% IF current_diagnosis.id %]
+                <ul class="affect_this">
+                    <li><a href="[% BASE_URI _ 'op=edit' %]" class="edit_this">Edit</a></li>
+                    <li><a href="[% BASE_URI _ 'op=clone' %]" class="clone_this">Clone</a></li>
+                </ul>
+            [% END %]
+
+            [% IF current_diagnosis.id || op == 'clone' || op == 'create' %]
+
+                [% IF op == 'home' || op == 'view' || op == 'save' %]
+                    [% INCLUDE diagnosis/view.html %]
+                [% ELSE %]
+                    [% INCLUDE diagnosis/edit.html %]
+                [% END %]
+
+            [% ELSE %]
+                <p>No diagnosis on record.</p>
+            [% END %]
+
+        </div>
+    </form>
+    <hr class="div" />
+
+</div>

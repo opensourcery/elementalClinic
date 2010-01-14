@@ -1,0 +1,217 @@
+[%#
+OPTIONAL
+    name:       The name prefix for each address field.
+    ord:        If there are multiple addresses with this prefix(name) provide
+                an ordinal
+    wraptag:    Wrap the section with the given tag Defaults to none, or 'div'
+                if wrapid or wrapclass are set.
+    wrapid:     ID to wrap around the section (used in wraptag, or <div> with no
+                wraptag
+    wrapclass:  css classes to wrap around the section <div> unless wraptag is
+                specified
+    required:   Make all fields except address 2 required
+    default:    Object to take values from
+    dl:         Format each field as part of a dl.
+    size:       Size for input text fields (address, address2, city) default: 25
+    rec_id:     rec_id for the address object (automatically taken from default
+                if present)
+    hidden:     Hash of hidden input values (set name, or object prefix+ord will
+                be prefixed)
+    toggle:     Show the active/inactive toggle.
+    reverse:    Passed into active checkbox
+    liftzip:    Put the zip code so that it is next with 'state' (only effective
+                when paired with 'dl')
+    county:     Show county
+-%]
+
+[%# {{{ Figure out field names and values -%]
+[%-
+    size = size ? size : 25;
+
+    prefix = name ? ord.defined ? name _ '[' _ ord _ ']['
+                                : name _ '_'
+                  : '';
+
+    postfix = name && ord.defined ? ']' : '';
+
+    address1_name  = prefix _ 'address1'  _ postfix;
+    address1_value = $address1_name || objects.$name.$ord.address1 || default.address1;
+
+    address2_name  = prefix _ 'address2'  _ postfix;
+    address2_value = $address2_name || objects.$name.$ord.address2 || default.address2;
+
+    city_name      = prefix _ 'city'      _ postfix;
+    city_value     = $city_name || objects.$name.$ord.city || default.city;
+
+    state_name     = prefix _ 'state'     _ postfix;
+    state_value    = $state_name || objects.$name.$ord.state || default.state;
+
+    post_code_name  = prefix _ 'post_code' _ postfix;
+    post_code_value = $post_code_name || objects.$name.$ord.post_code || default.post_code;
+
+    county_name  = prefix _ 'county' _ postfix;
+    county_value = $county_name || objects.$name.$ord.county || default.county;
+
+    # When no name is provided create a prefix for the following fields
+    prefix = prefix || 'address_';
+
+    rec_id_name  = prefix _ 'rec_id'  _ postfix;
+    rec_id_value = $rec_id_name || objects.$name.$ord.rec_id || default.rec_id || rec_id;
+
+    active_name  = prefix _ 'active' _ postfix;
+    active_value = $active_name || objects.$name.$ord.active || default.active || (rec_id_value ? 0 : 1);
+
+    primary_name  = prefix _ 'primary_entry' _ postfix;
+    primary_value = $primary_name || objects.$name.$ord.primary_entry || default.primary_entry || ((ord == 0 && !rec_id_value) ? 1 : 0);
+-%]
+[%# }}} -%]
+
+[% IF wraptag || wrapid || wrapclass %]
+<[% wraptag || 'div' %]
+    [% IF wrapid %] id="[% wrapid %]" [% END %]
+    [% IF wrapclass %]class="[% wrapclass %]"[% END %]
+>
+[% END %]
+
+[%# {{{ Main Fields -%]
+[% INCLUDE util/input_text.html
+    name    = address1_name
+    label   = 'Address'
+    dl      = dl
+    value   = address1_value
+    size    = size
+    required = required
+%]
+[% INCLUDE util/input_text.html
+    name    = address2_name
+    label   = 'Address 2'
+    dl      = dl
+    value   = address2_value
+    size    = size
+    required = 0
+%]
+
+[% INCLUDE util/input_text.html
+    name    = city_name
+    label   = 'City'
+    dl      = dl
+    value   = city_value
+    size    = size
+    required = required
+%]
+
+[% IF liftzip && dl %]
+    <dt>State:</dt>
+    <dd>
+        [% INCLUDE util/input_text.html
+            name    = state_name
+            value   = state_value
+            size    = 2
+            required = required
+            dl      = 0
+        %]
+        [% INCLUDE util/input_text.html
+            name    = post_code_name
+            label   = 'Zip'
+            value   = post_code_value
+            size    = 10
+            required = required
+            dl      = 0
+        %]
+    </dd>
+[% ELSE %]
+    [% INCLUDE util/input_text.html
+        name    = state_name
+        label   = 'State'
+        dl      = dl
+        value   = state_value
+        size    = 2
+        required = required
+    %]
+    [% INCLUDE util/input_text.html
+        name    = post_code_name
+        label   = 'Zip'
+        dl      = dl
+        value   = post_code_value
+        size    = 10
+        required = required
+    %]
+[% END %]
+
+[%# }}} -%]
+
+[%# {{{ Optional Fields -%]
+[% IF county %]
+    [% INCLUDE util/input_text.html
+        name    = county_name
+        label   = 'County'
+        dl      = 1
+        value   = county_value
+        size    = 25
+    %]
+[% END %]
+
+[% IF toggle %]
+    [% INCLUDE util/checkbox.html
+       name    = active_name
+       value   = active_value
+       label   = 'Active'
+       dl      = dl
+       reverse = reverse
+    %]
+[% END %]
+
+[%# }}} -%]
+
+[%# {{{ Hidden Fields -%]
+
+[% IF dl %]
+    <dt class="hidden_inputs_title" style="display: none" />
+    <dd class="hidden_inputs" style="display: none">
+[% END %]
+
+[% IF rec_id_value %]
+    <input
+        type="hidden"
+        name="[% rec_id_name %]"
+        value="[% rec_id_value %]"
+    />
+[% END %]
+
+[% UNLESS toggle %]
+    [% INCLUDE util/checkbox.html
+       name    = active_name
+       value   = active_value
+       dl      = 0
+    %]
+[% END %]
+
+[% IF primary %]
+    <input
+        type="hidden"
+        name="[% primary_name %]"
+        value="[% primary_value %]"
+    />
+[% END %]
+
+[% IF hidden %]
+    [% FOREACH item in hidden %]
+        [% iname = item.key %]
+        [% fname = prefix _ iname  _ postfix %]
+        <input
+            type="hidden"
+            name="[% fname %]"
+            value="[% $fname || objects.$name.$ord.$iname || default.$iname || item.value %]"
+        />
+    [% END %]
+[% END %]
+
+[% IF dl %]
+    </dd>
+[% END %]
+
+[%# }}} -%]
+
+[% IF wraptag || wrapid || wrapclass %]
+</[% wraptag || 'div' %]>
+[% END %]

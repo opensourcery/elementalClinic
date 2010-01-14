@@ -1,0 +1,42 @@
+[% action = (( op == 'group_save' && errors ) || op == 'group_edit' || op == 'group_create' ) ? 'edit' : 'display' %]
+[% INCLUDE util/errors.html %]
+
+<div id="content">
+    <br />
+    <p class="return"><a href="groups.cgi?group_id=[% group_id %]">&#171; Return to group</a></p>
+    <form>
+
+        <div id="active_groups" class="system_box">
+            <h2>Active</h2>
+
+        [% INCLUDE util/select2.html
+            name    = 'active_ids'
+            values  = active
+            keyname = 'rec_id'
+            valname = 'name'
+            size    = 25
+            multiple = 1;
+        %]
+
+        </div>
+        <div id="mover_tools">
+            <input type="button" name="activate" value="<< Activate selected" /><br />
+            <input type="button" name="deactivate" value="Deactivate selected >>" /><br />
+            <input type="submit" name="op" value=">> Move selected <<" /><br />
+        </div>
+        <div id="inactive_groups" class="system_box">
+            <h2>Inactive</h2>
+
+        [% INCLUDE util/select2.html
+            name    = 'inactive_ids'
+            values  = inactive
+            keyname = 'rec_id'
+            valname = 'name'
+            size    = 25
+            multiple = 1;
+        %]
+
+        </div>
+
+    </form>
+</div>

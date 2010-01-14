@@ -1,0 +1,32 @@
+#general {
+    clear : both;
+}
+#axis1 {
+}
+#axis2 {
+}
+#axis3 {
+    float : left;
+    width : 35%;
+    margin-right : 5%;
+}
+#axis4 {
+    float : left;
+    width : 35%;
+}
+fieldset {
+    border : none;
+}
+h5 {
+    font-size : 16px;
+    font-weight : bold;
+    padding : 0;
+    border : 0;
+}
+h6 {
+    padding : 0;
+    margin : 0;
+}
+p.choose {
+    margin-left : 20px;
+}

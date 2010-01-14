@@ -1,0 +1,26 @@
+[% INCLUDE util/choose_valid_data.html
+    id      = "${prefix}confirm_code_id"
+    name    = 'confirm_code_id'
+    label   = 'Confirm'
+    table   = '_confirmation_codes'
+    leading_hash = [ { value => '', name => '...', }, ]
+    type    = 'select'
+    default = appointment.confirm_code_id || 0
+    use_id  = 1
+    wraptag = 'p'
+    break   = 1
+    show_blank = 1
+%]
+
+[% INCLUDE util/choose_valid_data.html
+    id      = "${prefix}payment_code_id"
+    name    = 'payment_code_id'
+    label   = 'Payment'
+    table   = '_payment_codes'
+    leading_hash = [ { value => '', name => 'Select an amount', }, ]
+    type    = 'select'
+    default = appointment.payment_code_id
+    use_id  = 1
+    wraptag = 'p'
+    break   = 1
+%]

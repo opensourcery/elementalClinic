@@ -1,0 +1,45 @@
+<div class="submenu payments">
+    <ul class="toggle_menu">
+        <li[% ' class="active"' IF 1 %]>
+            <a href="[% script %]?section=payments;step=3">Insurers</a>
+        </li>
+    </ul>
+
+    <div class="toggle_content">
+        <ul>
+        [% FOR insurer IN insurers %]
+            <li[% ' class="active"' IF insurer.id == current_insurer.id %]>
+                <a href="[% script %]?section=payments;step=3;rolodex_id=[% insurer.id %]">[% insurer.name %]</a>
+            </li>
+        [% END %]
+        </ul>
+    </div>
+</div>
+
+<div class="subcontent">
+[% IF current_insurer %]
+    [% IF billing_payments %]
+        [% IF outstanding %]
+            [% IF saved %]
+                <h4>Transaction saved.</h4>
+            [% ELSE %]
+                <h4>Payment for each progress note must be saved individually</h4>
+            [% END %]
+            [% rowclass = 0 -%]
+            [% FOR client_id IN outstanding.keys %]
+                [% FOR billing_service IN outstanding.$client_id.billing_services %] [% rowclass = rowclass * -1 + 1 %]
+                    [% INCLUDE financial/payments/manual_entry.html 
+                        client_name = outstanding.$client_id.client_name 
+                    %]
+                [% END %]
+            [% END %]
+        [% ELSE %]
+            <p>There are no billed progress notes awaiting payment from this insurer.</p>
+        [% END %]
+    [% ELSE %]
+    <p>There are no Master Payments manually entered for this insurer yet.</p>
+    [% END %]
+[% ELSE %]
+<p>Please select an insurer.</p>
+[% END %]
+</div>

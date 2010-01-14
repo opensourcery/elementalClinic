@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="" />
+<title>emc-earth-blankdb-top-level-administration</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">emc-earth-blankdb-top-level-administration</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/admin.cgi?client_id=</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Home</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Administration</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Configuration</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>logout_time</td>
+	<td>60</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>op</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>logout_inactive</td>
+	<td>000</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>op</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>logout_inactive</td>
+	<td>3452345</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>op</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>logout_inactive</td>
+	<td>22222222222222222222222222222222222222222</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>op</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>enable_role_reports</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>op</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>edit_prognote</td>
+	<td>label=No</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>op</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>prognote_min_duration_minutes</td>
+	<td>5</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>op</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>prognote_max_duration_minutes</td>
+	<td>400</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>op</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>prognote_bounce_grace</td>
+	<td>4</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>op</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>cp_credentials_expire_warning</td>
+	<td>12</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>op</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>modem_port</td>
+	<td>/dev/modem/</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>op</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>modem_port</td>
+	<td>/dev/modem</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>silent_modem</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>op</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>org_name</td>
+	<td>Our Clinicsdf</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>op</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>org_name</td>
+	<td>Our Clinic</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>org_tax_id</td>
+	<td>123-45-67890</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>org_national_provider_id</td>
+	<td>12345678903</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>org_medicaid_provider_number</td>
+	<td>0000003</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>org_medicare_provider_number</td>
+	<td>R0000003</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>org_tax_id</td>
+	<td>123-45-67890r</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>org_national_provider_id</td>
+	<td>12345678903r</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>org_medicaid_provider_number</td>
+	<td>0000003r</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>org_medicare_provider_number</td>
+	<td>R0000003r</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>op</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>org_street2</td>
+	<td>wer234234~!@#$%^&amp;*(</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>op</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>org_zip</td>
+	<td>97215sdf</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>op</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>form_method</td>
+	<td>label=get</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>op</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>form_method</td>
+	<td>label=post</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>op</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>pdf_move_x</td>
+	<td>-3</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>op</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Lookup tables</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectAndWait</td>
+	<td>table_name</td>
+	<td>label=Appointment confirmation codes</td>
+</tr>
+<tr>
+	<td>selectAndWait</td>
+	<td>table_name</td>
+	<td>label=Charge codes</td>
+</tr>
+<tr>
+	<td>selectAndWait</td>
+	<td>table_name</td>
+	<td>label=Contact types</td>
+</tr>
+<tr>
+	<td>selectAndWait</td>
+	<td>table_name</td>
+	<td>label=Drug abuse</td>
+</tr>
+<tr>
+	<td>selectAndWait</td>
+	<td>table_name</td>
+	<td>label=DSM IV Details</td>
+</tr>
+<tr>
+	<td>selectAndWait</td>
+	<td>table_name</td>
+	<td>label=EDI 835 Adjustment Group Codes</td>
+</tr>
+<tr>
+	<td>selectAndWait</td>
+	<td>table_name</td>
+	<td>label=Programs</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@name='op' and @value='New group']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Edit lookup tables</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Table associations</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Administration</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Assessment Templates</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>op_new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>new_name</td>
+	<td>sdfgsdfg</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>op_new</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

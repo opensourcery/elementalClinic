@@ -1,0 +1,69 @@
+body {
+    background-color : #fff;
+    background-image : url( "../images/backer.gif" );
+    color : "000";
+}
+h1 {
+    background-image : url("../images/logo.gif");
+    width : 500px;
+    height : 140px;
+}
+h1 span {
+    display : none;
+}
+h2 {
+    font : bold 20px "Times New Roman", Times, serif;
+    text-align : center;
+    border-bottom : 1px solid #999;
+    padding : 5px;
+}
+h3 {
+    font : 16px Tahoma,Verdana,Helvetica,Arial,sans-serif;
+/*     border-bottom : 2px solid #17c; */
+    padding : 0;
+/*     margin : 0 0 10px 0; */
+    margin : 0;
+}
+dl.inline dt {
+    width : 50px;
+    text-align : right;
+    float : left;
+    padding : 0 5px 0 0;
+}
+tr.row0 {
+
+}
+tr.row1 {
+    background-color : #bbb;
+}
+th {
+    border-bottom : 1px solid #000;
+}
+ul, li {
+    list-style-type : none;
+    padding : 0;
+    margin : 0;
+}
+#main,
+#aux {
+    width : 30%;
+}
+#main {
+    margin : 0 0 0 15%;
+    float : left;
+}
+div.content {
+    background-color : #eee;
+    border : 1px solid #666;
+    border : 2px solid #17c;
+    padding : 7px;
+}
+#aux {
+    margin : 0 15% 0 55%;
+}
+#nav {
+    clear : both;
+    padding : 0 15% 0 15%;
+    margin : 25px 0 0 0;
+    border-top : 1px solid #999;
+}

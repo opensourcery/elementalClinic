@@ -1,0 +1,32 @@
+<table border="1">
+    <thead>
+    <tr>
+        <td colspan="4">
+            [% INCLUDE financial/reports/header.html %]
+            [% "<p>There was no data for this report.</p>" UNLESS current_report.data.0 %]
+        </td>
+    </tr>
+
+    <tr>
+        <th>Date billed</th>
+        <th>Client</th>
+        <th>CPMS</th>
+        <th>Service date</th>
+        <th>Billed amount</th>
+        <th>Billed units</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    [% FOR record IN current_report.data %]
+    <tr [% rowclass %]>
+        <td>[% record.billing_date %]</td>
+        <td>[% record.client_name %]</td>
+        <td>[% record.state_specific_id %]</td>
+        <td>[% record.prognote_date %]</td>
+        <td>$ [% record.billed_amount %]</td>
+        <td>[% record.billed_units %]</td>
+    </tr>
+    [% END %]
+    </tbody>
+</table>

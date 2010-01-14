@@ -1,0 +1,67 @@
+
+1: 
+  active: 1
+  dept_id: 1001
+  description: ~
+  name: Advocate
+  rec_id: 1
+10: 
+  active: 1
+  dept_id: 1001
+  description: ~
+  name: Pharmacy
+  rec_id: 10
+11: 
+  active: 1
+  dept_id: 1001
+  description: ~
+  name: Signifigant Other
+  rec_id: 11
+2: 
+  active: 1
+  dept_id: 1001
+  description: ~
+  name: Conservator
+  rec_id: 2
+3: 
+  active: 1
+  dept_id: 1001
+  description: ~
+  name: Emergency Contact
+  rec_id: 3
+4: 
+  active: 1
+  dept_id: 1001
+  description: ~
+  name: Guardian
+  rec_id: 4
+5: 
+  active: 1
+  dept_id: 1001
+  description: ~
+  name: Landlord
+  rec_id: 5
+6: 
+  active: 1
+  dept_id: 1001
+  description: ~
+  name: Legal Representative
+  rec_id: 6
+7: 
+  active: 1
+  dept_id: 1001
+  description: ~
+  name: Medication Monitor
+  rec_id: 7
+8: 
+  active: 1
+  dept_id: 1001
+  description: ~
+  name: Money Monitor
+  rec_id: 8
+9: 
+  active: 1
+  dept_id: 1001
+  description: ~
+  name: Other
+  rec_id: 9

@@ -1,0 +1,53 @@
+[% MACRO rowclass BLOCK;
+    rn = loop.index % 2;
+    IF rn; 'class="even"'; ELSE; 'class="odd"'; END;
+    END
+%]
+[% INCLUDE global/print_head.html
+    name    = 'Prescription'
+    a_href  = "$script?client_id=$client.id"
+    a_label = 'Prescriptions'
+    print_header    = print_header
+    date    = today_ymd
+%]
+
+<div id="patient">
+    <h4>Patient</h4>
+
+    <p><strong>[% client.lname %], [% client.fname %] [% client.mname %]</strong></p>
+    <p>
+        [% client.addr %]<br />
+        [% client.city %], [% client.state %]<br />
+        [% client.phone_f %]
+    </p>
+</div>
+
+
+<div id="treater">
+    <h4>Prescriber</h4>
+    <p><strong>[% treater.eman %]</strong></p>
+</div>
+
+<h5>Medications</h5>
+
+<table>
+[% FOR scrip = printscrips %]
+    <tr [% rowclass %]>
+        <th>[% scrip.medication %]</th>
+        <td>Dosage: <strong>[% scrip.dosage %]</strong></td>
+        <td>Quantity: <strong>[% scrip.quantity %]</strong></td>
+        <td>Frequency: <strong>[% scrip.frequency %]</strong></td>
+        <td>Refills: <strong>[% scrip.num_refills %]</strong></td>
+    </tr>
+
+    <tr [% rowclass %]>
+        <td></td>
+        <td colspan="4"><strong>Instructions:</strong> [% scrip.instructions %]</td>
+    </tr>
+[% END %]
+</table>
+
+<h5>Authorization</h5>
+    <p class="sigline">DEA #</p>
+    <p class="sigline">Signature</p>
+

@@ -1,0 +1,22 @@
+[% INCLUDE global/print_head.html
+    name    = 'Psychiatric Progress Note'
+    a_href  = "$script?client_id=$client.id"
+    a_label = 'Progress Notes'
+    date    = "Printed: $today_ymd"
+    light   = 1
+%]
+
+<table class="prognote">
+    <thead>
+        <tr><td>
+        [% INCLUDE progress_notes/client_head.html %]
+        </td></tr>
+    </thead>
+    <tbody>
+        <tr><td>
+        [% INCLUDE progress_notes/note_print.html
+            include_diagnosis = 1
+        %]
+        </td></tr>
+    </tbody>
+</table>

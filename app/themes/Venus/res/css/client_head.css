@@ -1,0 +1,169 @@
+/* main {{{ */
+#client_head {
+}
+#client_head ul {
+    height : 1.5em;
+    margin : 0;
+    padding : 0;
+    background-color : #ccc;
+    list-style-type : none;
+}
+#client_head ul a {
+    font-size : 12px;
+    line-height : 1.6em;
+    font-weight : bold;
+    text-decoration : none;
+    color : #666;
+    padding : 2px 10px 2px 10px;
+    float : left;
+}
+#client_head a.active {
+    line-height : 1.6em;
+    color : #000;
+    padding-top : 0px;
+    background-color : #fff;
+    border-top : 3px solid blue;
+}
+#client_head a:hover {
+    color : #000;
+    text-decoration : underline;
+    background-color : #ccc;
+}
+#client_head a.active:hover {
+    text-decoration : underline;
+    background-color : #fff;
+}
+#client_head strong em {
+    font-size : 16px;
+    font-style : normal;
+}
+#client_head .mini {
+    height : 32px;
+}
+#client_head div.primary,
+#client_head div.placement {
+    float : left;
+    width : auto;
+}
+#client_head div.placement {
+    padding : 0 10px;
+    margin : 0 10px;
+}
+#client_head .mini h2 {
+    font-size : 16px;
+    font-weight : bold;
+    padding : 0;
+    border : none;
+    margin : 0;
+}
+#client_head .mini h2 em {
+    font-size : 12px;
+    font-weight : normal;
+}
+#client_head .mini p {
+    font-size : 12px;
+}
+#client_head div.primary p {
+    font-size : 12px;
+    padding : 3px 0;
+    float : none;
+}
+#client_head div.placement p {
+    font-size : 12px;
+    line-height : 17px;
+    padding : 2px 15px 0 0;
+    border : 0;
+    margin : 0;
+    float : left;
+}
+#client_head div.placement p strong {
+    font-size : 14px;
+}
+#client_head .mini em {
+    font-size : 14px;
+    font-weight : bold;
+    font-style : normal;
+}
+#client_head .maxi {
+    border-top : 1px dotted #fb0;
+    margin : 5px 0 0 0;
+    clear : both;
+}
+/* }}} */
+/* client_content {{{ */
+#client_content p,
+#client_content dd,
+#client_content dt {
+    font-size : 11px;
+    line-height : 14px;
+}
+#client_content .demographics,
+#client_content .demographics p {
+    float : left;
+    margin : 0 0 1px 1em;
+}
+#client_content .placement {
+    float : right;
+    width : 25%;
+    border-left : 1px dotted #fb0;
+}
+#client_content .clinical {
+    margin : 0 0 0 42%;
+    width : 30%;
+}
+#client_content dl {
+    padding : 0;
+    margin : 0;
+}
+#client_content dt {
+    text-align : right;
+    float : left;
+    clear : left;
+    width : 7em;
+}
+#client_content dd {
+    font-weight : bold;
+    float : left;
+    clear : none;
+    margin : 0 0 0 5px;
+    white-space : nowrap;
+}
+#client_content dd em {
+    font-style : normal;
+    font-weight : normal;
+}
+/* }}} */
+/* subactive {{{ */
+#client_head p.subactive {
+    padding : 0 0 0 0;
+    background-color : #eee;
+    margin : 0 0 0px 0px;
+    display : block;
+    clear : both;
+    height : 20px;
+}
+#client_head p.subactive a {
+    font-size : 12px;
+    color : blue;
+    text-decoration : none;
+    border : none;
+    margin : 0 0px 0 0px;
+    padding : 2px 10px 2px 10px;
+    padding : 2px 5px 2px 5px;
+}
+#client_head p.subactive a.active {
+    color : #000;
+    border-bottom : 2px solid blue;
+    background-color : #fff;
+    padding : 2px 10px 2px 10px;
+}
+#client_head p.subactive a:hover {
+    text-decoration : underline;
+    background-color : #ddd;
+/*     border-bottom : 3px solid #ddd; */
+}
+#client_head p.subactive a.active:hover {
+    text-decoration : underline;
+    background-color : #fff;
+}
+/* }}} */

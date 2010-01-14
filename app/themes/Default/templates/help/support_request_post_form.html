@@ -1,0 +1,52 @@
+[% IF confirm %]
+<h4><font color="blue">Your transaction was committed.</font></h4>
+[% END %]
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded" name="support">
+
+<h4><hr /> <center>Technical Support Request</center> <hr /></h4>
+
+<table border="0">
+    <tr>
+        <th><b>Select Type of Request: </b></th>
+    </tr>
+    <tr>
+        <td><input type="radio" name="request_type" value="Access Request" />Access Request<br /> <input type="radio" name="request_type" value="Bug Report" />Bug Report<br /> <input type="radio" name="request_type" value="Change Password" />Change Password<br /> <input type="radio" name="request_type" value="Data Entry Error" />Data Entry Error<br /> <input type="radio" name="request_type" value="Other" />Other<br /></td>
+    </tr>
+</table>
+
+<p />
+
+<table border="0">
+    <tr>
+        <td><b>Enter Request: </b></td>
+        <tr>
+            <td>Please be as specific/detailed as possible.
+          Include <b><font color = "#ff0000">ERROR</font></b> 
+          messages, if applicable.</td>
+        </tr>
+    </tr>
+    <tr>
+        <td><textarea name="request_text" rows="8" cols="60" wrap="1"></textarea></td>
+    </tr>
+</table>
+
+<p />
+
+<input type="submit" name="go" value="Submit" />
+<p />
+
+<a href="../charting/my_caseload.cgi?previous=[% program %]">My Caseload</a>
+
+<br />
+
+<a href="[% local %]">Return to [% Local %]</a>
+
+<br />
+
+<a href="../main.html">Return to Main Menu</a>
+
+<div>
+<input type="hidden" name=".cgifields" value="request_type" />
+</div>
+</form>
+

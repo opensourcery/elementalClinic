@@ -1,0 +1,193 @@
+
+1: 
+  active: 1
+  dept_id: 1001
+  description: No error
+  name: 000
+  rec_id: 1
+10: 
+  active: 1
+  dept_id: 1001
+  description: Unknown Interchange Receiver ID
+  name: 009
+  rec_id: 10
+11: 
+  active: 1
+  dept_id: 1001
+  description: Invalid Authorization Information Qualifier Value
+  name: 010
+  rec_id: 11
+12: 
+  active: 1
+  dept_id: 1001
+  description: Invalid Authorization Information Value
+  name: 011
+  rec_id: 12
+13: 
+  active: 1
+  dept_id: 1001
+  description: Invalid Security Information Qualifier Value
+  name: 012
+  rec_id: 13
+14: 
+  active: 1
+  dept_id: 1001
+  description: Invalid Security Information Value
+  name: 013
+  rec_id: 14
+15: 
+  active: 1
+  dept_id: 1001
+  description: Invalid Interchange Date Value
+  name: 014
+  rec_id: 15
+16: 
+  active: 1
+  dept_id: 1001
+  description: Invalid Interchange Time Value
+  name: 015
+  rec_id: 16
+17: 
+  active: 1
+  dept_id: 1001
+  description: Invalid Interchange Standards Identifier Value
+  name: 016
+  rec_id: 17
+18: 
+  active: 1
+  dept_id: 1001
+  description: Invalid Interchange Version ID Value
+  name: 017
+  rec_id: 18
+19: 
+  active: 1
+  dept_id: 1001
+  description: Invalid Interchange Control Number Value
+  name: 018
+  rec_id: 19
+2: 
+  active: 1
+  dept_id: 1001
+  description: The Interchange Control Number in the Header and Trailer Do Not Match. The Value From the Header is Used in the Acknowledgment.
+  name: 001
+  rec_id: 2
+20: 
+  active: 1
+  dept_id: 1001
+  description: Invalid Acknowledgment Requested Value
+  name: 019
+  rec_id: 20
+21: 
+  active: 1
+  dept_id: 1001
+  description: Invalid Test Indicator Value
+  name: 020
+  rec_id: 21
+22: 
+  active: 1
+  dept_id: 1001
+  description: Invalid Number of Included Groups Value
+  name: 021
+  rec_id: 22
+23: 
+  active: 1
+  dept_id: 1001
+  description: Invalid Control Structure
+  name: 022
+  rec_id: 23
+24: 
+  active: 1
+  dept_id: 1001
+  description: Improper (Premature) End-of-File (Transmission)
+  name: 023
+  rec_id: 24
+25: 
+  active: 1
+  dept_id: 1001
+  description: Invalid Interchange Content (e.g., Invalid GS Segment)
+  name: 024
+  rec_id: 25
+26: 
+  active: 1
+  dept_id: 1001
+  description: Duplicate Interchange Control Number
+  name: 025
+  rec_id: 26
+27: 
+  active: 1
+  dept_id: 1001
+  description: Invalid Data Element Separator
+  name: 026
+  rec_id: 27
+28: 
+  active: 1
+  dept_id: 1001
+  description: Invalid Component Element Separator
+  name: 027
+  rec_id: 28
+29: 
+  active: 1
+  dept_id: 1001
+  description: Invalid Delivery Date in Deferred Delivery Request
+  name: 028
+  rec_id: 29
+3: 
+  active: 1
+  dept_id: 1001
+  description: This Standard as Noted in the Control Standards Identifier is Not Supported.
+  name: 002
+  rec_id: 3
+30: 
+  active: 1
+  dept_id: 1001
+  description: Invalid Delivery Time in Deferred Delivery Request
+  name: 029
+  rec_id: 30
+31: 
+  active: 1
+  dept_id: 1001
+  description: Invalid Delivery Time Code in Deferred Delivery Request
+  name: 030
+  rec_id: 31
+32: 
+  active: 1
+  dept_id: 1001
+  description: Invalid Grade of Service Code
+  name: 031
+  rec_id: 32
+4: 
+  active: 1
+  dept_id: 1001
+  description: This Version of the Controls is Not Supported
+  name: 003
+  rec_id: 4
+5: 
+  active: 1
+  dept_id: 1001
+  description: The Segment Terminator is Invalid
+  name: 004
+  rec_id: 5
+6: 
+  active: 1
+  dept_id: 1001
+  description: Invalid Interchange ID Qualifier for Sender
+  name: 005
+  rec_id: 6
+7: 
+  active: 1
+  dept_id: 1001
+  description: Invalid Interchange Sender ID
+  name: 006
+  rec_id: 7
+8: 
+  active: 1
+  dept_id: 1001
+  description: Invalid Interchange ID Qualifier for Receiver
+  name: 007
+  rec_id: 8
+9: 
+  active: 1
+  dept_id: 1001
+  description: Invalid Interchange Receiver ID
+  name: 008
+  rec_id: 9

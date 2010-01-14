@@ -1,0 +1,17 @@
+
+1: 
+  active: 1
+  dept_id: 1001
+  description: Normal Single Appointment per slot Schedule
+  name: normal
+  rec_id: 1
+  schedule_interval: 15
+  schedule_multiplier: 1
+2: 
+  active: 1
+  dept_id: 1001
+  description: For schedules where 2 appoinments can be booked for each time slot
+  name: double-booked
+  rec_id: 2
+  schedule_interval: 15
+  schedule_multiplier: 2

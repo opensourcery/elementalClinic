@@ -1,0 +1,49 @@
+[% 
+    id = id || name;
+    wraptag = ( action == 'hidden' ) ? 0 : wraptag;
+-%]
+[% IF action == 'display' %]
+    [% "<$wraptag>" IF wraptag %]
+    [% '<dt>' IF dl && label %][% "$label: " IF label %][% '</dt>' IF dl && label %]
+    [% '<dd>' IF dl %]<strong id="[% id %]">[% value %]</strong>[% '</dd>' IF dl %]
+    [% "</$wraptag>" IF wraptag %]
+    <script language="JavaScript" type="text/javascript">
+        var element = document.getElementById( '[% id %]' )
+        init_static( '[% id %]', '[% current_user.pref.date_format %]', '[% value %]' )
+    </script>
+[% ELSIF action == 'hidden' %]
+    <input type="hidden" name="[% name %]" value="[% value %]" />
+[% ELSE;
+    value = ( value == 'today' ) ? today_ymd : value;
+    value = ( value == 'year_from_today' ) ? year_from_today : value;
+    "<$wraptag>" IF wraptag;
+    required = required ? 'class="required"' : '';
+    onblur = onblur ? " onblur=\"$onblur\"" : '';
+    IF label -%]
+    [% '<dt>' IF dl %]<label for="[% id %]">[% label %]: </label>[% '</dt>' IF dl %]
+    [% END;
+    IF current_user.pref.date_picker;
+        facade_size = current_user.pref.date_format == 'long'
+            ? 16
+            : 10
+    -%]
+    [% '<dd>' IF dl %]
+        <input [% required %] type="text" name="[% name %]_facade" id="[% id %]_facade" size="[% facade_size %]" [% onblur %] />
+        <input type="hidden" name="[% name %]" id="[% id %]" value="[% value %]" />
+        <a class="calendar_icon" href="#"
+            onclick="return show_calendar( '[% id %]', document.getElementById( '[% id %]' ).value, '[% current_user.pref.date_format %]' )">
+            <img src="../res/[% eMC.config.theme %]/img/calendar_icon.gif" width="17" height="17" alt="Popup calendar" />
+        </a>
+    [% '</dd>' IF dl %]
+        <script language="JavaScript" type="text/javascript">
+            var element = document.getElementById( '[% id %]_facade' )
+            date_format = '[% current_user.pref.date_format %]'
+            element.addEventListener( 'keypress', alter_date, true )
+            init_facade( '[% id %]', '[% current_user.pref.date_format %]', '[% value %]' )
+        </script>
+    [% ELSE -%]
+        <input type="hidden" name="[% name %]_facade" id="[% id %]_facade" [% onblur %] />
+        <input [% required %] type="text" name="[% name %]" id="[% id %]" size="10" value="[% value %]" />
+    [% END -%]
+[% "</$wraptag>" IF wraptag %]
+[% END %]

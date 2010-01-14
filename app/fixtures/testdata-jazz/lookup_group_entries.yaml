@@ -1,0 +1,247 @@
+---
+1001:
+  group_id: 1001
+  item_id: 1001
+  rec_id: 1001
+1002:
+  group_id: 1001
+  item_id: 1002
+  rec_id: 1002
+1003:
+  group_id: 1001
+  item_id: 1003
+  rec_id: 1003
+1004:
+  group_id: 1001
+  item_id: 1004
+  rec_id: 1004
+1005:
+  group_id: 1001
+  item_id: 1005
+  rec_id: 1005
+1006:
+  group_id: 1001
+  item_id: 1006
+  rec_id: 1006
+1007:
+  group_id: 1001
+  item_id: 1015
+  rec_id: 1007
+1008:
+  group_id: 1001
+  item_id: 1016
+  rec_id: 1008
+1009:
+  group_id: 1001
+  item_id: 1022
+  rec_id: 1009
+1010:
+  group_id: 1001
+  item_id: 1025
+  rec_id: 1010
+1011:
+  group_id: 1001
+  item_id: 1026
+  rec_id: 1011
+1012:
+  group_id: 1001
+  item_id: 1027
+  rec_id: 1012
+1013:
+  group_id: 1001
+  item_id: 1028
+  rec_id: 1013
+1014:
+  group_id: 1001
+  item_id: 1029
+  rec_id: 1014
+1015:
+  group_id: 1001
+  item_id: 1030
+  rec_id: 1015
+1016:
+  group_id: 1001
+  item_id: 1033
+  rec_id: 1016
+1017:
+  group_id: 1001
+  item_id: 1034
+  rec_id: 1017
+1018:
+  group_id: 1002
+  item_id: 1001
+  rec_id: 1018
+1019:
+  group_id: 1002
+  item_id: 1002
+  rec_id: 1019
+1020:
+  group_id: 1002
+  item_id: 1003
+  rec_id: 1020
+1021:
+  group_id: 1002
+  item_id: 1004
+  rec_id: 1021
+1022:
+  group_id: 1002
+  item_id: 1015
+  rec_id: 1022
+1023:
+  group_id: 1002
+  item_id: 1016
+  rec_id: 1023
+1024:
+  group_id: 1002
+  item_id: 1029
+  rec_id: 1024
+1025:
+  group_id: 1002
+  item_id: 1030
+  rec_id: 1025
+1026:
+  group_id: 1002
+  item_id: 1031
+  rec_id: 1026
+1027:
+  group_id: 1002
+  item_id: 1032
+  rec_id: 1027
+1028:
+  group_id: 1003
+  item_id: 1007
+  rec_id: 1028
+1029:
+  group_id: 1003
+  item_id: 1008
+  rec_id: 1029
+1030:
+  group_id: 1003
+  item_id: 1009
+  rec_id: 1030
+1031:
+  group_id: 1003
+  item_id: 1010
+  rec_id: 1031
+1032:
+  group_id: 1003
+  item_id: 1011
+  rec_id: 1032
+1033:
+  group_id: 1003
+  item_id: 1012
+  rec_id: 1033
+1034:
+  group_id: 1003
+  item_id: 1013
+  rec_id: 1034
+1035:
+  group_id: 1003
+  item_id: 1014
+  rec_id: 1035
+1036:
+  group_id: 1003
+  item_id: 1022
+  rec_id: 1036
+1037:
+  group_id: 1003
+  item_id: 1023
+  rec_id: 1037
+1038:
+  group_id: 1003
+  item_id: 1033
+  rec_id: 1038
+1039:
+  group_id: 1003
+  item_id: 1034
+  rec_id: 1039
+1040:
+  group_id: 1004
+  item_id: 1001
+  rec_id: 1040
+1041:
+  group_id: 1004
+  item_id: 1002
+  rec_id: 1041
+1042:
+  group_id: 1004
+  item_id: 1021
+  rec_id: 1042
+1043:
+  group_id: 1004
+  item_id: 1022
+  rec_id: 1043
+1044:
+  group_id: 1004
+  item_id: 1027
+  rec_id: 1044
+1045:
+  group_id: 1004
+  item_id: 1028
+  rec_id: 1045
+1046:
+  group_id: 1005
+  item_id: 1023
+  rec_id: 1046
+1047:
+  group_id: 1005
+  item_id: 1024
+  rec_id: 1047
+1048:
+  group_id: 1005
+  item_id: 1029
+  rec_id: 1048
+1049:
+  group_id: 1005
+  item_id: 1030
+  rec_id: 1049
+1050:
+  group_id: 1005
+  item_id: 1031
+  rec_id: 1050
+1051:
+  group_id: 1005
+  item_id: 1032
+  rec_id: 1051
+1052:
+  group_id: 1005
+  item_id: 1033
+  rec_id: 1052
+1053:
+  group_id: 1005
+  item_id: 1034
+  rec_id: 1053
+1054:
+  group_id: 1006
+  item_id: 1017
+  rec_id: 1054
+1055:
+  group_id: 1006
+  item_id: 1018
+  rec_id: 1055
+1056:
+  group_id: 1006
+  item_id: 1019
+  rec_id: 1056
+1057:
+  group_id: 1006
+  item_id: 1020
+  rec_id: 1057
+1058:
+  group_id: 1
+  item_id: 1
+  rec_id: 1058
+1059:
+  group_id: 1
+  item_id: 2
+  rec_id: 1059
+1060:
+  group_id: 2
+  item_id: 1
+  rec_id: 1060
+1061:
+  group_id: 2
+  item_id: 2
+  rec_id: 1061
+
+

@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8800/" />
+<title>emc-earth-blankdb-top-level-reporting</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">emc-earth-blankdb-top-level-reporting</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/financial.cgi</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Home</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Supervisor</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Service Coordinator</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Writer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Financial</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[contains(text(),'Home')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Billing</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Payments</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[contains(text(),'Reports')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Tools</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Home</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>client_selector_link</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Groups</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Reports</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Administration</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>client_selector_link</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>client_list_filter</td>
+	<td>label=All</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//option[@value='0']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>client_program_list_filter</td>
+	<td>label=Referral</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>client_program_list_filter</td>
+	<td>label=Verified</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>client_list_filter</td>
+	<td>label=My Caseload</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>client_list_filter</td>
+	<td>label=Inactive</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>client_list_filter</td>
+	<td>label=Active</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>search</td>
+	<td>a</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Search']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>search</td>
+	<td>$</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Search']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>search</td>
+	<td>&quot;</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Search']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>search</td>
+	<td>~</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Search']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Groups</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>client_selector_link</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>search</td>
+	<td>~!@#$%^&amp;*()</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Search']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Groups</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Reports</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>report_name</td>
+	<td>label=Client List by Caseload</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Print']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Reporting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>report_name</td>
+	<td>label=Count of Active Clients By Mental Health Coverage</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Print']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Reporting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>report_name</td>
+	<td>label=Encounter Hours</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>date_picker_trigger_end_date</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=31</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Print']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Reporting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>report_name</td>
+	<td>label=Hospitalization History</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>report_name</td>
+	<td>label=Encounter Hours</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>report_name</td>
+	<td>label=Hospitalization History</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>date_picker_trigger_end_date</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=31</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Print']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Reporting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Reports</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>update</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectAndWait</td>
+	<td>report_name</td>
+	<td>label=Insurance Reauthorization</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>date_picker_trigger_start_date</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Delete date</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Reports</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectAndWait</td>
+	<td>report_name</td>
+	<td>label=Last Visits by Caseload</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Print']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Reporting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>report_name</td>
+	<td>label=Monthly Status Report</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Print']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Reporting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>report_name</td>
+	<td>label=Monthly Status Report</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>date_picker_trigger_date</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Delete date</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Print']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Reporting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>report_name</td>
+	<td>label=Progress Notes by caseload</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>staff_id</td>
+	<td>label=Root, Root</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Print']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Reporting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>report_name</td>
+	<td>label=Progress Notes by caseload</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>date_picker_trigger_start_date</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Delete date</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Reporting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>report_name</td>
+	<td>label=Progress Notes by caseload</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>date_picker_trigger_start_date</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Delete date</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>date_picker_trigger_end_date</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Delete date</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Reporting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>report_name</td>
+	<td>label=Progress Notes by writer</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>date_picker_trigger_start_date</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Cancel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Print']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Reporting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>report_name</td>
+	<td>label=Progress Notes by writer</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>date_picker_trigger_start_date</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Delete date</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>date_picker_trigger_end_date</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Delete date</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Reporting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>report_name</td>
+	<td>label=Uncommitted Progress Notes</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Print']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Reporting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>report_name</td>
+	<td>label=Zip Code Count</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Print']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Reporting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>update</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>report_name</td>
+	<td>label=Client List by Caseload</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>update</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>report_name</td>
+	<td>label=Uncommitted Progress Notes</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>update</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>update</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

@@ -1,0 +1,136 @@
+[% INCLUDE financial/billing/key.html
+    bounce      = 0
+    billable    = 0
+    transaction_in_error = 1
+%]
+<div class="submenu payments">
+    <ul class="toggle_menu">
+        <li[% ' class="active"' IF 1 %]>
+            <a href="[% script %]?section=payments;step=2">Clients</a>
+        </li>
+    </ul>
+
+    <div class="toggle_content">
+        <form id="clientform">
+            [% INCLUDE util/select_new.html
+                name        = "client_id"
+                onchange    = "document.forms['clientform'].submit()"
+                size        = 20
+                values      = eMC.department.clients
+                default     = client.id
+                keyname     = 'id'
+                valname     = 'eman'
+            %]
+            [% INCLUDE financial/session.html %]
+        </form>
+    </div>
+</div>
+
+<div class="subcontent">
+[% IF client.id %]
+    <h4>[% client.eman %]</h4>
+
+    [% IF( prognotes = client.prognotes ) %]
+        <table class="prognotes">
+            <tr>
+                <th>Date</th>
+                <th>Code</th>
+                <th>Billing history</th>
+            </tr>
+        [% rowclass = 0 -%]
+        [% FOR note IN prognotes.sort( 'start_date' ) -%] 
+            [% NEXT UNLESS( billing_prognotes = note.billing_prognotes ) -%] [% rowclass = rowclass * -1 + 1 -%]
+            <tr class="prognote [% IF rowclass; "even"; ELSE; "odd"; END %]">
+                <td class="note_date">[% note.note_date.format_date %]</td>
+                <td class="note_code">[% note.charge_code.name %]</td>
+                <td rowspan="2"><!-- billing history -->
+                <table class="insurers">
+
+                [% FOR billing_prognote IN billing_prognotes %]
+                    <tr class="insurer_head [% IF rowclass; "even"; ELSE; "odd"; END %]">
+                        <th colspan="2" class="insurer">[% billing_prognote.billing_service.billing_claim.client_insurance.rolodex.name %]</th>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Units</th>
+                        <th colspan="2"></th>
+                    </tr>
+                    <tr class="billed [% IF rowclass; "even"; ELSE; "odd"; END %]">
+                        <td class="controls"></td>
+                        <th class="entry_type">Billed</th>
+                        <td class="date">[% billing_prognote.billing_service.billing_claim.billing_file.submission_date.format_date_remove_time %]</td>
+                        [% IF billing_prognote.billing_service.get_prognotes.0.rec_id != note.rec_id %]
+                        <td class="amount" colspan="2">Combined</td>
+                        [% ELSE %]
+                        <td class="amount">$ [% billing_prognote.billing_service.billed_amount %]</td>
+                        <td class="units">[% billing_prognote.billing_service.billed_units %]</td>
+                        [% END %]
+                        <td class="aux" colspan="2"></td>
+                    </tr>
+                    [% IF( transactions = billing_prognote.billing_service.all_transactions ) %]
+                        [% FOR transaction IN transactions %]
+                            <tbody id="transaction_[% transaction.id %]" [% 'class="in_error"' IF transaction.entered_in_error %]>
+                                [% INCLUDE financial/payments/transaction.html %]
+                            </tbody>
+                        [% END %]<!-- FOR transactions -->
+                    [% END %]<!-- IF transactions -->
+                [% END %]<!-- FOR billing_prognotes -->
+                </table><!-- class insurers -->
+                </td>
+            </tr>
+            <tr class="[% IF rowclass; "even"; ELSE; "odd"; END %]">
+                <td colspan="2" class="personnel">
+                    [% billing_prognote.billing_service.billing_claim.personnel.eman %]
+                </td>
+            </tr>
+        [% END # end prognotes %]
+<!--
+        <tr>
+            <th>ID</th>
+            <th>Paid amount</th>
+            <th>Paid units</th>
+            <th>Payment received</th>
+            <th>Billed amount</th>
+            <th>Billed units</th>
+        </tr>
+-->
+        </table>
+    [% ELSE %]
+    <p>No billing prognotes for [% client.fname %].</p>
+    [% END %]
+[% ELSE %]
+<p>Please select a client.</p>
+[% END %]
+</div>
+
+<!--
+<pre>
+for each TRANSACTION
+- id
+- claim_status_code
+- patient_responsibility_amount
+- payer_claim_control_number
+- paid_charge_code
+- submitted_charge_code_if_applicable
+- remarks
+- entered_in_error
+- refunded
+
+each transaction belongs to a BILLING PAYMENT:
+- id
+- interchange_control_number
+- is_production
+- transaction_handling_code
+- payment_amount
+- payment_method
+- payment_date
+- payment_number
+- payment_company_id
+- interchange_date
+
+each transaction is associated with a BILLING CYCLE:
+- id
+- creation_date
+- staff_id
+- status
+</pre>
+-->

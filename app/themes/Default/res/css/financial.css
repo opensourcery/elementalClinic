@@ -1,0 +1,1013 @@
+/* layout {{{*/
+div.system_box.financial #content {
+    padding-top : 10px;
+    background : #fff;
+    border : 1px solid #60c;
+    min-height : 400px;
+    position : relative;
+}
+#center.financial {
+    margin : 3px 10px !important;
+    width : auto !important;
+    float : none !important;
+}
+#main {
+/*     margin-left : 175px; */
+}
+#work_in_progress {
+    padding : 5px;
+    border : 1px solid #666;
+    margin : -5px -5px 0 0;
+    height : 50px;
+    float : right;
+    width : 50px;
+    background : #dedeff url( "../img/spinner.gif" ) no-repeat 5px 5px;
+    display : none;
+}
+#work_in_progress.active {
+    width : 180px;
+    background : #dedeff url( "../img/spinner.gif" ) no-repeat 125px 5px;
+}
+#work_in_progress p {
+    color : #333;
+    font-size : 18px;
+    font-weight : bold;
+    line-height : 23px;
+    display : none;
+}
+#work_in_progress.active p {
+    display : block;
+}
+dl.inline {
+    float : left;
+}
+dl.inline dt {
+    width : 10em;
+}
+/*}}}*/
+/* main navigation {{{*/
+#financial_nav {
+    list-style : none;
+    padding : 0;
+    margin : 0 0 0 .5em;
+    height : 1.5em;
+}
+#financial_nav li {
+    float : left;
+}
+#financial_nav li a {
+    padding : .3em .7em;
+    border : 1px solid #60c;
+    border-bottom-color : #fff;
+    margin-left : -1px;
+    display : block;
+}
+#financial_nav li a:hover {
+    background : #efefff;
+}
+#financial_nav li.active a {
+    background : #fff;
+}
+#financial_nav li a:hover {
+    border-bottom-color : #60c;
+}
+/*}}}*/
+/* current set {{{*/
+#current_set {
+    margin : 0 0 20px 0;
+}
+#current_set p.note {
+    color : #666;
+    font-size : .8em;
+    border-bottom : 1px solid #aaa;
+    margin : 0;
+    padding : 0;
+}
+#current_set p.label {
+    font-size : 1em;
+}
+/*}}}*/
+/* menu {{{*/
+#menu {
+    list-style : none;
+    padding : 0;
+    margin : 0px 20px 0 0;
+    clear : both;
+    height : 40px;
+/*     width : 150px; */
+/*     float : left; */
+}
+#menu li {
+    height : 2.2em;
+    margin : .2em .5em;
+    float : left;
+}
+#menu li a {
+    padding : .2em .5em;
+    border : 1px solid #ddd;
+    margin : 0;
+    display : block;
+    float : left;
+}
+#menu li a:hover {
+    border-color : #999;
+}
+#menu li.active a {
+    background : #eee;
+    border : 1px solid #333;
+    border-bottom : 0;
+}
+#menu li.active {
+    background : transparent url( '../img/menu_active_bottom_caret.png' ) no-repeat 50% 100%;
+}
+#menu li a.unavailable {
+    font-weight : bold;
+    color : #999;
+}
+#menu li a.unavailable:hover {
+    border : 1px solid #ddd;
+    text-decoration : none;
+    cursor : default;
+}
+/*}}}*/
+/* billing 1 {{{*/
+div.finance.left {
+    width : 40%;
+    float : left;
+}
+div.finance.right {
+    width : 40%;
+    float : right;
+}
+div.finance.left h4,
+div.finance.right h4 {
+    margin-top : 10px;
+}
+div.results_list {
+    margin : 0 0 0 30px;
+    margin : 0;
+    width : 100%;
+    float : left;
+}
+/*}}}*/
+/* billing 3 {{{*/
+#rules {
+    width : 300px;
+    float : left;
+}
+/* rule list */ 
+#rules dl dt { 
+    font-weight : bold; 
+} 
+#rules dl dt input { 
+    padding : 0; 
+    margin : 0 
+    width : 14px; 
+    height : 14px; 
+} 
+#rules dl dd { 
+    padding : 0 0 4px 24px; 
+    border-bottom : 1px solid #eee; 
+    margin : 0 0 4px 0; 
+} 
+body.financial_billing_3 #prognote_list,
+body.financial_billing_4 #prognote_list {
+    width : 850px;
+    float : left;
+}
+ul.results_menu {
+    height : 2em;
+    clear : both;
+    list-style : none;
+}
+ul.results_menu li {
+    float : left;
+}
+ul.results_menu li a {
+    display : block;
+    border : 1px solid red;
+}
+ul.results_menu li.active a {
+    color : #900;
+}
+/*}}}*/
+/* billing 4 {{{*/
+td.boolean.yes,
+td.boolean.no,
+td.boolean.yes a,
+td.boolean.no a {
+    font-weight : bold;
+    text-align : center;
+}
+td.boolean.no a,
+td.boolean.no {
+    color : red;
+}
+td.boolean.yes a,
+td.boolean.yes {
+    color : green;
+}
+/*}}}*/
+/* billing 5 {{{*/
+body.financial_billing_5 div.submenu {
+    width : 50%;
+}
+body.financial_billing_5 div.subcontent {
+    margin : 0;
+    clear : both;
+    border : none;
+    padding : 0;
+}
+.error {
+   color : red;
+}
+body.financial_billing_5 table {
+    width : 100%;
+}
+body.financial_billing_5 th {
+    padding-bottom : 0.5em;
+}
+body.financial_billing_5 td {
+    padding-bottom : 1.5em;
+}
+body.financial_billing_5 span.mode {
+    color : #666;
+}
+/*}}}*/
+/* billing results {{{*/
+/* javascript toggles these on and off */
+#results.results_list {
+    display : block;
+}
+#results_passed.results_list,
+#results_failed.results_list {
+    display : none;
+}
+div.results_list tr.even {
+    background : #eee;
+}
+div.results_list tr.odd {
+    background : #fff;
+}
+div.results_list table {
+    border-collapse : collapse;
+    background : #fff;
+    width : 750px;
+    margin-bottom : 1em;
+}
+div.results_list table tbody {
+    height : 300px;
+    overflow-y : scroll;
+    overflow-x : hidden;
+}
+div.results_list table thead {
+    background : #fff;
+}
+div.results_list tr.head th {
+    font-size : 1.1em;
+    font-weight : bold;
+}
+div.results_list tr.labels {
+    border-bottom : 1px solid #666;
+}
+div.results_list th.rule {
+    font-weight : normal;
+    font-size : 11px;
+    text-align : center;
+}
+div.results_list th.rule.last {
+    padding-right : 20px;
+}
+div.notes_list td,
+div.results_list th,
+div.results_list td {
+    padding : 2px 5px;
+    white-space : nowrap;
+}
+div.results_list th {
+    font-weight : bold;
+    padding : 0 5px;
+}
+div.results_list td.rule {
+    font-weight : bold;
+    text-align : center;
+}
+div.results_list td.pass,
+div.results_list td.fail {
+    font-size : .9em;
+    font-weight : normal;
+}
+div.results_list td.last {
+    padding-right : 20px;
+}
+div.results_list td.all_pass,
+div.results_list td.all_pass {
+    font-size : .8em;
+    font-weight : bold;
+}
+.passed td.all_pass a span:after {
+    content : "O";
+    color : green;
+}
+.unpassed td.all_pass a span:after {
+    content : "X";
+    color : red;
+}
+div.results_list td.pass,
+div.results_list td.pass a {
+    color : green;
+}
+div.results_list td.fail,
+div.results_list td.fail a {
+    color : red;
+}
+/* notes list */
+div.notes_list table {
+    border-collapse : collapse;
+    margin : 0 0 0 3em;
+}
+div.notes_list th,
+div.notes_list td {
+    padding-right : 1em;
+}
+div.notes_list th {
+    border-bottom : 1px solid #000;
+}
+div.notes_list td {
+    border-left : 1px solid #eee;
+}
+div.notes_list td.date {
+    text-align : right;
+}
+div.notes_list tr.note_fields {
+}
+tr.note_body {
+    border-bottom : 1px solid #aaa;
+}
+tr.note_body td {
+    padding : 0;
+}
+tr.note_body td p {
+    color : #666;
+    font-size : .9em;
+    padding : 0 .5em;
+    white-space : normal;
+}
+/* content */
+div.results_list td.rule.pass:after {
+    content : 'O';
+}
+div.results_list td.rule.fail:after {
+    content : 'X';
+}
+/* client information */
+.client_head {
+    padding : .2em;
+    background : #ffc;
+    border : 1px solid #fb0;
+    border-top-width : 3px;
+    margin : 0 0 .5em 0;
+    width : 750px;
+}
+.client_head h4 {
+    font-size : .9em;
+    margin : 0 1em 0 0;
+    border : 0;
+}
+.client_head ul {
+    padding : 0;
+    margin : 0 1em;
+    float : left;
+}
+.client_head li {
+    font-size : .7em;
+    list-style : url( ../img/bullet_caret.png ) disc;
+    list-style-position : inside;
+    line-height : 1.6em;
+}
+/*}}}*/
+/* connection_details {{{*/
+div.connection_details {
+    background : #efefff;
+    border : 1px solid #60c;
+    padding : 5px;
+    margin-bottom : 7px;
+}
+/*}}}*/
+/* prognote bouncing {{{*/
+a.set_failures_unbillable,
+td.button a {
+    color : #ccc;
+    font-weight : bold !important; /* otherwise overridden by div.submenu.controls */
+    font-size : 1.5em;
+    text-align : center;
+    line-height : 18px;
+    border : 1px solid #ccc;
+    background : #fff;
+    margin : 0 auto;
+    display : block;
+    width : 18px;
+    height : 18px;
+}
+td.button a:link,
+td.button a:visited {
+    color : blue;
+}
+a.set_failures_unbillable:link:hover,
+a.set_failures_unbillable:visited:hover,
+td.button a:link:hover,
+td.button a:visited:hover {
+    text-decoration : none;
+    background : #eee;
+    border-color : #999;
+}
+.billable td.button.billable a {
+    color : #090;
+}
+a.set_failures_unbillable,
+.unbillable td.button.billable a {
+    color : #900;
+}
+/* catch-all a.set_failures_unbillable overrides */ 
+a.set_failures_unbillable { 
+    padding : 0 3px; 
+    margin : 0; 
+    display : inline; 
+} 
+#prognote_bounce {
+    padding : .5em;
+    background : #dedeff;
+    border : 1px solid #60c;
+}
+#prognote_bounce dl.inline dd {
+    font-weight : bold;
+}
+#prognote_bounce dl.inline dt ul {
+    list-style : none;
+    padding : 0;
+    margin : 0;
+}
+ a:link.toggle_bounce,
+ a:visited.toggle_bounce {
+}
+/* make the link look not like a link. the link is actually 'turned off' in the template. */
+.bounced a:link.toggle_bounce,
+.bounced a:visited.toggle_bounce {
+    color : #ccc;
+    cursor : text;
+}
+.bounced td.button a:link:hover.toggle_bounce,
+.bounced td.button a:visited:hover.toggle_bounce {
+    background : #fff;
+    border-color : #ccc;
+}
+.bill_manually a:link.toggle_manual,
+.bill_manually a:visited.toggle_manual {
+    color : purple;
+}
+/*}}}*/
+/* payments 1: master payments {{{*/
+body.financial_payments_1 div.submenu {
+    width : 25%;
+    position : relative;
+}
+body.financial_payments_1 div.subcontent {
+    width : 70%;
+    margin-left : 30%;
+}
+body.financial_payments_1 div.submenu div.add_item {
+    top : 1.3em;
+    right : .3em;
+}
+body.financial_payments_1 .minileft,
+body.financial_payments_1 .miniright {
+/*     width : 30%; */
+}
+/*}}}*/
+/* payments 2: history {{{*/
+body.financial_payments_2 table.prognotes,
+body.financial_payments_2 table.insurers {
+    border-collapse : collapse;
+}
+body.financial_payments_2 table.prognotes {
+    background : #fff;
+}
+body.financial_payments_2 table.prognotes tr.even {
+    background-color : #efefff;
+}
+body.financial_payments_2 table.prognotes tr.odd {
+    background-color : #fff;
+}
+body.financial_payments_2 table.insurers tr.even {
+    background : #dfdfff;
+}
+body.financial_payments_2 table.insurers tr.odd {
+    background : #f5f5ff;
+}
+body.financial_payments_2 table.prognotes tr.prognote td.note_date,
+body.financial_payments_2 table.prognotes tr.prognote td.note_code {
+    font-weight : bold;
+    vertical-align : top;
+    padding : .5em;
+}
+body.financial_payments_2 table.insurers th.entry_type {
+    font-weight : normal;
+}
+body.financial_payments_2 table.insurers tr.insurer_head th {
+    font-size : 1em;
+    text-align : right;
+    border-bottom : 2px solid #cce;
+}
+body.financial_payments_2 table.insurers tr.insurer_head th.insurer {
+    text-align : left;
+    font-size : 1.2em;
+    padding : 0;
+}
+
+/* colors for transaction rows */
+body.financial_payments_2 table.insurers tr.billed td,
+body.financial_payments_2 table.insurers tr.billed th {
+    font-weight : bold;
+    white-space : nowrap;
+    color : #33c;
+}
+body.financial_payments_2 table.insurers tr.paid td,
+body.financial_payments_2 table.insurers tr.paid th {
+    font-weight : bold;
+    white-space : nowrap;
+    color : #3c3;
+}
+body.financial_payments_2 table.insurers tr.deducted td,
+body.financial_payments_2 table.insurers tr.deducted th {
+    font-weight : bold;
+    white-space : nowrap;
+    color : #c33;
+}
+
+/* sizing for columns */
+body.financial_payments_2 table.insurers th.entry_type {
+    width : 10em;
+}
+body.financial_payments_2 table.insurers td.date {
+    width : 6em;
+}
+body.financial_payments_2 table.insurers td.amount {
+    width : 4em;
+}
+body.financial_payments_2 table.insurers td.units {
+    width : 3em;
+}
+/* formatting for transaction cells */
+body.financial_payments_2 table.insurers td.date,
+body.financial_payments_2 table.insurers td.amount,
+body.financial_payments_2 table.insurers td.units {
+    text-align : right;
+}
+body.financial_payments_2 table.insurers th,
+body.financial_payments_2 table.insurers td {
+    padding-left : 1.5em;
+}
+/* styles for updating and updated rows */
+td.controls a {
+    font-size : 1.3em;
+    text-align : center;
+    display : block;
+    width : 18px;
+    height : 18px;
+}
+ td.controls a {
+    color : #090;
+}
+.in_error td.controls a {
+    color : #900;
+}
+.updating th.entry_type,
+.updating td.date,
+.updating td.amount,
+.updating td.units,
+.updating td.aux {
+    color : #aaa !important;
+    background : #eee !important;
+}
+.updating td.controls a strong {
+    display : none;
+}
+.updating td.controls a:link,
+.updating td.controls a:visited,
+.updating td.button a:link,
+.updating td.button a:visited {
+    background : #fff url( '../img/spinner_small.gif' ) !important;
+}
+.updating td.controls a span,
+.updating td.button a span {
+   display : none;
+}
+.in_error {
+    background : gray;
+}
+span.refunded {
+    color : #c33;
+}
+body.financial_payments_2 dfn {
+    border-bottom : 1px dotted #000;
+}
+body.financial_payments_2 td.personnel {
+    vertical-align : top;
+    padding : .5em;
+}
+/*}}}*/
+/* payments 3: outstanding payments {{{*/
+body.financial_payments_3 table.payment_detail {
+    border-collapse : collapse;
+    background : #fff;
+    margin : 0;
+}
+body.financial_payments_3 table.payment_detail td {
+    padding : .25em .25em 0 .5em;
+}
+body.financial_payments_3 table.payment_detail tr.even {
+    background-color : #efefff;
+}
+body.financial_payments_3 table.payment_detail tr.odd {
+    background-color : #fff;
+}
+body.financial_payments_3 table.billed_paid,
+body.financial_payments_3 table.deductions {
+    border-collapse : collapse;
+    padding : 0;
+}
+body.financial_payments_3 table.billed_paid td,
+body.financial_payments_3 table.deductions td {
+    padding : .15em .25em;
+}
+body.financial_payments_3 table.payment_detail td.billed {
+    font-weight : bold;
+    color : #33c;
+    white-space : nowrap;
+}
+body.financial_payments_3 table.payment_detail td.paid {
+    font-weight : bold;
+    color : #3c3;
+    white-space : nowrap;
+}
+body.financial_payments_3 table.payment_detail td.deduction {
+    font-weight : bold;
+    color : #c33;
+    text-align : right;
+}
+body.financial_payments_3 table.payment_detail td.note_date,
+body.financial_payments_3 table.payment_detail td.client_name {
+    font-weight : bold;
+}
+body.financial_payments_3 p.save {
+    padding-top : 0;
+    padding-bottom : 0;
+}
+body.financial_payments_3 table.payment_detail tr.top td {
+    border-top : 10px solid #e5e5e5;
+}
+body.financial_payments_3 table.payment_detail tr.top table.billed_paid td {
+    border : none;
+}
+body.financial_payments_3 table.payment_detail td.billed_paid {
+    background : #e5e5e5;
+    padding-bottom : 5px;
+}
+/*}}}*/
+/* payments 4: receive electronic payments {{{*/
+body.financial_payments_4 div.submenu {
+    width : 100%;
+}
+body.financial_payments_4 div.subcontent {
+    margin : 0;
+    clear : both;
+    border : none;
+    padding : 0;
+}
+table.claim_list {
+    border-collapse : collapse;
+    border : 1px solid #000;
+    background : #fff;
+}
+table.claim_list tr.head th {
+    padding : .75em .5em .5em .5em;
+    border-top : 1px solid #000;
+}
+table.claim_list tr.labels th {
+    padding : .5em .5em .5em 2em;
+    border-top : 1px solid #000;
+}
+table.claim_list td {
+    padding : .5em .5em .5em 2em;
+}
+table.claim_list tr.even {
+    background-color : #efefff;
+}
+table.claim_list tr.odd {
+    background-color : #fff;
+}
+table.claim_list td.billed {
+    font-weight : bold;
+    color : #33c;
+    white-space : nowrap;
+}
+table.claim_list td.paid {
+    font-weight : bold;
+    color : #3c3;
+    white-space : nowrap;
+}
+table.claim_list th.status {
+    font-weight : bold;
+    color : #33c;
+}
+table.claim_list th.deduction {
+    padding : 0 .5em 0 2em;
+}
+table.claim_list tr.deduction td {
+    color : #c33;
+    padding : 0 .5em .5em 2em;
+}
+table.claim_list td.amount {
+    white-space : nowrap;
+    font-weight : bold;
+}
+table.claim_list td.units {
+    white-space : nowrap;
+    text-align : right;
+}
+table.claim_list td.note_date,
+table.claim_list td.note_code {
+    font-weight : bold;
+}
+table.claim_list td.remark {
+    color : #33c;
+}
+/*}}}*/
+/* reports {{{*/
+.financial_reports_1 #menu {
+    height : 0;
+}
+tr.billing th,
+tr.payment th {
+    text-align : right;
+    font-style : italic;
+    font-weight : normal;
+    text-decoration : none;
+}
+tr.billing td,
+tr.payment td {
+    font-style : italic;
+}
+/*}}}*/
+/* tools 1: insurance authorizations {{{*/
+div.subcontent.insurance_authorizations {
+    width : 60%;
+    margin-left : 0;
+    float : right;
+}
+div.submenu.insurance_authorizations {
+    width : 35%;
+}
+div.submenu.insurance_authorizations .toggle_content {
+    width : 100%;
+    margin : 0;
+    max-height : 450px;
+    overflow-y : scroll;
+    overflow-x : visible;
+}
+div.submenu.insurance_authorizations a {
+    font-weight : normal;
+}
+div.submenu.insurance_authorizations ul {
+    padding : 1em 0 0 .5em;
+}
+div.submenu.insurance_authorizations li {
+    padding : 0;
+}
+div.submenu.insurance_authorizations li.active a {
+    color : blue;
+}
+div.submenu.insurance_authorizations li.active a:after {
+    content : "";
+}
+table#insurance_authorizations {
+    border-collapse : collapse;
+}
+table#insurance_authorizations td {
+    padding-right : 1em;
+}
+table#insurance_authorizations td.requested {
+    text-align : right;
+}
+table#insurance_authorizations td.requested a {
+    color : green;
+}
+table#insurance_authorizations td.requested.not a {
+    color : red;
+}
+table#insurance_authorizations td.requested a em {
+    font-weight : normal;
+    font-style : normal;
+}
+table#insurance_authorizations tr.active {
+    background : #fff;
+}
+table#insurance_authorizations tr.active td {
+    padding-top : .2em;
+    padding-bottom : .2em;
+    border-top : 1px solid #999;
+    border-bottom : 1px solid #999;
+}
+/*}}}*/
+/* tools 2: claims processor {{{*/
+div.submenu {
+    padding : 0 .5em 2em 0;
+    float : left;
+    width : 25%;
+}
+div.submenu ul {
+    list-style : none;
+    padding : 0;
+    margin : 0;
+}
+div.submenu li {
+    padding : .1em 0;
+}
+div.submenu a {
+    font-weight : normal;
+}
+div.submenu li.active a,
+div.submenu tr.active a {
+    color : #900;
+    font-weight : bold;
+}
+div.submenu li.active a:after,
+div.submenu tr.active a:after {
+    content : " \00BB ";
+}
+div.subcontent {
+    padding-left : .5em;
+    border-left : 1px solid #60c;
+    margin-left : 25%;
+}
+div.subcontent h5 {
+    margin-top : 1em;
+}
+.financial_tools_2 dl.inline dt {
+    width : 20em;
+}
+/*}}}*/
+/* tools 3: validation rules {{{*/
+div.submenu.validation_rules {
+    width : 35%;
+    position : relative;
+}
+div.submenu.validation_rules div.add_item {
+    top : 1.3em;
+    right : .3em;
+}
+#validation_rule {
+    margin-left : 37%;
+}
+#validation_rule h4 {
+    padding-top : .2em;
+}
+body.financial_tools_3 h6 {
+    font-size : 1em;
+    padding : 0;
+    margin : 0;
+}
+p.query_part {
+    font-family : "Courier New",Courier,monospace;
+    font-weight : bold;
+    padding : 0;
+    margin : 0;
+}
+p.query_part,
+p.query_part + p {
+    margin-left : 3em;
+}
+/*}}}*/
+/* tools 4: medicaid claim adjustment {{{*/
+body.financial_tools_4 div.payment {
+    padding : .25em;
+    background-color : #efefff;
+}
+body.financial_tools_4 h5 {
+    font-weight : bold;
+    color : #33c;
+    font-size : 1em;
+    border : none;
+}
+body.financial_tools_4 h6 {
+    padding : 0 0 0 .25em;
+    margin :  .75em .75em .2em .75em;
+    font-size : .75em;
+    border-bottom : 1px solid #333;
+}
+body.financial_tools_4 table.transactions {
+    margin : 5px;
+    border-collapse : collapse;
+}
+body.financial_tools_4 table.transactions th,
+body.financial_tools_4 table.transactions td {
+    padding : .25em 1em;
+    text-align : right;
+}
+body.financial_tools_4 table.transactions td.code {
+    text-align : left;
+}
+body.financial_tools_4 p.adjust {
+    text-align : right;
+    padding : 3px 8px 3px 8px;
+    background-color : #666;
+    border : 1px solid #333;
+    margin : 5px;
+}
+body.financial_tools_4 p.input {
+    padding : .75em 0 0 0;
+    clear : both;
+    margin : 0;
+}
+body.financial_tools_4 p.instructions {
+    font-weight : bold;
+    padding : 1.5em 0 0 0;
+    margin : 0;
+}
+body.financial_tools_4 p.tip {
+    color : #777;
+    padding : 0 0 .5em 0;
+    margin : 0;
+}
+body.financial_tools_4 div.ra_data {
+    float : left;
+    padding : .75em 5em 0 0;
+}
+body.financial_tools_4 h3 {
+    padding : .75em 0;
+}
+body.financial_tools_4 fieldset.error_data {
+    width : 400px;
+    margin : 0;
+}
+body.financial_tools_4 fieldset.error_data legend {
+    font-weight : bold;
+    color : #33c;
+}
+body.financial_tools_4 p.wrong_info {
+    font-weight : bold;
+    padding : .25em 0;
+}
+body.financial_tools_4 table.error_transactions {
+    border-collapse : collapse;
+}
+body.financial_tools_4 table.error_transactions th,
+body.financial_tools_4 table.error_transactions td {
+    padding : 2px 10px;
+    text-align : right;
+}
+/*}}}*/
+/* tools 5: bounced notes {{{*/
+#bounced_prognotes {
+    border : 1px solid #999;
+    border-collapse : collapse;
+}
+#bounced_prognotes th {
+    padding : .2em .2em .2em .5em;
+}
+#bounced_prognotes td {
+    padding : .2em .2em .2em .5em;
+    border : 1px solid #ddd;
+    border-left : 0;
+}
+/*}}}*/
+/* tools 6: manual combined notes {{{*/
+table.manual_notes {
+    border : 1px solid #ddd;
+    margin : 10px 0 5px 0;
+}
+table.manual_notes th, table.manual_notes td {
+    padding : 2px 6px;
+}
+table.manual_notes th {
+    font-weight : normal;
+    color : #aaa;
+    border-bottom : 1px dotted #ddd;
+}
+#manual_note_groups p {
+    margin : 5px 0 20px 0;
+}
+table.deferred {
+    color : #555;
+}
+/*}}}*/
+/* help {{{*/
+#key {
+    background : #eee;
+    padding : .3em .5em;
+    border : 1px solid #999;
+    position : absolute;
+    top : 10px;
+    right : 10px;
+}
+/*}}}*/

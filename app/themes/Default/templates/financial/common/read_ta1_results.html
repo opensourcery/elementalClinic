@@ -1,0 +1,41 @@
+    <div class="connection_details">
+    <h4>
+    TA1 Interchange Acknowledgement
+    </h4>
+    <p>
+    Recipient: [% recipient %] ([% read_ta1.get_sender_interchange_id %])<br />
+    Date: [% read_ta1.get_interchange_date %]<br />
+    Production: [% IF read_ta1.is_production; 'Yes'; ELSE; 'No'; END %]
+    </p>
+    
+    <p>
+    Original Interchange Control Number: [% read_ta1.get_orig_interchange_control_number %]<br />
+    Original Interchange Date: [% read_ta1.get_orig_interchange_date %]<br />
+    Original Interchange Time: [% read_ta1.get_orig_interchange_time %]<br />
+    Interchange Acknowledgment Code: [% current_user.valid_data.get_byname( '_interchange_ack_codes', read_ta1.get_interchange_ack_code ).description %]<br />
+    Interchange Note Code: [% current_user.valid_data.get_byname( '_interchange_note_codes', read_ta1.get_interchange_note_code ).description %]
+    </p>
+    
+    <p>
+    Functional Group: [% current_user.valid_data.get_byname( '_functional_group_ack_codes', read_ta1.get_functional_group_response.ack_code ).description %]<br />
+    [% IF read_ta1.get_functional_group_response.syntax_error_codes.0 %]
+        Syntax Errors:
+        <ul>
+        [% FOR code IN read_ta1.get_functional_group_response.syntax_error_codes %]
+            [% IF code != '' %]
+            <li class="error">
+            [% current_user.valid_data.get_byname( '_functional_group_errors', code ).description %]
+            </li>
+            [% END %]
+        [% END %]
+        </ul>
+    [% ELSE %]
+        No functional group syntax errors.
+    [% END %]
+    </p>
+    <p>
+    Number of Transaction Sets Included: [% read_ta1.get_functional_group_response.number_transaction_sets_included %]<br />
+    Number of Transaction Sets Received: [% read_ta1.get_functional_group_response.number_transaction_sets_received %]<br />
+    Number of Transaction Sets Accepted: [% read_ta1.get_functional_group_response.number_transaction_sets_accepted %]
+    </p>
+    </div>

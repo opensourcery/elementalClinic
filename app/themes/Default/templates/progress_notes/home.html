@@ -1,0 +1,136 @@
+[% INCLUDE global/client_head.html
+    navsec = 'clinical'
+    navpage = 'progress_notes'
+%]
+
+[% INCLUDE progress_notes/note.html
+    label_action = current.rec_id ? 'Edit' : 'New'
+%]
+
+[% IF ( attends = client.uncommitted_attendees ) %]
+<div class="client_box" id="uncommitted_groupnotes">
+<h5>Uncommitted group notes</h5>
+<p>This client has uncommitted group notes:</p>
+<ul>
+    [% FOR attend IN attends %]
+    [% IF attend.get_prognote %]
+    <li><a href="group_notes.cgi?op=prognote_detail&attendee_id=[% attend.rec_id %]">
+        [% attend.get_group_note.note_date %]</a>
+        : uncommitted <strong>progress</strong> note for <strong>[% attend.get_group.name %]</strong> group.
+    </li>
+    [% ELSE %]
+    <li><a href="group_notes.cgi?op=group_note_detail&group_note_id=[% attend.get_group_note.rec_id %]">
+        [% attend.get_group_note.note_date %]</a>
+        : uncommitted <strong>group</strong> note for <strong>[% attend.get_group.name %]</strong> group.
+    </li>
+    [% END %]
+    [% END %]
+</ul>
+</div>
+[% END %]
+
+
+<div class="client_box" id="previous_notes">
+    <h4>Previous Notes</h4>
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+        <p>
+            [% INCLUDE util/date_picker.html
+                label   = 'From'
+                name    = 'notes_from'
+                value   = notes_from || progress_notes.-1.note_date || 'today'
+                wraptag = 'strong'
+            %]
+
+            [% INCLUDE util/date_picker.html
+                label   = 'to'
+                name    = 'notes_to'
+                value   = notes_to || 'today'
+                wraptag = 'strong'
+            %]
+
+            [% INCLUDE util/select_new.html
+                name    = 'writer_filter'
+                label   = 'written by'
+                values  = client.previous_note_writers
+                default = writer_filter
+                keyname = 'staff_id'
+                valname = 'eman'
+                leading_blank   = 'Optional: filter by writer'
+                wraptag = 'strong'
+            %]
+            <input type="hidden" name="client_id" value="[% client.id %]" />
+            <input type="hidden" name="rec_id" value="[% current.rec_id %]" />
+            <input type="submit" class="small" name="submit" id="submit" value="Filter notes" />
+        </p>
+    </form>
+    <hr class="subtle" />
+
+    [% FOREACH note IN progress_notes %]
+    <div class="old_note">
+        <h5>
+            On <strong>[% note.note_date %]</strong>, from <strong>[% note.start_time %]</strong>
+            to <strong>[% note.end_time %]</strong>.
+            [%- IF current_user.financial %]
+            <span class="[% note.billing_status %]">[% note.billing_status %]</span>.
+            [%- END %]
+        </h5>
+
+        <p class="print_as">
+            Print as <a href="[% script %]?op=print_psych&client_id=[% client.id %]&rec_id=[% note.rec_id %]">psychiatric</a>
+            or
+            <a href="[% script %]?op=print_single&client_id=[% client.id %]&rec_id=[% note.rec_id %]">single</a>
+        </p>
+        <p>
+            At <strong>[% current_user.valid_data.get( '_prognote_location', note.note_location_id ).name %]</strong>
+            with <strong>[% note.writer %]</strong>
+                <span class="sep">|</span>
+            Rating: <strong>[% note.outcome_rating %]</strong>
+                <span class="sep">|</span>
+            Goal: <strong>[% note.goal.goal_name || note.goal_id IF ( note.goal_id > -1 ) %]</strong>
+            <br />
+            Code: <strong>[% current_user.valid_data.get( '_charge_code', note.charge_code_id ).name %], [% current_user.valid_data.get( '_charge_code', note.charge_code_id ).description %]</strong>
+            [%- IF note.unbillable_per_writer %]
+            <br />
+            <strong class="attention">(Writer has marked this note "Unbillable").</strong>
+            [%- END %]
+        </p>
+        [% IF ( group = note.get_group ) %]
+        <p>Group <strong>[% group.name %]</strong>.</p>
+        [% END %]
+
+        <p class="note">[% note.note_body | replace('\\\n', "<br />") | replace('\n', "<br />") %]</p>
+        [%# IF Config.edit_prognote && ( current_user.admin || ( note.billing_status == "Unbilled" )) %]
+        <p>[% note.digital_signature %]</p>
+
+        [% IF ! note.locked && Config.edit_prognote %]
+        <p class="edit_note"><a href="[% script %]?op=edit&client_id=[% client.id %]&rec_id=[% note.rec_id %]">Edit note</a></p>
+        [% END %]
+    </div>
+    [% END %]
+</div>
+
+
+
+<script type="text/javascript">
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function Tpl( id, text ) {
+    this.id   = id;
+    this.text = text;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    var tpls = new Array();
+    [% FOREACH tpl IN current_user.valid_data.list( '_prognote_templates' ) %]
+        tpls[ [% tpl.rec_id %] ] = "[% tpl.description | replace('\n', '\\n')  %]";
+    [% END %]
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function insert_template() {
+    var template_id = document.getElementById( 'select_template' ).value
+    var note_body = document.getElementById( 'note_body' );
+
+    if( template_id ) {
+        note_body.value = note_body.value + "\n" + tpls[ template_id ] + "\n"
+    }
+}
+</script>

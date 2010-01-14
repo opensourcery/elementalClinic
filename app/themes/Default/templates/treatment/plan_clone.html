@@ -1,0 +1,39 @@
+[% INCLUDE global/client_head.html
+    navsec = 'clinical'
+    navpage = 'treatment'
+%]
+
+<div id="left" class="client_box">
+    <h4>You are about to clone this plan</h4>
+    <p class="sub">Dates: <strong>[% current.start_date %] to [% current.end_date %]</strong></p>
+
+    [% INCLUDE treatment/plan_view.html
+        allow_edit      = 0
+        display_full    = 1
+        no_header       = 1
+    %]
+
+</div>
+
+<div id="right" class="client_box">
+    <form method="[% Config.form_method %]" action="[% program %]" enctype="application/x-www-form-urlencoded">
+        <div id="goals">
+            [% IF current.goals.0.rec_id %]
+                <h4>Goals</h4>
+                <p>Please select the goals you want to clone.</p>
+                [% INCLUDE treatment/goal_list.html
+                    allow_edit  = 0
+                    show_clone  = 1
+                %]
+            [% ELSE %]
+                <h4>No goals</h4>
+                <p>This plan has no goals</p>
+            [% END %]
+            <p class="edit"><input type="submit" name="submit" value="Save Clone" /></p>
+            <input type="hidden" name="client_id" value="[% client.id %]" />
+            <input type="hidden" name="plan_id" value="[% current.rec_id %]" />
+            <input type="hidden" name="op" id="op" value="plan_clone_save" />
+        </div>
+    </form>
+</div>
+

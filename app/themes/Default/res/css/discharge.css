@@ -1,0 +1,14 @@
+.axis p {
+    margin-left : 25px;
+    margin-bottom : 0;
+}
+.axis p strong {
+    font-size : 12px;
+}
+p.manual {
+    color : #666;
+    margin-left : 20px;
+}
+p.manual strong {
+    color : #000;
+}

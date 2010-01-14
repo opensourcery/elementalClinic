@@ -1,0 +1,102 @@
+/* assessment {{{ */
+#new_template p.new_this input {
+    float : left;
+}
+#new_template p.new_this #new_name {
+    font-size : 1.1em;
+    margin : 4px 0 0 6px;
+}
+h4 input[type="text"],
+h4 label {
+    font-size : 1.1em;
+}
+p.created {
+    color : #999;
+}
+p.created strong {
+    color : #000;
+    font-weight : normal;
+}
+div#properties {
+    border : 1px solid blue;
+    margin : 0 20px 20px 20px;
+}
+dl.assessment_section {
+    margin : 10px;
+    float : left;
+}
+dl.assessment_section dt {
+    width : auto;
+    float : left;
+}
+dl.assessment_section li.section_field, li.new_field{
+    clear: both;
+    padding-top: 14px;
+}
+dl.assessment_section li.section_field input {
+    font-size : 1.1em;
+    float : left;
+    width : 25em;
+}
+dl.assessment_section li.section_field a {
+    text-indent : -5000px;
+    background : #fff url( '../img/icon_delete.png' ) no-repeat 0 0;
+    margin : .1em 0 0 .3em;
+    width : 14px;
+    height : 14px;
+    display : block;
+    float : left;
+    clear : right;
+    cursor : pointer;
+}
+dl.assessment_section li.section_field a:hover {
+    background-position : 0 -100px;
+}
+dl.assessment_section .label *, /* this is a bit of a hack */
+dl.assessment_section .label {
+    font-weight : bold;
+    font-size : 16px !important;
+    margin-top: 10px;
+}
+dl.assessment_section dt strong, /* to override the strong tag on displayed (uneditable) fields */
+dl.assessment_section li strong {
+    font-weight : normal;
+}
+h5 {
+    clear : both;
+    padding : 1em 0;
+}
+/* }}} */
+
+dl.fieldlist {
+    margin: 0;
+}
+
+dl.fieldlist dt {
+    font-weight : bold;
+    margin: 0 !important;
+    width: 80px;
+}
+dl.fieldlist dt label { /* to fix underline and alignment issues */
+    width: auto;
+    float: right;
+    border: 0;
+}
+dl.fieldlist dt label:hover { /* to fix underline issues */
+    border-bottom: 1px dotted #999;
+}
+dl.fieldlist dd {
+    white-space : normal;
+}
+
+p.fieldlist {
+    white-space: normal;
+}
+
+ul.navigation {
+    margin: 1.1em;
+}
+
+#op_new {
+    margin: 0px;
+}

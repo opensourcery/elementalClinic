@@ -1,0 +1,43 @@
+
+1: 
+  active: 1
+  dept_id: 1001
+  description: Accepted
+  name: A
+  rec_id: 1
+2: 
+  active: 1
+  dept_id: 1001
+  description: Accepted, But Errors Were Noted.
+  name: E
+  rec_id: 2
+3: 
+  active: 1
+  dept_id: 1001
+  description: Rejected, Message Authentication Code (MAC) Failed
+  name: M
+  rec_id: 3
+4: 
+  active: 1
+  dept_id: 1001
+  description: Partially Accepted, At Least One Transaction Set Was Rejected
+  name: P
+  rec_id: 4
+5: 
+  active: 1
+  dept_id: 1001
+  description: Rejected
+  name: R
+  rec_id: 5
+6: 
+  active: 1
+  dept_id: 1001
+  description: Rejected, Assurance Failed Validity Tests
+  name: W
+  rec_id: 6
+7: 
+  active: 1
+  dept_id: 1001
+  description: Rejected, Content After Decryption Could Not Be Analyzed
+  name: X
+  rec_id: 7

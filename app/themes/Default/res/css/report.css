@@ -1,0 +1,51 @@
+h2 {
+    font-size : 14px;
+    margin : 0;
+}
+h3 {
+    margin : 0 0 10px 0;
+    font-weight : normal;
+}
+/*
+h4 {
+    font-weight : normal;
+    margin : 20px 0 0 0;
+    border : 0;
+}
+*/
+table {
+    border-collapse: collapse;
+    border : 3px double #ddd;
+    margin-bottom : 30px;
+}
+tr.even {
+    background-color : #ddd;
+}
+tr.odd {
+    background-color : #fff;
+}
+th {
+    padding : 0 20px 0 0;
+    border-bottom : 2px solid #000;
+}
+th.subtle {
+    text-decoration : underline;
+    border-bottom : 0;
+}
+td {
+    padding : 0 10px 0 5px;
+    border-left : 1px solid #999;
+    margin : 0;
+}
+.force_on #client_head {
+    display : none !important;
+    border : 0;
+}
+p.sig {
+    border-bottom : 1px solid #000;
+    padding-top : 20px;
+}
+td.info {
+    vertical-align : top;
+    white-space : nowrap;
+}

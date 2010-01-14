@@ -1,0 +1,43 @@
+# vim: ft=perl ts=4 sts=4 sw=4
+use strict;
+use warnings;
+
+my $db = eleMentalClinic::DB->new;
+
+# see #1088.
+# in r6182, the dsm4 table changed to 'valid_data_dsm4'.  unfortunately, ryan
+# edited the 400emc migration instead of making a new one that changed the dsm4
+# table.  this means that any installations that existed before that revision
+# would break on newer code that assumes a valid_data_dsm4 table.
+# on the other hand, we can't just revert the changes to 400emc, because then a
+# migration that changes dsm4 to valid_data_dsm4 would explode on installations
+# NEWER than r6182.
+# the best way to deal with it is just to convert a dsm4 table if it exists.
+if ( $db->select_one(
+    [ '*' ],
+    'pg_catalog.pg_tables',
+    [ 'tablename = ?', 'dsm4' ],
+) ) {
+    $db->transaction_do(sub {
+        my @commands = split /(?<=;)/, do {
+            local $/;
+            <DATA>
+        };
+        for (@commands) {
+            $db->do_sql($_, 1);
+        }
+    });
+}
+
+__DATA__
+ALTER TABLE dsm4 RENAME TO valid_data_dsm4;
+ALTER TABLE valid_data_dsm4 RENAME code TO name;
+ALTER TABLE valid_data_dsm4 RENAME diag TO description;
+ALTER TABLE valid_data_dsm4 ADD COLUMN dept_id integer not null default 1001;
+ALTER TABLE valid_data_dsm4 ADD COLUMN active integer not null default 1;
+ALTER TABLE valid_data_dsm4 ADD PRIMARY KEY (rec_id);
+CREATE SEQUENCE valid_data_dsm4_rec_id_seq;
+SELECT setval('valid_data_dsm4_rec_id_seq',
+    (SELECT max(rec_id) FROM valid_data_dsm4));
+ALTER TABLE valid_data_dsm4 ALTER COLUMN rec_id
+    SET DEFAULT nextval('valid_data_dsm4_rec_id_seq'::regclass);

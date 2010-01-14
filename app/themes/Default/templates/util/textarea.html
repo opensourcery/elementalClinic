@@ -1,0 +1,27 @@
+<!-- util/textarea BEGIN -->
+[%
+    id = id || name;
+    wraptag = ( action == 'hidden' ) ? 0 : wraptag;
+    IF label_decoration;
+        lds = "<$label_decoration>";
+        lde = "</$label_decoration>";
+    END;
+    SET break = "<br />" IF break
+-%]
+[% "<$wraptag>" IF wraptag %]
+[% IF action == 'display' -%]
+    [% IF dl %]
+        [% "<dt>$label:</dt>" IF label %] [% break %] <dd><strong>[% value %]</strong></dd>
+    [% ELSE %]
+        [% "$label:" IF label %] [% break %] <strong>[% value %]</strong>
+    [% END %]
+[% ELSIF action == 'hidden' -%]
+    <input type="hidden" name="[% name %]" value="[% value %]" />
+[% ELSE -%]
+    [% IF label -%]
+    [% "<dt>" IF dl %][% lds %]<label for="[% id %]">[% label %]: </label>[% lde %][% "</dt>" IF dl %][% break %]
+    [% END -%]
+    [% "<dd>" IF dl %]<textarea name="[% name %]" id="[% id %]" cols="[% cols %]" rows="[% rows %]">[% value %]</textarea>[% "</dd>" IF dl %]
+[% END -%]
+[% "</$wraptag>" IF wraptag %]
+<!-- util/textarea END -->

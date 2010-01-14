@@ -1,0 +1,52 @@
+[% INCLUDE global/print_head.html
+    name    = 'Assessment'
+    a_href  = "$script?client_id=$client.id"
+    a_label = 'Assessment'
+    date    = today_ymd
+%]
+[% BASE_URI ="$script?client_id=$client.id;";
+    IF current_assessment.id;
+        BASE_URI = BASE_URI _ "assessment_id=$current_assessment.id;";
+    END
+%]
+[% UNLESS fields %]
+    [% fields = current_assessment.all_fields %]
+[% END %]
+
+<div id="assessment_print">
+<h3>[% client.lname %], [% client.fname %] [% client.mname %]</h3>
+<p>DOB: <strong>[% client.dob %]</strong></p>
+<p>SSN: <strong>[% client.ssn_f %]</strong></p>
+
+[% INCLUDE global/client_placement.html %]
+
+[% insurance = client.mental_health_provider.rolodex %]
+<p>Insurance: <strong>[% insurance.name %] [%- ", $insurance.phone_f" IF insurance.phone -%]</strong></p>
+
+    <div id="assessment">
+        <h4>
+            <em>Assessment:</em>
+            [% current_assessment.assessment_date.format_date_medium %]
+        </h4>
+        <p>
+            <label>Start date: </label>[% current_assessment.start_date %]
+            <br />
+            <label> End date: </label>[% current_assessment.end_date %]
+        </p>
+
+        <div id="big_list">
+            [% FOR section IN current_assessment.template.sections_view %]
+                <h2>[% section.label %]</h2>
+                <dl>
+                    [% FOR field IN fields.${ section.id } %]
+                        [% INCLUDE assessment/_field.html action = 'display' %]
+                    [% END %]
+                </dl>
+            [% END %]
+
+            <hr class="div" />
+        </div>
+    </div>
+
+    <hr class="div" />
+</div>

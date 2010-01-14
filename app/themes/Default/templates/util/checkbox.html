@@ -1,0 +1,42 @@
+<!-- BEGIN util/checkbox -->
+[%#
+    REQUIRED
+    name
+
+    OPTIONAL
+    id
+    value
+    wraptag
+    label
+    onchange
+-%]
+[%  id = id || name;
+    IF value; checked = ' checked="checked"'; END;
+    onchange = onchange ? " onchange=\"$onchange\"" : '';
+-%]
+[% "<$wraptag>" IF wraptag %]
+[%- IF action == 'display' %]
+    [% "<dt>" IF dl && label %][% "$label:" IF label %][% "</dt>" IF dl && label %]
+    [% "<dd>" IF dl %]<strong>[% value ? 'Yes' : has_value ? 'No' : '' %]</strong>[% "</dd>" IF dl %]
+[%- ELSE;
+    input = "<input type=\"checkbox\" name=\"$name\" id=\"$id\" $checked $onchange />";
+    SET label = "<label for=\"$id\">$label</label>" IF label
+%]
+[% IF dl %]
+    [% IF reverse %]
+    <dt>[% input %]</dt>
+    <dd>[% label %]</dd>
+    [% ELSE %]
+    <dt>[% label %]</dt>
+    <dd>[% input %]</dd>
+    [% END %]
+[% ELSE %]
+    [% IF reverse %]
+        [% input %] [% label %]
+    [% ELSE %]
+        [% label %] [% input %]
+    [% END %]
+[% END %]
+[% "</$wraptag>" IF wraptag %]
+[%- END %]
+<!-- END util/checkbox -->

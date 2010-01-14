@@ -1,0 +1,6 @@
+                        [%- rowspan = rowspan ? " rowspan=\"$rowspan\"" : '' %]
+                        [%- IF active %]
+                        <td class="is_active"[% rowspan %]><strong title="Active">O</strong></td>
+                        [%- ELSE %]
+                        <td class="is_active inactive %]"[% rowspan %]><strong title="Inactive">&#216;</strong></td>
+                        [%- END %]

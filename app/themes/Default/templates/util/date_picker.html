@@ -1,0 +1,18 @@
+[%- 
+    id = id || name;
+    required = required ? ' required' : '';
+-%]
+[%- IF action == 'display' %]
+    [%- "<$wraptag>" IF wraptag -%]
+    [% IF label %][% '<dt>' IF dl %]<label>[% label %]: </label>[% '</dt>' IF dl %][% END %]
+    [% '<dd>' IF dl %]<strong id="[% id %]">[% value.format_date_medium || 'No date set' %]</strong>[% '</dd>' IF dl %]
+    [%- "</$wraptag>" IF wraptag -%]
+[%- ELSE %]
+    [% value = ( value == 'today' ) ? today_ymd : value %]
+    [%- "<$wraptag>" IF wraptag -%]
+    [% IF label %][% '<dt>' IF dl %]<label for="[% id %]">[% label %]: </label>[% '</dt>' IF dl %][% END %]
+    [% '<dd>' IF dl %]
+    <input type="text" name="[% name %]" id="[% id %]" value="[% value %]" size="10" class="date_picker[% required %]" />
+    [% '</dd>' IF dl %]
+    [%- "</$wraptag>" IF wraptag -%]
+[%- END %]

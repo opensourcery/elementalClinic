@@ -1,0 +1,22 @@
+[% INCLUDE global/client_head.html
+    navsec = 'rolodex'
+%]
+[% action = ( op == 'rolodex_edit' || op == 'rolodex_new' || errors ) ? 'edit' : 'display' %]
+<div id="center" class="rolodex">
+
+    [% IF action == 'display';
+        INCLUDE rolodex/relationship.html;
+        END
+    %]
+
+    [% IF action == 'display' %]
+        [% INCLUDE rolodex/rolodex_filter.html
+            caller  = 'rolodex',
+            rolodex_filter  = current_user.pref.rolodex_filter,
+        %]
+    [% ELSE %]
+        [% INCLUDE rolodex/rolodex_edit.html %]
+    [% END %]
+
+    <hr class="div" />
+</div>

@@ -1,0 +1,15 @@
+[% IF( expired = department.claims_processors_with_expired_credentials ) %]
+    <h4>Expired Transmission Credentials</h4>
+    [% FOR claims_processor IN expired %]
+    <li>
+        <a href="[% script %]?op=claims_processor_edit;section=tools;step=2;claims_processor_id=[% claims_processor.id %]">[% claims_processor.name %]</a>:
+        [%- IF claims_processor.password_expired %]
+        <strong>expired [% claims_processor.password_expired %] days ago!</strong>
+        [%- ELSE %]
+        will expire soon.
+        [%- END %]
+    </li>
+    [% END %]
+[% ELSE %]
+    <p>All credentials are up to date.</p>
+[% END %]

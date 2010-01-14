@@ -1,0 +1,59 @@
+        <h5 style="clear:both;">Intake type</h5>
+        [% INCLUDE util/date_picker.html
+            name    = 'event_date'
+            label   = 'Intake date'
+            value   = current.event_date || 'today'
+            wraptag = 'p'
+        %]
+        <p>
+            <input type="radio" name="intake_type" id="Admission" value="Admission"
+                [%- IF(( intake_type == 'Admission' ) || ( ! intake_type )); ' checked="checked"'; END %] />
+            <label for="Admission">Admit to program:</label>
+            [% INCLUDE util/select_new.html
+                name    = 'admission_program_id'
+                values  = department.list_programs( 'admission' )
+                default = current.program_id
+                keyname = 'rec_id'
+                valname = 'full_name'
+                use_id  = 1
+            %]
+        </p>
+
+        <p>
+            <input type="radio" name="intake_type" id="Referral" value="Referral"
+                [%- IF intake_type == 'Referral'; ' checked="checked"'; END %] />
+            <label for="Referral">Admit to referral program:</label>
+            [% INCLUDE util/select_new.html
+                name    = 'referral_program_id'
+                values  = department.list_programs( 'referral' )
+                default = current.program_id
+                keyname = 'rec_id'
+                valname = 'full_name'
+                use_id  = 1
+            %]
+        </p>
+
+        <hr />
+        [% INCLUDE util/select_new.html
+            name    = 'staff_id'
+            label   = 'Service coordinator'
+            values  = department.get_service_coordinators
+            default = current.staff_id
+            keyname = 'staff_id'
+            valname = 'eman'
+            use_id  = 1
+            wraptag = 'p'
+            leading_blank   = 'Optional'
+        %]
+
+        [% INCLUDE util/select_new.html
+            name    = 'level_of_care_id'
+            label   = 'Level of care'
+            values  = current_user.valid_data.list( '_level_of_care' )
+            default = current.level_of_care_id
+            keyname = 'rec_id'
+            valname = 'name'
+            use_id  = 1
+            wraptag = 'p'
+            leading_blank   = 'Optional'
+        %]

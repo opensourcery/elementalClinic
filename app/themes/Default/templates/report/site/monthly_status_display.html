@@ -1,0 +1,123 @@
+<table>
+    <thead>
+    <tr>
+        <td>
+            [% INCLUDE report/header.html %]
+        </td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>
+            <p>Date: [% date_facade %]</p>
+
+            <br />
+            <h3>Intakes</h3>
+            [% UNLESS data.intakes.0 %]
+            <p>There was no intake data for this month.</p>
+            [% ELSE %]
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Input Date</th>
+                    <th>Admit Date</th>
+                    <th>Referral Date</th>
+                    <th>Referral Agency</th>
+                    <th>Input By</th>
+                </tr>
+                [% FOR entry IN data.intakes %]
+                <tr [% rowclass %]>
+                    <td class="nowrap">[% entry.client.lname %], [% entry.client.fname %]</td>
+                    <td>[% entry.input_date %]</td>
+                    <td>[% entry.admit_date %]</td>
+                    <td>[% entry.referral_date %]</td>
+                    <td>[% entry.referral.rolodex.name %]</td>
+                    <td>[% entry.input_by %]</td>
+                </tr>
+                [% END %]
+            </table>
+            [% END %]
+
+            <br />
+            <h3>Terminations</h3>
+            [% UNLESS data.terminations.0 %]
+            <p>There was no termination data for this month.</p>
+            [% ELSE %]
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Input Date</th>
+                    <th>Admit Date</th>
+                    <th>Discharge Date</th>
+                    <th>Reason</th>
+                    <th>Mental Health Coverage</th>
+                </tr>
+                [% FOR entry IN data.terminations %]
+                <tr [% rowclass %]>
+                    <td class="nowrap">[% entry.client.lname %], [% entry.client.fname %]</td>
+                    <td>[% entry.input_date %] </td>
+                    <td>[% entry.admit_date %]</td>
+                    <td>[% entry.event_date %]</td>
+                    <td>[% entry.termination_reason %]</td>
+                    <td>[% entry.client.mental_health_provider( entry.event_date ).rolodex.name_f || 'None' %]</td>
+                </tr>
+                [% END %]
+            </table>
+            [% END %]
+
+            <br />
+            <h3>Hospitalizations</h3>
+            [% UNLESS data.hospitalizations.0 %]
+            <p>There was no hospitalization data for this month.</p>
+            [% ELSE %]
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Input Date</th>
+                    <th>Start Date</th>
+                    <th>Mental Health Coverage</th>
+                    <th>Hospitalization Date</th>
+                    <th>Hospitalization Discharge Date</th>
+                    <th>Voluntary</th>
+                </tr>
+                [% FOR entry IN data.hospitalizations %]
+                <tr [% rowclass %]>
+                    <td class="nowrap">[% entry.client.lname %], [% entry.client.fname %]</td>
+                    <td>[% entry.client.input_on %]</td>
+                    <td>[% entry.client.start_date %]</td>
+                    <td>[% entry.client.mental_health_provider( entry.inpatient.end_date ).rolodex.name_f || 'None' %]</td>
+                    <td>[% entry.inpatient.start_date %]</td>
+                    <td>[% entry.inpatient.end_date %]</td>
+                    <td>[% entry.inpatient.voluntary ? 'Yes' : 'No' %]</td>
+                </tr>
+                <tr [% rowclass %]>
+                    <td>&nbsp;</td>
+                    <td colspan="6"><strong>Reason:</strong> [% entry.inpatient.reason %]</td>
+                </tr>
+                [% END %]
+            </table>
+            [% END %]
+
+            <br />
+            <h3>Totals</h3>
+            <table>
+                <tr>
+                    <th>Program</th>
+                    <th>Count</th>
+                </tr>
+                [% FOR program IN data.program_totals %]
+                <tr [% rowclass %]>
+                    <td>[% program.name %]</td>
+                    <td>[% program.count %]</td>
+                </tr>
+                [% END %]
+                <tr>
+                    <td><strong>Total Active</strong></td>
+                    <td>[% data.total_active_clients %]</td>
+                </tr>
+            </table>
+
+        </td>
+    </tr>
+    </tbody>
+</table>

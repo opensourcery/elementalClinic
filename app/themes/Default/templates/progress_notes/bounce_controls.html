@@ -1,0 +1,33 @@
+<div class="system_box bounce_controls">
+    <dl id="bounce" class="inline">
+        [% INCLUDE util/date_picker.html
+            name    = 'bounce_date'
+            label   = 'Bounce date'
+            value   = current.bounced.bounce_date
+            action  = 'display'
+            dl      = 1
+        %]
+
+        [% INCLUDE util/textarea.html
+            name    = 'bounce_message'
+            label   = 'Reason'
+            value   = current.bounced.bounce_message
+            cols    = 50
+            rows    = 5
+            dl      = 1
+            action  = 'display'
+        %]
+    </dl>
+
+    <div id="response">
+        [% INCLUDE util/textarea.html
+            name    = 'response_message'
+            label   = 'Message'
+            cols    = 50
+            rows    = 5
+            wraptag = 'p'
+            break   = 1
+        %]
+    </div>
+    <hr class="div" />
+</div>

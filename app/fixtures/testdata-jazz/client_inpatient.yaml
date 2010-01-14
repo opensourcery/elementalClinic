@@ -1,0 +1,27 @@
+---
+1001:
+  addr: 622 W 168th
+  client_id: 1003
+  comments: Already blinded and suffering from diabetes she lost her legs in 1993.
+  end_date: 1993-06-25
+  hospital: St. Vincent's
+  htype: Presbytarian
+  reason: Diabetes
+  rec_id: 1001
+  start_date: 1993-01-27
+  state_hosp: 1
+  voluntary: 1
+1002:
+  addr: 1 Gustave L. Levy Place
+  client_id: 1003
+  comments: ~
+  end_date: 1992-01-26
+  hospital: Mount Sinai Hospital
+  htype: Medical
+  reason: Losing sight
+  rec_id: 1002
+  start_date: 1991-12-09
+  state_hosp: 1
+  voluntary: 1
+
+

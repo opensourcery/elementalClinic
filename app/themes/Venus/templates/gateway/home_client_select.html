@@ -1,0 +1,105 @@
+[% Help.add( 'patient_lookup' ) %]
+<div id="client_search">
+    <h4 class="client_search_h4">Patient Search</h4>
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" id="search_pref" name="search_pref" onsubmit="return search_clients( 'home', '[% Config.theme %]' )">
+        [% INCLUDE util/input_text.html
+            name    = 'search'
+            value   = search
+            size    = 20
+        %]
+        [% IF script == 'report.cgi'; %]
+        <input type="hidden" name="report_track" value="client" />
+        [% END; %]
+    </form>
+</div>
+
+<div id="client_results">
+    <form method="[% Config.form_method %]" action="/clientoverview.cgi" enctype="application/x-www-form-urlencoded" id="clientform" name="clientform">
+        <h4 class="client_search_h4">Search Results</h4>
+        <p id="client_results_control">Search for patients...</p>
+    </form>
+</div>
+
+<hr class="subtle" />
+
+<div id="quick_patient_entry">
+    <form method="[% Config.form_method %]" action="/intake.cgi" enctype="application/x-www-form-urlencoded" name="quick_patient_form">
+
+        <h4 class="client_search_h4">Quick Patient</h4>
+        <dl class="inline">
+            [% INCLUDE util/input_text.html
+                id      = 'quick_patient_entry_fname'
+                name    = 'fname'
+                label   = 'First'
+                value   = current.fname
+                dl      = 1
+                required = 1
+            %]
+
+            [% INCLUDE util/input_text.html
+                id      = 'quick_patient_entry_mname'
+                name    = 'mname'
+                label   = 'MI'
+                value   = current.mname
+                dl      = 1
+                required = 0
+                size = '1'
+            %]
+
+            [% INCLUDE util/input_text.html
+                id      = 'quick_patient_entry_lname'
+                name    = 'lname'
+                label   = 'Last'
+                value   = current.lname
+                dl      = 1
+                required = 1
+            %]
+
+            <dt><label for='quick_patient_entry_sex'>Gender:</label></dt>
+            [% INCLUDE util/choose_valid_data.html
+                id      = 'quick_patient_entry_sex'
+                name    = "sex"
+                table   = '_sex'
+                type    = 'select'
+                default = current.sex || 'Unknown'
+                wraptag = 'dd'
+            %]
+
+            <dt><label for="quick_patient_entry_dob">Birthdate:</label></dt>
+            [% INCLUDE util/date_picker.html
+                id      = 'quick_patient_entry_dob'
+                name    = 'dob'
+                value   = current.dob
+                wraptag = 'dd'
+            %]
+            
+            [% INCLUDE util/input_text.html
+                id      = 'quick_patient_entry_phone'
+                name    = 'phone'
+                label   = 'Phone'
+                value   = current.phone
+                dl      = 1
+                required = 0
+            %]
+
+        </dl>
+
+	    <input type="hidden" name="event_date" id="quick_patient_entry_event_date" value="1970-01-01" />
+        <input type="hidden" name="intake_type" id="quick_patient_entry_intake_type" value="Referral" />
+        <input type="hidden" name="admission_program_id" id="quick_patient_entry_admission_program_id" value="1" />
+        <input type="hidden" name="referral_program_id" id="quick_patient_entry_referral_program_id" value="1" />
+        <input type="hidden" name="staff_id" id="quick_patient_entry_staff_id" value="1" />
+        <input type="hidden" name="level_of_care_id" id="quick_patient_entry_level_of_care_id" value="1" />
+        <input type="hidden" name="op" id="quick_patient_entry_op" value="intake" />
+    
+        <p class="save"><input type="submit" name="submit" value="Add patient"/></p>
+    </form>
+</div><!--quick_patient-->
+
+<hr class="subtle" />
+
+<div id="complete_patient_intake">
+    <h4 class="client_search_h4">New Patient</h4>
+    <a href="/intake.cgi">Long Intake</a>
+</div>
+

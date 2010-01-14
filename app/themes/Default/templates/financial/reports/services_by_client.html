@@ -1,0 +1,22 @@
+<p>Choose a client and a date range to see all billed progress notes with their payments and balances.</p>
+[% INCLUDE util/select_new.html
+    name    = 'client_id'
+    label   = 'Client'
+    values  = department.clients
+    leading_blank   = 'Choose a client ...'
+    keyname = 'id'
+    valname = 'eman'
+    wraptag = 'p'
+%]
+[% INCLUDE util/date_picker.html
+    label   = 'From'
+    name    = 'start_date'
+    value   = 'today'
+    wraptag = 'p'
+%]
+[% INCLUDE util/date_picker.html
+    label   = 'To'
+    name    = 'end_date'
+    value   = 'today'
+    wraptag = 'p'
+%]

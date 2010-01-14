@@ -1,0 +1,29 @@
+---
+1001:
+  active: 1
+  audit_trail: ~
+  client_id: 1005
+  end_date: ~
+  last_visit: 1988-06-24
+  rec_id: 1001
+  rolodex_treaters_id: 1001
+  start_date: ~
+  start_time: ~
+  treater_agency: Clinic
+  treater_licence: ~
+  treater_type_id: 1
+1002:
+  active: 1
+  audit_trail: ~
+  client_id: 1005
+  end_date: ~
+  last_visit: 1998-06-24
+  rec_id: 1002
+  rolodex_treaters_id: 1002
+  start_date: ~
+  start_time: ~
+  treater_agency: Clinic
+  treater_licence: ~
+  treater_type_id: 2
+
+

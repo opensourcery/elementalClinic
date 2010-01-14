@@ -1,0 +1,29 @@
+[% "<p>There was no data for this report.</p>" UNLESS data.0 %]
+
+<table>
+    <thead>
+    <tr>
+        <td colspan="2">
+            [% INCLUDE report/header.html %]
+        </td>
+    </tr>        
+    <tr>
+        <th>Note date</th>
+        <th>Client</th>
+    </tr>
+    </thead>
+    <tbody>
+    [% FOR writer IN data %]
+    [% class = rowclass %]
+    <tr [% class %]>
+        <th colspan="2">[% writer.writer.eman %]</th>
+    </tr>
+    [% FOR note IN writer.uncommitted_prognotes %]
+    <tr [% class %]>
+        <td>[% note.start_date %]</td>
+        <td>[% note.client.eman %]</td>
+    </tr>
+    [% END %]
+    [% END %]
+    </tbody>
+</table>

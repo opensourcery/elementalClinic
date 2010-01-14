@@ -1,0 +1,70 @@
+[% prognote_count = Current.validation_set.prognote_count( filter_by_insurer.id ) %]
+
+
+
+[%#
+
+FIXME: re-comment the next TWO directives
+
+%]
+
+[% note_clients = Current.validation_set.clients %]
+
+[%# UNLESS( op == 'billing_2_unselected' );
+    prognotes = prognotes || Current.validation_set.prognotes( filter_by_insurer.id );
+END %]
+<div class="notes_list">
+    [% IF(( ! prognotes ) && ( op == 'billing_2_unselected' )) %]
+        <h4>No Progress notes</h4>
+        <p>There are no unselected prognotes.</p>
+    [% ELSIF ! prognotes %]
+        <h4>Progress notes ([% prognote_count %])</h4>
+        <p>There are [% prognote_count %] notes in this set.  
+            <a href="#" onclick="return load_prognotes( [% Current.validation_set.id %][% ",$filter_by_insurer.id" IF filter_by_insurer %])">
+                Display them &#187;</a>
+                <br />(This may take some time for large sets).
+        </p>
+    [% ELSE %]
+        <h4>Progress notes ([% prognotes.size %])</h4>
+        [% FOR note IN prognotes.sort( 'client_name' );
+            current_client_id = note.client_id;
+            IF( current_client_id != previous_client_id );
+                previous_client_id = note.client_id;
+                note_client = note_clients.${ note.client_id }
+                %]
+                </table>
+
+                [% INCLUDE financial/billing/note_client_info.html %]
+
+                <table>
+                    <tr>
+                        [% '<th></th>' UNLESS no_toggle_billable %]
+                        <th>Date</th>
+                        <th>Minutes</th>
+                        <th>Units</th>
+                        <th>Code</th>
+                        <th>Location</th>
+                        <th>Writer</th>
+                    </tr>
+            [% END %]
+
+            <tbody id="note_[% note.id || note.rec_id %]" [% ( note.billing_status == 'Unbillable' ) ? 'class="unbillable"' : 'class="billable"'  %]>
+                <tr class="note_fields">
+                    [% INCLUDE financial/billing/button_billable.html UNLESS no_toggle_billable %]
+                    <td>[% note.start_date.format_date_time %]</td>
+                    <td>[% note.note_duration %]</td>
+                    <td>[% note.note_units %]</td>
+                    <td>[% note.charge_code_name %]</td>
+                    <td>[% note.location_name %]</td>
+                    <td>[% note.writer %]</td>
+                </tr>
+
+                <tr class="note_body">
+                    <td></td>
+                    <td colspan="5"><p title="[% note.note_body %]">[% note.note_body %]</p></td>
+                </tr>
+            </tbody>
+        [% END %]
+        </table>
+    [% END %]
+</div>

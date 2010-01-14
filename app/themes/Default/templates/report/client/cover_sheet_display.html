@@ -1,0 +1,45 @@
+[% INCLUDE global/print_head.html
+                name    = 'Report'
+                #a_href  = "$script?client_id=$client.id"
+                #a_label = 'Reporting'
+%]
+[% pref_date_format = current_user.pref.date_format -%]
+<div id="cover_sheet_display">
+<h3>Receive File</h3>
+<p>[% client.id %]</p>
+
+<table>
+    <th>
+        <th colspan="5" />
+    </th>
+    <tr>
+        <td>Last Name :</td>
+        <td><b>[% client.lname %]</b></td>
+        <td colspan="3" />
+    </tr>
+    <tr>
+        <td>First Name :</td>
+        <td><b>[% client.fname %]</b></td>
+        <td>&nbsp;</td>
+        <td>MI :</td>
+        <td><b>[% client.mname %]</b></td>
+    </tr>
+    <tr>
+        <td>DOB :</td>
+        <td>[% client.dob FILTER date_format(pref_date_format) %]</td>
+        <td colspan="3" />
+    </tr>
+    <tr>
+        <td>Phone :</td> 
+        <td><h4>[% client.phone %]</h4></td>
+        <td colspan="3" />
+    </tr>
+    <tr>
+        <td>Received Date :</td>
+        <td>[% (client.received_date || today_ymd) FILTER date_format(pref_date_format) %]</td>
+        <td colspan="3" />
+    </tr>
+</table>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<h2>Approved:<u>&nbsp;&nbsp;&nbsp;</u>Yes<u>&nbsp;&nbsp;&nbsp;</u>No</h2>
+</div>

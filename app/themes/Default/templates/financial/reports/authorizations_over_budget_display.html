@@ -1,0 +1,37 @@
+<table border="1">
+    <thead>
+    <tr>
+        <td colspan="2">
+            [% INCLUDE financial/reports/header.html %]
+            [% "<p>There was no data for this report.</p>" UNLESS data.0 %]
+        </td>
+    </tr>
+    <tr>
+        <th></th>
+        <th>Insurer</th>
+        <th>Authorization period</th>
+        <th>Allowed</th>
+        <th colspan="2">Used</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    [% FOR record IN data %]
+    [% this_class = rowclass %]
+    <tr [% this_class %]>
+        <td colspan="6">[% record.client.eman %]</td>
+    </tr>
+        [% FOR insurer IN record.insurers %]
+            [% auth = insurer.authorization( start_date ) %]</td>
+        <tr [% this_class %]>
+            <td></td>
+            <td>[% insurer.rolodex.eman %]</td>
+            <td>[% auth.start_date %] to [% auth.end_date %]</td>
+            <td>$[% auth.allowed_amount %]</td>
+            <td>$[% auth.capitation_amount %]</td>
+            <td>[% auth.capitation_amount_percent %]%</td>
+        </tr>
+        [% END %]
+    [% END %]
+    </tbody>
+</table>

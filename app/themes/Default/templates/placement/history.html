@@ -1,0 +1,56 @@
+[%- SET event_op = 'admit_from_referral' IF( client.placement.is_referral && client.placement.referral );
+    SET event_op = 'change' IF client.placement.is_admitted;
+%]
+
+[% INCLUDE placement/event_add.html %]
+
+<h4>Placement History</h4>
+[% FOR episode IN client.placement.episodes %] 
+    <table class="episode">
+        <tr>
+            [%- IF current_user.admin %]
+            <th class="edit"></th>
+            [%- END %]
+            <th class="type">Episode</th>
+            <th class="date">Date</th>
+            <th class="program">Program</th>
+            <th class="staff">Service coordinator</th>
+            <th class="loc">Level of care</th>
+        </tr>
+        [% FOR event IN episode.events %]
+        <tr[% ' class="active"' IF event.rec_id == current_event.rec_id %]>
+            [%- IF current_user.admin %]
+            <td class="edit"><a href="placement.cgi?op=event_edit;client_id=[% client.id %];event_id=[% event.rec_id %]">edit &#187;</a></td>
+            [%- END %]
+            <td>
+            [% IF event.program.is_referral %]
+                <a href="placement.cgi?op=referral_edit;client_id=[% client.id %];event_id=[% event.rec_id %]">
+                [%- IF event.referral %]
+                    Referral
+                [%- ELSE %]
+                    Referral (no data)
+                [%- END %]
+                </a>
+            [% ELSIF event.discharge %]
+                <a href="placement.cgi?op=discharge_view;client_id=[% client.id %];event_date=[% event.event_date %]">
+                [%- IF event.discharge.committed %]
+                    View Discharge
+                [%- ELSE %]
+                    Complete Discharge
+                [%- END %]
+                </a>
+            [% ELSIF event.is_intake %]
+                Intake
+            [% ELSE %]
+                &#8212;
+            [% END %]
+            </td>
+            <td>[% event.event_date %]</td>
+            <td>[% event.program.name || '&#8212;' %]</td>
+            <td>[% event.personnel.eman || '&#8212;' %]</td>
+            <td>[% event.level_of_care.name || '&#8212;' %]</td>
+        </tr>
+        [% END %]
+    </table>
+[% END %]
+

@@ -1,0 +1,16 @@
+<p>
+    [% INCLUDE util/input_text.html name='visit_frequency' label='Visit Frequency' value=current_item.visit_frequency size='7' %]
+    Per 
+    [% INCLUDE util/select_new.html
+        name    = 'visit_interval'
+        values  = [
+            { id  => 'day', label => 'Day', },
+            { id  => 'week', label => 'Week', },
+            { id  => 'month', label => 'Month', },
+            { id  => 'year', label => 'Year', },
+        ]
+        default = current_item.visit_interval || 'week'
+        keyname = 'id'
+        valname = 'label'
+    %]
+</p>

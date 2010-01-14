@@ -1,0 +1,174 @@
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+<table border="0">
+    <tr>
+        <td>Select Reporting Unit: </td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "unit"
+    s_values  = units
+%]</td>
+    </tr>
+    <tr>
+        <td>Site/Hospital/Campus Name:  </td>
+        <td><input type="text" name="campus"  size="27" maxlength="25" /></td>
+    </tr>
+    <tr>
+        <td>Address (Apt/Housing Unit):  </td>
+        <td><input type="text" name="addr"  size="62" maxlength="60" /></td>
+    </tr>
+    <tr>
+        <td>Phone:  </td>
+        <td><input type="text" name="phone"  size="17" maxlength="15" /></td>
+    </tr>
+    <tr>
+        <td>Inspection Completed: </td>
+        <td><input type="text" name="input_on" value="[% today %]" size="12" maxlength="10" /> <font color=red>* Format <small>YYYY-MM-DD</small></font></td>
+    </tr>
+</table>
+<p />
+<table border="3">
+    <tr>
+        <td><b>Inspection Criteria</b></td>
+        <td><b>Selection</b></td>
+    </tr>
+    <tr>
+        <td>All doors are unobstructed - open and shut easily.</td>
+        <td><input type="radio" name="doors" value="Yes" checked="checked" />Yes <input type="radio" name="doors" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>All Emergency exits are unlocked while building is occupied.</td>
+        <td><input type="radio" name="exits" value="Yes" checked="checked" />Yes <input type="radio" name="exits" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>Windows are free of cracks or broken panes.</td>
+        <td><input type="radio" name="windows" value="Yes" checked="checked" />Yes <input type="radio" name="windows" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>All floors are dry, free of holes, cracks, or bumps.</td>
+        <td><input type="radio" name="floors" value="Yes" checked="checked" />Yes <input type="radio" name="floors" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>All corridors are free of boxes, furniture, or other obstructions.</td>
+        <td><input type="radio" name="corridor" value="Yes" checked="checked" />Yes <input type="radio" name="corridor" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>All exits and services are clearly marked.</td>
+        <td><input type="radio" name="exitmark" value="Yes" checked="checked" />Yes <input type="radio" name="exitmark" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>All areas are illuminated w/o glare or shado.</td>
+        <td><input type="radio" name="lights" value="Yes" checked="checked" />Yes <input type="radio" name="lights" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>Stairwell doors are kept closed, treads are dry 
+           and free of cracks and bumps.</td>
+        <td><input type="radio" name="stairs" value="Yes" checked="checked" />Yes <input type="radio" name="stairs" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>All furniture is sturdy and functional, free of splinters 
+           or sharp edges.</td>
+        <td><input type="radio" name="furniture" value="Yes" checked="checked" />Yes <input type="radio" name="furniture" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>All electrical equipment is UL approved, properly installed 
+           and grounded.</td>
+        <td><input type="radio" name="electric" value="Yes" checked="checked" />Yes <input type="radio" name="electric" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>Pigtail adapters or extension cords are not in use.</td>
+        <td><input type="radio" name="ecords" value="Yes" checked="checked" />Yes <input type="radio" name="ecords" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>All wiring, plugs, switches are in good condition.</td>
+        <td><input type="radio" name="eplugs" value="Yes" checked="checked" />Yes <input type="radio" name="eplugs" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>Adequate natural or artificial ventilation is provided in all areas.</td>
+        <td><input type="radio" name="venting" value="Yes" checked="checked" />Yes <input type="radio" name="venting" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>Comfortable room temperature maintained, 
+           thermostat functions properly.</td>
+        <td><input type="radio" name="roomtemp" value="Yes" checked="checked" />Yes <input type="radio" name="roomtemp" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>Toilet facilities are sanitary, liquid soap dispensers are full.</td>
+        <td><input type="radio" name="toilets" value="Yes" checked="checked" />Yes <input type="radio" name="toilets" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>Garbage is disposed of properly and in a timely manner.</td>
+        <td><input type="radio" name="garbage" value="Yes" checked="checked" />Yes <input type="radio" name="garbage" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>All areas are free of insects and rodents.</td>
+        <td><input type="radio" name="no_insect" value="Yes" checked="checked" />Yes <input type="radio" name="no_insect" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>Smoking / No-Smoking areas are posted, policy is enforced. 
+           Ashtrays are provided.</td>
+        <td><input type="radio" name="smoking" value="Yes" checked="checked" />Yes <input type="radio" name="smoking" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>Evacuation maps and plans are posted.</td>
+        <td><input type="radio" name="evacplan" value="Yes" checked="checked" />Yes <input type="radio" name="evacplan" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>Fire extinguishers are inspected monthly/smoke alarms quarterly.</td>
+        <td><input type="radio" name="fire_equip" value="Yes" checked="checked" />Yes <input type="radio" name="fire_equip" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>Access to fire extinguishers is unobstructed.</td>
+        <td><input type="radio" name="fire_access" value="Yes" checked="checked" />Yes <input type="radio" name="fire_access" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>Employees are oriented to safety and emergency procedures on a 
+           regular basis.</td>
+        <td><input type="radio" name="training" value="Yes" checked="checked" />Yes <input type="radio" name="training" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>Ceiling panels are in place and secure.</td>
+        <td><input type="radio" name="ceiling" value="Yes" checked="checked" />Yes <input type="radio" name="ceiling" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>All scissors, knives, and other sharp objects are used and 
+           stored properly.</td>
+        <td><input type="radio" name="no_sharps" value="Yes" checked="checked" />Yes <input type="radio" name="no_sharps" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>Employees are advised to wear proper clothing/footwear,and to use 
+           safety equipment as necessary.</td>
+        <td><input type="radio" name="safe_equip" value="Yes" checked="checked" />Yes <input type="radio" name="safe_equip" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>Holiday decorations are flame retardant.</td>
+        <td><input type="radio" name="decorations" value="Yes" checked="checked" />Yes <input type="radio" name="decorations" value="No" />No</td>
+    </tr>
+</table>
+<p />
+<table border="0">
+    <tr>
+        <td>Comments (explain any NO answers): </td>
+    </tr>
+    <tr>
+        <td><textarea name="comment_text" rows="10" cols="70" wrap="1"></textarea></td>
+    </tr>
+    <tr>
+        <td>Corrective Action Taken (Types of Actions): </td>
+    </tr>
+    <tr>
+        <td><textarea name="take_action" rows="10" cols="70" wrap="1"></textarea></td>
+    </tr>
+</table>
+<p />
+<table border="0">
+    <tr>
+        <td>Referred To: </td>
+        <td><input type="text" name="refer"  size="62" maxlength="60" /></td>
+    </tr>
+    <tr>
+        <td>Referred On: </td>
+        <td><input type="text" name="ref_date"  size="12" maxlength="10" /> <font color=red>* Format <small>YYYY-MM-DD</small></font></td>
+    </tr>
+</table>
+<p />
+<input type="submit" name="go" value="Submit" /><div><input type="hidden" name=".cgifields" value="safe_equip" /><input type="hidden" name=".cgifields" value="decorations" /><input type="hidden" name=".cgifields" value="evacplan" /><input type="hidden" name=".cgifields" value="exits" /><input type="hidden" name=".cgifields" value="electric" /><input type="hidden" name=".cgifields" value="furniture" /><input type="hidden" name=".cgifields" value="windows" /><input type="hidden" name=".cgifields" value="smoking" /><input type="hidden" name=".cgifields" value="floors" /><input type="hidden" name=".cgifields" value="roomtemp" /><input type="hidden" name=".cgifields" value="training" /><input type="hidden" name=".cgifields" value="toilets" /><input type="hidden" name=".cgifields" value="venting" /><input type="hidden" name=".cgifields" value="doors" /><input type="hidden" name=".cgifields" value="garbage" /><input type="hidden" name=".cgifields" value="ceiling" /><input type="hidden" name=".cgifields" value="no_insect" /><input type="hidden" name=".cgifields" value="corridor" /><input type="hidden" name=".cgifields" value="ecords" /><input type="hidden" name=".cgifields" value="no_sharps" /><input type="hidden" name=".cgifields" value="fire_access" /><input type="hidden" name=".cgifields" value="fire_equip" /><input type="hidden" name=".cgifields" value="exitmark" /><input type="hidden" name=".cgifields" value="eplugs" /><input type="hidden" name=".cgifields" value="stairs" /><input type="hidden" name=".cgifields" value="lights" /></div></form>

@@ -1,0 +1,74 @@
+        [% IF discharge_incomplete %]
+        <p class="highlight">Client has been discharged, but discharge record is not complete.</p>
+        [% ELSE %]
+        <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+            [% IF readmit_confirm %]
+                [% INCLUDE intake/placement_controls.html %]
+            [% END %]
+                <input type="hidden" name="op" value="[% readmit_confirm ? 'readmit_confirm' : 'readmit' %]">
+                <input type="hidden" name="client_id" value="[% client.id %]">
+                <input type="hidden" name="readmit_confirm" value="[% readmit_confirm %]" />
+                <p class="print"><input type="submit" name="submit" value="Re-Admit Client" /></p>
+            </form>
+        [% END %]
+
+[% IF 0 %]
+<!-- don't need this since creating a new event takes care of it -->
+        <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+            <input type="hidden" name="client_id" value="[% client.id %]" />
+            <input type="hidden" name="op" value="reactivate" />
+            <input type="submit" name="submit" value="Reactivate client" />
+        </form>
+
+        [% dis = client.placement.last_discharge %]
+
+    <fieldset class="subtle" style="clear:both;">
+        <legend>Discharge Information</legend>
+        <div class="minileft45">
+            <p>Discharge date: <strong>[% dis.placement_event.event_date %]</strong></p>
+            <p>Last contact date: <strong>[% dis.last_contact_date %]</strong></p>
+            <p>Termination reason: <strong>[% dis.termination_reason %]</strong></p>
+        </div>
+        <div class="miniright45">
+            <p>Staff name: <strong>[% dis.staff_name %]</strong></p>
+            <p>Licensed Medical Practitioner: <strong>[% dis.physician %]</strong></p>
+            <p>Termination notice sent: <strong>[% dis.termination_notice_sent_date %]</strong></p>
+            <p>Client contests termination? <strong>[% dis.client_contests_termination ? 'Yes' : 'No' %]</strong></p>
+        </div>
+
+        <div class="minileft">
+            <p>Discharged to: <strong>[% dis.sent_to %]</strong></p>
+            <p>Contact: <strong>[% dis.ref_cont %]</strong></p>
+            <p>Address: <strong>[% dis.addr %]</strong></p>
+            <p>Address 2: <strong>[% dis.addr_2 %]</strong></p>
+            <p>City: <strong>[% dis.city %]</strong></p>
+            <p>State: <strong>[% dis.state %]</strong></p>
+            <p>Zip: <strong>[% dis.post_code %]</strong></p>
+            <p>Phone: <strong>[% dis.phone %]</strong></p>
+        </div>
+        <div class="miniright45">
+            <p>Employability Factor: <strong>[% dis.employability_factor %]</strong></p>
+            <p>Education: <strong>[% dis.education %]</strong></p>
+            <p>Household monthly income: <strong>[% dis.income %]</strong></p>
+            <p>Employment status: 
+            [% IF dis.employment_status == 'F' %]
+                Full-time
+            [% ELSIF dis.employment_status == 'P' %]
+                Part-time
+            [% ELSIF dis.employment_status == 'U' %]
+                Unemployed
+            [% END %] 
+            </p>
+            <p>Criminal justice? <strong>[% dis.criminal_justice ? 'Yes' : 'No' %]</strong></p>
+            <p>Discharge note: <strong>[% dis.discharge_note %]</strong></p>
+            <p>Aftercare notes: <strong>[% dis.after_care %]</strong></p>
+        </div>
+    </fieldset>
+<!-- 
+<p></p>
+<p><a href="/diagnosis.cgi?client_id=[% client.client_id %]&diagnosis_id=[% dis.initial_diag_id %]">
+    <strong>Client's initial diagnosis</strong></a></p>
+<p><a href="/diagnosis.cgi?client_id=[% client.client_id %]&diagnosis_id=[% dis.final_diag_id %]">
+    <strong>Client's final diagnosis</strong></a></p>
+-->
+[% END %]

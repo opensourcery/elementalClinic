@@ -1,0 +1,19 @@
+
+1: 
+  active: 1
+  dept_id: 1001
+  description: The Transmitted Interchange Control Structure Header and Trailer Have Been Received and Have No Errors.
+  name: A
+  rec_id: 1
+2: 
+  active: 1
+  dept_id: 1001
+  description: The Transmitted Interchange Control Structure Header and Trailer Have Been Received and Are Accepted But Errors Are Noted. This Means the Sender Must Not Resend This Data.
+  name: E
+  rec_id: 2
+3: 
+  active: 1
+  dept_id: 1001
+  description: The Transmitted Interchange Control Structure Header and Trailer are Rejected Because of Errors.
+  name: R
+  rec_id: 3

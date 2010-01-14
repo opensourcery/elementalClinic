@@ -1,0 +1,48 @@
+
+[% IF confirm %]
+<h4><font color="blue">Your transaction was committed.</font></h4>
+[% END %]
+
+[% IF data %]
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+
+<table border="0">
+    <tr>
+        <td><b>&#149; Update Employee Physical Exam: </b></td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "update"
+    s_values  = data
+%]</td>
+        <td><input type="submit" name="go" value="Update" /></td>
+    </tr>
+    <tr>
+        <td><b>&#149; View Physical Exams By Unit: </b></td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "unit"
+    s_values  = units
+%]</td>
+        <td><input type="submit" name="go" value="View" /></td>
+    </tr>
+    <tr>
+        <td><b>&#149; Enter A New Physical Exam:</b></td>
+        <td><input type="submit" name="go" value="Enter" /></td>
+    </tr>
+</table>
+
+<input type="hidden" name="ID" value="[% id %]" />
+<div>
+</div>
+</form>
+[% ELSE %]
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+<table border="0">
+    <tr>
+        <td><b>&#149; Enter A New Physical Exam:</b></td>
+        <td><input type="submit" name="go" value="Enter" /></td>
+    </tr>
+</table>
+<input type="hidden" name="ID" value="[% id %]" /><div></div></form>
+[% END %]
+<p />

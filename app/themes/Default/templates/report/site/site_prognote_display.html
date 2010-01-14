@@ -1,0 +1,67 @@
+<!-- taken from global/print_head.html because it had to be split up to get the page headers right -->
+[% IF auto_print %]<script type="text/javascript">print()</script>[% END %]
+<fieldset class="print_head">
+    <legend>Report notes</legend>
+    <ul>
+        <li>Only the letter itself will be printed (not the navigation, or these instructions).</li>
+        <li>Return to <a href="[% script %]">Reporting</a> when you're finished.</li>
+    </ul>
+    <p class="print"><input type="submit" onclick="print();return false;" value="Print" /></p>
+    
+    [% UNLESS data.0 %]
+        <p>Start: <strong>[% start_date_facade %]</strong></p>
+        <p>End: <strong>[% end_date_facade %]</strong></p>
+        <p>This staff member has not written any progress notes during this time period.</p>
+    [% END %]
+</fieldset>
+
+[% IF data %]
+    [% FOREACH writer = data %]
+        <table class="page[% ' first' IF loop.first %]">
+            <thead>
+            <tr>
+                <td>
+                    <h2>[% Config.org_name %]</h2>
+                    <h3>
+                        <strong>[% report.label %]</strong>
+                    </h3>
+            
+                    <p>Start: <strong>[% start_date_facade %]</strong></p>
+                    <p>End: <strong>[% end_date_facade %]</strong></p>
+                    <h3>Service coordinator: <strong>[% writer.staff %]</strong></h3>
+                </td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    [% FOREACH client = writer.data %]
+                    <h4>Client: <strong>[% client.0.client %]</strong></h4>
+                        [% FOREACH record = client %]
+                            <table>
+                                <tr [% rowclass %]>
+                                    <td class="info">
+                                        <strong>Date</strong>: [% record.date %]<br />
+                                        <strong>Billing Code</strong>: [% record.code %]<br />
+                                        <strong>Time</strong>: [% record.duration %]<br />
+                                        <strong>Location</strong>: [% record.location %]<br />
+                                        <strong>Treatment Goal</strong>: [% record.goal %]<br />
+                                        [% "<strong>Group</strong>: $record.group<br />" IF record.group %]
+                                    </td>
+                                    <td width="100%">
+                                        <p class="note">[% record.note %]</p>
+                                        <p class="sig"><strong>Signed: </strong></p><br />
+                                        <p class="note"><strong>Writer</strong>: [% record.writer.eman %]</p>
+                                        <p class="note">[% record.signature %]</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        [% END %]
+                        <br />        
+                    [% END %]
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    [% END %]
+[% END %]

@@ -1,0 +1,26 @@
+Source: libalgorithm-c3-perl
+Section: perl
+Priority: optional
+Build-Depends: debhelper (>= 5.0.0), libmodule-build-perl
+Build-Depends-Indep: perl (>= 5.8.8-12ubuntu0.4)
+Maintainer: Chad Granum <chad@>
+Standards-Version: 3.7.2
+Homepage: http://search.cpan.org/dist/Algorithm-C3/
+
+Package: libalgorithm-c3-perl
+Architecture: all
+Depends: ${perl:Depends}, ${misc:Depends}, 
+Description: A module for merging hierarchies using the C3 algorithm
+ This module implements the C3 algorithm. I have broken this out
+ into it's own module because I found myself copying and pasting
+ it way too often for various needs. Most of the uses I have for
+ C3 revolve around class building and metamodels, but it could
+ also be used for things like dependency resolution as well since
+ it tends to do such a nice job of preserving local precedence
+ orderings.
+ .
+ Below is a brief explanation of C3 taken from the Class::C3
+ module. For more detailed information, see the SEE ALSO section
+ and the links there.
+ .
+ This description was automagically extracted from the module by dh-make-perl.

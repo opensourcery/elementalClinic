@@ -1,0 +1,181 @@
+[% INCLUDE global/client_head.html
+    navsec = 'history'
+    navpage = 'income'
+%]
+
+[% UNLESS( current.rec_id || errors || op == 'create' );
+    current = client.income_history.0;
+END %]
+[% action = (( op == 'save' && errors ) || op == 'create' || op == 'edit' ) ? 'edit' : 'display' %]
+<div id="[% action == 'edit' ? 'center' : 'left' %]" class="client_box">
+    <h4>Income item</h4>
+    [% IF current || op == 'create' %]
+    <form method="[% Config.form_method %]" action="[% program %]" enctype="application/x-www-form-urlencoded">
+        <div class="left_[% action %]">
+            [% INCLUDE util/choose_valid_data.html
+                name   = 'source_type_id'
+                label  = 'Type' 
+                table  = '_income_sources'
+                type    = 'select'
+                default = current.source_type_id
+                use_id  = 1
+                wraptag = 'p'
+                blankmsg = '<strong>No income types have been defined in the lookup tables.</strong>'
+            %]
+
+            [% INCLUDE util/input_text.html
+                name    = 'income_amount'
+                label   = 'Amount'
+                value   = current.income_amount
+                wraptag = 'p'
+                currency = 1
+            %]
+
+            [% INCLUDE util/input_text.html
+                name    = 'account_id'
+                label   = 'Account ID'
+                value   = current.account_id
+                wraptag = 'p'
+            %]
+
+            [% INCLUDE util/checkbox.html
+                name    = 'has_direct_deposit'
+                label   = 'Direct deposit'
+                value   = current.has_direct_deposit
+                wraptag = 'p'
+            %]
+
+            [% INCLUDE util/checkbox.html
+                name    = 'is_recurring_income'
+                label   = 'Recurring?'
+                value   = current.is_recurring_income
+                wraptag = 'p'
+            %]
+        </div>
+
+        <div class="right_[% action %]">
+            [% '<hr class="subtle" />' IF action == 'display' %]
+            <p>
+            [% INCLUDE util/date_picker.html
+                label   = 'From'
+                name    = 'start_date'
+                value   = current.start_date
+            %]
+            [% INCLUDE util/date_picker.html
+                label   = 'to'
+                name    = 'end_date'
+                value   = current.end_date
+            %]
+            </p>
+
+            <p>
+            [% INCLUDE util/date_picker.html
+                label   = 'Certification'
+                name    = 'certification_date'
+                value   = current.certification_date
+            %]
+            |
+            [% INCLUDE util/date_picker.html
+                label   = 'Recertification'
+                name    = 'recertification_date'
+                value   = current.recertification_date
+            %]
+            </p>
+
+            <hr class="subtle" />
+            [% INCLUDE util/textarea.html
+                name    = 'comment_text'
+                label   = 'Comments'
+                value   = current.comment_text
+                cols    = 60
+                rows    = 5
+                wraptag = 'p'
+                break   = 1
+            %]
+        </div>
+
+        <hr class="div" />
+
+        <input type="hidden" name="rec_id" value="[% current.rec_id %]" />
+        <input type="hidden" name="client_id" value="[% client.id %]" />
+        [% IF action == 'display' %]
+        <p class="edit"><input type="submit" name="op" id="op_edit" value="Edit" /></p>
+        [% ELSE %]
+        <p class="save"><input type="submit" name="op" id="op_save" value="Save" /></p>
+        [% END %]
+    </form>
+    [% END %]
+    [% IF action == 'edit';
+        INCLUDE util/form_cancel.html;
+    END %]
+</div>
+
+
+[% UNLESS action == 'edit' %]
+<div id="right" class="client_box">
+
+    <h4>Income history</h4>
+    [% IF( income_history = client.income_history ) %]
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" id="chooser" name="chooser">
+        <select name="rec_id" id="rec_id" size="5" onchange="document.forms['chooser'].submit()">
+            [% FOR income IN income_history;
+                selected = income.rec_id == current.rec_id ? 'selected="selected"' : ''
+            %]
+            <option value="[% income.rec_id %]" [% selected %]>[% income.start_date || "No date (id: $income.rec_id)" %]</option>
+            [% END %]
+        </select>
+        <input type="hidden" name="client_id" value="[% client.id %]" />
+        <input type="hidden" name="op" value="view" />
+        <input type="submit" name="subview" value="View" />
+    </form>
+
+    [% ELSE %]
+    <p>No income history.</p>
+    [% END %]
+
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+        <input type="hidden" name="client_id" id="client_id" value="[% client.client_id %]" />
+        <input type="hidden" name="op" id="op" value="create" />
+        <p class="new"><input type="submit" name="op_new" id="op_new" value="New Income Record" /></p>
+    </form>
+
+    [% action = 'edit' %]
+    <div class="second">
+    <h5>General Income Information</h5>
+        <form method="[% Config.form_method %]" action="[% program %]" enctype="application/x-www-form-urlencoded">
+        [% meta = client.income_metadata %]
+        [% INCLUDE util/input_text.html
+            name    = 'bank_account'
+            label   = 'Bank account'
+            value   = meta.bank_account
+            wraptag = 'p'
+        %]
+
+        [% INCLUDE util/input_text.html
+            name    = 'css_id'
+            label   = 'CSS ID'
+            value   = meta.css_id
+            wraptag = 'p'
+        %]
+
+        [% INCLUDE util/checkbox.html
+            name    = 'self_pay'
+            label   = 'Does client self-pay?'
+            value   = meta.self_pay
+            wraptag = 'p'
+        %]
+
+        [% INCLUDE util/checkbox.html
+            name    = 'rep_payee'
+            label   = 'Is '_ Config.org_name _' the payee?'
+            value   = meta.rep_payee
+            wraptag = 'p'
+        %]
+        <input type="hidden" name="client_id" value="[% client.id %]" />
+        <input type="hidden" name="rec_id" value="[% meta.rec_id %]" />
+        <input type="hidden" name="op" id="op" value="save_meta" />
+        <p class="save"><input type="submit" name="submit" id="submit" value="Save" /></p>
+    </form>
+    </div>
+</div>
+[% END %]

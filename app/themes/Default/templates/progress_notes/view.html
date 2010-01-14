@@ -1,0 +1,10 @@
+[% INCLUDE global/client_head.html
+    navsec = 'clinical'
+    navpage = 'progress_notes'
+%]
+
+[% INCLUDE progress_notes/note.html
+    commit_only = 1
+    label_action = 'View'
+    action  = 'display'
+%]

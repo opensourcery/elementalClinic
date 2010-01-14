@@ -1,0 +1,73 @@
+---
+1001:
+  active: 1
+  description: 'Charge codes for individual therapy, training, or counseling.'
+  name: Individual therapy
+  parent_id: 3
+  rec_id: 1001
+  system: 0
+1002:
+  active: 1
+  description: Inactive by default.
+  name: Medication-related
+  parent_id: 3
+  rec_id: 1002
+  system: 0
+1003:
+  active: 1
+  description: 'Charge codes for individual therapy, training, or counseling.'
+  name: Group therapy
+  parent_id: 3
+  rec_id: 1003
+  system: 0
+1004:
+  active: 1
+  description: ~
+  name: Assessment
+  parent_id: 3
+  rec_id: 1004
+  system: 0
+1005:
+  active: 1
+  description: ~
+  name: Training and education
+  parent_id: 3
+  rec_id: 1005
+  system: 0
+1006:
+  active: 0
+  description: ~
+  name: Consultation
+  parent_id: 3
+  rec_id: 1006
+  system: 0
+1007:
+  active: 1
+  description: ~
+  name: Local locations
+  parent_id: 12
+  rec_id: 1007
+  system: 0
+1008:
+  active: 1
+  description: ~
+  name: Remote locations
+  parent_id: 12
+  rec_id: 1008
+  system: 0
+1009:
+  active: 0
+  description: ~
+  name: Test group
+  parent_id: 28
+  rec_id: 1009
+  system: 0
+1010:
+  active: 0
+  description: ~
+  name: Test group 2
+  parent_id: 28
+  rec_id: 1010
+  system: 0
+
+

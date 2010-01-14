@@ -1,0 +1,51 @@
+<div id="create_new_program" class="active">
+    <dl class="form create_new_program_column">
+        [% INCLUDE util/select_new.html
+            name    = 'program_id'
+            values  = department.list_programs( 'admission' )
+            label   = 'Program'
+            default = client.placement.program_id
+            keyname = 'rec_id'
+            valname = 'full_name'
+            use_id  = 1
+            dl      = 1
+        %]
+        [% INCLUDE placement/_event_fields.html %]
+    </dl>
+
+    <div class="create_new_program_column">
+        [% INCLUDE util/textarea.html
+            name    = 'client_intake[0][presenting_problem]'
+            label   = 'Admission reason'
+            value   = client.intake.presenting_problem
+            cols    = 50
+            rows    = 3
+            break   = 1
+            wraptag = 'p'
+        %]
+        [% INCLUDE util/textarea.html
+            name    = 'client_intake[0][special_needs]'
+            label   = 'Special needs'
+            value   = client.intake.special_needs
+            cols    = 50
+            rows    = 3
+            break   = 1
+            wraptag = 'p'
+        %]
+        [% INCLUDE util/textarea.html
+            name    = 'client_intake[0][medications]'
+            label   = 'Current or regular medications'
+            value   = client.intake.medications
+            cols    = 50
+            rows    = 3
+            break   = 1
+            wraptag = 'p'
+        %]
+    </div>
+
+    <p class="save">
+        <input type="submit" name="submit" value="Admit to program" />
+        or <a class="cancel_new_program" href="TODO">Cancel</a>
+    </p>
+    <input type="hidden" name="client_id" id="client_id" value="[% client.id %]" />
+</div>

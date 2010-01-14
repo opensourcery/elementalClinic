@@ -1,0 +1,13 @@
+[% IF report_track == 'client';
+
+   INCLUDE global/person_home.html
+           navpage = 'report'
+           variant = 'client'
+           include = 'report/results.html';
+
+ELSE;
+
+    INCLUDE report/results.html;
+
+END; %]
+

@@ -1,0 +1,183 @@
+
+1: 
+  active: 1
+  code: 00
+  dept_id: 1001
+  description: ~
+  name: Self
+  rec_id: 1
+10: 
+  active: 1
+  code: 19
+  dept_id: 1001
+  description: ~
+  name: Child
+  rec_id: 10
+11: 
+  active: 1
+  code: 20
+  dept_id: 1001
+  description: ~
+  name: Employee
+  rec_id: 11
+12: 
+  active: 1
+  code: 21
+  dept_id: 1001
+  description: ~
+  name: Unknown
+  rec_id: 12
+13: 
+  active: 1
+  code: 22
+  dept_id: 1001
+  description: ~
+  name: Handicapped Dependent
+  rec_id: 13
+14: 
+  active: 1
+  code: 23
+  dept_id: 1001
+  description: ~
+  name: Sponsored Dependent
+  rec_id: 14
+15: 
+  active: 1
+  code: 24
+  dept_id: 1001
+  description: ~
+  name: Dependent of a Minor Dependent
+  rec_id: 15
+16: 
+  active: 1
+  code: 29
+  dept_id: 1001
+  description: ~
+  name: Significant Other
+  rec_id: 16
+17: 
+  active: 1
+  code: 32
+  dept_id: 1001
+  description: ~
+  name: Mother
+  rec_id: 17
+18: 
+  active: 1
+  code: 33
+  dept_id: 1001
+  description: ~
+  name: Father
+  rec_id: 18
+19: 
+  active: 1
+  code: 34
+  dept_id: 1001
+  description: ~
+  name: Other Adult
+  rec_id: 19
+2: 
+  active: 1
+  code: 01
+  dept_id: 1001
+  description: ~
+  name: Spouse
+  rec_id: 2
+20: 
+  active: 1
+  code: 36
+  dept_id: 1001
+  description: ~
+  name: Emancipated Minor
+  rec_id: 20
+21: 
+  active: 1
+  code: 39
+  dept_id: 1001
+  description: ~
+  name: Organ Donor
+  rec_id: 21
+22: 
+  active: 1
+  code: 40
+  dept_id: 1001
+  description: ~
+  name: Cadaver Donor
+  rec_id: 22
+23: 
+  active: 1
+  code: 41
+  dept_id: 1001
+  description: ~
+  name: Injured Plaintiff
+  rec_id: 23
+24: 
+  active: 1
+  code: 43
+  dept_id: 1001
+  description: ~
+  name: Child Where Insured Has No Financial Responsibility
+  rec_id: 24
+25: 
+  active: 1
+  code: 53
+  dept_id: 1001
+  description: ~
+  name: Life Partner
+  rec_id: 25
+26: 
+  active: 1
+  code: G8
+  dept_id: 1001
+  description: ~
+  name: Other Relationship
+  rec_id: 26
+3: 
+  active: 1
+  code: 04
+  dept_id: 1001
+  description: ~
+  name: Grandfather / Grandmother
+  rec_id: 3
+4: 
+  active: 1
+  code: 05
+  dept_id: 1001
+  description: ~
+  name: Grandson / Granddaughter
+  rec_id: 4
+5: 
+  active: 1
+  code: 07
+  dept_id: 1001
+  description: ~
+  name: Nephew / Niece
+  rec_id: 5
+6: 
+  active: 1
+  code: 09
+  dept_id: 1001
+  description: ~
+  name: Adopted Child
+  rec_id: 6
+7: 
+  active: 1
+  code: 10
+  dept_id: 1001
+  description: ~
+  name: Foster Child
+  rec_id: 7
+8: 
+  active: 1
+  code: 15
+  dept_id: 1001
+  description: ~
+  name: Ward
+  rec_id: 8
+9: 
+  active: 1
+  code: 17
+  dept_id: 1001
+  description: ~
+  name: Stepson / Stepdaughter
+  rec_id: 9

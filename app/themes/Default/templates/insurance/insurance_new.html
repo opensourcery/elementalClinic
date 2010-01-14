@@ -1,0 +1,25 @@
+<div id="left" class="client_box insurance_subnav_child">
+    [% IF rolodex.id; # means we have selected an insurer %]
+        [%
+            SET carrier_type = rolodex.roles( role_name ).carrier_type IF role_name;
+            carrier_type = carrier_type || current_insurance.carrier_type
+            carrier_types    = {
+                'mental health' => 'Mental Health',
+                'medical'       => 'Medical',
+                'dental'        => 'Dental',
+            }
+        %]
+        <h4><em>New [% carrier_types.$carrier_type %] Insurance:</em> [% rolodex.eman %]</h4>
+        [% INCLUDE insurance/insurer.html insurance = current_insurance %]
+    [% ELSE %]
+        <h4>New Insurance</h4>
+        <p>Please select an insurer from the list to create a new insurance relationship.</p>
+    [% END %]
+</div>
+
+<div id="right">
+    [% INCLUDE rolodex/rolodex_filter.html
+        caller  = 'insurance',
+        rolodex_filter  = Session.client_insurance_rolodex_filter,
+    %]
+</div>

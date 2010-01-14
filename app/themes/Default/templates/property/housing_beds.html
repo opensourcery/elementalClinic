@@ -1,0 +1,35 @@
+[% IF data %]
+
+<b>Details: </b>
+
+<p />
+
+<table border="1">
+    <tr>
+        <td><b>Unit Name</b></td>
+        <td><b>Bed ID</b></td>
+        <td><b>Address</b></td>
+        <td><b>Postal Code</b></td>
+        <td><b>Phone</b></td>
+    </tr>
+    [% FOREACH dataii = data %]
+    <tr>
+        <td> [% dataii.0 %] </td>
+        <td> [% dataii.1 %] </td>
+        <td> [% dataii.2 %] </td>
+        <td> [% dataii.3 %] </td>
+        <td> [% dataii.4 %] </td>
+    </tr>
+    [% END %]
+</table>
+
+<p />
+
+
+
+[% ELSE %]
+
+<h4>No Certified Beds Found.</h4>
+<p />
+
+[% END %]

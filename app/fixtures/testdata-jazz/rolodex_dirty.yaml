@@ -1,0 +1,731 @@
+---
+1101:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: Barbara
+  generic: 0
+  lname: Batts
+  name: ~
+  rec_id: 1101
+1102:
+  client_id: 1004
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: Thelonious
+  generic: 0
+  lname: Mink
+  name: ~
+  rec_id: 1102
+1103:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: slimy
+  generic: 0
+  lname: producer
+  name: blue note
+  rec_id: 1103
+1104:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: Scrummy
+  generic: 0
+  lname: Poducer
+  name: Atlantic Records and Company
+  rec_id: 1104
+1105:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: Mephisto
+  generic: 0
+  lname: Producer
+  name: Chess Record
+  rec_id: 1105
+1106:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Regence Blue Cross
+  rec_id: 1106
+1107:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: ODS
+  rec_id: 1107
+1108:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Health Net
+  rec_id: 1108
+1109:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Providence
+  rec_id: 1109
+1110:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: Django
+  generic: 0
+  lname: Rheinhart
+  name: Django Records
+  rec_id: 1110
+1111:
+  client_id: ~
+  comment_text: ~
+  credentials: MSW
+  dept_id: 1001
+  fname: Bettie
+  generic: 0
+  lname: Clinician
+  name: ~
+  rec_id: 1111
+1201:
+  client_id: 1004
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: Barbara
+  generic: 0
+  lname: Batts
+  name: B Batts and Co
+  rec_id: 1201
+1202:
+  client_id: ~
+  comment_text: ~
+  credentials: Sr.
+  dept_id: 1001
+  fname: Thlonious
+  generic: 0
+  lname: Monk
+  name: ~
+  rec_id: 1202
+1203:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: Slim
+  generic: 0
+  lname: Producer
+  name: Blue Note
+  rec_id: 1203
+1204:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: Scummy
+  generic: 0
+  lname: Produce
+  name: Atlantic Records
+  rec_id: 1204
+1205:
+  client_id: ~
+  comment_text: ~
+  credentials: Sr.
+  dept_id: 1001
+  fname: Mephisto
+  generic: 0
+  lname: Producer
+  name: Chess Records
+  rec_id: 1205
+1206:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Regence BlueCross BlueShield
+  rec_id: 1206
+1207:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Oregon Dental Service
+  rec_id: 1207
+1208:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: HealthNet
+  rec_id: 1208
+1209:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Providence Health Plans
+  rec_id: 1209
+1210:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: Django
+  generic: 0
+  lname: Rheinhart
+  name: Django Records
+  rec_id: 1210
+1211:
+  client_id: ~
+  comment_text: ~
+  credentials: MSW
+  dept_id: 1001
+  fname: Betty
+  generic: 0
+  lname: Clinician
+  name: ~
+  rec_id: 1211
+1301:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: Barbara
+  generic: 0
+  lname: Batts
+  name: ~
+  rec_id: 1301
+1302:
+  client_id: ~
+  comment_text: ~
+  credentials: Sr.
+  dept_id: 1001
+  fname: Thelonious
+  generic: 0
+  lname: Monk
+  name: ~
+  rec_id: 1302
+1303:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: Slimy
+  generic: 0
+  lname: Producer
+  name: Blue Note
+  rec_id: 1303
+1304:
+  client_id: ~
+  comment_text: one heck of a guy
+  credentials: ~
+  dept_id: 1001
+  fname: Scummy
+  generic: 0
+  lname: Producer
+  name: Atlantic Records
+  rec_id: 1304
+1305:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: Mephisto
+  generic: 0
+  lname: Producer
+  name: Chess Records
+  rec_id: 1305
+1306:
+  client_id: 1004
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Regence BlueCross BlueShield
+  rec_id: 1306
+1307:
+  client_id: 1004
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Oregon Dental Service (ODS)
+  rec_id: 1307
+1308:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: HealthNet
+  rec_id: 1308
+1309:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Providence Health Plans
+  rec_id: 1309
+1310:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: Django
+  generic: 0
+  lname: Rheinhart
+  name: Django Records
+  rec_id: 1310
+1311:
+  client_id: ~
+  comment_text: ~
+  credentials: MSW
+  dept_id: 1001
+  fname: Betty
+  generic: 0
+  lname: Clinician
+  name: ~
+  rec_id: 1311
+1401:
+  client_id: 1002
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Providence St. Vincent Medical Center
+  rec_id: 1401
+1402:
+  client_id: 1002
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: St. Vincent Medical Center
+  rec_id: 1402
+1403:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Saint Vincent Medical Center
+  rec_id: 1403
+1404:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: St. Vincent
+  rec_id: 1404
+1405:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: St. Vincent's
+  rec_id: 1405
+1406:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: St. Vincent
+  rec_id: 1406
+1407:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Providence St. Vincent's
+  rec_id: 1407
+1408:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: St Vincent
+  rec_id: 1408
+1409:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: St Vincents
+  rec_id: 1409
+1410:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Prov St. Vincents
+  rec_id: 1410
+1411:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Saint Vincent's Medical Center
+  rec_id: 1411
+1412:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Providence St. Vincent's Medical Center
+  rec_id: 1412
+1413:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Providence (St. Vincent) Medical Center
+  rec_id: 1413
+1414:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: St Vincents (Providence)
+  rec_id: 1414
+1415:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: St Vincent Medical Center
+  rec_id: 1415
+1416:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Providence St. Vincent Hospital
+  rec_id: 1416
+1417:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Providence St. Vincent's Hospital
+  rec_id: 1417
+1418:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: St. Vincent Hospital
+  rec_id: 1418
+1419:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: St Vincent Hospital
+  rec_id: 1419
+1420:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: St. Vincent's Hospital
+  rec_id: 1420
+1501:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Lifewise Health Plan of Oregon
+  rec_id: 1501
+1502:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Lifewise Health Plan
+  rec_id: 1502
+1503:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Lifewise
+  rec_id: 1503
+1504:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Lifewise of Oregon
+  rec_id: 1504
+1505:
+  client_id: 1003
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Lifewise Health Plan
+  rec_id: 1505
+1506:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: lifewise health plan oregon
+  rec_id: 1506
+1507:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Lifewise Health Plan of Oregon
+  rec_id: 1507
+1508:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Lifewise
+  rec_id: 1508
+1509:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Lifewise Oregon
+  rec_id: 1509
+1510:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Lifewise Health Plan (Oregon)
+  rec_id: 1510
+1511:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Lifewise Health Plan of Oregon
+  rec_id: 1511
+1512:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Lifewise Health Plan of Oregon
+  rec_id: 1512
+1513:
+  client_id: 1004
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Lifewise Health Plan of Washington
+  rec_id: 1513
+1514:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Lifewise Health Plan of Washington
+  rec_id: 1514
+1515:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Lifewise Health Plan
+  rec_id: 1515
+1516:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Lifewise Health Plan (Wa)
+  rec_id: 1516
+1517:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Lifewise
+  rec_id: 1517
+1518:
+  client_id: ~
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Lifewise Plan
+  rec_id: 1518
+1519:
+  client_id: 1005
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Lifewise Health Plan of Oregon
+  rec_id: 1519
+1520:
+  client_id: 1002
+  comment_text: ~
+  credentials: ~
+  dept_id: 1001
+  fname: ~
+  generic: 0
+  lname: ~
+  name: Lifewise
+  rec_id: 1520

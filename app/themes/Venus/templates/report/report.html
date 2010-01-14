@@ -1,0 +1,40 @@
+[% IF report_template ;
+        PROCESS 'report/display.html';
+ELSE %]
+<div id="left" class="[% report_track %]_box">
+
+    <!-- span id="report_select" -->
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" id="formid" name="formid">
+        <input type="submit" id="update" value="Choose Report &gt;&gt;" /><br />
+
+        <select name="report_name" id="report_name" size="25" onchange="document.forms['formid'].submit()">
+            [% FOREACH one IN report_list %]
+                <option value="[% one.name %]"[% ' selected="selected"' IF one.name == report.name %]>[% one.label %]</option>
+            [% END %]
+        </select>
+        <input type="hidden" id="report_track" name="report_track" value="[% report_track %]" />
+        <input type="hidden" id="client_id" name="client_id" value="[% client.id %]" />
+    </form>
+    <!-- /span -->
+</div>
+
+<div id="right" class="[% report_track %]_box">
+
+    [% IF report.name %]
+        <h3>[% report.label %]</h3>
+        <form name="run_report" method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+
+        [% INCLUDE "report/$report_track/${ report.name }.html" %]
+
+        <input type="hidden" name="report_name" value="[% report.name %]">
+        <input type="hidden" name="op" value="run_report">
+        <input type="hidden" name="report_track" value="[% report_track %]">
+        [% IF client.client_id %]<input type="hidden" name="client_id" value="[% client.client_id %]">[% END %]
+        <p class="edit"><input type="submit" name="submit" value="Run Report" /></p>
+    </form>
+    [% ELSE %]
+        <p>Please pick a report.</p>
+    [% END %]
+
+</div>
+[% END %]

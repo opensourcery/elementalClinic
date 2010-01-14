@@ -1,0 +1,48 @@
+[% IF data %]
+<h4>&#149; Physical Examination History</h4>
+<table border="0">
+    <tr>
+        <th><u>Record ID</u></th>
+        <th><u>Exam Due Date</u></th>
+        <th><u>Exam Completed</u></th>
+        <th><u>Physician</u></th>
+        <th><u>Examination Site</u></th>
+    </tr>
+    [% FOREACH dataii = data; dataii; END %]
+</table>
+[% END %]
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+
+<h4>&#149; Add A Physical Examination Record</h4>
+
+<table border="0">
+    <tr>
+        <td><b>Employee Date of Birth: </b></td>
+        <td>[% row.dob %]</td>
+    </tr>
+    <tr>
+        <td><b>Date Physical Was Due By: </b></td>
+        <td><input type="text" name="start_date" value="[% staff_next %]" size="12" maxlength="10" /></td>
+    </tr>
+    <tr>
+        <td><b>Date Physical Was Completed: </b></td>
+        <td><input type="text" name="end_date"  size="12" maxlength="10" /></td>
+    </tr>
+    <tr>
+        <td><b>Doctor's Name: </b></td>
+        <td><input type="text" name="physician"  size="27" maxlength="25" /></td>
+    </tr>
+    <tr>
+        <td><b>Examination Site: </b></td>
+        <td><input type="text" name="location"  size="62" maxlength="60" /></td>
+    </tr>
+</table>
+
+<p />
+
+<input type="submit" name="go" value="Submit" />
+<input type="hidden" name="super_id" value="[% row.super_visor %]" />
+<input type="hidden" name="ID" value="[% id %]" />
+<div>
+</div>
+</form>

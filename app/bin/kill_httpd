@@ -1,0 +1,26 @@
+#!/bin/sh
+
+port=${1:-$HTTPD_PORT}
+
+if [ "$port" = "--quiet" ]; then
+    port=${2:-$HTTPD_PORT}
+    quiet=1
+fi
+
+if ! [ -e "/tmp/httpd.$port.pid" ]; then
+    echo "No httpd pidfile for $port!" 1>&2
+    exit 1
+fi
+
+pid=$(cat /tmp/httpd.$port.pid 2>/dev/null)
+if [ "$pid" ]
+then
+    /bin/kill $pid
+else
+    if [ "$quiet" = "1" ]; then
+        exit 0
+    fi
+    exec 1>&2
+    echo "Invalid port $port specified (file not found... server down?) or no port specified."
+    echo "Usage: $0 <port>"
+fi

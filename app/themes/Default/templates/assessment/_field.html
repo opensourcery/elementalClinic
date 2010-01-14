@@ -1,0 +1,55 @@
+[%-
+    control_type = field.template_field.choices ? 'select' : 'text'
+-%]
+<li class="[% control_type %] [% action %]">
+    <label for="field[[% field.template_field_id %]][value]">[% field.label %]:</label>
+
+    [% IF control_type == 'select' %]
+        [% INCLUDE util/object_field.html
+            include = 'util/select_new.html'
+            type = 'field'
+            id = field.template_field_id
+            field = 'value'
+            values = field.template_field.list_choices
+            default = field.value
+        %]
+        [%# INCLUDE util/select_new.html
+            name    = 'field['_ field.template_field_id _'][value]'
+            values  = field.template_field.list_choices
+            default = field.value
+        %]
+    [% ELSE %]
+        <!-- 
+            Get the Field value
+            We want the cleaned up and 'safe' version
+            If there is no value use 'n/a'
+        -->
+        [% IF field.value %]
+            [% field_value = field.value FILTER html %]
+        [% ELSE %]
+            [% field_value = 'n/a' %]
+        [% END %]
+        <!-- Readability comment -->
+
+        [% INCLUDE util/object_field.html
+            include = 'util/textarea.html'
+            type = 'field'
+            id = field.template_field_id
+            field = 'value'
+            value = field_value
+        %]
+
+        [%# INCLUDE util/textarea.html
+            name    = 'field['_ field.template_field_id _'][value]'
+            value   = field_value
+        %]
+
+    [% END %]
+
+    <input 
+        type="hidden" 
+        name="field[[% field.template_field_id %]][template_field_id]"
+        id="field[[% field.template_field_id %]][template_field_id]"
+        value="[% field.template_field_id %]" 
+    />
+</li>

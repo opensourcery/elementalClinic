@@ -1,0 +1,8 @@
+[% Help.add( 'clinic_schedule' ) %]
+[% WRAPPER global/person_home.html
+    navpage = 'schedule'
+    variant = 'client'
+%]
+  [% INCLUDE schedule/calendar.html %]
+  [% INCLUDE schedule/add.html %]
+[% END %]

@@ -1,0 +1,30 @@
+[%#
+    dl      = dl
+    size    = size
+    reverse = reverse
+    ord     = ord
+    prefix  = prefix
+    postfix = postfix
+    name    = name
+    required = required
+    default = default
+    params  = params
+-%]
+
+[%
+    params.iname = params.name;
+    params.name = name;
+    irequired = params.required;
+    params.required = irequired && required ? 1 : 0;
+
+    field_name = prefix _ params.iname _ postfix;
+    field_value = $field_name || objects.$name.$ord.$iname || default.$iname
+%]
+
+[% import( params ) %]
+
+[% INCLUDE params.type
+    name = field_name
+    value = field_value
+    default = params.default
+%]

@@ -1,0 +1,96 @@
+<div class="minileft_[% action %]" id="template_viewer">
+<form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" 
+id="template_edit" name="template_edit" >
+
+
+<dl class="inline">
+    [% INCLUDE util/input_text.html
+        name    = 'name'
+        label   = 'Template Name'
+        value   = name
+        dl      = 1
+    %]
+
+    [% IF action == 'edit' || op == 'create' %]
+        <dt></dt>
+        <dd style="width: 500px;"><small>
+            Attachments are information that eleMentalClinic
+            wants to attach to your message or subject. You can choose to deregard
+            attachments, attach them to the beginning, or attach them at the
+            end.
+        </small></dd>
+    [% END %]
+
+    [% INCLUDE util/select_new.html
+        name    = 'subject_attach'
+        default = subject_attach
+        values  = [ 'No', 'Before', 'After' ]
+        label   = 'Subject Attachments'
+        dl      = 1
+    %]
+
+    [% INCLUDE util/select_new.html
+        name    = 'message_attach'
+        default = message_attach
+        values  = [ 'No', 'Before', 'After' ]
+        label   = 'Message Attachments'
+        dl      = 1
+    %]
+
+    [% IF action == 'edit' || op == 'create' %]
+        <dt></dt>
+        <dd><small>
+            Clinic Attachment toggles the attachment of your clinics name at the end of the message.
+        </small></dd>
+    [% END %]
+
+    [% INCLUDE util/select_new.html
+        name    = 'clinic_attach'
+        default = clinic_attach
+        values  = [ 'No', 'Yes' ]
+        label   = 'Clinic Attachment'
+        dl      = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'subject'
+        label   = 'Email Subject'
+        value   = subject
+        dl      = 1
+        size    = 80
+    %]
+
+    [% IF action == 'edit' %]
+    [% INCLUDE util/textarea.html
+        name    = 'message'
+        label   = 'Email Message'
+        value   = message
+        dl      = 1
+        cols    = 80 
+        rows    = 20 
+    %]
+    [% ELSE %]
+        <dt>Email Message:</dt>
+        <dd>[% htmlmessage %]</dd>
+    [% END %]
+
+</dl>
+
+    <hr class="div" />
+    <hr class="subtle" />
+
+    [% IF action == 'edit' %]
+    <p class="save"><input type="submit" name="op" id="op" value="Save" /></p>
+    [% ELSE %]
+    <p class="edit"><input type="submit" name="op" id="op" value="Edit" /></p>
+    [% END %]
+    [% IF template_id %]<input type="hidden" name="template_id" value="[% template_id %]" />[% END %]
+</form>
+[% IF action == 'edit' %]
+<form class="cancel" method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+    <p><input type="submit" name="op" id="op" value="Cancel" /></p>
+    <input type="hidden" name="template_id" value="[% template_id %]" />
+</form>
+[% END %]
+
+</div>

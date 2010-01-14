@@ -1,0 +1,39 @@
+                            <tr class="paid [% IF rowclass; "even"; ELSE; "odd"; END %]">
+                                [% IF billing_prognote.billing_service.get_prognotes.0.rec_id != note.rec_id %]
+                                <td></td>
+                                <th class="entry_type">Paid</th>
+                                <td class="units" colspan="3">Combined</td>
+                                <td colspan="2"></td>
+                                [% ELSE %]
+                                <td class="controls">
+                                    <a href="#" onclick="return toggle_transaction_error( '[% transaction.id %]' )">
+                                        <strong>$</strong>
+                                    </a>
+                                </td>
+                                [% IF transaction.refunded %]
+                                <th class="entry_type">Paid <span class="refunded">refunded</span></th>
+                                [% ELSE %]
+                                <th class="entry_type">Paid</th>
+                                [% END %]
+                                <td class="date">[% transaction.billing_payment.date_received.format_date %]</td>
+                                <td class="amount">$ [% transaction.paid_amount %]</td>
+                                <td class="units">[% transaction.paid_units %]</td>
+                                <td class="aux"><em>Check #</em>: [% transaction.billing_payment.payment_number %]</td>
+                                <td class="aux" colspan="1"></td>
+                                [% END %]
+                            </tr>
+                            [% IF( deductions = transaction.deductions )
+                               AND billing_prognote.billing_service.get_prognotes.0.rec_id == note.rec_id 
+                            %]
+                                [% FOR deduction IN deductions %]
+                                    <tr class="deducted [% IF rowclass; "even"; ELSE; "odd"; END %]">
+                                        <td class="controls"></td>
+                                        <th class="entry_type">Deducted</th>
+                                        <td class="date"></td>
+                                        <td class="amount">$ [% deduction.amount %]</td>
+                                        <td class="units">[% deduction.units || 0 %]</td>
+                                        <td class="aux"><em>Group</em>: <dfn title="[% current_user.valid_data.get_byname( '_adjustment_group_codes', deduction.group_code ).description %]">[% deduction.group_code %]</dfn></td>
+                                        <td class="aux"><em>Reason</em>: <dfn title="[% current_user.valid_data.get_byname( '_claim_adjustment_codes', deduction.reason_code ).description %]">[% deduction.reason_code %]</dfn></td>
+                                    </tr>
+                                [% END %]<!-- FOR deductions -->
+                            [% END %]<!-- IF deductions -->

@@ -1,0 +1,112 @@
+<!-- util/choose_valid_data BEGIN -->
+[%# choose_valid_data: make a select box for entries from a valid_data table
+    REQUIRED:
+    table   : name of table containing valid_data entries
+    type    : select, radio
+    name    : duh
+
+    OPTIONAL:
+    id      : defaults to name if not specified
+    use_id  : use rec_id instead of name
+    default : current value to be highlighted
+    use_desc: use description as well as name for label
+    show_blank  : show the control even if there's no data
+    wraptag     : different meanings depending on type
+    force_valid : don't display the current value if it's not
+                  'active' in the valid_data table
+    exclude_id1 : set true to exclude id #1 in the data list
+    active_only : default false; if true, only show active items
+    required    : add 'required' css class
+
+    SELECT ONLY:
+    size    : select only
+            : set to "fit" to fit data size
+    label   : label to display before the control
+    labelbr : line break after label
+    labelbr : line break after label (DEPRECATED)
+    break   : set true for line break after label
+    wraptag : tag to wrap entire control
+    posttext: text to display after the control, inside the wrap
+    blankmsg: message to display if no data
+    leading_hash : adds a blank option at the top so nothing
+              is selected by default. value is an array of hashes: [ { value => 'value', name => 'name', }, ]
+    onchange: javascript target to execute after update
+
+    RADIO ONLY:
+    wraptag : tag to wrap each radio button
+    endtag  : tag for the end of each radio button
+-%]
+[% active_only = ( active_only || 0 ) * -1 + 1 %]
+
+[%- UNLESS table && type && name -%]
+    <p><strong>ERROR:</strong> required field missing in util/choose_valid_data.html</p>
+    <!-- util/choose_valid_data END -->
+[%- RETURN; END -%]
+
+<!-- If no default was specified check if the table has one of its own -->
+[%- UNLESS default -%]
+    [%- default = current_user.valid_data.get_default( table, use_id ) -%]
+[%- END -%]
+[%- id = id || name -%]
+[%- required = required ? ' class="required" ' : '' -%]
+
+[%- data = current_user.valid_data.list( table, active_only ? 0 : 1 ); -%]
+[%- IF action == 'display' %]
+    [% FOREACH datum IN data;
+        NEXT IF( exclude_id1 && datum.rec_id == 1 );
+        this_key = use_id ? datum.rec_id : datum.name;
+        IF this_key == default;
+            this_val = use_desc ? "$datum.name: $datum.description" : datum.name;
+        END;
+        END
+    -%]
+    [% "<$wraptag>" IF wraptag %]
+    [% "$label: " IF label %]<strong id="[% id %]">[% this_val %]</strong>
+    [% "</$wraptag>" IF wraptag %]
+[%- ELSE -%]
+
+    [% IF type == 'select';
+        IF size == 'fit'; size = ' size=' _ ( data.size + 1 );
+        ELSIF size; size = " size=\"$size\"";
+        END;
+        IF wraptag; "<$wraptag>"; END;
+        IF label; label = "<label for=\"$id\">$label: </label>"; END;
+        IF labelbr || break; label = "$label<br />"; END;
+        IF onchange; onchange = " onchange=\"$onchange\""; END;
+-%]
+    [% IF( !show_blank && !data ); "<p>$blankmsg</p>"; RETURN; END %]
+    [% label %]
+    <select name="[% name %]" id="[% id %]"[% size %][% onchange %][% required %]>
+    [% FOREACH leading IN leading_hash;
+        this_name = leading.name;
+        this_val = leading.value;
+     -%]
+     <option value="[% this_val %]"[% IF this_val == default; ' selected="selected"'; END -%]>[% this_name %]</option>
+    [% END %]
+    [% FOREACH datum IN data;
+        NEXT IF( exclude_id1 && datum.rec_id == 1 );
+        key = use_id ? datum.rec_id : datum.name;
+        val = use_desc ? "$datum.name: $datum.description" : datum.name;
+        NEXT UNLESS datum.active || ( key == default && !force_valid );
+        -%]
+    <option value="[% key %]"[% IF key == default; ' selected="selected"'; END -%]>[% val %]</option>
+    [% END -%]
+</select>
+[% posttext -%]
+[% IF wraptag; "</$wraptag>"; END %]
+
+[% ELSIF type == 'radio' -%]
+    [% FOREACH datum IN data;
+        NEXT IF( exclude_id1 && datum.rec_id == 1 );
+        key = use_id ? datum.rec_id : datum.name;
+        val = datum.name;
+        NEXT UNLESS datum.active || ( key == default && !force_valid );
+        label = use_desc ? "<strong>$val</strong>: $datum.description" : val;
+        IF wraptag; tag_start = "<$wraptag>"; tag_end = "</$wraptag>"; END;
+        -%]
+[% tag_start %]<input type="radio" id="[% id %]_[% key %]" name="[% name %]" value="[% key %]"[% required %][% IF key == default; ' checked="checked"'; END -%]/>
+    <label for="[% id %]_[% key %]">[% label %]</label>[% endtag %][% tag_end %]
+    [% END -%]
+[% END -%]
+[%- END -%]
+<!-- util/choose_valid_data END -->

@@ -1,0 +1,69 @@
+[% RETURN IF op == 'edit_security' || ( op == 'save_security' && errors ) %]
+<div class="widget inactive" id="charge_codes">
+    <h4>Charge codes</h4>
+
+    [% UNLESS op == 'create' || ( op == 'save' && errors ) %]
+        [% IF lookup_groups %]
+        <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" id="tableform" name="tableform">
+            <table cellspacing="0">
+                <tr class="head">
+                    <th class="lookup_group">Group</th>
+                    <th class="lookup_group">Can use?</th>
+                    <th class="lookup_group">Sticky?</th>
+                </tr>
+            [% rowclass = 0 %]
+
+            [% action = 'edit' %]
+            [% FOR lg IN lookup_groups %]
+            [% rowclass = rowclass * -1 + 1 %]
+                <tr class="[% IF rowclass; "even"; ELSE; "odd"; END %]">
+                    <td>[% lg.name %]</td>
+                    <td>[% INCLUDE util/checkbox.html
+                        name    = "item_$lg.rec_id"
+                        value   = current.lookup_associations_hash( current_table.rec_id ).${ lg.rec_id } || ${ "item_$lg.rec_id" }
+                        onchange = "update_checks( 'item', $lg.rec_id )"
+                    %]</td>
+                    <td>[% INCLUDE util/checkbox.html
+                        name    = "sticky_$lg.rec_id"
+                        value   = ( current.lookup_associations_hash( current_table.rec_id ).${ lg.rec_id } == 'sticky' ) || ${ "sticky_$lg.rec_id" }
+                        onchange = "update_checks( 'sticky', $lg.rec_id )"
+                    %]</td>
+                </tr>
+            [% END %]
+            </table>
+
+            <hr />
+
+            <ul>
+                <li>If you uncheck all groups, <strong>[% "$current.fname $current.lname" %]</strong> will be able to use <strong>all</strong> charge codes.</li>
+                <li><strong>Sticky</strong> charge codes will always be available, regardless of other restrictions.</li>
+            </ul>
+
+            <input type="hidden" name="staff_id" value="[% current.staff_id %]" />
+            <input type="hidden" name="table_name" value="valid_data_charge_code" />
+            <input type="hidden" name="op" id="op" value="charge_code_associations_save" />
+            <p class="save"><input type="submit" value="Save charge code associations" /></p>
+        </form>
+
+        [% ELSE %]
+        <p>No charge code groups have been created.</p>
+        [% END %]
+    [% ELSE %]
+        <p>Charge code associations must be set after creating a new person.</p>
+    [% END %]
+</div>
+
+<script type="text/javascript">
+function update_checks( type, id ) {
+    var item = document.getElementById( "item_"+ id )
+    var sticky = document.getElementById( "sticky_"+ id )
+    // if user unchecks item, uncheck sticky
+    if(( type == 'item' ) && ( ! item.checked )) {
+        sticky.checked = false
+    }
+    // if user checks sticky, check item
+    if(( type == 'sticky' ) && ( sticky.checked )) {
+        item.checked = true
+    }
+}
+</script>

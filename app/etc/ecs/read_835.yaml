@@ -1,0 +1,396 @@
+--- #YAML:1.0
+loop_name:
+    ISA: interchange_control_header
+    GS: functional_group_header
+    ST: transaction_set_header
+    1000A: payer
+    1000B: provider
+    2000: claim_header
+    2100: claims
+    2110: service_lines
+    PLB: provider_adjustments
+    SE: transaction_set_trailer
+    GE: functional_group_trailer
+    IEA: interchange_control_trailer
+
+ISA:
+    ISA:
+        0: interchange_control_header
+        1:
+        2:
+        3:
+        4:
+        5:
+        6: sender_interchange_id
+        7:
+        8: receiver_interchange_id
+        9: interchange_date
+        10: interchange_time
+        11:
+        12:
+        13: interchange_control_number
+        14: interchange_ack_requested
+        15: mode
+        16: composite_delimiter
+GS:
+    GS:
+        0: functional_group_header
+        1: functional_identifier_code 
+        2: sender_code
+        3: receiver_code
+        4: functional_group_date
+        5: functional_group_time
+        6: group_control_number
+        7: 
+        8: x12_version
+ST:
+    ST:
+        0: transaction_set_header
+        1: identifier_code
+        2: control_number
+    BPR:
+        0: financial_info
+        1: transaction_handling_code
+        2: monetary_amount
+        3: credit_debit_flag_code 
+        4: payment_method
+        5: payment_format_code
+        16: payment_date
+    TRN:
+        0: trace_number
+        1: trace_type
+        2: payment_number
+        3: originating_company_id
+        4: originating_company_supplemental_code
+    REF:
+        0: REF
+        1: qualifier
+        2: id
+        EV: receiver_id
+        F2: version_id
+    DTM:
+        0: production_date
+        1: qualifier
+        2: date
+        405: production_cycle_end_date
+1000A:
+    N1:
+        0: identification
+        1: name_qualifier
+        2: name
+        3: identification_code_qualifier
+        4: identification_code
+    N3:
+        0: address
+        1: addr_1
+        2: addr_2
+    N4:
+        0: city_state_zip
+        1: city
+        2: state
+        3: zip
+    REF:
+        0: additional_id
+        1: reference_id_qualifier
+        2: id
+    PER:
+        0: payer_contact
+        1: contact_function_code
+        2: name
+        3: number_1_qualifier
+        4: number_1
+        5: number_2_qualifier
+        6: number_2
+        7: number_3_qualifier
+        8: number_3
+1000B:
+    N1:
+        0: identification
+        1: name_qualifier
+        2: name
+        3: code_qualifier
+        4: code
+    N3:
+        0: address
+        1: addr_1
+        2: addr_2
+    N4:
+        0: city_state_zip
+        1: city
+        2: state
+        3: zip
+    REF:
+        0: additional_id
+        1: reference_id_qualifier
+        2: id
+2000:
+    LX:
+        0: header_number
+        1: assigned_number
+    TS3:
+        0: provider_summary_info
+        1: provider_id
+        2: facility_code
+        3: fiscal_period_date
+        4: total_claim_count
+        5: total_claim_charge_amount
+        6: total_covered_charge_amount
+        7: total_noncovered_charge_amount
+        8: total_denied_charge_amount
+        9: total_provider_payment_amount
+        10: total_interest_amount
+        11: total_contractual_adjustment_amount
+        12: total_gramm-rudman_reduction_amount
+        13: total_MSP_payer_amount
+        14: total_blood_deductible_amount
+        15: total_non-lab_charge_amount
+        16: total_coinsurance_amount
+        17: total_HCPCS_reported_charge_amount
+        18: total_HCPCS_payable_amount
+        19: total_deductible_amount
+        20: total_professional_component_amount
+        21: total_MSP_patient_liability_met_amount
+        22: total_patient_reimbursement_amount
+        23: total_PIP_claim_count
+        24: total_PIP_adjustment_amount
+    TS2:
+        0: provider_supplemental_summary_info
+        1: total_DRG_amount
+        2: total_federal_specific_amount
+        3: total_hospital_specific_amount
+        4: total_disproportionate_share_amount
+        5: total_capital_amount
+        6: total_indirect_medical_education_amount
+        7: total_outlier_day_count
+        8: total_day_outlier_amount
+        9: total_cost_outlier_amount
+        10: average_DRG_length_of_stay
+        11: total_discharge_stay
+        12: total_cost_report_day_count
+        13: total_covered_day_count
+        14: total_noncovered_day_count
+        15: total_MSP_pass-through_amount
+        16: average_DRG_weight
+        17: total_PPS_capital_FSP_DRG_amount
+        18: total_PPS_capital_HSP_DRG_amount
+        19: total_PPS_DSH_DRG_amount
+2100:
+    CLP:
+        0: claim_payment_info
+        1: id
+        2: status_code
+        3: total_charge_amount
+        4: payment_amount
+        5: patient_responsibility_amount
+        6: claim_filing_indicator_code
+        7: payer_claim_control_number
+        8: facility_code
+    CAS:
+        0: claim_adjustment
+        1: group_code
+        2: reason_1
+        3: adjustment_amount_1
+        4: adjustment_quantity_1
+        5: reason_2
+        6: adjustment_amount_2
+        7: adjustment_quantity_2
+        8: reason_3
+        9: adjustment_amount_3
+        10: adjustment_quantity_3
+        11: reason_4
+        12: adjustment_amount_4
+        13: adjustment_quantity_4
+        14: reason_5
+        15: adjustment_amount_5
+        16: adjustment_quantity_5
+        17: reason_6
+        18: adjustment_amount_6
+        19: adjustment_quantity_6
+    NM1:
+        0: name
+        1: qualifier
+        2: entity_type_qualifier
+        3: lname
+        4: fname
+        5: mname
+        7: name_suffix
+        8: id_code_qualifier
+        9: id_code
+        QC: patient
+        IL: subscriber
+        74: corrected_insured_name
+        82: rendering_provider
+        TT: transfer_to
+        PR: corrected_priority_payer
+    MIA:
+        0: inpatient_adjudication_info
+        1: 
+        2: PPS_operating_outlier_amount
+        3: lifetime_psychiatric_days_count
+        4: claim_DRG_amount
+        5: remark_code_1
+        6: claim_disproportionate_share_amount
+        7: claim_MSP_pass_through_amount
+        8: claim_PPS_capital_amount
+        9: PPS_capital_FSP_DRG_amount
+        10: PPS_capital_HSP_DRG_amount
+        11: PPS_capital_DSH_DRG_amount
+        12: old_capital_amount
+        13: PPS_capital_IME_amount
+        14: PPS_operating_hospital_specific_DRG_amount
+        15: cost_report_day_count
+        16: PPS_operating_federal_specific_DRG_amount
+        17: claim_PPS_capital_outlier_amount
+        18: claim_indirect_teaching_amount
+        19: nonpayable_professional_component_amount
+        20: remark_code_2
+        21: remark_code_3
+        22: remark_code_4
+        23: remark_code_5
+        24: PPS_capital_exception_amount
+    MOA:
+        0: outpatient_adjudication_info
+        1: reimbursement_rate
+        2: claim_HCPCS_payable_amount
+        3: remark_code_1
+        4: remark_code_2
+        5: remark_code_3
+        6: remark_code_4
+        7: remark_code_5
+        8: claim_ESRD_payment_amount
+        9: nonpayable_professional_component_amount
+    REF:
+        0: reference_ids
+        1: qualifier
+        2: id
+        F8: original_reference_number
+        G1: prior_authorization_number
+        1D: rendering_provider_medicaid_provider_number
+        1G: rendering_provider_UPIN_number
+        1H: rendering_provider_CHAMPUS_id_number 
+    DTM:
+        0: claim_dates
+        1: qualifier
+        2: date
+        050: date_received
+        232: claim_statement_period_start
+        233: claim_statement_period_end
+    PER:
+        0: claim_contact
+        1: contact_function_code
+        2: name
+        3: number_1_qualifier
+        4: number_1
+        5: number_2_qualifier
+        6: number_2
+        7: number_3_qualifier
+        8: number_3
+    AMT:
+        0: claim_supplemental_info
+        1: qualifier
+        2: amount
+        F5: patient_paid_amount
+        I: interest
+    QTY:
+        0: claim_supplemental_info_quantity
+        1: qualifier
+        2: quantity
+        CA: covered_actual
+        CD: coinsured_actual
+2110:
+    SVC:
+        0: service_payment_info
+        1: composite_medical_procedure
+        2: line_item_charge_amount
+        3: line_item_provider_payment_amount
+        4: national_uniform_billing_committee_revenue_code
+        5: units_of_service_paid_count
+        6: composite_submitted_medical_procedure
+        7: original_units_of_service_count
+    DTM:
+        0: service_dates
+        1: qualifier
+        2: date
+        150: service_period_start
+        151: service_period_end
+        472: service_date       
+    CAS:
+        0: service_adjustment
+        1: group_code
+        2: reason_1
+        3: adjustment_amount_1
+        4: adjustment_quantity_1
+        5: reason_2
+        6: adjustment_amount_2
+        7: adjustment_quantity_2
+        8: reason_3
+        9: adjustment_amount_3
+        10: adjustment_quantity_3
+        11: reason_4
+        12: adjustment_amount_4
+        13: adjustment_quantity_4
+        14: reason_5
+        15: adjustment_amount_5
+        16: adjustment_quantity_5
+        17: reason_6
+        18: adjustment_amount_6
+        19: adjustment_quantity_6
+    REF:
+        0: reference_ids
+        1: qualifier
+        2: id
+        6R: line_item_control_number
+        LU: location_number
+        1C: rendering_provider_medicare_provider_number
+        1D: rendering_provider_medicaid_provider_number
+        1G: rendering_provider_provider_UPIN_number
+        1H: rendering_provider_CHAMPUS_number
+        HPI: rendering_provider_national_provider_id
+    AMT:
+        0: service_supplemental_info
+        1: qualifier
+        2: amount
+        B6: allowed_actual
+        KH: deduction_amount
+    QTY:
+        0: service_supplemental_info_quantity
+        1: qualifier
+        2: quantity
+        NE: non_covered_estimated
+    LQ:
+        0: health_care_remark_codes
+        1: qualifier
+        2: remark_code
+        HE: claim_payment_remark_code
+PLB:
+    PLB:
+        0: provider_adjustments
+        1: provider_id
+        2: fiscal_period_date
+        3: composite_adjustment_id_1
+        4: amount_1
+        5: composite_adjustment_id_2
+        6: amount_2
+        7: composite_adjustment_id_3
+        8: amount_3
+        9: composite_adjustment_id_4
+        10: amount_4
+        11: composite_adjustment_id_5
+        12: amount_5
+        13: composite_adjustment_id_6
+        14: amount_6
+SE:
+    SE:
+        0: transaction_set_trailer
+        1: segment_count
+        2: control_number
+GE:
+    GE:
+        0: functional_group_trailer
+        1: transaction_set_count
+        2: group_control_number
+IEA:
+    IEA:
+        0: interchange_control_trailer
+        1: functional_group_count
+        2: interchange_control_number

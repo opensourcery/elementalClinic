@@ -1,0 +1,29 @@
+p {
+    padding : 0;
+    margin : 0 0 7px 0;
+}
+#left,
+#right {
+    border : 1px solid #999;
+    padding : 5px;
+    background-color : #ccc;
+}
+#plan_data {
+    font-size : 11px;
+    border : 1px solid #000;
+    margin : 0 5px 0 0;
+    float : left;
+}
+#left div,
+#right div {
+    background-color : #fff;
+    padding : 5px;
+    border : 1px solid #999;
+    border-width : 1px 0 1px 0;
+    margin : 10px 10px 20px 10px;
+}
+div.actions {
+    width : 100px;
+    text-align : center;
+    float : left;
+}

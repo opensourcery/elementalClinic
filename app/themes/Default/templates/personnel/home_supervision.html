@@ -1,0 +1,28 @@
+<div class="widget inactive" id="supervision">
+    <h4>Supervision</h4>
+    [% UNLESS op == 'create' || ( op == 'save' && errors ) %]
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+        [% INCLUDE util/select_new.html
+            action  = 'edit'
+            name    = 'supervisor_id'
+            values  = department.get_supervisors
+            default = current.supervisor_id
+            label   = 'Supervisor'
+            keyname = 'staff_id'
+            valname = 'eman'
+            leading_blank   = 'No supervisor'
+            wraptag = 'p'
+        %]
+
+        [% IF current.supervisor %]
+            <p>This person can supervise others.</p>
+        [% END %]
+
+        <input type="hidden" name="staff_id" value="[% current.staff_id %]" />
+        <input type="hidden" name="op" id="op" value="supervision_save" />
+        <p class="save"><input type="submit" value="Save supervision" /></p>
+    </form>
+    [% ELSE %]
+    <p>Supervision must be set after creating a new person.</p>
+    [% END %]
+</div>

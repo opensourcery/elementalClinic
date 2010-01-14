@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="" />
+<title>emc-earth-blankdb-top-level-client-intake</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">emc-earth-blankdb-top-level-client-intake</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//li[@id='home']/a/em</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>client_selector_link</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>search</td>
+	<td>a</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Search']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Create a new client »</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>fname</td>
+	<td>a</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>mname</td>
+	<td>b</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>lname</td>
+	<td>c</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>birth_name</td>
+	<td>d</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>sex</td>
+	<td>label=Female</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ssn</td>
+	<td>66666666</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>previous_year_trigger_dob</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>LOCATOR_DETECTION_FAILED</td>
+	<td>label=1988</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>LOCATOR_DETECTION_FAILED</td>
+	<td>label=1970</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=16</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ssn</td>
+	<td>666664666</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email</td>
+	<td>skdfjh@slkdfjshdl.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email</td>
+	<td>dfg@sdfogiuoi.com</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>no_address</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>no_phone</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>no_emergency</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Postpone this intake</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>client_selector_link</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>search</td>
+	<td>a</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Search']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>client_list_filter</td>
+	<td>label=All</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>client_selector_link</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=c, a b</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>no_address</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>no_phone</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>no_emergency</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>no_employment</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>admit_button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>client_selector_link</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='View the Client »']</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

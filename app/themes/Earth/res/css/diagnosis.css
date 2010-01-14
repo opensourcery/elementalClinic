@@ -1,0 +1,35 @@
+#general {
+    float : right;
+    width : 30%;
+    border : 1px dotted orange;
+    border-width : 0 0 1px 1px;
+}
+#axis1 {
+}
+#axis2 {
+}
+#axis3 {
+    float : left;
+    width : 45%;
+    margin-right : 5%;
+}
+#axis4 {
+    float : left;
+    width : 45%;
+}
+fieldset {
+    border : none;
+}
+h3 {
+    font-size : 16px;
+    font-weight : bold;
+    padding : 0;
+    border-bottom : 1px solid #000;
+}
+h4 {
+    border : none;
+    margin : 10px 0 0 0;
+}
+p.choose {
+    margin-left : 20px;
+}

@@ -1,0 +1,57 @@
+[% INCLUDE util/errors.html %]
+<div id="content">
+
+<div id="center" class="system_box">
+
+    <h3><em>Edit membership for</em> [% current.name %]</h3>
+    <p class="return"><a href="groups.cgi?group_id=[% current.rec_id %]">&#171; Return to group</a></p>
+
+    <div id="clients">
+        <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+            <div id="member_list">
+            <label for="staff_id"><strong>Members</strong></label><br />
+            [% IF ( members = current.get_members ) %]
+            <select name="member_id" id="member_id" multiple="multiple" size="20">
+                [% FOR member IN members %]
+                <option value="[% member.client_id %]">[% member.eman %]</option>
+                [% END %]
+            </select>
+                [% IF members %]
+                <p class="edit rm_member" style="visibility:[% vis %]">
+                    <input type="submit" name="op" id="rm" value="Remove Members" /></p>
+                [% END %]
+            [% ELSE %]
+            <p>No members.</p>
+            [% END %]
+            </div>
+
+            <div id="client_list">
+                <label for="staff_id"><strong>Clients</strong></label><br />
+                [% IF clients %]
+                <div id="client_results_control">
+                    <select name="new_member_id" id="new_member_id" multiple="multiple" size="20">
+                    [% FOREACH one = clients %]
+                        <option value="[% one.client_id %]">[% "$one.lname, $one.fname $one.mname" %]</option>
+                    [% END %]
+                    </select>
+                    <p class="edit add_member" style="visibility:[% vis %]">
+                        <input type="submit" name="op" id="add" value="Add Members" />
+                    </p>
+                </div>
+                [% ELSE %]
+                <p id="client_results_control">No clients in this list.</p>
+                [% END %]
+            </div>
+
+            <input type="hidden" name="group_id" value="[% current.rec_id %]" />
+        </form>
+    </div>        
+
+    <div id="filter">
+        [% INCLUDE util/client_filter.html
+            onchange = "return filter_clients( 'groups', '$Config.theme' )"
+        %]
+    </div>
+</div>
+
+</div>

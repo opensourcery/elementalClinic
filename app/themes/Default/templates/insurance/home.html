@@ -1,0 +1,31 @@
+[% INCLUDE global/client_head.html
+    navsec = 'insurance'
+%]
+[% 
+    navtab = Session.client_insurance_filter || 'active';
+    IF( op == 'insurance_new' ); navtab = 'insurance_new'; END;
+    IF(( op == 'insurance_save' ) && errors ); navtab = 'insurance_new'; END;
+%]
+
+[% UNLESS ( op == 'authorization_new' ) %]
+<ul id="insurance_nav">
+    <li[% ' class="active"' IF( navtab == 'active' ) %]>
+        <a href="[% script %]?op=home;client_id=[% client.id %];client_insurance_filter=active">Active</a></li>
+    <li[% ' class="active"' IF( navtab == 'inactive' ) %]>
+        <a href="[% script %]?op=home;client_id=[% client.id %];client_insurance_filter=inactive">Inactive</a></li>
+    [% IF action == 'edit' %]
+    <li[% ' class="active"' IF( navtab == 'insurance_new' ) %]>
+        <a href="[% script %]?op=insurance_new;client_id=[% client.id %]">New Insurance</a></li>
+    [% END %]
+</ul>
+[% END %]
+
+[% 
+    IF(( op == 'insurance_new' ));
+        INCLUDE insurance/insurance_new.html;
+    ELSIF(( op == 'authorization_new' ));
+        INCLUDE insurance/authorization.html;
+    ELSE;
+        INCLUDE insurance/insurance.html;
+    END
+%]

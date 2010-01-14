@@ -1,0 +1,10 @@
+[% BLOCK personnel/home/sub_categories %]
+    [% IF current.staff_id || op == 'create' || action == 'edit' %]
+        [% INCLUDE personnel/home_demographics.html %]
+        <div class="miniright_[% action %]">
+        [% INCLUDE personnel/home_security.html %]
+        [% INCLUDE personnel/home_charge_codes.html %]
+        </div>
+    [% END %]
+[% END %]
+[% INCLUDE Base:personnel/home.html %]

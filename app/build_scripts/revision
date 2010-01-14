@@ -1,0 +1,14 @@
+#!/bin/sh -e
+revision=$(svnversion)
+
+if [ "$revision" = "exported" ]; then
+  revision=$(git svn info | grep '^Revision: ' | cut -d' ' -f2 2>/dev/null || true)
+  if [ -z "$revision" ]; then
+    echo "Can't find revision; svnversion and git svn find-rev failed" 1>&2
+    exit 1
+  fi
+else
+  revision=$(echo "$revision" | cut -d: -f2 | sed 's/[MS]//')
+fi
+
+printf "0.%06d" $revision

@@ -1,0 +1,14 @@
+[% INCLUDE global/print_head.html
+    name    = 'Release of Information Letter'
+    a_href  = "$script?client_id=$client.id"
+    a_label = 'Release of Information'
+    instructions_only   = 1
+    auto_print          = 1
+%]
+
+[% FOR release IN releases;
+    INCLUDE roi/letter.html;
+    UNLESS loop.last();
+        INCLUDE global/print_footer.html;
+    END;
+END %]

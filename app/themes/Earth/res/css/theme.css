@@ -1,0 +1,375 @@
+/* COLORS
+client
+    background : #ffc;
+    border : #fb0;
+site
+    background : #dedeff;
+    border : #60c;
+*/
+/* header {{{*/
+#header {
+    background : #660666;
+    background : #fff;
+    height : 27px;
+}
+h1 a {
+    padding : 3px 5px;
+    background : #fff url( '../img/emc_atom.png' ) no-repeat center center;
+    width : 21px;
+    height : 21px;
+    display : block;
+    display : none;
+}
+h1 span {
+    display : none;
+}
+#nav a {
+    font-size : 1em;
+    color : #811788;
+    padding : 8px 10px 1px 10px;
+    background : #fff;
+    margin : 0px 1px 0 1px;
+    height : 18px;
+    display : block;
+}
+#nav a:hover {
+    color : #fff;
+    background : #811788;
+}
+#nav #home {
+    margin-left : -1px;
+}
+#nav #home a {
+    background : #fff url( '../img/emc_atom.png' ) no-repeat 5px center;
+    padding-left : 30px;
+}
+#nav #home a:hover {
+    background : #811788 url( '../img/emc_atom_reverse.png' ) no-repeat 5px center;
+}
+#new_client {
+    margin-top : -15px;
+}
+#new_client a {
+    font-size : 12px;
+    font-weight : bold;
+    padding : 0;
+    background : transparent;
+    margin : 0;
+    height : auto;
+    display : inline;
+}
+#new_client a:hover {
+    color : #811788;
+    text-decoration : underline;
+    background : inherit;
+}
+/*}}}*/
+/* shadows {{{ */
+#shadow_only {
+    padding : 0;
+    margin : 0 0 5px 0;
+    height : 3px;
+    background-image : url( '../img/shadow.png' );
+    background-repeat : repeat-x;
+    background-position : bottom;
+    clear : both;
+}
+.wrap0,
+.wrap1,
+.wrap2,
+.wrap3 {
+    border : 1px dotted red;
+}
+/* }}} */
+/* colors {{{ */
+.client_box,
+.site_box,
+.system_box {
+/*     background-color : #fff; */
+    padding-top : 7px;
+/*     margin : 0; */
+}
+
+.client,
+.client_box {
+    background-color : #ffc;
+}
+#client_content,
+.client_box {
+    padding : 0 7px 7px 7px;
+    border : 1px solid #fb0;
+    border-top-width : 4px;
+}
+
+.system,
+.site_box,
+.system_box {
+    background-color : #dedeff;
+}
+.site_box,
+.system_box {
+    padding : 7px;
+    border : 1px solid #60c;
+}
+#client_head hr {
+    background-color : transparent;
+/*     color : #fb0; */
+    height : 1px;
+    padding : 0;
+    border-bottom : 1px dotted #f90;
+    margin : 5px 0 5px 0;
+    clear : both;
+}
+#client_head hr.div {
+    background-color : transparent;
+    border : none;
+}
+.client hr.subtle,
+.client_box hr.subtle {
+    padding : 0;
+    background : transparent;
+    border-bottom : 1px dotted #fb0;
+    margin : 5px 0 5px 0;
+    height : 1px;
+    clear : none;
+}
+.system hr.subtle,
+.site_box hr.subtle,
+.system_box hr.subtle {
+    padding : 0;
+    background : transparent;
+    border-bottom : 1px dotted #60c;
+    margin : 5px 0 5px 0;
+    height : 1px;
+    clear : none;
+}
+.attention,
+.attention * {
+    color : #900 !important;
+}
+/* }}} */
+/* forms {{{ */
+input[type="submit"] {
+    font-size : 12px;
+    border : 1px solid #000; 
+    margin : 3px;
+}
+button {
+    font-size : 12px;
+    border : 1px solid #000; 
+    margin : 3px;
+}
+p.new {
+    text-align : right;
+    padding : 0px 8px 0px 8px;
+    background-color : #ccc;
+    border : 1px solid #999;
+    margin : 0;
+    clear : both;
+}
+p.save {
+    text-align : left;
+    padding : 3px 8px 3px 8px;
+    margin : 0;
+    clear : both;
+}
+p.save input[type="submit"] {
+    font-size : 14px;
+    border : 2px solid blue;
+    background : #f6f6f6;
+    -moz-border-radius : 5px;
+}
+p.save input[type="submit"]:hover {
+    color : blue;
+    cursor : pointer;
+}
+p.save.delete input[type="submit"]:hover {
+    color : #900;
+    border-color : #900;
+}
+p.small {
+    padding : 1px 5px 1px 5px;
+    margin : 0;
+    clear : both;
+}
+p.small input[type="submit"],
+button.small {
+    font-size : 10px;
+    border : 1px solid #000; 
+    margin : 2px;
+}
+p.edit {
+    text-align : right;
+    padding : 2px 6px 2px 6px;
+    background-color : #aaa;
+    border : 1px solid #333;
+    margin : 0;
+    clear : both;
+}
+p.edit_text {
+    text-align : right;
+    padding : 2px 6px 2px 6px;
+    background-color : #ccc;
+    border : 1px solid #333;
+    margin : 0;
+    clear : both;
+}
+.print_head p.print {
+    text-align : right;
+    padding : 2px 6px 2px 6px;
+    background-color : #aaa;
+    border : 1px solid #333;
+    margin : 0;
+    clear : both;
+}
+form.cancel {
+    text-align : left;
+    padding : 3px 8px 3px 8px;
+}
+form.cancel p {
+    display : inline;
+    padding : 0;
+    margin : 0;
+}
+select.multibutton {
+    float : left;
+}
+p.print_edit {
+    padding : 2px 6px 2px 6px;
+    border : 1px solid #333;
+    margin : 0;
+
+    float : left;
+    background-color : #fff;
+    clear : left;
+}
+p.print_edit + p.edit {
+    clear : right;
+}
+/* }}} */
+/* admin role selector *{{{*/
+#role_selector {
+    padding : 0;
+    margin : 0 2em;
+    height : 1em;
+}
+#role_selector li {
+    font-size : .8em;
+    list-style : none;
+    background : #fff;
+    padding : 2px 7px;
+    float : left;
+}
+#role_selector li.role {
+    padding : 0;
+}
+#role_selector li.role a {
+    color : #60c;
+    font-weight : normal;
+    padding : 2px 7px;
+    border : 1px solid #60c;
+    border-bottom : none;
+    margin-left : -1px;
+    display : block;
+}
+#role_selector li.role a.active {
+    background : #dedeff
+}
+/*}}}*/
+tr.even {
+    background : #ccc;
+}
+tr.odd {
+    background : #eee;
+}
+fieldset.subtle {
+    border-color : #fb0;
+    border-style : dotted;
+}
+#footer {
+    padding : 7px 0 0 0;
+    background-image : url( '../img/shadow_up.png' );
+    background-repeat : repeat-x;
+    background-position : 0px 6px;
+    position : fixed;
+    width : 100%;
+    height : 30px;
+    top : 700px;
+    right : 0;
+    display : none;
+}
+#footer p {
+    font-size : 11px;
+    font-style : normal;
+    text-align : right;
+    color : #666;
+    background-color : #ddd;
+    padding : 2px 15px 0 0;
+    margin : 3px 0 0 0;
+    height : 20px;
+}
+/* buttons {{{*/
+p.close_button,
+#close_button {
+    padding : 0;
+    margin : 0;
+}
+p.close_button a,
+#close_button a {
+    padding : 0;
+    background : transparent url( '../img/close_button.gif' ) no-repeat;
+    margin : 0;
+    display : block;
+    width : 24px;
+    height : 18px;
+}
+p.close_button a span,
+#close_button a span {
+    display : none;
+}
+p.close_button:hover a,
+#close_button:hover a {
+    background : transparent url( '../img/close_button.gif' ) 0 -18px no-repeat;
+}
+/*}}}*/
+/* icons {{{*/
+div.add_item {
+    margin : 10px;
+    position : absolute;
+    top : 0;
+    right : 0;
+    z-index : 6;
+}
+div.add_item a {
+    padding : 5px;
+    background : #fff url( '../img/icons/add.png' ) no-repeat 50% 50%;
+    border : 1px solid #ddd;
+    width : 17px;
+    height : 17px;
+    display : block;
+
+/*     height : 27px; */
+}
+div.add_item em {
+    display : none;
+    font-style : normal;
+    text-align : center;
+    padding : 2px 5px;
+    background-color : #dedeff;
+    border : 1px solid #999;
+    width : 11em;
+
+    position : absolute;
+    top : 28px;
+    right : -5px;
+    z-index : -1;
+}
+div.add_item a:hover {
+    border-color : #999;
+    border-bottom-color : #dedeff;
+    background-color : #dedeff;
+}
+div.add_item a:hover em {
+    display : block;
+}
+/*}}}*/

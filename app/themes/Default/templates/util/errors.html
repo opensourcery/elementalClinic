@@ -1,0 +1,16 @@
+[% RETURN UNLESS errors %]
+<div class="errors">
+    <img src="../res/[% Config.theme %]/img/icon_error_b.png" width="50" height="50" alt="error icon" />
+    <div>
+    [% IF err_note %]
+        <p><strong>[% err_note %]</strong></p>
+        <hr>
+    [% ELSE %]
+    <p>Please correct these errors and try again:</p>
+    [% END %]
+    <ul>
+        [% FOR error IN errors %]
+        <li>[% error %]</li>
+        [% END %]
+    </ul>
+</div></div>

@@ -1,0 +1,41 @@
+[% INCLUDE report/header.html %]
+[% "<p>There was no data for this report.</p>" UNLESS data.schedule_details.0 %]
+<p>
+    [% FOR details IN data.schedule_details %]
+        [% details.dow %]
+        [% details.sa_date %]
+        Dr. [% details.lname %]
+        [% details.location %] 
+    [% END %]
+</p>
+
+<table border="0" cellspacing="5" cellpadding="5">
+    <tr>
+        <th>Time</th>
+        <th>Confirm</th>
+        <th>FName</th>
+        <th>MI</th>
+        <th>LName</th>
+        <th>Fax</th>
+        <th>Chart</th>
+        <th>Notes</th>
+        <th>HomePhone</th>
+        <th>Payment</th>
+        <th>Employee</th>
+    </tr>
+    [% FOR record IN data.schedule_appointments %]
+    <tr>
+        <td>[% record.appt_time FILTER time_format('12') %]</td>
+        <td>[% record.confirm %]</td>
+        <td>[% record.c_fname %]</td>
+        <td>[% record.c_mname %]</td>
+        <td>[% record.c_lname %]</td>
+        <td>[% record.fax %]</td>
+        <td>[% record.chart %]</td>
+        <td>[% record.notes %]</td>
+        <td>[% record.phone %]</td>
+        <td>[% record.payment %]</td>
+        <td>[% record.p_fname %]</td>
+    </tr>
+    [% END %]
+</table>

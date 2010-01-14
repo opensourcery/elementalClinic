@@ -1,0 +1,52 @@
+[% RETURN UNLESS current_user.id %]
+[%- IF no_client_selector_popup %]
+<input type="hidden" name="no_client_selector_popup" value="1" />
+[%- END %]
+[% '<div id="clients">' UNLESS ajax %]
+    <div id="search_filter">
+        [% IF ajax;
+            INCLUDE util/close_button.html click_action = "return client_selector( '$script' )";
+        END %]
+        <div id="search_only">
+            <h4>Search</h4>
+            <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" id="search_pref" name="search_pref" onsubmit="return search_clients( 'home', '[% Config.theme %]' )">
+                [% INCLUDE util/input_text.html
+                    name    = "search"
+                    value   = search
+                %]
+                <p class="search"><input type="submit" value="Search"></p>
+            </form>
+            <p class="instructions">Enter name, DOB, SSN, CPMS, or insurance ID.</p>
+        </div>
+
+        <h3 id="or">&#8212; OR &#8212;</h3>
+
+        <div id="filter_only">
+            [% INCLUDE util/client_filter.html
+                onchange = "return filter_clients( 'home', '$Config.theme' )"
+            %]
+        </div>
+    </div>
+
+    <div id="client_results">
+        <form method="[% Config.form_method %]" action="[% controller || 'demographics' %].cgi" enctype="application/x-www-form-urlencoded" id="clientform" name="clientform">
+        <h4>Clients</h4>
+        [% IF clients %]
+            <p id="client_results_control">
+                <select name="client_id" id="client_id" onchange="document.forms['clientform'].submit()">
+                [% FOR one IN clients %]
+                    <option value="[% one.client_id %]"[% IF one.client_id == client.id; ' selected="selected"'; END %]>[% "$one.lname, $one.fname $one.mname" %]</option>
+                [% END %]
+                </select>
+                <input type="hidden" name="op" id="op" value="home" />
+                <input type="submit" value="View the Client &#187;" /> 
+            </p>
+        [% ELSE %]
+            <p id="client_results_control">No clients in this list.</p>
+        [% END %]
+        </form>
+    </div>
+    
+    <input type="hidden" id="client_selector_loaded" name="client_selector_loaded" value="0" />
+    <hr class="div" />
+[% '</div>' UNLESS ajax %]

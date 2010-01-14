@@ -1,0 +1,33 @@
+<!-- util/input_text BEGIN -->
+[%
+    id = id || name;
+    size = size ? " size=\"$size\"" : '';
+    maxlength = maxlength ? " maxlength=\"$maxlength\"" : '';
+    class = class ? " class=\"$class\"" : '';
+    wraptag = ( action == 'hidden' ) ? 0 : wraptag;
+    wraptag = dl ? 0 : wraptag;
+    wrapclass = wrapclass ? " class=\"$wrapclass\"" : "";
+    IF label_decoration;
+        lds = "<$label_decoration>";
+        lde = "</$label_decoration>";
+    END;
+    currency = currency ? '$' : '';
+    required = required ? 'class="required"' : '';
+-%]
+[% "<$wraptag$wrapclass>" IF wraptag %]
+[% IF action == 'display' %]
+    [% IF dl %]
+    [% "<dt><label$class>$label:</label></dt>" IF label %] <dd>[% currency %]<strong id="[% id %]" [% class %]>[% value %]</strong></dd>
+    [% ELSE %]
+    [% "<label$class>$label:</label>" IF label %] [% currency %]<strong id="[% id %]" [% class %]>[% value %]</strong>
+    [% END %]
+[% ELSIF action == 'hidden' %]
+    <input type="hidden" name="[% name %]" value="[% value %]" />
+[% ELSE %]
+    [% IF label %]
+    [% "<dt>" IF dl %][% lds %]<label for="[% id %]"[% class %]>[% label %]: </label>[% lde %][% "<br />" IF break %][% "</dt>" IF dl %]
+    [% END %]
+    [% "<dd>" IF dl %]<strong>[% currency %]</strong><input [% required %] type="[% password ? 'password' : 'text' %]" name="[% name %]" id="[% id %]" value="[% value %]"[% size %] [% maxlength %][% class %] />[% "</dd>" IF dl %]
+[% END %]
+[% "</$wraptag>" IF wraptag %]
+<!-- util/input_text END -->

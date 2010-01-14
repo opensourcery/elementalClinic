@@ -1,0 +1,13 @@
+.left_edit {
+    width : 45%;
+    float : left;
+}
+.right_edit {
+    width : 45%;
+    margin-left : 55%;
+}
+.second {
+    background-color : #fff;
+    padding : 7px;
+    border : 1px solid #fb0;
+}

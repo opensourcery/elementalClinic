@@ -1,0 +1,72 @@
+#!/usr/bin/env perl
+
+=head1 NAME
+
+install - install emc Perl module dependencies from a tarball
+
+=head1 SYNOPSIS
+
+  install emc.tar.gz
+
+=head1 DESCRIPTION
+
+Given a tarball of emc it will use CPAN.pm to install its Perl module
+dependencies.
+
+Your CPAN shell must be configured and you must have permission to
+install modules.  We recommend configuring CPAN to use 'sudo'.
+
+=head1 NOTES
+
+The tarball is only necessary because that's how the CPAN shell thinks
+about distributions.
+
+=cut
+
+use strict;
+use warnings;
+
+use File::Temp qw(tempdir);
+use File::Path;
+use CPAN 1.92;
+use CPAN::HandleConfig;
+use CPAN::Version;
+
+my $distfile = shift;
+my $tmpdir = tempdir( CLEANUP => 1 );
+
+system qq[tar -C $tmpdir -zxf "$distfile"];
+
+my ($dir) = glob("$tmpdir/eleMentalClinic-*");
+
+chdir $dir or die $!;
+
+CPAN::HandleConfig->load;
+$CPAN::Config->{auto_commit} = 0;
+@{$CPAN::Config->{urllist}} or
+  $CPAN::Config->{urllist} = [ q[http://www.perl.org/CPAN] ];
+$CPAN::Config->{prerequisites_policy} = q[follow];
+
+my $dist = CPAN::Shell->expandany("$dir/.");
+if (-e "_build") {
+  $dist->clean if -e "Build";
+  File::Path::rmtree("_build");
+}
+$dist->make;
+
+for my $type (keys %{ $dist->prereq_pm }) {
+  my $p = $dist->prereq_pm->{$type};
+  for my $name (keys %$p) {
+    my $version = $p->{$name};
+    my $mod = CPAN::Shell->expandany($name);
+    if ($mod->inst_version and
+      CPAN::Version->vge($mod->inst_version, $version)) {
+      printf "%-40s %-10s >= %-10s : up to date\n",
+        $name, $mod->inst_version, $version;
+      next;
+    }
+    printf "%-40s %-10s <  %-10s : needs update\n",
+      $name, $mod->inst_version || 'undef', $version;
+    $mod->install;
+  }
+}

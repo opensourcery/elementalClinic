@@ -1,0 +1,76 @@
+[% IF( event_op && ! discharge_incomplete && ! discharge_confirm && ( op != 'referral_edit' )) %]
+[% IF( client.placement.level_of_care_locked && ! ( current_user.financial || current_user.admin ));
+    loc_locked = 1;
+    END
+%]
+    <fieldset class="subtle">
+        <legend>New Placement Event</legend>
+        <form method="[% Config.form_method %]" name="placement_event" action="[% script %]" enctype="application/x-www-form-urlencoded">
+        <table class="placement">
+            <tr>
+                <th class="date">Date</th>
+                <th class="program">Program</th>
+                <th class="staff">Service coordinator</th>
+                <th class="loc">Level of care [% '<span class="attention">(locked)</span>' IF loc_locked %]</th>
+                <th class="action"></th>
+            </tr>
+            <tr>
+                <td>
+                [% INCLUDE util/date_picker.html
+                    name    = 'event_date'
+                    value   = event_date || 'today'
+                    wraptag = 'p'
+                %]
+                </td>
+
+                <td>
+                [% INCLUDE util/select_new.html
+                    name    = 'program_id'
+                    values  = department.list_programs( 'admission' )
+                    default = client.placement.program_id
+                    keyname = 'rec_id'
+                    valname = 'full_name'
+                    use_id  = 1
+                %]
+                </td>
+
+                <td>
+                [% INCLUDE util/select_new.html
+                    name    = 'staff_id'
+                    values  = department.get_service_coordinators
+                    default = client.placement.staff_id
+                    keyname = 'staff_id'
+                    valname = 'eman'
+                    leading_blank   = 'Optional'
+                %]
+                </td>
+
+                <td>
+                [% INCLUDE util/choose_valid_data.html
+                    name   = 'level_of_care_id'
+                    table  = '_level_of_care'
+                    type    = 'select'
+                    default = client.placement.level_of_care_id
+                    use_id  = 1
+                    leading_hash    = [{ name => 'Optional' }]
+                    action  = loc_locked ? 'display' : 'edit'
+                %]
+                </td>
+                <td>
+                    [%- SWITCH event_op;
+                        CASE 'admit_from_referral'; label = 'Admit';
+                        CASE 'change'; label = 'Change';
+                        CASE; 'SHOULD_NEVER_APPEAR';
+                    END %]
+                    <input type="hidden" name="client_id" value="[% client.id %]" />
+                    <input type="hidden" name="op" value="[% event_op %]" />
+                    <input type="submit" name="submit" value="[% label %]" />
+                </td>
+            </tr>
+        </table>
+        </form>
+    [% IF loc_locked %]
+    <p><strong>Level of care</strong> has been locked by a Financial personnel.  Any other placement inforamtion may be changed.</p>
+    [% END %]
+    </fieldset>
+[% END %]

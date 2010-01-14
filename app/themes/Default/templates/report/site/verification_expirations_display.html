@@ -1,0 +1,41 @@
+[% "<p>There was no data for this report.</p>" UNLESS data.0 %]
+
+<table>
+    <thead>
+    <tr>
+        <td colspan="11">
+            [% INCLUDE report/header.html %]
+        </td>
+    </tr>        
+    <tr>
+        <th>ID</th>
+        <th>Last</th>   
+        <th>First</th>
+        <th>MI</th>
+        <th>Verification Expires</th>
+        <th>Sex</th>
+        <th>Phone</th>
+        <th>Phone2</th>
+        <th>No Call</th>
+        <th>State</th>
+        <th>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    [% FOR entry IN data %]
+    <tr [% rowclass %]>
+        <td>[% entry.client_id %]</td>
+        <td>[% entry.lname %]</td>
+        <td>[% entry.fname %]</td>
+        <td>[% entry.mname %]</td>
+        <td>[% entry.verification_expires FILTER date_format(current_user.pref.date_format) %]</td>
+        <td>[% entry.sex  %]</td>
+        <td>[% entry.phone %]</td>
+        <td>[% entry.phone_2 %]</td>
+        <td>[% entry.dont_call %]</td>
+        <td>[% entry.state %]</td>
+        <td>[% entry.email %]</td>
+    </tr>
+    [% END %]
+    </tbody>
+</table>

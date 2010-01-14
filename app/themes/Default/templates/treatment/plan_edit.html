@@ -1,0 +1,98 @@
+[% INCLUDE global/client_head.html
+    navsec = 'clinical'
+    navpage = 'treatment'
+%]
+
+<div id="center" class="client_box">
+    <form method="[% Config.form_method %]" action="[% program %]" enctype="application/x-www-form-urlencoded">
+    <h4>[% action %] Treatment Plan</h4>
+    <div class="minileft">
+    <p>
+    [% INCLUDE util/date_picker.html
+        name    = 'start_date'
+        label   = 'Start'
+        value   = current.start_date
+        required = 1
+    %]
+    |
+    [% INCLUDE util/date_picker.html
+        name    = 'end_date'
+        label   = 'End'
+        value   = current.end_date
+    %]
+    </p>
+
+    [% INCLUDE util/textarea.html
+        name    = 'assets'
+        label   = 'Strengths'
+        value   = current.assets
+        wraptag = 'p'
+        cols    = 50
+        rows    = 4
+        break   = 1
+    %]
+
+    [% INCLUDE util/textarea.html
+        name    = 'debits'
+        label   = 'Challenges'
+        value   = current.debits
+        wraptag = 'p'
+        cols    = 50
+        rows    = 4
+        break   = 1
+    %]
+</div>
+
+<div class="miniright">
+    <h4>Limitations</h4>
+    [% INCLUDE util/checkbox.html
+        name    = 'meets_dsm4'
+        label   = 'Is 18 yrs or older, has DSM IV diagnosis'
+        value   = current.meets_dsm4
+        wraptag = 'p'
+    %]
+
+    [% INCLUDE util/checkbox.html
+        name    = 'needs_selfcare'
+        label   = 'Demonstrates marked difficulties in self care'
+        value   = current.needs_selfcare
+        wraptag = 'p'
+    %]
+
+    [% INCLUDE util/checkbox.html
+        name    = 'needs_skills'
+        label   = 'Shows marked difficulties in maintaining social functioning'
+        value   = current.needs_skills
+        wraptag = 'p'
+    %]
+
+    [% INCLUDE util/checkbox.html
+        name    = 'needs_support'
+        label   = 'Exhibits reliance on psychiatric treatment and support'
+        value   = current.needs_support
+        wraptag = 'p'
+    %]
+
+    [% INCLUDE util/checkbox.html
+        name    = 'needs_adl'
+        label   = 'Exhibits marked restriction of ADL'
+        value   = current.needs_adl
+        wraptag = 'p'
+    %]
+
+    [% INCLUDE util/checkbox.html
+        name    = 'needs_focus'
+        label   = 'Exhibits deficiencies of concentration and task completion'
+        value   = current.needs_focus
+        wraptag = 'p'
+    %]
+</div>
+
+<hr class="div" />
+
+    <input type="hidden" name="client_id" value="[% client.id %]" />
+    <input type="hidden" name="rec_id" value="[% current.rec_id %]" />
+    <p class="save"><input type="submit" name="op" id="op_save" value="Save Plan" /></p>
+    </form>
+    [% INCLUDE util/form_cancel.html %]
+</div>

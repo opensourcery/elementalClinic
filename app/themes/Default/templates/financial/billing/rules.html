@@ -1,0 +1,26 @@
+[% IF track == 'validate' %]
+    <dl>
+    [% FOR rule IN rules; 
+        rule_id = "rule_"_ rule.rec_id
+    %]
+        [% INCLUDE util/checkbox.html
+            name    = rule_id
+            label   = rule.rec_id
+            wraptag = 'dt'
+            value   = selected_rules ? selected_rules.${ rule.rec_id } : rule.last_used
+        %]
+        <dd><label for="[% rule_id %]">[% rule.name %]</label></dd>
+    [% END %]
+    </dl>
+[% ELSIF track == 'results' %]
+    <dl>
+    [% FOR rule IN rules %]
+        <dt> 
+            <a href="[% script %]?op=billing_set_failures_unbillable;validation_rule_id=[% rule.id %];validation_set_id=[% Current.validation_set.id %];result_set_id=[% result_set_id %];section=billing;step=[% Current.step %];rolodex_id=[% Current.insurer.id %]" 
+                class="set_failures_unbillable" title="Mark all notes which failed this rule as 'Unbillable'">$</a> 
+            [% rule.rec_id %] 
+        </dt> 
+        <dd>[% rule.name %]</dd> 
+    [% END %]
+    </dl>
+[% END %]

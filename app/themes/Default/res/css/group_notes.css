@@ -1,0 +1,69 @@
+#noteinfo {
+    float : left;
+    width : 480px;
+    border-right : 1px dotted #60c;
+}
+#noteitself {
+    margin-left : 500px;
+}
+#attendance {
+    margin-bottom : 20px;
+}
+#attendees {
+    width : 30%;
+    float : left;
+}
+#prognote {
+    width : 60%;
+    float : right;
+}
+div.client_box {
+    margin-top : 20px;
+}
+h3 {
+    margin : 0 0 15px 0;
+    border-bottom : 1px solid #333;
+}
+h3 em {
+    font-style : normal;
+    font-weight : normal;
+}
+.select_member_action p {
+    padding : 2px 0 2px 0;
+    border : 1px solid #dedeff;
+    border-width : 1px 3px 1px 3px;
+    margin : 0;
+}
+.select_member_action p label {
+    font-size : 11px;
+    margin-right : 10px;
+}
+.select_member_action span {
+    padding : 0 5px 0 0;
+    margin : 0 10px 0 0;
+}
+p.even {
+    background-color : #fff;
+    border-color : #fff;
+}
+.select_member_action p:hover {
+    border-color : #60c;
+}
+p.savenote {
+    font-size : 11px;
+    font-style : italic;
+    text-align : right;
+    padding : 0;
+    margin : 0;
+}
+ul.attendee_list li a {
+    font-weight : normal;
+}
+ul.attendee_list li.active a {
+    font-weight : bold;
+}
+p.return {
+    margin : -15px 0 20px 0;
+    clear : both;
+}
+

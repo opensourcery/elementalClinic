@@ -1,0 +1,32 @@
+[% INCLUDE global/client_head.html
+    navsec = 'home'
+    navpage = 'placement'
+%]
+[% SET discharge_incomplete = 1 IF( ! client.placement.active && ! client.placement.last_discharge.committed ) %]
+
+<div id="center" class="client_box">
+
+    [% IF client.placement.is_admitted %]
+        <h4>[% INCLUDE placement/client_status.html %]</h4>
+        [% IF( current_event && current_event.referral ) %]
+            [% INCLUDE placement/referral.html %]
+        [% END %]
+        [% INCLUDE placement/admitted.html %]
+
+    [% ELSIF client.placement.is_referral %]
+        <h4>[% INCLUDE placement/client_status.html %]</h4>
+        [%- IF ! client.placement.referral %]
+            <p>Client cannot be admitted until you enter their referral information.</p>
+        [%- END %]
+        [% IF( ! client.placement.referral || ( current_event && referral_edit )) %]
+            [% INCLUDE placement/referral.html %]
+        [% END %]
+
+    [% ELSIF !client.placement.active %]
+        <h4>[% INCLUDE placement/client_status.html %]</h4>
+        [% INCLUDE placement/inactive.html %]
+
+    [% END %]
+
+    [% INCLUDE placement/history.html %]
+</div>

@@ -1,0 +1,17 @@
+<ul class="tabs">
+    [% INCLUDE link
+        tab_op      = 'home'
+        tab_name    = 'main'
+        tab_label   = 'Edit lookup tables'
+    -%]
+    [% INCLUDE link
+        tab_op      = 'associate'
+        tab_name    = 'associate'
+        tab_label   = 'Table associations'
+    -%]
+</ul>
+[% BLOCK link %]
+    <li [% 'class="active"' IF tab == tab_name %]>
+        <a href="[% script %]?table_name=[% current_table.name %]&group_id=[% current_group.rec_id %]&op=[% tab_op %]">[% tab_label %]</a>
+    </li>
+[% END %]

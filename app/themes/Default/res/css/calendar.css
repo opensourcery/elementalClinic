@@ -1,0 +1,119 @@
+/* munging default elements  {{{*/
+#header {
+    display : none;
+}
+#page {
+    padding : 10px;
+}
+/*}}}*/
+tr.head {
+    background-color : #66c;
+}
+th {
+    text-align : center;
+}
+tr.head th {
+    font : 14px tahoma;
+}
+tr.days {
+    background-color : #dede99;
+}
+tr.days th {
+    font : 12px tahoma;
+}
+a:link,
+a:visited {
+    font : 14px/25px verdana;
+    color : #66c;
+    text-decoration : none;
+    text-align : center;
+    border : 1px solid #ccc;
+    margin : 1px;
+    width : 25px;
+    height : 25px;
+    display : block;
+}
+a:hover {
+    color : #fff;
+    background-color : #66c;
+    border : 1px solid #000;
+}
+th.label {
+    font-weight : bold;
+    color : #dede99;
+    border-width : 0 2px 0 2px;
+}
+th.nav a:link,
+th.nav a:visited {
+    font-size : 20px;
+    font-weight : bold;
+    color : #fff;
+    border : 1px solid #66c;
+    margin : 2px;
+    width : 23px;
+    height : 23px;
+}
+th.nav a:hover {
+    color : #66c;
+    background-color : #fff;
+    border-color : #fff;
+}
+a.today,
+a.today:hover,
+td.today {
+    font-weight : bold;
+    border : 1px solid #000;
+}
+a.current,
+a.current:hover,
+td.current {
+    font-weight : bold;
+    color : #fff;
+    background-color : #66c;
+    border : 1px solid #000;
+}
+
+td.current,
+td.today {
+    font : 14px tahoma;
+    font-weight : bold;
+    text-align : center;
+    width : 25px;
+    height : 25px;
+}
+td.key {
+    font : 12px tahoma;
+}
+
+
+th.nav a:link,
+th.nav a:visited {
+    font-size : 20px;
+    font-weight : bold;
+    color : #66c;
+    background-color : #fff;
+    border : 1px solid #fff;
+    margin : 2px;
+    width : 23px;
+    height : 23px;
+}
+th.nav a:hover {
+    color : #fff;
+    background-color : #66c;
+    border : 1px solid #fff;
+}
+
+/* month head  {{{*/
+table.months {
+    display : none;
+    border-collapse : collapse;
+}
+table.months th {
+    height : auto;
+    width : auto;
+}
+table.months th a {
+    height : auto;
+    width : auto;
+}
+/*}}}*/

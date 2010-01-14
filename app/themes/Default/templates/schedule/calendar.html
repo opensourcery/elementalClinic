@@ -1,0 +1,86 @@
+<script type="text/javascript">
+/* This is providing dynamic resizing of the height of resize_element
+** so that its scrollbar will work properly.  See base.js live_resize().
+*/
+    var resize_percentage = 77 /* integer; percentage of the windeow that we want the element sized for */
+    var resize_element = "left" /* string; element to resize */
+</script>
+<div id='left' class="client_box" >
+    <div id="appointments">[% INCLUDE schedule/appointments.html %]</div><!--appointments-->
+</div>
+<div id='right' class="client_box" >
+  <div id="calendar_view">
+    [% IF ! Config.quick_schedule_availability %]
+    <div class="filters">
+<!--  <dl class=inline>
+        <dt class=label>Location :</dt>
+-->
+        <div class="filter_row">
+        <p class="label">Locale:</p>
+        <p class="control">
+            [% INCLUDE util/choose_valid_data.html
+                name    = 'location_id'
+                table   = '_prognote_location'
+                default = location_id
+                type    = 'select'
+                use_id  = 1
+                leading_hash = [ { value => 0, name => 'Location ...' }]
+            %]
+<!--
+        <dt class=label>Doctor :</dt>
+-->
+        </p>
+        </div>
+        <div class="filter_row">
+        <p class="label">Doctor:</p>
+        <p class="control">
+             [% INCLUDE util/select_new.html
+                name    = 'rolodex_id'
+                default = rolodex.id
+                values  = treaters
+                keyname = 'rec_id'
+                valname = 'lname'
+                leading_blank = "Doctor..."
+            %]
+<!--
+        </dl>
+-->
+        </p>
+        </div>
+    </div><!--calendar filters-->
+    [% END %]
+    <input type="hidden" name="client_id" id="client_id" value="[% client.id %]" />
+
+    <div id="calendar"></div>
+    <hr class="div" /><!--calendar-->
+
+    <h4 id="key_head">Key</h4>
+
+    <div id="key">
+        <table class="calendar">
+            [% IF Config.quick_schedule_availability %]
+                <tr>
+                    <td class="doc_scheduled color"></td>
+                    <td class="key_text">No appointments have been made</td>
+                </tr>
+            [% ELSE %]
+                <tr>
+                    <td class="unavailable color"></td>
+                    <td class="key_text">No personnel are scheduled</td>
+                </tr>
+                <tr>
+                    <td class="doc_scheduled color"></td>
+                    <td class="key_text">Personnel are scheduled, no appointments made</td>
+                </tr>
+            [% END %]
+            <tr>
+                <td class="appointments color"></td>
+                <td class="key_text">Appointments have been made</td>
+            </tr>
+        </table>
+    </div>
+
+    <hr class="div" /><!--calendar-->
+    <input type="hidden" id="current_date" value="[% current_date %]" />
+  </div><!-- end calendar_view -->
+</div><!-- end right column -->

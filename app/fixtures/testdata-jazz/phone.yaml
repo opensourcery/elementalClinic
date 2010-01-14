@@ -1,0 +1,136 @@
+1001:
+  rec_id: 1001
+  client_id: 1001
+  phone_number: (212) 254-6436
+  primary_entry: true
+1002:
+  rec_id: 1002
+  client_id: 1001
+  phone_number: (212) 123-4567
+1003:
+  rec_id: 1003
+  client_id: 1002
+  phone_number: (212) 479-7888
+  primary_entry: true
+1004:
+  rec_id: 1004
+  client_id: 1002
+  phone_number: (212) 654-3211
+1005:
+  rec_id: 1005
+  client_id: 1003
+  phone_number: (212) 576-2232
+  primary_entry: true
+1006:
+  rec_id: 1006
+  client_id: 1003
+  phone_number: (212) 456-7890
+1007:
+  rec_id: 1007
+  client_id: 1004
+  phone_number: (212) 475-8592
+  primary_entry: true
+1008:
+  rec_id: 1008
+  client_id: 1004
+  phone_number: (212) 232-2323
+1013:
+  rec_id: 1013
+  rolodex_id: 1001
+  phone_number: 111-222-3333
+  primary_entry: true
+1015:
+  rec_id: 1015
+  rolodex_id: 1002
+  phone_number: 111-222-4444
+  primary_entry: true
+1021:
+  rec_id: 1021
+  rolodex_id: 1005
+  phone_number: 503-111-2222
+  primary_entry: true
+1023:
+  rec_id: 1023
+  rolodex_id: 1006
+  phone_number: 503-225-5336
+  primary_entry: true
+1024:
+  rec_id: 1024
+  rolodex_id: 1006
+  phone_number: 1-800-452-7390
+1025:
+  rec_id: 1025
+  rolodex_id: 1007
+  phone_number: 503-243-2962
+  primary_entry: true
+1026:
+  rec_id: 1026
+  rolodex_id: 1007
+  phone_number: 877-605-3229
+1027:
+  rec_id: 1027
+  rolodex_id: 1008
+  phone_number: 503-802-7000
+  primary_entry: true
+1029:
+  rec_id: 1029
+  rolodex_id: 1009
+  phone_number: 503-574-6300
+  primary_entry: true
+1030:
+  rec_id: 1030
+  rolodex_id: 1009
+  phone_number: 877-245-4077
+1031:
+  rec_id: 1031
+  rolodex_id: 1010
+  phone_number: 503-227-4381
+  primary_entry: true
+1035:
+  rec_id: 1035
+  rolodex_id: 1012
+  phone_number: 510-549-1125
+  primary_entry: true
+1043:
+  rec_id: 1043
+  rolodex_id: 1016
+  phone_number: 251-537-2484
+  primary_entry: true
+1044:
+  rec_id: 1044
+  rolodex_id: 1016
+  phone_number: (491)566-1397
+1045:
+  rec_id: 1045
+  rolodex_id: 1017
+  phone_number: 428-837-5789
+  primary_entry: true
+1046:
+  rec_id: 1046
+  rolodex_id: 1017
+  phone_number: (378) 260-5586
+1047:
+  rec_id: 1047
+  rolodex_id: 1018
+  phone_number: (432) 080-6307
+  primary_entry: true
+1048:
+  rec_id: 1048
+  rolodex_id: 1018
+  phone_number: 844.951.1117
+1049:
+  rec_id: 1049
+  rolodex_id: 1019
+  phone_number: (436)191-0313
+  primary_entry: true
+1050:
+  rec_id: 1050
+  rolodex_id: 1019
+  phone_number: (112) 261-1516
+1051:
+  rec_id: 1051
+  client_id: 1003
+  phone_number: 212-475-8592
+  phone_type: 'Work: Blue Note'
+  active: 1
+

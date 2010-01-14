@@ -1,0 +1,85 @@
+[% INCLUDE global/client_head.html
+    navsec = 'groups'
+%]
+
+
+<div id="left" class="client_box" style="margin-top:0;">
+<h4>Client Groups</h4>
+
+    <div id="active_menu_wrapper">
+        <form method="[% Config.form_method %]" action="groups.cgi" enctype="application/x-www-form-urlencoded">
+            [% INCLUDE util/active_group_menu.html %]
+            <input type="hidden" name="client_id" value="[% client.id %]" />
+            <input type="hidden" name="group_id" value="[% group.id %]" />
+            <input type="hidden" name="op" value="client_history" />
+        </form>
+    </div>
+
+<form method="[% Config.form_method %]" action="groups.cgi" enctype="application/x-www-form-urlencoded" id="group_select" name="group_select">
+        [% INCLUDE util/select_new.html
+            name    = 'group_id'
+            values  = groups
+            size    = 5
+            default = group.rec_id
+            keyname = 'rec_id'
+            valname = 'name'
+            onchange    = "document.forms['group_select'].submit()"
+        %]
+    <input type="hidden" name="client_id" id="client_id" value="[% client.id %]" />
+    <input type="hidden" name="op" id="op" value="client_group_detail" />
+    <input type="submit" name="op_view" value="View" />
+</form>
+
+[% IF group %]
+<p><a href="groups.cgi?group_id=[% group.rec_id %]">&#171; Group home</a></p>
+
+<h4>Progress notes <em>for [% group.name %]</em></h4>
+
+[% prognotes = []; uncommitted_group_notes = []; # necessary
+FOR hist IN client.group_history( group.rec_id );
+    hist.get_prognote
+        ? prognotes.push( hist )
+        : uncommitted_group_notes.push( hist );
+END %]
+
+[% IF prognotes.0 %]
+<form method="[% Config.form_method %]" action="group_notes.cgi" enctype="application/x-www-form-urlencoded" id="attendee_chooser" name="attendee_chooser">
+    <select name="attendee_id" id="attendee_id" size="10" onchange="document.forms['attendee_chooser'].submit()">
+        [% FOR attend IN prognotes;
+            UNLESS attend.get_prognote.note_committed;
+                attend_action = 'Uncommitted';
+            ELSE;
+                SWITCH attend.action;
+                    CASE 'none';        attend_action = 'None'; # should not happen
+                    CASE 'group_note';  attend_action = 'Group note';
+                    CASE 'no_show';     attend_action = 'No show';
+                END;
+            END %]
+        <option value="[% attend.rec_id %]" [% 'selected="selected"' IF attend.get_prognote.rec_id == prognote.rec_id %]>[% attend.get_prognote.note_date %] ([% attend_action %])</option>
+        [% END %]
+    </select>
+    <input type="hidden" name="op" value="client_prognote_detail" />
+    <input type="hidden" name="client_id" value="[% client.id %]" />
+    <input type="submit" name="op_view" value="View" />
+    <input type="hidden" name="group_id" value="[% group.id %]" />
+</form>
+[% ELSE %]
+<p>No group progress notes for this client.</p>
+[% END %]
+
+    [% FOR attend IN uncommitted_group_notes %]
+    <hr class="subtle" />
+    <p>Client has one <a href="group_notes.cgi?op=group_note_detail&group_note_id=[% attend.get_group_note.rec_id %]"> uncommitted <strong>group</strong> note</a> for <strong>[% attend.get_group.name %]</strong> group <em>(link goes to <strong>Group Management</strong>)</em>.</p>
+    [% END %]
+
+[% END %]
+</div>
+
+[% IF prognote %]
+<div id="right" class="client_box" style="margin-top:0;">
+[% INCLUDE group_notes/note.html
+    action          = 'display'
+    client_space    = 1
+%]
+</div>
+[% END %]

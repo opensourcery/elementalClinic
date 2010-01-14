@@ -1,0 +1,50 @@
+Installation is complete, but there are still a couple of steps you must
+complete before you can use eleMentalClinic:
+
+1) Create a user for eleMentalClinic with a postgres role
+
+    $ createuser -P elementalclinic
+
+2) Create the postgres database for eleMentalClinic
+
+    $ createdb elementalclinic
+
+3) Edit /etc/elementalclinic/config.yaml
+
+    Provide the information for the user and database you created.
+
+4) Set up eleMentalClinic data
+
+    $ elementalclinic_migration --to 999
+    $ sudo elementalclinic_fixture_import -f /usr/share/elementalclinic/fixtures/base-sys
+    If you would like the testdata-jazz fixture you may load it after loading base-sys.
+    $ sudo elementalclinic_fixture_import -f /usr/share/elementalclinic/fixtures/testdata-jazz
+
+5) Edit your /etc/hosts file to add the following line:
+
+    127.0.0.1 elementalclinic
+
+6) Enable the eleMentalClinic vhost in apache.
+
+    An example apache config file has been placed in
+    /etc/apache2/sites-available/elementalclinic.conf
+
+    $ sudo a2ensite elementalclinic.conf
+    $ sudo /etc/init.d/apache2 reload 
+
+##
+# Upgrade Instructions
+#
+Step 1) turn off apache
+Step 2) Backup database
+Step 3) Install updated emc packages
+Step 4) ignore the fresh installation instructions
+Step 5)
+
+    run elementalclinic_migration --update --to 999
+*OR If there are any errors restore the backup and try this instead*
+    run elementalclinic_migration --update --to 999 --upgrade
+
+--upgrade is only needed for very old installations (older than 5)
+
+Step 6) Start apache and verify app is working.

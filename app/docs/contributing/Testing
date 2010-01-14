@@ -1,0 +1,37 @@
+Testing standards
+-----------------
+
+- Every Perl object must have one and only one test file.
+- This test file must test every method of the object for all reasonable
+  failure and success conditions.
+- Each test file must use test data from the Test.pm module, or your own
+  sub-class of that module.
+- Each test file must leave the test database exactly as it was found; test
+  files may not have side effects which could affect other tests.
+- Each test file must be repeatable; you must be able to run it 2 or 5 times in
+  succession with the same results.
+- Every bugfix in object code must be accompanied by a new test.
+
+Test naming conventions
+-----------------------
+
+Tests must be named correctly in the test directory, with three numbers and an
+object name.  For instance, "100client," "822client_prognote_report."  The
+first of these numbers must fit the following scheme:
+
+- 0??_test.t : infrastructure code.  code which helps the application work, but
+  does not define business logic.
+
+- 1??_test.t : core logic:  code which is required for the application, like
+  Client.
+
+- 2??_test.t - 7??_test.t : most objects which implement features should go here.
+
+- 8??_test.t : reports.
+
+- 9??_test.t : web application tests.  automated tests which directly
+  manipulate the application.
+
+- x??_test.t : temporary scratch space, for tests which will soon be moved
+  elsewhere (note that this is a literal "x")
+

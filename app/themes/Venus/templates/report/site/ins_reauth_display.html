@@ -1,0 +1,41 @@
+<table border="1">
+    <thead>
+    <tr>
+        <td colspan="6">
+            [% INCLUDE report/header.html %]
+            
+            <p>Mental Health Insurance Carrier: [% IF rolodex_name; rolodex_name; ELSE; "All Mental Health Insurance Carriers"; END %]</p>
+            <p>Start: [% start_date_facade %]</p>
+            <p>End: [% end_date_facade %]</p>
+            
+            [% "<p>There was no data for this insurance carrier and date range.</p>" UNLESS data.0 %]
+
+        </td>
+    </tr>
+    </thead>
+    <tbody>
+    [% FOR entry IN data %]
+    <tr>
+        <th colspan="6"><h4>[% entry.name %]</h4></th>
+    </tr>
+    <tr>
+        <th>End Date</th>
+        <th>Start Date</th>
+        <th>Name</th>
+        <th>SSN</th>
+        <th>DOB</th>
+        <th>Insurance ID</th>
+    </tr>
+        [% FOR record IN entry.data %]
+        <tr [% rowclass %]>
+            <td>[% record.auth_end_date %]</td>
+            <td>[% record.auth_start_date %]</td>
+            <td>[% record.lname %], [% record.fname %]</td>
+            <td>[% record.ssn %]</td>
+            <td>[% record.dob %]</td>
+            <td>[% record.insurance_id %]</td>
+        </tr>
+        [% END %]
+    [% END %]
+    </tbody>
+</table>

@@ -1,0 +1,20 @@
+    <fieldset class="subtle">
+        <legend>Discharge</legend>
+        <form method="[% Config.form_method %]" action="placement.cgi" enctype="application/x-www-form-urlencoded">
+            [% IF discharge_confirm %]
+                [% INCLUDE util/date_picker.html
+                    name    = 'discharge_date'
+                    label   = 'Discharge date'
+                    value   = 'today'
+                    wraptag = 'p'
+                %]
+                <p><strong>Note:</strong> Client will be discharged immediately.  </p>
+            [% END %]
+            <input type="hidden" name="client_id" value="[% client.id %]" />
+            <input type="hidden" name="op" value="discharge" />
+            <input type="hidden" name="discharge_confirm" value="[% discharge_confirm %]" />
+            <p[%- ' class="save"' IF discharge_confirm %]>
+                <input type="submit" name="submit" value="Discharge client" /></p>
+        </form>
+            [%- INCLUDE util/form_cancel.html IF discharge_confirm %]
+    </fieldset>

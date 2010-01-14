@@ -1,0 +1,10 @@
+[%-  #
+    # NOTE: must be called with PROCESS
+    # 
+    # allows incoming 'i' as 1 or 0 to override loop index
+    MACRO rowclass( i ) BLOCK;
+    UNLESS( i == 0 || i == 1 ); i = loop.index; END;
+    rn = i % 2;
+    IF rn; 'class="even"'; ELSE; 'class="odd"'; END;
+    END
+-%]

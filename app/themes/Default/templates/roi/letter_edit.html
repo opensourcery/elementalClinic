@@ -1,0 +1,122 @@
+<form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+    <div>
+        <div id="tofrom">
+        [% INCLUDE util/checkbox.html
+            name    = 'release_to'
+            label   = 'Release to'
+            value   = current.release_to
+            wraptag = 'p'
+            reverse = 1
+        %]
+        [% INCLUDE util/checkbox.html
+            name    = 'release_from'
+            label   = 'Release from'
+            value   = current.release_from
+            wraptag = 'p'
+            reverse = 1
+        %]
+        </div>
+
+        <div>
+        <p style="margin-bottom : 0px;">
+        [% INCLUDE util/select_new.html
+            name    = 'rolodex_id'
+            label   = 'Contact'
+            values  = release_contacts
+            default = current.rolodex_id || rolodex.rec_id
+            keyname = 'rec_id'
+            valname = 'eman_company'
+        %]
+        </p>
+        [% IF action != 'edit' %]
+        <p style="margin-left : 215px;">
+            [% "$current.rolodex.addr<br />" IF current.rolodex.addr %]
+            [% "$current.rolodex.addr_2<br />" IF current.rolodex.addr_2 %]
+            [% current.rolodex.city %], [% current.rolodex.state %] [% current.rolodex.post_code %]<br />
+            [% current.rolodex.phone_f %]
+            </p>
+        [% END %]
+        [% INCLUDE util/choose_valid_data.html
+            name    = 'print_header_id'
+            label   = 'Print Header'
+            table   = '_print_header'
+            default = current.print_header_id
+            type    = 'select'
+            use_id  = 1
+            show_blank = 0
+            wraptag = 'p'
+        %]
+        </div>
+        [% INCLUDE util/date_picker.html
+            name    = 'renewal_date'
+            value   = current.renewal_date || 'today'
+            label   = 'Renewal date'
+            wraptag = 'p'
+        %]
+    </div>
+
+    <fieldset>
+        <legend>Release Items</legend>
+        [% IF action == 'edit' # show all possible items %]
+            [% INCLUDE release_list_client
+                heading = 'Sensitive Information'
+                list    = current.site_release_list_sensitive
+            %]
+            [% INCLUDE release_list_client
+                heading = 'Standard Information'
+                list    = current.site_release_list_normal
+            %]
+
+        [% ELSE # show only items for this release %]
+            [% INCLUDE release_list_static
+                heading = 'Sensitive Information'
+                list    = current.release_list_sensitive_names
+            %]
+            [% INCLUDE release_list_static
+                heading = 'Standard Information'
+                list    = current.release_list_normal_names
+            %]
+
+            [% UNLESS current.release_list_sensitive_names || current.release_list_normal_names %]
+            <p>No release items.</p>
+            [% END %]
+        [% END %]
+    </fieldset>
+
+    <input type="hidden" name="client_id" id="client_id" value="[% client.id %]" />
+    <input type="hidden" name="roi_id" id="roi_id" value="[% current.rec_id %]" />
+
+    [% IF action == 'display' %]
+    <p class="edit"><input type="submit" id="submit" name="op" value="Edit Letter" /></p>
+    [% ELSE %]
+    <p class="save"><input type="submit" name="op" id="op" value="Save Letter" /></p>
+    [% END %]
+</form>
+    [% IF( op == 'edit' ) || ( op == 'create' );
+        INCLUDE util/form_cancel.html;
+    END %]
+
+[% BLOCK release_list_static %]
+    [% IF( list_tmp = list ) %]
+    <h5>[% heading %]</h5>
+    <ul class="checkbox">
+        [% FOR item IN list_tmp %]
+        <li>[% item %]</li>
+        [% END %]
+    </ul>
+    [% END %]
+[% END %]
+[% BLOCK release_list_client %]
+    <h5>[% header %]</h5>
+    <ul class="checkbox">
+        [% FOR info IN list %]
+            [% INCLUDE util/checkbox.html
+                name    = "info_$info.rec_id"
+                label   = info.name
+                value   = current.${"info_$info.rec_id"}
+                wraptag = 'li'
+                reverse = 1
+            %]
+        [% END %]
+    </ul>
+[% END %]

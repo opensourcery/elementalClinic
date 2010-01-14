@@ -1,0 +1,84 @@
+#exception {
+  border: 1px solid #ff0000;
+  padding: 5px;
+  overflow: auto;
+}
+
+#exception_list {
+  width: 100%;
+}
+
+#exception_list:after,
+#exception_list dl:after {
+  content: ".";
+  display: block;
+  visibility: hidden;
+}
+
+#exception_list dl dt{
+  clear: left;
+  float: left;
+}
+
+#exception_list dl dd {
+  clear: none;
+  float: left;
+  margin: 0;
+  clear: right;
+}
+
+.obfuscatable {
+  color: #004400;
+}
+
+.obfuscatable:hover {
+  color: #008800;
+  text-decoration: underline;
+}
+
+.obfuscated {
+  color: #330000;
+}
+
+#data-fields dl dt{
+  clear: left;
+  float: left;
+  width: 100px;
+}
+
+#data-fields dl dd {
+  clear: none;
+  float: left;
+  margin: 0;
+  clear: right;
+  padding-left: 10px;
+  width: 300px;
+}
+
+#data-fields table tr.odd {
+  background: #DDDDDD;
+}
+
+#data-fields table {
+  width: 85%;
+}
+
+#data-fields table tr td.field {
+  width: 100px;
+}
+
+#data-field-set dl:after {
+  content: ".";
+  display: block;
+  visibility: hidden;
+}
+
+#data-fields:after {
+  content: ".";
+  display: block;
+  visibility: hidden;
+}
+
+#data-field-set {
+  border: 1px solid #aaaaaa;
+}

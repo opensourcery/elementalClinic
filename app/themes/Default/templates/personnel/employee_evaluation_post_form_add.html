@@ -1,0 +1,26 @@
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+
+<h4>&#149; Add A Evaluation Record</h4>
+
+<table border="0">
+    <tr>
+        <td><b>Last Evaluation Completed: </b></td>
+        <td><input type="text" name="start_date"  size="12" maxlength="10" /> <font color="red"><small>Use Format: YYYY-MM-DD or Leave Blank</small></font></td>
+    </tr>
+    <tr>
+        <td><b>Next Evaluation Due By: </b></td>
+        <td><input type="text" name="end_date"  size="12" maxlength="10" /> <font color="red"><small>Use Format: YYYY-MM-DD or Leave Blank</small></font></td>
+    </tr>
+    <tr>
+        <td>Comments: </td>
+        <td><textarea name="comment_text" rows="5" cols="60"></textarea></td>
+    </tr>
+</table>
+
+<p />
+
+<input type="submit" name="go" value="Submit" />
+<input type="hidden" name="ID" value="[% id %]" />
+<div>
+</div>
+</form>

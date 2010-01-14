@@ -1,0 +1,53 @@
+--- 
+4: 
+  name: active
+  rec_id: 4
+  staff_id: ~
+  system_role: 1
+  has_homepage: 0
+5: 
+  name: financial
+  rec_id: 5
+  staff_id: ~
+  system_role: 1
+  has_homepage: 1
+6: 
+  name: reports
+  rec_id: 6
+  staff_id: ~
+  system_role: 1
+  has_homepage: 0
+7: 
+  name: scanner
+  rec_id: 7
+  staff_id: ~
+  system_role: 1
+  has_homepage: 0
+8: 
+  name: service_coordinator
+  rec_id: 8
+  staff_id: ~
+  system_role: 1
+  has_homepage: 1
+9: 
+  name: supervisor
+  rec_id: 9
+  staff_id: ~
+  system_role: 1
+  has_homepage: 1
+10: 
+  name: writer
+  rec_id: 10
+  staff_id: ~
+  system_role: 1
+  has_homepage: 1
+11: 
+  name: 1
+  rec_id: 11
+  staff_id: 1
+  system_role: 0
+12:
+  name: insurance
+  rec_id: 12
+  staff_id: ~
+  system_role: 1

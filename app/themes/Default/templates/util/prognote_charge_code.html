@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Charge codes: SQL Clinic</title>
+    <meta http-equiv="Content-Language" content="en-us" />
+
+    <meta http-equiv="imagetoolbar" content="false" />
+    <meta name="MSSmartTagsPreventParsing" content="true" />
+    <meta name="ROBOTS" content="NONE" />
+    <link rel="stylesheet" type="text/css" media="all" href="../styles/progress_note.css" />
+</head>
+<body>
+    <label for="charge_code_chooser">Select charge code: </label></td>
+    [% INCLUDE util/choose_valid_data.html
+        name    = 'charge_code_chooser'
+        table   = '_charge_code'
+        type    = 'select'
+        default = charge_code_id
+        use_id  = 1
+        use_desc = 1
+        size    = 30
+    %]
+    <input type="submit" value="Choose code" onclick="set_code();return false;" />
+
+    <script language="JavaScript" type="text/javascript">
+    var charge_code_chooser = document.getElementById( 'charge_code_chooser' )
+    charge_code_chooser.addEventListener( 'keypress', get_enter, true )
+    charge_code_chooser.focus()
+
+    function get_enter( event ) {
+        var key = event.keyCode
+        if( key == 13 ) {
+            set_code(  )
+        }
+    }
+
+    function set_code( event ) {
+        var id_field = opener.document.getElementById( 'charge_code_id' )
+        var name_field = opener.document.getElementById( 'charge_code_id' )
+        id_field.value = charge_code_chooser.value
+        name_field.value = charge_code_chooser.value
+        id_field.focus()
+        self.close()
+    }
+    </script>
+
+</body>
+</html>

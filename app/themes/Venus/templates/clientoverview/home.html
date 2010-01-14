@@ -1,0 +1,12 @@
+[% IF client.id %]
+[%    include = 'clientoverview/overview.html' %]
+[% ELSE %]
+[%    include = '' %]
+[% END %]
+
+[% INCLUDE global/person_home.html
+    navpage = 'clientoverview'
+    variant = 'client'
+    include = include
+%]
+

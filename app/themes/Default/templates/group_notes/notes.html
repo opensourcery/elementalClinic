@@ -1,0 +1,70 @@
+[% INCLUDE util/errors.html %]
+<div id="center" class="system_box">
+    <h3><em>Individual Group Notes for</em> [% group.name %] <em>on</em> [% group_note.note_date %]</h3>
+
+    <div id="attendees">
+        <p class="return"><a href="groups.cgi?group_id=[% group.rec_id %]">&#171; Return to group</a></p>
+        <h5>Group Notes</h5>
+        <ul class="attendee_list">
+        [% FOR member IN group_note.get_attendees( 'group_note' );
+            active = ( member.rec_id == attendee.rec_id ) ? 'class="active"' : '' %]
+        <li [% active %]>
+            <a href="[% script %]?op=prognote_detail&attendee_id=[% member.rec_id %]">[% member.client.eman  %]</a> 
+            [%- "<em>(uncommitted)</em>" UNLESS member.get_prognote.note_committed %]
+        </li>
+        [% END %]
+        </ul>
+
+        <h5>No-shows</h5>
+        <ul class="attendee_list">
+        [% FOR member IN group_note.get_attendees( 'no_show' );
+            active = ( member.rec_id == attendee.rec_id ) ? 'class="active"' : '' %]
+        <li [% active %]>
+            <a href="[% script %]?op=prognote_detail&attendee_id=[% member.rec_id %]">[% member.client.eman  %]</a> 
+            [%- "<em>(uncommitted)</em>" UNLESS member.get_prognote.note_committed %]
+        </li>
+        [% END %]
+        </ul>
+    </div>
+
+    <div id="prognote" class="client_box">
+    [% IF prognote;
+        INCLUDE group_notes/note.html
+        action = prognote.note_committed ? 'display' : 'edit';
+    ELSE %]
+    <p>Select an attendee to see his or her group note.</p>
+    [% END %]
+    </div>
+
+    <hr class="div" />
+</div>
+
+<script type="text/javascript">
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    var prog_tpls = new Array();
+    [% FOREACH p_tpl IN current_user.valid_data.list( '_prognote_templates' ) %]
+        prog_tpls[ [% p_tpl.rec_id %] ] = "[% p_tpl.description | replace('\n', '\\n')  %]";
+    [% END %]
+
+    var group_tpls = new Array();
+    [% FOREACH g_tpl IN current_user.valid_data.list( '_groupnote_templates' ) %]
+        group_tpls[ [% g_tpl.rec_id %] ] = "[% g_tpl.description | replace('\n', '\\n')  %]";
+    [% END %]
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function insert_template( ttype ) {
+    var template_id = document.getElementById( 'select_' + ttype + 'note_template' ).value
+
+    if( template_id ) {
+        var note_body = document.getElementById( 'note_body' );
+        var tpl
+        if( ttype == 'prog' ) {
+            tpl = prog_tpls[ template_id ]
+        }
+        else {
+            tpl = group_tpls[ template_id ]
+        }
+        note_body.value = note_body.value + "\n" + tpl + "\n"
+    }
+}
+</script>

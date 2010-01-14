@@ -1,0 +1,109 @@
+[% divclass = ( duplicates.ssn || duplicates.lname_dob )
+    ? 'left' : 'center'
+%]
+<div id="content">
+
+[% INCLUDE util/errors.html %]
+
+<div id="[% divclass %]" class="client_box">
+
+    <h4>New client intake</h4>
+
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+        <h5>Client Information</h5>
+
+        <dl class="inline">
+            [% INCLUDE util/input_text.html
+                name    = 'fname'
+                label   = 'First name'
+                value   = current.fname
+                dl      = 1
+                required = 1
+            %]
+
+            [% INCLUDE util/input_text.html
+                name    = 'lname'
+                label   = 'Last name'
+                value   = current.lname
+                dl      = 1
+                required = 1
+            %]
+
+            [% INCLUDE util/input_text.html
+                name    = 'ssn'
+                label   = 'SSN'
+                value   = current.ssn_f
+                dl      = 1
+            %]
+
+            <dt><label for="dob_facade">Birth date:</label></dt>
+            [% INCLUDE util/date_picker.html
+                name    = 'dob'
+                value   = current.dob
+                wraptag = 'dd'
+                required = 1
+            %]
+
+        </dl>
+
+        [% INCLUDE intake/placement_controls.html %]
+
+        [% IF dupsok %]
+        <p class="save"><input type="submit" name="submit" value="Add client, ignoring duplicates" /></p>
+        <input type="hidden" name="dupsok" id="dupsok" value="[% dupsok %]" />
+        [% ELSE %]
+        <p class="save"><input type="submit" name="submit" value="Add client" /></p>
+        [% END %]
+        <input type="hidden" name="op" id="op" value="step1_save" />
+    </form>
+
+</div>
+
+[% IF duplicates.ssn || duplicates.lname_dob %]
+
+<div id="right" class="system_box">
+
+    <h4>Potential duplicates found</h4>
+
+    [% IF duplicates.ssn; dup = duplicates.ssn %]
+    <fieldset>
+        <legend>Duplicate SSN</legend>
+
+        <p>Duplicate SSNs are not allowed.  Either take action on the duplicate client or change the new client input.</p>
+        <hr />
+        <dl>
+            [% INCLUDE dup_client %]
+        </dl>
+    </fieldset>
+    [% END %]
+
+    [% IF duplicates.lname_dob %]
+    <fieldset>
+        <legend>Duplicate last names and birth dates</legend>
+        <p>Clients with the same last names and dates of birth are allowed, but please review them first to make sure they are not duplicates.  Once you've done so, you may click "Add client and ignore duplicates."</p>
+        <hr />
+    <dl>
+        [% FOR dup IN duplicates.lname_dob %]
+        [% INCLUDE dup_client %]
+        [% END %]
+    <dl>
+    </fieldset>
+    [% END %]
+
+</div>
+
+[% END %]
+
+[% BLOCK dup_client %]
+        <dt><strong>[% dup.fname %] [% dup.lname %]</strong> ([% dup.ssn_f %]; [% dup.dob %])</dt>
+        <dd>
+            [%- IF dup.placement.is_admitted %]
+            This client is currently admitted; you may <a href="/demographics.cgi?client_id=[% dup.client_id %]">view</a> [% INCLUDE pronoun %].
+            [%- ELSIF dup.placement.is_referral %]
+            This client is an active referral; you may <a href="/demographics.cgi?client_id=[% dup.client_id %]">view</a> [% INCLUDE pronoun %].
+            [%- ELSE %]
+            This client has been discharged; see client's <a href="/placement.cgi?client_id=[% dup.client_id %]">placement screen</a> to reactivate [% INCLUDE pronoun %].
+            [%- END %]
+        </dd>
+[% END %]
+[% BLOCK pronoun; dup.sex == 'Male' ? 'him' : 'her'; END %]

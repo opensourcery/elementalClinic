@@ -1,0 +1,18 @@
+            <div class="minileft">
+            <p>
+                <label for="name">Name: </label>
+                <input type="text" name="name" id="name" size="10" value="[% current_item.name %]" />
+                [% is_active = edit ? current_item.active : 1;
+                INCLUDE util/checkbox.html
+                    label = 'Active?'
+                    name  = 'active'
+                    value = is_active
+                    %]
+            </p>
+
+            <p>
+                <label for="description">Description: </label><br />
+                <textarea name="description" id="description" rows="5" cols="40">[% current_item.description | replace('\\\n', "\n") %]</textarea>
+            </p>
+            </div>
+            [% INCLUDE lookup/valid_data_charge_code_edit_vars.html %]

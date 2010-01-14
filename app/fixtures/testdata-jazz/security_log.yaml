@@ -1,0 +1,1080 @@
+1001:
+  rec_id: 1001
+  logged: 2008-11-05 12:16:00
+  login: clinic
+  action: failure
+1002:
+  rec_id: 1002
+  logged: 2008-11-05 14:32:00
+  login: clinic
+  action: login
+1003:
+  rec_id: 1003
+  logged: 2008-11-05 16:18:00
+  login: clinic
+  action: logout
+1004:
+  rec_id: 1004
+  logged: 2008-11-05 12:35:00
+  login: betty
+  action: failure
+1005:
+  rec_id: 1005
+  logged: 2008-11-05 14:30:00
+  login: betty
+  action: login
+1006:
+  rec_id: 1006
+  logged: 2008-11-05 16:31:00
+  login: betty
+  action: logout
+1007:
+  rec_id: 1007
+  logged: 2008-11-05 12:36:00
+  login: whip
+  action: failure
+1008:
+  rec_id: 1008
+  logged: 2008-11-05 14:35:00
+  login: whip
+  action: login
+1009:
+  rec_id: 1009
+  logged: 2008-11-05 16:15:00
+  login: whip
+  action: logout
+1010:
+  rec_id: 1010
+  logged: 2008-11-05 12:34:00
+  login: number
+  action: failure
+1011:
+  rec_id: 1011
+  logged: 2008-11-05 14:39:00
+  login: number
+  action: login
+1012:
+  rec_id: 1012
+  logged: 2008-11-05 16:41:00
+  login: number
+  action: logout
+1013:
+  rec_id: 1013
+  logged: 2008-11-05 12:19:00
+  login: root
+  action: failure
+1014:
+  rec_id: 1014
+  logged: 2008-11-05 14:34:00
+  login: root
+  action: login
+1015:
+  rec_id: 1015
+  logged: 2008-11-05 16:16:00
+  login: root
+  action: logout
+1016:
+  rec_id: 1016
+  logged: 2008-11-05 12:55:00
+  login: ima
+  action: failure
+1017:
+  rec_id: 1017
+  logged: 2008-11-05 14:36:00
+  login: ima
+  action: login
+1018:
+  rec_id: 1018
+  logged: 2008-11-05 16:45:00
+  login: ima
+  action: logout
+1019:
+  rec_id: 1019
+  logged: 2008-11-05 12:25:00
+  login: willy
+  action: failure
+1020:
+  rec_id: 1020
+  logged: 2008-11-05 14:27:00
+  login: willy
+  action: login
+1021:
+  rec_id: 1021
+  logged: 2008-11-05 16:18:00
+  login: willy
+  action: logout
+1022:
+  rec_id: 1022
+  logged: 2008-11-05 12:31:00
+  login: admini
+  action: failure
+1023:
+  rec_id: 1023
+  logged: 2008-11-05 12:48:00
+  login: user
+  action: failure
+1024:
+  rec_id: 1024
+  logged: 2008-11-05 12:56:00
+  login: guest
+  action: failure
+1025:
+  rec_id: 1025
+  logged: 2008-11-05 12:32:00
+  login: fred
+  action: failure
+1026:
+  rec_id: 1026
+  logged: 2008-11-05 12:50:00
+  login: user22
+  action: failure
+1027:
+  rec_id: 1027
+  logged: 2008-11-05 12:40:00
+  login: barney
+  action: failure
+1028:
+  rec_id: 1028
+  logged: 2008-11-06 12:52:00
+  login: clinic
+  action: failure
+1029:
+  rec_id: 1029
+  logged: 2008-11-06 14:16:00
+  login: clinic
+  action: login
+1030:
+  rec_id: 1030
+  logged: 2008-11-06 16:58:00
+  login: clinic
+  action: logout
+1031:
+  rec_id: 1031
+  logged: 2008-11-06 12:27:00
+  login: betty
+  action: failure
+1032:
+  rec_id: 1032
+  logged: 2008-11-06 14:14:00
+  login: betty
+  action: login
+1033:
+  rec_id: 1033
+  logged: 2008-11-06 16:32:00
+  login: betty
+  action: logout
+1034:
+  rec_id: 1034
+  logged: 2008-11-06 12:49:00
+  login: whip
+  action: failure
+1035:
+  rec_id: 1035
+  logged: 2008-11-06 14:44:00
+  login: whip
+  action: login
+1036:
+  rec_id: 1036
+  logged: 2008-11-06 16:17:00
+  login: whip
+  action: logout
+1037:
+  rec_id: 1037
+  logged: 2008-11-06 12:35:00
+  login: number
+  action: failure
+1038:
+  rec_id: 1038
+  logged: 2008-11-06 14:48:00
+  login: number
+  action: login
+1039:
+  rec_id: 1039
+  logged: 2008-11-06 16:49:00
+  login: number
+  action: logout
+1040:
+  rec_id: 1040
+  logged: 2008-11-06 12:36:00
+  login: root
+  action: failure
+1041:
+  rec_id: 1041
+  logged: 2008-11-06 14:16:00
+  login: root
+  action: login
+1042:
+  rec_id: 1042
+  logged: 2008-11-06 16:50:00
+  login: root
+  action: logout
+1043:
+  rec_id: 1043
+  logged: 2008-11-06 12:32:00
+  login: ima
+  action: failure
+1044:
+  rec_id: 1044
+  logged: 2008-11-06 14:20:00
+  login: ima
+  action: login
+1045:
+  rec_id: 1045
+  logged: 2008-11-06 16:56:00
+  login: ima
+  action: logout
+1046:
+  rec_id: 1046
+  logged: 2008-11-06 12:54:00
+  login: willy
+  action: failure
+1047:
+  rec_id: 1047
+  logged: 2008-11-06 14:37:00
+  login: willy
+  action: login
+1048:
+  rec_id: 1048
+  logged: 2008-11-06 16:12:00
+  login: willy
+  action: logout
+1049:
+  rec_id: 1049
+  logged: 2008-11-06 12:17:00
+  login: admini
+  action: failure
+1050:
+  rec_id: 1050
+  logged: 2008-11-06 12:12:00
+  login: user
+  action: failure
+1051:
+  rec_id: 1051
+  logged: 2008-11-06 12:52:00
+  login: guest
+  action: failure
+1052:
+  rec_id: 1052
+  logged: 2008-11-06 12:34:00
+  login: fred
+  action: failure
+1053:
+  rec_id: 1053
+  logged: 2008-11-06 12:49:00
+  login: user22
+  action: failure
+1054:
+  rec_id: 1054
+  logged: 2008-11-06 12:33:00
+  login: barney
+  action: failure
+1055:
+  rec_id: 1055
+  logged: 2008-11-10 12:14:00
+  login: clinic
+  action: failure
+1056:
+  rec_id: 1056
+  logged: 2008-11-10 14:15:00
+  login: clinic
+  action: login
+1057:
+  rec_id: 1057
+  logged: 2008-11-10 16:51:00
+  login: clinic
+  action: logout
+1058:
+  rec_id: 1058
+  logged: 2008-11-10 12:53:00
+  login: betty
+  action: failure
+1059:
+  rec_id: 1059
+  logged: 2008-11-10 14:48:00
+  login: betty
+  action: login
+1060:
+  rec_id: 1060
+  logged: 2008-11-10 16:36:00
+  login: betty
+  action: logout
+1061:
+  rec_id: 1061
+  logged: 2008-11-10 12:43:00
+  login: whip
+  action: failure
+1062:
+  rec_id: 1062
+  logged: 2008-11-10 14:32:00
+  login: whip
+  action: login
+1063:
+  rec_id: 1063
+  logged: 2008-11-10 16:36:00
+  login: whip
+  action: logout
+1064:
+  rec_id: 1064
+  logged: 2008-11-10 12:43:00
+  login: number
+  action: failure
+1065:
+  rec_id: 1065
+  logged: 2008-11-10 14:30:00
+  login: number
+  action: login
+1066:
+  rec_id: 1066
+  logged: 2008-11-10 16:13:00
+  login: number
+  action: logout
+1067:
+  rec_id: 1067
+  logged: 2008-11-10 12:52:00
+  login: root
+  action: failure
+1068:
+  rec_id: 1068
+  logged: 2008-11-10 14:11:00
+  login: root
+  action: login
+1069:
+  rec_id: 1069
+  logged: 2008-11-10 16:35:00
+  login: root
+  action: logout
+1070:
+  rec_id: 1070
+  logged: 2008-11-10 12:35:00
+  login: ima
+  action: failure
+1071:
+  rec_id: 1071
+  logged: 2008-11-10 14:45:00
+  login: ima
+  action: login
+1072:
+  rec_id: 1072
+  logged: 2008-11-10 16:27:00
+  login: ima
+  action: logout
+1073:
+  rec_id: 1073
+  logged: 2008-11-10 12:19:00
+  login: willy
+  action: failure
+1074:
+  rec_id: 1074
+  logged: 2008-11-10 14:51:00
+  login: willy
+  action: login
+1075:
+  rec_id: 1075
+  logged: 2008-11-10 16:43:00
+  login: willy
+  action: logout
+1076:
+  rec_id: 1076
+  logged: 2008-11-10 12:36:00
+  login: admini
+  action: failure
+1077:
+  rec_id: 1077
+  logged: 2008-11-10 12:34:00
+  login: user
+  action: failure
+1078:
+  rec_id: 1078
+  logged: 2008-11-10 12:19:00
+  login: guest
+  action: failure
+1079:
+  rec_id: 1079
+  logged: 2008-11-10 12:20:00
+  login: fred
+  action: failure
+1080:
+  rec_id: 1080
+  logged: 2008-11-10 12:44:00
+  login: user22
+  action: failure
+1081:
+  rec_id: 1081
+  logged: 2008-11-10 12:12:00
+  login: barney
+  action: failure
+1082:
+  rec_id: 1082
+  logged: 2008-11-14 12:31:00
+  login: clinic
+  action: failure
+1083:
+  rec_id: 1083
+  logged: 2008-11-14 14:45:00
+  login: clinic
+  action: login
+1084:
+  rec_id: 1084
+  logged: 2008-11-14 16:46:00
+  login: clinic
+  action: logout
+1085:
+  rec_id: 1085
+  logged: 2008-11-14 12:26:00
+  login: betty
+  action: failure
+1086:
+  rec_id: 1086
+  logged: 2008-11-14 14:31:00
+  login: betty
+  action: login
+1087:
+  rec_id: 1087
+  logged: 2008-11-14 16:56:00
+  login: betty
+  action: logout
+1088:
+  rec_id: 1088
+  logged: 2008-11-14 12:42:00
+  login: whip
+  action: failure
+1089:
+  rec_id: 1089
+  logged: 2008-11-14 14:27:00
+  login: whip
+  action: login
+1090:
+  rec_id: 1090
+  logged: 2008-11-14 16:48:00
+  login: whip
+  action: logout
+1091:
+  rec_id: 1091
+  logged: 2008-11-14 12:49:00
+  login: number
+  action: failure
+1092:
+  rec_id: 1092
+  logged: 2008-11-14 14:31:00
+  login: number
+  action: login
+1093:
+  rec_id: 1093
+  logged: 2008-11-14 16:38:00
+  login: number
+  action: logout
+1094:
+  rec_id: 1094
+  logged: 2008-11-14 12:34:00
+  login: root
+  action: failure
+1095:
+  rec_id: 1095
+  logged: 2008-11-14 14:21:00
+  login: root
+  action: login
+1096:
+  rec_id: 1096
+  logged: 2008-11-14 16:34:00
+  login: root
+  action: logout
+1097:
+  rec_id: 1097
+  logged: 2008-11-14 12:38:00
+  login: ima
+  action: failure
+1098:
+  rec_id: 1098
+  logged: 2008-11-14 14:23:00
+  login: ima
+  action: login
+1099:
+  rec_id: 1099
+  logged: 2008-11-14 16:38:00
+  login: ima
+  action: logout
+1100:
+  rec_id: 1100
+  logged: 2008-11-14 12:14:00
+  login: willy
+  action: failure
+1101:
+  rec_id: 1101
+  logged: 2008-11-14 14:45:00
+  login: willy
+  action: login
+1102:
+  rec_id: 1102
+  logged: 2008-11-14 16:39:00
+  login: willy
+  action: logout
+1103:
+  rec_id: 1103
+  logged: 2008-11-14 12:50:00
+  login: admini
+  action: failure
+1104:
+  rec_id: 1104
+  logged: 2008-11-14 12:39:00
+  login: user
+  action: failure
+1105:
+  rec_id: 1105
+  logged: 2008-11-14 12:45:00
+  login: guest
+  action: failure
+1106:
+  rec_id: 1106
+  logged: 2008-11-14 12:50:00
+  login: fred
+  action: failure
+1107:
+  rec_id: 1107
+  logged: 2008-11-14 12:22:00
+  login: user22
+  action: failure
+1108:
+  rec_id: 1108
+  logged: 2008-11-14 12:22:00
+  login: barney
+  action: failure
+1001:
+  rec_id: 1001
+  logged: 2008-11-05 12:28:00
+  login: clinic
+  action: failure
+1002:
+  rec_id: 1002
+  logged: 2008-11-05 14:34:00
+  login: clinic
+  action: login
+1003:
+  rec_id: 1003
+  logged: 2008-11-05 16:48:00
+  login: clinic
+  action: logout
+1004:
+  rec_id: 1004
+  logged: 2008-11-05 12:20:00
+  login: betty
+  action: failure
+1005:
+  rec_id: 1005
+  logged: 2008-11-05 14:28:00
+  login: betty
+  action: login
+1006:
+  rec_id: 1006
+  logged: 2008-11-05 16:11:00
+  login: betty
+  action: logout
+1007:
+  rec_id: 1007
+  logged: 2008-11-05 12:20:00
+  login: whip
+  action: failure
+1008:
+  rec_id: 1008
+  logged: 2008-11-05 14:48:00
+  login: whip
+  action: login
+1009:
+  rec_id: 1009
+  logged: 2008-11-05 16:23:00
+  login: whip
+  action: logout
+1010:
+  rec_id: 1010
+  logged: 2008-11-05 12:47:00
+  login: number
+  action: failure
+1011:
+  rec_id: 1011
+  logged: 2008-11-05 14:53:00
+  login: number
+  action: login
+1012:
+  rec_id: 1012
+  logged: 2008-11-05 16:13:00
+  login: number
+  action: logout
+1013:
+  rec_id: 1013
+  logged: 2008-11-05 12:30:00
+  login: root
+  action: failure
+1014:
+  rec_id: 1014
+  logged: 2008-11-05 14:21:00
+  login: root
+  action: login
+1015:
+  rec_id: 1015
+  logged: 2008-11-05 16:53:00
+  login: root
+  action: logout
+1016:
+  rec_id: 1016
+  logged: 2008-11-05 12:28:00
+  login: ima
+  action: failure
+1017:
+  rec_id: 1017
+  logged: 2008-11-05 14:36:00
+  login: ima
+  action: login
+1018:
+  rec_id: 1018
+  logged: 2008-11-05 16:46:00
+  login: ima
+  action: logout
+1019:
+  rec_id: 1019
+  logged: 2008-11-05 12:18:00
+  login: willy
+  action: failure
+1020:
+  rec_id: 1020
+  logged: 2008-11-05 14:11:00
+  login: willy
+  action: login
+1021:
+  rec_id: 1021
+  logged: 2008-11-05 16:13:00
+  login: willy
+  action: logout
+1022:
+  rec_id: 1022
+  logged: 2008-11-05 12:11:00
+  login: admini
+  action: failure
+1023:
+  rec_id: 1023
+  logged: 2008-11-05 12:54:00
+  login: user
+  action: failure
+1024:
+  rec_id: 1024
+  logged: 2008-11-05 12:46:00
+  login: guest
+  action: failure
+1025:
+  rec_id: 1025
+  logged: 2008-11-05 12:51:00
+  login: fred
+  action: failure
+1026:
+  rec_id: 1026
+  logged: 2008-11-05 12:44:00
+  login: user22
+  action: failure
+1027:
+  rec_id: 1027
+  logged: 2008-11-05 12:56:00
+  login: barney
+  action: failure
+1028:
+  rec_id: 1028
+  logged: 2008-11-06 12:54:00
+  login: clinic
+  action: failure
+1029:
+  rec_id: 1029
+  logged: 2008-11-06 14:24:00
+  login: clinic
+  action: login
+1030:
+  rec_id: 1030
+  logged: 2008-11-06 16:19:00
+  login: clinic
+  action: logout
+1031:
+  rec_id: 1031
+  logged: 2008-11-06 12:26:00
+  login: betty
+  action: failure
+1032:
+  rec_id: 1032
+  logged: 2008-11-06 14:11:00
+  login: betty
+  action: login
+1033:
+  rec_id: 1033
+  logged: 2008-11-06 16:21:00
+  login: betty
+  action: logout
+1034:
+  rec_id: 1034
+  logged: 2008-11-06 12:12:00
+  login: whip
+  action: failure
+1035:
+  rec_id: 1035
+  logged: 2008-11-06 14:47:00
+  login: whip
+  action: login
+1036:
+  rec_id: 1036
+  logged: 2008-11-06 16:33:00
+  login: whip
+  action: logout
+1037:
+  rec_id: 1037
+  logged: 2008-11-06 12:13:00
+  login: number
+  action: failure
+1038:
+  rec_id: 1038
+  logged: 2008-11-06 14:21:00
+  login: number
+  action: login
+1039:
+  rec_id: 1039
+  logged: 2008-11-06 16:27:00
+  login: number
+  action: logout
+1040:
+  rec_id: 1040
+  logged: 2008-11-06 12:48:00
+  login: root
+  action: failure
+1041:
+  rec_id: 1041
+  logged: 2008-11-06 14:23:00
+  login: root
+  action: login
+1042:
+  rec_id: 1042
+  logged: 2008-11-06 16:19:00
+  login: root
+  action: logout
+1043:
+  rec_id: 1043
+  logged: 2008-11-06 12:38:00
+  login: ima
+  action: failure
+1044:
+  rec_id: 1044
+  logged: 2008-11-06 14:13:00
+  login: ima
+  action: login
+1045:
+  rec_id: 1045
+  logged: 2008-11-06 16:44:00
+  login: ima
+  action: logout
+1046:
+  rec_id: 1046
+  logged: 2008-11-06 12:41:00
+  login: willy
+  action: failure
+1047:
+  rec_id: 1047
+  logged: 2008-11-06 14:27:00
+  login: willy
+  action: login
+1048:
+  rec_id: 1048
+  logged: 2008-11-06 16:34:00
+  login: willy
+  action: logout
+1049:
+  rec_id: 1049
+  logged: 2008-11-06 12:41:00
+  login: admini
+  action: failure
+1050:
+  rec_id: 1050
+  logged: 2008-11-06 12:30:00
+  login: user
+  action: failure
+1051:
+  rec_id: 1051
+  logged: 2008-11-06 12:46:00
+  login: guest
+  action: failure
+1052:
+  rec_id: 1052
+  logged: 2008-11-06 12:29:00
+  login: fred
+  action: failure
+1053:
+  rec_id: 1053
+  logged: 2008-11-06 12:11:00
+  login: user22
+  action: failure
+1054:
+  rec_id: 1054
+  logged: 2008-11-06 12:50:00
+  login: barney
+  action: failure
+1055:
+  rec_id: 1055
+  logged: 2008-11-10 12:43:00
+  login: clinic
+  action: failure
+1056:
+  rec_id: 1056
+  logged: 2008-11-10 14:38:00
+  login: clinic
+  action: login
+1057:
+  rec_id: 1057
+  logged: 2008-11-10 16:43:00
+  login: clinic
+  action: logout
+1058:
+  rec_id: 1058
+  logged: 2008-11-10 12:18:00
+  login: betty
+  action: failure
+1059:
+  rec_id: 1059
+  logged: 2008-11-10 14:29:00
+  login: betty
+  action: login
+1060:
+  rec_id: 1060
+  logged: 2008-11-10 16:39:00
+  login: betty
+  action: logout
+1061:
+  rec_id: 1061
+  logged: 2008-11-10 12:22:00
+  login: whip
+  action: failure
+1062:
+  rec_id: 1062
+  logged: 2008-11-10 14:19:00
+  login: whip
+  action: login
+1063:
+  rec_id: 1063
+  logged: 2008-11-10 16:38:00
+  login: whip
+  action: logout
+1064:
+  rec_id: 1064
+  logged: 2008-11-10 12:40:00
+  login: number
+  action: failure
+1065:
+  rec_id: 1065
+  logged: 2008-11-10 14:10:00
+  login: number
+  action: login
+1066:
+  rec_id: 1066
+  logged: 2008-11-10 16:29:00
+  login: number
+  action: logout
+1067:
+  rec_id: 1067
+  logged: 2008-11-10 12:24:00
+  login: root
+  action: failure
+1068:
+  rec_id: 1068
+  logged: 2008-11-10 14:10:00
+  login: root
+  action: login
+1069:
+  rec_id: 1069
+  logged: 2008-11-10 16:39:00
+  login: root
+  action: logout
+1070:
+  rec_id: 1070
+  logged: 2008-11-10 12:17:00
+  login: ima
+  action: failure
+1071:
+  rec_id: 1071
+  logged: 2008-11-10 14:57:00
+  login: ima
+  action: login
+1072:
+  rec_id: 1072
+  logged: 2008-11-10 16:29:00
+  login: ima
+  action: logout
+1073:
+  rec_id: 1073
+  logged: 2008-11-10 12:42:00
+  login: willy
+  action: failure
+1074:
+  rec_id: 1074
+  logged: 2008-11-10 14:46:00
+  login: willy
+  action: login
+1075:
+  rec_id: 1075
+  logged: 2008-11-10 16:42:00
+  login: willy
+  action: logout
+1076:
+  rec_id: 1076
+  logged: 2008-11-10 12:57:00
+  login: admini
+  action: failure
+1077:
+  rec_id: 1077
+  logged: 2008-11-10 12:15:00
+  login: user
+  action: failure
+1078:
+  rec_id: 1078
+  logged: 2008-11-10 12:33:00
+  login: guest
+  action: failure
+1079:
+  rec_id: 1079
+  logged: 2008-11-10 12:12:00
+  login: fred
+  action: failure
+1080:
+  rec_id: 1080
+  logged: 2008-11-10 12:53:00
+  login: user22
+  action: failure
+1081:
+  rec_id: 1081
+  logged: 2008-11-10 12:25:00
+  login: barney
+  action: failure
+1082:
+  rec_id: 1082
+  logged: 2008-11-14 12:53:00
+  login: clinic
+  action: failure
+1083:
+  rec_id: 1083
+  logged: 2008-11-14 14:24:00
+  login: clinic
+  action: login
+1084:
+  rec_id: 1084
+  logged: 2008-11-14 16:54:00
+  login: clinic
+  action: logout
+1085:
+  rec_id: 1085
+  logged: 2008-11-14 12:57:00
+  login: betty
+  action: failure
+1086:
+  rec_id: 1086
+  logged: 2008-11-14 14:32:00
+  login: betty
+  action: login
+1087:
+  rec_id: 1087
+  logged: 2008-11-14 16:39:00
+  login: betty
+  action: logout
+1088:
+  rec_id: 1088
+  logged: 2008-11-14 12:31:00
+  login: whip
+  action: failure
+1089:
+  rec_id: 1089
+  logged: 2008-11-14 14:30:00
+  login: whip
+  action: login
+1090:
+  rec_id: 1090
+  logged: 2008-11-14 16:27:00
+  login: whip
+  action: logout
+1091:
+  rec_id: 1091
+  logged: 2008-11-14 12:42:00
+  login: number
+  action: failure
+1092:
+  rec_id: 1092
+  logged: 2008-11-14 14:31:00
+  login: number
+  action: login
+1093:
+  rec_id: 1093
+  logged: 2008-11-14 16:58:00
+  login: number
+  action: logout
+1094:
+  rec_id: 1094
+  logged: 2008-11-14 12:24:00
+  login: root
+  action: failure
+1095:
+  rec_id: 1095
+  logged: 2008-11-14 14:17:00
+  login: root
+  action: login
+1096:
+  rec_id: 1096
+  logged: 2008-11-14 16:53:00
+  login: root
+  action: logout
+1097:
+  rec_id: 1097
+  logged: 2008-11-14 12:32:00
+  login: ima
+  action: failure
+1098:
+  rec_id: 1098
+  logged: 2008-11-14 14:39:00
+  login: ima
+  action: login
+1099:
+  rec_id: 1099
+  logged: 2008-11-14 16:46:00
+  login: ima
+  action: logout
+1100:
+  rec_id: 1100
+  logged: 2008-11-14 12:47:00
+  login: willy
+  action: failure
+1101:
+  rec_id: 1101
+  logged: 2008-11-14 14:13:00
+  login: willy
+  action: login
+1102:
+  rec_id: 1102
+  logged: 2008-11-14 16:56:00
+  login: willy
+  action: logout
+1103:
+  rec_id: 1103
+  logged: 2008-11-14 12:46:00
+  login: admini
+  action: failure
+1104:
+  rec_id: 1104
+  logged: 2008-11-14 12:19:00
+  login: user
+  action: failure
+1105:
+  rec_id: 1105
+  logged: 2008-11-14 12:56:00
+  login: guest
+  action: failure
+1106:
+  rec_id: 1106
+  logged: 2008-11-14 12:44:00
+  login: fred
+  action: failure
+1107:
+  rec_id: 1107
+  logged: 2008-11-14 12:31:00
+  login: user22
+  action: failure
+1108:
+  rec_id: 1108
+  logged: 2008-11-14 12:49:00
+  login: barney
+  action: failure

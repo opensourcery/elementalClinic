@@ -1,0 +1,18 @@
+<p>
+  [% INCLUDE util/select_new.html,
+      label = 'Axis', name = 'axis', values = [1,2], required = 1,
+      value = current_item.axis
+  %]
+  [% INCLUDE util/input_text.html,
+      label = 'Level', name = 'level_num', size = 2, maxlength = 2,
+      value = current_item.level_num
+  %]
+  [% INCLUDE util/input_text.html,
+      label = 'Category', name = 'category', size = 2, maxlength = 2,
+      value = current_item.category
+  %]
+  [% INCLUDE util/input_text.html,
+      label = 'Header', name = 'hdr', size = 1, maxlength = 2,
+      value = current_item.hdr
+  %]
+</p>

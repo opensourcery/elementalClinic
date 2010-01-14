@@ -1,0 +1,8 @@
+[%- SET onclick = "onclick=\"$onclick\"" IF onclick %]
+<form class="cancel" method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" name="cancel_form">
+    <input type="hidden" name="client_id" id="[% prefix %]cancel_client_id" value="[% client.id %]" />
+    [%- FOR x IN extras %]
+    <input type="hidden" name="[% x.key %]" id="[% prefix %][% x.key %]" value="[% x.value %]" />
+    [%- END %]
+    <p><input type="submit" name="op" id="[% prefix %]cancel_op" [% onclick %] value="Cancel" /></p>
+</form>

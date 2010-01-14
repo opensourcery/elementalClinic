@@ -1,0 +1,30 @@
+---
+1001:
+  client_id: 1002
+  comment_text: on stage
+  end_date: 1974-07-03
+  location_id: 1
+  reason: More Violence
+  rec_id: 1001
+  start_date: 1973-08-07
+  status_id: 1
+1002:
+  client_id: 1002
+  comment_text: ~
+  end_date: 1969-05-01
+  location_id: 1
+  reason: Violence
+  rec_id: 1002
+  start_date: 1969-04-10
+  status_id: 1
+1003:
+  client_id: 1002
+  comment_text: ~
+  end_date: ~
+  location_id: 1
+  reason: Yet More Violence
+  rec_id: 1003
+  start_date: 1981-12-21
+  status_id: 1
+
+

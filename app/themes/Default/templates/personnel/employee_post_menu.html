@@ -1,0 +1,37 @@
+[% IF confirm %]
+<h4><font color="blue">Your transaction was committed.</font></h4>
+[% END %]
+[% IF data %]
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+<table border="0">
+    <tr>
+        <td><b>&#149; View An Existing Record: </b></td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "view"
+    s_values  = data
+    s_size    = 5
+%]</td>
+        <td><input type="submit" name="go" value="View" /></td>
+    </tr>
+    <tr>
+        <td><b>&#149; Update An Existing Record: </b></td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "update"
+    s_values  = data
+    s_size    = 5
+%]</td>
+        <td><input type="submit" name="go" value="Update" /></td>
+    </tr>
+</table>
+<div></div></form>
+[% ELSE %]
+<h4>No Employee Records Found.</h4>
+
+<p />
+<h4>ERROR: No Record Selected.</h4>
+<p />
+
+
+[% END %]

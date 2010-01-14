@@ -1,0 +1,38 @@
+<table border="1">
+    <thead>
+    <tr>
+        <td colspan="4">
+            [% INCLUDE financial/reports/header.html %]
+            [% "<p>There was no data for this report.</p>" UNLESS current_report.data.0 %]
+        </td>
+    </tr>
+
+    <tr>
+        <th>Program</th>
+        <th>Billed</th>
+        <th>Paid</th>
+        <th>Deductions</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    [% FOR record IN current_report.data;
+        total.total_billed     = total.total_billed     + record.total_billed;
+        total.total_paid       = total.total_paid       + record.total_paid;
+        total.total_deductions = total.total_deductions + record.total_deductions;
+        %]
+    <tr [% rowclass %]>
+        <td>[% record.program_name %]</td> 
+        <td>$ [% record.total_billed %]</td> 
+        <td>$ [% record.total_paid %]</td> 
+        <td>$ [% record.total_deductions %]</td> 
+    </tr>
+    [% END %]
+    <tr [% rowclass %]>
+        <th>Totals</th>
+        <td>$ [% total.total_billed %]</td> 
+        <td>$ [% total.total_paid %]</td> 
+        <td>$ [% total.total_deductions %]</td> 
+    </tr>
+    </tbody>
+</table>

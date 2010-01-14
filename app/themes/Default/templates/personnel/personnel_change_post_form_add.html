@@ -1,0 +1,73 @@
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+
+<b>&#149; Employee Data</b>
+
+<p />
+
+<table border="0">
+    <tr>
+        <td><b>Select Change Type: </b></td>
+        <td>
+[% INCLUDE util/radio.html
+    r_name   = "change_type"
+    r_values  = [ 'New Hire','Termination', 'Update Information' ],
+    r_default = 'New Hire'
+%]</td>
+    </tr>
+    <tr>
+        <td><b>Name:</b></td>
+        <td><input type="text" name="staff_name"  size="32" maxlength="30" /></td>
+    </tr>
+    <tr>
+        <td><b>Department (e.g. Housing): </b></td>
+        <td><input type="text" name="dept"  size="32" maxlength="30" /></td>
+    </tr>
+    <tr>
+        <td><b>Primary Unit (e.g. Residence I): </b></td>
+        <td><input type="text" name="unit"  size="32" maxlength="30" /></td>
+    </tr>
+    <tr>
+        <td><b>Address: </b></td>
+        <td><input type="text" name="addr"  size="32" maxlength="30" /></td>
+    </tr>
+    <tr>
+        <td><b>Postal Code: </b></td>
+        <td><input type="text" name="post_code"  size="12" maxlength="10" /></td>
+    </tr>
+    <tr>
+        <td><b>Telephone: </b></td>
+        <td><input type="text" name="phone"  size="18" maxlength="16" /></td>
+    </tr>
+    <tr>
+        <td><b>Job Title: </b></td>
+        <td><input type="text" name="job_title"  size="22" maxlength="20" /></td>
+    </tr>
+    <tr>
+        <td><b>Start/Term Date: </b></td>
+        <td><input type="text" name="change_date"  size="12" maxlength="10" /></td>
+    </tr>
+    <tr>
+        <td><b>Supervisor: </b></td>
+        <td><input type="text" name="super_name"  size="32" maxlength="30" /></td>
+    </tr>
+    <tr>
+        <td><b>Employment Status: </b></td>
+        <td>
+[% INCLUDE util/radio.html
+    r_name   = "job_status"
+    r_values  = [ 'Full Time','Part Time','On-Call', 'Salaried', 'Other' ],
+    r_default = 'Full Time'
+%]</td>
+    </tr>
+    <tr>
+        <td><b>Enter A Comment, If Desired: </b></td>
+        <td><textarea name="note_text" rows="4" cols="50" wrap="1"></textarea></td>
+    </tr>
+</table>
+
+<p />
+
+<input type="submit" name="go" value="Submit" />
+<div>
+</div>
+</form>

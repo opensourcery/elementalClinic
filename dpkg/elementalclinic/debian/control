@@ -1,0 +1,15 @@
+Source: elementalclinic
+Section: web
+Priority: extra
+Maintainer: USER <EMAIL>
+Build-Depends: debhelper (>= 5)
+Standards-Version: 3.7.2
+
+Package: elementalclinic
+Architecture: all
+Conflicts: 
+Replaces: 
+Depends: ${shlibs:Depends}, ${misc:Depends}, apache2-mpm-prefork, postgresql-client, libapache2-mod-perl2, libalgorithm-c3-perl, cpan-libelementalclinic-perl | libelementalclinic-perl
+Description: An RMS for mental health professionals
+ eleMental Clinic is an Open Source medical records 
+ management system for mental health professionals

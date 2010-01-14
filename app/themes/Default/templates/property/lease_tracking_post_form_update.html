@@ -1,0 +1,97 @@
+<b>&#149; Update Lease Information</b>
+
+<p />
+
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+
+
+<table border="0">
+    <tr>
+        <td><b>Select Unit: </b></td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "unit_update"
+    s_values  = units
+    s_default = unit_lname
+%]</td>
+    </tr>
+    <tr>
+        <td><b>Address: </b></td>
+        <td><input type="text" name="addr" value="[% row_addr %]" size="27" maxlength="25" /></td>
+    </tr>
+    <tr>
+        <td><b>Apartment: </b></td>
+        <td><input type="text" name="apt" value="[% row_apt %]" size="10" maxlength="8" /></td>
+    </tr>
+    <tr>
+        <td><b>City: </b></td>
+        <td><input type="text" name="city" value="[% row_city %]" size="32" maxlength="30" /></td>
+    </tr>
+    <tr>
+        <td><b>Post Code: </b></td>
+        <td><input type="text" name="post_code" value="[% row_post_code %]" size="12" maxlength="10" /></td>
+    </tr>
+    <tr>
+        <td><b>Lease Type: </b></td>
+        <td><input type="text" name="ltype" value="[% row_ltype %]" size="10" maxlength="8" /></td>
+    </tr>
+    <tr>
+        <td><b>Number of Beds: </b></td>
+        <td><input type="text" name="beds" value="[% row_beds %]" size="5" maxlength="8" /></td>
+    </tr>
+    <tr>
+        <td><b>Rent: </b></td>
+        <td><input type="text" name="rent" value="[% row_rent %]" size="15" maxlength="35" /></td>
+    </tr>
+    <tr>
+        <td><b>Tenant Name: </b></td>
+        <td><input type="text" name="tenant" value="[% row_tenant %]" size="27" maxlength="25" /></td>
+    </tr>
+    <tr>
+        <td><b>Telephone: </b></td>
+        <td><input type="text" name="phone" value="[% row_phone %]" size="18" maxlength="16" /></td>
+    </tr>
+    <tr>
+        <td><b>Landlord Name: </b></td>
+        <td><input type="text" name="landlord" value="[% row_landlord %]" size="27" maxlength="25" /></td>
+    </tr>
+    <tr>
+        <td><b>Telephone:  </b></td>
+        <td><input type="text" name="lphone" value="[% row_lphone %]" size="27" maxlength="25" /></td>
+    </tr>
+    <tr>
+        <td><b>Realtor: </b></td>
+        <td><input type="text" name="realtor" value="[% row_realtor %]" size="27" maxlength="25" /></td>
+    </tr>
+    <tr>
+        <td><b>Telephone: </b></td>
+        <td><input type="text" name="rphone" value="[% row_rphone %]" size="27" maxlength="25" /></td>
+    </tr>
+    <tr>
+        <td><b>Lease Signed: </b></td>
+        <td><input type="text" name="start_date" value="[% row_start_date %]" size="12" maxlength="10" /> [% font_on %] * Use Format: <small>YYYY-MM-DD</small> [% font_off %]</td>
+    </tr>
+    <tr>
+        <td><b>Lease Expires:  </b></td>
+        <td><input type="text" name="end_date" value="[% row_end_date %]" size="12" maxlength="10" /> [% font_on %] * Use Format: <small>YYYY-MM-DD</small> [% font_off %]</td>
+    </tr>
+</table>
+
+
+
+<p />
+
+<table border="0">
+    <tr>
+        <td><b>Comment: </b></td>
+        <td><textarea name="comment_text" rows="10" cols="50">[% row_comment_text %]</textarea></td>
+    </tr>
+</table>
+
+<p />
+
+<input type="submit" name="go" value="Submit Query" />
+<input type="hidden" name="rec_id" value="[% rec_id %]" />
+<div>
+</div>
+</form>

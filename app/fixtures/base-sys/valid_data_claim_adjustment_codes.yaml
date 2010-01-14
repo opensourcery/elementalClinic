@@ -1,0 +1,1501 @@
+
+1: 
+  active: 1
+  dept_id: 1001
+  description: Deductible Amount
+  name: 1
+  rec_id: 1
+10: 
+  active: 1
+  dept_id: 1001
+  description: "The diagnosis is inconsistent with the patient's gender.    Note: Changed as of 2/00"
+  name: 10
+  rec_id: 10
+100: 
+  active: 1
+  dept_id: 1001
+  description: Payment made to patient/insured/responsible party.
+  name: 100
+  rec_id: 100
+101: 
+  active: 1
+  dept_id: 1001
+  description: "Predetermination: anticipated payment upon completion of services or claim adjudication. Note: Changed as of 2/99"
+  name: 101
+  rec_id: 101
+102: 
+  active: 1
+  dept_id: 1001
+  description: Major Medical Adjustment.
+  name: 102
+  rec_id: 102
+103: 
+  active: 1
+  dept_id: 1001
+  description: "Provider promotional discount (e.g., Senior citizen discount). Note: Changed as of 6/01"
+  name: 103
+  rec_id: 103
+104: 
+  active: 1
+  dept_id: 1001
+  description: Managed care withholding.
+  name: 104
+  rec_id: 104
+105: 
+  active: 1
+  dept_id: 1001
+  description: Tax withholding.
+  name: 105
+  rec_id: 105
+106: 
+  active: 1
+  dept_id: 1001
+  description: Patient payment option/election not in effect.
+  name: 106
+  rec_id: 106
+107: 
+  active: 1
+  dept_id: 1001
+  description: "Claim/service denied because the related or qualifying claim/service was not previously paid or identified on this claim. Note: Changed as of 6/03"
+  name: 107
+  rec_id: 107
+108: 
+  active: 1
+  dept_id: 1001
+  description: "Payment adjusted because rent/purchase guidelines were not met. Note: Changed as of 6/02"
+  name: 108
+  rec_id: 108
+109: 
+  active: 1
+  dept_id: 1001
+  description: Claim not covered by this payer/contractor. You must send the claim to the correct payer/contractor.
+  name: 109
+  rec_id: 109
+11: 
+  active: 1
+  dept_id: 1001
+  description: The diagnosis is inconsistent with the procedure.
+  name: 11
+  rec_id: 11
+110: 
+  active: 1
+  dept_id: 1001
+  description: Billing date predates service date.
+  name: 110
+  rec_id: 110
+111: 
+  active: 1
+  dept_id: 1001
+  description: Not covered unless the provider accepts assignment.
+  name: 111
+  rec_id: 111
+112: 
+  active: 1
+  dept_id: 1001
+  description: "Payment adjusted as not furnished directly to the patient and/or not documented. Note: Changed as of 2/01"
+  name: 112
+  rec_id: 112
+113: 
+  active: 1
+  dept_id: 1001
+  description: "Payment denied because service/procedure was provided outside the United States or as a result of war. Note: Changed as of 2/01; Inactive for version 004060. Use Codes 157, 158 or 159."
+  name: 113
+  rec_id: 113
+114: 
+  active: 1
+  dept_id: 1001
+  description: Procedure/product not approved by the Food and Drug Administration.
+  name: 114
+  rec_id: 114
+115: 
+  active: 1
+  dept_id: 1001
+  description: "Payment adjusted as procedure postponed or canceled. Note: Changed as of 2/01"
+  name: 115
+  rec_id: 115
+116: 
+  active: 1
+  dept_id: 1001
+  description: "Payment denied. The advance indemnification notice signed by the patient did not comply with requirements. Note: Changed as of 2/01"
+  name: 116
+  rec_id: 116
+117: 
+  active: 1
+  dept_id: 1001
+  description: "Payment adjusted because transportation is only covered to the closest facility that can provide the necessary care. Note: Changed as of 2/01"
+  name: 117
+  rec_id: 117
+118: 
+  active: 1
+  dept_id: 1001
+  description: Charges reduced for ESRD network support.
+  name: 118
+  rec_id: 118
+119: 
+  active: 1
+  dept_id: 1001
+  description: "Benefit maximum for this time period or occurrence has been reached. Note: Changed as of 2/04"
+  name: 119
+  rec_id: 119
+12: 
+  active: 1
+  dept_id: 1001
+  description: The diagnosis is inconsistent with the provider type.
+  name: 12
+  rec_id: 12
+120: 
+  active: 1
+  dept_id: 1001
+  description: "Patient is covered by a managed care plan. Note: Inactive for 004030, since 6/99. Use code 24."
+  name: 120
+  rec_id: 120
+121: 
+  active: 1
+  dept_id: 1001
+  description: Indemnification adjustment.
+  name: 121
+  rec_id: 121
+122: 
+  active: 1
+  dept_id: 1001
+  description: Psychiatric reduction.
+  name: 122
+  rec_id: 122
+123: 
+  active: 1
+  dept_id: 1001
+  description: "Payer refund due to overpayment. Note: Inactive for 004030, since 6/99. Refer to implementation guide for proper handling of reversals."
+  name: 123
+  rec_id: 123
+124: 
+  active: 1
+  dept_id: 1001
+  description: "Payer refund amount - not our patient. Note: Inactive for 004030, since 6/99. Refer to implementation guide for proper handling of reversals."
+  name: 124
+  rec_id: 124
+125: 
+  active: 1
+  dept_id: 1001
+  description: "Payment adjusted due to a submission/billing error(s). Additional information is supplied using the remittance advice remarks codes whenever appropriate. This change to be effective 4/1/2007: At least one Remark Code must be provided (may be comprised of either the Remittance Advice Remark Code or NCPDP Reject Reason Code.). Note: Changed as of 2/02 and 6/06"
+  name: 125
+  rec_id: 125
+126: 
+  active: 1
+  dept_id: 1001
+  description: "Deductible -- Major Medical. Note: New as of 2/97"
+  name: 126
+  rec_id: 126
+127: 
+  active: 1
+  dept_id: 1001
+  description: "Coinsurance -- Major Medical. Note: New as of 2/97"
+  name: 127
+  rec_id: 127
+128: 
+  active: 1
+  dept_id: 1001
+  description: "Newborn's services are covered in the mother's Allowance. Note: New as of 2/97"
+  name: 128
+  rec_id: 128
+129: 
+  active: 1
+  dept_id: 1001
+  description: "Payment denied - Prior processing information appears incorrect. Note: Changed as of 2/01"
+  name: 129
+  rec_id: 129
+13: 
+  active: 1
+  dept_id: 1001
+  description: The date of death precedes the date of service.
+  name: 13
+  rec_id: 13
+130: 
+  active: 1
+  dept_id: 1001
+  description: "Claim submission fee. Note: Changed as of 6/01"
+  name: 130
+  rec_id: 130
+131: 
+  active: 1
+  dept_id: 1001
+  description: "Claim specific negotiated discount. Note: New as of 2/97"
+  name: 131
+  rec_id: 131
+132: 
+  active: 1
+  dept_id: 1001
+  description: "Prearranged demonstration project adjustment. Note: New as of 2/97"
+  name: 132
+  rec_id: 132
+133: 
+  active: 1
+  dept_id: 1001
+  description: "The disposition of this claim/service is pending further review. Note: Changed as of 10/99"
+  name: 133
+  rec_id: 133
+134: 
+  active: 1
+  dept_id: 1001
+  description: "Technical fees removed from charges. Note: New as of 10/98"
+  name: 134
+  rec_id: 134
+135: 
+  active: 1
+  dept_id: 1001
+  description: "Claim denied. Interim bills cannot be processed. Note: New as of 10/98"
+  name: 135
+  rec_id: 135
+136: 
+  active: 1
+  dept_id: 1001
+  description: "Claim Adjusted. Plan procedures of a prior payer were not followed. Note: Changed as of 6/00"
+  name: 136
+  rec_id: 136
+137: 
+  active: 1
+  dept_id: 1001
+  description: "Payment/Reduction for Regulatory Surcharges, Assessments, Allowances or Health Related Taxes. Note: New as of 2/99"
+  name: 137
+  rec_id: 137
+138: 
+  active: 1
+  dept_id: 1001
+  description: "Claim/service denied. Appeal procedures not followed or time limits not met. Note: New as of 6/99"
+  name: 138
+  rec_id: 138
+139: 
+  active: 1
+  dept_id: 1001
+  description: "Contracted funding agreement - Subscriber is employed by the provider of services. Note: New as of 6/99"
+  name: 139
+  rec_id: 139
+14: 
+  active: 1
+  dept_id: 1001
+  description: The date of birth follows the date of service.
+  name: 14
+  rec_id: 14
+140: 
+  active: 1
+  dept_id: 1001
+  description: "Patient/Insured health identification number and name do not match. Note: New as of 6/99"
+  name: 140
+  rec_id: 140
+141: 
+  active: 1
+  dept_id: 1001
+  description: "Claim adjustment because the claim spans eligible and ineligible periods of coverage. Note: Changed as of 6/00"
+  name: 141
+  rec_id: 141
+142: 
+  active: 1
+  dept_id: 1001
+  description: "Claim adjusted by the monthly Medicaid patient liability amount. Note: New as of 6/00"
+  name: 142
+  rec_id: 142
+143: 
+  active: 1
+  dept_id: 1001
+  description: "Portion of payment deferred. Note: New as of 2/01"
+  name: 143
+  rec_id: 143
+144: 
+  active: 1
+  dept_id: 1001
+  description: "Incentive adjustment, e.g. preferred product/service. Note: New as of 6/01"
+  name: 144
+  rec_id: 144
+145: 
+  active: 1
+  dept_id: 1001
+  description: "Premium payment withholding. Note: New as of 6/02"
+  name: 145
+  rec_id: 145
+146: 
+  active: 1
+  dept_id: 1001
+  description: "Payment denied because the diagnosis was invalid for the date(s) of service reported. Note: New as of 6/02"
+  name: 146
+  rec_id: 146
+147: 
+  active: 1
+  dept_id: 1001
+  description: "Provider contracted/negotiated rate expired or not on file. Note: New as of 6/02"
+  name: 147
+  rec_id: 147
+148: 
+  active: 1
+  dept_id: 1001
+  description: "Claim/service rejected at this time because information from another provider was not provided or was insufficient/incomplete. Note: New as of 6/02"
+  name: 148
+  rec_id: 148
+149: 
+  active: 1
+  dept_id: 1001
+  description: "Lifetime benefit maximum has been reached for this service/benefit category. Note: New as of 10/02"
+  name: 149
+  rec_id: 149
+15: 
+  active: 1
+  dept_id: 1001
+  description: "Payment adjusted because the submitted authorization number is missing, invalid, or does not apply to the billed services or provider.    Note: Changed as of 2/01"
+  name: 15
+  rec_id: 15
+150: 
+  active: 1
+  dept_id: 1001
+  description: "Payment adjusted because the payer deems the information submitted does not support this level of service. Note: New as of 10/02"
+  name: 150
+  rec_id: 150
+151: 
+  active: 1
+  dept_id: 1001
+  description: "Payment adjusted because the payer deems the information submitted does not support this many services. Note: New as of 10/02"
+  name: 151
+  rec_id: 151
+152: 
+  active: 1
+  dept_id: 1001
+  description: "Payment adjusted because the payer deems the information submitted does not support this length of service. Note: New as of 10/02"
+  name: 152
+  rec_id: 152
+153: 
+  active: 1
+  dept_id: 1001
+  description: "Payment adjusted because the payer deems the information submitted does not support this dosage. Note: New as of 10/02"
+  name: 153
+  rec_id: 153
+154: 
+  active: 1
+  dept_id: 1001
+  description: "Payment adjusted because the payer deems the information submitted does not support this day's supply. Note: New as of 10/02"
+  name: 154
+  rec_id: 154
+155: 
+  active: 1
+  dept_id: 1001
+  description: "This claim is denied because the patient refused the service/procedure. Note: New as of 6/03"
+  name: 155
+  rec_id: 155
+156: 
+  active: 1
+  dept_id: 1001
+  description: "Flexible spending account payments. Note: New as of 9/03"
+  name: 156
+  rec_id: 156
+157: 
+  active: 1
+  dept_id: 1001
+  description: "Payment denied/reduced because service/procedure was provided as a result of an act of war. Note: New as of 9/03"
+  name: 157
+  rec_id: 157
+158: 
+  active: 1
+  dept_id: 1001
+  description: "Payment denied/reduced because the service/procedure was provided outside of the United States. Note: New as of 9/03"
+  name: 158
+  rec_id: 158
+159: 
+  active: 1
+  dept_id: 1001
+  description: "Payment denied/reduced because the service/procedure was provided as a result of terrorism. Note: New as of 9/03"
+  name: 159
+  rec_id: 159
+16: 
+  active: 1
+  dept_id: 1001
+  description: "Claim/service lacks information which is needed for adjudication. Additional information is supplied using remittance advice remarks codes whenever appropriate. This change to be effective 4/1/2007: At least one Remark Code must be provided (may be comprised of either the Remittance Advice Remark Code or NCPDP Reject Reason Code.)    Note: Changed as of 2/02 and 6/06"
+  name: 16
+  rec_id: 16
+160: 
+  active: 1
+  dept_id: 1001
+  description: "Payment denied/reduced because injury/illness was the result of an activity that is a benefit exclusion. Note: New as of 9/03"
+  name: 160
+  rec_id: 160
+161: 
+  active: 1
+  dept_id: 1001
+  description: "Provider performance bonus. Note: New as of 2/04"
+  name: 161
+  rec_id: 161
+162: 
+  active: 1
+  dept_id: 1001
+  description: "State-mandated Requirement for Property and Casualty, see Claim Payment Remarks Code for specific explanation. Note: New as of 2/04"
+  name: 162
+  rec_id: 162
+163: 
+  active: 1
+  dept_id: 1001
+  description: "Claim/Service adjusted because the attachment referenced on the claim was not received. Note: New as of 6/04"
+  name: 163
+  rec_id: 163
+164: 
+  active: 1
+  dept_id: 1001
+  description: "Claim/Service adjusted because the attachment referenced on the claim was not received in a timely fashion. Note: New as of 6/04"
+  name: 164
+  rec_id: 164
+165: 
+  active: 1
+  dept_id: 1001
+  description: "Payment denied /reduced for absence of, or exceeded referral. Note: New as of 10/04"
+  name: 165
+  rec_id: 165
+166: 
+  active: 1
+  dept_id: 1001
+  description: "These services were submitted after this payers responsibility for processing claims under this plan ended. Note: New as of 2/05"
+  name: 166
+  rec_id: 166
+167: 
+  active: 1
+  dept_id: 1001
+  description: "This (these) diagnosis(es) is (are) not covered. Note: New as of 6/05"
+  name: 167
+  rec_id: 167
+168: 
+  active: 1
+  dept_id: 1001
+  description: "Payment denied as Service(s) have been considered under the patient's medical plan. Benefits are not available under this dental plan. Note: New as of 6/05"
+  name: 168
+  rec_id: 168
+169: 
+  active: 1
+  dept_id: 1001
+  description: "Payment adjusted because an alternate benefit has been provided. Note: New as of 6/05"
+  name: 169
+  rec_id: 169
+17: 
+  active: 1
+  dept_id: 1001
+  description: "Payment adjusted because requested information was not provided or was insufficient/incomplete. Additional information is supplied using the remittance advice remarks codes whenever appropriate. This change to be effective 4/1/2007: At least one Remark Code must be provided (may be comprised of either the Remittance Advice Remark Code or NCPDP Reject Reason Code.)    Note: Changed as of 2/02 and 6/06"
+  name: 17
+  rec_id: 17
+170: 
+  active: 1
+  dept_id: 1001
+  description: "Payment is denied when performed/billed by this type of provider. Note: New as of 6/05"
+  name: 170
+  rec_id: 170
+171: 
+  active: 1
+  dept_id: 1001
+  description: "Payment is denied when performed/billed by this type of provider in this type of facility. Note: New as of 6/05"
+  name: 171
+  rec_id: 171
+172: 
+  active: 1
+  dept_id: 1001
+  description: "Payment is adjusted when performed/billed by a provider of this specialty. Note: New as of 6/05"
+  name: 172
+  rec_id: 172
+173: 
+  active: 1
+  dept_id: 1001
+  description: "Payment adjusted because this service was not prescribed by a physician. Note: New as of 6/05"
+  name: 173
+  rec_id: 173
+174: 
+  active: 1
+  dept_id: 1001
+  description: "Payment denied because this service was not prescribed prior to delivery. Note: New as of 6/05"
+  name: 174
+  rec_id: 174
+175: 
+  active: 1
+  dept_id: 1001
+  description: "Payment denied because the prescription is incomplete. Note: New as of 6/05"
+  name: 175
+  rec_id: 175
+176: 
+  active: 1
+  dept_id: 1001
+  description: "Payment denied because the prescription is not current. Note: New as of 6/05"
+  name: 176
+  rec_id: 176
+177: 
+  active: 1
+  dept_id: 1001
+  description: "Payment denied because the patient has not met the required eligibility requirements. Note: New as of 6/05"
+  name: 177
+  rec_id: 177
+178: 
+  active: 1
+  dept_id: 1001
+  description: "Payment adjusted because the patient has not met the required spend down requirements. Note: New as of 6/05"
+  name: 178
+  rec_id: 178
+179: 
+  active: 1
+  dept_id: 1001
+  description: "Payment adjusted because the patient has not met the required waiting requirements. Note: New as of 6/05"
+  name: 179
+  rec_id: 179
+18: 
+  active: 1
+  dept_id: 1001
+  description: Duplicate claim/service.
+  name: 18
+  rec_id: 18
+180: 
+  active: 1
+  dept_id: 1001
+  description: "Payment adjusted because the patient has not met the required residency requirements. Note: New as of 6/05"
+  name: 180
+  rec_id: 180
+181: 
+  active: 1
+  dept_id: 1001
+  description: "Payment adjusted because this procedure code was invalid on the date of service. Note: New as of 6/05"
+  name: 181
+  rec_id: 181
+182: 
+  active: 1
+  dept_id: 1001
+  description: "Payment adjusted because the procedure modifier was invalid on the date of service. Note: New as of 6/05. Modified on 8/8/2005"
+  name: 182
+  rec_id: 182
+183: 
+  active: 1
+  dept_id: 1001
+  description: "The referring provider is not eligible to refer the service billed. Note: New as of 6/05"
+  name: 183
+  rec_id: 183
+184: 
+  active: 1
+  dept_id: 1001
+  description: "The prescribing/ordering provider is not eligible to prescribe/order the service billed. Note: New as of 6/05"
+  name: 184
+  rec_id: 184
+185: 
+  active: 1
+  dept_id: 1001
+  description: "The rendering provider is not eligible to perform the service billed. Note: New as of 6/05"
+  name: 185
+  rec_id: 185
+186: 
+  active: 1
+  dept_id: 1001
+  description: "Payment adjusted since the level of care changed. Note: New as of 6/05"
+  name: 186
+  rec_id: 186
+187: 
+  active: 1
+  dept_id: 1001
+  description: "Health Savings account payments. Note: New as of 6/05"
+  name: 187
+  rec_id: 187
+188: 
+  active: 1
+  dept_id: 1001
+  description: "This product/procedure is only covered when used according to FDA recommendations. Note: New as of 6/05"
+  name: 188
+  rec_id: 188
+189: 
+  active: 1
+  dept_id: 1001
+  description: "\"Not otherwise classified\" or \"unlisted\" procedure code (CPT/HCPCS) was billed when there is a specific procedure code for this procedure/service. Note: New as of 6/05"
+  name: 189
+  rec_id: 189
+19: 
+  active: 1
+  dept_id: 1001
+  description: Claim denied because this is a work-related injury/illness and thus the liability of the Worker's Compensation Carrier.
+  name: 19
+  rec_id: 19
+190: 
+  active: 1
+  dept_id: 1001
+  description: "Payment is included in the allowance for a Skilled Nursing Facility (SNF) qualified stay. Note: New as of 10/05"
+  name: 190
+  rec_id: 190
+191: 
+  active: 1
+  dept_id: 1001
+  description: "Claim denied because this is not a work related injury/illness and thus not the liability of the workers\xE2\x80\x99 compensation carrier. Note: New as of 10/05"
+  name: 191
+  rec_id: 191
+192: 
+  active: 1
+  dept_id: 1001
+  description: "Non standard adjustment code from paper remittance advice. Note: New as of 10/05"
+  name: 192
+  rec_id: 192
+193: 
+  active: 1
+  dept_id: 1001
+  description: "Original payment decision is being maintained. This claim was processed properly the first time. Note: New as of 2/06"
+  name: 193
+  rec_id: 193
+194: 
+  active: 1
+  dept_id: 1001
+  description: "Payment adjusted when anesthesia is performed by the operating physician, the assistant surgeon or the attending physician. Note: New as of 2/06"
+  name: 194
+  rec_id: 194
+195: 
+  active: 1
+  dept_id: 1001
+  description: "Payment denied/reduced due to a refund issued to an erroneous priority payer for this claim/service. Note: New as of 2/06"
+  name: 195
+  rec_id: 195
+196: 
+  active: 1
+  dept_id: 1001
+  description: "Claim/service denied based on prior payer's coverage determination. Note: New as of 6/06"
+  name: 196
+  rec_id: 196
+197: 
+  active: 1
+  dept_id: 1001
+  description: Patient refund amount.
+  name: A0
+  rec_id: 197
+198: 
+  active: 1
+  dept_id: 1001
+  description: Claim denied charges.
+  name: A1
+  rec_id: 198
+199: 
+  active: 1
+  dept_id: 1001
+  description: "Contractual adjustment. Note: Inactive for version 004060. Use Code 45 with Group Code 'CO' or use another appropriate specific adjustment code."
+  name: A2
+  rec_id: 199
+2: 
+  active: 1
+  dept_id: 1001
+  description: Coinsurance Amount
+  name: 2
+  rec_id: 2
+20: 
+  active: 1
+  dept_id: 1001
+  description: Claim denied because this injury/illness is covered by the liability carrier.
+  name: 20
+  rec_id: 20
+200: 
+  active: 1
+  dept_id: 1001
+  description: "Medicare Secondary Payer liability met. Note: Inactive for 004010, since 6/98."
+  name: A3
+  rec_id: 200
+201: 
+  active: 1
+  dept_id: 1001
+  description: Medicare Claim PPS Capital Day Outlier Amount.
+  name: A4
+  rec_id: 201
+202: 
+  active: 1
+  dept_id: 1001
+  description: Medicare Claim PPS Capital Cost Outlier Amount.
+  name: A5
+  rec_id: 202
+203: 
+  active: 1
+  dept_id: 1001
+  description: "Prior hospitalization or 30 day transfer requirement not met. Note:"
+  name: A6
+  rec_id: 203
+204: 
+  active: 1
+  dept_id: 1001
+  description: "Presumptive Payment Adjustment. Note:"
+  name: A7
+  rec_id: 204
+205: 
+  active: 1
+  dept_id: 1001
+  description: Claim denied; ungroupable DRG
+  name: A8
+  rec_id: 205
+206: 
+  active: 1
+  dept_id: 1001
+  description: "Non-covered visits. Note:"
+  name: B1
+  rec_id: 206
+207: 
+  active: 1
+  dept_id: 1001
+  description: "Covered visits. Note: Inactive for 003040"
+  name: B2
+  rec_id: 207
+208: 
+  active: 1
+  dept_id: 1001
+  description: "Covered charges. Note: Inactive for 003040"
+  name: B3
+  rec_id: 208
+209: 
+  active: 1
+  dept_id: 1001
+  description: Late filing penalty.
+  name: B4
+  rec_id: 209
+21: 
+  active: 1
+  dept_id: 1001
+  description: Claim denied because this injury/illness is the liability of the no-fault carrier.
+  name: 21
+  rec_id: 21
+210: 
+  active: 1
+  dept_id: 1001
+  description: "Payment adjusted because coverage/program guidelines were not met or were exceeded. Note: Changed as of 2/01"
+  name: B5
+  rec_id: 210
+211: 
+  active: 1
+  dept_id: 1001
+  description: "This payment is adjusted when performed/billed by this type of provider, by this type of provider in this type of facility, or by a provider of this specialty. Note: Changed as of 2/01. This code will be deactivated on 2/1/2006."
+  name: B6
+  rec_id: 211
+212: 
+  active: 1
+  dept_id: 1001
+  description: "This provider was not certified/eligible to be paid for this procedure/service on this date of service. Note: Changed as of 10/98"
+  name: B7
+  rec_id: 212
+213: 
+  active: 1
+  dept_id: 1001
+  description: Claim/service not covered/reduced because alternative services were available, and should have been utilized.
+  name: B8
+  rec_id: 213
+214: 
+  active: 1
+  dept_id: 1001
+  description: Services not covered because the patient is enrolled in a Hospice.
+  name: B9
+  rec_id: 214
+215: 
+  active: 1
+  dept_id: 1001
+  description: "Allowed amount has been reduced because a component of the basic procedure/test was paid. The beneficiary is not liable for more than the charge limit for the basic procedure/test. Note:"
+  name: B10
+  rec_id: 215
+216: 
+  active: 1
+  dept_id: 1001
+  description: "The claim/service has been transferred to the proper payer/processor for processing. Claim/service not covered by this payer/processor. Note:"
+  name: B11
+  rec_id: 216
+217: 
+  active: 1
+  dept_id: 1001
+  description: "Services not documented in patients' medical records. Note:"
+  name: B12
+  rec_id: 217
+218: 
+  active: 1
+  dept_id: 1001
+  description: "Previously paid. Payment for this claim/service may have been provided in a previous payment. Note:"
+  name: B13
+  rec_id: 218
+219: 
+  active: 1
+  dept_id: 1001
+  description: "Payment denied because only one visit or consultation per physician per day is covered. Note: Changed as of 2/01"
+  name: B14
+  rec_id: 219
+22: 
+  active: 1
+  dept_id: 1001
+  description: "Payment adjusted because this care may be covered by another payer per coordination of benefits.    Note: Changed as of 2/01"
+  name: 22
+  rec_id: 22
+220: 
+  active: 1
+  dept_id: 1001
+  description: "Payment adjusted because this procedure/service is not paid separately. Note: Changed as of 2/01"
+  name: B15
+  rec_id: 220
+221: 
+  active: 1
+  dept_id: 1001
+  description: "Payment adjusted because `New Patient' qualifications were not met. Note: Changed as of 2/01"
+  name: B16
+  rec_id: 221
+222: 
+  active: 1
+  dept_id: 1001
+  description: "Payment adjusted because this service was not prescribed by a physician, not prescribed prior to delivery, the prescription is incomplete, or the prescription is not current. Note: Changed as of 2/01. This code will be deactivated on 2/1/2006."
+  name: B17
+  rec_id: 222
+223: 
+  active: 1
+  dept_id: 1001
+  description: "Payment adjusted because this procedure code and modifier were invalid on the date of service. Note: Changed as of 2/01, 6/05"
+  name: B18
+  rec_id: 223
+224: 
+  active: 1
+  dept_id: 1001
+  description: "Claim/service adjusted because of the finding of a Review Organization. Note: Inactive for 003070"
+  name: B19
+  rec_id: 224
+225: 
+  active: 1
+  dept_id: 1001
+  description: "Payment adjusted because procedure/service was partially or fully furnished by another provider. Note: Changed as of 2/01"
+  name: B20
+  rec_id: 225
+226: 
+  active: 1
+  dept_id: 1001
+  description: "The charges were reduced because the service/care was partially furnished by another physician. Note: Inactive for 003040"
+  name: B21
+  rec_id: 226
+227: 
+  active: 1
+  dept_id: 1001
+  description: "This payment is adjusted based on the diagnosis. Note: Changed as of 2/01"
+  name: B22
+  rec_id: 227
+228: 
+  active: 1
+  dept_id: 1001
+  description: "Payment denied because this provider has failed an aspect of a proficiency testing program. Note: Changed as of 2/01"
+  name: B23
+  rec_id: 228
+229: 
+  active: 1
+  dept_id: 1001
+  description: "Claim/service denied. Level of subluxation is missing or inadequate. Note: Inactive for 004010, since 2/99. Use code 16 and remark codes if necessary."
+  name: D1
+  rec_id: 229
+23: 
+  active: 1
+  dept_id: 1001
+  description: "Payment adjusted due to the impact of prior payer(s) adjudication including payments and/or adjustments    Note: Changed as of 2/01, and 6/05"
+  name: 23
+  rec_id: 23
+230: 
+  active: 1
+  dept_id: 1001
+  description: "Claim lacks the name, strength, or dosage of the drug furnished. Note: Inactive for 004010, since 2/99. Use code 16 and remark codes if necessary."
+  name: D2
+  rec_id: 230
+231: 
+  active: 1
+  dept_id: 1001
+  description: "Claim/service denied because information to indicate if the patient owns the equipment that requires the part or supply was missing. Note: Inactive for 004010, since 2/99. Use code 16 and remark codes if necessary."
+  name: D3
+  rec_id: 231
+232: 
+  active: 1
+  dept_id: 1001
+  description: "Claim/service does not indicate the period of time for which this will be needed. Note: Inactive for 004010, since 2/99. Use code 16 and remark codes if necessary."
+  name: D4
+  rec_id: 232
+233: 
+  active: 1
+  dept_id: 1001
+  description: "Claim/service denied. Claim lacks individual lab codes included in the test. Note: Inactive for 004010, since 2/99. Use code 16 and remark codes if necessary."
+  name: D5
+  rec_id: 233
+234: 
+  active: 1
+  dept_id: 1001
+  description: "Claim/service denied. Claim did not include patient's medical record for the service. Note: Inactive for 004010, since 2/99. Use code 16 and remark codes if necessary."
+  name: D6
+  rec_id: 234
+235: 
+  active: 1
+  dept_id: 1001
+  description: "Claim/service denied. Claim lacks date of patient's most recent physician visit. Note: Inactive for 004010, since 2/99. Use code 16 and remark codes if necessary."
+  name: D7
+  rec_id: 235
+236: 
+  active: 1
+  dept_id: 1001
+  description: "Claim/service denied. Claim lacks indicator that `x-ray is available for review.'. Note: Inactive for 004010, since 2/99. Use code 16 and remark codes if necessary."
+  name: D8
+  rec_id: 236
+237: 
+  active: 1
+  dept_id: 1001
+  description: "Claim/service denied. Claim lacks invoice or statement certifying the actual cost of the lens, less discounts or the type of intraocular lens used. Note: Inactive for 004010, since 2/99. Use code 16 and remark codes if necessary."
+  name: D9
+  rec_id: 237
+238: 
+  active: 1
+  dept_id: 1001
+  description: "Claim/service denied. Completed physician financial relationship form not on file. Note: Inactive for 003070, since 8/97. Use code 17."
+  name: D10
+  rec_id: 238
+239: 
+  active: 1
+  dept_id: 1001
+  description: "Claim lacks completed pacemaker registration form. Note: Inactive for 003070, since 8/97. Use code 17."
+  name: D11
+  rec_id: 239
+24: 
+  active: 1
+  dept_id: 1001
+  description: "Payment for charges adjusted. Charges are covered under a capitation agreement/managed care plan.    Note: Changed as of 6/00"
+  name: 24
+  rec_id: 24
+240: 
+  active: 1
+  dept_id: 1001
+  description: "Claim/service denied. Claim does not identify who performed the purchased diagnostic test or the amount you were charged for the test. Note: Inactive for 003070, since 8/97. Use code 17."
+  name: D12
+  rec_id: 240
+241: 
+  active: 1
+  dept_id: 1001
+  description: "Claim/service denied. Performed by a facility/supplier in which the ordering/referring physician has a financial interest. Note: Inactive for 003070, since 8/97. Use code 17."
+  name: D13
+  rec_id: 241
+242: 
+  active: 1
+  dept_id: 1001
+  description: "Claim lacks indication that plan of treatment is on file. Note: Inactive for 003070, since 8/97. Use code 17."
+  name: D14
+  rec_id: 242
+243: 
+  active: 1
+  dept_id: 1001
+  description: "Claim lacks indication that service was supervised or evaluated by a physician. Note: Inactive for 003070, since 8/97. Use code 17."
+  name: D15
+  rec_id: 243
+244: 
+  active: 1
+  dept_id: 1001
+  description: "Claim lacks prior payer payment information. Note: Inactive as of version 5010. Use code 16 with appropriate claim payment remark code [N4]."
+  name: D16
+  rec_id: 244
+245: 
+  active: 1
+  dept_id: 1001
+  description: "Claim/Service has invalid non-covered days. Note: Inactive as of version 5010. Use code 16 with appropriate claim payment remark code [M32, M33]."
+  name: D17
+  rec_id: 245
+246: 
+  active: 1
+  dept_id: 1001
+  description: "Claim/Service has missing diagnosis information. Note: Inactive as of version 5010. Use code 16 with appropriate claim payment remark code [MA63, MA65]."
+  name: D18
+  rec_id: 246
+247: 
+  active: 1
+  dept_id: 1001
+  description: "Claim/Service lacks Physician/Operative or other supporting documentation. Note: Inactive as of version 5010. Use code 16 with appropriate claim payment remark code [M29, M30, M35, M66]."
+  name: D19
+  rec_id: 247
+248: 
+  active: 1
+  dept_id: 1001
+  description: "Claim/Service missing service/product information. Note: Inactive as of version 5010. Use code 16 with appropriate claim payment remark code [M20, M67, M19, MA67]."
+  name: D20
+  rec_id: 248
+249: 
+  active: 1
+  dept_id: 1001
+  description: "This (these) diagnosis(es) is (are) missing or are invalid. Note: New as of 6/05"
+  name: D21
+  rec_id: 249
+25: 
+  active: 1
+  dept_id: 1001
+  description: Payment denied. Your Stop loss deductible has not been met.
+  name: 25
+  rec_id: 25
+250: 
+  active: 1
+  dept_id: 1001
+  description: "Workers Compensation State Fee Schedule Adjustment. Note: New as of 2/00"
+  name: W1
+  rec_id: 250
+26: 
+  active: 1
+  dept_id: 1001
+  description: Expenses incurred prior to coverage.
+  name: 26
+  rec_id: 26
+27: 
+  active: 1
+  dept_id: 1001
+  description: Expenses incurred after coverage terminated.
+  name: 27
+  rec_id: 27
+28: 
+  active: 1
+  dept_id: 1001
+  description: "Coverage not in effect at the time the service was provided.    Note: Inactive for 004010, since 6/98. Redundant to codes 26&27."
+  name: 28
+  rec_id: 28
+29: 
+  active: 1
+  dept_id: 1001
+  description: The time limit for filing has expired.
+  name: 29
+  rec_id: 29
+3: 
+  active: 1
+  dept_id: 1001
+  description: Co-payment Amount
+  name: 3
+  rec_id: 3
+30: 
+  active: 1
+  dept_id: 1001
+  description: "Payment adjusted because the patient has not met the required eligibility, spend down, waiting, or residency requirements.    Note: Changed as of 2/01. This code will be deactivated on 2/1/2006."
+  name: 30
+  rec_id: 30
+31: 
+  active: 1
+  dept_id: 1001
+  description: Claim denied as patient cannot be identified as our insured.
+  name: 31
+  rec_id: 31
+32: 
+  active: 1
+  dept_id: 1001
+  description: Our records indicate that this dependent is not an eligible dependent as defined.
+  name: 32
+  rec_id: 32
+33: 
+  active: 1
+  dept_id: 1001
+  description: Claim denied. Insured has no dependent coverage.
+  name: 33
+  rec_id: 33
+34: 
+  active: 1
+  dept_id: 1001
+  description: Claim denied. Insured has no coverage for newborns.
+  name: 34
+  rec_id: 34
+35: 
+  active: 1
+  dept_id: 1001
+  description: "Lifetime benefit maximum has been reached.    Note: Changed as of 10/02"
+  name: 35
+  rec_id: 35
+36: 
+  active: 1
+  dept_id: 1001
+  description: "Balance does not exceed co-payment amount.    Note: Inactive for 003040"
+  name: 36
+  rec_id: 36
+37: 
+  active: 1
+  dept_id: 1001
+  description: "Balance does not exceed deductible. Note: Inactive for 003040"
+  name: 37
+  rec_id: 37
+38: 
+  active: 1
+  dept_id: 1001
+  description: "Services not provided or authorized by designated (network/primary care) providers. Note: Changed as of 6/03"
+  name: 38
+  rec_id: 38
+39: 
+  active: 1
+  dept_id: 1001
+  description: Services denied at the time authorization/pre-certification was requested.
+  name: 39
+  rec_id: 39
+4: 
+  active: 1
+  dept_id: 1001
+  description: The procedure code is inconsistent with the modifier used or a required modifier is missing.
+  name: 4
+  rec_id: 4
+40: 
+  active: 1
+  dept_id: 1001
+  description: Charges do not meet qualifications for emergent/urgent care.
+  name: 40
+  rec_id: 40
+41: 
+  active: 1
+  dept_id: 1001
+  description: "Discount agreed to in Preferred Provider contract. Note: Inactive for 003040"
+  name: 41
+  rec_id: 41
+42: 
+  active: 1
+  dept_id: 1001
+  description: Charges exceed our fee schedule or maximum allowable amount.
+  name: 42
+  rec_id: 42
+43: 
+  active: 1
+  dept_id: 1001
+  description: "Gramm-Rudman reduction. Note: Changed as of 6/06. This code will be deactivated on 7/1/2006."
+  name: 43
+  rec_id: 43
+44: 
+  active: 1
+  dept_id: 1001
+  description: Prompt-pay discount.
+  name: 44
+  rec_id: 44
+45: 
+  active: 1
+  dept_id: 1001
+  description: Charges exceed your contracted/ legislated fee arrangement.
+  name: 45
+  rec_id: 45
+46: 
+  active: 1
+  dept_id: 1001
+  description: "This (these) service(s) is (are) not covered. Note: Inactive for 004010, since 6/00. Use code 96."
+  name: 46
+  rec_id: 46
+47: 
+  active: 1
+  dept_id: 1001
+  description: "This (these) diagnosis(es) is (are) not covered, missing, or are invalid. Note: Changed as of 6/00. This code will be deactivated on 2/1/2006."
+  name: 47
+  rec_id: 47
+48: 
+  active: 1
+  dept_id: 1001
+  description: "This (these) procedure(s) is (are) not covered. Note: Inactive for 004010, since 6/00. Use code 96."
+  name: 48
+  rec_id: 48
+49: 
+  active: 1
+  dept_id: 1001
+  description: These are non-covered services because this is a routine exam or screening procedure done in conjunction with a routine exam.
+  name: 49
+  rec_id: 49
+5: 
+  active: 1
+  dept_id: 1001
+  description: The procedure code/bill type is inconsistent with the place of service.
+  name: 5
+  rec_id: 5
+50: 
+  active: 1
+  dept_id: 1001
+  description: These are non-covered services because this is not deemed a `medical necessity' by the payer.
+  name: 50
+  rec_id: 50
+51: 
+  active: 1
+  dept_id: 1001
+  description: These are non-covered services because this is a pre-existing condition
+  name: 51
+  rec_id: 51
+52: 
+  active: 1
+  dept_id: 1001
+  description: "The referring/prescribing/rendering provider is not eligible to refer/prescribe/order/perform the service billed. Note: Changed as of 10/98. This code will be deactivated on 2/1/2006."
+  name: 52
+  rec_id: 52
+53: 
+  active: 1
+  dept_id: 1001
+  description: Services by an immediate relative or a member of the same household are not covered.
+  name: 53
+  rec_id: 53
+54: 
+  active: 1
+  dept_id: 1001
+  description: Multiple physicians/assistants are not covered in this case .
+  name: 54
+  rec_id: 54
+55: 
+  active: 1
+  dept_id: 1001
+  description: Claim/service denied because procedure/treatment is deemed experimental/investigational by the payer.
+  name: 55
+  rec_id: 55
+56: 
+  active: 1
+  dept_id: 1001
+  description: Claim/service denied because procedure/treatment has not been deemed `proven to be effective' by the payer.
+  name: 56
+  rec_id: 56
+57: 
+  active: 1
+  dept_id: 1001
+  description: "Payment denied/reduced because the payer deems the information submitted does not support this level of service, this many services, this length of service, this dosage, or this day's supply. Note: Inactive for 004050. Split into codes 150, 151, 152, 153 and 154."
+  name: 57
+  rec_id: 57
+58: 
+  active: 1
+  dept_id: 1001
+  description: "Payment adjusted because treatment was deemed by the payer to have been rendered in an inappropriate or invalid place of service. Note: Changed as of 2/01"
+  name: 58
+  rec_id: 58
+59: 
+  active: 1
+  dept_id: 1001
+  description: "Charges are adjusted based on multiple surgery rules or concurrent anesthesia rules. Note: Changed as of 6/00"
+  name: 59
+  rec_id: 59
+6: 
+  active: 1
+  dept_id: 1001
+  description: "The procedure/revenue code is inconsistent with the patient's age.    Note: Changed as of 6/02"
+  name: 6
+  rec_id: 6
+60: 
+  active: 1
+  dept_id: 1001
+  description: Charges for outpatient services with this proximity to inpatient services are not covered.
+  name: 60
+  rec_id: 60
+61: 
+  active: 1
+  dept_id: 1001
+  description: "Charges adjusted as penalty for failure to obtain second surgical opinion. Note: Changed as of 6/00"
+  name: 61
+  rec_id: 61
+62: 
+  active: 1
+  dept_id: 1001
+  description: "Payment denied/reduced for absence of, or exceeded, pre-certification/authorization. Note: Changed as of 2/01"
+  name: 62
+  rec_id: 62
+63: 
+  active: 1
+  dept_id: 1001
+  description: "Correction to a prior claim. Note: Inactive for 003040"
+  name: 63
+  rec_id: 63
+64: 
+  active: 1
+  dept_id: 1001
+  description: "Denial reversed per Medical Review. Note: Inactive for 003040"
+  name: 64
+  rec_id: 64
+65: 
+  active: 1
+  dept_id: 1001
+  description: "Procedure code was incorrect. This payment reflects the correct code. Note: Inactive for 003040"
+  name: 65
+  rec_id: 65
+66: 
+  active: 1
+  dept_id: 1001
+  description: Blood Deductible.
+  name: 66
+  rec_id: 66
+67: 
+  active: 1
+  dept_id: 1001
+  description: "Lifetime reserve days. (Handled in QTY, QTY01=LA). Note: Inactive for 003040"
+  name: 67
+  rec_id: 67
+68: 
+  active: 1
+  dept_id: 1001
+  description: "DRG weight. (Handled in CLP12). Note: Inactive for 003040"
+  name: 68
+  rec_id: 68
+69: 
+  active: 1
+  dept_id: 1001
+  description: Day outlier amount.
+  name: 69
+  rec_id: 69
+7: 
+  active: 1
+  dept_id: 1001
+  description: "The procedure/revenue code is inconsistent with the patient's gender.    Note: Changed as of 6/02"
+  name: 7
+  rec_id: 7
+70: 
+  active: 1
+  dept_id: 1001
+  description: "Cost outlier - Adjustment to compensate for additional costs. Note: Changed as of 6/01"
+  name: 70
+  rec_id: 70
+71: 
+  active: 1
+  dept_id: 1001
+  description: "Primary Payer amount. Note: Deleted as of 6/00. Use code 23."
+  name: 71
+  rec_id: 71
+72: 
+  active: 1
+  dept_id: 1001
+  description: "Coinsurance day. (Handled in QTY, QTY01=CD). Note: Inactive for 003040"
+  name: 72
+  rec_id: 72
+73: 
+  active: 1
+  dept_id: 1001
+  description: "Administrative days. Note: Inactive for 003050"
+  name: 73
+  rec_id: 73
+74: 
+  active: 1
+  dept_id: 1001
+  description: Indirect Medical Education Adjustment.
+  name: 74
+  rec_id: 74
+75: 
+  active: 1
+  dept_id: 1001
+  description: Direct Medical Education Adjustment.
+  name: 75
+  rec_id: 75
+76: 
+  active: 1
+  dept_id: 1001
+  description: Disproportionate Share Adjustment.
+  name: 76
+  rec_id: 76
+77: 
+  active: 1
+  dept_id: 1001
+  description: "Covered days. (Handled in QTY, QTY01=CA). Note: Inactive for 003040"
+  name: 77
+  rec_id: 77
+78: 
+  active: 1
+  dept_id: 1001
+  description: Non-Covered days/Room charge adjustment.
+  name: 78
+  rec_id: 78
+79: 
+  active: 1
+  dept_id: 1001
+  description: "Cost Report days. (Handled in MIA15). Note: Inactive for 003050"
+  name: 79
+  rec_id: 79
+8: 
+  active: 1
+  dept_id: 1001
+  description: "The procedure code is inconsistent with the provider type/specialty (taxonomy).    Note: Changed as of 6/02"
+  name: 8
+  rec_id: 8
+80: 
+  active: 1
+  dept_id: 1001
+  description: "Outlier days. (Handled in QTY, QTY01=OU). Note: Inactive for 003050"
+  name: 80
+  rec_id: 80
+81: 
+  active: 1
+  dept_id: 1001
+  description: "Discharges. Note: Inactive for 003040"
+  name: 81
+  rec_id: 81
+82: 
+  active: 1
+  dept_id: 1001
+  description: "PIP days. Note: Inactive for 003040"
+  name: 82
+  rec_id: 82
+83: 
+  active: 1
+  dept_id: 1001
+  description: "Total visits. Note: Inactive for 003040"
+  name: 83
+  rec_id: 83
+84: 
+  active: 1
+  dept_id: 1001
+  description: "Capital Adjustment. (Handled in MIA). Note: Inactive for 003050"
+  name: 84
+  rec_id: 84
+85: 
+  active: 1
+  dept_id: 1001
+  description: Interest amount.
+  name: 85
+  rec_id: 85
+86: 
+  active: 1
+  dept_id: 1001
+  description: "Statutory Adjustment. Note: Inactive for 004010, since 6/98. Duplicative of code 45."
+  name: 86
+  rec_id: 86
+87: 
+  active: 1
+  dept_id: 1001
+  description: Transfer amount.
+  name: 87
+  rec_id: 87
+88: 
+  active: 1
+  dept_id: 1001
+  description: "Adjustment amount represents collection against receivable created in prior overpayment. Note: Inactive for 004050."
+  name: 88
+  rec_id: 88
+89: 
+  active: 1
+  dept_id: 1001
+  description: Professional fees removed from charges.
+  name: 89
+  rec_id: 89
+9: 
+  active: 1
+  dept_id: 1001
+  description: The diagnosis is inconsistent with the patient's age.
+  name: 9
+  rec_id: 9
+90: 
+  active: 1
+  dept_id: 1001
+  description: Ingredient cost adjustment.
+  name: 90
+  rec_id: 90
+91: 
+  active: 1
+  dept_id: 1001
+  description: Dispensing fee adjustment.
+  name: 91
+  rec_id: 91
+92: 
+  active: 1
+  dept_id: 1001
+  description: "Claim Paid in full. Note: Inactive for 003040"
+  name: 92
+  rec_id: 92
+93: 
+  active: 1
+  dept_id: 1001
+  description: "No Claim level Adjustments. Note: Inactive for 004010, since 2/99. In 004010, CAS at the claim level is optional."
+  name: 93
+  rec_id: 93
+94: 
+  active: 1
+  dept_id: 1001
+  description: Processed in Excess of charges.
+  name: 94
+  rec_id: 94
+95: 
+  active: 1
+  dept_id: 1001
+  description: "Benefits adjusted. Plan procedures not followed. Note: Changed as of 6/00"
+  name: 95
+  rec_id: 95
+96: 
+  active: 1
+  dept_id: 1001
+  description: "Non-covered charge(s). This change to be effective 4/1/2007: At least one Remark Code must be provided (may be comprised of either the Remittance Advice Remark Code or NCPDP Reject Reason Code.). Note: Changed as of 6/06"
+  name: 96
+  rec_id: 96
+97: 
+  active: 1
+  dept_id: 1001
+  description: "Payment is included in the allowance for another service/procedure. Note: Changed as of 2/99"
+  name: 97
+  rec_id: 97
+98: 
+  active: 1
+  dept_id: 1001
+  description: "The hospital must file the Medicare claim for this inpatient non-physician service. Note: Inactive for 003040"
+  name: 98
+  rec_id: 98
+99: 
+  active: 1
+  dept_id: 1001
+  description: "Medicare Secondary Payer Adjustment Amount. Note: Inactive for 003040"
+  name: 99
+  rec_id: 99

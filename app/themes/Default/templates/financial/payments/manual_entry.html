@@ -1,0 +1,202 @@
+            [% INCLUDE util/form.html %]
+            [% IF current_transaction.billing_service_id == billing_service.rec_id;
+                reload_transaction = current_transaction; 
+            END %]
+            <table class="payment_detail">
+                <tr class="top [% IF rowclass; "even"; ELSE; "odd"; END %]">
+                    <td class="client_name">
+                        [% client_name %]
+                        <input type="hidden" name="current_client_id" value="[% client_id %]" />
+                    </td>
+                    <td class="billed_paid" rowspan="2">
+                        <table class="billed_paid">
+                            <tr>
+                                <td class="billed">Billed As</td>
+                                <td class="billed">[% billing_service.get_prognotes.0.charge_code.name %]</td>
+                                <td class="billed">$ [% billing_service.billed_amount %]</td>
+                                <td class="billed">[% billing_service.billed_units %] units</td>
+                            </tr>
+                            <tr>
+                                <!-- XXX better UI - indicate this isn't required unless it's different -->
+                                <td class="paid">Paid As</td>
+                                <td class="paid">
+                                [% INCLUDE util/input_text.html
+                                    name    = 'paid_charge_code'
+                                    value   = reload_transaction.paid_charge_code 
+                                    size    = 7
+                                    maxlength = 48
+                                %]
+                                </td>
+                                <td class="paid">$
+                                    [% INCLUDE util/input_text.html
+                                        name    = 'paid_amount'
+                                        value   = reload_transaction.paid_amount || billing_service.billed_amount
+                                        size    = 7
+                                        maxlength = 18
+                                    %]
+                                    <input type="hidden" name="submitted_charge_code_if_applicable" value="[% billing_service.get_prognotes.0.charge_code.name %]" />
+                                </td>
+                                <td class="paid">
+                                    [% INCLUDE util/input_text.html
+                                        name    = 'paid_units'
+                                        value   = reload_transaction.paid_units || billing_service.billed_units
+                                        size    = 3
+                                    %] units
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    [% INCLUDE util/select_new.html
+                        name    = 'billing_payment_id'
+                        label = 'Payment'
+                        values  = billing_payments
+                        keyname = 'rec_id'
+                        valname = 'label'
+                        wraptag = 'td'
+                        default = reload_transaction.billing_payment_id
+                    %]
+                </tr>
+                <tr class="[% IF rowclass; "even"; ELSE; "odd"; END %]">
+                    <td class="note_date">[% billing_service.get_prognotes.0.note_date.format_date %]</td>
+                        <!-- inner table spans this row in this middle column -->
+                    [% INCLUDE util/select_new.html
+                        name    = 'claim_status_code'
+                        values  = current_user.valid_data.list( '_claim_status_codes' ) 
+                        keyname = 'name'
+                        valname = 'description'
+                        wraptag = 'td'
+                        default = reload_transaction.claim_status_code
+                    %]
+                </tr>
+                <tr class="[% IF rowclass; "even"; ELSE; "odd"; END %]">
+                    <td class="deduction">
+                    Deductions 
+                    </td>
+                    <td rowspan="2">
+                        <table class="deductions">
+                            <tr>
+                                <td class="deduction">
+                                $ [% INCLUDE util/input_text.html
+                                    name    = 'deduction_1'
+                                    value   = reload_transaction.deduction_1
+                                    size    = 5
+                                    maxlength = 18
+                                %]
+                                </td>
+                                <td class="deduction">
+                                $ [% INCLUDE util/input_text.html
+                                    name    = 'deduction_2'
+                                    value   = reload_transaction.deduction_2
+                                    size    = 5
+                                    maxlength = 18
+                                %]
+                                </td>
+                                <td class="deduction">
+                                $ [% INCLUDE util/input_text.html
+                                    name    = 'deduction_3'
+                                    value   = reload_transaction.deduction_3
+                                    size    = 5
+                                    maxlength = 18
+                                %]
+                                </td>
+                                <td class="deduction">
+                                $ [% INCLUDE util/input_text.html
+                                    name    = 'deduction_4'
+                                    value   = reload_transaction.deduction_4
+                                    size    = 5
+                                    maxlength = 18
+                                %]
+                                </td>
+                            </tr>
+                            <tr class="[% IF rowclass; "even"; ELSE; "odd"; END %]">
+                                <td class="deduction">
+                                [% INCLUDE util/select_new.html
+                                    name    = 'reason_1'
+                                    values  = reason_codes 
+                                    keyname = 'name'
+                                    valname = 'name_desc'
+                                    default = reload_transaction.reason_1
+                                    truncate_to = 15
+                                    leading_blank = ' '
+                                %]
+                                </td>
+                                <td class="deduction">
+                                [% INCLUDE util/select_new.html
+                                    name    = 'reason_2'
+                                    values  = reason_codes 
+                                    keyname = 'name'
+                                    valname = 'name_desc'
+                                    default = reload_transaction.reason_2
+                                    truncate_to = 15
+                                    leading_blank = ' '
+                                %]
+                                </td>
+                                <td class="deduction">
+                                [% INCLUDE util/select_new.html
+                                    name    = 'reason_3'
+                                    values  = reason_codes 
+                                    keyname = 'name'
+                                    valname = 'name_desc'
+                                    default = reload_transaction.reason_3
+                                    truncate_to = 15
+                                    leading_blank = ' '
+                                %]
+                                </td>
+                                <td class="deduction">
+                                [% INCLUDE util/select_new.html
+                                    name    = 'reason_4'
+                                    values  = reason_codes 
+                                    keyname = 'name'
+                                    valname = 'name_desc'
+                                    default = reload_transaction.reason_4
+                                    truncate_to = 15
+                                    leading_blank = ' '
+                                %]
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    [% INCLUDE util/input_text.html
+                        name    = 'payer_claim_control_number'
+                        label   = 'Payer Control #'
+                        value   = reload_transaction.payer_claim_control_number
+                        size    = 10
+                        maxlength = 30
+                        wraptag = 'td'
+                    %]
+                </tr>
+                <tr class="[% IF rowclass; "even"; ELSE; "odd"; END %]">
+                    <td class="deduction">
+                    Reasons 
+                    </td>
+                    <!-- deduction table takes up 2 rows -->
+                    [% INCLUDE util/input_text.html
+                        name    = 'patient_responsibility_amount'
+                        label   = 'Patient Responsibility'
+                        value   = reload_transaction.patient_responsibility_amount
+                        size    = 5
+                        maxlength = 18
+                        currency = '$'
+                        wraptag = 'td'
+                    %]
+                </tr>
+                <tr class="[% IF rowclass; "even"; ELSE; "odd"; END %]">
+                    <td colspan="2">
+                        [% INCLUDE util/input_text.html
+                            name    = 'remarks'
+                            label   = 'Remarks'
+                            value   = reload_transaction.remarks
+                            size    = 55
+                        %]
+                    </td>
+                    <td>
+                        <input type="hidden" name="billing_service_id" value="[% billing_service.rec_id %]" />
+                        <input type="hidden" name="rolodex_id" value="[% current_insurer.id %]" />
+                        <input type="hidden" name="section" value="payments" />
+                        <input type="hidden" name="step" value="3" />
+                        <input type="hidden" name="op" value="payments_3_save" />
+                        <p class="save"><input type="submit" value="Save" /></p>
+                    </td>
+                </tr>
+            </table>
+            [% INCLUDE util/form_end.html %]

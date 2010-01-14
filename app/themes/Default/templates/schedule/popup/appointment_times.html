@@ -1,0 +1,36 @@
+[%# 
+
+This needs to be callable from the controller as well to do an AJAX update of appointment times when the user selects a new appointment date.
+
+REQUIRED
+    - appointment - the current appointment so that we can set the default time
+    - appointment_times - the list of appointment times we are to process.
+    - prefix - the descriminator for the appointment popup that this is being included in (add/edit/etc.)  Keeps the id's distinct when multiple instances are involved in a page (or any other id's).  This can become a rather ugly namespace issue in a complex page.
+
+appointment_times expects an array of hashes of appt_time => 'time', count => 'count of appointments at that time', such as eleMentalClinic::Schedule::Availability::get_appointment_slots_tallied produces.
+ %]
+
+[%- 
+    current_appt_time_iso = appointment.appt_time FILTER time_format('24')
+    # appointment.appt_time is in db iso format, but the appointment_times list returns simple hh:mm 24-hour times
+-%]
+                    [% INCLUDE util/select_new.html
+                        id      = "${prefix}appt_time"
+                        name    = "appt_time"
+                        default = current_appt_time_iso
+                        label   = 'Time'
+                        wraptag = 'p'
+                        values  = appointment_times
+                        valblock  = 'appointment_time_builder'
+                        keyname = 'appt_time'
+                    %]
+                    [% BLOCK appointment_time_builder;
+                           tmp_appt_time_12hour = value.appt_time FILTER time_format('12');
+                           IF value.count > 0 %]
+                           [% tmp_appt_time_12hour %] - [% value.count %] appointment[% 's' UNLESS value.count == 1 %]
+                           [% ELSE %]
+                           [% tmp_appt_time_12hour %]
+                           [% END;
+                       END;
+                    %]
+

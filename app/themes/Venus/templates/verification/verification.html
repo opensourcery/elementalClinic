@@ -1,0 +1,76 @@
+[% pref_date_format = current_user.pref.date_format -%]
+<div id="left" class="client_box">
+
+    <h4>[% op == 'edit' ? 'Edit' : 'New' %] Verification Letter</h4>
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" name="verification_form">
+    <p>Patient's DOB: [% client.dob FILTER date_format(pref_date_format) %]</p>
+
+    [% INCLUDE util/input_text.html
+        name     = 'apid_num'
+        label    = 'APID#'
+        value    = current.apid_num
+        required = 1
+        wraptag  = 'p'
+    %]
+
+    [% INCLUDE util/select_new.html
+        name     = 'rolodex_treaters_id'
+        wraptag  = 'p' 
+        label    = 'Doctor'
+        required = 1
+        values   = rolodex_treaters
+        default  = current.rolodex_treaters_id || client.get_primary_treater.rolodex_treaters_id
+        keyname  = 'in_treaters'
+        valname  = 'eman'
+    %]
+
+	[% INCLUDE util/date_picker.html
+		name	 = 'verif_date'
+		label	 = 'Date'
+		value    = current.verif_date || today_ymd
+		required = 1
+		wraptag = 'p'
+	%]
+    
+        <input type="hidden" name="rec_id" id="rec_id" value="[% current.rec_id %]" /> 
+        <input type="hidden" name="client_id" id="client_id" value="[% client.client_id %]" />
+        <input type="hidden" name="op" id="op" value="save" />
+        <p class="save"><input type="submit" name="submit" id="submit" value="Save" /></p>
+    </form>
+    [% IF op == 'edit';
+        INCLUDE util/form_cancel.html;
+    END %]
+</div>
+
+<div id="right" class="client_box">
+
+    [% IF( verifications = client.verifications( )) %]
+        <h4>Verification Letters Received</h4>
+        [% INCLUDE verification_list %]
+        [% ELSE %]
+        <p>No Verification Letters Received.</p>
+    [% END %]
+
+</div>
+
+[% BLOCK verification_list %]
+    <table>
+        <thead>
+            <th>Verification Date</th>
+            <th>APID#</th>
+            <th>Doctor</th>
+            <th>Entered By</th>
+            <th>On</th>
+        </thead>
+        [% FOR verification IN verifications %]
+        <tr>
+            <td>[% verification.verif_date FILTER date_format(pref_date_format) %]</td>
+            <td><a href="[% script %]?op=edit&rec_id=[% verification.rec_id %]&client_id=[% client.id %]">[% verification.apid_num %]</a></td>
+            <td>[% verification.rolodex.eman %]</td>
+            <td>[% verification.personnel.login %]</td>
+            <td>[% verification.created FILTER date_format(pref_date_format) %]</td>
+        </tr>
+        [% END %]
+    </table>
+[% END %]
+

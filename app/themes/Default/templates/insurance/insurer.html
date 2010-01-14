@@ -1,0 +1,290 @@
+[% UNLESS( op == 'insurance_new' ) %]
+<h4><em>Insurance:</em> [% insurance.rolodex.eman %]</h4>
+<p><a href="rolodex.cgi?op=rolodex_edit;client_id=[% client.id %];rolodex_id=[% insurance.rolodex.id %]">Edit Rolodex entry &#187;</a></p>
+[% END %]
+
+[% INCLUDE util/form.html IF action == 'edit' %]
+<div class="left">
+[% INCLUDE util/select_new.html
+    label     = 'Rank'
+    name      = 'rank'
+    values    = [
+        { key => 1, val => 'Primary' },
+        { key => 2, val => 'Secondary' },
+        { key => 3, val => 'Tertiary' },
+    ]
+    keyname = 'key'
+    valname = 'val'
+    default = insurance.rank
+    wraptag = 'p'
+    required    = 1
+%]
+</div>
+
+<div class="left">
+[% INCLUDE util/date_picker.html
+    name    = 'start_date'
+    value   = insurance.start_date || 'today'
+    label   = 'Plan start'
+    wraptag = 'p'
+    required    = 1
+%]
+
+[% INCLUDE util/date_picker.html
+    name    = 'end_date'
+    value   = insurance.end_date
+    label   = 'Plan end'
+    wraptag = 'p'
+%]
+</div>
+
+<hr class="div" />
+
+[% INCLUDE util/input_text.html
+    name    = 'insurance_id'
+    label   = 'Subscriber Insurance ID'
+    value   = insurance.insurance_id
+    size    = 15
+    wraptag = 'p'
+    required    = 1
+%]
+
+[% INCLUDE util/choose_valid_data.html
+    name    = 'insurance_type_id'
+    table   = '_insurance_type'
+    label   = 'Insurance Type'
+    type    = 'select'
+    default = insurance.insurance_type_id || 0
+    use_id  = 1
+    required = 1
+    wraptag = 'p'
+    leading_hash = [ { value => '', name => 'Select an insurance type', }, ] 
+%]
+
+<hr class="div" />
+
+<h5>Plan Information</h5>
+
+<div class="left">
+[% INCLUDE util/input_text.html
+    name    = 'patient_insurance_id'
+    label   = 'Client Insurance ID<br /><em>(if different from subscriber\'s)</em>'
+    value   = insurance.patient_insurance_id
+    size    = 15
+    wraptag = 'p'
+    break   = 1
+%]
+[% INCLUDE util/input_text.html
+    name    = 'insurance_name'
+    label   = 'Plan name'
+    value   = insurance.insurance_name
+    size    = 30
+    wraptag = 'p'
+    break   = 1
+%]
+<hr class="subtle" />
+[% INCLUDE util/input_text.html
+    name    = 'insured_group'
+    label   = 'Group name'
+    value   = insurance.insured_group
+    size    = 30
+    wraptag = 'p'
+    break   = 1
+%]
+[% INCLUDE util/input_text.html
+    name    = 'insured_group_id'
+    label   = 'Group id'
+    value   = insurance.insured_group_id
+    size    = 30
+    wraptag = 'p'
+    break   = 1
+%]
+
+[% INCLUDE util/input_text.html
+    name    = 'carrier_contact'
+    label   = 'Carrier contact'
+    value   = insurance.carrier_contact
+    size    = 30
+    wraptag = 'p'
+    break   = 1
+%]
+
+[% INCLUDE util/input_text.html
+    name    = 'co_pay_amount'
+    label   = 'Co-pay'
+    value   = insurance.co_pay_amount
+    size    = 8
+    currency = 1
+    wraptag = 'p'
+%]
+
+[% INCLUDE util/input_text.html
+    name    = 'deductible_amount'
+    label   = 'Deductible'
+    value   = insurance.deductible_amount
+    size    = 8
+    currency = 1
+    wraptag = 'p'
+%]
+
+[% INCLUDE util/input_text.html
+    name    = 'license_required'
+    label   = 'License required'
+    value   = insurance.license_required
+    size    = 30
+    wraptag = 'p'
+    break   = 1
+%]
+
+</div>
+
+<div class="right">
+[% INCLUDE util/textarea.html
+    name    = 'comment_text'
+    label   = 'Comment'
+    break   = 1
+    value   = insurance.comment_text
+    cols    = 50
+    rows    = 8
+    wraptag = 'p'
+%]
+</div>
+
+<hr class="div" />
+
+    <h5>Insured Information</h5>
+    <dl class="inline">
+        <dt><label for="insured_fname">First name</label></dt>
+        <dd>
+            [% INCLUDE util/input_text.html
+                name    = 'insured_fname'
+                value   = insurance.insured_fname
+                size    = 15
+            %]
+            [% INCLUDE util/input_text.html
+                name    = 'insured_mname'
+                label   = 'Middle'
+                value   = insurance.insured_mname
+                size    = 15
+            %]
+        </dd>
+
+        <dt><label for="insured_fname">Last name</label></dt>
+        <dd>
+            [% INCLUDE util/input_text.html
+                name    = 'insured_lname'
+                value   = insurance.insured_lname
+                size    = 15
+            %]
+            [% INCLUDE util/input_text.html
+                name    = 'insured_name_suffix'
+                label   = 'Suffix'
+                value   = insurance.insured_name_suffix
+                size    = 15
+            %]
+        </dd>
+    </dl>
+
+    <hr class="div" /><hr class="subtle" />
+
+    <dl class="inline">
+        <dt><label for="insured_relationship_id">Client's Relationship to Insured</label></dt>
+        [% INCLUDE util/choose_valid_data.html
+            name    = 'insured_relationship_id'
+            table   = '_insurance_relationship'
+            type    = 'select'
+            default = insurance.insured_relationship_id || 1
+            use_id  = 1
+            wraptag = 'dd'
+        %]
+    </dl>
+
+    <hr class="div" /><hr class="subtle" />
+
+    <dl class="inline">
+        [% INCLUDE util/input_text.html
+            name    = 'insured_addr'
+            label   = 'Address'
+            value   = insurance.insured_addr
+            size    = 25
+            dl      = 1
+        %]
+        [% INCLUDE util/input_text.html
+            name    = 'insured_addr2'
+            label   = 'Address 2'
+            value   = insurance.insured_addr2
+            size    = 25
+            dl      = 1
+        %]
+        [% INCLUDE util/input_text.html
+            name    = 'insured_city'
+            label   = 'City'
+            value   = insurance.insured_city
+            size    = 25
+            dl      = 1
+        %]
+        <dt>State:</dt>
+        <dd>
+            [% INCLUDE util/input_text.html
+                name    = 'insured_state'
+                value   = insurance.insured_state
+                size    = 2
+            %]
+            [% INCLUDE util/input_text.html
+                name    = 'insured_postcode'
+                label   = 'Zip'
+                value   = insurance.insured_postcode
+                size    = 10
+            %]
+        </dd>
+        [% INCLUDE util/input_text.html
+            name    = 'insured_phone'
+            label   = 'Phone'
+            value   = insurance.insured_phone
+            size    = 15
+            dl      = 1
+        %]
+    </dl>
+
+    <hr class="div" /><hr class="subtle" />
+
+    <dl class="inline">
+        <dt>Birthdate:</dt>
+        [% INCLUDE util/date_picker.html
+            name    = 'insured_dob'
+            value   = insurance.insured_dob
+            wraptag = 'dd'
+        %]
+
+        [% INCLUDE util/select_new.html
+            label     = 'Sex'
+            name      = 'insured_sex'
+            values    = current_user.valid_data.list( '_sex' )
+            default   = insurance.insured_sex || 'Unknown'
+            keyname   = 'name'
+            valname   = 'name'
+            dl      = 1
+        %]
+    </dl>
+
+    <dl class="inline">
+        [% INCLUDE util/input_text.html
+            name    = 'insured_employer'
+            label   = 'Employer'
+            value   = insurance.insured_employer
+            size    = 30
+            dl      = 1
+        %]
+    </dl>
+</fieldset>
+
+[% IF action == 'edit' %]
+    <input type="hidden" name="carrier_type" value="[% carrier_type || insurance.carrier_type %]" />
+    <input type="hidden" name="role_name" value="[% role_name || insurance.role_name %]" />
+    <input type="hidden" name="rolodex_id" value="[% rolodex.id %]" />
+    <input type="hidden" name="client_insurance_id" value="[% insurance.id %]" />
+    <input type="hidden" name="rolodex_insurance_id" value="[% insurance.rolodex_insurance_id %]" />
+    <input type="hidden" name="client_id" value="[% client.id %]" />
+    <p class="save"><input type="submit" name="op" id="op" value="Save Insurance" /></p>
+[% INCLUDE util/form_end.html %]
+[% END %]

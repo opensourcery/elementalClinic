@@ -1,0 +1,37 @@
+[% PROCESS global/rowclass.html %]
+<div class="subcontent">
+    [% IF current_report.name %]
+        <h4>[% current_report.label %][% ": $current_report.sublabel" IF current_report.sublabel %]</h4>
+        [% IF current_report.run %]
+            [% IF current_report.data %]
+                [% TRY;
+                    display_template = "financial/reports/${ current_report.name }_display.html";
+                    INCLUDE "$display_template";
+                    CATCH %]
+                    <p>No data display template or template error for [% current_report.name %] ([% display_template %])</p>
+                    <p>Error Type: <strong>[% error.type %]</strong></p>
+                    <p>Error Info: <strong>[% error.info %]</strong></p>
+                    <p>Report Data: [% current_report.data %]</p>
+                    [% END %]
+            [% ELSE %]
+                <p>No data.</p>
+            [% END %]
+        [% ELSE %]
+            [% INCLUDE util/form.html %]
+                [% TRY;
+                    run_template = "financial/reports/${ current_report.name }.html";
+                    INCLUDE "$run_template";
+                    CATCH %]
+                    <p>No report runner template for [% current_report.name %] ([% run_template %]).</p>
+                    [% END %]
+            <input type="hidden" name="op" value="reports_1_run" />
+            <input type="hidden" name="report_name" value="[% current_report.name %]" />
+            <p class="save"><input type="submit" value="Run Report"/></p>
+            [% INCLUDE financial/session.html %]
+            [% INCLUDE util/form_end.html %]
+        [% END %]
+
+    [% ELSE %]
+        <p>Please choose a report</p>
+    [% END %]
+</div>

@@ -1,0 +1,27 @@
+[% op_type = 'associate' %]
+<div id="content">
+[% INCLUDE lookup/tabs.html
+    tab = 'associate'
+%]
+<div class="system_box">
+[% INCLUDE util/errors.html %]
+    [% INCLUDE lookup/table_select.html %]
+
+    <p>Use this screen to associate individual items from one lookup table (on the left) with a group from another table (on the right).</p>
+    <div id="table">
+        <div class="header_small">
+        </div>
+        [% IF current_table;
+            INCLUDE lookup/table_rows.html
+                row_edit = 0;
+        END %]
+    </div>
+
+    [% IF current_table;
+        INCLUDE lookup/associate_groups.html
+    ; END %]
+
+    <hr class="div" />
+</div>
+</div>
+

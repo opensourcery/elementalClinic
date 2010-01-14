@@ -1,0 +1,72 @@
+<div id="assessment" class="selectee">
+    [% UNLESS intake %]
+        <p class="new_this"><a href="[% BASE_URI _ 'op=create' %]">Create a new assessment</a></p>
+    [% END %]
+    [% IF current_assessment.id && !intake %]
+        <h4>
+            <em>[% title_prefix %]Assessment of</em> [% current_assessment.start_date.format_date_medium %],
+            <em>expires</em> [% current_assessment.end_date.format_date_medium %]
+        </h4>
+    [% ELSIF op == 'create' && !intake %]
+        <h4>New Assessment</h4>
+    [% END %]
+    [% IF current_assessment.id && !intake %]
+        <ul class="affect_this">
+            <li><a href="[% BASE_URI _ 'op=edit' %]" class="edit_this">Edit</a></li>
+            [%- IF clonable %]
+            <li><a href="[% BASE_URI _ 'op=clone' %]" class="clone_this">Clone</a></li>
+            [%- END %]
+            <li><a href="[% BASE_URI _ 'op=print' %]" class="print_this">Print</a></li>
+        </ul>
+    [% END %]
+    [% IF op == 'create' || op == 'edit' || op == 'clone' || intake %]
+        <dl class="inline">
+            [% INCLUDE util/date_picker.html
+                label   = 'Assessment date'
+                name    = 'start_date'
+                value   = current_assessment.start_date || 'today'
+                dl      = 1
+            %]
+            [% INCLUDE util/date_picker.html
+                label   = 'Expiration date'
+                name    = 'end_date'
+                value   = current_assessment.end_date || today_ymd.date_calc( '+1y' )
+                dl      = 1
+            %]
+        </dl>
+        <hr class="div" />
+    [% END %]
+    <ul class="navigation">
+        [% FOR section IN current_assessment.template.sections_view %]
+            [% INCLUDE admin/assessment_template/_section_navigation.html %]
+        [% END %]
+    </ul>
+
+    <div class="content">
+        [% FOR section IN current_assessment.template.sections_view %]
+            <ul class="assessment_section" id="section_fields_[% section.id %]"
+                [% IF part %]
+                    [% ' style="display:none"' UNLESS part == section.label %]
+                [% ELSE %]
+                    [% ' style="display:none"' UNLESS loop.first %]
+                [% END %]
+            >
+                [% FOR field IN fields.${ section.id } %]
+                    [% INCLUDE assessment/_field.html %]
+                [% END %]
+            </ul>
+        [% END %]
+
+        <hr class="div" />[%# FIXME this sucks %]
+    </div>
+    [% IF action == 'edit' || intake %]
+    <input type="hidden" id="assessment_id" name="assessment_id" value="[% current_assessment.id %]" />
+    <input type="hidden" id="part_id" name="part_id" value="[% part_id %]" />
+        [% UNLESS intake %]
+            <input type="hidden" id="client_id" name="client_id" value="[% client.id %]" />
+
+            <p class="save_this"><input type="submit" name="op" id="op_save" value="Save assessment" /></p>
+            <p class="cancel_this"><a href="[% BASE_URI %]">Cancel</a></p>
+        [% END %]
+    [% END %]
+</div>

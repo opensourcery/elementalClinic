@@ -1,0 +1,100 @@
+    <h4>[% attendee.client.eman %]</h4>
+    [% UNLESS client_space %]
+    <p><a href="groups.cgi?op=client_group_detail&group_id=[% group.rec_id %]&client_id=[% attendee.client.id %]">Client group history &#187;</a></p>
+    [% END %]
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+
+    <p>
+        On <strong>[% prognote.note_date %]</strong>,
+        from <strong>[% prognote.start_time %]</strong>
+        to <strong>[% prognote.end_time %]</strong>
+    </p>
+    <input type="hidden" name="start_date" value="[% prognote.start_date %]" />
+    <input type="hidden" name="end_date" value="[% prognote.end_date %]" />
+
+    [% INCLUDE util/choose_valid_charge_code.html
+        note    = prognote
+    %]
+
+
+    <hr class="subtle" />
+
+    <dl class="inline">
+    <dt>Location</dt>
+    [% INCLUDE util/choose_valid_data.html
+        name   = 'note_location_id'
+        table  = '_prognote_location'
+        type    = 'select'
+        default = prognote.note_location_id
+        use_id  = 1
+        wraptag = 'dd'
+        onchange    = "return get_codes( '$Config.theme' )"
+    %]
+
+    <dt>Writer</dt>
+    [% INCLUDE util/select_new.html
+        action  = 'display'
+        name    = 'writer_id'
+        values  = department.get_writers
+        default = prognote.staff_id
+        keyname = 'staff_id'
+        valname = 'name'
+        wraptag = 'dd'
+        onchange    = "return get_codes( '$Config.theme' )"
+    %]
+
+    <dt>Rating</dt>
+    [% INCLUDE util/input_text.html
+        name    = 'outcome_rating'
+        value   = prognote.outcome_rating
+        size    = 3
+        wraptag = 'dd'
+    %]
+
+    <dt>Goal</dt>
+    <dd>
+        <strong>0: Simple progress note</strong>
+    </dd>
+    </dl>
+    <input type="hidden" name="goal_id" value="0" />
+
+    <hr class="div" />
+    <hr class="subtle" />
+
+    
+    [% INCLUDE util/textarea.html
+        name    = 'note_body'
+        value   = prognote.note_body
+        cols    = 90
+        rows    = 10
+        wraptag = 'p'
+    %]
+
+    [% IF prognote.digital_signature %]
+    <hr class="div" />
+    <hr class="subtle" />
+    <p>[% prognote.digital_signature %]</p>
+    [% END %]
+
+    [% IF prognote.note_committed %]
+        <p class="edit_text">Progress note has been committed and cannot be edited.
+        [% IF client_space && current_user.primary_role.has_group_permission( group.rec_id ) -%]
+        <a href="group_notes.cgi?op=prognote_detail&attendee_id=[% attendee.rec_id %]">View &#187;</a>
+        [% END -%]
+        </p>
+    [% ELSIF client_space %]
+        <p class="edit_text">Progress note has not been committed.
+        [% IF current_user.primary_role.has_group_permission( group.rec_id ) %]
+            <a href="group_notes.cgi?op=prognote_detail&attendee_id=[% attendee.rec_id %]">Edit &#187;</a></p>
+        [% END %]
+    [% ELSE %]
+        <input type="hidden" name="attendee_id" value="[% attendee.rec_id %]" />
+        <input type="hidden" name="client_id" value="[% attendee.client.id %]" />
+        <input type="hidden" name="prognote_id" value="[% prognote.rec_id %]" />
+        <input type="hidden" name="group_id" value="[% group.rec_id %]" />
+        <p class="save">
+            <input type="submit" name="op" id="op_save_temp" value="Save progress note for later editing" />
+            <input type="submit" name="op" id="op_save_commit" value="Digitally sign and commit" />
+        </p>
+    [% END %]
+    </form>

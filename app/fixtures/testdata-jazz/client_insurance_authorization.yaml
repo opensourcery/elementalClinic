@@ -1,0 +1,171 @@
+---
+1001:
+  allowed_amount: 1000
+  capitation_amount: ~
+  capitation_last_date: ~
+  client_insurance_id: 1003
+  code: A123
+  end_date: 2003-12-31
+  rec_id: 1001
+  start_date: 2003-01-01
+  type: Initial
+1002:
+  allowed_amount: 1000
+  capitation_amount: ~
+  capitation_last_date: ~
+  client_insurance_id: 1003
+  code: B123
+  end_date: 2004-12-31
+  rec_id: 1002
+  start_date: 2004-01-01
+  type: Renewal
+1003:
+  allowed_amount: 1000
+  capitation_amount: ~
+  capitation_last_date: ~
+  client_insurance_id: 1003
+  code: C123
+  end_date: 2005-12-31
+  rec_id: 1003
+  start_date: 2005-01-01
+  type: Renewal
+1004:
+  allowed_amount: 1000
+  capitation_amount: ~
+  capitation_last_date: ~
+  client_insurance_id: 1003
+  code: D123
+  end_date: 2007-12-31
+  rec_id: 1004
+  start_date: 2006-01-01
+  type: Renewal
+1005:
+  allowed_amount: 1000
+  capitation_amount: ~
+  capitation_last_date: ~
+  client_insurance_id: 1004
+  code: RCA3
+  end_date: 2005-03-31
+  rec_id: 1005
+  start_date: 2004-03-28
+  type: Oral
+1006:
+  allowed_amount: 1000
+  capitation_amount: ~
+  capitation_last_date: ~
+  client_insurance_id: 1004
+  code: RCA3
+  end_date: 2006-03-31
+  rec_id: 1006
+  start_date: 2005-04-01
+  type: Oral
+1007:
+  allowed_amount: 1000
+  capitation_amount: ~
+  capitation_last_date: ~
+  client_insurance_id: 1004
+  code: RCA3
+  end_date: 2007-03-31
+  rec_id: 1007
+  start_date: 2006-04-01
+  type: Oral
+1008:
+  allowed_amount: 1000
+  capitation_amount: ~
+  capitation_last_date: ~
+  client_insurance_id: 1007
+  code: Foo Bar
+  end_date: 2006-02-14
+  rec_id: 1008
+  start_date: 2005-02-15
+  type: Initial
+1009:
+  allowed_amount: 1000
+  capitation_amount: ~
+  capitation_last_date: ~
+  client_insurance_id: 1007
+  code: Foo Bar
+  end_date: 2007-02-15
+  rec_id: 1009
+  start_date: 2006-02-15
+  type: Renewal
+1010:
+  allowed_amount: 1000
+  capitation_amount: ~
+  capitation_last_date: ~
+  client_insurance_id: 1008
+  code: ABC 123
+  end_date: 2006-02-15
+  rec_id: 1010
+  start_date: 2005-02-15
+  type: Oral
+1011:
+  allowed_amount: 1000
+  capitation_amount: ~
+  capitation_last_date: ~
+  client_insurance_id: 1010
+  code: NA
+  end_date: 2004-12-31
+  rec_id: 1011
+  start_date: 2004-11-30
+  type: Oral
+1012:
+  allowed_amount: 1000
+  capitation_amount: ~
+  capitation_last_date: ~
+  client_insurance_id: 1010
+  code: NA
+  end_date: 2005-12-31
+  rec_id: 1012
+  start_date: 2005-01-01
+  type: Oral
+1013:
+  allowed_amount: 1000
+  capitation_amount: ~
+  capitation_last_date: ~
+  client_insurance_id: 1010
+  code: NA
+  end_date: 2007-12-31
+  rec_id: 1013
+  start_date: 2006-01-01
+  type: Oral
+1014:
+  allowed_amount: 1000
+  capitation_amount: ~
+  capitation_last_date: ~
+  client_insurance_id: 1011
+  code: 123456 XYZ
+  end_date: 2007-12-31
+  rec_id: 1014
+  start_date: 2006-07-15
+  type: Initial
+1015:
+  allowed_amount: 1000
+  capitation_amount: ~
+  capitation_last_date: ~
+  client_insurance_id: 1013
+  code: ABC 123
+  end_date: 2006-02-15
+  rec_id: 1015
+  start_date: 2005-02-15
+  type: Oral
+1016:
+  allowed_amount: 1000
+  capitation_amount: ~
+  capitation_last_date: ~
+  client_insurance_id: 1013
+  code: ABC 123
+  end_date: 2010-12-31
+  rec_id: 1016
+  start_date: 2008-01-01
+  type: Oral
+1017:
+  allowed_amount: 1000
+  capitation_amount: ~
+  capitation_last_date: ~
+  client_insurance_id: 1003
+  code: D123
+  end_date: 2010-12-31
+  rec_id: 1017
+  start_date: 2008-01-01
+  type: Renewal

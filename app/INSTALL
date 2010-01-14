@@ -1,0 +1,164 @@
+Installing eleMentalClinic
+---------------------------
+
+Summary
+=======
+This is a high-level overview.  You should understand Perl, Apache, and
+Unix.
+
+Requirements
+============
+
+Unix-like OS
+------------
+
+PostgreSQL 8.2 or 8.3
+---------------------
+eleMentalClinic will not install or run on any other database.
+
+Webserver
+---------
+Using mod_perl, eleMentalClinic will only run on Apache 2.2 and higher.  Any
+webserver that supports the FastCGI protocol should also work.
+
+Perl
+----
+Version 5.8.1 or above.
+
+Root
+----
+Root access is required to modify Apache and install Perl modules.
+
+Firefox
+-------
+eleMentalClinic targets Mozilla Firefox.
+
+Installation
+============
+1. Install eleMentalClinic & Perl modules
+2. Create a database
+3. Configure eleMentalClinic
+4. Deploy
+5. Insert data
+6. Configure your webserver
+7. Configure your browser
+8. Login
+9. Configure automatic notification (optional)
+
+1.  eleMentalClinic is a standard Perl distribution.  Run:
+
+    $ perl Build.PL
+    $ ./Build
+    $ sudo ./Build install
+
+    If `Build.PL` reported missing dependencies, you have a few options:
+
+    To install all dependencies using the CPAN shell, run
+
+    $ sudo ./Build installdeps
+
+    This will only work with a relatively recent CPAN.pm; if you get an error
+    that says "Cannot test ., don't know what it is", upgrade your CPAN.pm,
+    e.g.:
+
+    $ sudo cpan CPAN
+
+    Alternately, install eleMentalClinic from CPAN instead:
+
+    $ sudo cpan eleMentalClinic
+
+    To build Debian packages for any missing dependencies using CPANPLUS, run
+
+    $ make debs
+    $ sudo dpkg -i $(find debs/ -name \*.deb)
+
+    You'll need CPANPLUS::Dist::Deb installed to build Debian packages.
+
+    To install or build dependencies, you'll need the Postgres header files
+    unless you've already installed DBD::Pg.  On Ubuntu, these are in the
+    'libpq-dev' package.
+
+2.  Create a PostgreSQL database and give yourself access to it.  The database
+    must be named "elementalclinic", or you must specify a different name in
+    the next step.
+
+3.  Run `sudo elementalclinic_setup`; you will be prompted for the database username and
+    password that you configured in step 2.
+
+    You will also need to give the username your webserver runs as, or the
+    username that eleMentalClinic will run as (if they are different).
+
+    This will create a configuration file in /etc/elementalclinic/config.yaml,
+    as well as any directories under /var that are necessary for
+    eleMentalClinic.
+
+4.  Deploy
+
+    This will install configuration files and paths that cannot be part of a
+    normal perl distribution.
+
+    $ sudo ./Build deploy
+
+5.  Insert data
+    This will create the schema
+    $ elementalclinic_migration --to 999
+
+    This will insert the bare minimum data.
+    $ sudo elementalclinic_fixture_import -f /usr/share/elementalclinic/fixtures/base-sys
+
+    If you would like the testdata-jazz fixture you may load it after loading base-sys.
+    $ sudo elementalclinic_fixture_import -f /usr/share/elementalclinic/fixtures/testdata-jazz
+
+6.  Configure your web server
+    There is an example apache config file in etc/httpd.conf. This file should
+    be renamed and "elementalclinic.conf" and copied to your apache available
+    hosts folder (/etc/apache2/sites-available/ on ubuntu.)
+
+    If you want to use the example config file as-is you will need to Edit your
+    /etc/hosts file to add the following line.
+
+        127.0.0.1 elementalclinic
+
+    Run the following to enable the emc vhost
+    $ sudo a2ensite elementalclinic.conf
+    $ sudo /etc/init.d/apache2 reload
+
+    You should now be able to access elementalclinic by pointing your
+    web-browser to http://elementalclinic NOTE: elementalclinic will only be
+    accessible to the machine on which it runs. You will need to modify your
+    apache config in order to allow outside access.
+
+7.  Configure Firefox
+
+    You should configure Firefox to allow cookies and popups from the site
+    serving eleMental Clinic (e.g. localhost).  Also, make sure your browser is at
+    least 1024 pixels wide.
+
+8.  Login
+
+    You should be able to login as the root user "root" with password "password".
+    You will be prompted to change this password upon your first login.
+    The old login clinic/dba is now part of testdata-jazz, don't rely on it.
+
+9.  Automatic appointment and Renewal notifications
+
+    The script misc/send_notifications.pl is used to generate and send
+    notifications.  The best option is to create a cronjob that executes this
+    script at least once a day. A record is kept of all sent notifications; you
+    can safely run this script many times each day without generating duplicate
+    notifications.
+
+    With no syntax the script will find all appointments and renewals between
+    today's date and the number of days specified in your admin configuration.
+
+    The usual way to add a cronjob is to type `crontab -e` and add a new line to
+    the list of jobs.
+
+    An example cron job line that will run the script every hour:
+
+    0  *  *  *  *  /path/to/send_notifications.pl
+
+    Running once each hour is reasonable; it will not interfere with the system
+    by running too often, and it will also send out notifications within an
+    hour of an appointment being added to the system (useful if the new
+    appointment is for the next day).

@@ -1,0 +1,24 @@
+
+[% FOR set IN data %]
+<h2>[% set.name %]</h2>
+<table>
+    <tr>
+        <th>
+            Login Name
+        </th>
+        <th>
+            Action
+        </th>
+        <th>
+            Date/Time
+        </th>
+    </tr>
+    [% FOR event IN set.list %]
+        <tr>
+            <td>[% event.login %]</td>
+            <td>[% event.action %]</td>
+            <td>[% event.logged %]</td>
+        </tr>
+    [% END %]
+</table>
+[% END %]

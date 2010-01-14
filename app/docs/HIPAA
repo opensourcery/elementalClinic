@@ -1,0 +1,106 @@
+HIPAA Compliance
+----------------
+Last update: March 15, 2007
+
+The HIPAA Security Standards [http://www.cms.hhs.gov/SecurityStandard/] impose
+certain requirements on EMR software.  eleMental Clinic strives to be a good
+citizen in a HIPPA-compliant system.  Please read the SECURITY document in this
+package for recommended configuration.
+
+Here are the requirements as we understand them, and our implementation:
+
+HIPAA 164.308 Administrative safeguards
+---------------------------------------
+
+164.308(a)(5)(ii)(C): (C) Log-in monitoring (Addressable).  Procedures for
+    monitoring log-in attempts and reporting discrepancies. 
+
+    - Fulfilled.  All user login/logout behavior is logged.  Failed login
+      attempts are also recorded.
+
+
+164.308(a)(5)(ii)(D): (D) Password management (Addressable). Procedures for
+    creating, changing, and safeguarding passwords. 
+
+    - Fulfilled.  All passwords are stored using one-way encryption, never as
+      plain text.  Users are able to change their own passwords in the
+      application.
+
+
+HIPAA 164.312 Technical safeguards
+----------------------------------
+
+164.312(a)(2)(i): Unique user identification (Required). Assign a unique
+    name and/ or number for identifying and tracking user identity. 
+
+    - Fulfilled.  Every user has a unique login.
+
+
+164.312(a)(2)(ii): Emergency access procedure (Required). Establish (and
+    implement as needed) procedures for obtaining necessary electronic
+    protected health information during an emergency. 
+
+    - We believe this to be a requirement for the administration of the
+      application, not the application itself.
+
+
+164.312(a)(2)(iii): Automatic logoff (Addressable).  Implement electronic
+    procedures that terminate an electronic session after a predetermined
+    time of inactivity. 
+
+    - Fulfilled.  This is the default behavior.  In the configuration file, you
+      can tell the application to log users off after either a set amount of
+      time or a period of inactivity.
+
+
+164.312(a)(2)(iv): Encryption and decryption (Addressable). Implement a
+    mechanism to encrypt and decrypt electronic protected health information. 
+
+    - Fulfilled, when configured and run as recommended (i.e. with an encrypted
+      filesystem, using HTTPS, and encrypting traffic between the database and
+      application servers).
+
+
+164.312(b): Standard: Audit controls.  Implement hardware, software, and/or
+    procedural mechanisms that record and examine activity in information
+    systems that contain or use electronic protected health information. 
+
+    - In progress.  We have basic audit logging in place, and continue to
+      expand it.  Currently all user login/logout behavior is logged.  Also,
+      every access of a client record by a user is recorded.
+
+
+164.312(c)(2): Mechanism to authenticate electronic protected health
+    information. Implement electronic mechanisms to corroborate that
+    electronic protected health information has not been altered or destroyed
+    in an unauthorized manner. 
+
+    - We believe that this would require either a parallel system to monitor
+      the application, which would be hideously complex, or very fine-grained
+      audit controls.  We continue to improve audit logging.
+
+
+164.312(d): Standard: Person or entity authentication. Implement procedures
+    to verify that a person or entity seeking access to electronic protected
+    health information is the one claimed.
+
+    - We believe that administrative checking of identity documents coupled
+      with required periodic password changes fulfills this requirement.
+
+
+164.312(e)(2)(i): Integrity controls (Addressable).  Implement security
+    measures to ensure that electronically transmitted electronic protected
+    health information is not improperly modified without detection until
+    disposed of.
+
+    - Currently we do not transmit records electronically.  We are implementing
+      ECS, and will do so in a compliant manner.
+
+
+164.312(e)(2)(ii): Encryption (Addressable).  Implement a mechanism to
+    encrypt electronic protected health information whenever deemed
+    appropriate. 
+
+    - Fulfilled, when configured and run as recommended (i.e. with an encrypted
+      filesystem, using HTTPS, and encrypting traffic between the database and
+      application servers).

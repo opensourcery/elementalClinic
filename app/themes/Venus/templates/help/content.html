@@ -1,0 +1,28 @@
+<h4>[% helper.label %]</h4>
+<p id="help_description">[% helper.description %]</p>
+<div id="help_content">[% helper.content %]</div>
+[% IF 0 %]
+<div id="help_resource">
+    [% resource_path = "../res/$Config.theme/help/"_ helper.resource %]
+    <object
+        classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+        codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"
+        width="502"
+        height="268" >
+        <param name="movie" value="[% resource_path %]">
+        <param name="quality" value="high">
+        <param name="bgcolor" value="#ffffff">
+        <param name="play" value="true">
+        <param name="loop" value="false">
+        <embed src="[% resource_path %]"
+            quality="high"
+            bgcolor="#ffffff"
+            width="502"
+            height="268"
+            name="myMovieName"
+            type="application/x-shockwave-flash"
+            pluginspage="http://www.macromedia.com/go/getflashplayer" >
+        </embed>
+    </object>
+</div>
+[% END %]

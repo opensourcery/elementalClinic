@@ -1,0 +1,15 @@
+<div class="finance left">
+    <h4>Finish [% Current.validation_set.billing_cycle ? 'Billing cycle' : 'Validation set' %]</h4>
+
+    [% INCLUDE util/form.html %]
+    <input type="hidden" name="section" value="billing" />
+    <input type="hidden" name="step" value="0" />
+    <input type="hidden" name="op" value="finish" />
+    [% INCLUDE util/checkbox.html
+        name    = 'confirm'
+        label   = 'Confirm completion'
+        wraptag = 'p'
+    %]
+    <p class="save"><input type="submit" name="submit" value="Close" /></p>
+    [% INCLUDE util/form_end.html %]
+</div>

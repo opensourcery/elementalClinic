@@ -1,0 +1,36 @@
+[% "<p>There was no data for this report.</p>" UNLESS data.0 %]
+
+<table border="1">
+    <thead>
+    <tr>
+        <td colspan="6">
+            [% INCLUDE report/header.html %]
+        </td>
+    </tr>
+    </thead>
+    <tbody>
+    [% FOR entry IN data %]
+    <tr>
+        <th colspan="6"><h4>[% entry.name %]</h4></th>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <th>Admit</th>
+        <th>Discharge</th>
+        <th>Location</th>
+        <th>Reason</th>
+        <th>Voluntary</th>
+    </tr>
+    [% FOR record IN entry.data %]
+    <tr [% rowclass %]>
+        <td class="nowrap">[% record.lname %], [% record.fname %]</td>
+        <td>[% record.admit %]</td>
+        <td>[% record.discharge %]</td>
+        <td>[% record.location %]</td>
+        <td>[% record.reason %]</td>
+        <td>[% record.voluntary ? 'Yes' : 'No' %]</td>
+    </tr>
+    [% END %]
+    [% END %]
+</tbody>
+</table>

@@ -1,0 +1,224 @@
+[%# to add:
+    edu_level
+    referral_source
+    referral_date
+    housing complex?
+%]
+<div id="client_head">
+    <div id="client_content" class="client">
+    [% IF client.id %]
+        <div class="mini">
+            <div class="primary">
+                [%- IF not_nav %]
+                    <p><em>SSN: [% client.ssn_f %]</em></p>
+                [%- ELSE %]
+                    <h2>[% client.eman %], <em>[% client.ssn_f %]</em></h2>
+                [%- END %]
+
+                [% IF client.placement.is_admitted %]
+                    <p><em>Admitted</em> on <strong>[% client.placement.admit_date %]</strong></p>
+                [% ELSIF client.placement.is_referral %]
+                    <p><em>Referral</em>
+                    [%- " from <strong>$client.placement.referral.rolodex.name</strong>" IF client.placement.referral.rolodex.name -%]
+                    [%- " on <strong>$client.placement.referral.referral_date</strong>" IF client.placement.referral.referral_date -%]
+                    </p>
+                [% ELSE %]
+                    <p><em>Discharged</em> on [% client.placement.last_discharge.placement_event.event_date %]</p>
+                [% END %]
+            </div>
+
+            [%- IF( client.placement.is_admitted || client.placement.is_referral ) %]
+            <div class="placement">
+                <p>Placed<br /><strong>[% client.placement.event_date %]</strong></p>
+                <p>in<br /><strong>[% client.placement.program.name %]</strong></p>
+                [% "<p>with<br /><strong>$client.placement.personnel.name</strong></p>"
+                    IF client.placement.personnel %]
+                [% "<p>receiving<br /><strong>$client.placement.level_of_care.name</strong></p>"
+                    IF client.placement.level_of_care %]
+            </div>
+            [%- END %]
+        </div>
+
+
+        [% maxi_style = ( navpage == 'index' || navsec == 'no_client' || navpage == 'demographics' )
+            ? 'none' : 'block' %]
+        <div class="maxi" id="maxi" style="display:[% maxi_style %];">
+            <div class="demographics">
+                <dl style="float:left;">
+                    <dt><strong>[% client.sex %]</strong>,</dt>
+                    <dd><em>born</em> [% client.dob %]</dd>
+
+                    <dt>Marital:</dt>
+                    <dd>[% client.marital_status %]</dd>
+
+                    <dt>Race:</dt>
+                    <dd>[% client.race %]</dd>
+                </dl>
+
+                <dl style="float:left;">
+                    <dt>Language:</dt>
+                    <dd>[% client.language_spoken %]</dd>
+
+                    <dt>Education:</dt>
+                    <dd>[% client.edu_level %]</dd>
+                </dl>
+            </div>
+
+            <div class="demographics" id="client_head_contact">
+                <dl>
+                <dt>Phone:</dt>
+                <dd>[% client.phone_f %]</dd>
+
+                <dt>Living Arrangement:</dt>
+                <dd>
+                    [% current_user.valid_data.get( '_living_arrangement', client.living_arrangement ).name %]
+                </dd>
+
+                <dt></dt>
+                <dd>
+                    [% address = client.address %]
+                    <br />
+                    [% address.address1 %]<br />
+                    [% "$address.address2 <br />" IF address.address2 %]
+                    [% "$address.city $address.state, " IF address.city || address.state %] [% address.post_code %]<br />
+                </dd>
+                </dl>
+            </div>
+
+            <div class="demographics">
+                [% insurance = client.mental_health_provider.rolodex %]
+                <p>
+                    [% IF insurance.name %]
+                    Insurance: <strong>[% insurance.name %] [%- ", $insurance.phone_f" IF insurance.phone -%]</strong><br />
+                    [% END %]
+                    [% IF ! not_nav %]
+                    CPMS #: <strong>[% client.state_specific_id %]</strong>
+                    [% END %]
+                </p>
+            </div>
+
+        <hr class="div" />
+        </div>
+        [% INCLUDE active_alerts %]
+    [% ELSE %]
+    <p>No client selected.</p>
+    [% END %]
+    </div>
+
+[% IF client.id && !not_nav %]
+[% PERL %]
+# my $user = $stash->get( 'current_user' );
+# return unless my $navsec = $stash->get( 'navsec' );
+# return unless my $navpage = $stash->get( 'navpage' );
+# my $method = 'nav_'. $navsec;
+# $user->pref->$method( $navpage );
+# $user->pref->save;
+[% END %]
+
+    <ul>
+        <li><a [% ' class="active"' IF navsec == 'home' -%]
+            href="/[% current_user.pref.navpage( 'home' ) %].cgi?client_id=[% client.id %];navsec=home">Client Home</a></li>
+        [% IF Config.Theme.controller_can('Schedule') %]
+        <li><a [% ' class="active"' IF navsec == 'schedule' -%]
+            href="/schedule.cgi?client_id=[% client.id %];withclient=yes;navsec=schedule">Schedule</a></li>
+        [% END %]
+        <li><a [% ' class="active"' IF navsec == 'clinical' -%]
+            href="/[% current_user.pref.navpage( 'clinical' ) %].cgi?client_id=[% client.id %];navsec=clinical">Clinical</a></li>
+        <li><a [% ' class="active"' IF navsec == 'history' -%]
+            href="/[% current_user.pref.navpage( 'history' ) %].cgi?client_id=[% client.id %];navsec=history">History</a></li>
+        <li><a [% ' class="active"' IF navsec == 'rolodex' -%]
+            href="/rolodex.cgi?client_id=[% client.id %]">Rolodex</a></li>
+        <li><a [% ' class="active"' IF navsec == 'insurance' -%]
+            href="/insurance.cgi?client_id=[% client.id %]">Insurance</a></li>
+        <li><a [% ' class="active"' IF navsec == 'letters' -%]
+            href="/[% current_user.pref.navpage( 'letters' ) %].cgi?client_id=[% client.id %];navsec=letters">Letters</a></li>
+        <li><a [% ' class="active"' IF navsec == 'report' -%]
+            href="/report.cgi?client_id=[% client.id %];report_track=client">Reports</a></li>
+        <li><a [% ' class="active"' IF navsec == 'groups' -%]
+            href="/groups.cgi?client_id=[% client.id %];op=client_history">Groups</a></li>
+    </ul>
+
+    [% IF navsec == 'home' %]
+    <p class="subactive">
+        <a [% ' class="active"' IF navpage == 'demographics' -%]
+            href="/demographics.cgi?client_id=[% client.id %]">Demographics</a>
+        <a [% ' class="active"' IF navpage == 'placement' -%]
+            href="/placement.cgi?client_id=[% client.id %]">Placement</a>
+        <a [% ' class="active"' IF navpage == 'permissions' -%]
+            href="/clientpermissions.cgi?client_id=[% client.id %]">Access</a>
+    </p>
+    [% END %]
+
+    [% IF navsec == 'schedule' %]
+    <p class="subactive">
+        <a [% ' class="active"' IF navpage == 'calendar' -%]
+            href="/schedule.cgi?client_id=[% client.id %];withclient=yes;navsec=schedule">Calendar</a>
+        <a [% ' class="active"' IF navpage == 'overview' -%]
+            href="/schedule.cgi?client_id=[% client.id %];withclient=yes;navsec=schedule;op=by_client">Overview</a>
+    </p>
+    [% END %]
+
+    [% IF navsec == 'clinical' %]
+    <p class="subactive">
+        <a [% ' class="active"' IF navpage == 'assessment' -%]
+            href="/assessment.cgi?client_id=[% client.id %]">Assessment</a>
+        <a [% ' class="active"' IF navpage == 'diagnosis' -%]
+            href="/diagnosis.cgi?client_id=[% client.id %]">Diagnosis</a>
+        <a [% ' class="active"' IF navpage == 'treatment' -%]
+            href="/treatment.cgi?client_id=[% client.id %]">Treatment</a>
+        <a [% ' class="active"' IF navpage == 'progress_notes' -%]
+            href="/progress_notes.cgi?client_id=[% client.id %]">Progress Notes</a>
+        <a [% ' class="active"' IF navpage == 'allergies' -%]
+            href="/allergies.cgi?client_id=[% client.id %]">Allergies</a>
+        <a [% ' class="active"' IF navpage == 'prescription' -%]
+            href="/prescription.cgi?client_id=[% client.id %]">Prescriptions</a>
+    </p>
+    [% END %]
+
+    [% IF navsec == 'history' %]
+    <p class="subactive">
+        <a [% ' class="active"' IF navpage == 'hospitalizations' -%]
+            href="/hospitalizations.cgi?client_id=[% client.id %]">Hospitalizations</a>
+        <a [% ' class="active"' IF navpage == 'income' -%]
+            href="/income.cgi?client_id=[% client.id %]">Income</a>
+        <a [% ' class="active"' IF navpage == 'legal' -%]
+            href="/legal.cgi?client_id=[% client.id %]">Legal</a>
+    </p>
+    [% END %]
+
+    [% IF navsec == 'letters' %]
+    <p class="subactive">
+        <a [% ' class="active"' IF navpage == 'roi' -%]
+            href="/roi.cgi?client_id=[% client.id %]">Release of Information</a>
+        <a [% ' class="active"' IF navpage == 'letter' -%]
+            href="/letter.cgi?client_id=[% client.id %]">General Letters</a>
+    </p>
+    [% END %]
+[% END %]
+
+</div>
+
+[% UNLESS not_nav %]
+<div id="content">
+[% END %]
+
+[% INCLUDE util/errors.html %]
+
+[%- BLOCK active_alerts %]
+    [% alerts = client.assessment.active_alerts %]
+    [% IF alerts %]
+    [% alert_href = "/assessment.cgi?op=view&assessment_id=$client.assessment.id&part=Alerts&client_id=$client.id" %]
+    <div class="alerts active" onclick="window.location = '[% alert_href %]'">
+        <h3><a href="[% alert_href %]">Alerts</a></h3>
+        <ul>
+            [% FOR alert IN alerts %]
+            <li>[% alert.label %]</li>
+            [% END %]
+        </ul>
+    </div>
+    [% ELSE %]
+    <div class="alerts">
+        <h3>No Alerts</h3>
+    </div>
+    [% END %]
+[% END %]

@@ -1,0 +1,14 @@
+[%-
+    classes = 'section_selector';
+    IF( part && ( part == section.label )) || !part && loop.first;
+        classes = classes _ ' current';
+    END;
+    IF loop.first;
+        classes = classes _ ' first';
+    END;
+    IF( loop.last && ! no_class_for_last_item );
+        classes = classes _ ' last';
+    END;
+    IF classes; classes = " class=\"$classes\""; END
+-%]
+<li[% classes %]><a href="#" id="section_selector_[% section.id %]">[% section.label %]</a></li>

@@ -1,0 +1,198 @@
+table.episode {
+    width : 100%;
+}
+table.episode th {
+    border-bottom : 1px dotted #fb0;
+}
+table.episode th {
+    padding : 15px 0 0 0;
+}
+/* cells */
+table.episode th.type,
+table.episode th.action {
+    width : 15%;
+}
+table.episode th.date {
+    width : 15%;
+}
+table.episode th.program {
+    width : 25%;
+}
+table.episode th.staff {
+    width : 20%;
+}
+table.episode th.loc {
+    width : 25%;
+}
+/* placement */
+table.placement th,
+table.placement td {
+    padding-left : 20px;
+}
+table.episode td.edit {
+    font-size : 11px;
+    white-space : nowrap;
+    padding : 0 10px 0 0;
+}
+dl.inline.event_edit {
+    height : 1em; /* any height at all makes following content float at bottom, which is our goal  */
+}
+/* mockup  ************************************************** */
+#episode_selector {
+    padding : 0;
+    margin : 0;
+    list-style : none;
+    width : 100%;
+    clear : both;
+    margin-top : -1975px;
+}
+#episode_selector li {
+    border : 1px solid transparent;
+}
+#episode_selector p.program_name {
+    margin : 10px 0 0 0;
+}
+#episode_selector p.program_name a {
+    color : #fff;
+    font-weight : normal;
+    white-space : nowrap;
+    padding : 3px 0;
+    background : #aaa;
+    display : block;
+    overflow : hidden;
+}
+#episode_selector li.current {
+    padding-bottom : 7px;
+    margin-bottom : 7px;
+}
+#episode_selector li.active p.program_name a {
+    background : #66c url( /res/img/chevron_overlay_right_fff.png ) no-repeat right center;
+}
+#episode_selector li.primary p.program_name a {
+    font-weight : bold;
+}
+div.episode_details {
+    background : #fff;
+    padding : 7px 0;
+    border : 1px solid #aaa;
+    border-width : 1px 0;
+    display : none;
+}
+div.episode_details a em {
+    font-weight : normal;
+    text-decoration : none;
+}
+li.active.current div.episode_details {
+    border-color : #66c;
+}
+table.events {
+    border-collapse : collapse;
+    margin : 0 14px;
+    float : left;
+}
+table.events th,
+table.events td {
+    padding : 4px 7px 4px 0;
+}
+table.events td {
+    color : #999;
+}
+table.events td strong {
+    font-weight : normal;
+    color : #000;
+}
+table.events td.label {
+    text-align : right;
+    padding : 4px 7px;
+}
+table.events tr.active {
+    background : #66c;
+}
+table.events tr.active td {
+    color : #ddd;
+}
+table.events tr.active th,
+table.events tr.active td strong {
+    color : #fff;
+}
+/* year labels */
+#center {
+    overflow : hidden;
+    padding-bottom : 20px;
+}
+#year_labels {
+    padding : 0;
+    border-collapse : collapse;
+    margin : 0;
+    width : 100%;
+    height : 2000px;
+    clear : both;
+}
+#year_labels td {
+    color : #666;
+    font : 14px Verdana;
+    text-align : right;
+    padding : 0;
+    border-right : 1px solid #666;
+    margin : 0;
+    vertical-align : top;
+    overflow : hidden;
+}
+/* controls */
+p#show_new_program {
+    float : left;
+}
+.create_new_program_column {
+    float : left;
+    width : 40%;
+}
+ul#expand_collapse {
+    padding : 0;
+    margin : 0;
+    float : right;
+}
+ul#expand_collapse li {
+    list-style : none;
+    margin-left : 15px;
+    display : inline;
+}
+ul#expand_collapse li a {
+    font-size : 11px;
+    font-weight : normal;
+}
+ul#expand_collapse li a em {
+    font-weight : bold;
+    font-size : 16px;
+    text-decoration : none;
+}
+ul.controls {
+    float : right;
+    width : 30%;
+}
+ul.controls li.show_new_discharge a.local:hover {
+    color : #c00;
+}
+#create_new_program.active,
+ul.controls li.show_new_primary.active,
+ul.controls li.show_new_discharge.active,
+ul.controls li.show_new_event.active {
+    background : #eee;
+}
+#create_new_program,
+div.create_new_primary,
+div.create_new_discharge,
+div.create_new_event {
+    padding : 7px 0;
+    border : 1px solid #aaa;
+    border-width : 1px 0;
+    margin-top : 7px;
+    clear : both;
+    display : none;
+}
+/* overriding globals */
+tr.odd {
+    background : transparent;
+}
+tr.even {
+    background : #eee;
+}

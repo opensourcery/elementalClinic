@@ -1,0 +1,37 @@
+---
+1001:
+    rec_id: 1001
+    group_note_id: 1001
+    client_id: 1001
+    action: group_note
+    prognote_id: 1646
+1002:
+    rec_id: 1002
+    group_note_id: 1001
+    client_id: 1002
+    action: group_note
+    prognote_id: 1647
+1003:
+    rec_id: 1003
+    group_note_id: 1001
+    client_id: 1003
+    action: group_note
+    prognote_id: 1648
+1004:
+    rec_id: 1004
+    group_note_id: 1002
+    client_id: 1001
+    action: group_note
+    prognote_id: 1649
+1005:
+    rec_id: 1005
+    group_note_id: 1002
+    client_id: 1002
+    action: group_note
+    prognote_id: 1650
+1006:
+    rec_id: 1006
+    group_note_id: 1002
+    client_id: 1003
+    action: group_note
+    prognote_id: 1651

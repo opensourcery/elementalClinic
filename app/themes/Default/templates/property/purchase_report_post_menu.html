@@ -1,0 +1,36 @@
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+
+<table border="0">
+    <tr>
+        <td><b>&#149; View All Active Purchase Orders: </b></td>
+        <td><input type="submit" name="go" value="View Active" /></td>
+    </tr>
+    <tr>
+        <td><b>&#149; View All Completed Purchase Orders: </b></td>
+        <td><input type="submit" name="go" value="View Complete" /></td>
+    </tr>
+    <tr>
+        <td><b>&#149; View Purchase Order Summary Report: </b></td>
+        <td><input type="submit" name="go" value="View Summary" /></td>
+    </tr>
+    <tr>
+        <td><b>&#149; View Purchase Orders By Unit: </b></td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "unit"
+    s_values  = units
+%]</td>
+        <td><input type="submit" name="go" value="View Unit" /></td>
+    </tr>
+    <tr>
+        <td><b>&#149; View Departmental Summary Report: </b></td>
+        <td><input type="submit" name="go" value="View Dept" /></td>
+    </tr>
+</table>
+
+<input type="hidden" name="start_date" value="[% start_date %]" />
+<input type="hidden" name="end_date" value="[% end_date %]" />
+<input type="hidden" name="dept_id" value="[% dept_id %]" />
+<div>
+</div>
+</form>

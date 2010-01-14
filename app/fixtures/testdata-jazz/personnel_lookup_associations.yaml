@@ -1,0 +1,28 @@
+---
+1001:
+  lookup_group_id: 1001
+  rec_id: 1001
+  staff_id: 1001
+  sticky: 1
+1002:
+  lookup_group_id: 1002
+  rec_id: 1002
+  staff_id: 1001
+  sticky: 0
+1003:
+  lookup_group_id: 1001
+  rec_id: 1003
+  staff_id: 1002
+  sticky: 1
+1004:
+  lookup_group_id: 1003
+  rec_id: 1004
+  staff_id: 1002
+  sticky: 0
+1005:
+  lookup_group_id: 1001
+  rec_id: 1005
+  staff_id: 1003
+  sticky: 1
+
+

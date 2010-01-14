@@ -1,0 +1,42 @@
+<div id="current_plan">
+    [% UNLESS no_header %]
+    <h4>Current plan:</h4>
+    <p class="sub">[% current.start_date %] to [% current.end_date %]</p>
+    [% END %]
+
+    <h5 class="treatment">Strengths</h5>
+    <p>[% current.assets %]</p>
+
+    <h5 class="treatment">Challenges</h5>
+    <p>[% current.debits %]</p>
+
+    <hr class="div" />
+
+    [% IF display_full %]
+        <h5 class="treatment">Limitations</h5>
+
+        <ul class="plan_needs">
+        [% FOR need IN [
+            { 'meets_dsm4'      = 'Is 18 yrs or older, has DSM IV diagnosis.' },
+            { 'needs_selfcare'  = 'Demonstrates marked difficulties in self care.' },
+            { 'needs_skills'    = 'Shows marked difficulties in maintaining social functioning.' },
+            { 'needs_support'   = 'Exhibits reliance on psychiatric treatment and support.' },
+            { 'needs_adl'       = 'Exhibits marked restriction of ADL.' },
+            { 'needs_focus'     = 'Exibits deficiencies of concentration and task completion.' },
+        ] %]
+            [% IF current.${ need.keys.0 } %]
+            <li>[% need.values.0 %]</li>
+            [% END %]
+        [% END %]
+        </ul>
+    [% END %]
+
+    [% IF allow_edit %]
+    <form method="[% Config.form_method %]" action="[% program %]" enctype="application/x-www-form-urlencoded">
+        <input type="hidden" name="client_id" value="[% client.id %]" />
+        <input type="hidden" name="plan_id" value="[% current.rec_id %]" />
+        <p class="print_edit"><input type="submit" name="op" value="Print Plan" /></p>
+        <p class="edit"><input type="submit" name="op" value="Edit Plan" /></p>
+    </form>
+    [% END %]
+</div>

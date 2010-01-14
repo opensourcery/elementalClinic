@@ -1,0 +1,139 @@
+[% IF ( rolodex.id || ( op == 'rolodex_new' ) || errors ) %]
+<form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" name="rolodex demographics">
+
+<div class="lefthalf">
+    <dl class="inline">
+    [% INCLUDE util/input_text.html
+        name    = 'fname'
+        label   = 'First'
+        required = 1
+        value   = rolodex.fname
+        size    = 30
+        dl      = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'lname'
+        label   = 'Last'
+        required = 1
+        value   = rolodex.lname
+        size    = 30
+        dl      = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'credentials'
+        label   = 'Credentials'
+        value   = rolodex.credentials
+        size    = 30
+        dl      = 1
+    %]
+    [% INCLUDE util/input_text.html
+        name    = 'name'
+        label   = 'Organization'
+        value   = rolodex.name
+        size    = 30
+        dl      = 1
+    %]
+
+<!--
+    <dt>Schedule:</dt>
+	[%# INCLUDE util/choose_valid_data.html
+        name    = 'schedule_type'
+        type    = 'select'
+		table   = '_schedule_types'
+		use_id  = 1
+        default   = schedule_type_id 
+        wraptag = 'dd'
+    %]
+-->
+    <input type="hidden" name="schedule_type" value="1" />
+
+    <dt>Comment:</dt>
+    [% INCLUDE util/textarea.html
+        name    = 'comment_text'
+        value   = rolodex.comment_text
+        cols    = 50
+        rows    = 3
+        wraptag = 'dd'
+        break   = 1
+    %]
+    </dl>
+</div>
+
+<div class="righthalf">
+    <dl class="inline">
+    [% INCLUDE util/input_text.html
+        name    = 'address1'
+        label   = 'Address'
+        value   = address1 || rolodex.address.address1
+        size    = 30
+        dl      = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'address2'
+        label   = 'Address 2'
+        value   = address2 || rolodex.address.address2
+        size    = 30
+        dl      = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'city'
+        label   = 'City'
+        value   = city || rolodex.address.city
+        size    = 25
+        dl      = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'state'
+        label   = 'State'
+        value   = state || rolodex.address.state
+        size    = 2
+        dl      = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'post_code'
+        label   = 'Zip'
+        value   = post_code || rolodex.address.post_code
+        size    = 10
+        dl      = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'phone'
+        label   = 'Phone'
+        value   = phone_1 || rolodex.phone.phone_number
+        size    = 15
+        dl      = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'phone_2'
+        label   = 'Phone 2'
+        value   = phone_2 || rolodex.phones.1.phone_number
+        size    = 15
+        dl      = 1
+    %]
+    </dl>
+</div>
+
+    <input type="hidden" name="treaters" id="role_treaters" value="1" />
+
+    <input type="hidden" name="edit_rolodex_entry" id="edit_rolodex_entry" value="[% edit_rolodex_entry %]" />
+    <input type="hidden" name="client_id" id="client_id" value="[% client.id %]" />
+    <input type="hidden" name="rolodex_id" id="rolodex_id" value="[% rolodex.rec_id %]" />
+    [% IF dupsok %]
+    <p class="save"><input type="submit" name="op" id="op" value="Save Doctor, ignoring duplicates" /></p>
+    <input type="hidden" name="dupsok" id="dupsok" value="[% dupsok %]" />
+    [% ELSE %]
+    <p class="save"><input type="submit" name="op" id="op" value="Save Doctor" /></p>
+    [% END %]
+</form>
+
+[% ELSE %]
+<p>Please select a Doctor.</p>
+[% END %]

@@ -1,0 +1,47 @@
+<b>&#149; Update A Supervision Note</b>
+
+<p />
+
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+
+<table border="0">
+    <tr>
+        <td>Select Unit: </td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "unit_name"
+    s_values  = units
+    s_default = row.unit_name
+%]</td>
+    </tr>
+    <tr>
+        <td>Enter Issues Discussed: </td>
+        <td><input type="text" name="issue_list" value="[% row.issue_list %]" size="62" maxlength="60" /></td>
+    </tr>
+    <tr>
+        <td>List Charts Reviewed:</td>
+        <td><input type="text" name="chart_list" value="[% row.chart_list %]" size="62" maxlength="60" /></td>
+    </tr>
+    <tr>
+        <td>Administrative Notes: </td>
+        <td><textarea name="admin_note" rows="4" cols="50" wrap="1">[% row.admin_note %]</textarea></td>
+    </tr>
+    <tr>
+        <td>Clinical Notes: </td>
+        <td><textarea name="clinic_note" rows="4" cols="50" wrap="1">[% row.clinic_note %]</textarea></td>
+    </tr>
+    <tr>
+        <td>Supervisor's Suggestions: </td>
+        <td><textarea name="suggest_note" rows="4" cols="50" wrap="1">[% row.suggest_note %]</textarea></td>
+    </tr>
+</table>
+
+<p />
+
+<input type="submit" name="go" value="Submit Query" />
+<input type="hidden" name="ID" value="[% id %]" />
+<input type="hidden" name="rec_id" value="[% rec_id %]" />
+<input type="hidden" name="start_date" value="[% start_date %]" />
+<div>
+</div>
+</form>

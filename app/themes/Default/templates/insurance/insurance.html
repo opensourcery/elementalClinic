@@ -1,0 +1,61 @@
+<div id="left" class="client_box insurance_subnav_child">
+[% INCLUDE insurance/level_of_care.html %]
+<h4>Client Insurances</h4>
+    [%
+        return_op = 'insurance_view';
+        IF( op == 'authorization_view' ); return_op = 'authorization_view'; END;
+        show_auths_href = "$script?op=show_authorizations;return_op=$return_op;client_id=$client.id;client_insurance_id=$current_insurance.id;authorization_id=$current_authorization.id";
+
+        # only makes sense to show this for active insurances
+        # since inactive ones won't have active authorizations anyway
+        IF( current_insurance && ( Session.client_insurance_filter == 'active' ))
+    %]
+    <p id="authorization_pref">Showing authorizations:
+        [% IF Session.client_insurance_authorizations_show_all %]
+        [ <a href="[% "${show_auths_href};show=0" %]">Active</a> | <strong>All</strong> ]
+        [% ELSE %]
+        [ <strong>Active</strong> | <a href="[% "${show_auths_href};show=1" %]">All</a> ]
+        [% END %]
+    </p>
+    [% END %]
+
+    [% INCLUDE insurance/insurance_list.html
+        label    = 'Mental Health'
+        type     = 'mental_health'
+        insurers = client_insurers.mental_health
+    %]
+
+    [% INCLUDE insurance/insurance_list.html
+        label    = 'Medical'
+        type     = 'medical'
+        insurers = client_insurers.medical
+    %]
+
+    [% INCLUDE insurance/insurance_list.html
+        label    = 'Dental'
+        type     = 'dental'
+        insurers = client_insurers.dental
+    %]
+</div>
+
+
+<div id="right" class="client_box">
+    [%
+        IF(( op == 'authorization_view' ) || ( op == 'authorization_save' ));
+            INCLUDE insurance/authorization.html authorization = current_authorization;
+
+        # new -- do not include data
+        ELSIF(( op == 'authorization_new' ));
+            INCLUDE insurance/authorization.html;
+        ELSIF(( op == 'insurance_new' ) && errors );
+            INCLUDE insurance/insurer.html insurance = current_insurance;
+        ELSIF(( op == 'insurance_new' ));
+            INCLUDE insurance/insurer.html insurance = 'If you see this message, please file a bug report.';
+
+        ELSIF( current_insurance ); # default is to show the primary insurance
+            INCLUDE insurance/insurer.html insurance = current_insurance;
+        ELSE
+    %]
+    <p>No insurance selected.</p>
+    [% END %]
+</div>

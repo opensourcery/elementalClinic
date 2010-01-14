@@ -1,0 +1,51 @@
+---
+1001:
+  apid_num: 1001
+  client_id: 1001
+  created: 2005-08-01
+  rec_id: 1001
+  rolodex_treaters_id: 1001
+  staff_id: 1001
+  verif_date: 2005-10-01
+1002:
+  apid_num: 1002
+  client_id: 1001
+  created: 2006-08-01
+  rec_id: 1002
+  rolodex_treaters_id: 1002
+  staff_id: 1002
+  verif_date: 2006-10-01
+1003:
+  apid_num: 1003
+  client_id: 1002
+  created: 2005-08-01
+  rec_id: 1003
+  rolodex_treaters_id: ~
+  staff_id: 1003
+  verif_date: 2005-10-01
+1004:
+  apid_num: 1004
+  client_id: 1003
+  created: 2006-08-01
+  rec_id: 1004
+  rolodex_treaters_id: ~
+  staff_id: 1004
+  verif_date: 2004-10-01
+1005:
+  apid_num: 1005
+  client_id: 1003
+  created: 2005-08-01
+  rec_id: 1005
+  rolodex_treaters_id: ~
+  staff_id: 1005
+  verif_date: 2005-10-01
+1006:
+  apid_num: 1006
+  client_id: 1003
+  created: 2006-08-01
+  rec_id: 1006
+  rolodex_treaters_id: ~
+  staff_id: 1001
+  verif_date: 2006-11-01
+
+

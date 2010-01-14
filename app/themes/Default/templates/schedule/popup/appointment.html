@@ -1,0 +1,138 @@
+[%
+    pref_date_format = current_user.pref.date_format;
+    source_script = return_script || script;
+-%]
+[% BLOCK select_location;
+  INCLUDE util/choose_valid_data.html
+    label   = 'at'
+    table   = '_prognote_location'
+    type    = 'select'
+    default = appointment.schedule_availability.location_id || location_id
+    use_id  = 1
+    required = 1
+  ;
+  END %]
+
+[% UNLESS ajax %]
+<div id="add_appointment" style="display:none;">
+    <div class="content" id="appointment_loading">
+        <p>Loading ...</p>
+    </div>
+    <div class="content" id="appointment_content">
+[% END %]
+        [% IF op == 'appointment_edit' %]
+        <h6>Editing existing appointment for</h6>
+        [% ELSE %]
+        <h6>Creating new appointment for</h6>
+        [% END %]
+        <p><strong id="[% prefix %]appointment_patient_facade">
+            <a href="/schedule.cgi?client_id=[% client.id %];withclient=yes;navsec=schedule">[% client.eman %]</a>
+        </strong>&nbsp;[% client.phone.phone_number %]</p>
+
+        <form method="[% Config.form_method %]" action="[% $source_script %]" enctype="application/x-www-form-urlencoded">
+            <div class="static">
+                <p>
+                    At <strong id="[% prefix %]appointment_time_facade">[% appointment.appt_time FILTER time_format('12') %]</strong>
+                    on <strong id="[% prefix %]appointment_date_facade">[%
+                        (appointment.schedule_availability.date || date) FILTER date_format(pref_date_format)
+                    %]</strong>
+                </p>
+                <p>
+                    With 
+                    [% IF Config.quick_schedule_availability %]
+                    [%# XXX copied from calendar.html; should refactor %]
+                      [% INCLUDE util/select_new.html
+                          name    = 'rolodex_id'
+                          default = appointment.rolodex.id || rolodex.id
+                          values  = treaters
+                          keyname = 'rec_id'
+                          valname = 'lname'
+                          leading_blank = "Doctor..."
+                          required = 1
+                      %] <br/>
+                      [% INCLUDE select_location
+                          name         = 'location_id'
+                          leading_hash = [ { value => '', name => 'Location ...' }]
+                      %]
+                    [% ELSE %]
+                    <strong id="[% prefix %]appointment_doctor_facade">[% appointment.rolodex.eman || rolodex.eman %]</strong>
+                    [% INCLUDE select_location
+                        action  = 'display'
+                        id      = "${prefix}location_id_facade"
+                        name    = 'location_id_facade'
+                    %]
+                    [% END %]
+                </p>
+                <p> 
+                    Made by <strong id="[% prefix %]appointment_personnel_facade">[% appointment.personnel.fname || current_user.fname %]</strong>
+                </p>
+            </div>
+
+            [% INCLUDE schedule/popup/appointment_checkboxes.html %]
+
+            <div class="dynamic">
+                <input type="hidden" name="date" id="[% prefix %]appointment_date" value="[% appointment.schedule_availability.date || date %]" />
+            
+                [% IF op == 'appointment_edit' %]
+                    [% IF ! Config.quick_schedule_availability %]
+                    [% INCLUDE util/select_new.html
+                        id      = "${prefix}schedule_availability_id"
+                        name    = "schedule_availability_id"
+                        default = appointment.schedule_availability_id
+                        values  = available_schedules
+                        keyname = 'schedule_availability_id'
+                        label   = 'Date'
+                        #valname = 'detail'
+                        valblock = 'appointment_schedule_availability_builder'
+                        wraptag = 'p'
+                        onchange = "return update_appointment_times( '$prefix', '$source_script' )"
+                    %]
+                    [% BLOCK appointment_schedule_availability_builder;
+                           tmp_date = value.date FILTER date_format(pref_date_format);
+                           "$tmp_date : ${value.location} : ${value.doctor} : ${value.appointment_count}";
+                       END;
+                    %]
+                    [% END %]
+
+                    <div id="[% prefix %]appointment_times">
+                    [% INCLUDE schedule/popup/appointment_times.html
+                        prefix            = prefix
+                        appointment       = appointment
+                        appointment_times = appointment_times
+                    %]
+                    </div>
+
+                [% ELSE %]
+ 
+            <input type="hidden" name="appt_time" id="[% prefix %]appt_time" value="[% appointment.appt_time %]" />
+            [% IF ! Config.quick_schedule_availability %]
+            <input type="hidden" name="schedule_availability_id" id="[% prefix %]schedule_availability_id" value="[% appointment.schedule_availability_id %]" />
+            [% END %]
+
+                [% END %]
+
+                [% INCLUDE schedule/popup/appointment_codes.html %]
+
+                [% INCLUDE util/textarea.html
+                    id      = "${prefix}notes"
+                    name    = 'notes'
+                    label   = 'Notes'
+                    value   = appointment.notes
+                    wraptag = 'p'
+                    cols    = 25
+                    rows    = 5
+                    break   = 1
+                %]
+            </div>
+
+            <input type="hidden" name="client_id" id="[% prefix %]client_id" value="[% appointment.client_id %]" />
+            <input type="hidden" name="appointment_id" id="[% prefix %]appointment_id" value="[% appointment.id %]" />
+            <input type="hidden" name="op" id="[% prefix %]op" value="appointment_save" />
+            <input type="hidden" name="withclient" id="[% prefix %]withclient" value="[% withclient %]" />
+            <p class="save"><input type="submit" value="Save" /></p>
+        </form>
+        [% INCLUDE util/form_cancel.html %]
+[% UNLESS ajax %]
+    </div>
+</div>
+[% END %]

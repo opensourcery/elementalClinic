@@ -1,0 +1,52 @@
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+
+<table border="0">
+    <tr>
+        <td><b>Vehicle Make/Model: </b></td>
+        <td>[% row_auto_year %] [% row_auto_model %]</td>
+    </tr>
+    <tr>
+        <td><b>Vehicle Type: </b></td>
+        <td>[% row_auto_type %]</td>
+    </tr>
+    <tr>
+        <td><b>Vehicle Colour: </b></td>
+        <td>[% row_auto_colour %]</td>
+    </tr>
+    <tr>
+        <td><b>Vehicle ID (VIN): </b></td>
+        <td>[% row_auto_vin %]</td>
+    </tr>
+    <tr>
+        <td><b>Licence Plate: </b></td>
+        <td>[% row_auto_licence %]</td>
+    </tr>
+    <tr>
+        <td><b>Assigned To: </b></td>
+        <td>[% row_unit_lname %]</td>
+    </tr>
+    <tr>
+        <td><b>Date Registration Expires: </b></td>
+        <td>[% row_reg_date %]</td>
+    </tr>
+    <tr>
+        <td><b>Date Inspection Is Due: </b></td>
+        <td>[% row_inspect_date %]</td>
+    </tr>
+    <tr>
+        <td><b>Send Expiration E-Mail To: </b></td>
+        <td>[% row_email_remind %]</td>
+    </tr>
+    <tr>
+        <td><b>Note: </b></td>
+        <td>[% row_auto_note %]</td>
+    </tr>
+</table>
+
+<p />
+
+<input type="submit" name="go" value="Remove Record" />
+<input type="hidden" name="rec_id" value="[% row_rec_id %]" />
+<div>
+</div>
+</form>

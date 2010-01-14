@@ -1,0 +1,26 @@
+<ul class="navigation">
+    [% FOR i IN intake_steps %]
+        <li[% ' class="current"' IF step == loop.count %]>
+            [% IF(( loop.count == 1 ) || client.id ) %]
+            <a href="[% script %]?op=step[% loop.count %];client_id=[% client.id %]" accesskey="[% loop.count %]"><em>[% loop.count %]</em>. [% i %]</a>
+            [% ELSE %]
+            <a name="step_[% loop.count %]_nav">[% loop.count %]. [% i %]</a>
+            [% END %]
+        </li>
+    [% END %]
+</ul>
+
+<div id="center" class="client_box">
+    <p id="progress">
+        [% IF client.name %]
+            Client intake for <strong>[% client.name %]:</strong>
+        [% ELSE %]
+            <strong>Client Intake:</strong>
+        [% END %]
+        [%- IF client.intake_step %]
+        You have completed <strong>[% client.intake_step || 0 %]</strong>
+        [%- ELSE %]
+        This is the <strong>first</strong>
+        [%- END %]
+        of the <strong>[% intake_steps.size %]</strong> steps.
+    </p>

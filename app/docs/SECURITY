@@ -1,0 +1,18 @@
+Security
+--------
+Last update: Nov 29, 2007
+
+For maximum security, and for HIPAA compliance, we recommend the following
+configuration and policy after installation:
+
+- Encrypt all brower transmissions using HTTPS.
+- Require that users change their passwords at specified intervals.
+- Encrypt the filesystem on which the database is stored.
+- Give only authorized personnel accounts on any application or database
+  servers.
+- If you are using a separate database server, encrypt all transmissions
+  between the application server and database server.
+
+- If you are using the scanned documents feature, be aware that files with patient
+  data will be available to anyone with access to the server, regardless of whether
+  they have a login to eMC.

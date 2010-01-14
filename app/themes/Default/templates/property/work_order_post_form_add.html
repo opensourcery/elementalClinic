@@ -1,0 +1,35 @@
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+
+<table border="0">
+    <tr>
+        <td><b>Unit Initiating Request: </b></td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "unit"
+    s_values  = units
+    s_default = unit_name
+%]</td>
+    </tr>
+    <tr>
+        <td><b>Location Where Work Is Needed: </b></td>
+        <td><input type="text" name="addr"  size="80" maxlength="255" /></td>
+    </tr>
+    <tr>
+        <td><b>Emergency: </b></td>
+        <td><input type="radio" name="high_risk" value="No" checked="checked" />No <input type="radio" name="high_risk" value="Yes" />Yes</td>
+    </tr>
+    <tr>
+        <td><b>Description of the Work Needed: </b></td>
+        <td><textarea name="work_request" rows="4" cols="50" wrap="1"></textarea></td>
+    </tr>
+</table>
+
+<p />
+
+<input type="submit" name="go" value="Submit" />
+<input type="hidden" name="search_start" value="[% search_start %]" />
+<input type="hidden" name="search_end" value="[% search_end %]" />
+<div>
+<input type="hidden" name=".cgifields" value="high_risk" />
+</div>
+</form>

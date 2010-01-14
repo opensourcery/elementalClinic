@@ -1,0 +1,19 @@
+<!-- BEGIN util/radio -->
+[% FOREACH value = r_values;
+    this_value = r_valname
+        ? value.$r_valname
+        : value;
+    is_checked = ( this_value == r_default )
+        ? ' checked="checked"'
+        : '';
+    this_label = r_labelname
+        ? value.description
+        : this_value;
+    on_change = r_onchange
+        ? " onchange=\"$r_onchange\""
+        : '';
+    IF r_linebreak; r_linebreak = '<br />'; END -%]
+    <input type="radio" name="[% r_name %]" id="[% this_value %]" value="[% this_value %]" [% is_checked %][% on_change %] />
+        <label for="[% this_value %]">[% this_label %]</label>[% r_linebreak %]
+[% END %]
+<!-- END util/radio -->

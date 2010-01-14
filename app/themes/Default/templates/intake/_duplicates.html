@@ -1,0 +1,57 @@
+[% IF duplicates.ssn || duplicates.lname_dob %]
+
+<div id="duplicates" class="system_box">
+
+    <h4>Potential duplicates found</h4>
+
+    [% IF duplicates.ssn; dup = duplicates.ssn %]
+    <fieldset>
+        <legend>Duplicate SSN</legend>
+
+        <p>Duplicate SSNs are not allowed.  Either take action on the duplicate client or change the new client input.</p>
+        <hr />
+        <dl>
+            [% INCLUDE dup_client %]
+        </dl>
+    </fieldset>
+    [% END %]
+
+    [% IF duplicates.lname_dob %]
+    <fieldset>
+        <legend>Duplicate last names and birth dates</legend>
+        <p>Clients with the same last names and dates of birth are allowed, but please review them first to make sure they are not duplicates.  Once you've done so, you may click "Add client and ignore duplicates."</p>
+        <hr />
+    <dl>
+        [% FOR dup IN duplicates.lname_dob %]
+        [% INCLUDE dup_client %]
+        [% END %]
+    <dl>
+    </fieldset>
+    [% END %]
+
+</div>
+
+[% END %]
+
+[% BLOCK dup_client %]
+    [% IF dup.denied %]
+        <dt><strong>[% dup.fname %] [% dup.lname %]</strong> ([% dup.dob %])</dt>
+        <dd>
+            You do not have access to the duplicate client, limited information is shown.
+        </dd>
+    [% ELSE %]
+        <dt><strong>[% dup.fname %] [% dup.lname %]</strong> ([% dup.ssn_f %]; [% dup.dob %])</dt>
+        <dd>
+            [%- IF dup.is_partial_intake %]
+            This client is in the middle of the intake process; you may <a href="/intake.cgi?client_id=[% dup.id %];op=step[% dup.intake_step + 1 %]">complete the intake</a>.
+            [%- ELSIF dup.placement.is_admitted %]
+            This client is currently admitted; you may <a href="/demographics.cgi?client_id=[% dup.client_id %]">view</a> [% INCLUDE pronoun %].
+            [%- ELSIF dup.placement.is_referral %]
+            This client is an active referral; you may <a href="/demographics.cgi?client_id=[% dup.client_id %]">view</a> [% INCLUDE pronoun %].
+            [%- ELSE %]
+            This client has been discharged; see client's <a href="/placement.cgi?client_id=[% dup.client_id %]">placement screen</a> to reactivate [% INCLUDE pronoun %].
+            [%- END %]
+        </dd>
+    [% END %]
+[% END %]
+[% BLOCK pronoun; dup.sex == 'Male' ? 'him' : 'her'; END %]

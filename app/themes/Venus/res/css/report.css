@@ -1,0 +1,67 @@
+h2 {
+    font-size : 14px;
+    margin : 0;
+}
+h3 {
+    margin : 0 0 10px 0;
+    font-weight : normal;
+}
+/*
+h4 {
+    font-weight : normal;
+    margin : 20px 0 0 0;
+    border : 0;
+}
+*/
+table {
+    border-collapse: collapse;
+    border : 3px double #ddd;
+    margin-bottom : 30px;
+}
+tr.even {
+    background-color : #ddd;
+}
+tr.odd {
+    background-color : #fff;
+}
+th {
+    padding : 0 20px 0 0;
+    border-bottom : 2px solid #000;
+}
+td {
+    padding : 0 10px 0 5px;
+    border-left : 1px solid #999;
+    margin : 0;
+}
+.force_on #client_head {
+    display : none !important;
+    border : 0;
+}
+p.sig {
+    border-bottom : 1px solid #000;
+    padding-top : 20px;
+}
+td.info {
+    vertical-align : top;
+    white-space : nowrap;
+}
+
+#center.report_track_client_results {
+  width: 100%;
+  float: left;
+  padding: 0;
+  padding-top: 8px;
+  margin: 0;
+}
+
+#center #center-inner {
+  padding: 0 7px 7px;
+}
+
+#center.report_track_client_results table {
+  border: none;
+}
+
+#center.report_track_client_results table thead tr td {
+  border: none;
+}

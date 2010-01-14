@@ -1,0 +1,38 @@
+    [% current_event = current_event || client.placement %]
+    [% referral = referral || current_event.referral %]
+    <fieldset class="subtle">
+        <legend>Referral</legend>
+
+        <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+            [% INCLUDE util/select_new.html
+                name    = 'rolodex_id'
+                label   = 'Source'
+                values  = referrals_list
+                default = referral.rolodex.rec_id
+                keyname = 'rec_id'
+                valname = 'name_f'
+                wraptag = 'p'
+                show_blank = 0
+                blankmsg = '<strong>No referral sources:</strong> You must give at least one Rolodex entry a "Referral Source" role.'
+            %]
+
+            [% INCLUDE util/input_text.html
+                name    = 'agency_contact'
+                label   = 'Agency contact'
+                value   = referral.agency_contact
+                wraptag = 'p'
+            %]
+
+            [% INCLUDE util/input_text.html
+                name    = 'agency_type'
+                label   = 'Agency type'
+                value   = referral.agency_type
+                wraptag = 'p'
+            %]
+
+            <input type="hidden" name="referral_id" value="[% referral.rec_id %]" />
+            <input type="hidden" name="client_placement_event_id" value="[% current_event.rec_id || referral.client_placement_event_id %]" />
+            <input type="hidden" name="client_id" value="[% client.id %]" />
+            <p class="save"><input type="submit" name="op" id="op_save" value="Save Referral" /></p>
+        </form>
+    </fieldset>

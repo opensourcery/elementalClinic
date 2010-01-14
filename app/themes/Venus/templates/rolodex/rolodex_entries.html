@@ -1,0 +1,7 @@
+<table>
+[%- FOR entry IN rolodex_entries %]
+    <tr>
+        <td><a href="[% script %]?op=rolodex_edit;client_id=[% client.id %];rolodex_id=[% entry.rec_id %]">[% entry.eman %]</a></td>
+    </tr>
+[%- END %]
+</table>

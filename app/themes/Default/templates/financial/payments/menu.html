@@ -1,0 +1,8 @@
+[%- FOR item IN [
+    { step => 1, label => 'Master Payments', },
+    { step => 2, label => 'History', },
+    { step => 3, label => 'Outstanding', },
+    { step => 4, label => 'Receive Electronic Payments', },
+]%]
+    <li[% ' class="active"' IF item.step == Current.step %]><a href="/financial.cgi?section=[% Current.section %];step=[% item.step %]">[% item.label %]</a></li>
+[%- END %]

@@ -1,0 +1,85 @@
+    [% IF current_insurer;
+        insurer_codes = current_insurer.charge_code_associations( 'only_associated_codes' )
+    ; END %]
+    <div class="header[% "_small" IF op_type == 'associate' %]">
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" id="insurerform" name="insurerform">
+        <h5>
+            <label for="rolodex_id"><strong>Insurer:</strong></label>
+            <select name="rolodex_id" id="rolodex_id" size="1" onchange="document.forms['insurerform'].submit()">
+                [% "<option>No insurers ...</option>" UNLESS insurers %]
+                [% "<option>Choose an insurer ...</option>" IF( insurers && ! current_insurer ) %]
+                [% FOR insurer IN insurers %]
+                    <option value="[% insurer.id %]"[% IF insurer.id == current_insurer.id; ' selected="selected"'; END %]>[% insurer.name %]</option>
+                [% END %]
+            </select>
+        </h5>
+        <input type="hidden" name="table_name" id="table_name" value="[% current_table.name %]" />
+        <input type="hidden" name="op" value="home" />
+    </form>
+    [% IF( current_insurer && current_item ) %]
+        [% INCLUDE util/form.html %]
+            [% INCLUDE lookup/valid_data_charge_code_edit_vars.html
+                show_insurer_code = 1
+            %]
+        <input type="hidden" name="table_id" id="table_id" value="[% current_table.rec_id %]" />
+        <input type="hidden" name="table_name" value="[% current_table.name %]" />
+        <input type="hidden" name="rolodex_id" value="[% current_insurer.id %]" />
+        <input type="hidden" name="rec_id" value="[% current_item.rec_id %]" />
+        <input type="hidden" name="op" value="insurer_association_save" />
+        <p class="save"><input type="submit" value="Save insurer-specific data" /></p>
+        [% INCLUDE util/form_end.html %]
+    [% END %]
+    </div>
+
+    [% IF current_insurer %]
+    <table id="insurer_codes" cellspacing="0">
+        <tr class="head super">
+            <th></th>
+            <th class="column"></th>
+            <th colspan="2" class="column">Maximums per...</th>
+        </tr>
+        <tr class="head">
+            <th><strong>Ok?</strong></th>
+            <th class="column">Cost</th>
+            <th class="column">Encounter</th>
+            <th>Day</th>
+        </tr>
+        [% rowclass = 0 %]
+        [% FOR charge_code IN current_user.valid_data.list( current_table.name, 'all' );
+            insurer_code    = insurer_codes.${ charge_code.rec_id }
+        %]
+            [% rowclass = rowclass * -1 + 1 %]
+            [% IF( insurer_code && insurer_code.acceptable ) %]
+                <tr class="subhead[% rowclass ? ' even' : ' odd' %]">
+                    [% INCLUDE lookup/table_row_active_indicator.html
+                        active  = insurer_code.acceptable
+                        rowspan = 2
+                    %]
+                    <td class="column">$<strong>[% insurer_code.dollars_per_unit %]</strong></td>
+                    <td class="column"><strong>[% insurer_code.max_units_allowed_per_encounter %]</strong></td>
+                    <td><strong>[% insurer_code.max_units_allowed_per_day %]</strong></td>
+                </tr>
+            [% ELSE %]
+                <tr class="subhead[% rowclass ? ' even' : ' odd' %]">
+                    [% IF( insurer_code && ! insurer_code.acceptable );
+                        INCLUDE lookup/table_row_active_indicator.html
+                            active  = insurer_code.acceptable
+                            rowspan = 2
+                    %]
+                    [% ELSE %]
+                        <td class="is_active" rowspan="2"></td>
+                    [% END %]
+                    <td class="column"></td>
+                    <td class="column"></td>
+                    <td></td>
+                </tr>
+            [% END %]
+            <tr class="controls[% rowclass ? ' even' : ' odd' %]">
+                <td class="column" colspan="1"></td>
+                <td class="column" colspan="2"></td>
+            </tr>
+        [% END %]
+    </table>
+    [% END %]
+
+

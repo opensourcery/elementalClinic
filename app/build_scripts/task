@@ -1,0 +1,131 @@
+#!/usr/bin/env perl
+
+use Getopt::Long;
+END {
+  my %opt;
+  GetOptions(
+    \%opt,
+    'name=s',
+    'require=s%',
+    'include=s@',
+    'version=s',
+    'output=s',
+  );
+  die "--name is required\n" unless $opt{name};
+  die "--version is required\n" unless $opt{version};
+  $opt{require} ||= {};
+  $opt{include} ||= [];
+  Task::Builder->new(%opt)->run;
+}
+
+package Task::Builder;
+
+use File::Path ();
+use File::Basename ();
+use File::Temp ();
+use File::Copy ();
+use Cwd ();
+
+sub _accessor {
+  no strict 'refs';
+  my $attr = shift;
+  *$attr = sub { @_ > 1 ? ($_[0]->{$attr} = $_[1]) : $_[0]->{$attr} };
+}
+BEGIN { _accessor($_) for qw(name require include version output) }
+
+sub new {
+  my $class = shift;
+  my $self = bless {@_} => $class;
+  $self->{output} ||= $self->vars->{dist_vname} . ".tar.gz";
+  %{ $self->require } = (
+    (map {
+      my %r = %{ do($_) || die $@ };
+      ( %{ $r{requires} }, %{ $r{test_requires} } );
+    } @{ $self->include }),
+    %{ $self->require }
+  );
+  return $self;
+}
+
+sub vars {
+  my $self = shift;
+  use Data::Dumper;
+  local $Data::Dumper::Terse = 1;
+  my %v = (
+    mod_name => 'Task::' . $self->name,
+    dist_name => 'Task-' . $self->name,
+    mod_file  => 'lib/Task/' . $self->name . '.pm',
+    requires  => Dumper($self->require),
+    version   => $self->version,
+  );
+  $v{dist_vname} = "$v{dist_name}-$v{version}";
+  return wantarray ? %v : \%v;
+}
+
+sub run {
+  my $self = shift;
+  my $old = Cwd::cwd;
+  chdir(my $tmp = File::Temp::tempdir(CLEANUP => 1));
+
+  my %v = $self->vars; 
+  mkdir $v{dist_vname}, 0755 or die "Can't mkdir $v{dist_vname}: $!";
+
+  my $s = $self->templates(%v);
+
+  for my $path (keys %$s) {
+    my $text = $s->{$path};
+    $path = "$v{dist_vname}/$path";
+    File::Path::mkpath(File::Basename::dirname($path));
+    open my $fh, '>', $path or die "Can't open $path: $!";
+    $text =~ s/\{\{(.+?)\}\}/$v{$1}/g;
+    print $fh $text;
+  }
+
+  # XXX use Archive::Tar or something instead
+  system("tar zcf $v{dist_vname}.tar.gz $v{dist_vname}") && exit($? >> 8);
+
+  chdir $old;
+  File::Copy::copy "$tmp/$v{dist_vname}.tar.gz", $self->output
+    or die "Can't copy to " . $self->output . ": $!";
+}
+
+sub templates {
+  my ($self, %v) = @_;
+  return {
+    'Makefile.PL' => <<'END',
+use strict;
+use warnings;
+use ExtUtils::MakeMaker;
+WriteMakefile(
+  NAME => '{{mod_name}}',
+  VERSION_FROM => '{{mod_file}}',
+  ABSTRACT => 'install dependencies for {{mod_name}}',
+  PREREQ_PM => {{requires}},
+  dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
+  clean               => { FILES => '{{dist_name}}-*' },
+);
+END
+
+    'MANIFEST' => <<'END',
+Makefile.PL
+README
+{{mod_file}}
+END
+
+    'README' => <<'END',
+This is an automatically generated README for {{mod_name}}.
+END
+
+    $v{mod_file} => <<'END',
+  package
+  {{mod_name}};
+
+our $VERSION = {{version}};
+
+  1;
+END
+
+  };
+}
+
+1;

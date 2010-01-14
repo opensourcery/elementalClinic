@@ -1,0 +1,46 @@
+    <div class="site_display">
+        <h4>Rolodex entries</h4>
+        <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+            [% IF caller == 'rolodex' %]
+            <ul>
+            [% FOR role_name IN all_role_names;
+                INCLUDE radio_role_filter;
+            END %]
+            </ul>
+            [% END %]
+
+            [% IF caller == 'insurance' %]
+            <ul>
+            [% FOR role_name IN [ 'mental_health_insurance', 'medical_insurance', 'dental_insurance' ];
+                INCLUDE radio_role_filter
+                rolodex_filter = Session.client_insurance_rolodex_filter;
+            END %]
+            </ul>
+            [% END %]
+        </form>
+
+        <hr class="subtle" />
+
+        <div id="rolodex_entries">
+            [%
+                INCLUDE rolodex/rolodex_entries.html
+                role_name = current_role.name || Session.client_insurance_rolodex_filter
+            %]
+        </div>
+
+        <form method="[% Config.form_method %]" action="rolodex.cgi" enctype="application/x-www-form-urlencoded">
+            <input type="hidden" name="client_id" value="[% client.id %]" />
+            <p class="save"><input type="submit" name="op" id="op_new" value="New Rolodex" /></p>
+        </form>
+    </div>
+
+[% BLOCK radio_role_filter %]
+[% role = rolodex.roles( role_name ) %]
+    <li>
+        <input type="radio" name="role_filter" id="role_filter_[% role.name %]" value="[% role.name %]"
+            onchange="return filter_roles( '[% role.name %]', [% client.id %], [% current_user.staff_id %], '[% Config.theme %]' )"
+            [% ' checked="checked"' IF rolodex_filter == role.name %]
+            />
+        <label for="role_filter_[% role.name %]">[% role.description %]</label>
+    </li>
+[% END %]

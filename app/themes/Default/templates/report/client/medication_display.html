@@ -1,0 +1,42 @@
+    <table>
+        <thead>
+        <tr>
+            <td colspan="9">
+                [% INCLUDE report/header.html %]
+                
+                <p>Start: [% start_date_facade %]</p>
+                <p>End: [% end_date_facade %]</p>
+                
+                [% "<p>This client has no medication history between these dates.</p>" UNLESS data.0 %]
+            </td>
+        </tr>
+        [% IF data.0 %]
+        <tr>
+            <th>Date</th>
+            <th>Medication</th>
+            <th>Dosage</th>
+            <th>Quantity</th>
+            <th>Treater</th>
+            <th>Frequency</th>
+            <th>Instructions</th>
+            <th>Refills</th>
+            <th>Notes</th>
+        </tr>
+        [% END %]
+        </thead>
+        <tbody>
+        [% FOR entry IN data %]
+        <tr [% rowclass %]>
+            <td>[% entry.start_date %]</td>
+            <td>[% entry.medication %]</td>
+            <td>[% entry.dosage %]</td>
+            <td>[% entry.quantity %]</td>
+            <td>[% entry.rolodex.name_f %]</td>
+            <td>[% entry.frequency %]</td>
+            <td>[% entry.instructions %]</td>
+            <td>[% entry.num_refills %]</td>
+            <td>[% entry.notes %]</td>
+        </tr>
+        [% END %]
+        </tbody>
+    </table>

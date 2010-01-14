@@ -1,0 +1,227 @@
+1001:
+  rec_id: 1001
+  rolodex_id: 1001
+  address1: 123 Jazz St
+  address2: ~
+  city: New Orleans
+  post_code: 12345
+  state: LA
+  primary_entry: true
+1002:
+  rec_id: 1002
+  rolodex_id: 1002
+  address1: 123 Jazz St
+  address2: ~
+  city: New Orleans
+  post_code: 12345
+  state: LA
+  primary_entry: true
+1003:
+  rec_id: 1003
+  rolodex_id: 1003
+  address1: 666 Crossroads Lane
+  address2: ~
+  city: Longview
+  post_code: 44666
+  state: TX
+  primary_entry: true
+1004:
+  rec_id: 1004
+  rolodex_id: 1004
+  address1: 668 Devil Way
+  address2: ~
+  city: New Orleans
+  post_code: 02468
+  state: LA
+  primary_entry: true
+1005:
+  rec_id: 1005
+  rolodex_id: 1005
+  address1: 246 NW 23rd Ave
+  address2: ~
+  city: Portland
+  post_code: 97000
+  state: OR
+  primary_entry: true
+1006:
+  rec_id: 1006
+  rolodex_id: 1006
+  address1: P.O. Box 1271
+  address2: ~
+  city: Portland
+  post_code: 97207-1271
+  state: OR
+  primary_entry: true
+1007:
+  rec_id: 1007
+  rolodex_id: 1007
+  address1: 601 SW Second Avenue
+  address2: ~
+  city: Portland
+  post_code: 97204-3154
+  state: OR
+  primary_entry: true
+1008:
+  rec_id: 1008
+  rolodex_id: 1008
+  address1: 13221 SW 68th Pkwy
+  address2: ~
+  city: Portland
+  post_code: 97223
+  state: OR
+  primary_entry: true
+1009:
+  rec_id: 1009
+  rolodex_id: 1009
+  address1: P.O. Box 4327
+  address2: ~
+  city: Portland
+  post_code: 97208-4327
+  state: OR
+  primary_entry: true
+1010:
+  rec_id: 1010
+  rolodex_id: 1010
+  address1: 1111 SW Stark
+  address2: ~
+  city: Portland
+  post_code: 97200
+  state: OR
+  primary_entry: true
+1011:
+  rec_id: 1011
+  rolodex_id: 1011
+  address1: ~
+  address2: ~
+  city: ~
+  post_code: ~
+  state: ~
+  primary_entry: true
+1012:
+  rec_id: 1012
+  rolodex_id: 1012
+  address1: 2455 Telegraph Ave
+  address2: ~
+  city: Berkeley
+  post_code: 94704
+  state: OR
+  primary_entry: true
+1013:
+  rec_id: 1013
+  rolodex_id: 1013
+  address1: 500 Summer Street NE
+  address2: ~
+  city: Salem
+  post_code: 97301-0315
+  state: OR
+  primary_entry: true
+1014:
+  rec_id: 1014
+  rolodex_id: 1014
+  address1: P.O. Box 5490
+  address2: ~
+  city: Salem
+  post_code: 97304
+  state: OR
+  primary_entry: true
+1015:
+  rec_id: 1015
+  rolodex_id: 1015
+  address1: PO Box 9319
+  address2: ~
+  city: Fargo
+  post_code: 58106-6702
+  state: ND
+  primary_entry: true
+1016:
+  rec_id: 1016
+  rolodex_id: 1016
+  address1: 6287 Nikolaus Common
+  address2: 8878 Gideon Rue
+  city: Hillsboro
+  post_code: 97124
+  state: OR
+  primary_entry: true
+1017:
+  rec_id: 1017
+  rolodex_id: 1017
+  address1: '02547 Dina Glen #48'
+  address2: '38348 Kade Knolls #758'
+  city: Portland
+  post_code: 97227
+  state: OR
+  primary_entry: true
+1018:
+  rec_id: 1018
+  rolodex_id: 1018
+  address1: 93665 Loy Springs Suite 345
+  address2: 55060 Huels Parks
+  city: ~
+  post_code: ~
+  state: ~
+  primary_entry: true
+1019:
+  rec_id: 1019
+  rolodex_id: 1019
+  address1: 2723 Sawayn Valley
+  address2: 9194 Rolfson Via
+  city: Hillsboro
+  post_code: ~
+  state: OR
+  primary_entry: true
+1020:
+  rec_id: 1020
+  client_id: 1001
+  address1: 827 Broadway
+  address2: ~
+  city: New York
+  post_code: 10003
+  state: NY
+  primary_entry: true
+1021:
+  rec_id: 1021
+  client_id: 1002
+  address1: 8 Avenue
+  address2: Apt X
+  city: New York
+  post_code: 10001
+  state: NY
+  primary_entry: true
+1022:
+  rec_id: 1022
+  client_id: 1003
+  address1: 116 E 27th St
+  address2: ~
+  city: New York
+  post_code: 10016
+  state: NY
+  county: New York
+  primary_entry: true
+1023:
+  rec_id: 1023
+  client_id: 1004
+  address1: 131 W 3rd St
+  address2: ~
+  city: New York
+  post_code: 10012
+  state: NY
+  primary_entry: true
+1024:
+  rec_id: 1024
+  client_id: 1005
+  address1: 123 Main St.
+  address2: ~
+  city: Portland
+  post_code: 97215
+  state: OR
+  primary_entry: true
+1025:
+  rec_id: 1025
+  client_id: 1006
+  address1: ~
+  address2: ~
+  city: ~
+  post_code: ~
+  state: ~
+  primary_entry: true
+

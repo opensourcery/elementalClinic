@@ -1,0 +1,82 @@
+
+[%# {{{ Figure out field names and values -%]
+[%-
+    name = 'client_emergency_contact';
+    prefix = ordinal.defined ? name _ '[' _ ordinal _ ']['
+                             : name _ '_';
+
+    postfix = name && ordinal.defined ? ']' : '';
+
+    fname_name  = prefix _ 'fname' _ postfix;
+    fname_value = $fname_name || client.get_emergency_contacts.$ordinal.rolodex.fname || objects.client_emergency_contact.$ordinal.fname;
+
+    lname_name  = prefix _ 'lname' _ postfix;
+    lname_value = $lname_name || client.get_emergency_contacts.$ordinal.rolodex.lname || objects.client_emergency_contact.$ordinal.lname;
+
+    comment_name  = prefix _ 'comment_text' _ postfix;
+    comment_value = $comment_name || client.get_emergency_contacts.$ordinal.rolodex.comment_text || objects.client_emergency_contact.$ordinal.comment_text;
+
+    phone_name  = prefix _ 'phone_number' _ postfix;
+    phone_value = client.get_emergency_contacts.$ordinal.rolodex.phones.0 || objects.client_emergency_contact.$ordinal;
+
+    rec_id_name  = prefix _ 'rec_id'  _ postfix;
+    rec_id_value = $rec_id_name || objects.$name.$ordinal.rec_id || default.rec_id || rec_id;
+
+    active_name  = prefix _ 'active' _ postfix;
+    active_value = $active_name || objects.$name.$ordinal.active || default.active || rec_id_value ? 0 : 1;
+-%]
+[%# }}} -%]
+
+<div class="client_emergency [% class %]">
+    <dl class="inline client_emergency">
+        [% INCLUDE util/input_text.html
+            name    = fname_name
+            value   = fname_value
+            label   = 'First'
+            size    = 25
+            dl      = 1
+            required = locally_required
+        %]
+        [% INCLUDE util/input_text.html
+            name    = lname_name
+            value   = lname_value
+            label   = 'Last'
+            size    = 25
+            dl      = 1
+            required = locally_required
+        %]
+        [% INCLUDE util/composite/phone.html
+            name    = name
+            ord     = ordinal
+            default = phone_value
+            dl      = 1
+            size    = 20
+            required = locally_required
+            simple  = 1
+        %]
+        [% INCLUDE util/input_text.html
+            name    = comment_name
+            value   = comment_value
+            label   = 'Relationship'
+            size    = 25
+            dl      = 1
+            required = locally_required
+        %]
+        <dt></dt>
+        <dd>
+            <div class="emergency_selector">
+                <input type="radio" id="client_emergency_contact_primary_[% ordinal %]" name="client_emergency_contact_primary" value="[% ordinal %]"[% ' checked="checked"' IF client_emergency_contact_primary == ordinal %]/>
+                <label for="client_emergency_contact_primary_[% ordinal %]">Primary contact</label>
+            </div>
+        </dd>
+    </dl>
+
+    <hr />
+
+    [% IF ( loop.last OR !loop ) AND ( ordinal + 1 ) < MAX_EMERGENCY_CONTACTS %]
+    <p class="add emergency_contact" id="add_emergency_contact_[% ordinal + 1 %]"><a href="[% script %]?op=step2;add_new=emergency_contact;client_id=[% client.id %]"><em>+</em> Add another emergency contact</a></p>
+    [% END %]
+
+    <input type="hidden" name="[% prefix _ "rolodex_id" _ postfix %]" value="[% client.get_emergency_contacts.$ordinal.rolodex.rec_id %]" />
+    <input type="hidden" name="[% prefix _ "rec_id" _ postfix %]" value="[% client.get_emergency_contacts.$ordinal.rec_id %]" />
+</div>

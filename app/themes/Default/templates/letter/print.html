@@ -1,0 +1,15 @@
+[% INCLUDE global/print_head.html
+    name    = 'General Letter'
+    a_href  = "$script?client_id=$client.id"
+    a_label = 'General Letter'
+    instructions_only   = 1
+    auto_print          = 1
+    
+%]
+
+[% FOR letter IN letters;
+    INCLUDE letter/letter.html;
+    UNLESS loop.last();
+        INCLUDE global/print_footer.html;
+    END;
+END %]

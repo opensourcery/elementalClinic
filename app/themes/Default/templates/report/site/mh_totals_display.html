@@ -1,0 +1,23 @@
+<table border="1">
+    <thead>
+    <tr>
+        <td colspan="2">
+            [% INCLUDE report/header.html %]
+
+            [% "<p>There was no data for this report.</p>" UNLESS data.0 %]
+        </td>
+    </tr>
+    <tr>
+        <th>Mental Health Coverage</th>
+        <th>Count</th>
+    </tr>
+    </thead>
+    <tbody>
+    [% FOR entry IN data %]
+    <tr [% rowclass %]>
+        <td>[% entry.mh_coverage %]</td>
+        <td>[% entry.count %]</td>
+    </tr>
+    [% END %]
+    </tbody>
+</table>

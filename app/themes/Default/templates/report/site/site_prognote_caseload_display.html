@@ -1,0 +1,38 @@
+<!-- taken from global/print_head.html because it had to be split up to get the page headers right -->
+[% IF auto_print %]<script type="text/javascript">print()</script>[% END %]
+<fieldset class="print_head">
+    <legend>Report notes</legend>
+    <ul>
+        <li>Only the letter itself will be printed (not the navigation, or these instructions).</li>
+        <li>Return to <a href="[% script %]">Reporting</a> when you're finished.</li>
+    </ul>
+    <p class="print"><input type="submit" onclick="print();return false;" value="Print" /></p>
+</fieldset>
+
+[% FOR writer IN data;
+    NEXT UNLESS( clients = writer.get_clients ) %]
+<table class="page[% ' first' IF loop.first %]">
+    <thead>
+    <tr>
+        <td>
+            <h2>[% Config.org_name %]</h2>
+            <h3>
+                <strong>[% report.label %]</strong>
+            </h3>
+            
+            <h3 class="caseload_of">Caseload of: <strong>[% writer.eman %]</strong></h3>
+            <h4>Progress notes from: <strong>[% start_date_facade %]</strong> - <strong>[% end_date_facade %]</strong></h4>
+        </td>
+    </tr>
+    </thead>
+    <tbody>
+        <tr><td> 
+                [% FOR client IN clients %]
+                    [% NEXT UNLESS( notes = client.get_all_progress_notes( report.args.start_date, report.args.end_date )) %]
+                    [% INCLUDE progress_notes/client_head.html %]
+                    [% FOR current IN notes; INCLUDE progress_notes/note_print.html; END %]
+                [% END %]
+        </td></tr>
+    </tbody>
+</table>
+[% END %]

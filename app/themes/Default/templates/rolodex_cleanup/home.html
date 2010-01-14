@@ -1,0 +1,88 @@
+<div id="center" class="system_box">
+        
+    <h2>Rolodex Cleanup Tool</h2>
+
+    [% INCLUDE util/errors.html %]
+    [% IF message %]
+    <p><strong><br />[% message %]<br /><br /></strong></p>
+    [% END %]
+
+    <div class="cleanup_display">
+        <h3>Rolodex Entries</h3>
+        <br />
+    
+        [% IF rolodex_entries.size > 0 %]
+            [% IF all_rolodex %]
+                <h4><a href="[% script %]">View Matching Rolodex Entries</a> | All Rolodex Entries</h4>
+                <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+            [% ELSE %]
+                <h4>Matching Rolodex Entries | <a href="[% script %]?all_rolodex=1">View All Rolodex Entries</a></h4>
+            [% END %]
+            
+            <div id="cleanup_entries">
+            <table>
+                [%- FOR entry IN rolodex_entries %]
+                    <tr>
+                        <th>[% entry.name %]</th>
+                        [% IF all_rolodex %]
+                        <td class="merge" rowspan="2">
+                            [% INCLUDE util/checkbox.html
+                                name    = "plan_$entry.rec_id"
+                                label   = 'choose'
+                                value   = 0
+                            %]
+                        </td>
+                        [% ELSE %]
+                        <td class="merge" rowspan="2">
+                            <a href="[% script %]?op=plan_merge;rolodex_id=[% entry.rec_id %]" title="Choose entry">cleanup &#187;</a>
+                        </td>
+                        [% END %]
+                    </tr>
+                    <tr>
+                        <td class="name"><div>[% IF entry.lname; "$entry.lname, "; END %][% "$entry.fname $entry.credentials" %]</div></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            [% IF entry.phone; "($entry.phone)"; END %]
+                            [% IF entry.addr; "$entry.addr;"; END %]
+                            [% IF entry.city; "$entry.city,"; END %]
+                            [% IF entry.state; entry.state; END %]
+                        </td>
+                        <td>
+                            [% IF ! all_rolodex; "$entry.num_match matching records"; END %]
+                        </td>
+                    </tr>
+                [% END %]
+            </table>
+            </div>
+        [% ELSE %]
+        <h4>There are no rolodex entries which match other entries. <br />
+            The list may need to be regenerated.</h4>
+        [% END %]
+
+        [% IF all_rolodex %]
+            <p class="edit"><input type="submit" name="op" id="op_new" value="Cleanup Chosen Entries >>" /></p>
+            <input type="hidden" name="custom" value="1" />
+            </form>
+        [% ELSE %]
+            <br />
+            <hr class="subtle" />
+            [% IF modified; "<h4>This list was last updated: $modified</h4>"; END %]
+            <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+                <p class="edit"><input type="submit" name="op" id="op_new" value="Refresh List" /></p>
+            </form>
+        [% END %]
+    </div>
+
+    
+    <h3>
+        1. Never use this tool while anyone else is logged in to the system.
+        <br /><br />
+        2. Check the last modified date to make sure this list has been generated recently. It will take
+        several minutes to generate.
+        <br /><br />
+        3. Select an entry to view all of the records that are similar to it, and begin the cleanup process.
+    </h3>
+    
+    <hr class="div" />
+</div>

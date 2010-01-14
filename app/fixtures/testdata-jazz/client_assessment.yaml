@@ -1,0 +1,65 @@
+--- 
+1002: 
+  rec_id: 1002
+  client_id: 1001  
+  template_id: 1006 
+  assessment_date: 2008-05-10 
+  start_date: 2008-05-10
+  end_date: 2009-05-10
+  staff_id: 1001
+1003: 
+  rec_id: 1003
+  client_id: 1001  
+  template_id: 1006 
+  assessment_date: 2007-05-10 
+  start_date: 2007-05-10
+  end_date: 2008-05-09
+  staff_id: 1001
+1004: 
+  rec_id: 1004
+  client_id: 1001  
+  template_id: 1003 
+  assessment_date: 2006-05-10 
+  start_date: 2006-05-10
+  end_date: 2007-05-09
+  staff_id: 1001
+1005: 
+  rec_id: 1005
+  client_id: 1001  
+  template_id: 1001
+  assessment_date: 2005-05-10 
+  start_date: 2005-05-10
+  end_date: 2006-05-09
+  staff_id: 1001
+1006: 
+  rec_id: 1006
+  client_id: 1002  
+  template_id: 1006 
+  assessment_date: 2008-05-10 
+  start_date: 2008-05-10
+  end_date: 2009-05-10
+  staff_id: 1001
+1007: 
+  rec_id: 1007
+  client_id: 1003  
+  template_id: 1006 
+  assessment_date: 2008-05-10 
+  start_date: 2008-05-10
+  end_date: 2009-05-10
+  staff_id: 1001
+1008: 
+  rec_id: 1008
+  client_id: 1004  
+  template_id: 1006 
+  assessment_date: 2008-05-10 
+  start_date: 2008-05-10
+  end_date: 2009-05-10
+  staff_id: 1001
+1009:
+  rec_id: 1009
+  client_id: 1001
+  template_id: 1007
+  assessment_date: 2005-05-04
+  start_date: 2005-05-04
+  end_date: 2005-05-04
+  staff_id: 1000

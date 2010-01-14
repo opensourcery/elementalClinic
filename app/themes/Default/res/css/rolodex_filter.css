@@ -1,0 +1,61 @@
+div.rolodex h4,
+div.site_display h4 {
+    font-size : 12px;
+    text-align : left;
+    padding : 2px 7px 2px 7px;
+    margin : -8px -7px 4px -7px;
+    border : none;
+}
+div.site_display {
+    background-color : #dedeff;
+    padding : 7px;
+    border : 1px solid #60c;
+    width : 355px;
+    float : right;
+    min-height : 200px;
+}
+div.site_display hr.subtle {
+    clear : both !important;
+    border-color : #60c;
+    padding : 5px 0;
+}
+.site_display h4,
+.site_box h4 {
+    color : #fff;
+    text-align : right;
+    background-color : #60c;
+}
+div.site_display ul {
+    list-style-type : none;
+    padding : 0;
+    margin : 0;
+}
+div.site_display ul.right {
+    float : right;
+    margin-right : 10px;
+}
+#rolodex_entries {
+    height : 300px;
+    border : 2px solid #06c;
+    overflow : auto;
+    background : #ddd;
+}
+#rolodex_entries table {
+    background : #fff;
+    width : 100%;
+    border-collapse : collapse;
+}
+#rolodex_entries table td {
+    font-size : 11px;
+    border-bottom : 1px solid #666;
+}
+#rolodex_entries td.relationship_new {
+    font-size : 25px;
+    line-height : 12px;
+    font-weight : bold;
+}
+#rolodex_entries table td.view,
+#rolodex_entries table td.edit {
+    font-weight : bold;
+    border : none;
+}

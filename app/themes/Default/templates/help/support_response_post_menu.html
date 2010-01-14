@@ -1,0 +1,42 @@
+<center>
+<img src="../images/logo.gif" />
+
+</center>
+<h4><hr /> <center>Support Response</center> <hr /></h4>
+
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+
+<table border="0">
+    <tr>
+        <td><b>Select Record: </b></td>
+    </tr>
+    <tr>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "record"
+    s_values  = data
+    s_size    = 8
+%]</td>
+    </tr>
+</table>
+
+<p />
+
+<input type="submit" name="go" value="Select" />
+<input type="hidden" name="sdate" value="[% sdate %]" />
+<p />
+
+<a href="../charting/my_caseload.cgi?previous=[% program %]">My Caseload</a>
+
+<br />
+
+<a href="[% local %]">Return to [% Local %]</a>
+
+<br />
+
+<a href="../main.html">Return to Main Menu</a>
+
+<div>
+</div>
+</form>
+

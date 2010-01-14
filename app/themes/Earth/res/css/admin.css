@@ -1,0 +1,21 @@
+h3 {
+    font-size : 1.1em;
+    margin : 1em 0 .3em 0;
+}
+dl {
+    margin : 0 0 2em 2em;
+}
+dt label {
+    font-weight : bold;
+    width : 13em;
+    display : block;
+    float : left;
+    border-bottom : 1px solid #ccc;
+}
+dt input,
+dt select {
+    float : left;
+}
+dd {
+    margin : 0 0 1em 0;
+}

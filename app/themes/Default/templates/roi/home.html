@@ -1,0 +1,65 @@
+[% INCLUDE global/client_head.html
+    navsec = 'letters'
+    navpage = 'roi'
+%]
+[% release_contacts = client.filter_by_show_inactive( 'release_agencies', current_user.pref.rolodex_show_inactive ) %]
+[% action = (( op == 'save' && errors ) || op == 'edit' || op == 'create' || op == 'clone' ) ? 'edit' : 'display' %]
+
+<div id="left" class="client_box">
+    <h4>Release of Information</h4>
+    [% IF current.id;
+        INCLUDE roi/letter_edit.html;
+    ELSIF release_contacts;
+        IF( action == 'edit' );
+            INCLUDE roi/letter_edit.html;
+        END;
+    ELSE %]
+        <p>Client has no Rolodex relationships; ROIs can only be made to established Rolodex relationships.</p>
+    [% END %]
+</div>
+
+<div id="right" class="client_box">
+    <h4>Release History <em>(expiration date)</em></h4>
+    <p id="releases_show_expired_pref">
+        [% prefs_link = "user_prefs.cgi?op=save_one;return_to=$script;client_id=$client.id;pref=releases_show_expired;value=";
+        IF current_user.pref.releases_show_expired %]
+        Showing <strong>all</strong> | <a href="[% "${prefs_link}0" %]">Show unexpired releases only</a>
+        [% ELSE %]
+        <a href="[% "${prefs_link}1" %]">Show all releases</a> | Showing <strong>unexpired only</strong>
+        [% END %]
+    </p>
+    <p>Starred releases have not been printed.</p>
+    [% IF client.roi.history( client.client_id, current_user.pref.releases_show_expired ) %]
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" id="chooser" name="chooser">
+        <select name="roi_id" id="roi_id" size="15" multiple="multiple" class="multibutton" ondblclick="document.forms['chooser'].submit()">
+            [% FOR roi IN client.roi.history( client.client_id, current_user.pref.releases_show_expired );
+                NEXT UNLESS roi.rolodex_id;
+                selected = roi.rec_id == current.rec_id ? 'selected="selected"' : '';
+                printed = roi.print_date ? '' : '* ';
+            %]
+            <option value="[% roi.rec_id %]" [% selected %]>[% printed %][% roi.rolodex.eman_company %] ([% roi.renewal_date %])</option>
+            [% END %]
+        </select>
+        <input type="hidden" name="client_id" value="[% client.id %]" />
+        <p class="view"><input type="submit" name="op" value="View Letter" /></p>
+        <p class="print"><input type="submit" name="op" value="Print Letters" /></p>
+        <h5>Clone Releases</h5>
+            [% INCLUDE util/date_picker.html
+                name    = 'clone_renewal_date'
+                value   = 'year_from_today'
+                action  = edit
+                label   = 'New renewal date'
+             %]
+        <p class="clone"><input type="submit" name="op" value="Clone Letters" /></p>
+        <!-- hidden op must come after these op submit buttons -->
+        <input type="hidden" name="op" value="view">
+    </form>
+    [% ELSE %]
+    <p>No previous releases.</p>
+    [% END %]
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+        <input type="hidden" name="client_id" value="[% client.id %]" />
+        <input type="hidden" name="op" value="create" />
+        <p class="new"><input type="submit" name="go" value="New Letter" /></p>
+    </form>
+</div>

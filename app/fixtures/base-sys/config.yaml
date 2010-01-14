@@ -1,0 +1,19 @@
+100:
+  rec_id: 100
+  dept_id: 1001
+  name: renewal_notification_days
+  value: 14,7
+101:
+  rec_id: 101
+  dept_id: 1001
+  name: appointment_notification_days
+  value: 7,1
+102:
+  rec_id: 102
+  dept_id: 1001
+  name: quick_schedule_availability
+  value: 1
+103:
+  rec_id: 103
+  dept_id: 1001
+  name: send_errors_to

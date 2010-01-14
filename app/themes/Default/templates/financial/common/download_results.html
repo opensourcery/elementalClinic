@@ -1,0 +1,49 @@
+[% IF download_results.0 %]
+<div class="subcontent">
+    
+    <h4>Files received and parsed:</h4>
+
+    [% FOR result IN download_results %]
+        [% IF result.error %]
+            <p>
+            Error reading file [% result.file %]:
+            </p>
+            <div class="connection_details">
+                <p>
+                [% result.error %]
+                </p>
+            </div>
+        [% ELSIF result.billing_payment.id %]
+            <p>
+            Successfully imported payment file [% result.file %]
+            </p>
+            [% INCLUDE financial/common/read_835_results.html 
+                billing_payment = result.billing_payment
+            %]
+        [% ELSIF result.read_997 %]
+            <p>
+            Successfully read 997 file [% result.file %]
+            </p>
+            [% INCLUDE financial/common/read_997_results.html 
+                read_997 = result.read_997
+            %]
+        [% ELSIF result.read_ta1 %]
+            <p>
+            Successfully read ta1 file [% result.file %]
+            </p>
+            [% INCLUDE financial/common/read_ta1_results.html 
+                read_ta1 = result.read_ta1
+            %]
+        [% ELSIF result.file_content %]
+            <p>
+            Successfully downloaded file [% result.file %]
+            </p>
+            <div class="connection_details">
+                <pre>
+[% result.file_content %]
+                </pre>
+            </div>
+        [% END %]
+    [% END %]
+</div>
+[% END %]

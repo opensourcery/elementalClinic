@@ -1,0 +1,5 @@
+COPY claims_processor (interchange_id_qualifier, interchange_id, code, name, primary_id, clinic_trading_partner_id, clinic_submitter_id, requires_rendering_provider_ids, template_837, password_active_days, password_expires, password_min_char, username, "password", sftp_host, sftp_port, dialup_number, put_directory, get_directory, send_personnel_id, send_production_files) FROM stdin;
+ZZ	ORDHSOMAP	ORDHSOMAP	OREGON DHS OMAP	ORDHSOMAP	tp000000	PROVIDER	f	write_837	60	2006-04-30	8	\N	\N	sftp.test.com	22	\N	/	/	f	f
+ZZ	931211733	MHO	PHTECH	931211733	999999999	PROVIDER	f	write_837	\N	2006-06-30	\N	username	\N	sftp.test.com	22	\N	/HOME/upload/testfiles	/HOME/download	f	f
+ZZ	00824	0042	MEDICARE B OF OREGON	00835	OR00000	OR00000	t	write_837	60	2006-02-28	8	\N	\N	\N	\N	19712440200	\N	\N	f	f
+\.

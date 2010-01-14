@@ -1,0 +1,96 @@
+[% PROCESS global/header/help %]
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+    <title>eleMental Clinic [% "(r$Config.revision)" IF Config.show_revision && Config.revision %] | [% Config.org_name %]</title>
+    <meta http-equiv="Content-Language" content="en-us" />
+
+    <meta http-equiv="imagetoolbar" content="false" />
+    <meta name="MSSmartTagsPreventParsing" content="true" />
+    <meta name="ROBOTS" content="NONE" />
+    <link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico" />
+
+    <script type="text/javascript" src="../res/[% Config.theme %]/js/jquery.js"></script>
+    <script type="text/javascript">var THEME = '[% Config.theme %]'</script>
+
+    <script type="text/javascript" src="../res/[% Config.theme %]/js/common/jquery.OpenSourceryCommon.js"></script>
+    <script type="text/javascript" src="../res/[% Config.theme %]/js/base.js"></script>
+    [%- IF use_new_date_picker %]
+    <script type="text/javascript" src="../res/[% Config.theme %]/js/date_picker.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../res/[% Config.theme %]/css/date_picker.css" />
+    [%- ELSE %]
+    <script type="text/javascript" src="../res/[% Config.theme %]/js/calendar.js"></script>
+    [%- END %]
+    [%- FOR js IN javascripts %]
+    <script type="text/javascript" src="../res/[% Config.theme %]/js/[% js %]"></script>
+    [%- END %]
+
+    [% MACRO css_link(style, media) BLOCK -%]
+    <link rel="stylesheet" type="text/css" media="[% media || 'screen' %]" href="../res/[% Config.theme %]/css/[% style %].css" />
+    [%- END %]
+    [%- FOR style IN [ 'base', 'client_head', 'client_selector', 'theme' ] %]
+      [% css_link(style) %]
+    [%- END %]
+    [%- IF eMC.user.home_page_type %]
+      [% style = 'user_role/' _ eMC.user.home_page_type; css_link(style) %]
+    [%- END %]
+    [%- FOR style IN styles %]
+      [% css_link(style) %]
+    [%- END %]
+    [% css_link('override') %]
+    [% css_link('print', 'print') %]
+    [%- FOR print_style IN print_styles %]
+      [% css_link(print_style, 'print') %]
+    [%- END %]
+</head>
+
+<body[% " class=\"$body_class\"" IF body_class %]>
+    <div id="header">
+        <h1><a href="/"><span>[% Config.org_name || 'eleMentalClinic' %]</span></a></h1>
+        <p id="current_user">
+        [% IF current_user.id %]
+            Logged in as <strong>[% "$current_user.fname $current_user.lname" %]</strong>
+            | <a class="tool" href="/user_prefs.cgi?ref_script=[% script %];ref_client_id=[% client.id %]">preferences</a>
+            | <a class="tool" href="/login.cgi?op=logout">logout</a>
+        [% ELSE %]
+            <a href="/login.cgi">Login</a>
+        [% END %]
+        </p>
+
+        <div id="nav">[% PROCESS global/header/nav %]</div>
+    </div>
+
+<div id="page">
+[% IF sc23module %]
+    <div id="content">
+    <div id="sc23" class="system_box">
+    <h2><em>[% sc23module %]:</em> [% sc23title %]</h2>
+    <a class="sc23module" href="/admin.cgi">Return to <strong>[% sc23module %]</strong> management.</a>
+[% END %]
+
+[% BLOCK global/header/help %][% END %]
+
+[% BLOCK global/header/nav %]
+<ul>
+    <li id="home"><a href="/" accesskey="h"><em>H</em>ome</a></li>
+    <li><a id="client_selector_link" href="/" onclick="return client_selector( '[% eMC.controller %]' )" accesskey="c"><em>C</em>lients</a></li>
+    [% IF Config.Theme.controller_can('Schedule') %]
+    <li><a href="/schedule.cgi?withclient=no" accesskey="s"><em>S</em>chedule</a></li>
+    [% END %]
+    <li><a href="/groups.cgi" accesskey="g"><em>G</em>roups</a></li>
+    [% IF current_user.reports || current_user.admin %]
+    <li><a href="/report.cgi" accesskey="r"><em>R</em>eports</a></li>
+    [% END %]
+    [% IF current_user.admin %]<li><a href="/admin.cgi?client_id=[% client.id %]">Administration</a></li>[% END %]
+</ul>
+<div id="client_selector" style="display:none">
+    <div class="inner">
+        <h3>Select a client</h3>
+        [% IF current_user.service_coordinator %]
+            <p id="new_client"><a href="/intake.cgi?op=step1" accesskey="i">Create a new cl<em>i</em>ent &#187;</a></p>
+        [% END %]
+        <p id="client_selector_status">Loading ...</p>
+        <div id="client_selector_body"></div>
+    </div>
+</div>
+[% END %]

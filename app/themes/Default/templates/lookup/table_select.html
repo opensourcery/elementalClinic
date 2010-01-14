@@ -1,0 +1,14 @@
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" id="tableform" name="tableform">
+        <label for="table_name"><strong>Select table:</strong></label>
+        <select name="table_name" id="table_name" size="1" onchange="document.forms['tableform'].submit()">
+            [% "<option>Select a table ...</option>" UNLESS current_table %]
+        [% FOR one IN current_user.valid_data.tables.sort('description') %]
+            <option value="[% one.name %]"[% IF one.name == current_table.name; ' selected="selected"'; END %]>[% one.description %]</option>
+        [% END %]
+        </select>
+        <input type="hidden" name="associate_group_id" value="[% associate_current_group.rec_id %]" />
+        <input type="hidden" name="associate_table_name" value="[% associate_table.name %]" />
+
+        <input type="hidden" name="op" id="op" value="[% op_type %]" />
+        <input type="submit" value="View table" />
+    </form>

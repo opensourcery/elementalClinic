@@ -1,0 +1,98 @@
+<table>
+    <thead>
+        <tr><td>
+                [% INCLUDE report/header.html %]
+        </td></tr>
+    </thead>
+    <tbody>
+        <tr><td>
+            [% dis = report.data || client.placement.last_discharge %]
+            <p>Admit date: <strong>[% client.placement( dis.placement_event.event_date ).admit_date %]</strong></p>
+            <p>Discharge date: <strong>[% dis.placement_event.event_date %]</strong></p>
+            [% IF( diagnosis = dis.initial_diagnosis ) %]
+                <h4><em>Initial Diagnosis</em>: [% diagnosis.diagnosis_date %]</h4>
+                [% INCLUDE diagnosis_display %]
+            [% ELSE %]
+                <p>No Initial Diagnosis</p>
+            [% END %]
+
+            [% IF ( diagnosis.rec_id == dis.final_diagnosis.rec_id ) %]
+                <h4><em>No Further Diagnosis</em></h4>
+            [% ELSIF( diagnosis = dis.final_diagnosis ) %]
+                <h4><em>Final Diagnosis</em>: [% diagnosis.diagnosis_date %]</h4>
+                [% INCLUDE diagnosis_display %]
+            [% ELSE %]
+                <p>No Final Diagnosis</p>
+            [% END %]
+
+        <div class="left">
+            <h4>Discharge Information</h4>
+            <table class="small">
+                <tr [% rowclass( 0 ) %]><td>Discharge date</td> <td>[% dis.placement_event.event_date %]</td></tr>
+                <tr [% rowclass( 1 ) %]><td>Last contact date</td> <td>[% dis.last_contact_date %]</td></tr>
+                <tr [% rowclass( 0 ) %]><td>Termination reason</td> <td>[% dis.termination_reason %]</td></tr>
+                <tr [% rowclass( 1 ) %]><td>Staff name</td> <td>[% dis.staff_name %]</td></tr>
+                <tr [% rowclass( 0 ) %]><td>Licensed Medical Practitioner</td> <td>[% dis.physician %]</td></tr>
+                <tr [% rowclass( 1 ) %]><td>Termination notice sent</td> <td>[% dis.termination_notice_sent_date %]</td></tr>
+                <tr [% rowclass( 0 ) %]><td>Client contests termination?</td> <td>[% dis.client_contests_termination ? 'Yes' : 'No' %]</td></tr>
+            </table>
+        </div>
+
+        <div class="right">
+            <h4>Aftercare: Discharge</h4>
+            <table class="small">
+                <tr [% rowclass( 0 ) %]><td>Discharged to</td> <td>[% dis.sent_to %]</td></tr>
+                <tr [% rowclass( 1 ) %]><td>Contact</td> <td>[% dis.ref_cont %]</td></tr>
+                <tr [% rowclass( 0 ) %]><td>Address</td> <td>[% dis.addr %]</td></tr>
+                <tr [% rowclass( 1 ) %]><td>Address 2</td> <td>[% dis.addr_2 %]</td></tr>
+                <tr [% rowclass( 0 ) %]><td>City</td> <td>[% dis.city %]</td></tr>
+                <tr [% rowclass( 1 ) %]><td>State</td> <td>[% dis.state %]</td></tr>
+                <tr [% rowclass( 0 ) %]><td>Zip</td> <td>[% dis.post_code %]</td></tr>
+                <tr [% rowclass( 1 ) %]><td>Phone</td> <td>[% dis.phone %]</td></tr>
+            </table>
+        </div>
+        <hr class="forcediv" />
+
+            <h4>Aftercare: General</h4>
+            <table class="small">
+                <tr [% rowclass( 0 ) %]><td>Employability Factor</td> <td>[% dis.employability_factor %]</td></tr>
+                <tr [% rowclass( 1 ) %]><td>Education</td> <td>[% dis.education %]</td></tr>
+                <tr [% rowclass( 0 ) %]><td>Household monthly income</td> <td>[% dis.income %]</td></tr>
+                <tr [% rowclass( 1 ) %]><td>Employment status</td><td>
+                [%- SWITCH( dis.employment_status );
+                    CASE 'F'; "Full-time";
+                    CASE 'P'; "Part-time";
+                    CASE 'U'; "Unemployed";
+                    CASE    ; "n/a";
+                END -%] 
+                </td></tr>
+                <tr [% rowclass( 0 ) %]><td>Criminal justice?</td> <td>[% dis.criminal_justice ? 'Yes' : 'No' %]</td></tr>
+                <tr [% rowclass( 1 ) %]><td>Discharge note</td> <td>[% dis.discharge_note %]</td></tr>
+                <tr [% rowclass( 0 ) %]><td>Aftercare notes</td> <td>[% dis.after_care %]</td></tr>
+            </table>
+
+            <div class="left"><p class="sigline">Clinician Signature / Date</p></div>
+
+            <div class="right"><p class="sigline">Supervisor Signature / Date</p></div>
+
+            [% BLOCK diagnosis_display %]
+            <div class="small">
+                <h5>Axis I</h5>
+                <p><strong>Primary:</strong> [% diagnosis.diagnosis_1a %]</p>
+                <p><strong>Secondary</strong>: [% diagnosis.diagnosis_1b %]</p>
+                <p><strong>Tertiary</strong>: [% diagnosis.diagnosis_1c %]</p>
+                <hr class="subtle" />
+
+                <h5>Axis II</h5>
+                <p><strong>Primary</strong>: [% diagnosis.diagnosis_2a %]</p>
+                <p><strong>Secondary</strong>: [% diagnosis.diagnosis_2b %]</p>
+                <hr class="subtle" />
+
+                <p><strong>Axis III</strong>: [% diagnosis.diagnosis_3 %]</p>
+                <p><strong>Axis IV</strong>: [% diagnosis.diagnosis_4 %]</p>
+                <p><strong>GAF</strong>: [% diagnosis.diagnosis_5_current %]</p>
+            </div>
+            [% END %]
+        </td></tr>
+    </tbody>
+</table>

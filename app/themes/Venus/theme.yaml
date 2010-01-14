@@ -1,0 +1,77 @@
+---
+name: Venus
+description: 
+theme_index: ClientOverview
+allowed_controllers:
+  - Admin
+  - Ajax
+  - Allergies
+  - Appointments
+  - Assessment
+  - AdminAssessmentTemplates
+  - Calendar
+  - ClientOverview
+  - ClientFilter
+  - ClientScannedRecord
+  - ClientPermissions
+  - Demographics
+  - Diagnosis
+  - Discharge
+  - Entitlements
+  - Error
+  - GroupNotes
+  - Groups
+  - Help
+  - Income
+  - Inpatient
+  - Intake
+  - Legal
+  - Letter
+  - Login
+  - Menu
+  - PersonnelNotesChargeCodes
+  - Personnel
+  - PersonnelPrefs
+  - Placement
+  - Prescription
+  - ProgressNote
+  - Report
+  - ROI
+  - RolodexCleanup
+  - RolodexFilter
+  - Rolodex
+  - Schedule
+  - ScannedRecord
+  - SecurityError
+  - TreaterSet
+  - Treatment
+  - ValidData
+  - Verification
+  - Notification
+allowed_reports:
+#  - client/allergy
+  - client/client_prognote
+  - client/client_termination
+  - client/cover_sheet
+  - client/data_sheet
+  - client/legal
+  - client/medication
+  - client/prognote
+  - site/client_list
+  - site/clinic_schedule
+  - site/email
+  - site/access
+  - site/security_log
+  - site/encounter
+  - site/hospital
+  - site/ins_reauth
+  - site/last_visit_bystaff
+  - site/mh_totals
+  - site/monthly_status
+  - site/renewals
+  - site/site_prognote
+  - site/site_prognote_caseload
+  - site/verification_expirations
+  - site/verifications
+  - site/zip_count
+  - site/appointments

@@ -1,0 +1,5611 @@
+
+1: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Cancer
+  hdr: ~
+  level_num: ~
+  name: ~
+  rec_id: 1
+10: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Muscle Spasms
+  hdr: ~
+  level_num: ~
+  name: ~
+  rec_id: 10
+100: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Other/Unknown Substance-Induced Sexual Dysfunction
+  hdr: ~
+  level_num: 3
+  name: 292.89
+  rec_id: 100
+101: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Other/Unknown Substance-Induced Sleep Disorder
+  hdr: ~
+  level_num: 3
+  name: 292.89
+  rec_id: 101
+102: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Phencyclidine Intoxication
+  hdr: ~
+  level_num: 3
+  name: 292.89
+  rec_id: 102
+103: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Alcohol Induced Persisting Dementia with psychotic features
+  hdr: ~
+  level_num: ~
+  name: 291.20
+  rec_id: 103
+104: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Substance abuse induced psychotic disorder
+  hdr: ~
+  level_num: ~
+  name: 292.12
+  rec_id: 104
+105: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Psychosis Due to Brain Injury w/hallucinations
+  hdr: ~
+  level_num: ~
+  name: 293.82
+  rec_id: 105
+106: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Mood Disorder due to head injury
+  hdr: ~
+  level_num: ~
+  name: 293.83
+  rec_id: 106
+107: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Amnestic Disorder due to head injury
+  hdr: ~
+  level_num: ~
+  name: 294.00
+  rec_id: 107
+108: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Cognitive Disorder, NOS
+  hdr: ~
+  level_num: ~
+  name: 294.90
+  rec_id: 108
+109: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Bipolar 1 D/O, Single Manic Episode, Unspecified
+  hdr: ~
+  level_num: ~
+  name: 296.00
+  rec_id: 109
+11: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Asthma
+  hdr: ~
+  level_num: ~
+  name: ~
+  rec_id: 11
+110: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Bipolar 1 D/O, Single Manic Episode, Mild
+  hdr: ~
+  level_num: ~
+  name: 296.01
+  rec_id: 110
+111: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Bipolar 1 D/O, Single Manic Episode, Moderate
+  hdr: ~
+  level_num: ~
+  name: 296.02
+  rec_id: 111
+112: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Bipolar 1 D/O, Single Manic Episode, Severe w/o Psychotic Features
+  hdr: ~
+  level_num: ~
+  name: 296.03
+  rec_id: 112
+113: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Bipolar 1 D/O, Single Manic Episode, Severe with Psychotic Features
+  hdr: ~
+  level_num: ~
+  name: 296.04
+  rec_id: 113
+114: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Bipolar 1 D/O, Single Manic Episode, In Full Remission
+  hdr: ~
+  level_num: ~
+  name: 296.06
+  rec_id: 114
+115: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Major Depressive D/O, Unspecified
+  hdr: ~
+  level_num: ~
+  name: 296.20
+  rec_id: 115
+116: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Major Depressive D/O, Single Episode, Mild
+  hdr: ~
+  level_num: ~
+  name: 296.21
+  rec_id: 116
+117: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Major Depressive D/O, Single Episode, Moderate
+  hdr: ~
+  level_num: ~
+  name: 296.22
+  rec_id: 117
+118: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Major Depressive D/O, Single Episode, Severe w/o Psychotic Features
+  hdr: ~
+  level_num: ~
+  name: 296.23
+  rec_id: 118
+119: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Major Depressive D/O, Single Episode, Severe with Psychotic Features
+  hdr: ~
+  level_num: ~
+  name: 296.24
+  rec_id: 119
+12: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Complications of Diabetes
+  hdr: ~
+  level_num: ~
+  name: ~
+  rec_id: 12
+120: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Major Depressive D/O, Single Episode, In Partial Remission
+  hdr: ~
+  level_num: ~
+  name: 296.25
+  rec_id: 120
+121: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Major Depressive D/O, Single Episode, In Full Remission
+  hdr: ~
+  level_num: ~
+  name: 296.26
+  rec_id: 121
+122: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Major Depressive D/O, Unspecified
+  hdr: ~
+  level_num: ~
+  name: 296.30
+  rec_id: 122
+123: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Major Depressive D/O, Recurrent, Mild
+  hdr: ~
+  level_num: ~
+  name: 296.31
+  rec_id: 123
+124: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Major Depressive D/O, Recurrent, Moderate
+  hdr: ~
+  level_num: ~
+  name: 296.32
+  rec_id: 124
+125: 
+  active: 1
+  axis: 1
+  category: 41
+  dept_id: 1001
+  description: Relational Problem Related to a Mental Disorder/Medical Cond.
+  hdr: ~
+  level_num: 10
+  name: V61.90
+  rec_id: 125
+126: 
+  active: 1
+  axis: 1
+  category: 41
+  dept_id: 1001
+  description: Occupational Problem
+  hdr: ~
+  level_num: 10
+  name: V62.20
+  rec_id: 126
+127: 
+  active: 1
+  axis: 1
+  category: 41
+  dept_id: 1001
+  description: Academic Problem
+  hdr: ~
+  level_num: 10
+  name: V62.30
+  rec_id: 127
+128: 
+  active: 1
+  axis: 1
+  category: 41
+  dept_id: 1001
+  description: Acculturation Problem
+  hdr: ~
+  level_num: 10
+  name: V62.40
+  rec_id: 128
+129: 
+  active: 1
+  axis: 1
+  category: 41
+  dept_id: 1001
+  description: Relational Problem NOS
+  hdr: ~
+  level_num: 10
+  name: V62.81
+  rec_id: 129
+13: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Hepatitus C
+  hdr: ~
+  level_num: ~
+  name: ~
+  rec_id: 13
+130: 
+  active: 1
+  axis: 1
+  category: 41
+  dept_id: 1001
+  description: Bereavement
+  hdr: ~
+  level_num: 10
+  name: V62.82
+  rec_id: 130
+131: 
+  active: 1
+  axis: 1
+  category: 41
+  dept_id: 1001
+  description: Phase of Life Problem
+  hdr: ~
+  level_num: 10
+  name: V62.89
+  rec_id: 131
+132: 
+  active: 1
+  axis: 1
+  category: 41
+  dept_id: 1001
+  description: Religious or Spiritual Problem
+  hdr: ~
+  level_num: 10
+  name: V62.89
+  rec_id: 132
+133: 
+  active: 1
+  axis: 1
+  category: 41
+  dept_id: 1001
+  description: Malingering
+  hdr: ~
+  level_num: 10
+  name: V65.20
+  rec_id: 133
+134: 
+  active: 1
+  axis: 1
+  category: 41
+  dept_id: 1001
+  description: Adult Antisocial Behavior
+  hdr: ~
+  level_num: 10
+  name: V71.01
+  rec_id: 134
+135: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Cocaine-Induced Psychotic Disorder, w/ Hallucinations
+  hdr: ~
+  level_num: 3
+  name: 292.12
+  rec_id: 135
+136: 
+  active: 1
+  axis: 1
+  category: 41
+  dept_id: 1001
+  description: Child or Adolescent Antisocial Behavior
+  hdr: ~
+  level_num: 10
+  name: V71.02
+  rec_id: 136
+137: 
+  active: 1
+  axis: 1
+  category: 41
+  dept_id: 1001
+  description: No Diagnosis or Condition on Axis I
+  hdr: ~
+  level_num: 10
+  name: V71.09
+  rec_id: 137
+138: 
+  active: 1
+  axis: 2
+  category: ~
+  dept_id: 1001
+  description: Paranoid Personality Disorder
+  hdr: ~
+  level_num: 11
+  name: 301.00
+  rec_id: 138
+139: 
+  active: 1
+  axis: 2
+  category: ~
+  dept_id: 1001
+  description: Schizoid Personality Disorder
+  hdr: ~
+  level_num: 11
+  name: 301.20
+  rec_id: 139
+14: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Migraine Headaches
+  hdr: ~
+  level_num: ~
+  name: ~
+  rec_id: 14
+140: 
+  active: 1
+  axis: 2
+  category: ~
+  dept_id: 1001
+  description: Schizotypal Personality Disorder
+  hdr: ~
+  level_num: 11
+  name: 301.22
+  rec_id: 140
+141: 
+  active: 1
+  axis: 2
+  category: ~
+  dept_id: 1001
+  description: Obsessive-Compulsive Personality Disorder
+  hdr: ~
+  level_num: 11
+  name: 301.40
+  rec_id: 141
+142: 
+  active: 1
+  axis: 2
+  category: ~
+  dept_id: 1001
+  description: Histrionic Personality Disorder
+  hdr: ~
+  level_num: 11
+  name: 301.50
+  rec_id: 142
+143: 
+  active: 1
+  axis: 2
+  category: ~
+  dept_id: 1001
+  description: Dependent Personality Disorder
+  hdr: ~
+  level_num: 11
+  name: 301.60
+  rec_id: 143
+144: 
+  active: 1
+  axis: 2
+  category: ~
+  dept_id: 1001
+  description: Antisocial Personality Disorder
+  hdr: ~
+  level_num: 11
+  name: 301.70
+  rec_id: 144
+145: 
+  active: 1
+  axis: 2
+  category: ~
+  dept_id: 1001
+  description: Narcissistic Personality Disorder
+  hdr: ~
+  level_num: 11
+  name: 301.81
+  rec_id: 145
+146: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Hallucinogen-Induced Psychotic Disorder, w/ Hallucinations
+  hdr: ~
+  level_num: 3
+  name: 292.12
+  rec_id: 146
+147: 
+  active: 1
+  axis: 2
+  category: ~
+  dept_id: 1001
+  description: Avoidant Personality Disorder
+  hdr: ~
+  level_num: 11
+  name: 301.82
+  rec_id: 147
+148: 
+  active: 1
+  axis: 2
+  category: ~
+  dept_id: 1001
+  description: Borderline Personality Disorder
+  hdr: ~
+  level_num: 11
+  name: 301.83
+  rec_id: 148
+149: 
+  active: 1
+  axis: 2
+  category: ~
+  dept_id: 1001
+  description: Mild Mental Retardation
+  hdr: ~
+  level_num: 11
+  name: 317.00
+  rec_id: 149
+15: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Cachexia
+  hdr: ~
+  level_num: ~
+  name: ~
+  rec_id: 15
+150: 
+  active: 1
+  axis: 2
+  category: ~
+  dept_id: 1001
+  description: Moderate Mental Retardation
+  hdr: ~
+  level_num: 11
+  name: 318.00
+  rec_id: 150
+151: 
+  active: 1
+  axis: 2
+  category: ~
+  dept_id: 1001
+  description: Severe Mental Retardation
+  hdr: ~
+  level_num: 11
+  name: 318.10
+  rec_id: 151
+152: 
+  active: 1
+  axis: 2
+  category: ~
+  dept_id: 1001
+  description: Profound Mental Retardation
+  hdr: ~
+  level_num: 11
+  name: 318.20
+  rec_id: 152
+153: 
+  active: 1
+  axis: 2
+  category: ~
+  dept_id: 1001
+  description: Mental Retardation, Severity Unspecified
+  hdr: ~
+  level_num: 11
+  name: 319.00
+  rec_id: 153
+154: 
+  active: 1
+  axis: 2
+  category: ~
+  dept_id: 1001
+  description: Borderline Intellectual Functioning
+  hdr: ~
+  level_num: 11
+  name: V62.89
+  rec_id: 154
+155: 
+  active: 1
+  axis: 2
+  category: ~
+  dept_id: 1001
+  description: No Diagnosis on Axis II
+  hdr: ~
+  level_num: 11
+  name: V71.09
+  rec_id: 155
+156: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Inhalant-Induced Psychotic Disorder, w/ Hallucinations
+  hdr: ~
+  level_num: 3
+  name: 292.12
+  rec_id: 156
+157: 
+  active: 1
+  axis: 1
+  category: 11
+  dept_id: 1001
+  description: Alcohol Intoxication, Continuous
+  hdr: ~
+  level_num: 3
+  name: 303.01
+  rec_id: 157
+158: 
+  active: 1
+  axis: 1
+  category: 11
+  dept_id: 1001
+  description: Alcohol Intoxication, Episodic
+  hdr: ~
+  level_num: 3
+  name: 303.02
+  rec_id: 158
+159: 
+  active: 1
+  axis: 1
+  category: 21
+  dept_id: 1001
+  description: Caffeine Intoxication, Episodic
+  hdr: ~
+  level_num: 3
+  name: 309.92
+  rec_id: 159
+16: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Irritable Bowel Syndrome
+  hdr: ~
+  level_num: ~
+  name: ~
+  rec_id: 16
+160: 
+  active: 1
+  axis: 1
+  category: 7
+  dept_id: 1001
+  description: Mixed Receptive-Expressive Language Disorder
+  hdr: ~
+  level_num: 1
+  name: 315.32
+  rec_id: 160
+161: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Opioid-Induced Psychotic Disorder, w/ Hallucinations
+  hdr: ~
+  level_num: 3
+  name: 292.12
+  rec_id: 161
+162: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Other/Unknown Substance-Induced Psychotic Disorder, w/ Halluc.
+  hdr: ~
+  level_num: 3
+  name: 292.12
+  rec_id: 162
+163: 
+  active: 1
+  axis: 1
+  category: 8
+  dept_id: 1001
+  description: Dementia - Alzheimer's Type, Early Onset, w/ Delirium
+  hdr: ~
+  level_num: 2
+  name: 290.11
+  rec_id: 163
+164: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Phencyclidine-Induced Psychotic Disorder, w/ Hallucinations
+  hdr: ~
+  level_num: 3
+  name: 292.12
+  rec_id: 164
+165: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Sedative/Hypnotic/Anxiolytic-Induced Psychotic Dis. w/ Halluc.
+  hdr: ~
+  level_num: 3
+  name: 292.12
+  rec_id: 165
+166: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Amphetamine Intoxication Delirium
+  hdr: ~
+  level_num: 3
+  name: 292.81
+  rec_id: 166
+167: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Cannabis Intoxication Delirium
+  hdr: ~
+  level_num: 3
+  name: 292.81
+  rec_id: 167
+168: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Cocaine Intoxication Delirium
+  hdr: ~
+  level_num: 3
+  name: 292.81
+  rec_id: 168
+169: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Hallucinogen Intoxication Delirium
+  hdr: ~
+  level_num: 3
+  name: 292.81
+  rec_id: 169
+17: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Arthritis
+  hdr: ~
+  level_num: ~
+  name: ~
+  rec_id: 17
+170: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Inhalant Intoxication Delirium
+  hdr: ~
+  level_num: 3
+  name: 292.81
+  rec_id: 170
+171: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Opioid Intoxication Delirium
+  hdr: ~
+  level_num: 3
+  name: 292.81
+  rec_id: 171
+172: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Other/Unknown Substance-Induced Delirium
+  hdr: ~
+  level_num: 3
+  name: 292.81
+  rec_id: 172
+173: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Phencyclidine Intoxication Delirium
+  hdr: ~
+  level_num: 3
+  name: 292.81
+  rec_id: 173
+174: 
+  active: 1
+  axis: 1
+  category: 8
+  dept_id: 1001
+  description: Dementia - Alzheimer's Type, Early Onset, w/ Delusions
+  hdr: ~
+  level_num: 2
+  name: 290.12
+  rec_id: 174
+175: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Sedative, Hypnotic, or Anxiolytic Intoxication Delirium
+  hdr: ~
+  level_num: 3
+  name: 292.81
+  rec_id: 175
+176: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Sedative, Hypnotic, or Anxiolytic Withdrawal Delirium
+  hdr: ~
+  level_num: 3
+  name: 292.81
+  rec_id: 176
+177: 
+  active: 1
+  axis: 1
+  category: 19
+  dept_id: 1001
+  description: Inhalant-Induced Persisting Dementia
+  hdr: ~
+  level_num: 3
+  name: 292.82
+  rec_id: 177
+178: 
+  active: 1
+  axis: 1
+  category: 19
+  dept_id: 1001
+  description: Other/Unknown Substance-Induced Persisting Dementia
+  hdr: ~
+  level_num: 3
+  name: 292.82
+  rec_id: 178
+179: 
+  active: 1
+  axis: 1
+  category: 19
+  dept_id: 1001
+  description: Sedative, Hypnotic, or Anxiolytic-Induced Persisting Dementia
+  hdr: ~
+  level_num: 3
+  name: 292.82
+  rec_id: 179
+18: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Degenerative Disc Disease
+  hdr: ~
+  level_num: ~
+  name: ~
+  rec_id: 18
+180: 
+  active: 1
+  axis: 1
+  category: 7
+  dept_id: 1001
+  description: Disorder of Written Expression
+  hdr: ~
+  level_num: 1
+  name: 315.20
+  rec_id: 180
+181: 
+  active: 1
+  axis: 1
+  category: 7
+  dept_id: 1001
+  description: Expressive Language Disorder
+  hdr: ~
+  level_num: 1
+  name: 315.31
+  rec_id: 181
+182: 
+  active: 1
+  axis: 1
+  category: 7
+  dept_id: 1001
+  description: Mixed Receptive-Expressive Language Disorder
+  hdr: ~
+  level_num: 1
+  name: 315.31
+  rec_id: 182
+183: 
+  active: 1
+  axis: 1
+  category: 7
+  dept_id: 1001
+  description: Phonological Disorder
+  hdr: ~
+  level_num: 1
+  name: 315.39
+  rec_id: 183
+184: 
+  active: 1
+  axis: 1
+  category: 7
+  dept_id: 1001
+  description: Developmental Coordination Disorder
+  hdr: ~
+  level_num: 1
+  name: 315.40
+  rec_id: 184
+185: 
+  active: 1
+  axis: 1
+  category: 7
+  dept_id: 1001
+  description: Learning Disorder NOS
+  hdr: ~
+  level_num: 1
+  name: 315.90
+  rec_id: 185
+186: 
+  active: 1
+  axis: 1
+  category: 43
+  dept_id: 1001
+  description: Psychological Factor Affecting Medical Condition
+  hdr: ~
+  level_num: 10
+  name: 316.00
+  rec_id: 186
+187: 
+  active: 1
+  axis: 1
+  category: 8
+  dept_id: 1001
+  description: Dementia Due to Pick's Disease
+  hdr: ~
+  level_num: 2
+  name: 290.10
+  rec_id: 187
+188: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Other/Unknown Substance-Induced Psychotic Disorder, w/ Delusions
+  hdr: ~
+  level_num: 3
+  name: 292.11
+  rec_id: 188
+189: 
+  active: 1
+  axis: 1
+  category: 43
+  dept_id: 1001
+  description: Neuroleptic-Induced Parkinsonism
+  hdr: ~
+  level_num: 10
+  name: 332.10
+  rec_id: 189
+19: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Major Depressive D/O, Recurrent, Severe w/o Psychotic Features
+  hdr: ~
+  level_num: ~
+  name: 296.33
+  rec_id: 19
+190: 
+  active: 1
+  axis: 1
+  category: 43
+  dept_id: 1001
+  description: Medication-Induced Postural Tremor
+  hdr: ~
+  level_num: 10
+  name: 333.10
+  rec_id: 190
+191: 
+  active: 1
+  axis: 1
+  category: 43
+  dept_id: 1001
+  description: Neuroleptic-Induced Acute Dystonia
+  hdr: ~
+  level_num: 10
+  name: 333.70
+  rec_id: 191
+192: 
+  active: 1
+  axis: 1
+  category: 43
+  dept_id: 1001
+  description: Neuroleptic-Induced Tardive Dyskinesia
+  hdr: ~
+  level_num: 10
+  name: 333.82
+  rec_id: 192
+193: 
+  active: 1
+  axis: 1
+  category: 43
+  dept_id: 1001
+  description: Medication-Induced Movement Disorder NOS
+  hdr: ~
+  level_num: 10
+  name: 333.90
+  rec_id: 193
+194: 
+  active: 1
+  axis: 1
+  category: 43
+  dept_id: 1001
+  description: Neuroleptic Malignant Syndrome
+  hdr: ~
+  level_num: 10
+  name: 333.92
+  rec_id: 194
+195: 
+  active: 1
+  axis: 1
+  category: 43
+  dept_id: 1001
+  description: Neuroleptic-Induced Acute Akathisia
+  hdr: ~
+  level_num: 10
+  name: 333.99
+  rec_id: 195
+196: 
+  active: 1
+  axis: 1
+  category: 36
+  dept_id: 1001
+  description: Narcolepsy
+  hdr: ~
+  level_num: 9
+  name: 347.00
+  rec_id: 196
+197: 
+  active: 1
+  axis: 1
+  category: 33
+  dept_id: 1001
+  description: Male Erectile Disorder Due to Medical Condition
+  hdr: ~
+  level_num: 8
+  name: 607.84
+  rec_id: 197
+198: 
+  active: 1
+  axis: 1
+  category: 33
+  dept_id: 1001
+  description: Male Dyspareunia Due to Medical Condition
+  hdr: ~
+  level_num: 8
+  name: 608.89
+  rec_id: 198
+199: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Phencyclidine-Induced Psychotic Disorder, w/ Delusions
+  hdr: ~
+  level_num: 3
+  name: 292.11
+  rec_id: 199
+2: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Glaucoma
+  hdr: ~
+  level_num: ~
+  name: ~
+  rec_id: 2
+20: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Major Depressive D/O, Recurrent, Severe with Psychotic Features
+  hdr: ~
+  level_num: ~
+  name: 296.34
+  rec_id: 20
+200: 
+  active: 1
+  axis: 1
+  category: 33
+  dept_id: 1001
+  description: Male Hypoactive Sexual Desire Disorder Due to Condition
+  hdr: ~
+  level_num: 8
+  name: 608.89
+  rec_id: 200
+201: 
+  active: 1
+  axis: 1
+  category: 33
+  dept_id: 1001
+  description: Other Male Sexual Dysfunction Due to Medical Condition
+  hdr: ~
+  level_num: 8
+  name: 608.89
+  rec_id: 201
+202: 
+  active: 1
+  axis: 1
+  category: 33
+  dept_id: 1001
+  description: Female Dyspareunia Due to Medical Condition
+  hdr: ~
+  level_num: 8
+  name: 625.00
+  rec_id: 202
+203: 
+  active: 1
+  axis: 1
+  category: 33
+  dept_id: 1001
+  description: Female Hypoactive Sexual Desire Disorder Due to Medical Cond.
+  hdr: ~
+  level_num: 8
+  name: 625.80
+  rec_id: 203
+204: 
+  active: 1
+  axis: 1
+  category: 33
+  dept_id: 1001
+  description: Other Female Sexual Dysfunction Due to Medical Condition
+  hdr: ~
+  level_num: 8
+  name: 625.80
+  rec_id: 204
+205: 
+  active: 1
+  axis: 1
+  category: 38
+  dept_id: 1001
+  description: Sleep Disorder Due to Medical Condition, Insomnia Type
+  hdr: ~
+  level_num: 9
+  name: 780.52
+  rec_id: 205
+206: 
+  active: 1
+  axis: 1
+  category: 38
+  dept_id: 1001
+  description: Sleep Disorder Due to Medical Condition, Hypersomnia Type
+  hdr: ~
+  level_num: 9
+  name: 780.54
+  rec_id: 206
+207: 
+  active: 1
+  axis: 1
+  category: 38
+  dept_id: 1001
+  description: Breathing-Related Sleep Disorder
+  hdr: ~
+  level_num: 9
+  name: 780.59
+  rec_id: 207
+208: 
+  active: 1
+  axis: 1
+  category: 38
+  dept_id: 1001
+  description: Sleep Disorder Due to Medical Condition, Mixed Type
+  hdr: ~
+  level_num: 9
+  name: 780.59
+  rec_id: 208
+209: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Sedative/Hypnotic/Anxiolytic-Induced Psychotic Dis. w/ Delusions
+  hdr: ~
+  level_num: 3
+  name: 292.11
+  rec_id: 209
+21: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Major Depressive D/O, Recurrent, In Partial Remission
+  hdr: ~
+  level_num: ~
+  name: 296.35
+  rec_id: 21
+210: 
+  active: 1
+  axis: 1
+  category: 38
+  dept_id: 1001
+  description: Sleep Disorder Due to Medical Condition, Parasomnia Type
+  hdr: ~
+  level_num: 9
+  name: 780.59
+  rec_id: 210
+211: 
+  active: 1
+  axis: 1
+  category: 9
+  dept_id: 1001
+  description: Age-Related Cognitive Decline
+  hdr: ~
+  level_num: 2
+  name: 780.90
+  rec_id: 211
+212: 
+  active: 1
+  axis: 1
+  category: 5
+  dept_id: 1001
+  description: Encopresis, w/ Constipation and Overflow Incontinence
+  hdr: ~
+  level_num: 1
+  name: 787.60
+  rec_id: 212
+213: 
+  active: 1
+  axis: 2
+  category: 43
+  dept_id: 1001
+  description: Diagnosis Deferred on Axis II
+  hdr: ~
+  level_num: 10
+  name: 799.90
+  rec_id: 213
+214: 
+  active: 1
+  axis: 1
+  category: 43
+  dept_id: 1001
+  description: Diagnosis or Condition Deferred on Axis I
+  hdr: ~
+  level_num: 10
+  name: 799.90
+  rec_id: 214
+215: 
+  active: 1
+  axis: 1
+  category: 43
+  dept_id: 1001
+  description: Adverse Effects of Medication NOS
+  hdr: ~
+  level_num: 10
+  name: 995.20
+  rec_id: 215
+216: 
+  active: 1
+  axis: 1
+  category: 6
+  dept_id: 1001
+  description: Neglect of Child (if focus of attention is on victim)
+  hdr: ~
+  level_num: 1
+  name: 995.50
+  rec_id: 216
+217: 
+  active: 1
+  axis: 1
+  category: 6
+  dept_id: 1001
+  description: Physical Abuse of Child (if focus of attention is on victim)
+  hdr: ~
+  level_num: 1
+  name: 995.50
+  rec_id: 217
+218: 
+  active: 1
+  axis: 1
+  category: 6
+  dept_id: 1001
+  description: Sexual Abuse of Child (if focus of attention is on victim)
+  hdr: ~
+  level_num: 1
+  name: 995.50
+  rec_id: 218
+219: 
+  active: 1
+  axis: 1
+  category: 6
+  dept_id: 1001
+  description: Physical Abuse of Adult (if focus of attention is on victim)
+  hdr: ~
+  level_num: 1
+  name: 995.81
+  rec_id: 219
+22: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Major Depressive D/O, Recurrent, In Full Remission
+  hdr: ~
+  level_num: ~
+  name: 296.36
+  rec_id: 22
+220: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Amphetamine-Induced Psychotic Disorder, w/ Hallucinations
+  hdr: ~
+  level_num: 3
+  name: 292.12
+  rec_id: 220
+221: 
+  active: 1
+  axis: 1
+  category: 6
+  dept_id: 1001
+  description: Sexual Abuse of Adult (if focus of attention is on victim)
+  hdr: ~
+  level_num: 1
+  name: 995.81
+  rec_id: 221
+222: 
+  active: 1
+  axis: 1
+  category: 41
+  dept_id: 1001
+  description: Noncompliance w/ Treatment
+  hdr: ~
+  level_num: 10
+  name: V15.81
+  rec_id: 222
+223: 
+  active: 1
+  axis: 1
+  category: 41
+  dept_id: 1001
+  description: Partner Relational Problem
+  hdr: ~
+  level_num: 10
+  name: V61.10
+  rec_id: 223
+224: 
+  active: 1
+  axis: 1
+  category: 41
+  dept_id: 1001
+  description: Physical Abuse of Adult
+  hdr: ~
+  level_num: 10
+  name: V61.10
+  rec_id: 224
+225: 
+  active: 1
+  axis: 1
+  category: 41
+  dept_id: 1001
+  description: Sexual Abuse of Adult
+  hdr: ~
+  level_num: 10
+  name: V61.10
+  rec_id: 225
+226: 
+  active: 1
+  axis: 1
+  category: 41
+  dept_id: 1001
+  description: Parent-Child Relational Problem
+  hdr: ~
+  level_num: 10
+  name: V61.20
+  rec_id: 226
+227: 
+  active: 1
+  axis: 1
+  category: 41
+  dept_id: 1001
+  description: Neglect of Child
+  hdr: ~
+  level_num: 10
+  name: V61.21
+  rec_id: 227
+228: 
+  active: 1
+  axis: 1
+  category: 41
+  dept_id: 1001
+  description: Physical Abuse of Child
+  hdr: ~
+  level_num: 10
+  name: V61.21
+  rec_id: 228
+229: 
+  active: 1
+  axis: 1
+  category: 41
+  dept_id: 1001
+  description: Sexual Abuse of Child
+  hdr: ~
+  level_num: 10
+  name: V61.21
+  rec_id: 229
+23: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Bipolar 1 D/O, Most Recent Episode Manic, Unspecified
+  hdr: ~
+  level_num: ~
+  name: 296.40
+  rec_id: 23
+230: 
+  active: 1
+  axis: 1
+  category: 41
+  dept_id: 1001
+  description: Sibling Relational Problem
+  hdr: ~
+  level_num: 10
+  name: V61.80
+  rec_id: 230
+231: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Cannabis-Induced Psychotic Disorder, w/ Hallucinations
+  hdr: ~
+  level_num: 3
+  name: 292.12
+  rec_id: 231
+232: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Amphetamine-Induced Psychotic Disorder, w/ Delusions
+  hdr: ~
+  level_num: 3
+  name: 292.11
+  rec_id: 232
+233: 
+  active: 1
+  axis: 1
+  category: 6
+  dept_id: 1001
+  description: Stereotypic Movement Disorder
+  hdr: ~
+  level_num: 1
+  name: 307.30
+  rec_id: 233
+234: 
+  active: 1
+  axis: 1
+  category: 37
+  dept_id: 1001
+  description: Insomnia Related to Axis I or Axis II Disorder
+  hdr: ~
+  level_num: 9
+  name: 307.42
+  rec_id: 234
+235: 
+  active: 1
+  axis: 1
+  category: 37
+  dept_id: 1001
+  description: Primary Insomnia
+  hdr: ~
+  level_num: 9
+  name: 307.42
+  rec_id: 235
+236: 
+  active: 1
+  axis: 1
+  category: 37
+  dept_id: 1001
+  description: Hypersomnia Related to Axis I or Axis II Disorder
+  hdr: ~
+  level_num: 9
+  name: 307.44
+  rec_id: 236
+237: 
+  active: 1
+  axis: 1
+  category: 37
+  dept_id: 1001
+  description: Primary Hypersomnia
+  hdr: ~
+  level_num: 9
+  name: 307.44
+  rec_id: 237
+238: 
+  active: 1
+  axis: 1
+  category: 36
+  dept_id: 1001
+  description: Circadian Rhythm Sleep Disorder
+  hdr: ~
+  level_num: 9
+  name: 307.45
+  rec_id: 238
+239: 
+  active: 1
+  axis: 1
+  category: 36
+  dept_id: 1001
+  description: Sleep Terror Disorder
+  hdr: ~
+  level_num: 9
+  name: 307.46
+  rec_id: 239
+24: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Bipolar 1 D/O, Most Recent Episode Manic, Mild
+  hdr: ~
+  level_num: ~
+  name: 296.41
+  rec_id: 24
+240: 
+  active: 1
+  axis: 1
+  category: 36
+  dept_id: 1001
+  description: Sleepwalking Disorder
+  hdr: ~
+  level_num: 9
+  name: 307.46
+  rec_id: 240
+241: 
+  active: 1
+  axis: 1
+  category: 36
+  dept_id: 1001
+  description: Dyssomnia NOS
+  hdr: ~
+  level_num: 9
+  name: 307.47
+  rec_id: 241
+242: 
+  active: 1
+  axis: 1
+  category: 36
+  dept_id: 1001
+  description: Nightmare Disorder
+  hdr: ~
+  level_num: 9
+  name: 307.47
+  rec_id: 242
+243: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Cannabis-Induced Psychotic Disorder, w/ Delusions
+  hdr: ~
+  level_num: 3
+  name: 292.11
+  rec_id: 243
+244: 
+  active: 1
+  axis: 1
+  category: 36
+  dept_id: 1001
+  description: Parasomnia NOS
+  hdr: ~
+  level_num: 9
+  name: 307.47
+  rec_id: 244
+245: 
+  active: 1
+  axis: 1
+  category: 31
+  dept_id: 1001
+  description: Eating Disorder NOS
+  hdr: ~
+  level_num: 7
+  name: 307.50
+  rec_id: 245
+246: 
+  active: 1
+  axis: 1
+  category: 31
+  dept_id: 1001
+  description: Bulimia Nervosa
+  hdr: ~
+  level_num: 7
+  name: 307.51
+  rec_id: 246
+247: 
+  active: 1
+  axis: 1
+  category: 3
+  dept_id: 1001
+  description: Rumination Disorder
+  hdr: ~
+  level_num: 1
+  name: 307.53
+  rec_id: 247
+248: 
+  active: 1
+  axis: 1
+  category: 3
+  dept_id: 1001
+  description: Feeding Disorder of Infancy or Early Childhood
+  hdr: ~
+  level_num: 1
+  name: 307.59
+  rec_id: 248
+249: 
+  active: 1
+  axis: 1
+  category: 5
+  dept_id: 1001
+  description: Enuresis (Not Due to a General Medical Condition)
+  hdr: ~
+  level_num: 1
+  name: 307.60
+  rec_id: 249
+25: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Bipolar 1 D/O, Most Recent Episode Manic, Moderate
+  hdr: ~
+  level_num: ~
+  name: 296.42
+  rec_id: 25
+250: 
+  active: 1
+  axis: 1
+  category: 5
+  dept_id: 1001
+  description: Encopresis, w/out Constipation and Overflow Incontinence
+  hdr: ~
+  level_num: 1
+  name: 307.70
+  rec_id: 250
+251: 
+  active: 1
+  axis: 1
+  category: 28
+  dept_id: 1001
+  description: Pain Disorder Associated w/ Psychological Factors
+  hdr: ~
+  level_num: 6
+  name: 307.80
+  rec_id: 251
+252: 
+  active: 1
+  axis: 1
+  category: 28
+  dept_id: 1001
+  description: Pain Disorder Assoc w/ Psychological Factors and Medical Cond.
+  hdr: ~
+  level_num: 6
+  name: 307.89
+  rec_id: 252
+253: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Cocaine-Induced Psychotic Disorder, w/ Delusions
+  hdr: ~
+  level_num: 3
+  name: 292.11
+  rec_id: 253
+254: 
+  active: 1
+  axis: 1
+  category: 7
+  dept_id: 1001
+  description: Communication Disorder NOS
+  hdr: ~
+  level_num: 1
+  name: 307.90
+  rec_id: 254
+255: 
+  active: 1
+  axis: 1
+  category: 27
+  dept_id: 1001
+  description: Acute Stress Disorder
+  hdr: ~
+  level_num: 6
+  name: 308.30
+  rec_id: 255
+256: 
+  active: 1
+  axis: 1
+  category: 39
+  dept_id: 1001
+  description: Adjustment Disorder w/ Depressed Mood
+  hdr: ~
+  level_num: 10
+  name: 309.00
+  rec_id: 256
+257: 
+  active: 1
+  axis: 1
+  category: 6
+  dept_id: 1001
+  description: Separation Anxiety Disorder
+  hdr: ~
+  level_num: 1
+  name: 309.21
+  rec_id: 257
+258: 
+  active: 1
+  axis: 1
+  category: 39
+  dept_id: 1001
+  description: Adjustment Disorder w/ Anxiety
+  hdr: ~
+  level_num: 10
+  name: 309.24
+  rec_id: 258
+259: 
+  active: 1
+  axis: 1
+  category: 39
+  dept_id: 1001
+  description: Adjustment Disorder w/ Mixed Anxiety and Depressed Mood
+  hdr: ~
+  level_num: 10
+  name: 309.28
+  rec_id: 259
+26: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Bipolar 1 D/O, Most Recent Episode Manic, Severe w/o Psychotic Features
+  hdr: ~
+  level_num: ~
+  name: 296.43
+  rec_id: 26
+260: 
+  active: 1
+  axis: 1
+  category: 39
+  dept_id: 1001
+  description: Adjustment Disorder w/ Disturbance of Conduct
+  hdr: ~
+  level_num: 10
+  name: 309.30
+  rec_id: 260
+261: 
+  active: 1
+  axis: 1
+  category: 39
+  dept_id: 1001
+  description: Adjustment Disorder w/ Mixed Disturbance of Emotions and Conduct
+  hdr: ~
+  level_num: 10
+  name: 309.40
+  rec_id: 261
+262: 
+  active: 1
+  axis: 1
+  category: 27
+  dept_id: 1001
+  description: Posttraumatic Stress Disorder
+  hdr: ~
+  level_num: 6
+  name: 309.81
+  rec_id: 262
+263: 
+  active: 1
+  axis: 1
+  category: 39
+  dept_id: 1001
+  description: Adjustment Disorder Unspecified
+  hdr: ~
+  level_num: 10
+  name: 309.90
+  rec_id: 263
+264: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Hallucinogen-Induced Psychotic Disorder, w/ Delusions
+  hdr: ~
+  level_num: 3
+  name: 292.11
+  rec_id: 264
+265: 
+  active: 1
+  axis: 1
+  category: 27
+  dept_id: 1001
+  description: Personality Change Due to Medical Condition
+  hdr: ~
+  level_num: 6
+  name: 310.10
+  rec_id: 265
+266: 
+  active: 1
+  axis: 1
+  category: 7
+  dept_id: 1001
+  description: Impulse-Control Disorder NOS
+  hdr: ~
+  level_num: 1
+  name: 312.30
+  rec_id: 266
+267: 
+  active: 1
+  axis: 1
+  category: 32
+  dept_id: 1001
+  description: Pathological Gambling
+  hdr: ~
+  level_num: 7
+  name: 312.31
+  rec_id: 267
+268: 
+  active: 1
+  axis: 1
+  category: 32
+  dept_id: 1001
+  description: Kleptomania
+  hdr: ~
+  level_num: 7
+  name: 312.32
+  rec_id: 268
+269: 
+  active: 1
+  axis: 1
+  category: 7
+  dept_id: 1001
+  description: Pyromania
+  hdr: ~
+  level_num: 1
+  name: 312.33
+  rec_id: 269
+27: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Bipolar 1 D/O, Most Recent Episode Manic, Severe with Psychotic Features
+  hdr: ~
+  level_num: ~
+  name: 296.44
+  rec_id: 27
+270: 
+  active: 1
+  axis: 1
+  category: 32
+  dept_id: 1001
+  description: Intermittent Explosive Disorder
+  hdr: ~
+  level_num: 7
+  name: 312.34
+  rec_id: 270
+271: 
+  active: 1
+  axis: 1
+  category: 32
+  dept_id: 1001
+  description: Trichotillomania
+  hdr: ~
+  level_num: 7
+  name: 312.39
+  rec_id: 271
+272: 
+  active: 1
+  axis: 1
+  category: 1
+  dept_id: 1001
+  description: Conduct Disorder
+  hdr: ~
+  level_num: 1
+  name: 312.80
+  rec_id: 272
+273: 
+  active: 1
+  axis: 1
+  category: 1
+  dept_id: 1001
+  description: Conduct Disorder Childhood Onset
+  hdr: ~
+  level_num: 1
+  name: 312.81
+  rec_id: 273
+274: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Inhalant-Induced Psychotic Disorder, w/ Delusions
+  hdr: ~
+  level_num: 3
+  name: 292.11
+  rec_id: 274
+275: 
+  active: 1
+  axis: 1
+  category: 1
+  dept_id: 1001
+  description: Conduct Disorder Adolescent Onset
+  hdr: ~
+  level_num: 1
+  name: 312.82
+  rec_id: 275
+276: 
+  active: 1
+  axis: 1
+  category: 1
+  dept_id: 1001
+  description: Disruptive Behavior Disorder NOS
+  hdr: ~
+  level_num: 1
+  name: 312.90
+  rec_id: 276
+277: 
+  active: 1
+  axis: 1
+  category: 6
+  dept_id: 1001
+  description: Selective Mutism
+  hdr: ~
+  level_num: 1
+  name: 313.23
+  rec_id: 277
+278: 
+  active: 1
+  axis: 1
+  category: 1
+  dept_id: 1001
+  description: Oppositional Defiant Disorder
+  hdr: ~
+  level_num: 1
+  name: 313.81
+  rec_id: 278
+279: 
+  active: 1
+  axis: 1
+  category: 43
+  dept_id: 1001
+  description: Identity Problem
+  hdr: ~
+  level_num: 10
+  name: 313.82
+  rec_id: 279
+28: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Bipolar 1 D/O, Most Recent Episode Manic, In Partial Remission
+  hdr: ~
+  level_num: ~
+  name: 296.45
+  rec_id: 28
+280: 
+  active: 1
+  axis: 1
+  category: 6
+  dept_id: 1001
+  description: Reactive Attachment Disorder of Infancy or Early Childhood
+  hdr: ~
+  level_num: 1
+  name: 313.89
+  rec_id: 280
+281: 
+  active: 1
+  axis: 1
+  category: 6
+  dept_id: 1001
+  description: Disorder of Infancy, Childhood, or Adolescence NOS
+  hdr: ~
+  level_num: 1
+  name: 313.90
+  rec_id: 281
+282: 
+  active: 1
+  axis: 1
+  category: 1
+  dept_id: 1001
+  description: Attention-Deficit/Hyperactivity Dis. Inattentive Type
+  hdr: ~
+  level_num: 1
+  name: 314.00
+  rec_id: 282
+283: 
+  active: 1
+  axis: 1
+  category: 1
+  dept_id: 1001
+  description: Attention-Deficit/Hyperactivity Dis. Combined Type
+  hdr: ~
+  level_num: 1
+  name: 314.01
+  rec_id: 283
+284: 
+  active: 1
+  axis: 1
+  category: 1
+  dept_id: 1001
+  description: Attention-Deficit/Hyperactivity Dis. Hyperactive-Impulsive Type
+  hdr: ~
+  level_num: 1
+  name: 314.01
+  rec_id: 284
+285: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Opioid-Induced Psychotic Disorder, w/ Delusions
+  hdr: ~
+  level_num: 3
+  name: 292.11
+  rec_id: 285
+286: 
+  active: 1
+  axis: 1
+  category: 1
+  dept_id: 1001
+  description: Attention-Deficit/Hyperactivity Disorder NOS
+  hdr: ~
+  level_num: 1
+  name: 314.90
+  rec_id: 286
+287: 
+  active: 1
+  axis: 1
+  category: 7
+  dept_id: 1001
+  description: Reading Disorder
+  hdr: ~
+  level_num: 1
+  name: 315.00
+  rec_id: 287
+288: 
+  active: 1
+  axis: 1
+  category: 7
+  dept_id: 1001
+  description: Mathematics Disorder
+  hdr: ~
+  level_num: 1
+  name: 315.10
+  rec_id: 288
+289: 
+  active: 1
+  axis: 1
+  category: 12
+  dept_id: 1001
+  description: Amphetamine Dependence, Episodic
+  hdr: ~
+  level_num: 3
+  name: 304.42
+  rec_id: 289
+29: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Bipolar 1 D/O, Most Recent Episode Manic, In Full Remission
+  hdr: ~
+  level_num: ~
+  name: 296.46
+  rec_id: 29
+290: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Hallucinogen Dependence
+  hdr: ~
+  level_num: 3
+  name: 304.50
+  rec_id: 290
+291: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Hallucinogen Dependence, Continuous
+  hdr: ~
+  level_num: 3
+  name: 304.51
+  rec_id: 291
+292: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Hallucinogen Dependence, Episodic
+  hdr: ~
+  level_num: 3
+  name: 304.52
+  rec_id: 292
+293: 
+  active: 1
+  axis: 1
+  category: 16
+  dept_id: 1001
+  description: Inhalant Dependence
+  hdr: ~
+  level_num: 3
+  name: 304.60
+  rec_id: 293
+294: 
+  active: 1
+  axis: 1
+  category: 16
+  dept_id: 1001
+  description: Inhalant Dependence, Continuous
+  hdr: ~
+  level_num: 3
+  name: 304.61
+  rec_id: 294
+295: 
+  active: 1
+  axis: 1
+  category: 16
+  dept_id: 1001
+  description: Phencyclidine Dependence, Continuous
+  hdr: ~
+  level_num: 3
+  name: 304.61
+  rec_id: 295
+296: 
+  active: 1
+  axis: 1
+  category: 14
+  dept_id: 1001
+  description: Cocaine Withdrawal
+  hdr: ~
+  level_num: 3
+  name: 292.00
+  rec_id: 296
+297: 
+  active: 1
+  axis: 1
+  category: 16
+  dept_id: 1001
+  description: Inhalant Dependence, Episodic
+  hdr: ~
+  level_num: 3
+  name: 304.62
+  rec_id: 297
+298: 
+  active: 1
+  axis: 1
+  category: 16
+  dept_id: 1001
+  description: Phencyclidine Dependence, Episodic
+  hdr: ~
+  level_num: 3
+  name: 304.62
+  rec_id: 298
+299: 
+  active: 1
+  axis: 1
+  category: 20
+  dept_id: 1001
+  description: Polysubstance Dependence
+  hdr: ~
+  level_num: 3
+  name: 304.80
+  rec_id: 299
+3: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: HIV/AIDS
+  hdr: ~
+  level_num: ~
+  name: ~
+  rec_id: 3
+30: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Bipolar 1 D/O, Most Recent Episode Hypomanic
+  hdr: ~
+  level_num: ~
+  name: 296.4X
+  rec_id: 30
+300: 
+  active: 1
+  axis: 1
+  category: 20
+  dept_id: 1001
+  description: Polysubstance Dependence, Continuous
+  hdr: ~
+  level_num: 3
+  name: 304.81
+  rec_id: 300
+301: 
+  active: 1
+  axis: 1
+  category: 20
+  dept_id: 1001
+  description: Polysubstance Dependence, Episodic
+  hdr: ~
+  level_num: 3
+  name: 304.82
+  rec_id: 301
+302: 
+  active: 1
+  axis: 1
+  category: 16
+  dept_id: 1001
+  description: Other/Unknown Substance Dependence
+  hdr: ~
+  level_num: 3
+  name: 304.90
+  rec_id: 302
+303: 
+  active: 1
+  axis: 1
+  category: 16
+  dept_id: 1001
+  description: Phencyclidine Dependence
+  hdr: ~
+  level_num: 3
+  name: 304.90
+  rec_id: 303
+304: 
+  active: 1
+  axis: 1
+  category: 11
+  dept_id: 1001
+  description: Alcohol Abuse
+  hdr: ~
+  level_num: 3
+  name: 305.00
+  rec_id: 304
+305: 
+  active: 1
+  axis: 1
+  category: 11
+  dept_id: 1001
+  description: Alcohol Abuse, Continuous
+  hdr: ~
+  level_num: 3
+  name: 305.01
+  rec_id: 305
+306: 
+  active: 1
+  axis: 1
+  category: 11
+  dept_id: 1001
+  description: Alcohol Abuse, Continuous, In Remission
+  hdr: ~
+  level_num: 3
+  name: 305.01
+  rec_id: 306
+307: 
+  active: 1
+  axis: 1
+  category: 8
+  dept_id: 1001
+  description: Dementia Due to Creutzfeldt-Jakob Disease
+  hdr: ~
+  level_num: 2
+  name: 290.10
+  rec_id: 307
+308: 
+  active: 1
+  axis: 1
+  category: 14
+  dept_id: 1001
+  description: Nicotine Withdrawal
+  hdr: ~
+  level_num: 3
+  name: 292.00
+  rec_id: 308
+309: 
+  active: 1
+  axis: 1
+  category: 11
+  dept_id: 1001
+  description: Alcohol Abuse, Episodic
+  hdr: ~
+  level_num: 3
+  name: 305.02
+  rec_id: 309
+31: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Bipolar 1 D/O, Most Recent Episode Depressed, Unspecified
+  hdr: ~
+  level_num: ~
+  name: 296.50
+  rec_id: 31
+310: 
+  active: 1
+  axis: 1
+  category: 11
+  dept_id: 1001
+  description: Alcohol Abuse, Episodic, In Remission
+  hdr: ~
+  level_num: 3
+  name: 305.02
+  rec_id: 310
+311: 
+  active: 1
+  axis: 1
+  category: 22
+  dept_id: 1001
+  description: Nicotine Dependence
+  hdr: ~
+  level_num: 3
+  name: 305.10
+  rec_id: 311
+312: 
+  active: 1
+  axis: 1
+  category: 22
+  dept_id: 1001
+  description: Nicotine Dependence, Continuous
+  hdr: ~
+  level_num: 3
+  name: 305.11
+  rec_id: 312
+313: 
+  active: 1
+  axis: 1
+  category: 22
+  dept_id: 1001
+  description: Nicotine Dependence, Episodic
+  hdr: ~
+  level_num: 3
+  name: 305.12
+  rec_id: 313
+314: 
+  active: 1
+  axis: 1
+  category: 13
+  dept_id: 1001
+  description: Cannabis Abuse
+  hdr: ~
+  level_num: 3
+  name: 305.20
+  rec_id: 314
+315: 
+  active: 1
+  axis: 1
+  category: 13
+  dept_id: 1001
+  description: Cannabis Abuse, Continuous
+  hdr: ~
+  level_num: 3
+  name: 305.21
+  rec_id: 315
+316: 
+  active: 1
+  axis: 1
+  category: 13
+  dept_id: 1001
+  description: Cannabis Abuse, Episodic
+  hdr: ~
+  level_num: 3
+  name: 305.22
+  rec_id: 316
+317: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Hallucinogen Abuse
+  hdr: ~
+  level_num: 3
+  name: 305.30
+  rec_id: 317
+318: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Hallucinogen Abuse, Continuous
+  hdr: ~
+  level_num: 3
+  name: 305.31
+  rec_id: 318
+319: 
+  active: 1
+  axis: 1
+  category: 14
+  dept_id: 1001
+  description: Opioid Withdrawal
+  hdr: ~
+  level_num: 3
+  name: 292.00
+  rec_id: 319
+32: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Bipolar 1 D/O, Most Recent Episode Depressed, Mild
+  hdr: ~
+  level_num: ~
+  name: 296.51
+  rec_id: 32
+320: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Hallucinogen Abuse, Episodic
+  hdr: ~
+  level_num: 3
+  name: 305.32
+  rec_id: 320
+321: 
+  active: 1
+  axis: 1
+  category: 19
+  dept_id: 1001
+  description: Sedative, Hypnotic, or Anxiolytic Abuse
+  hdr: ~
+  level_num: 3
+  name: 305.40
+  rec_id: 321
+322: 
+  active: 1
+  axis: 1
+  category: 19
+  dept_id: 1001
+  description: Sedative, Hypnotic, Anxio Abuse, Continuous
+  hdr: ~
+  level_num: 3
+  name: 305.41
+  rec_id: 322
+323: 
+  active: 1
+  axis: 1
+  category: 19
+  dept_id: 1001
+  description: Sedative, Hypnotic, Anxio Abuse, Episodic
+  hdr: ~
+  level_num: 3
+  name: 305.42
+  rec_id: 323
+324: 
+  active: 1
+  axis: 1
+  category: 17
+  dept_id: 1001
+  description: Opioid Abuse
+  hdr: ~
+  level_num: 3
+  name: 305.50
+  rec_id: 324
+325: 
+  active: 1
+  axis: 1
+  category: 17
+  dept_id: 1001
+  description: Opioid Abuse, Continuous
+  hdr: ~
+  level_num: 3
+  name: 305.51
+  rec_id: 325
+326: 
+  active: 1
+  axis: 1
+  category: 17
+  dept_id: 1001
+  description: Opioid Abuse, Episodic
+  hdr: ~
+  level_num: 3
+  name: 305.52
+  rec_id: 326
+327: 
+  active: 1
+  axis: 1
+  category: 14
+  dept_id: 1001
+  description: Cocaine Abuse
+  hdr: ~
+  level_num: 3
+  name: 305.60
+  rec_id: 327
+328: 
+  active: 1
+  axis: 1
+  category: 14
+  dept_id: 1001
+  description: Cocaine Abuse, Continuous
+  hdr: ~
+  level_num: 3
+  name: 305.61
+  rec_id: 328
+329: 
+  active: 1
+  axis: 1
+  category: 14
+  dept_id: 1001
+  description: Cocaine Abuse, Episodic
+  hdr: ~
+  level_num: 3
+  name: 305.62
+  rec_id: 329
+33: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Bipolar 1 D/O, Most Recent Episode Depressed, Moderate
+  hdr: ~
+  level_num: ~
+  name: 296.52
+  rec_id: 33
+330: 
+  active: 1
+  axis: 1
+  category: 14
+  dept_id: 1001
+  description: Other/Unknown Substance Withdrawal
+  hdr: ~
+  level_num: 3
+  name: 292.00
+  rec_id: 330
+331: 
+  active: 1
+  axis: 1
+  category: 12
+  dept_id: 1001
+  description: Amphetamine Abuse
+  hdr: ~
+  level_num: 3
+  name: 305.70
+  rec_id: 331
+332: 
+  active: 1
+  axis: 1
+  category: 12
+  dept_id: 1001
+  description: Amphetamine Abuse, Continuous
+  hdr: ~
+  level_num: 3
+  name: 305.71
+  rec_id: 332
+333: 
+  active: 1
+  axis: 1
+  category: 12
+  dept_id: 1001
+  description: Amphetamine Abuse, Episodic
+  hdr: ~
+  level_num: 3
+  name: 305.72
+  rec_id: 333
+334: 
+  active: 1
+  axis: 1
+  category: 18
+  dept_id: 1001
+  description: Caffeine Intoxication
+  hdr: ~
+  level_num: 3
+  name: 305.90
+  rec_id: 334
+335: 
+  active: 1
+  axis: 1
+  category: 18
+  dept_id: 1001
+  description: Inhalant Abuse
+  hdr: ~
+  level_num: 3
+  name: 305.90
+  rec_id: 335
+336: 
+  active: 1
+  axis: 1
+  category: 18
+  dept_id: 1001
+  description: Other/Unknown Substance Abuse
+  hdr: ~
+  level_num: 3
+  name: 305.90
+  rec_id: 336
+337: 
+  active: 1
+  axis: 1
+  category: 18
+  dept_id: 1001
+  description: Phencyclidine Abuse
+  hdr: ~
+  level_num: 3
+  name: 305.90
+  rec_id: 337
+338: 
+  active: 1
+  axis: 1
+  category: 18
+  dept_id: 1001
+  description: Caffeine Intoxication, Continuous
+  hdr: ~
+  level_num: 3
+  name: 305.91
+  rec_id: 338
+339: 
+  active: 1
+  axis: 1
+  category: 18
+  dept_id: 1001
+  description: Inhalant Abuse, Continuous
+  hdr: ~
+  level_num: 3
+  name: 305.91
+  rec_id: 339
+34: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Bipolar 1 D/O, Most Recent Episode Depressed, Severe w/o Psychotic Features
+  hdr: ~
+  level_num: ~
+  name: 296.53
+  rec_id: 34
+340: 
+  active: 1
+  axis: 1
+  category: 18
+  dept_id: 1001
+  description: Phencyclidine Abuse, Continuous
+  hdr: ~
+  level_num: 3
+  name: 305.91
+  rec_id: 340
+341: 
+  active: 1
+  axis: 1
+  category: 14
+  dept_id: 1001
+  description: Sedative, Hypnotic, or Anxiolytic Withdrawal
+  hdr: ~
+  level_num: 3
+  name: 292.00
+  rec_id: 341
+342: 
+  active: 1
+  axis: 1
+  category: 18
+  dept_id: 1001
+  description: Inhalant Abuse, Episodic
+  hdr: ~
+  level_num: 3
+  name: 305.92
+  rec_id: 342
+343: 
+  active: 1
+  axis: 1
+  category: 18
+  dept_id: 1001
+  description: Phencyclidine Abuse, Episodic
+  hdr: ~
+  level_num: 3
+  name: 305.92
+  rec_id: 343
+344: 
+  active: 1
+  axis: 1
+  category: 33
+  dept_id: 1001
+  description: Vaginismus (Not Due To Medical)
+  hdr: ~
+  level_num: 8
+  name: 306.51
+  rec_id: 344
+345: 
+  active: 1
+  axis: 1
+  category: 33
+  dept_id: 1001
+  description: Vaginismus (Not Due to a General Medical Condition)
+  hdr: ~
+  level_num: 8
+  name: 306.51
+  rec_id: 345
+346: 
+  active: 1
+  axis: 1
+  category: 7
+  dept_id: 1001
+  description: Stuttering
+  hdr: ~
+  level_num: 1
+  name: 307.00
+  rec_id: 346
+347: 
+  active: 1
+  axis: 1
+  category: 31
+  dept_id: 1001
+  description: Anorexia Nervosa
+  hdr: ~
+  level_num: 7
+  name: 307.10
+  rec_id: 347
+348: 
+  active: 1
+  axis: 1
+  category: 4
+  dept_id: 1001
+  description: Tic Disorder NOS
+  hdr: ~
+  level_num: 1
+  name: 307.20
+  rec_id: 348
+349: 
+  active: 1
+  axis: 1
+  category: 4
+  dept_id: 1001
+  description: Transient Tic Disorder
+  hdr: ~
+  level_num: 1
+  name: 307.21
+  rec_id: 349
+35: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Bipolar 1 D/O, Most Recent Episode Depressed, Severe with Psychotic Features
+  hdr: ~
+  level_num: ~
+  name: 296.54
+  rec_id: 35
+350: 
+  active: 1
+  axis: 1
+  category: 4
+  dept_id: 1001
+  description: Chronic Motor or Vocal Tic Disorder
+  hdr: ~
+  level_num: 1
+  name: 307.22
+  rec_id: 350
+351: 
+  active: 1
+  axis: 1
+  category: 4
+  dept_id: 1001
+  description: Tourette's Disorder
+  hdr: ~
+  level_num: 1
+  name: 307.23
+  rec_id: 351
+352: 
+  active: 1
+  axis: 1
+  category: 29
+  dept_id: 1001
+  description: Factitious Disorder - Predominantly Physical Signs and Symptoms
+  hdr: ~
+  level_num: 6
+  name: 300.19
+  rec_id: 352
+353: 
+  active: 1
+  axis: 1
+  category: 29
+  dept_id: 1001
+  description: Factitious Disorder NOS
+  hdr: ~
+  level_num: 6
+  name: 300.19
+  rec_id: 353
+354: 
+  active: 1
+  axis: 1
+  category: 27
+  dept_id: 1001
+  description: Panic Disorder w/ Agoraphobia
+  hdr: ~
+  level_num: 6
+  name: 300.21
+  rec_id: 354
+355: 
+  active: 1
+  axis: 1
+  category: 27
+  dept_id: 1001
+  description: Agoraphobia w/out History of Panic Disorder
+  hdr: ~
+  level_num: 6
+  name: 300.22
+  rec_id: 355
+356: 
+  active: 1
+  axis: 1
+  category: 27
+  dept_id: 1001
+  description: Social Phobia
+  hdr: ~
+  level_num: 6
+  name: 300.23
+  rec_id: 356
+357: 
+  active: 1
+  axis: 1
+  category: 11
+  dept_id: 1001
+  description: Alcohol-Induced Mood Disorder
+  hdr: ~
+  level_num: 3
+  name: 291.80
+  rec_id: 357
+358: 
+  active: 1
+  axis: 1
+  category: 27
+  dept_id: 1001
+  description: Specific Phobia
+  hdr: ~
+  level_num: 6
+  name: 300.29
+  rec_id: 358
+359: 
+  active: 1
+  axis: 1
+  category: 27
+  dept_id: 1001
+  description: Obsessive-Compulsive Disorder
+  hdr: ~
+  level_num: 6
+  name: 300.30
+  rec_id: 359
+36: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Bipolar 1 D/O, Most Recent Episode Depressed, In Partial Remission
+  hdr: ~
+  level_num: ~
+  name: 296.55
+  rec_id: 36
+360: 
+  active: 1
+  axis: 1
+  category: 25
+  dept_id: 1001
+  description: Dysthymic Disorder
+  hdr: ~
+  level_num: 5
+  name: 300.40
+  rec_id: 360
+361: 
+  active: 1
+  axis: 1
+  category: 30
+  dept_id: 1001
+  description: Depersonalization Disorder
+  hdr: ~
+  level_num: 7
+  name: 300.60
+  rec_id: 361
+362: 
+  active: 1
+  axis: 1
+  category: 28
+  dept_id: 1001
+  description: Body Dysmorphic Disorder
+  hdr: ~
+  level_num: 6
+  name: 300.70
+  rec_id: 362
+363: 
+  active: 1
+  axis: 1
+  category: 28
+  dept_id: 1001
+  description: Somatization Disorder
+  hdr: ~
+  level_num: 6
+  name: 300.81
+  rec_id: 363
+364: 
+  active: 1
+  axis: 1
+  category: 28
+  dept_id: 1001
+  description: Somatoform Disorder NOS
+  hdr: ~
+  level_num: 6
+  name: 300.81
+  rec_id: 364
+365: 
+  active: 1
+  axis: 1
+  category: 28
+  dept_id: 1001
+  description: Undifferentiated Somatoform Disorder
+  hdr: ~
+  level_num: 6
+  name: 300.81
+  rec_id: 365
+366: 
+  active: 1
+  axis: 1
+  category: 39
+  dept_id: 1001
+  description: Unspecified Mental Disorder (nonpsychotic)
+  hdr: ~
+  level_num: 10
+  name: 300.90
+  rec_id: 366
+367: 
+  active: 1
+  axis: 1
+  category: 11
+  dept_id: 1001
+  description: Alcohol-Induced Sexual Dysfunction
+  hdr: ~
+  level_num: 3
+  name: 291.80
+  rec_id: 367
+368: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: Cyclothymic Disorder
+  hdr: ~
+  level_num: 5
+  name: 301.13
+  rec_id: 368
+369: 
+  active: 1
+  axis: 1
+  category: 34
+  dept_id: 1001
+  description: Pedophilia
+  hdr: ~
+  level_num: 8
+  name: 302.20
+  rec_id: 369
+37: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Bipolar 1 D/O, Most Recent Episode Depressed, In Full Remission
+  hdr: ~
+  level_num: ~
+  name: 296.56
+  rec_id: 37
+370: 
+  active: 1
+  axis: 1
+  category: 34
+  dept_id: 1001
+  description: Transvestic Fetishism
+  hdr: ~
+  level_num: 8
+  name: 302.30
+  rec_id: 370
+371: 
+  active: 1
+  axis: 1
+  category: 34
+  dept_id: 1001
+  description: Exhibitionism
+  hdr: ~
+  level_num: 8
+  name: 302.40
+  rec_id: 371
+372: 
+  active: 1
+  axis: 1
+  category: 35
+  dept_id: 1001
+  description: Gender Identity Disorder NOS
+  hdr: ~
+  level_num: 8
+  name: 302.60
+  rec_id: 372
+373: 
+  active: 1
+  axis: 1
+  category: 35
+  dept_id: 1001
+  description: Gender Identity Disorder in Children
+  hdr: ~
+  level_num: 8
+  name: 302.60
+  rec_id: 373
+374: 
+  active: 1
+  axis: 1
+  category: 33
+  dept_id: 1001
+  description: Sexual Dysfunction NOS
+  hdr: ~
+  level_num: 8
+  name: 302.70
+  rec_id: 374
+375: 
+  active: 1
+  axis: 1
+  category: 33
+  dept_id: 1001
+  description: Hypoactive Sexual Desire Disorder
+  hdr: ~
+  level_num: 8
+  name: 302.71
+  rec_id: 375
+376: 
+  active: 1
+  axis: 1
+  category: 33
+  dept_id: 1001
+  description: Female Sexual Arousal Disorder
+  hdr: ~
+  level_num: 8
+  name: 302.72
+  rec_id: 376
+377: 
+  active: 1
+  axis: 1
+  category: 33
+  dept_id: 1001
+  description: Male Erectile Disorder
+  hdr: ~
+  level_num: 8
+  name: 302.72
+  rec_id: 377
+378: 
+  active: 1
+  axis: 1
+  category: 11
+  dept_id: 1001
+  description: Alcohol-Induced Sleep Disorder
+  hdr: ~
+  level_num: 3
+  name: 291.80
+  rec_id: 378
+379: 
+  active: 1
+  axis: 1
+  category: 33
+  dept_id: 1001
+  description: Female Orgasmic Disorder
+  hdr: ~
+  level_num: 8
+  name: 302.73
+  rec_id: 379
+38: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Bipolar 1 D/O, Most Recent Episode Mixed, Unspecified
+  hdr: ~
+  level_num: ~
+  name: 296.60
+  rec_id: 38
+380: 
+  active: 1
+  axis: 1
+  category: 33
+  dept_id: 1001
+  description: Male Orgasmic Disorder
+  hdr: ~
+  level_num: 8
+  name: 302.74
+  rec_id: 380
+381: 
+  active: 1
+  axis: 1
+  category: 33
+  dept_id: 1001
+  description: Premature Ejaculation
+  hdr: ~
+  level_num: 8
+  name: 302.75
+  rec_id: 381
+382: 
+  active: 1
+  axis: 1
+  category: 33
+  dept_id: 1001
+  description: Dyspareunia (Not Due to a General Medical Condition)
+  hdr: ~
+  level_num: 8
+  name: 302.76
+  rec_id: 382
+383: 
+  active: 1
+  axis: 1
+  category: 33
+  dept_id: 1001
+  description: Sexual Aversion Disorder
+  hdr: ~
+  level_num: 8
+  name: 302.79
+  rec_id: 383
+384: 
+  active: 1
+  axis: 1
+  category: 34
+  dept_id: 1001
+  description: Voyeurism
+  hdr: ~
+  level_num: 8
+  name: 302.82
+  rec_id: 384
+385: 
+  active: 1
+  axis: 1
+  category: 34
+  dept_id: 1001
+  description: Sexual Masochism
+  hdr: ~
+  level_num: 8
+  name: 302.83
+  rec_id: 385
+386: 
+  active: 1
+  axis: 1
+  category: 34
+  dept_id: 1001
+  description: Sexual Sadism
+  hdr: ~
+  level_num: 8
+  name: 302.84
+  rec_id: 386
+387: 
+  active: 1
+  axis: 1
+  category: 35
+  dept_id: 1001
+  description: Gender Identity Disorder in Adolescents or Adults
+  hdr: ~
+  level_num: 8
+  name: 302.85
+  rec_id: 387
+388: 
+  active: 1
+  axis: 1
+  category: 11
+  dept_id: 1001
+  description: Alcohol-Induced Mood/Anxiety Disorder
+  hdr: ~
+  level_num: 3
+  name: 291.89
+  rec_id: 388
+389: 
+  active: 1
+  axis: 1
+  category: 34
+  dept_id: 1001
+  description: Frotteurism
+  hdr: ~
+  level_num: 8
+  name: 302.89
+  rec_id: 389
+39: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Bipolar 1 D/O, Most Recent Episode Mixed, Mild
+  hdr: ~
+  level_num: ~
+  name: 296.61
+  rec_id: 39
+390: 
+  active: 1
+  axis: 1
+  category: 34
+  dept_id: 1001
+  description: Paraphilia NOS
+  hdr: ~
+  level_num: 8
+  name: 302.90
+  rec_id: 390
+391: 
+  active: 1
+  axis: 1
+  category: 33
+  dept_id: 1001
+  description: Sexual Disorder NOS
+  hdr: ~
+  level_num: 8
+  name: 302.90
+  rec_id: 391
+392: 
+  active: 1
+  axis: 1
+  category: 11
+  dept_id: 1001
+  description: Alcohol Intoxication
+  hdr: ~
+  level_num: 3
+  name: 303.00
+  rec_id: 392
+393: 
+  active: 1
+  axis: 1
+  category: 11
+  dept_id: 1001
+  description: Alcohol Dependence
+  hdr: ~
+  level_num: 3
+  name: 303.90
+  rec_id: 393
+394: 
+  active: 1
+  axis: 1
+  category: 11
+  dept_id: 1001
+  description: Alcohol Dependence, Continuous
+  hdr: ~
+  level_num: 3
+  name: 303.91
+  rec_id: 394
+395: 
+  active: 1
+  axis: 1
+  category: 11
+  dept_id: 1001
+  description: Alcohol Dependence, Continuous, In Remission
+  hdr: ~
+  level_num: 3
+  name: 303.91
+  rec_id: 395
+396: 
+  active: 1
+  axis: 1
+  category: 11
+  dept_id: 1001
+  description: Alcohol Dependence, Episodic
+  hdr: ~
+  level_num: 3
+  name: 303.92
+  rec_id: 396
+397: 
+  active: 1
+  axis: 1
+  category: 11
+  dept_id: 1001
+  description: Alcohol Dependence, Episodic, In Remission
+  hdr: ~
+  level_num: 3
+  name: 303.92
+  rec_id: 397
+398: 
+  active: 1
+  axis: 1
+  category: 17
+  dept_id: 1001
+  description: Opioid Dependence
+  hdr: ~
+  level_num: 3
+  name: 304.00
+  rec_id: 398
+399: 
+  active: 1
+  axis: 1
+  category: 11
+  dept_id: 1001
+  description: Alcohol-Related Disorder NOS
+  hdr: ~
+  level_num: 3
+  name: 291.90
+  rec_id: 399
+4: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Alzheimer's Rage
+  hdr: ~
+  level_num: ~
+  name: ~
+  rec_id: 4
+40: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Bipolar 1 D/O, Most Recent Episode Mixed, Moderate
+  hdr: ~
+  level_num: ~
+  name: 296.62
+  rec_id: 40
+400: 
+  active: 1
+  axis: 1
+  category: 17
+  dept_id: 1001
+  description: Opioid Dependence, Continuous
+  hdr: ~
+  level_num: 3
+  name: 304.01
+  rec_id: 400
+401: 
+  active: 1
+  axis: 1
+  category: 17
+  dept_id: 1001
+  description: Opioid Dependence, Episodic
+  hdr: ~
+  level_num: 3
+  name: 304.02
+  rec_id: 401
+402: 
+  active: 1
+  axis: 1
+  category: 19
+  dept_id: 1001
+  description: Sedative, Hypnotic, or Anxiolytic Dependence
+  hdr: ~
+  level_num: 3
+  name: 304.10
+  rec_id: 402
+403: 
+  active: 1
+  axis: 1
+  category: 19
+  dept_id: 1001
+  description: Sedative, Hypnotic, Anxio Dependence, Continuous
+  hdr: ~
+  level_num: 3
+  name: 304.11
+  rec_id: 403
+404: 
+  active: 1
+  axis: 1
+  category: 19
+  dept_id: 1001
+  description: Sedative, Hypnotic, Anxio Dependence, Episodic
+  hdr: ~
+  level_num: 3
+  name: 304.12
+  rec_id: 404
+405: 
+  active: 1
+  axis: 1
+  category: 14
+  dept_id: 1001
+  description: Cocaine Dependence
+  hdr: ~
+  level_num: 3
+  name: 304.20
+  rec_id: 405
+406: 
+  active: 1
+  axis: 1
+  category: 14
+  dept_id: 1001
+  description: Cocaine Dependence, Continuous
+  hdr: ~
+  level_num: 3
+  name: 304.21
+  rec_id: 406
+407: 
+  active: 1
+  axis: 1
+  category: 14
+  dept_id: 1001
+  description: Cocaine Dependence, Episodic
+  hdr: ~
+  level_num: 3
+  name: 304.22
+  rec_id: 407
+408: 
+  active: 1
+  axis: 1
+  category: 13
+  dept_id: 1001
+  description: Cannabis Dependence
+  hdr: ~
+  level_num: 3
+  name: 304.30
+  rec_id: 408
+409: 
+  active: 1
+  axis: 1
+  category: 13
+  dept_id: 1001
+  description: Cannabis Dependence, Continuous
+  hdr: ~
+  level_num: 3
+  name: 304.31
+  rec_id: 409
+41: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Bipolar 1 D/O, Most Recent Episode Mixed, Severe w/o Psychotic Features
+  hdr: ~
+  level_num: ~
+  name: 296.63
+  rec_id: 41
+410: 
+  active: 1
+  axis: 1
+  category: 14
+  dept_id: 1001
+  description: Amphetamine Withdrawal
+  hdr: ~
+  level_num: 3
+  name: 292.00
+  rec_id: 410
+411: 
+  active: 1
+  axis: 1
+  category: 13
+  dept_id: 1001
+  description: Cannabis Dependence, Episodic
+  hdr: ~
+  level_num: 3
+  name: 304.32
+  rec_id: 411
+412: 
+  active: 1
+  axis: 1
+  category: 12
+  dept_id: 1001
+  description: Amphetamine Dependence
+  hdr: ~
+  level_num: 3
+  name: 304.40
+  rec_id: 412
+413: 
+  active: 1
+  axis: 1
+  category: 12
+  dept_id: 1001
+  description: Amphetamine Dependence, Continuous
+  hdr: ~
+  level_num: 3
+  name: 304.41
+  rec_id: 413
+414: 
+  active: 1
+  axis: 1
+  category: 11
+  dept_id: 1001
+  description: Alcohol-Induced Persisting Dementia
+  hdr: ~
+  level_num: 3
+  name: 291.20
+  rec_id: 414
+415: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: Bipolar I Disorder, Most Recent Episode Hypomanic
+  hdr: ~
+  level_num: 5
+  name: 296.40
+  rec_id: 415
+416: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: Bipolar I Disorder, Most Recent Episode Manic, Unspecified
+  hdr: ~
+  level_num: 5
+  name: 296.40
+  rec_id: 416
+417: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: Bipolar I Disorder, Most Recent Episode Manic, Mild
+  hdr: ~
+  level_num: 5
+  name: 296.41
+  rec_id: 417
+418: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: Bipolar I Disorder, Most Recent Episode Manic, Moderate
+  hdr: ~
+  level_num: 5
+  name: 296.42
+  rec_id: 418
+419: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: Bipolar I Most Recent Manic, Severe w/out Psychotic Features
+  hdr: ~
+  level_num: 5
+  name: 296.43
+  rec_id: 419
+42: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Bipolar 1 D/O, Most Recent Episode Mixed, Severe with Psychotic Features
+  hdr: ~
+  level_num: ~
+  name: 296.64
+  rec_id: 42
+420: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: Bipolar I Most Recent Manic, Severe w/ Psychotic Features
+  hdr: ~
+  level_num: 5
+  name: 296.44
+  rec_id: 420
+421: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: Bipolar I Most Recent Episode Manic, In Partial Remission
+  hdr: ~
+  level_num: 5
+  name: 296.45
+  rec_id: 421
+422: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: Bipolar I Disorder, Most Recent Episode Manic, In Full Remission
+  hdr: ~
+  level_num: 5
+  name: 296.46
+  rec_id: 422
+423: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: Bipolar I Disorder, Most Recent Episode Depressed, Unspecified
+  hdr: ~
+  level_num: 5
+  name: 296.50
+  rec_id: 423
+424: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: Bipolar I Disorder, Most Recent Episode Depressed, Mild
+  hdr: ~
+  level_num: 5
+  name: 296.51
+  rec_id: 424
+425: 
+  active: 1
+  axis: 1
+  category: 11
+  dept_id: 1001
+  description: Alcohol-Induced Psychotic Disorder, w/ Hallucinations
+  hdr: ~
+  level_num: 3
+  name: 291.30
+  rec_id: 425
+426: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: Bipolar I Disorder, Most Recent Episode Depressed, Moderate
+  hdr: ~
+  level_num: 5
+  name: 296.52
+  rec_id: 426
+427: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: Bipolar I Most Recent Depressed, Severe w/out Psychotic Features
+  hdr: ~
+  level_num: 5
+  name: 296.53
+  rec_id: 427
+428: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: Bipolar I Most Recent Depressed, Severe w/ Psychotic Features
+  hdr: ~
+  level_num: 5
+  name: 296.54
+  rec_id: 428
+429: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: Bipolar I Most Recent Episode Depressed, In Partial Remission
+  hdr: ~
+  level_num: 5
+  name: 296.55
+  rec_id: 429
+43: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Bipolar 1 D/O, Most Recent Episode Mixed, In Partial Remission
+  hdr: ~
+  level_num: ~
+  name: 296.65
+  rec_id: 43
+430: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: Bipolar I Most Recent Episode Depressed, In Full Remission
+  hdr: ~
+  level_num: 5
+  name: 296.56
+  rec_id: 430
+431: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: Bipolar I Disorder, Most Recent Episode Mixed, Unspecified
+  hdr: ~
+  level_num: 5
+  name: 296.60
+  rec_id: 431
+432: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: Bipolar I Disorder, Most Recent Episode Mixed, Mild
+  hdr: ~
+  level_num: 5
+  name: 296.61
+  rec_id: 432
+433: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: Bipolar I Disorder, Most Recent Episode Mixed, Moderate
+  hdr: ~
+  level_num: 5
+  name: 296.62
+  rec_id: 433
+434: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: Bipolar I Most Recent Mixed, Severe w/out Psychotic Features
+  hdr: ~
+  level_num: 5
+  name: 296.63
+  rec_id: 434
+435: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: Bipolar I Most Recent Mixed, Severe w/ Psychotic Features
+  hdr: ~
+  level_num: 5
+  name: 296.64
+  rec_id: 435
+436: 
+  active: 1
+  axis: 1
+  category: 8
+  dept_id: 1001
+  description: Dementia - Alzheimer's Type, Early Onset, Uncomplicated
+  hdr: ~
+  level_num: 2
+  name: 290.10
+  rec_id: 436
+437: 
+  active: 1
+  axis: 1
+  category: 11
+  dept_id: 1001
+  description: Alcohol-Induced Psychotic Disorder, w/ Delusions
+  hdr: ~
+  level_num: 3
+  name: 291.50
+  rec_id: 437
+438: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: Bipolar I Disorder, Most Recent Episode Mixed, Partial Remission
+  hdr: ~
+  level_num: 5
+  name: 296.65
+  rec_id: 438
+439: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: Bipolar I Disorder, Most Recent Episode Mixed, Full Remission
+  hdr: ~
+  level_num: 5
+  name: 296.66
+  rec_id: 439
+44: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Bipolar 1 D/O, Most Recent Episode Mixed, In Full Remission
+  hdr: ~
+  level_num: ~
+  name: 296.66
+  rec_id: 44
+440: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: Bipolar I Disorder, Most Recent Episode Unspecified
+  hdr: ~
+  level_num: 5
+  name: 296.70
+  rec_id: 440
+441: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: Bipolar I Disorder NOS
+  hdr: ~
+  level_num: 5
+  name: 296.80
+  rec_id: 441
+442: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: Bipolar II Disorder
+  hdr: ~
+  level_num: 5
+  name: 296.89
+  rec_id: 442
+443: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: Mood Disorder NOS
+  hdr: ~
+  level_num: 5
+  name: 296.90
+  rec_id: 443
+444: 
+  active: 1
+  axis: 1
+  category: 24
+  dept_id: 1001
+  description: Delusional Disorder
+  hdr: ~
+  level_num: 4
+  name: 297.10
+  rec_id: 444
+445: 
+  active: 1
+  axis: 1
+  category: 24
+  dept_id: 1001
+  description: Shared Psychotic Disorder
+  hdr: ~
+  level_num: 4
+  name: 297.30
+  rec_id: 445
+446: 
+  active: 1
+  axis: 1
+  category: 24
+  dept_id: 1001
+  description: Brief Psychotic Disorder
+  hdr: ~
+  level_num: 4
+  name: 298.80
+  rec_id: 446
+447: 
+  active: 1
+  axis: 1
+  category: 24
+  dept_id: 1001
+  description: Psychotic Disorder NOS
+  hdr: ~
+  level_num: 4
+  name: 298.90
+  rec_id: 447
+448: 
+  active: 1
+  axis: 1
+  category: 11
+  dept_id: 1001
+  description: Alcohol Withdrawal
+  hdr: ~
+  level_num: 3
+  name: 291.81
+  rec_id: 448
+449: 
+  active: 1
+  axis: 1
+  category: 2
+  dept_id: 1001
+  description: Autistic Disorder
+  hdr: ~
+  level_num: 1
+  name: 299.00
+  rec_id: 449
+45: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Bipolar 1 D/O, Most Recent Episode Unspecified
+  hdr: ~
+  level_num: ~
+  name: 296.70
+  rec_id: 45
+450: 
+  active: 1
+  axis: 1
+  category: 2
+  dept_id: 1001
+  description: Childhood Disintegrative Disorder
+  hdr: ~
+  level_num: 1
+  name: 299.10
+  rec_id: 450
+451: 
+  active: 1
+  axis: 1
+  category: 2
+  dept_id: 1001
+  description: Asperger's Disorder
+  hdr: ~
+  level_num: 1
+  name: 299.80
+  rec_id: 451
+452: 
+  active: 1
+  axis: 1
+  category: 2
+  dept_id: 1001
+  description: Pervasive Developmental Disorder NOS
+  hdr: ~
+  level_num: 1
+  name: 299.80
+  rec_id: 452
+453: 
+  active: 1
+  axis: 1
+  category: 2
+  dept_id: 1001
+  description: Rett's Disorder
+  hdr: ~
+  level_num: 1
+  name: 299.80
+  rec_id: 453
+454: 
+  active: 1
+  axis: 1
+  category: 27
+  dept_id: 1001
+  description: Anxiety Disorder NOS
+  hdr: ~
+  level_num: 6
+  name: 300.00
+  rec_id: 454
+455: 
+  active: 1
+  axis: 1
+  category: 27
+  dept_id: 1001
+  description: Panic Disorder w/out Agoraphobia
+  hdr: ~
+  level_num: 6
+  name: 300.01
+  rec_id: 455
+456: 
+  active: 1
+  axis: 1
+  category: 27
+  dept_id: 1001
+  description: Generalized Anxiety Disorder
+  hdr: ~
+  level_num: 6
+  name: 300.02
+  rec_id: 456
+457: 
+  active: 1
+  axis: 1
+  category: 28
+  dept_id: 1001
+  description: Conversion Disorder
+  hdr: ~
+  level_num: 6
+  name: 300.11
+  rec_id: 457
+458: 
+  active: 1
+  axis: 1
+  category: 30
+  dept_id: 1001
+  description: Dissociative Amnesia
+  hdr: ~
+  level_num: 7
+  name: 300.12
+  rec_id: 458
+459: 
+  active: 1
+  axis: 1
+  category: 11
+  dept_id: 1001
+  description: Alcohol-Induced Anxiety Disorder
+  hdr: ~
+  level_num: 3
+  name: 291.80
+  rec_id: 459
+46: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Bipolar Disorder NOS
+  hdr: ~
+  level_num: ~
+  name: 296.80
+  rec_id: 46
+460: 
+  active: 1
+  axis: 1
+  category: 30
+  dept_id: 1001
+  description: Dissociative Fugue
+  hdr: ~
+  level_num: 7
+  name: 300.13
+  rec_id: 460
+461: 
+  active: 1
+  axis: 1
+  category: 30
+  dept_id: 1001
+  description: Dissociative Identity Disorder
+  hdr: ~
+  level_num: 7
+  name: 300.14
+  rec_id: 461
+462: 
+  active: 1
+  axis: 1
+  category: 30
+  dept_id: 1001
+  description: Dissociative Disorder NOS
+  hdr: ~
+  level_num: 7
+  name: 300.15
+  rec_id: 462
+463: 
+  active: 1
+  axis: 1
+  category: 29
+  dept_id: 1001
+  description: Factitious Disorder - Predominantly Psychological Signs/Symptoms
+  hdr: ~
+  level_num: 6
+  name: 300.16
+  rec_id: 463
+464: 
+  active: 1
+  axis: 1
+  category: 29
+  dept_id: 1001
+  description: Factitious Disorder - Combined Psych/Physical Signs/Symptoms
+  hdr: ~
+  level_num: 6
+  name: 300.19
+  rec_id: 464
+465: 
+  active: 1
+  axis: 1
+  category: 23
+  dept_id: 1001
+  description: Schizophrenia, Disorganized Type, Subchronic, Acute Exac
+  hdr: ~
+  level_num: 4
+  name: 295.13
+  rec_id: 465
+466: 
+  active: 1
+  axis: 1
+  category: 23
+  dept_id: 1001
+  description: Schizophrenia, Disorganized Type, Chronic, Acute Exac
+  hdr: ~
+  level_num: 4
+  name: 295.14
+  rec_id: 466
+467: 
+  active: 1
+  axis: 1
+  category: 23
+  dept_id: 1001
+  description: Schizophrenia, Catatonic Type
+  hdr: ~
+  level_num: 4
+  name: 295.20
+  rec_id: 467
+468: 
+  active: 1
+  axis: 1
+  category: 23
+  dept_id: 1001
+  description: Schizophrenia, Catatonic Type, Subchronic
+  hdr: ~
+  level_num: 4
+  name: 295.21
+  rec_id: 468
+469: 
+  active: 1
+  axis: 1
+  category: 23
+  dept_id: 1001
+  description: Schizophrenia, Catatonic Type, Chronic
+  hdr: ~
+  level_num: 4
+  name: 295.22
+  rec_id: 469
+47: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Bipolar 2 D/O
+  hdr: ~
+  level_num: ~
+  name: 296.89
+  rec_id: 47
+470: 
+  active: 1
+  axis: 1
+  category: 8
+  dept_id: 1001
+  description: Vascular Dementia, w/ Depressed Mood
+  hdr: ~
+  level_num: 2
+  name: 290.43
+  rec_id: 470
+471: 
+  active: 1
+  axis: 1
+  category: 23
+  dept_id: 1001
+  description: Schizophrenia, Catatonic Type, Subchronic, Acute Exac
+  hdr: ~
+  level_num: 4
+  name: 295.23
+  rec_id: 471
+472: 
+  active: 1
+  axis: 1
+  category: 23
+  dept_id: 1001
+  description: Schizophrenia, Catatonic Type, Chronic, Acute Exac
+  hdr: ~
+  level_num: 4
+  name: 295.24
+  rec_id: 472
+473: 
+  active: 1
+  axis: 1
+  category: 23
+  dept_id: 1001
+  description: Schizophrenia, Paranoid Type
+  hdr: ~
+  level_num: 4
+  name: 295.30
+  rec_id: 473
+474: 
+  active: 1
+  axis: 1
+  category: 23
+  dept_id: 1001
+  description: Schizophrenia, Paranoid Type, Subchronic
+  hdr: ~
+  level_num: 4
+  name: 295.31
+  rec_id: 474
+475: 
+  active: 1
+  axis: 1
+  category: 23
+  dept_id: 1001
+  description: Schizophrenia, Paranoid Type, Chronic
+  hdr: ~
+  level_num: 4
+  name: 295.32
+  rec_id: 475
+476: 
+  active: 1
+  axis: 1
+  category: 23
+  dept_id: 1001
+  description: Schizophrenia, Paranoid Type, Subchronic W Acute Exac
+  hdr: ~
+  level_num: 4
+  name: 295.33
+  rec_id: 476
+477: 
+  active: 1
+  axis: 1
+  category: 23
+  dept_id: 1001
+  description: Schizophrenia, Paranoid Type, Chronic W Acute Exac
+  hdr: ~
+  level_num: 4
+  name: 295.34
+  rec_id: 477
+478: 
+  active: 1
+  axis: 1
+  category: 24
+  dept_id: 1001
+  description: Schizophreniform Disorder
+  hdr: ~
+  level_num: 4
+  name: 295.40
+  rec_id: 478
+479: 
+  active: 1
+  axis: 1
+  category: 23
+  dept_id: 1001
+  description: Schizophrenia, Residual Type
+  hdr: ~
+  level_num: 4
+  name: 295.60
+  rec_id: 479
+48: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Delusional D/O Persecutory Type
+  hdr: ~
+  level_num: ~
+  name: 297.10
+  rec_id: 48
+480: 
+  active: 1
+  axis: 1
+  category: 23
+  dept_id: 1001
+  description: Schizophrenia, Residual Type, Subchronic
+  hdr: ~
+  level_num: 4
+  name: 295.61
+  rec_id: 480
+481: 
+  active: 1
+  axis: 1
+  category: 11
+  dept_id: 1001
+  description: Alcohol Intoxication Delirium
+  hdr: ~
+  level_num: 3
+  name: 291.00
+  rec_id: 481
+482: 
+  active: 1
+  axis: 1
+  category: 23
+  dept_id: 1001
+  description: Schizophrenia, Residual Type, Chronic
+  hdr: ~
+  level_num: 4
+  name: 295.62
+  rec_id: 482
+483: 
+  active: 1
+  axis: 1
+  category: 23
+  dept_id: 1001
+  description: Schizophrenia, Residual Type, Subchronic, Acute Exac
+  hdr: ~
+  level_num: 4
+  name: 295.63
+  rec_id: 483
+484: 
+  active: 1
+  axis: 1
+  category: 23
+  dept_id: 1001
+  description: Schizophrenia, Residual Type, Chronic, Acute Exac
+  hdr: ~
+  level_num: 4
+  name: 295.64
+  rec_id: 484
+485: 
+  active: 1
+  axis: 1
+  category: 24
+  dept_id: 1001
+  description: Schizoaffective Disorder
+  hdr: ~
+  level_num: 4
+  name: 295.70
+  rec_id: 485
+486: 
+  active: 1
+  axis: 1
+  category: 23
+  dept_id: 1001
+  description: Schizophrenia, Undifferentiated Type
+  hdr: ~
+  level_num: 4
+  name: 295.90
+  rec_id: 486
+487: 
+  active: 1
+  axis: 1
+  category: 23
+  dept_id: 1001
+  description: Schizophrenia Undifferentiated Type, Subchronic
+  hdr: ~
+  level_num: 4
+  name: 295.91
+  rec_id: 487
+488: 
+  active: 1
+  axis: 1
+  category: 23
+  dept_id: 1001
+  description: Schizophrenia Undifferentiated Type, Chronic
+  hdr: ~
+  level_num: 4
+  name: 295.92
+  rec_id: 488
+489: 
+  active: 1
+  axis: 1
+  category: 23
+  dept_id: 1001
+  description: Schizophrenia Undifferentiated Type, Subchronic Acute Exac
+  hdr: ~
+  level_num: 4
+  name: 295.93
+  rec_id: 489
+49: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Brief Psychotic D/O
+  hdr: ~
+  level_num: ~
+  name: 298.80
+  rec_id: 49
+490: 
+  active: 1
+  axis: 1
+  category: 23
+  dept_id: 1001
+  description: Schizophrenia Undifferentiated Type, Chronic Acute Exac
+  hdr: ~
+  level_num: 4
+  name: 295.94
+  rec_id: 490
+491: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: Bipolar I Disorder, Single Manic Episode, Unspecified
+  hdr: ~
+  level_num: 5
+  name: 296.00
+  rec_id: 491
+492: 
+  active: 1
+  axis: 1
+  category: 11
+  dept_id: 1001
+  description: Alcohol Withdrawal Delirium
+  hdr: ~
+  level_num: 3
+  name: 291.00
+  rec_id: 492
+493: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: Bipolar I Disorder, Single Manic Episode, Mild
+  hdr: ~
+  level_num: 5
+  name: 296.01
+  rec_id: 493
+494: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: Bipolar I Disorder, Single Manic Episode, Moderate
+  hdr: ~
+  level_num: 5
+  name: 296.02
+  rec_id: 494
+495: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: Bipolar I Dis. 1 Manic Episode, Severe w/out Psychotic Features
+  hdr: ~
+  level_num: 5
+  name: 296.03
+  rec_id: 495
+496: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: Bipolar I Dis. 1 Manic Episode, Severe w/ Psychotic Features
+  hdr: ~
+  level_num: 5
+  name: 296.04
+  rec_id: 496
+497: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: Bipolar I Disorder, Single Manic Episode, In Partial Remission
+  hdr: ~
+  level_num: 5
+  name: 296.05
+  rec_id: 497
+498: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: Bipolar I Disorder, Single Manic Episode, In Full Remission
+  hdr: ~
+  level_num: 5
+  name: 296.06
+  rec_id: 498
+499: 
+  active: 1
+  axis: 1
+  category: 25
+  dept_id: 1001
+  description: Major Depression, Single Episode, Unspecified
+  hdr: ~
+  level_num: 5
+  name: 296.20
+  rec_id: 499
+5: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Chronic Severe Pain
+  hdr: ~
+  level_num: ~
+  name: ~
+  rec_id: 5
+50: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Panic D/O
+  hdr: ~
+  level_num: ~
+  name: 300.01
+  rec_id: 50
+500: 
+  active: 1
+  axis: 1
+  category: 25
+  dept_id: 1001
+  description: Major Depression, Single Episode, Mild
+  hdr: ~
+  level_num: 5
+  name: 296.21
+  rec_id: 500
+501: 
+  active: 1
+  axis: 1
+  category: 25
+  dept_id: 1001
+  description: Major Depression, Single Episode, Moderate
+  hdr: ~
+  level_num: 5
+  name: 296.22
+  rec_id: 501
+502: 
+  active: 1
+  axis: 1
+  category: 25
+  dept_id: 1001
+  description: Major Depression, 1 Episode, Severe w/out Psychotic Features
+  hdr: ~
+  level_num: 5
+  name: 296.23
+  rec_id: 502
+503: 
+  active: 1
+  axis: 1
+  category: 11
+  dept_id: 1001
+  description: Alcohol-Induced Persisting Amnestic Disorder
+  hdr: ~
+  level_num: 3
+  name: 291.10
+  rec_id: 503
+504: 
+  active: 1
+  axis: 1
+  category: 25
+  dept_id: 1001
+  description: Major Depression, 1 Episode, Severe w/ Psychotic Features
+  hdr: ~
+  level_num: 5
+  name: 296.24
+  rec_id: 504
+505: 
+  active: 1
+  axis: 1
+  category: 25
+  dept_id: 1001
+  description: Major Depression, Single Episode, In Partial Remission
+  hdr: ~
+  level_num: 5
+  name: 296.25
+  rec_id: 505
+506: 
+  active: 1
+  axis: 1
+  category: 25
+  dept_id: 1001
+  description: Major Depression, Single Episode, In Full Remission
+  hdr: ~
+  level_num: 5
+  name: 296.26
+  rec_id: 506
+507: 
+  active: 1
+  axis: 1
+  category: 25
+  dept_id: 1001
+  description: Major Depression, Recurrent, Unspecified
+  hdr: ~
+  level_num: 5
+  name: 296.30
+  rec_id: 507
+508: 
+  active: 1
+  axis: 1
+  category: 25
+  dept_id: 1001
+  description: Major Depression, Recurrent, Mild
+  hdr: ~
+  level_num: 5
+  name: 296.31
+  rec_id: 508
+509: 
+  active: 1
+  axis: 1
+  category: 25
+  dept_id: 1001
+  description: Major Depression, Recurrent, Moderate
+  hdr: ~
+  level_num: 5
+  name: 296.32
+  rec_id: 509
+51: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Panic Disorder with Agoraphobia
+  hdr: ~
+  level_num: ~
+  name: 300.21
+  rec_id: 51
+510: 
+  active: 1
+  axis: 1
+  category: 25
+  dept_id: 1001
+  description: Major Depression, Recurrent, Severe w/out Psychotic Features
+  hdr: ~
+  level_num: 5
+  name: 296.33
+  rec_id: 510
+511: 
+  active: 1
+  axis: 1
+  category: 25
+  dept_id: 1001
+  description: Major Depression, Recurrent, Severe w/ Psychotic Features
+  hdr: ~
+  level_num: 5
+  name: 296.34
+  rec_id: 511
+512: 
+  active: 1
+  axis: 1
+  category: 25
+  dept_id: 1001
+  description: Major Depression, Recurrent, In Partial Remission
+  hdr: ~
+  level_num: 5
+  name: 296.35
+  rec_id: 512
+513: 
+  active: 1
+  axis: 1
+  category: 25
+  dept_id: 1001
+  description: Major Depression, Recurrent, In Full Remission
+  hdr: ~
+  level_num: 5
+  name: 296.36
+  rec_id: 513
+514: 
+  active: 1
+  axis: 1
+  category: 28
+  dept_id: 1001
+  description: Hypochondriasis
+  hdr: ~
+  level_num: 6
+  name: 300.70
+  rec_id: 514
+515: 
+  active: 1
+  axis: 1
+  category: 3
+  dept_id: 1001
+  description: Pica
+  hdr: ~
+  level_num: 1
+  name: 307.52
+  rec_id: 515
+516: 
+  active: 1
+  axis: 1
+  category: 0
+  dept_id: 1001
+  description: No Data Available
+  hdr: 0
+  level_num: 0
+  name: 000.00
+  rec_id: 516
+517: 
+  active: 1
+  axis: 2
+  category: 0
+  dept_id: 1001
+  description: No Data Available
+  hdr: 0
+  level_num: 0
+  name: 000.00
+  rec_id: 517
+518: 
+  active: 1
+  axis: 1
+  category: 8
+  dept_id: 1001
+  description: Dementia - Alzheimer's Type, w/ Late Onset, Uncomplicated
+  hdr: ~
+  level_num: 2
+  name: 290.00
+  rec_id: 518
+519: 
+  active: 1
+  axis: 1
+  category: 8
+  dept_id: 1001
+  description: Dementia - Alzheimer's Type, Late Onset, w/ Delirium
+  hdr: ~
+  level_num: 2
+  name: 290.30
+  rec_id: 519
+52: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Obsessive Compulsive Disorder
+  hdr: ~
+  level_num: ~
+  name: 300.30
+  rec_id: 52
+520: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Phencyclidine-Induced Anxiety Disorder
+  hdr: ~
+  level_num: 3
+  name: 292.89
+  rec_id: 520
+521: 
+  active: 1
+  axis: 2
+  category: ~
+  dept_id: 1001
+  description: Personality Disorder NOS
+  hdr: ~
+  level_num: 11
+  name: 301.90
+  rec_id: 521
+522: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Sedative, Hypnotic, or Anxiolytic Intoxication
+  hdr: ~
+  level_num: 3
+  name: 292.89
+  rec_id: 522
+523: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Sedative, Hypnotic, or Anxiolytic-Induced Anxiety Disorder
+  hdr: ~
+  level_num: 3
+  name: 292.89
+  rec_id: 523
+524: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Sedative, Hypnotic, or Anxiolytic-Induced Sexual Dysfunction
+  hdr: ~
+  level_num: 3
+  name: 292.89
+  rec_id: 524
+525: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Sedative, Hypnotic, or Anxiolytic-Induced Sleep Disorder
+  hdr: ~
+  level_num: 3
+  name: 292.89
+  rec_id: 525
+526: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Amphetamine-Related Disorder NOS
+  hdr: ~
+  level_num: 3
+  name: 292.90
+  rec_id: 526
+527: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Caffeine-Related Disorder NOS
+  hdr: ~
+  level_num: 3
+  name: 292.90
+  rec_id: 527
+528: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Cannabis-Related Disorder NOS
+  hdr: ~
+  level_num: 3
+  name: 292.90
+  rec_id: 528
+529: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Cocaine-Related Disorder NOS
+  hdr: ~
+  level_num: 3
+  name: 292.90
+  rec_id: 529
+53: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Opiod Dependence
+  hdr: ~
+  level_num: ~
+  name: 304.00
+  rec_id: 53
+530: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Hallucinogen-Related Disorder NOS
+  hdr: ~
+  level_num: 3
+  name: 292.90
+  rec_id: 530
+531: 
+  active: 1
+  axis: 1
+  category: 8
+  dept_id: 1001
+  description: Vascular Dementia, Uncomplicated
+  hdr: ~
+  level_num: 2
+  name: 290.40
+  rec_id: 531
+532: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Inhalant-Related Disorder NOS
+  hdr: ~
+  level_num: 3
+  name: 292.90
+  rec_id: 532
+533: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Nicotine-Related Disorder NOS
+  hdr: ~
+  level_num: 3
+  name: 292.90
+  rec_id: 533
+534: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Opioid-Related Disorder NOS
+  hdr: ~
+  level_num: 3
+  name: 292.90
+  rec_id: 534
+535: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Other/Unknown Substance-Related Disorder NOS
+  hdr: ~
+  level_num: 3
+  name: 292.90
+  rec_id: 535
+536: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Phencyclidine-Related Disorder NOS
+  hdr: ~
+  level_num: 3
+  name: 292.90
+  rec_id: 536
+537: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Sedative, Hypnotic, or Anxiolytic-Related Disorder NOS
+  hdr: ~
+  level_num: 3
+  name: 292.90
+  rec_id: 537
+538: 
+  active: 1
+  axis: 1
+  category: 9
+  dept_id: 1001
+  description: Delirium Due to Medical Condition
+  hdr: ~
+  level_num: 2
+  name: 293.00
+  rec_id: 538
+539: 
+  active: 1
+  axis: 1
+  category: 24
+  dept_id: 1001
+  description: Psychotic Disorder Due to Medical Condition, w/ Delusions
+  hdr: ~
+  level_num: 4
+  name: 293.81
+  rec_id: 539
+54: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Sedative Dependence
+  hdr: ~
+  level_num: ~
+  name: 304.10
+  rec_id: 54
+540: 
+  active: 1
+  axis: 1
+  category: 24
+  dept_id: 1001
+  description: Psychotic Disorder Due to Medical Condition, w/ Hallucinations
+  hdr: ~
+  level_num: 4
+  name: 293.82
+  rec_id: 540
+541: 
+  active: 1
+  axis: 1
+  category: 26
+  dept_id: 1001
+  description: "Mood Disorder Due to Medical Condition "
+  hdr: ~
+  level_num: 5
+  name: 293.83
+  rec_id: 541
+542: 
+  active: 1
+  axis: 1
+  category: 8
+  dept_id: 1001
+  description: Vascular Dementia, w/ Delirium
+  hdr: ~
+  level_num: 2
+  name: 290.41
+  rec_id: 542
+543: 
+  active: 1
+  axis: 1
+  category: 27
+  dept_id: 1001
+  description: Anxiety Disorder Due to Medical Condition
+  hdr: ~
+  level_num: 6
+  name: 293.89
+  rec_id: 543
+544: 
+  active: 1
+  axis: 1
+  category: 27
+  dept_id: 1001
+  description: Catatonic Disorder Due to Medical Condition
+  hdr: ~
+  level_num: 6
+  name: 293.89
+  rec_id: 544
+545: 
+  active: 1
+  axis: 1
+  category: 27
+  dept_id: 1001
+  description: Mental Disorder NOS Due to Medical Condition
+  hdr: ~
+  level_num: 6
+  name: 293.90
+  rec_id: 545
+546: 
+  active: 1
+  axis: 1
+  category: 10
+  dept_id: 1001
+  description: Amnestic Disorder Due to Medical Condition
+  hdr: ~
+  level_num: 2
+  name: 294.00
+  rec_id: 546
+547: 
+  active: 1
+  axis: 1
+  category: 8
+  dept_id: 1001
+  description: Dementia Due to Head Trauma
+  hdr: ~
+  level_num: 2
+  name: 294.10
+  rec_id: 547
+548: 
+  active: 1
+  axis: 1
+  category: 8
+  dept_id: 1001
+  description: Dementia Due to Huntington's Disease
+  hdr: ~
+  level_num: 2
+  name: 294.10
+  rec_id: 548
+549: 
+  active: 1
+  axis: 1
+  category: 8
+  dept_id: 1001
+  description: Dementia Due to Medical Condition
+  hdr: ~
+  level_num: 2
+  name: 294.10
+  rec_id: 549
+55: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Cannabis, Dependence
+  hdr: ~
+  level_num: ~
+  name: 304.30
+  rec_id: 55
+550: 
+  active: 1
+  axis: 1
+  category: 8
+  dept_id: 1001
+  description: Dementia Due to Parkinson's Disease
+  hdr: ~
+  level_num: 2
+  name: 294.10
+  rec_id: 550
+551: 
+  active: 1
+  axis: 1
+  category: 8
+  dept_id: 1001
+  description: Amnestic Disorder NOS
+  hdr: ~
+  level_num: 2
+  name: 294.80
+  rec_id: 551
+552: 
+  active: 1
+  axis: 1
+  category: 8
+  dept_id: 1001
+  description: Dementia NOS
+  hdr: ~
+  level_num: 2
+  name: 294.80
+  rec_id: 552
+553: 
+  active: 1
+  axis: 1
+  category: 8
+  dept_id: 1001
+  description: Vascular Dementia, w/ Delusions
+  hdr: ~
+  level_num: 2
+  name: 290.42
+  rec_id: 553
+554: 
+  active: 1
+  axis: 1
+  category: 8
+  dept_id: 1001
+  description: Cognitive Disorder NOS
+  hdr: ~
+  level_num: 2
+  name: 294.90
+  rec_id: 554
+555: 
+  active: 1
+  axis: 1
+  category: 8
+  dept_id: 1001
+  description: Dementia Due to HIV Disease
+  hdr: ~
+  level_num: 2
+  name: 294.90
+  rec_id: 555
+556: 
+  active: 1
+  axis: 1
+  category: 23
+  dept_id: 1001
+  description: Schizophrenia, Disorganized Type
+  hdr: ~
+  level_num: 4
+  name: 295.10
+  rec_id: 556
+557: 
+  active: 1
+  axis: 1
+  category: 23
+  dept_id: 1001
+  description: Schizophrenia, Disorganized Type, Subchronic
+  hdr: ~
+  level_num: 4
+  name: 295.11
+  rec_id: 557
+558: 
+  active: 1
+  axis: 1
+  category: 23
+  dept_id: 1001
+  description: Schizophrenia, Disorganized Type, Chronic
+  hdr: ~
+  level_num: 4
+  name: 295.12
+  rec_id: 558
+559: 
+  active: 1
+  axis: 1
+  category: 9
+  dept_id: 1001
+  description: Delirium NOS
+  hdr: ~
+  level_num: 2
+  name: 780.09
+  rec_id: 559
+56: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Hallucinogen, Dependence
+  hdr: ~
+  level_num: ~
+  name: 304.50
+  rec_id: 56
+560: 
+  active: 1
+  axis: 1
+  category: 25
+  dept_id: 1001
+  description: Depressive Disorder NOS
+  hdr: ~
+  level_num: 5
+  name: 311.00
+  rec_id: 560
+561: 
+  active: 1
+  axis: 1
+  category: 34
+  dept_id: 1001
+  description: Fetishism
+  hdr: ~
+  level_num: 8
+  name: 302.81
+  rec_id: 561
+57: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Cannabis, Abuse
+  hdr: ~
+  level_num: ~
+  name: 305.20
+  rec_id: 57
+58: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Hallucinogen, Abuse
+  hdr: ~
+  level_num: ~
+  name: 305.30
+  rec_id: 58
+59: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Posttraumatic Stress Disorders
+  hdr: ~
+  level_num: ~
+  name: 309.81
+  rec_id: 59
+6: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Chronic Severe Nausea
+  hdr: ~
+  level_num: ~
+  name: ~
+  rec_id: 6
+60: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Pathologic gambling
+  hdr: ~
+  level_num: ~
+  name: 312.31
+  rec_id: 60
+61: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Attention-Deficit/Hyperactivity Disorder Predominantly Hyperactive-Impulsive Typ
+  hdr: ~
+  level_num: ~
+  name: 314.00
+  rec_id: 61
+62: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Attention-Deficit/Hyperactivity Disorder Combined Type
+  hdr: ~
+  level_num: ~
+  name: 314.01
+  rec_id: 62
+63: 
+  active: 1
+  axis: 2
+  category: ~
+  dept_id: 1001
+  description: Personality Change due to head injury
+  hdr: ~
+  level_num: ~
+  name: 310.10
+  rec_id: 63
+64: 
+  active: 1
+  axis: 2
+  category: ~
+  dept_id: 1001
+  description: Intermittent Explosive Disorder
+  hdr: ~
+  level_num: ~
+  name: 312.34
+  rec_id: 64
+65: 
+  active: 1
+  axis: 1
+  category: 19
+  dept_id: 1001
+  description: Other/Unknown Substance-Induced Persisting Amnestic Disorder
+  hdr: ~
+  level_num: 3
+  name: 292.83
+  rec_id: 65
+66: 
+  active: 1
+  axis: 1
+  category: 19
+  dept_id: 1001
+  description: Sedative/Hypnotic/Anxiolytic-Induced Persisting Amnestic Dis.
+  hdr: ~
+  level_num: 3
+  name: 292.83
+  rec_id: 66
+67: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Amphetamine-Induced Mood Disorder
+  hdr: ~
+  level_num: 3
+  name: 292.84
+  rec_id: 67
+68: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Cocaine-Induced Mood Disorder
+  hdr: ~
+  level_num: 3
+  name: 292.84
+  rec_id: 68
+69: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Hallucinogen-Induced Mood Disorder
+  hdr: ~
+  level_num: 3
+  name: 292.84
+  rec_id: 69
+7: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Fibromyalgia
+  hdr: ~
+  level_num: ~
+  name: ~
+  rec_id: 7
+70: 
+  active: 1
+  axis: 1
+  category: 8
+  dept_id: 1001
+  description: Dementia - Alzheimer's Type, Early Onset, w/ Depressed Mood
+  hdr: ~
+  level_num: 2
+  name: 290.13
+  rec_id: 70
+71: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Inhalant-Induced Mood Disorder
+  hdr: ~
+  level_num: 3
+  name: 292.84
+  rec_id: 71
+72: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Opioid-Induced Mood Disorder
+  hdr: ~
+  level_num: 3
+  name: 292.84
+  rec_id: 72
+73: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Other/Unknown Substance-Induced Mood Disorder
+  hdr: ~
+  level_num: 3
+  name: 292.84
+  rec_id: 73
+74: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Phencyclidine-Induced Mood Disorder
+  hdr: ~
+  level_num: 3
+  name: 292.84
+  rec_id: 74
+75: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Sedative, Hypnotic, or Anxiolytic-Induced Mood Disorder
+  hdr: ~
+  level_num: 3
+  name: 292.84
+  rec_id: 75
+76: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Amphetamine Intoxication
+  hdr: ~
+  level_num: 3
+  name: 292.89
+  rec_id: 76
+77: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Amphetamine-Induced Anxiety Disorder
+  hdr: ~
+  level_num: 3
+  name: 292.89
+  rec_id: 77
+78: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Amphetamine-Induced Sexual Dysfunction
+  hdr: ~
+  level_num: 3
+  name: 292.89
+  rec_id: 78
+79: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Amphetamine-Induced Sleep Disorder
+  hdr: ~
+  level_num: 3
+  name: 292.89
+  rec_id: 79
+8: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Epilepsy
+  hdr: ~
+  level_num: ~
+  name: ~
+  rec_id: 8
+80: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Caffeine-Induced Anxiety Disorder
+  hdr: ~
+  level_num: 3
+  name: 292.89
+  rec_id: 80
+81: 
+  active: 1
+  axis: 1
+  category: 8
+  dept_id: 1001
+  description: Dementia - Alzheimer's Type, Late Onset, w/ Delusions
+  hdr: ~
+  level_num: 2
+  name: 290.20
+  rec_id: 81
+82: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Caffeine-Induced Sleep Disorder
+  hdr: ~
+  level_num: 3
+  name: 292.89
+  rec_id: 82
+83: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Cannabis Intoxication
+  hdr: ~
+  level_num: 3
+  name: 292.89
+  rec_id: 83
+84: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Cannabis-Induced Anxiety Disorder
+  hdr: ~
+  level_num: 3
+  name: 292.89
+  rec_id: 84
+85: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Cocaine Intoxication
+  hdr: ~
+  level_num: 3
+  name: 292.89
+  rec_id: 85
+86: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Cocaine-Induced Anxiety Disorder
+  hdr: ~
+  level_num: 3
+  name: 292.89
+  rec_id: 86
+87: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Cocaine-Induced Sexual Dysfunction
+  hdr: ~
+  level_num: 3
+  name: 292.89
+  rec_id: 87
+88: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Cocaine-Induced Sleep Disorder
+  hdr: ~
+  level_num: 3
+  name: 292.89
+  rec_id: 88
+89: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Hallucinogen Intoxication
+  hdr: ~
+  level_num: 3
+  name: 292.89
+  rec_id: 89
+9: 
+  active: 1
+  axis: 1
+  category: ~
+  dept_id: 1001
+  description: Crohn's Disease
+  hdr: ~
+  level_num: ~
+  name: ~
+  rec_id: 9
+90: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Hallucinogen Persisting Perception Disorder
+  hdr: ~
+  level_num: 3
+  name: 292.89
+  rec_id: 90
+91: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Hallucinogen-Induced Anxiety Disorder
+  hdr: ~
+  level_num: 3
+  name: 292.89
+  rec_id: 91
+92: 
+  active: 1
+  axis: 1
+  category: 8
+  dept_id: 1001
+  description: Dementia - Alzheimer's Type, Late Onset, w/ Depressed Mood
+  hdr: ~
+  level_num: 2
+  name: 290.21
+  rec_id: 92
+93: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Inhalant Intoxication
+  hdr: ~
+  level_num: 3
+  name: 292.89
+  rec_id: 93
+94: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Inhalant-Induced Anxiety Disorder
+  hdr: ~
+  level_num: 3
+  name: 292.89
+  rec_id: 94
+95: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Opioid Intoxication
+  hdr: ~
+  level_num: 3
+  name: 292.89
+  rec_id: 95
+96: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Opioid-Induced Sexual Dysfunction
+  hdr: ~
+  level_num: 3
+  name: 292.89
+  rec_id: 96
+97: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Opioid-Induced Sleep Disorder
+  hdr: ~
+  level_num: 3
+  name: 292.89
+  rec_id: 97
+98: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Other/Unknown Substance Intoxication
+  hdr: ~
+  level_num: 3
+  name: 292.89
+  rec_id: 98
+99: 
+  active: 1
+  axis: 1
+  category: 15
+  dept_id: 1001
+  description: Other/Unknown Substance-Induced Anxiety Disorder
+  hdr: ~
+  level_num: 3
+  name: 292.89
+  rec_id: 99

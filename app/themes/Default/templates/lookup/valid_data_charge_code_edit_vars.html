@@ -1,0 +1,90 @@
+            <div class="minileft">
+            [% IF show_insurer_code;
+                current_item = insurer_codes.${ current_item.rec_id }
+                leader  = 'insurer_'
+            ; END %]
+            [% UNLESS show_insurer_code %]
+                <h6>Time</h6>
+                <p>
+                    [% INCLUDE util/input_text.html
+                        name    = leader _ 'min_allowable_time'
+                        label   = 'Min'
+                        value   = current_item.min_allowable_time
+                        size    = '3'
+                    %]
+                    [% INCLUDE util/input_text.html
+                        name    = leader _ 'max_allowable_time'
+                        label   = 'Max'
+                        value   = current_item.max_allowable_time
+                        size    = '3'
+                    %]
+                </p>
+            [% END %]
+
+            <h6>Per unit</h6>
+                <p>
+                [% UNLESS show_insurer_code %]
+                    [% INCLUDE util/input_text.html
+                        name    = leader _ 'minutes_per_unit'
+                        label   = 'Minutes'
+                        value   = current_item.minutes_per_unit
+                        size    = '3'
+                    %]
+                [% END %]
+                [% INCLUDE util/input_text.html
+                    name    = leader _ 'dollars_per_unit'
+                    label   = 'Dollars'
+                    value   = current_item.dollars_per_unit
+                    size    = '6'
+                %]
+                </p>
+
+            <h6>Maximums per</h6>
+                <p>
+                [% INCLUDE util/input_text.html
+                    name    = leader _ 'max_units_allowed_per_encounter'
+                    label   = 'Encounter'
+                    value   = current_item.max_units_allowed_per_encounter
+                    size    = '3'
+                %]
+                [% INCLUDE util/input_text.html
+                    name    = leader _ 'max_units_allowed_per_day'
+                    label   = 'Day'
+                    value   = current_item.max_units_allowed_per_day
+                    size    = '3'
+                %]
+                </p>
+
+            <h6>Calculate Cost of a Note</h6>
+                <p>
+                [% INCLUDE util/select_new.html
+                    name    = 'cost_calculation_method'
+                    values  = [
+                        { id  => 'Dollars per Unit', label => 'Dollars per Unit', },
+                        { id  => 'Per Session', label => 'Per Session', },
+                        { id  => 'Pro Rated Dollars per Unit', label => 'Pro Rated Dollars per Unit', },
+                    ]
+                    default = current_item.cost_calculation_method || 'Pro Rated Dollars per Unit'
+                    keyname = 'id'
+                    valname = 'label'
+                %]
+                </p>
+
+            [% IF show_insurer_code %]
+                <hr class="subtle" />
+                <p>
+                    Acceptable to insurer?
+                    [% INCLUDE util/radio_new.html
+                        name    = leader _ 'acceptable'
+                        values  = [
+                            { key => 1, val => 'Yes' },
+                            { key => 0, val => 'No' },
+                        ]
+                        keyname = 'key'
+                        valname = 'val'
+                        default = current_item.acceptable
+                    %]
+                </p>
+                <hr class="subtle" />
+            [% END %]
+            </div>

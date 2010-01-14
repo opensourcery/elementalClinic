@@ -1,0 +1,143 @@
+/*{{{ appointment filters adjustments */
+#appointments div.filters {
+/*    height : 1.5em; */
+    margin-bottom : .2em;
+}
+#appointments div.filters p {
+    float : left;
+}
+#appointments div.filters p.delete {
+    left-margin : .1em;
+}
+/*}}}*/
+/* appointments {{{*/
+#appointments {
+    /*background : #efe;*/
+/*    padding : 5px; */
+/*    border-left : 2px solid #060; */
+    margin : 5px 0 0 0;
+    width : 100%;
+    height : 100%;
+/*    float : right; */
+/*    position : relative; */
+}
+#appointments h3 {
+    padding-bottom : 0;
+    margin-bottom : .2em;
+}
+#appointment_table {
+    height : 90%;
+    overflow : auto;
+}
+#appointments table {
+    border-collapse : collapse;
+    width : 100%;
+}
+#appointments tr:hover {
+    background : #ccc;
+}
+#appointments td,
+#appointments td a {
+    font-size : 11px;
+    font-weight : normal;
+}
+#appointments td.time {
+    text-align : right;
+    border-right : 0px;
+}
+#appointments td.slot {
+    color : #999;
+}
+#appointments td.client {
+    background : transparent;
+}
+#appointments td.client a {
+    font-weight : bold;
+}
+#appointments td.delete {
+    vertical-align : middle;
+}
+#appointments td.delete a {
+    background : transparent url( "../img/delete.gif" ) no-repeat;
+    margin-right : 5px;
+    height : 10px;
+    width : 10px;
+    display : block;
+    float : right;
+}
+#appointments td.delete span {
+    display : none;
+}
+/*}}}*/
+/* add appointment {{{*/
+#delete_appointment,
+#add_appointment {
+    padding : 0 10px 10px 0;
+    background : url( ../img/shadow_box.png ) right bottom no-repeat;
+    position : absolute;
+    top : 50px;
+    z-index : 10;
+}
+#delete_appointment .content,
+#add_appointment .content {
+    background : #fff;
+    padding : 10px;
+    border : 2px solid #ffbb00;
+    border-top-width : 7px;
+    width : 350px;
+    min-height : 150px;
+}
+#delete_appointment .content {
+    width : 400px;
+    min-height : 10px;
+}
+#delete_appointment h5,
+#add_appointment h5 {
+    color : #fff;
+    background : #ffbb00;
+    padding : 5px;
+    margin : -10px -10px 10px -10px;
+}
+#delete_appointment h6,
+#add_appointment h6 {
+    color : #ffbb00;
+    font-size : 1em;
+    border-bottom : 1px solid #333;
+    padding : 0;
+    margin : 0;
+}
+#add_appointment #appointment_patient_facade {
+    font-size : 1.4em;
+}
+#add_appointment .static {
+    padding : 0 0 10px 0;
+    border-bottom : 1px solid #666;
+    margin : 0 0 15px 0;
+}
+#add_appointment .dynamic {
+    padding : 0 10px 0 0;
+    border-right : 1px solid #999;
+    margin : 0 0 0 10px;
+    width : 65%;
+}
+#add_appointment .booleans {
+    list-style : none;
+    padding : 0;
+    margin : 0;
+    float : right;
+}
+#add_appointment #appointment_content {
+    display : block;
+}
+#add_appointment #appointment_loading {
+    display : none;
+    background-image : url( "../img/spinner.gif" );
+    background-repeat : no-repeat;
+    background-position : 20px 20px;
+}
+#add_appointment #appointment_loading p {
+    font-size : 1.5em;
+    font-weight : bold;
+    padding : 20px 0 0 70px;
+}
+/*}}}*/

@@ -1,0 +1,32 @@
+<table border="1">
+    <thead>
+    <tr>
+        <td colspan="5">
+            [% INCLUDE report/header.html %]
+            
+            <p>Staff Member: [% staff_name %]</p>
+            [% "<p>There was no data for this staff member.</p>" UNLESS data.0 %]
+        </td>
+    </tr>
+    </thead>
+    [% IF data.0 %]
+    <tbody>
+    <tr>
+        <th>Client</th>
+        <th>Date</th>
+        <th>Charge Code</th>
+        <th>Time</th>
+        <th>Writer</th>
+    </tr>
+    [% FOR entry IN data %]
+    <tr [% rowclass %]>
+        <td>[% entry.client %]</td>
+        <td>[% entry.date %]</td>
+        <td>[% entry.charge_code %]</td>
+        <td>[% entry.duration %]</td>
+        <td>[% entry.writer %]</td>
+    </tr>
+    [% END %]
+</tbody>
+[% END %]
+</table>

@@ -1,0 +1,289 @@
+div.center,
+div.wrap0,
+div.wrap1,
+div.wrap2,
+div.wrap3,
+div.site_box,
+div.client_box,
+div.content {
+    background : none !important;
+    border : 0 !important;
+    font-family : Tahoma,Verdana,Helvetica,Arial,sans-serif;
+    font-size : 8pt;
+}
+#page {
+    width : 100%;
+}
+#client_head {
+    display : none !important;
+}
+.force_on #client_head {
+    display : block !important;
+    border : 0;
+}
+/* headings */
+h2 {
+    margin-bottom : 0;
+    border-bottom : 1px solid #000;
+}
+h3 {
+    font-family : Tahoma,Verdana,Helvetica,Arial,sans-serif;
+    font-weight : normal;
+    margin : 0 0 10px 0;
+}
+h3.page {
+    page-break-before : always;
+}
+h3.caseload_of {
+    padding : 0;
+    border-bottom : 1px solid #000;
+    margin : 0;
+}
+h3.caseload_of + h4 {
+    font-size : .9em;
+    font-weight : normal;
+    padding : 0;
+    border : 0;
+    margin : 0;
+}
+h4 em {
+    font-weight : normal;
+    font-style : normal;
+}
+/* text */
+p {
+    font-family : Tahoma,Verdana,Helvetica,Arial,sans-serif;
+    padding : 0;
+    margin : 0;
+}
+p.sig {
+    border-bottom : 1px solid #000;
+    padding-top : 20px;
+}
+p.note {
+    padding-right : 60px;
+}
+/* tables */
+table {
+    width : 100%;
+    border-collapse: collapse;
+    border-bottom : 1px solid #999;
+}
+table.page {
+    page-break-before : always;
+}
+table.first {
+    page-break-before : avoid !important;
+}
+thead {
+    display : table-header-group;
+}
+tbody {
+    display : table-row-group;
+}
+th {
+    border-bottom : 2px solid #000;
+}
+td {
+    border-left : 1px solid #999;
+    border-right : 1px solid #999;
+    border-bottom : 1px solid #999;
+}
+td.info {
+    vertical-align : top;
+    white-space : nowrap;
+}
+td.page {
+    page-break-inside : avoid;
+}
+tr.even {
+    background-color : #ddd;
+}
+tr.odd {
+    background-color : #fff;
+}
+/* basic client header */
+div.basic_client {
+    font-family : Tahoma,Verdana,Helvetica,Arial,sans-serif;
+    border : 1px solid #000;
+    margin : 10px 0 30px 0;
+}
+div.basic_client h3 {
+    font-size : 15px;
+    font-weight : bold;
+    padding : 3px;
+    margin : 0;
+}
+div.basic_client p {
+    font-size : 14px;
+    padding : 0 5px;
+    margin : 0;
+}
+div.basic_client h3 .aux {
+    font-size : 14px;
+    font-weight : normal;
+}
+/* light */
+div.light {
+    clear : both;
+}
+.light h2 {
+    border : 0;
+}
+.light .date {
+    font-weight : normal;
+    position : absolute;
+    top : 10px;
+    right : 5px;
+}
+
+.note {
+    page-break-inside : avoid;
+}
+
+.left {
+    float : left;
+    width : 45%;
+}
+.right {
+    float : right;
+    width : 45%;
+}
+.left table td + td,
+.right table td + td {
+    width : 55%;
+}
+.small {
+    font-family : Tahoma,Verdana,Helvetica,Arial,sans-serif;
+    font-size : 11px;
+}
+.small h5 {
+    padding : 0;
+    margin : 0;
+}
+p.sigline {
+    margin-top : 40px;
+    border-top : 1px solid #000;
+}
+p.sigline span.writer {
+    margin-top : 10px;
+    font-weight : bold;
+}
+p.sigline span.date {
+    margin-top : -7px;
+    margin-left : 300px;
+}
+
+.nowrap {
+    white-space : nowrap;
+}
+/* taken from client_head.css */
+/* main {{{ */
+#client_head {
+    background-color : #fff;
+    padding : 0 15px 5px 15px;
+    margin : 0;
+    position : relative;
+}
+#client_head ul {
+    height : 1.5em;
+    margin : 0;
+    padding : 0;
+    list-style-type : none;
+    clear : both;
+}
+#client_head strong em {
+    font-size : 16px;
+    font-style : normal;
+}
+#client_head .mini {
+    height : 16px;
+}
+#client_head .mini h2 {
+    font-size : 16px;
+    font-weight : bold;
+    padding : 0;
+    border : none;
+    margin : 0;
+    float : left;
+}
+#client_head .mini p {
+    font-size : 12px;
+    float : left;
+    padding : 0 0 0 9px;
+    margin : 4px 0 0 9px;
+}
+#client_head .mini em {
+    font-size : 14px;
+    font-weight : bold;
+    font-style : normal;
+}
+#client_head .maxi {
+    margin : 5px 0 0 0;
+    clear : both;
+}
+/* }}} */
+/* client_content {{{ */
+#client_content p,
+#client_content dd,
+#client_content dt {
+    font-size : 11px;
+    line-height : 14px;
+}
+#client_content .demographics {
+    float : left;
+    margin : 7px 15px 0 0;
+}
+#client_content .placement {
+    clear : both;
+    margin : 0 0 4px 0;
+}
+#client_content .clinical {
+    margin : 0 0 0 42%;
+    width : 30%;
+}
+#client_content dl {
+    padding : 0;
+    margin : 0;
+}
+#client_content dt {
+    text-align : right;
+    float : left;
+    clear : left;
+    width : 7em;
+}
+#client_content dd {
+    font-weight : bold;
+    float : left;
+    clear : none;
+    margin : 0 0 0 5px;
+    white-space : nowrap;
+}
+#client_content dd em {
+    font-style : normal;
+    font-weight : normal;
+}
+/* }}} */
+/* {{{ cover_sheet_display formatting */
+/* The sole purpose of this style is to increase the size of the cover_sheet report. */
+#cover_sheet_display {
+    font-size : 2.6em;
+}
+/* }}} */
+/* {{{ verifications_display formatting */
+/* The sole purpose of this style is to increase the size of the verifications report,
+ * per Jamuna ticket #200, because it was too small and was blurring in faxes. 
+ * see #254 also; being more specific so that it takes precedence
+ */
+#verifications_display tbody td {
+    font-size : 14em;
+}
+/* }}} */
+/* {{{ font sizing to 14pt */
+html * {
+    font-size : 14pt !important;
+}
+h2 {
+    font-size : 16pt !important;
+}
+/* }}} */

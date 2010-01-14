@@ -1,0 +1,27 @@
+<p />
+
+<b>&#149; Employee Training Records For: </b>
+
+[% staff_name %]
+<p />
+
+<table border="0">
+    <tr>
+        <th><u>Date of Training</u></th>
+        <th><u>Title of Training</u></th>
+        <th><u>Instructor</u></th>
+        <th><u>Co-Instructor</u></th>
+        <th><u>Training Type</u></th>
+        <th><u>Duration</u></th>
+    </tr>
+    [% FOREACH datum IN data %]
+    <tr>
+        <td>[% datum.start_date %]</td>
+        <td>[% datum.title %]</td>
+        <td>[% datum.leader %]</td>
+        <td>[% datum.co_leader %]</td>
+        <td>[% datum.ins_type %]</td>
+        <td>[% datum.duration %] hours</td>
+    </tr>
+    [% END %]
+</table>

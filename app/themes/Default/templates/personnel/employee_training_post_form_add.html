@@ -1,0 +1,40 @@
+<b>&#149; Enter An Inservice Record</b>
+
+<p />
+
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+
+<table border="0">
+    <tr>
+        <td>Title of Inservice: </td>
+        <td><input type="text" name="title"  size="27" maxlength="25" /></td>
+    </tr>
+    <tr>
+        <td>Name of Presenter: </td>
+        <td><input type="text" name="leader"  size="27" maxlength="25" /></td>
+    </tr>
+    <tr>
+        <td>Name of Co-Leader: </td>
+        <td><input type="text" name="co_leader"  size="27" maxlength="25" /></td>
+    </tr>
+    <tr>
+        <td>Duration of Training: </td>
+        <td><input type="text" name="duration"  size="5" maxlength="25" /> <small>(in hours, exam: 2.5)</small></td>
+    </tr>
+    <tr>
+        <td>Date of Training: </td>
+        <td><input type="text" name="start_date" value="[% today %]" size="12" maxlength="10" /></td>
+    </tr>
+    <tr>
+        <td>Type of Inservice: </td>
+        <td><input type="text" name="ins_type"  size="27" maxlength="25" /> <small>(e.g., General-Mandatory-Orientation-Other)</small></td>
+    </tr>
+</table>
+
+<p />
+
+<input type="submit" name="go" value="Submit" />
+<input type="hidden" name="ID" value="[% id %]" />
+<div>
+</div>
+</form>

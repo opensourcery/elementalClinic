@@ -1,0 +1,23 @@
+        <table id="insurance_authorizations">
+        <tr>
+            <th>Client</th>
+            <th>Expires</th>
+            <th>Requested?</th>
+        </tr>
+        [% FOR auth IN auths_expiring %]
+            <tr[% ' class="active"' IF auth.id == current_auth.id %]>
+                <td>[% auth.client.eman %]</td>
+                <td>[% auth.end_date %]</td>
+                <td class="requested[% ' not' UNLESS auth.authorization_request %]">
+                    <a href="[% script %]?op=client_insurance_authorization_request;section=tools;step=1;client_insurance_authorization_id=[% auth.id %];client_id=[% auth.client.id %]">
+                    [%- IF auth.authorization_request %]
+                        <strong title="Requested">[% auth.authorization_request.date_requested %]</strong>
+                    [%- ELSE %]
+                        <strong title="Not requested">N/A</strong>
+                    [%- END %]
+                    &#187;
+                    </a>
+                </td>
+            </tr>
+        [% END %]
+        </table>

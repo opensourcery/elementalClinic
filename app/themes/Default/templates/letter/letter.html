@@ -1,0 +1,34 @@
+[% 
+    client = letter.client;
+    rolodex = letter.client_relationship.rolodex;
+    personnel = client.personnel;
+%]
+
+[% INCLUDE global/print_head.html
+    header_only  = 1
+    print_header = letter.print_header
+    date         = letter.sent_date
+%]
+
+<p>
+[% rolodex.fname %] [% rolodex.lname %]<br />
+[% rolodex.name ? "$rolodex.name<br />" : '' %]
+[% rolodex.addr %] [% rolodex.addr_2 %]<br />
+[% rolodex.city %], [% rolodex.state %] [% rolodex.post_code %]
+</p>
+
+<p>RE: [% client.fname %] [% client.lname %] (SSN: [% client.ssn_f %], DOB: [% client.dob %])</p>
+<br />
+
+<p>Dear [% rolodex.name_f %]</p>
+
+<p>[% letter.letter FILTER replace('\\\n', "<br>") FILTER replace('\n', "<br>") FILTER html_para %]</p>
+<br />
+
+<p>Sincerely,</p>
+<br /> <br />
+
+<p>
+    [% personnel.fname %] [% personnel.lname %], [% personnel.credentials %]<br />
+    [% personnel.job_title %]
+</p>

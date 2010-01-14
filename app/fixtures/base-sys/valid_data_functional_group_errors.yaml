@@ -1,0 +1,115 @@
+
+1: 
+  active: 1
+  dept_id: 1001
+  description: Functional Group Not Supported
+  name: 1
+  rec_id: 1
+10: 
+  active: 1
+  dept_id: 1001
+  description: Unknown Security Recipient
+  name: 13
+  rec_id: 10
+11: 
+  active: 1
+  dept_id: 1001
+  description: Unknown Security Originator
+  name: 14
+  rec_id: 11
+12: 
+  active: 1
+  dept_id: 1001
+  description: Syntax Error in Decrypted Text
+  name: 15
+  rec_id: 12
+13: 
+  active: 1
+  dept_id: 1001
+  description: Security Not Supported
+  name: 16
+  rec_id: 13
+14: 
+  active: 1
+  dept_id: 1001
+  description: Incorrect Message Length (Encryption Only)
+  name: 17
+  rec_id: 14
+15: 
+  active: 1
+  dept_id: 1001
+  description: Message Authentication Code Failed
+  name: 18
+  rec_id: 15
+16: 
+  active: 1
+  dept_id: 1001
+  description: S3E Security End Segment Missing for S3S Security Start Segment
+  name: 23
+  rec_id: 16
+17: 
+  active: 1
+  dept_id: 1001
+  description: S3S Security Start Segment Missing for S3E End Segment
+  name: 24
+  rec_id: 17
+18: 
+  active: 1
+  dept_id: 1001
+  description: S4E Security End Segment Missing for S4S Security Start Segment
+  name: 25
+  rec_id: 18
+19: 
+  active: 1
+  dept_id: 1001
+  description: S4S Security Start Segment Missing for S4E Security End Segment
+  name: 26
+  rec_id: 19
+2: 
+  active: 1
+  dept_id: 1001
+  description: Functional Group Version Not Supported
+  name: 2
+  rec_id: 2
+3: 
+  active: 1
+  dept_id: 1001
+  description: Functional Group Trailer Missing
+  name: 3
+  rec_id: 3
+4: 
+  active: 1
+  dept_id: 1001
+  description: Group Control Number in the Functional Group Header and Trailer Do Not Agree
+  name: 4
+  rec_id: 4
+5: 
+  active: 1
+  dept_id: 1001
+  description: Number of Included Transaction Sets Does Not Match Actual Count
+  name: 5
+  rec_id: 5
+6: 
+  active: 1
+  dept_id: 1001
+  description: Group Control Number Violates Syntax
+  name: 6
+  rec_id: 6
+7: 
+  active: 1
+  dept_id: 1001
+  description: Authentication Key Name Unknown
+  name: 10
+  rec_id: 7
+8: 
+  active: 1
+  dept_id: 1001
+  description: Encryption Key Name Unknown
+  name: 11
+  rec_id: 8
+9: 
+  active: 1
+  dept_id: 1001
+  description: Requested Service (Authentication or Encryption) Not Available
+  name: 12
+  rec_id: 9

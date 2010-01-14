@@ -1,0 +1,77 @@
+= Creating and Loading Fixture Datasets for eleMentalClinic =
+
+This document describes the general processes related to loading, creating, and
+editing fixture datasets in eleMentalClinic, as well as using Template Toolkit
+in the datasets. It is assumed that eleMentalClinic is set up and fully
+functioning already, if this is not true, see docs/DEVELOPER_QUICKSTART and
+docs/INSTALL to get it set up.
+
+== Loading Existing Sets of Fixture Data ==
+
+    To load an existing set of fixture data, first run `./Build db-clean-dev` to
+    ensure that the database is empty, then run `bin/fixture_import.pl -f`,
+    passing to it the path to the fixture dataset, relative to trunk/. This
+    will usually be fixtures/name-of-dataset/.
+
+    For loading testdata-jazz, the dataset used in the test suite, a simple
+    `./Build db-testdata-jazz` will load the dataset into the database.
+
+== Creating and Editing Datasets ==
+
+    Datasets should be stored in trunk/fixtures/name-of-dataset/. Note that
+    fixtures/testdata-jazz is the dataset used for the test suite and
+    existing data values should generally not be edited unless it is necessary,
+    as changes very possibly will break the tests. However, new additions to
+    the testdata will most likely be fine, so long as you remember to run the
+    test suite before committing any changes to ensure that any edits have not
+    broken anything.
+
+    Datasets are composed of files, each representing a table in the database.
+    There are two types of files used in datasets: .yaml and .fixture files.
+
+    .yaml files are YAML files with entries corresponding to rows and columns
+    of the database. These are compiled and inserted into the database.
+
+    .fixture files are YAML files with included Template Toolkit directives.
+    These are first run through Template Toolkit then compiled and inserted
+    into the database. Fixture data files should be .yaml unless they require
+    dynamic data to be processed by Template Toolkit.
+
+    The editing of .yaml files is fairly self-explanatory. Top-level entries
+    are rows, and second-level entries are the columns and their data for each
+    row. .fixture files are slightly more complicated, however.
+
+    The next paragraph and the use of Template Toolkit in .fixture files
+    assume existing general knowledge of the use of Template Toolkit. If not,
+    read up on it, or skip the next paragraph if you do not need the use of
+    dynamic datasets.
+
+    Template Toolkit directives are defined in lib/eleMentalClinic/Fixtures.pm
+    in the function &tt_functions. All of these are available for use in
+    .fixture files. Their use is documented in POD above the whole function.
+    If you need the use of an additional function, add it here, and make sure
+    it is well-documented and necessary. If possible, generalize it as much as
+    you can to reduce unneeded code.
+
+    When creating a new fixture dataset, try to follow the general example used
+    in preexisting datasets, such as testdata-jazz. Look at these for the
+    general format of the YAML files and their specific uses. When naming
+    datasets, a simple-but-descriptive name is best. For data used in testing
+    or the like, a name of the form testdata-name may be useful in making the
+    names similar. Datasets for other uses may follow a similar pattern. Also,
+    when possible, fixture sets should be stored in fixtures/name-of-dataset
+    for consistency.
+
+    Datasets should only be edited when necessary, as parts of the dataset may
+    be relied upon by other parts of the system. Check to make sure nothing
+    will break before editing datasets, and ABSOLUTELY check to make sure none
+    of the test suite breaks from editing testdata-jazz.
+
+== Exporting a Dataset from an Existing Database ==
+
+    Exporting a dataset from an existing database is fairly straightforward.
+    To do so, simply run `bin/fixture_export.pl -d`, passing in the name of a
+    directory into which the fixture dataset should be exported. All the data
+    in the database will be stored as-is in .yaml files. Be careful, because
+    all .yaml files already in the directory will be removed, unless you pass
+    the `--noclean` flag to bin/fixture_export.

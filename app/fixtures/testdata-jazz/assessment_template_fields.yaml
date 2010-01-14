@@ -1,0 +1,618 @@
+---
+1001: 
+  label: Admission reason
+  position: 0
+  rec_id: 1001
+  assessment_template_section_id: 1001
+  field_type: text::words
+1002: 
+  label: Referral reason
+  position: 1
+  rec_id: 1002
+  assessment_template_section_id: 1001
+  field_type: text::words
+1003: 
+  label: Social environment
+  position: 2
+  rec_id: 1003
+  assessment_template_section_id: 1001
+  field_type: text::words
+1004: 
+  label: Danger to others
+  position: 0
+  rec_id: 1004
+  assessment_template_section_id: 1002
+  field_type: text::words
+1005: 
+  label: Danger to self
+  position: 1
+  rec_id: 1005
+  assessment_template_section_id: 1002
+  field_type: text::words
+1006: 
+  label: Drug/alcohol abuse
+  position: 2
+  rec_id: 1006
+  assessment_template_section_id: 1002
+  field_type: text::words
+1007: 
+  label: Medical conditions/problems
+  position: 3
+  rec_id: 1007
+  assessment_template_section_id: 1002
+  field_type: text::words
+1008: 
+  label: Medication side effects
+  position: 4
+  rec_id: 1008
+  assessment_template_section_id: 1002
+  field_type: text::words
+1009: 
+  label: Needle disposal
+  position: 5
+  rec_id: 1009
+  assessment_template_section_id: 1002
+  field_type: text::words
+1010: 
+  label: Notes
+  position: 6
+  rec_id: 1010
+  assessment_template_section_id: 1002
+  field_type: text::words
+1011: 
+  label: Other alerts
+  position: 7
+  rec_id: 1011
+  assessment_template_section_id: 1002
+  field_type: text::words
+1012: 
+  label: Physical/sexual abuse
+  position: 8
+  rec_id: 1012
+  assessment_template_section_id: 1002
+  field_type: text::words
+1013: 
+  label: Special dietary needs
+  position: 9
+  rec_id: 1013
+  assessment_template_section_id: 1002
+  field_type: text::words
+1014: 
+  label: Birth history
+  position: 0
+  rec_id: 1014
+  assessment_template_section_id: 1003
+  field_type: text::words
+1015: 
+  label: Dating history
+  position: 1
+  rec_id: 1015
+  assessment_template_section_id: 1003
+  field_type: text::words
+1016: 
+  label: Early childhood diseases
+  position: 2
+  rec_id: 1016
+  assessment_template_section_id: 1003
+  field_type: text::words
+1017: 
+  label: Education history
+  position: 3
+  rec_id: 1017
+  assessment_template_section_id: 1003
+  field_type: text::words
+1018: 
+  label: Milestone adjustments
+  position: 4
+  rec_id: 1018
+  assessment_template_section_id: 1003
+  field_type: text::words
+1019: 
+  label: Psychosexual history
+  position: 5
+  rec_id: 1019
+  assessment_template_section_id: 1003
+  field_type: text::words
+1020: 
+  label: Social/relationship history
+  position: 6
+  rec_id: 1020
+  assessment_template_section_id: 1003
+  field_type: text::words
+1021: 
+  label: Dental history
+  position: 0
+  rec_id: 1021
+  assessment_template_section_id: 1004
+  field_type: text::words
+1022: 
+  label: Diagnosis history for all physical disorders
+  position: 1
+  rec_id: 1022
+  assessment_template_section_id: 1004
+  field_type: text::words
+1023: 
+  label: History of past illnesses
+  position: 2
+  rec_id: 1023
+  assessment_template_section_id: 1004
+  field_type: text::words
+1024: 
+  label: Medical strengths/proactivity
+  position: 3
+  rec_id: 1024
+  assessment_template_section_id: 1004
+  field_type: text::words
+1025: 
+  label: Medical vulnerabilities
+  position: 4
+  rec_id: 1025
+  assessment_template_section_id: 1004
+  field_type: text::words
+1026: 
+  label: Nutritional assessment/needs
+  position: 5
+  rec_id: 1026
+  assessment_template_section_id: 1004
+  field_type: text::words
+1027: 
+  label: Significant family illnesses
+  position: 6
+  rec_id: 1027
+  assessment_template_section_id: 1004
+  field_type: text::words
+1028: 
+  label: Affect
+  position: 0
+  rec_id: 1028
+  assessment_template_section_id: 1005
+  field_type: text::words
+1029: 
+  label: Appearance
+  position: 1
+  rec_id: 1029
+  assessment_template_section_id: 1005
+  field_type: text::words
+1030: 
+  label: Blocking
+  position: 2
+  rec_id: 1030
+  assessment_template_section_id: 1005
+  field_type: text::words
+1031: 
+  label: Circumstantiality
+  position: 3
+  rec_id: 1031
+  assessment_template_section_id: 1005
+  field_type: text::words
+1032: 
+  label: Coherency
+  position: 4
+  rec_id: 1032
+  assessment_template_section_id: 1005
+  field_type: text::words
+1033: 
+  label: Delusions
+  position: 5
+  rec_id: 1033
+  assessment_template_section_id: 1005
+  field_type: text::words
+1034: 
+  label: Echolalia
+  position: 6
+  rec_id: 1034
+  assessment_template_section_id: 1005
+  field_type: text::words
+1035: 
+  label: Functional state
+  position: 7
+  rec_id: 1035
+  assessment_template_section_id: 1005
+  field_type: text::words
+1036: 
+  label: Hallucination
+  position: 8
+  rec_id: 1036
+  assessment_template_section_id: 1005
+  field_type: text::words
+1037: 
+  label: Homicidal ideation
+  position: 9
+  rec_id: 1037
+  assessment_template_section_id: 1005
+  field_type: text::words
+1038: 
+  label: Impulse control
+  position: 10
+  rec_id: 1038
+  assessment_template_section_id: 1005
+  field_type: text::words
+1039: 
+  label: Insight
+  position: 11
+  rec_id: 1039
+  assessment_template_section_id: 1005
+  field_type: text::words
+1040: 
+  label: Intelligence
+  position: 12
+  rec_id: 1040
+  assessment_template_section_id: 1005
+  field_type: text::words
+1041: 
+  label: Judgement
+  position: 13
+  rec_id: 1041
+  assessment_template_section_id: 1005
+  field_type: text::words
+1042: 
+  label: Manner
+  position: 14
+  rec_id: 1042
+  assessment_template_section_id: 1005
+  field_type: text::words
+1043: 
+  label: Mood and affect notes/description
+  position: 15
+  rec_id: 1043
+  assessment_template_section_id: 1005
+  field_type: text::words
+1044: 
+  label: Mood
+  position: 16
+  rec_id: 1044
+  assessment_template_section_id: 1005
+  field_type: text::words
+1045: 
+  label: Neologisms
+  position: 17
+  rec_id: 1045
+  assessment_template_section_id: 1005
+  field_type: text::words
+1046: 
+  label: Obsession
+  position: 18
+  rec_id: 1046
+  assessment_template_section_id: 1005
+  field_type: text::words
+1047: 
+  label: Orientation
+  position: 19
+  rec_id: 1047
+  assessment_template_section_id: 1005
+  field_type: text::words
+1048: 
+  label: Perseveration
+  position: 20
+  rec_id: 1048
+  assessment_template_section_id: 1005
+  field_type: text::words
+1049: 
+  label: Psychomotor activity
+  position: 21
+  rec_id: 1049
+  assessment_template_section_id: 1005
+  field_type: text::words
+1050: 
+  label: Recent
+  position: 22
+  rec_id: 1050
+  assessment_template_section_id: 1005
+  field_type: text::words
+1051: 
+  label: Relevency
+  position: 23
+  rec_id: 1051
+  assessment_template_section_id: 1005
+  field_type: text::words
+1052: 
+  label: Remote
+  position: 24
+  rec_id: 1052
+  assessment_template_section_id: 1005
+  field_type: text::words
+1053: 
+  label: Speech flow
+  position: 25
+  rec_id: 1053
+  assessment_template_section_id: 1005
+  field_type: text::words
+1054: 
+  label: Speech tone/volume
+  position: 26
+  rec_id: 1054
+  assessment_template_section_id: 1005
+  field_type: text::words
+1055: 
+  label: Suicidal ideation
+  position: 27
+  rec_id: 1055
+  assessment_template_section_id: 1005
+  field_type: text::words
+1056: 
+  label: Tangentiality
+  position: 28
+  rec_id: 1056
+  assessment_template_section_id: 1005
+  field_type: text::words
+1057: 
+  label: Thought content notes/description
+  position: 29
+  rec_id: 1057
+  assessment_template_section_id: 1005
+  field_type: text::words
+1058: 
+  label: Word salad
+  position: 30
+  rec_id: 1058
+  assessment_template_section_id: 1005
+  field_type: text::words
+1059: 
+  label: Addictive behaviors
+  position: 0
+  rec_id: 1059
+  assessment_template_section_id: 1006
+  field_type: text::words
+1060: 
+  label: Financial status
+  position: 1
+  rec_id: 1060
+  assessment_template_section_id: 1006
+  field_type: text::words
+1061: 
+  label: History of homelessness
+  position: 2
+  rec_id: 1061
+  assessment_template_section_id: 1006
+  field_type: text::words
+1062: 
+  label: Legal status
+  position: 3
+  rec_id: 1062
+  assessment_template_section_id: 1006
+  field_type: text::words
+1063: 
+  label: Military service history
+  position: 4
+  rec_id: 1063
+  assessment_template_section_id: 1006
+  field_type: text::words
+1064: 
+  label: Most recent difficulties/precipitating events
+  position: 5
+  rec_id: 1064
+  assessment_template_section_id: 1006
+  field_type: text::words
+1065: 
+  label: Past psychiatric history
+  position: 6
+  rec_id: 1065
+  assessment_template_section_id: 1006
+  field_type: text::words
+1066: 
+  label: Patient description
+  position: 7
+  rec_id: 1066
+  assessment_template_section_id: 1006
+  field_type: text::words
+1067: 
+  label: Religious/spiritual/cultural orientation
+  position: 8
+  rec_id: 1067
+  assessment_template_section_id: 1006
+  field_type: text::words
+1068: 
+  label: Social functioning
+  position: 9
+  rec_id: 1068
+  assessment_template_section_id: 1006
+  field_type: text::words
+1069: 
+  label: Social strengths
+  position: 10
+  rec_id: 1069
+  assessment_template_section_id: 1006
+  field_type: text::words
+1070: 
+  label: Work history
+  position: 11
+  rec_id: 1070
+  assessment_template_section_id: 1006
+  field_type: text::words
+1071: 
+  label: Why are you here today?
+  position: 0
+  rec_id: 1071
+  assessment_template_section_id: 1007
+  field_type: text::words
+1072: 
+  label: Do you have any special needs?
+  position: 1
+  rec_id: 1072
+  assessment_template_section_id: 1007
+  field_type: text::words
+1073: 
+  label: What are your current or regular medications?
+  position: 2
+  rec_id: 1073
+  assessment_template_section_id: 1007
+  field_type: text::words
+1074: 
+  label: Danger to others
+  position: 0
+  rec_id: 1074
+  assessment_template_section_id: 1008
+  field_type: text::words
+1075: 
+  label: Danger to self
+  position: 1
+  rec_id: 1075
+  assessment_template_section_id: 1008
+  field_type: text::words
+1076: 
+  label: Drug/alcohol abuse
+  position: 2
+  rec_id: 1076
+  assessment_template_section_id: 1008
+  field_type: text::words
+1077: 
+  label: Other alerts
+  position: 3
+  rec_id: 1077
+  assessment_template_section_id: 1008
+  field_type: text::words
+1078: 
+  label: Affect
+  position: 0
+  rec_id: 1078
+  assessment_template_section_id: 1009
+  field_type: text::words
+1079: 
+  label: Coherency
+  position: 1
+  rec_id: 1079
+  assessment_template_section_id: 1009
+  field_type: text::words
+1080: 
+  label: Delusions
+  position: 2
+  rec_id: 1080
+  assessment_template_section_id: 1009
+  field_type: text::words
+1081: 
+  label: Hallucination
+  position: 3
+  rec_id: 1081
+  assessment_template_section_id: 1009
+  field_type: text::words
+1082: 
+  label: Insight
+  position: 4
+  rec_id: 1082
+  assessment_template_section_id: 1009
+  field_type: text::words
+1083: 
+  label: Intelligence
+  position: 5
+  rec_id: 1083
+  assessment_template_section_id: 1009
+  field_type: text::words
+1084: 
+  label: Judgement
+  position: 6
+  rec_id: 1084
+  assessment_template_section_id: 1009
+  field_type: text::words
+1085: 
+  label: Relevency
+  position: 7
+  rec_id: 1085
+  assessment_template_section_id: 1009
+  field_type: text::words
+1086: 
+  label: Speech flow
+  position: 8
+  rec_id: 1086
+  assessment_template_section_id: 1009
+  field_type: text::words
+1087: 
+  label: Tangentiality
+  position: 9
+  rec_id: 1087
+  assessment_template_section_id: 1009
+  field_type: text::words
+1088: 
+  label: Word salad
+  position: 10
+  rec_id: 1088
+  assessment_template_section_id: 1009
+  field_type: text::words
+1101: 
+  label: Fears
+  position: 1
+  rec_id: 1101
+  assessment_template_section_id: 1010
+  field_type: text::words
+  choices: Death, Life, Pressure, Pain
+1102: 
+  label: Personality notes
+  position: 2
+  rec_id: 1102
+  assessment_template_section_id: 1010
+  field_type: text::words
+  choices:
+1103: 
+  label: Raised by
+  position: 3
+  rec_id: 1103
+  assessment_template_section_id: 1010
+  field_type: text::words
+  choices: Mother, Father, Both parents, Foster care, Relatives, Other
+1104: 
+  label: Diet
+  position: 4
+  rec_id: 1104
+  assessment_template_section_id: 1010
+  field_type: text::words
+  choices: Healthy, Average, Unhealthy
+1105: 
+  label: Emotional Status
+  position: 5
+  rec_id: 1105
+  assessment_template_section_id: 1010
+  field_type: text::words
+  choices: Happy, Sad, Angry, Depressed
+1106: 
+  label: Theft
+  position: 1
+  rec_id: 1106
+  assessment_template_section_id: 1011
+  field_type: text::words
+1107: 
+  label: Abuse
+  position: 2
+  rec_id: 1107
+  assessment_template_section_id: 1011
+  field_type: text::words
+1108: 
+  label: Weapons
+  position: 3
+  rec_id: 1108
+  assessment_template_section_id: 1011
+  field_type: text::words
+1109: 
+  label: Defiance
+  position: 4
+  rec_id: 1109
+  assessment_template_section_id: 1011
+  field_type: text::words
+1110: 
+  label: Violence
+  position: 5
+  rec_id: 1110
+  assessment_template_section_id: 1011
+  field_type: text::words
+1111: 
+  label: Other
+  position: 5
+  rec_id: 1111
+  assessment_template_section_id: 1011
+  field_type: text::words
+1112:
+  label: What are your current or regular medications?
+  position: 1
+  rec_id: 1112
+  assessment_template_section_id: 1012
+  field_type: text::words
+1113:
+  label: Do you have any special needs?
+  position: 2
+  rec_id: 1113
+  assessment_template_section_id: 1012
+  field_type: text::words
+1114:
+  label: Why are you here today?
+  position: 3
+  rec_id: 1114
+  assessment_template_section_id: 1012
+  field_type: text::words

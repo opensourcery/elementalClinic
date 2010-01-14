@@ -1,0 +1,7 @@
+[% INCLUDE personnel/role_selector.html;
+    # if the current user has a home page style, try to use it
+    # otherwise fall back to the default
+    TRY;    INCLUDE "personnel/role_home/${ current_user.home_page_type }.html";
+    CATCH;  INCLUDE personnel/role_home/default.html;
+    END
+%]

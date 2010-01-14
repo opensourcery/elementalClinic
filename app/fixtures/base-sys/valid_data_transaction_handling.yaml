@@ -1,0 +1,19 @@
+
+1: 
+  active: 1
+  dept_id: 1001
+  description: Payment Accompanies Remittance Advice
+  name: C
+  rec_id: 1
+2: 
+  active: 1
+  dept_id: 1001
+  description: Notification Only (Usually used to pass predetermination of benefits info from payer to provider)
+  name: 'N'
+  rec_id: 2
+3: 
+  active: 1
+  dept_id: 1001
+  description: "Remittance Information Only: payment is separate"
+  name: I
+  rec_id: 3

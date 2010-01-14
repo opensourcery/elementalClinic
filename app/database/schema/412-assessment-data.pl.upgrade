@@ -1,0 +1,12 @@
+#get_all is all per client, in other words it has to be done this way :-(
+use eleMentalClinic::Client::AssessmentOld;
+for my $old ( @{ eleMentalClinic::DB->new->select_many_arrayref(
+        [ 'rec_id' ],
+        eleMentalClinic::Client::AssessmentOld->table,
+        '',
+        ''
+    ) || [] }) {
+    eleMentalClinic::Client::Assessment->new_from_old(
+        eleMentalClinic::Client::AssessmentOld->retrieve( $old )
+    );
+}

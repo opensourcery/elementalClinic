@@ -1,0 +1,63 @@
+<table border="1">
+    <thead>
+    <tr>
+        <td colspan="4">
+            [% INCLUDE financial/reports/header.html %]
+            [% "<p>There was no data for this report.</p>" UNLESS prognotes %]
+        </td>
+    </tr>
+
+    <tr>
+        <th></th>
+        <th>Service date</th>
+        <th>Charge code</th>
+        <th>Duration</th>
+        <th>Location</th>
+        <th>Writer</th>
+        <th>Amount</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    [% FOR note IN prognotes %]
+        <tr [% rowclass( 1 ) %]>
+            <th class="subtle">Service</th>
+            <td>[% note.note_date.format_date %]</td>
+            <td>[% note.charge_code.name %]</td>
+            <td>[% note.note_duration_pretty %]</td>
+            <td>[% note.location.name %]</td>
+            <td>[% note.writer %]</td>
+            <td colspan="99"></td>
+        </tr>
+        [% totals = {} %]
+        [% IF( billings = note.billings );
+            FOR billing IN billings;
+                # each billing, the FULL amount is billed, so don't total the billed_amount
+                IF billing.insurance_rank == 1 and billing.combined != 1; totals.billings = billing.billed_amount; END
+            %]
+            <tr class="billing">
+                <th class="subtle">Billing</th>
+                <td>[% billing.billed_date.format_date %]</td>
+                <td colspan="4"></td>
+                <td>$ [% IF billing.insurance_rank != 1; 'secondary billing'; ELSIF billing.combined; 'combined'; ELSE; billing.billed_amount; END %]</td>
+            </tr>
+            [% IF billing.paid_date %]
+            [% UNLESS billing.combined; totals.payments = totals.payments + billing.paid_amount; END %]
+            <tr class="payment">
+                <th class="subtle">Payment</th>
+                <td>[% billing.paid_date.format_date %]</td>
+                <td colspan="4"></td>
+                <td>$ [% UNLESS billing.combined; billing.paid_amount; ELSE; 'combined'; END %] [% IF billing.refunded; 'refunded'; END %]</td>
+            </tr>
+            [% END %]
+            [% END;
+        END %]
+        [% IF totals %]
+            <tr>
+                <td colspan="6"></td>
+                <th>$ [% totals.billings - totals.payments %] (balance)</th>
+            </tr>
+        [% END %]
+    [% END %]
+    </tbody>
+</table>

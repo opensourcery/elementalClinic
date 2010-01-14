@@ -1,0 +1,47 @@
+<b>&#149; Access Individual Records For: </b>
+
+[% staff_name %]
+<p />
+
+<ul>
+    <li>
+        <a href="../personnel/employee.cgi?staff_id=[% id %]&amp;GO=view">View Employee Personnel Record</a>
+    </li>
+    <li>
+        <a href="../personnel/employee.cgi?staff_id=[% id %]&amp;GO=update">Update Employee Personnel Record</a>
+    </li>
+    <li>
+        <a href="../personnel/employee_driver.cgi?staff_id=[% id %]&amp;GO=view">Employee Drivers Licenses</a>
+    </li>
+    <li>
+        <a href="../personnel/employee_education.cgi?staff_id=[% id %]&amp;GO=view">Employee Education History</a>
+    </li>
+    <li>
+        <a href="../personnel/employee_evaluation.cgi?staff_id=[% id %]&amp;GO=view">Employee Evaluation Schedule</a>
+    </li>
+    <li>
+        <a href="../personnel/employee_physical.cgi?staff_id=[% id %]&amp;GO=view">Employee Physical Exams</a>
+    </li>
+    <li>
+        <a href="../personnel/employee_supervision.cgi?staff_id=[% id %]&amp;GO=view">Employee Supervision</a>
+    </li>
+    <li>
+        <a href="../personnel/employee_training.cgi?staff_id=[% id %]&amp;GO=view">Employee Training</a>
+    </li>
+    <li>
+        <a href="../personnel/per_diem.cgi">Per Diem Request Form</a>
+    </li>
+    <li>
+        <a href="../personnel/personnel_change.cgi">Personnel Change Notice</a>
+    </li>
+</ul>
+
+<p />
+
+<a href="[% program %]">Select Another Staffmember</a>
+
+<br />
+[% IF previous != "" %]
+    <a href="[% previous %]">Previous Program</a>
+    <br />
+[% END %]

@@ -1,0 +1,40 @@
+
+1: 
+  active: 1
+  cost_calculation_method: ~
+  dept_id: 1001
+  description: ~
+  dollars_per_unit: ~
+  max_allowable_time: ~
+  max_units_allowed_per_day: ~
+  max_units_allowed_per_encounter: ~
+  min_allowable_time: ~
+  minutes_per_unit: ~
+  name: N/A
+  rec_id: 1
+2: 
+  active: 1
+  cost_calculation_method: ~
+  dept_id: 1001
+  description: ~
+  dollars_per_unit: ~
+  max_allowable_time: ~
+  max_units_allowed_per_day: ~
+  max_units_allowed_per_encounter: ~
+  min_allowable_time: ~
+  minutes_per_unit: ~
+  name: No Show
+  rec_id: 2
+3: 
+  active: 1
+  cost_calculation_method: ~
+  dept_id: 1001
+  description: ~
+  dollars_per_unit: ~
+  max_allowable_time: ~
+  max_units_allowed_per_day: ~
+  max_units_allowed_per_encounter: ~
+  min_allowable_time: ~
+  minutes_per_unit: ~
+  name: Default Charge Code
+  rec_id: 3

@@ -1,0 +1,131 @@
+<form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" name="Edit Doctor">
+
+<fieldset class="left">
+    <legend>Demographic Information</legend>
+
+    <div class="lefthalf">
+    <dl class="inline">
+    [% INCLUDE util/input_text.html
+        name    = 'fname'
+        label   = 'First'
+        value   = rolodex.fname
+        size    = 30
+        dl      = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'lname'
+        label   = 'Last'
+        value   = rolodex.lname
+        size    = 30
+        dl      = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'credentials'
+        label   = 'Credentials'
+        value   = rolodex.credentials
+        size    = 30
+        dl      = 1
+    %]
+    <hr class="subtle" />
+    [% INCLUDE util/input_text.html
+        name    = 'name'
+        label   = 'Organization'
+        value   = rolodex.name
+        size    = 30
+        dl      = 1
+    %]
+    </dl>
+
+    <hr class="subtle" />
+
+    [% INCLUDE util/textarea.html
+        name    = 'comment_text'
+        label   = 'Comment'
+        value   = rolodex.comment_text
+        cols    = 50
+        rows    = 3
+        wraptag = 'p'
+        break   = 1
+    %]
+    </div>
+
+    <div class="righthalf">
+    <dl class="inline">
+    [% INCLUDE util/input_text.html
+        name    = 'address1'
+        label   = 'Address'
+        value   = address.address
+        size    = 30
+        dl      = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'address2'
+        label   = 'Address 2'
+        value   = address.address2
+        size    = 30
+        dl      = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'city'
+        label   = 'City'
+        value   = address.city
+        size    = 25
+        dl      = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'state'
+        label   = 'State'
+        value   = address.state
+        size    = 2
+        dl      = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'post_code'
+        label   = 'Zip'
+        value   = address.post_code
+        size    = 10
+        dl      = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'phone'
+        label   = 'Phone'
+        value   = phones.0.phone_number
+        size    = 15
+        dl      = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'phone_2'
+        label   = 'Phone 2'
+        value   = phone.1.phone_number
+        size    = 15
+        dl      = 1
+    %]
+    </dl>
+    </div>
+</fieldset>
+
+    <input type="hidden" name="treaters" id="role_treaters" value="1">
+
+    <input type="hidden" name="edit_rolodex_entry" id="edit_rolodex_entry" value="[% edit_rolodex_entry %]" />
+    <input type="hidden" name="client_id" id="client_id" value="[% client.id %]" />
+    <input type="hidden" name="rolodex_id" id="rolodex_id" value="[% rolodex.rec_id %]" />
+    [% IF dupsok %]
+    <p class="save"><input type="submit" name="op" id="op" value="Save Doctor, ignoring duplicates" /></p>
+    <input type="hidden" name="dupsok" id="dupsok" value="[% dupsok %]" />
+    [% ELSE %]
+    <p class="save"><input type="submit" name="op" id="op" value="Save Doctor" /></p>
+    [% END %]
+</form>
+[% INCLUDE util/form_cancel.html
+    extras = {
+        rolodex_id => rolodex.id,
+    }
+%]

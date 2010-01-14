@@ -1,0 +1,56 @@
+Documentation standards
+=======================
+
+User documentation
+------------------
+
+    - All new and changed features must be documented so that a busy but
+      motivated clinician can, in the least amount of time, answer her own
+      questions.
+
+Developer documentation
+-----------------------
+
+    - All new methods must have with accompanying POD (see below).
+
+Incomplete code
+---------------
+
+    The best way to mark incomplete code is with a TODO test.  See the
+    documentation for Test::More for more details.
+    
+    Barring that, use whichever of these is appropriate:
+    
+    - TODO:  means "I haven't started this yet, and I need to."
+    - FIXME:  means "This doesn't work the way it should."
+    - XXX:  means "Pay special attention to this."
+
+    Any other comments should be informational only, for other developers who
+    are reading the code.
+
+POD (Plain Old Documentation)
+-----------------------------
+
+    - Here is a sample POD block for a method:
+
+    # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    =head2 save_rules( \@rule_ids, [ $payer_id ])
+
+    Class method.
+
+    Associates a list of rules with the system validation process (or with
+    payer validation for C<$payer_id>, if supplied).  Uses the
+    C<validation_rule_last_used> table.
+
+    C<\@rule_ids> may be empty arrayref.  In this case, all rule records
+    associated system validation (or with payer validation for C<$payer_id>)
+    are removed.
+
+    =cut
+
+    # ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    sub save_rules {
+
+- There is a skeleton you can copy for your own use in docs/POD-stub in this
+  distribution.

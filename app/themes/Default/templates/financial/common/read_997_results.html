@@ -1,0 +1,72 @@
+    <div class="connection_details">
+    <h4>
+    Functional Acknowledgement Report (997)
+    </h4>
+    <p>
+    Recipient: [% recipient %] ([%read_997.get_sender_interchange_id %])<br />
+    Date: [% read_997.get_interchange_date %]<br />
+    Test Mode: [% IF read_997.is_production; 'No'; ELSE; 'Yes'; END %]
+    </p>
+
+    [% IF read_997.get_data_segment_notes.0 %]
+        <p>
+        Data Notes:
+        </p>
+        <ul>
+        [% FOR note IN read_997.get_data_segment_notes %] 
+            <li>
+            Error: <span class="error">[% current_user.valid_data.get_byname( '_segment_errors', note.syntax_error_code ).description %]</span><br />
+            In the [% note.identifier_code %] segment, loop [% note.loop_identifier_code %], line [% note.position_in_transaction_set %].
+            <ul>
+            [% FOR element IN note.element_notes %]
+                <li>
+                Error in element [% element.element_position %]: <span class="error">[% current_user.valid_data.get_byname( '_element_errors', element.syntax_error_code ).description %]</span><br />
+                Element reference number: [% element.reference_number %]<br />
+                Data that was sent: [[% element.copy_of_bad_data_element %]]<br />
+                </li>
+            [% END %]
+            </ul>
+            </li>
+            [% END %]
+        </ul>
+    [% END %]
+    <p>
+    Transaction Set: [% current_user.valid_data.get_byname( '_transaction_set_ack_codes', read_997.get_transaction_response.ack_code ).description %]<br />
+    [% IF read_997.get_transaction_response.syntax_error_codes.0 %]
+        Syntax Errors:
+        <ul>
+        [% FOR code IN read_997.get_transaction_response.syntax_error_codes %]
+            [% IF code != '' %]
+            <li class="error">
+            [% current_user.valid_data.get_byname( '_transaction_set_errors', code ).description %]
+            </li>
+            [% END %]
+        [% END %]
+        </ul>
+    [% ELSE %]
+        No transaction syntax errors.
+    [% END %]
+    </p>
+    <p>
+    Functional Group: [% current_user.valid_data.get_byname( '_functional_group_ack_codes', read_997.get_functional_group_response.ack_code ).description %]<br />
+    [% IF read_997.get_functional_group_response.syntax_error_codes.0 %]
+        Syntax Errors:
+        <ul>
+        [% FOR code IN read_997.get_functional_group_response.syntax_error_codes %]
+            [% IF code != '' %]
+            <li class="error">
+            [% current_user.valid_data.get_byname( '_functional_group_errors', code ).description %]
+            </li>
+            [% END %]
+        [% END %]
+        </ul>
+    [% ELSE %]
+        No functional group syntax errors.
+    [% END %]
+    </p>
+    <p>
+    Number of Transaction Sets Included: [% read_997.get_functional_group_response.number_transaction_sets_included %]<br />
+    Number of Transaction Sets Received: [% read_997.get_functional_group_response.number_transaction_sets_received %]<br />
+    Number of Transaction Sets Accepted: [% read_997.get_functional_group_response.number_transaction_sets_accepted %]
+    </p>
+    </div>

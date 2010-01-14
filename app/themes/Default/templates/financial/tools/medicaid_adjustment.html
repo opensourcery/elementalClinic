@@ -1,0 +1,450 @@
+        [% adjustment_types = [ 
+            { key => 1, value => 'Underpayment - Request additional payment', },
+            { key => 0, value => 'Overpayment - Please deduct from subsequent payment', },
+        ] %]
+
+        <h4>Individual Adjustment Request - State of Oregon</h4>
+        [% INCLUDE util/form.html %]
+        <p class="input">
+        <strong>Type of adjustment:</strong>
+        </p>
+        <p class="input">
+        [% INCLUDE util/radio_new.html
+            name    = 'underpayment'
+            values  = adjustment_types
+            keyname = 'key'
+            valname = 'value'
+            break   = 1
+            default = adjustment.underpayment || 1
+        %]
+        </p>
+        <div class="ra_data">
+            <p><strong>Internal Control Number:</strong> [% adjustment.internal_control_number %]</p>
+            <p><strong>Recipient Name:</strong> [% adjustment.recipient_name %]</p>
+            <p><strong>Provider Name:</strong> [% adjustment.provider_name %]</p>
+            <p><strong>NPI:</strong> [% adjustment.provider_npi %]</p>
+        </div>
+        <div class="ra_data">
+            <p><strong>RA Date:</strong> [% adjustment.ra_date %]</p>
+            <p><strong>Recipient ID Number:</strong> [% adjustment.recipient_id %]</p>
+            <p><strong>Provider Number:</strong> [% adjustment.provider_number %]</p>
+            <p><strong>Taxonomy Code:</strong> [% adjustment.provider_taxonomy %]</p>
+        </div>
+        <p class="input">
+            [% INCLUDE util/input_text.html
+                name    = 'remarks'
+                value   = remarks
+                label   = 'Remarks'
+                size    = 50
+                maxlength = 60
+                wraptag = 'strong'
+            %]
+        </p>
+        
+        <p class="instructions">
+            Select the lines to be corrected:
+        </p>
+        <p class="tip">
+            Note that if multiple lines are selected for the same error, only 
+            the first one will be used to show the 'right' information.
+        </p>
+        <fieldset class="error_data">
+            <legend>Place of Service</legend>
+            <table class="error_transactions">
+                <tr>
+                    <th>Line</th>
+                    <th>Service Date</th>
+                    <th>Right</th>
+                </tr>
+                [% FOR transaction IN adjustment.transactions %]
+                <tr><td>
+                    [% transaction.billing_service.line_number %]
+                    [% INCLUDE util/checkbox.html
+                        name    = 'place_' _ transaction.rec_id
+                        value   = transaction.place
+                    %]
+                    </td>
+                    [% prognote = transaction.billing_service.billing_prognotes.0.prognote %]
+                    <td>[% prognote.start_date.format_date_remove_time %]</td>
+                    <td>[% prognote.location.facility_code %]</td>
+                    <td>
+                    <!-- send all of the transaction IDs here - a refactor could make this unneeded -->
+                    <input type="hidden" name="transaction_[% transaction.rec_id %]" value="1" />
+                    <!-- send the 'right' info for each transaction -->
+                    <input type="hidden" name="place_right_[% transaction.rec_id %]" value="[% prognote.location.facility_code %]" />
+                    </td>
+                </tr>
+                [% END %]
+            </table>
+            <p class="wrong_info">
+            Wrong Info:
+            [% INCLUDE util/input_text.html
+                name    = 'place_wrong'
+                value   = place_wrong
+                size    = 25
+                maxlength = 10
+            %]
+            </p>
+        </fieldset>
+
+        <fieldset class="error_data">
+            <legend>Charge Code</legend>
+            <table class="error_transactions">
+                <tr>
+                    <th>Line</th>
+                    <th>Service Date</th>
+                    <th>Right</th>
+                </tr>
+                [% FOR transaction IN adjustment.transactions %]
+                <tr><td>
+                    [% transaction.billing_service.line_number %]
+                    [% INCLUDE util/checkbox.html
+                        name    = 'charge_code_' _ transaction.rec_id
+                        value   = transaction.charge_code
+                    %]
+                    </td>
+                    [% prognote = transaction.billing_service.billing_prognotes.0.prognote %]
+                    <td>[% prognote.start_date.format_date_remove_time %]</td>
+                    <td>[% prognote.split_charge_code.charge_code %]</td>
+                    <td><input type="hidden" name="charge_code_right_[% transaction.rec_id %]" value="[% prognote.split_charge_code.charge_code %]" /></td>
+                </tr>
+            [% END %]
+            </table>
+            <p class="wrong_info">
+            [% INCLUDE util/input_text.html
+                name    = 'charge_code_wrong'
+                value   = charge_code_wrong
+                label   = 'Wrong Info'
+                size    = 25
+                maxlength = 10
+            %]
+            </p> 
+        </fieldset>
+        
+        <fieldset class="error_data">
+            <legend>Modifier</legend>
+            <table class="error_transactions">
+                <tr>
+                    <th>Line</th>
+                    <th>Service Date</th>
+                    <th>Right</th>
+                </tr>
+                [% FOR transaction IN adjustment.transactions %]
+                <tr><td>
+                    [% transaction.billing_service.line_number %]
+                    [% INCLUDE util/checkbox.html
+                        name    = 'modifier_' _ transaction.rec_id
+                        value   = transaction.modifier
+                    %]
+                    </td>
+                    [% prognote = transaction.billing_service.billing_prognotes.0.prognote %]
+                    <td>[% prognote.start_date.format_date_remove_time %]</td>
+                    <td>[% prognote.split_charge_code.modifiers %]</td>
+                    <input type="hidden" name="modifier_right_[% transaction.rec_id %]" value="[% prognote.split_charge_code.modifiers %]" />
+                </tr>
+            [% END %]
+            </table>
+            <p class="wrong_info">
+            [% INCLUDE util/input_text.html
+                name    = 'modifier_wrong'
+                value   = modifier_wrong
+                label   = 'Wrong Info'
+                size    = 25
+                maxlength = 10
+            %]
+            </p> 
+        </fieldset>
+        
+        <fieldset class="error_data">
+            <legend>Units</legend>
+            <table class="error_transactions">
+                <tr>
+                    <th>Line</th>
+                    <th>Service Date</th>
+                    <th>Right</th>
+                </tr>
+                [% FOR transaction IN adjustment.transactions %]
+                <tr><td>
+                    [% transaction.billing_service.line_number %]
+                    [% INCLUDE util/checkbox.html
+                        name    = 'units_' _ transaction.rec_id
+                        value   = transaction.units
+                    %]
+                    </td>
+                    [% prognote = transaction.billing_service.billing_prognotes.0.prognote %]
+                    <td>[% prognote.start_date.format_date_remove_time %]</td>
+                    <td>[% transaction.billing_service.billed_units %]</td>
+                    <td><input type="hidden" name="units_right_[% transaction.rec_id %]" value="[% transaction.billing_service.billed_units %]" /></td>
+                </tr>
+            [% END %]
+            </table>
+            <p class="wrong_info">
+            [% INCLUDE util/input_text.html
+                name    = 'units_wrong'
+                value   = units_wrong
+                label   = 'Wrong Info'
+                size    = 25
+                maxlength = 10
+            %]
+            </p> 
+        </fieldset>
+
+        <fieldset class="error_data">
+            <legend>Diagnosis</legend>
+            <table class="error_transactions">
+                <tr>
+                    <th>Line</th>
+                    <th>Service Date</th>
+                    <th>Right</th>
+                </tr>
+                [% FOR transaction IN adjustment.transactions %]
+                <tr><td>
+                    [% transaction.billing_service.line_number %]
+                    [% INCLUDE util/checkbox.html
+                        name    = 'diagnosis_' _ transaction.rec_id
+                        value   = transaction.diagnosis
+                    %]
+                    </td>
+                    [% prognote = transaction.billing_service.billing_prognotes.0.prognote %]
+                    <td>[% prognote.start_date.format_date_remove_time %]</td>
+                    <td>[% transaction.billing_service.billing_claim.diagnosis_codes( 'hcfa' ).0 %]</td>
+                    <td><input type="hidden" name="diagnosis_right_[% transaction.rec_id %]" value="[% transaction.billing_service.billing_claim.diagnosis_codes( 'hcfa' ).0 %]" /></td>
+                </tr>
+            [% END %]
+            </table>
+            <p class="wrong_info">
+            [% INCLUDE util/input_text.html
+                name    = 'diagnosis_wrong'
+                value   = diagnosis_wrong
+                label   = 'Wrong Info'
+                size    = 25
+                maxlength = 10
+            %]
+            </p> 
+        </fieldset>
+
+        <fieldset class="error_data">
+            <legend>Performing Provider</legend>
+            <table class="error_transactions">
+                <tr>
+                    <th>Line</th>
+                    <th>Service Date</th>
+                    <th>Right</th>
+                </tr>
+                [% FOR transaction IN adjustment.transactions %]
+                <tr><td>
+                    [% transaction.billing_service.line_number %]
+                    [% INCLUDE util/checkbox.html
+                        name    = 'performing_provider_' _ transaction.rec_id
+                        value   = transaction.performing_provider
+                    %]
+                    </td>
+                    [% prognote = transaction.billing_service.billing_prognotes.0.prognote %]
+                    <td>[% prognote.start_date.format_date_remove_time %]</td>
+                    [% 
+                      # XXX There is a slight chance that the prognote's personnel is not the right one.
+                      # XXX The billing_services's billing_prognote with the lowest rec_id prognote determines the staff_id 
+                      # XXX in a combined note. And that's not necessarily what's happening here.
+                      # XXX This is probably rare and the work-around is for the user to write in the correct info by hand on the form.
+                    %]
+                    <td>[% prognote.personnel.eman %]</td>
+                    <td><input type="hidden" name="performing_provider_right_[% transaction.rec_id %]" value="[% prognote.personnel.eman %]" /></td>
+                </tr>
+            [% END %]
+            </table>
+            <p class="wrong_info">
+            [% INCLUDE util/input_text.html
+                name    = 'performing_provider_wrong'
+                value   = performing_provider_wrong
+                label   = 'Wrong Info'
+                size    = 25
+                maxlength = 25
+            %]
+            </p> 
+        </fieldset>
+
+        <fieldset class="error_data">
+            <legend>Billed Amount</legend>
+            <table class="error_transactions">
+                <tr>
+                    <th>Line</th>
+                    <th>Service Date</th>
+                    <th>Right</th>
+                </tr>
+                [% FOR transaction IN adjustment.transactions %]
+                <tr><td>
+                    [% transaction.billing_service.line_number %]
+                    [% INCLUDE util/checkbox.html
+                        name    = 'billed_amount_' _ transaction.rec_id
+                        value   = transaction.billed_amount
+                    %]
+                    </td>
+                    [% prognote = transaction.billing_service.billing_prognotes.0.prognote %]
+                    <td>[% prognote.start_date.format_date_remove_time %]</td>
+                    <td>$[% transaction.billing_service.billed_amount %]</td>
+                    <td><input type="hidden" name="billed_amount_right_[% transaction.rec_id %]" value="[% transaction.billing_service.billed_amount %]" /></td>
+                </tr>
+            [% END %]
+            </table>
+            <p class="wrong_info">
+            [% INCLUDE util/input_text.html
+                name    = 'billed_amount_wrong'
+                value   = billed_amount_wrong
+                label   = 'Wrong Info'
+                size    = 25
+                maxlength = 10
+            %]
+            </p> 
+        </fieldset>
+
+        <fieldset class="error_data">
+            <legend>Medicare Payment</legend>
+            <table class="error_transactions">
+                <tr>
+                    <th>Line</th>
+                    <th>Service Date</th>
+                    <th>Right</th>
+                </tr>
+                [% FOR transaction IN adjustment.transactions %]
+                <tr><td>
+                    [% transaction.billing_service.line_number %]
+                    [% INCLUDE util/checkbox.html
+                        name    = 'medicare_payment_' _ transaction.rec_id
+                        value   = transaction.medicare_payment
+                    %]
+                    </td>
+                    [% prognote = transaction.billing_service.billing_prognotes.0.prognote %]
+                    <td>[% prognote.start_date.format_date_remove_time %]</td>
+                    <td>$[% transaction.billing_service.get_total_paid_previous( [ Config.medicare_rolodex_id ] ) %]</td>
+                    <td><input type="hidden" name="medicare_payment_right_[% transaction.rec_id %]" value="[% transaction.billing_service.get_total_paid_previous( [ Config.medicare_rolodex_id ] ) %]" /></td>
+                </tr>
+            [% END %]
+            </table>
+            <p class="wrong_info">
+            [% INCLUDE util/input_text.html
+                name    = 'medicare_payment_wrong'
+                value   = medicare_payment_wrong
+                label   = 'Wrong Info'
+                size    = 25
+                maxlength = 10
+            %]
+            </p> 
+        </fieldset>
+
+        <fieldset class="error_data">
+            <legend>Other Insurance Payment/Patient Liability</legend>
+            <table class="error_transactions">
+                <tr>
+                    <th>Line</th>
+                    <th>Service Date</th>
+                    <th>Right</th>
+                </tr>
+                [% FOR transaction IN adjustment.transactions %]
+                <tr><td>
+                    [% transaction.billing_service.line_number %]
+                    [% INCLUDE util/checkbox.html
+                        name    = 'other_payment_' _ transaction.rec_id
+                        value   = transaction.other_payment
+                    %]
+                    </td>
+                    [% prognote = transaction.billing_service.billing_prognotes.0.prognote %]
+                    <td>[% prognote.start_date.format_date_remove_time %]</td>
+                    <td>$[% transaction.billing_service.get_other_insurance_patient_liability( Config.medicare_rolodex_id ) %]</td>
+                    <td><input type="hidden" name="other_payment_right_[% transaction.rec_id %]" value="[% transaction.billing_service.get_other_insurance_patient_liability( Config.medicare_rolodex_id ) %]" /></td>
+                </tr>
+            [% END %]
+            </table>
+            <p class="wrong_info">
+            [% INCLUDE util/input_text.html
+                name    = 'other_payment_wrong'
+                value   = other_payment_wrong
+                label   = 'Wrong Info'
+                size    = 25
+                maxlength = 10
+            %]
+            </p> 
+        </fieldset>
+
+        <fieldset class="error_data">
+            <legend>Co-Insurance</legend>
+            <table class="error_transactions">
+                <tr>
+                    <th>Line</th>
+                    <th>Service Date</th>
+                </tr>
+                [% FOR transaction IN adjustment.transactions %]
+                <tr><td>
+                    [% transaction.billing_service.line_number %]
+                    [% INCLUDE util/checkbox.html
+                        name    = 'coinsurance_' _ transaction.rec_id
+                        value   = transaction.coinsurance
+                    %]
+                    </td>
+                    [% prognote = transaction.billing_service.billing_prognotes.0.prognote %]
+                    <td>[% prognote.start_date.format_date_remove_time %]</td>
+                </tr>
+            [% END %]
+            </table>
+            <p class="wrong_info">
+            [% INCLUDE util/input_text.html
+                name    = 'coinsurance_wrong'
+                value   = coinsurance_wrong
+                label   = 'Wrong Info'
+                size    = 25
+                maxlength = 30
+            %]
+            </p> 
+            <p class="wrong_info">
+            [% INCLUDE util/input_text.html
+                name    = 'coinsurance_right'
+                value   = coinsurance_right
+                label   = 'Right Info'
+                size    = 25
+                maxlength = 30
+            %]
+            </p> 
+        </fieldset>
+
+        <fieldset class="error_data">
+            <legend>Other</legend>
+            <table class="error_transactions">
+                <tr>
+                    <th>Line</th>
+                    <th>Service Date</th>
+                </tr>
+                [% FOR transaction IN adjustment.transactions %]
+                <tr><td>
+                    [% transaction.billing_service.line_number %]
+                    [% INCLUDE util/checkbox.html
+                        name    = 'other_' _ transaction.rec_id
+                        value   = transaction.other
+                    %]
+                    </td>
+                    [% prognote = transaction.billing_service.billing_prognotes.0.prognote %]
+                    <td>[% prognote.start_date.format_date_remove_time %]</td>
+                </tr>
+            [% END %]
+            </table>
+            <p class="wrong_info">
+            [% INCLUDE util/input_text.html
+                name    = 'other_wrong'
+                value   = other_wrong
+                label   = 'Wrong Info'
+                size    = 25
+                maxlength = 30
+            %]
+            </p>
+            <p class="wrong_info">
+            [% INCLUDE util/input_text.html
+                name    = 'other_right'
+                value   = other_right
+                label   = 'Right Info'
+                size    = 25
+                maxlength = 30
+            %]
+            </p> 
+        </fieldset>
+        
+        <input type="hidden" name="op" value="tools_4_generate_pdf" />
+        <p class="save"><input type="submit" value="Create PDF" /></p>
+        [% INCLUDE util/form_end.html %]

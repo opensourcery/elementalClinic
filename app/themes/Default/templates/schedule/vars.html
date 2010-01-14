@@ -1,0 +1,6 @@
+            <input type="hidden" name="location_id" value="[% appointment.schedule_availability.location_id || location_id %]" />
+            <input type="hidden" name="rolodex_id" value="[% appointment.rolodex.id || rolodex.id %]" />
+            <input type="hidden" name="schedule_year"  id="[% prefix %]appointment_schedule_year"  value="[% month.year %]" />
+            <input type="hidden" name="schedule_month" id="[% prefix %]appointment_schedule_month" value="[% month.month %]" />
+            <input type="hidden" name="schedule_date"  id="[% prefix %]appointment_schedule_date"  value="[% schedule_date %]" />
+            <input type="hidden" name="appointment_date"  id="[% prefix %]appointment_date"  value="[% appointment.schedule_availability.date || date %]" />

@@ -1,0 +1,164 @@
+/* main display screen {{{ */
+div.client_display {
+    padding : 7px;
+    background-color : #ffc;
+    border : 1px solid #fb0;
+    margin : 0;
+    width : 580px;
+    float : left;
+}
+#rolodex_select_form {
+    width : 355px;
+}
+#relationships_pref {
+    font-size : .7em;
+    text-align : right;
+    padding : 3px;
+    background : #fff;
+    border : 1px dotted #fb0;
+    border-width : 0 0 1px 1px;
+    float : right;
+}
+#relationships_pref a {
+    font-weight : normal;
+    text-decoration : underline;
+}
+#relationships_pref span {
+    margin : 0 10px;
+}
+hr.subtle {
+    clear : both !important;
+    border-bottom : 1px dotted #fb0;
+}
+legend {
+    font-size : 14px;
+    font-weight : bold;
+    padding : 0;
+    border-bottom : 1px dotted #60c;
+}
+/* }}} */
+/* relationship list {{{*/
+div.relationships_byrole {
+    border-bottom : 1px solid #666;
+}
+h5 {
+    font-weight : bold;
+    padding : 0;
+    border-bottom : 1px solid #666;
+    margin : 10px 0 0 0;
+}
+table.relationships {
+    font-size : 12px;
+    border-collapse : collapse;
+    border : 1px solid #666;
+    border-bottom-width : 0;
+    width : 100%;
+}
+table.relationships tr {
+    background : #fff;
+}
+table.relationships tr.aux {
+    border-bottom : 1px solid #666;
+}
+table.relationships th a {
+    font-weight : bold;
+}
+table.relationships th {
+    font-weight : bold;
+    padding : 5px 0 0 5px;
+    border : none;
+    margin : 0;
+    width : 40%;
+}
+table.relationships td {
+    color : #666;
+    font-size : 11px;
+    padding : 0 0 5px 5px;
+}
+table.relationships tr.main td {
+    padding-top : 5px;
+}
+table.relationships:hover td {
+    color : #000;
+}
+table.relationships td.actions {
+    width : 80px;
+}
+/*}}}*/
+/* client {{{ */
+.client_display h4,
+.client_box h4 {
+    color : #000;
+    background-color : #fb0;
+}
+.client_box h4 {
+    margin-bottom : 10px;
+}
+fieldset.left_display,
+fieldset.right_display {
+    border : 2px solid #fb0;
+    border-width : 0 0 2px 0;
+}
+fieldset.left_edit,
+fieldset.right_edit {
+    width : 45%;
+    padding : 10px 10px 0 0;
+}
+fieldset.left_edit {
+    float : left;
+    border : 2px solid #fb0;
+    border-width : 0 2px 0 0;
+}
+fieldset.right_edit {
+    border : 0;
+    margin : 0 0 0 15px;
+}
+.client_display legend,
+.client_box legend {
+    border-color : #fb0;
+}
+/* }}} */
+/* rolodex {{{ */
+.site_box fieldset {
+    border : 2px solid #60c;
+    border-width : 0 0 2px 0;
+    padding : 10px 10px 0 0;
+}
+.site_box legend {
+    border-color : #60c;
+}
+.site_box fieldset.left {
+    width : 680px;
+    float : left;
+    border : 2px solid #60c;
+    border-width : 0 2px 0 0;
+}
+.site_box fieldset.right {
+    width : 220px;
+    border : 0;
+    margin : 0 0 0 15px;
+}
+fieldset.left div.lefthalf,
+fieldset.left div.righthalf {
+    width : 340px;
+    float : left;
+}
+/* }}} */
+#rolodex_entries table th div,
+table.relationships th div {
+    height : 18px;
+    overflow : hidden;
+}
+div.current_inactive_relationships {
+    padding : 5px;
+    background : #fff;
+    border-bottom : 1px dotted #fb0;
+    margin : -10px -7px 10px -7px;
+}
+div.current_inactive_relationships li,
+div.current_inactive_relationships p {
+    font-size : .8em;
+}
+div.current_inactive_relationships ul {
+    margin : 0;
+}

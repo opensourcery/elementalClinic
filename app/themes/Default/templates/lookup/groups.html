@@ -1,0 +1,96 @@
+<div id="groups">
+    <div class="header[% "_small" IF op_type == 'associate' %]">
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" id="groupform" name="groupform">
+        <h5>
+            <label for="group_id"><strong>Group:</strong></label>
+            <select name="group_id" id="group_id" size="1" onchange="document.forms['groupform'].submit()">
+                [% "<option>No groups ...</option>" UNLESS lookup_groups %]
+                [% "<option>Choose a group ...</option>" IF( lookup_groups && ! current_group ) %]
+                [% FOR lg IN lookup_groups %]
+                    <option value="[% lg.rec_id %]"[% IF lg.rec_id == current_group.rec_id; ' selected="selected"'; END %]>[% lg.name %]</option>
+                [% END %]
+            </select>
+        </h5>
+        <input type="hidden" name="table_name" id="table_name" value="[% current_table.name %]" />
+        [% IF op_type == 'associate' %]
+        <input type="hidden" name="op" id="associate_home_op" value="associate" />
+        [% END %]
+        [% IF( op_type == 'main' ) && ( op != "group_new" ) %]
+        <input type="submit" name="op" value="New group" />
+        [% END %]
+        [% IF op == "group_new" %]
+        <p>You are creating a new group.  Check the <strong>members</strong> you want, and change the <strong>group name</strong> below.</p>
+        [% END %]
+    </form>
+    </div>
+
+    [% IF current_group %]
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" id="groupeditform" name="groupeditform">
+        <table cellspacing="0">
+            <tr class="head">
+                <th class="lookup_group">In Group?</th>
+            </tr>
+        [% rowclass = 0 %]
+        [% FOR row IN current_user.valid_data.list( current_table.name, 'all' ) %] [% rowclass = rowclass * -1 + 1 %]
+            <tr class="[% IF rowclass; "even"; ELSE; "odd"; END %]">
+                <td class="lookup_group">
+                [% IF op_type == 'main' %]
+                    [% INCLUDE util/checkbox.html
+                        name    = "item_$row.rec_id"
+                        value   = current_group.members_lookup.${ row.rec_id } || ${ "item_$row.rec_id" }
+                        # value   = current_group.is_member( row.rec_id ) || current_group.${ "item_$row.rec_id" }
+                        # the line above turns the checkbox on if, e.g., current_group.item_1001 comes in
+                        # as a variable; this is in case the user gets an error, so their work is not lost
+                    %]
+                [% ELSIF op_type == 'associate' %]
+                    [% INCLUDE util/checkbox.html
+                        name    = "item_$row.rec_id"
+                        # value   = current_group.members_lookup.${ row.rec_id } || ${ "item_$row.rec_id" }
+                        # the line above turns the checkbox on if, e.g., current_group.item_1001 comes in
+                        # as a variable; this is in case the user gets an error, so their work is not lost
+                    %]
+                [% END %]
+                </td>
+            </tr>
+            [%- # oh, this is an awful hack, but it works
+                IF( current_table.name == 'valid_data_charge_code' ) %]
+                <tr class="[% IF rowclass; "even"; ELSE; "odd"; END %]">
+                    <td class="description_only lookup_group"></td>
+                </tr>
+            [% END %]
+        [% END %]
+        </table>
+
+        [% IF( op_type == 'main' ) && current_group.name %]
+            [% IF current_group.system %]
+            <p><strong>[% current_group.name %]</strong> is a system group; its name cannot be changed.</p>
+            <input type="hidden" name="name" value="[% current_group.name %]" />
+            [% ELSE %]
+            <p>
+                <label for="name">Name: </label>
+                <input type="text" name="name" id="group_name" size="30" value="[% current_group.name %]" />
+            </p>
+            [% END %]
+        [% END %]
+
+        <input type="hidden" name="group_id" id="rec_id" value="[% current_group.rec_id %]" />
+        <input type="hidden" name="table_name" id="table_name" value="[% current_table.name %]" />
+        <input type="hidden" name="table_id" id="table_id" value="[% current_table.rec_id %]" />
+        [% IF current_group;
+            IF( op_type == 'main' ) %]
+            <p class="save"><input type="submit" name="op" id="group_save" value="Save group" /></p>
+            [% ELSE %]
+            <p class="save"><input type="submit" name="op" id="associate_save" value="Save associations" /></p>
+            [% END %]
+        [% END %]
+    </form>
+    [%  # this was commented:
+        #  "since it returns us with no current group; pry not necessary anyway"
+        # now i think it is necessary, and having no current group is not a big deal
+    IF op == "group_new";
+        INCLUDE util/form_cancel.html extras = {
+            table_name => current_table.name,
+        };
+    END %]
+    [% END %]
+</div>

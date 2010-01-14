@@ -1,0 +1,14 @@
+[%- insurance = client.mental_health_provider.rolodex %]
+<div class="basic_client">
+    <h3>[% client.lname %], [% client.fname %] [% client.mname %] <span class="aux">(DOB: [% client.dob %])</span></h3>
+    <p>
+        Program: <strong>[% client.placement.program.name %]</strong>
+        [% "| Level of care: <strong>$client.placement.level_of_care.name</strong>"
+            IF client.placement.level_of_care %]
+        [%- "| Primary Insurance: <strong>$insurance.name" IF insurance.name -%]
+        [%- ", $insurance.phone_f" IF insurance.phone -%]
+        [%- ", $insurance.insurance_id" IF insurance.insurance_id -%]
+        [%- "</strong>" IF insurance.name -%]
+        | CPMS #: <strong>[% client.state_specific_id || "None" %]</strong>
+    </p>
+</div>

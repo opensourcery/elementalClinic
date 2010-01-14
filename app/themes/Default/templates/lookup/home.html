@@ -1,0 +1,59 @@
+[% op_type = 'main' %]
+<div id="content">
+[% INCLUDE lookup/tabs.html
+    tab = 'main'
+%]
+<div id="admin_valid_data" class="system_box">
+[% INCLUDE util/errors.html %]
+    [% INCLUDE lookup/table_select.html %]
+
+    <div id="table">
+        <div class="header">
+        [% INCLUDE lookup/edit_item.html IF current_table %]
+        <hr class="subtle" />
+        </div>
+        [% IF current_table;
+            INCLUDE lookup/table_rows.html
+                row_edit = 1;
+        END %]
+    </div>
+
+    [% IF current_table %]
+    <div id="aux">
+        <ul class="toggle_menu">
+            [% INCLUDE link
+                tab_op      = 'show_groups'
+                tab_name    = 'groups'
+                tab_label   = 'Groups'
+            %]
+            [% IF current_table.name == 'valid_data_charge_code';
+               INCLUDE link
+                tab_op      = 'show_insurers'
+                tab_name    = 'insurers'
+                tab_label   = 'Insurers'
+            ; END %]
+        </ul>
+        [% IF current_table %]
+            <div class="toggle_content">
+                [% IF(( aux_tab == 'groups' ) || ( current_table.name != 'valid_data_charge_code' ));
+                    INCLUDE lookup/groups.html;
+                ELSIF( aux_tab == 'insurers' );
+                    INCLUDE lookup/insurers.html;
+                END
+                %]
+                <hr class="div" />
+            </div>
+        [% END %]
+        <hr class="div" />
+        </div>
+        [% END %]
+
+    <hr class="div" />
+</div>
+</div>
+
+[% BLOCK link %]
+    <li [% 'class="active"' IF aux_tab == tab_name %]>
+        <a href="[% script %]?op=[% tab_op %];table_name=[% current_table.name %];group_id=[% current_group.rec_id %]">[% tab_label %]</a>
+    </li>
+[% END %]

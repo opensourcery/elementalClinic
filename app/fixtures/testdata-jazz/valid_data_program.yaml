@@ -1,0 +1,51 @@
+---
+1001:
+  active: 1
+  addr: '123 4th Street, 101A'
+  city: Portland
+  dept_id: 1001
+  description: ~
+  is_referral: 0
+  name: Substance abuse
+  number: 200
+  rec_id: 1001
+  state: OR
+  zip: 97215
+1002:
+  active: 1
+  addr: 456 4th Street
+  city: Portland
+  dept_id: 1001
+  description: ~
+  is_referral: 0
+  name: Adolescent
+  number: 300
+  rec_id: 1002
+  state: OR
+  zip: 97215
+1003:
+  active: 1
+  addr: '123 4th Street, 201'
+  city: Portland
+  dept_id: 1001
+  description: ~
+  is_referral: 0
+  name: Family
+  number: 310
+  rec_id: 1003
+  state: OR
+  zip: 97215
+1004:
+  active: 1
+  addr: 555 SE Main St.
+  city: Portland
+  dept_id: 1001
+  description: ~
+  is_referral: 0
+  name: Inpatient
+  number: 150
+  rec_id: 1004
+  state: OR
+  zip: 97206
+
+

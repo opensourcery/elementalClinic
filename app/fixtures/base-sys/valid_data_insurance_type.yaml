@@ -1,0 +1,106 @@
+
+1: 
+  active: 1
+  code: AP
+  dept_id: 1001
+  description: ~
+  name: Auto Insurance Policy
+  rec_id: 1
+10: 
+  active: 1
+  code: MC
+  dept_id: 1001
+  description: ~
+  name: Medicaid
+  rec_id: 10
+11: 
+  active: 1
+  code: MI
+  dept_id: 1001
+  description: ~
+  name: Medigap Part B
+  rec_id: 11
+12: 
+  active: 1
+  code: MP
+  dept_id: 1001
+  description: ~
+  name: Medicare Primary
+  rec_id: 12
+13: 
+  active: 1
+  code: OT
+  dept_id: 1001
+  description: ~
+  name: Other
+  rec_id: 13
+14: 
+  active: 1
+  code: PP
+  dept_id: 1001
+  description: ~
+  name: Personal Payment (Cash - No Insurance)
+  rec_id: 14
+15: 
+  active: 1
+  code: SP
+  dept_id: 1001
+  description: ~
+  name: Supplemental Policy
+  rec_id: 15
+2: 
+  active: 1
+  code: C1
+  dept_id: 1001
+  description: ~
+  name: Commercial
+  rec_id: 2
+3: 
+  active: 1
+  code: CP
+  dept_id: 1001
+  description: ~
+  name: Medicare Conditionally Primary
+  rec_id: 3
+4: 
+  active: 1
+  code: GP
+  dept_id: 1001
+  description: ~
+  name: Group Policy
+  rec_id: 4
+5: 
+  active: 1
+  code: HM
+  dept_id: 1001
+  description: ~
+  name: Health Maintenance Organization (HMO)
+  rec_id: 5
+6: 
+  active: 1
+  code: IP
+  dept_id: 1001
+  description: ~
+  name: Individual Policy
+  rec_id: 6
+7: 
+  active: 1
+  code: LD
+  dept_id: 1001
+  description: ~
+  name: Long Term Policy
+  rec_id: 7
+8: 
+  active: 1
+  code: LT
+  dept_id: 1001
+  description: ~
+  name: Litigation
+  rec_id: 8
+9: 
+  active: 1
+  code: MB
+  dept_id: 1001
+  description: ~
+  name: Medicare Part B
+  rec_id: 9

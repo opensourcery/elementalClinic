@@ -1,0 +1,29 @@
+<dl class="email_query">
+
+<dt><label>Only show user:</label></dt>
+<dd>
+    [% INCLUDE util/select_new.html
+        name   = 'user'
+        values = data.users
+    %]
+</dd>
+
+<dt><label>Group by:</label></dt>
+<dd>
+    [% INCLUDE util/select_new.html
+        name   = 'group'
+        values = [ 'None', 'Staff' ]
+    %]
+</dd>
+
+    <label>Date:</label>
+</dt>
+<dd>
+    [% INCLUDE util/date_picker.html
+        label = 'Date'
+        name  = 'date'
+        value = 'today'
+    %]
+</dd>
+
+</dl>

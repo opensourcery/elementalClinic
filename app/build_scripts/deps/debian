@@ -1,0 +1,35 @@
+#!/bin/sh -e
+
+tmp=$(mktemp)
+cat >> $tmp <<END
+^Apache::
+^perl$
+^Config$
+^uri$
+^Algorithm::C3$
+^Test::WWW::Selenium$
+^Date::Manip$
+Selenium
+END
+corelist -v $(perl -MConfig -e 'print $Config{version}') | cut -d' ' -f1 | \
+    sed 's/^/^/; s/$/$/;' >> $tmp
+
+trap "rm -f $tmp" INT EXIT
+
+export MODULEBUILDRC=$(mktemp);
+cat >> $MODULEBUILDRC <<END
+Build_PL --installdirs site
+END
+
+export PERL_MM_OPT='INSTALLDIRS=site'
+
+cpan2dist \
+  --noverbose \
+  --nomakefile \
+  --default-ignorelist --ignorelist $tmp \
+  --format CPANPLUS::Dist::Deb \
+  --dist-opts distdir=$PWD/debs \
+  --defaults --skiptest \
+  "$@"
+
+rm -f $tmp

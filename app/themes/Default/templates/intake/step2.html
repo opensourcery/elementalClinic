@@ -1,0 +1,108 @@
+[% # this is evil, but it's a hard problem
+    client_address_primary = 0;
+    FOR address IN client.addresses;
+        IF address.primary_entry;
+            client_address_primary = loop.index;
+        END;
+    END;
+
+    client_phone_primary = 0;
+    FOR phone IN client.phones;
+        IF phone.primary_entry;
+            client_phone_primary = loop.index;
+        END;
+    END;
+
+    client_emergency_contact_primary = 0;
+    FOR emergency_contact IN client.emergency_contacts;
+        IF emergency_contact.primary_entry;
+            client_emergency_contact_primary = loop.index;
+        END;
+    END
+%]
+<div id="content">
+
+[% INCLUDE util/errors.html %]
+[% INCLUDE intake/_header.html %]
+
+<form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+    [% INCLUDE util/input_text.html
+        name    = 'email'
+        label   = 'Email address'
+        value   = client.email || email
+        size    = 40
+        wraptag = 'p'
+        class   = 'autofocus'
+    %]
+
+    <div id="client_addresses" class="client_column contact first">
+        <h4>Address</h4>
+        <dl class="inline">
+            [% INCLUDE util/checkbox.html
+                name    = 'no_address'
+                value   = no_address
+                label   = 'No address provided.'
+                dl      = 1
+                reverse = 1
+            %]
+        </dl>
+
+        [% client_addresses_count = client_addresses_count - 1;
+        FOR i IN [0..client_addresses_count] %]
+            [% INCLUDE intake/_address.html
+                locally_required = 1
+                show_add_new     = 1
+                ordinal = i
+            %]
+        [% END %]
+    </div>
+
+    <div id="client_phones" class="client_column contact">
+        <h4>Phone</h4>
+        <dl class="inline">
+            [% INCLUDE util/checkbox.html
+                name    = 'no_phone'
+                value   = no_phone
+                label   = 'No phone provided.'
+                dl      = 1
+                reverse = 1
+            %]
+        </dl>
+        [% client_phones_count = client_phones_count - 1;
+        FOR i IN [0..client_phones_count] %]
+            [% INCLUDE intake/_phone.html
+                ordinal = i
+                class   = 'first'
+                show_add_new     = 1
+            %]
+        [% END %]
+    </div>
+
+    <div id="client_emergency_contacts" class="client_column contact last">
+        <h4>Emergency Contact</h4>
+        <dl class="inline short_label">
+            [% INCLUDE util/checkbox.html
+                name    = 'no_emergency'
+                value   = no_emergency
+                label   = 'No emergency contact provided.'
+                dl      = 1
+                reverse = 1
+            %]
+        </dl>
+        [% client_emergency_count = client_emergency_count - 1;
+        FOR i IN [0..client_emergency_count] %]
+            [% INCLUDE intake/_emergency_contact.html
+                locally_required = 1
+                ordinal = i
+                show_add_new     = 1
+            %]
+        [% END %]
+    </div>
+
+    <hr />
+
+    <p class="save"><input type="submit" name="submit" value="Next step" /> or <a href="/">Postpone this intake</a></p>
+    <input type="hidden" name="client_id" id="client_id" value="[% client.id %]" />
+    <input type="hidden" name="op" id="op" value="step2_save" />
+</form>
+

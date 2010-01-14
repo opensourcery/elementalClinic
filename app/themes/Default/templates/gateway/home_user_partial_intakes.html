@@ -1,0 +1,11 @@
+[% IF current_user.clients_intake_incomplete %]
+<div id="partial_intakes">
+    <h3>Partial Intakes</h3>
+
+    <ul>
+        [% FOR client IN current_user.clients_intake_incomplete %]
+        <li><a href="/intake.cgi?client_id=[% client.id %];op=step[% client.intake_step + 1 %]">[% client.eman %]</a></li>
+        [% END %]
+    </ul>
+</div>
+[% END %]

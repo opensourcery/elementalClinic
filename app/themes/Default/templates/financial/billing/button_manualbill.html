@@ -1,0 +1,6 @@
+            <td class="button">
+                <a title="Mark note to bill manually" class="toggle_manual"
+                    onclick="return toggle_prognote_manual([% note.id %])"
+                    href="[% script %]?op=prognote_toggle_manual;prognote_id=[% note.id %];section=billing;step=[% Current.step %][% ";rolodex_id=$Current.insurer.id" IF Current.insurer %]">
+                <span>M</span>
+            </a></td>

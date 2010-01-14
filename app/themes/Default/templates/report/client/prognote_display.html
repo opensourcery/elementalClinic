@@ -1,0 +1,30 @@
+[% INCLUDE report/client.html %]
+[% UNLESS data.data.0 %]
+    This client has no progress notes.
+[% ELSE %]
+    <p>Service coordinator: [% client.personnel.name %]</p>
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Billing Code</th>
+            <th>Time</th>
+            <th>Location</th>
+            <th>Plan</th>
+            <th>Rating</th>
+        </tr>
+        [% FOREACH entry = data.data %]
+        <tr [% rowclass %]>
+            <td>[% entry.date %]</td>
+            <td>[% entry.code %]</td>
+            <td>[% entry.duration %]</td>
+            <td>[% entry.location %]</td>
+            <td>[% entry.plan %]</td>
+            <td>[% entry.rating %]</td>
+        </tr>
+        <tr [% rowclass %]>
+            <td></td>
+            <td colspan="5">[% entry.note %]</td>
+        </tr>
+        [% END %]
+    </table>
+[% END %]

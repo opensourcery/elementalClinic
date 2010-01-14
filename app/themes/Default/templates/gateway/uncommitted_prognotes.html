@@ -1,0 +1,42 @@
+[%-
+    # very similar to gateway/bounced_prognotes.html
+    # would be nice, but non-trivial, to merge these two
+%]
+    [% user_reporters = current_user.reporters_with_uncommitted_prognotes %]
+    [% user_uncommitted_prognotes = current_user.uncommitted_prognotes %]
+    [% RETURN UNLESS( user_reporters || user_uncommitted_prognotes ) %]
+    <div class="prognote_block uncommitted">
+        [% IF user_uncommitted_prognotes %]
+            <h4>Your Uncommitted Notes</h4>
+            <dl>
+                [% INCLUDE staff_notes
+                    uncommitted_prognotes   = user_uncommitted_prognotes
+                    note_action             = 'edit'
+                %]
+            </dl>
+        [% END %]
+        [% IF user_reporters %]
+            <h4>Uncommitted Notes</h4>
+            <dl>
+                [% FOR staff IN user_reporters;
+                    INCLUDE staff_notes
+                    uncommitted_prognotes   = staff.uncommitted_prognotes
+                    note_action             = 'view'
+                ;END %]
+            </dl>
+        [% END %]
+    </div>
+
+[% BLOCK staff_notes %]
+            <dt>[% staff.eman %]</dt>
+            <dd>
+                <ul>
+                [% FOR note IN uncommitted_prognotes %]
+                    <li><a href="/progress_notes.cgi?op=[% note_action %];client_id=[% note.client_id %];rec_id=[% note.id %]">
+                        [% note.id %] on [% note.note_date %]
+                    </a></li>
+                [% END %]
+                </ul>
+            </dd>
+[% END %]
+

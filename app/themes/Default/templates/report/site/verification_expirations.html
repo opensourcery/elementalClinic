@@ -1,0 +1,24 @@
+<p>This report lists all patients whose verification letters have expired or will expire within the number of days given below:</p>
+<hr/>
+ [% INCLUDE util/input_text.html
+            label='Expires in (days)'
+            name='expires_in_days'
+            value=0
+            size='4'
+            wraptag='p' %]
+
+<ul>
+    <li>Leaving this set to 0 will show you everyone who currently has an expired verification letter.</li>
+    <li>Setting it to 60 would show you everyone whose verification has expired or will expire in 60 days.</li>
+</ul>
+
+<hr/>
+<p>If you wish to limit the display of patients with older, expired verification letters, you may set the following to a date to ignore any patient whose verification expired prior to this date:</p>
+
+ [% INCLUDE util/date_picker.html
+            label='Ignore before (date)'
+            name='start_date'
+            wraptag='p'
+ %]
+
+<p>So to see ONLY patients whose verification letters will expire in the next 60 days, but not anyone whose verification letter has already expired, set 'Expires' to 60 and set 'Ignore before' to today's date.</p>

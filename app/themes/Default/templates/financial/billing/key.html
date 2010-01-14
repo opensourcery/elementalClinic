@@ -1,0 +1,38 @@
+[%- RETURN UNLESS( bounce || billable || bill_manually || transaction_in_error ) %]
+        <div id="key">
+            <h5>Key</h5>
+            <table class="results_list">
+                [% IF bounce %]
+                <tr>
+                    <td class="button">
+                        <a href="#">^</a>
+                    </td>
+                    <td>Bounce note to clinician</td>
+                </tr>
+                [% END %]
+                [% IF billable %]
+                <tr>
+                    <td class="button">
+                        <a href="#" class="billable">$</a>
+                    </td>
+                    <td>Toggle note's "Unbillable" status.</td>
+                </tr>
+                [% END %]
+                [% IF bill_manually %]
+                <tr>
+                    <td class="button">
+                        <a href="#" class="billable">M</a>
+                    </td>
+                    <td>Toggle note's "Bill Manually" status.</td>
+                </tr>
+                [% END %]
+                [% IF transaction_in_error %]
+                <tr>
+                    <td class="button">
+                        <a href="#" class="billable">$</a>
+                    </td>
+                    <td>Toggle transaction's "Entered in error" status.</td>
+                </tr>
+                [% END %]
+            </table>
+        </div>

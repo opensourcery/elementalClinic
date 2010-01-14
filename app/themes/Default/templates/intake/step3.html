@@ -1,0 +1,252 @@
+<div id="content">
+
+[% INCLUDE util/errors.html %]
+[% INCLUDE intake/_header.html %]
+
+<form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+    <div class="client_column">
+        <h4>Demographics</h4> 
+        <dl class="inline wide_label">
+            <dt>Education:</dt>
+            [% INCLUDE util/select_new.html
+                name   = "client[0][edu_level]"
+                values  = [ 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16]
+                default = objects.client.0.edu_level || client.edu_level
+                wraptag = 'dd'
+            %]
+            <dt>Marital:</dt>
+            [% INCLUDE util/choose_valid_data.html
+                name   = "client[0][marital_status]"
+                table  = '_marital_status'
+                type    = 'select'
+                default = objects.client.0.marital_status || client.marital_status
+                wraptag = 'dd'
+            %]
+            <dt>Ethnicity:</dt>
+            [% INCLUDE util/choose_valid_data.html
+                name   = "client[0][race]"
+                table  = '_race'
+                type    = 'select'
+                default = objects.client.0.race || client.race
+                wraptag = 'dd'
+            %]
+            <dt>Religion:</dt>
+            [% INCLUDE util/choose_valid_data.html
+                name   = "client[0][religion]"
+                table  = '_religion'
+                type    = 'select'
+                default = objects.client.0.religion || client.religion
+                wraptag = 'dd'
+            %]
+
+            <dt>Language:</dt>
+            [% INCLUDE util/choose_valid_data.html
+                name   = "client[0][language_spoken]"
+                table  = '_language'
+                type    = 'select'
+                default = objects.client.0.language_spoken || client.language_spoken
+                wraptag = 'dd'
+            %]
+
+            <dt>Nationality:</dt>
+            [% INCLUDE util/choose_valid_data.html
+                name    = 'client[0][nationality_id]'
+                table   = '_nationality'
+                type    = 'select'
+                default = objects.client.0.nationality_id || client.nationality_id
+                wraptag = 'dd'
+                use_id  = 1
+            %]
+
+            <dt>Living Arrangement:</dt>
+            <dd>
+            [% INCLUDE util/choose_valid_data.html
+                name = 'client[0][living_arrangement]'
+                table  = '_living_arrangement'
+                type    = 'select'
+                default = objects.client.0.living_arrangement || client.living_arrangement
+                use_id  = 1
+            %]
+            </dd>
+
+            <dt>Consent to Treat:</dt>
+            <dd>
+            [% INCLUDE util/select_new.html
+                name = 'client[0][consent_to_treat]'
+                values  = [
+                    { id  => 0, label => 'No', },
+                    { id  => 1, label => 'Yes', },
+                    ]
+                default = objects.client.0.consent_to_treat || client.consent_to_treat || 0
+                keyname = 'id'
+                valname = 'label'
+            %]
+            </dd>
+
+            [% INCLUDE util/input_text.html
+                name  = 'client[0][state_specific_id]'
+                label = 'CPMS'
+                dl    = 1
+                value = objects.client.0.state_specific_id || client.state_specific_id size='25'
+            %]
+
+            [% INCLUDE util/input_text.html
+                name  = 'client[0][aka]'
+                label = 'Alias'
+                dl    = 1
+                value = objects.client.0.aka || client.aka
+            %]
+
+            [% INCLUDE util/input_text.html
+                name  = 'client[0][chart_id]'
+                label = 'Chart #'
+                dl    = 1
+                value = objects.client.0.chart_id || client.chart_id
+            %]
+
+            <dt>Sexual Identity:</dt>
+            [% INCLUDE util/choose_valid_data.html
+                name = 'client[0][sexual_identity]'
+                table  = '_sexual_identity'
+                type    = 'select'
+                default = objects.client.0.sexual_identity || client.sexual_identity || 'Unknown'
+                wraptag = 'dd'
+            %]
+
+        </dl>
+
+        <hr />
+        <h4>History of abusing</h4>
+        <dl class="inline history_abusing">
+            <dt>Drugs:</dt>
+            [% INCLUDE util/select_new.html
+                name = 'client[0][substance_abuse]'
+                values  = [ 'Yes', 'No', 'Unknown' ]
+                default = objects.client.0.substance_abuse || client.substance_abuse || 'Unknown'
+                wraptag = 'dd'
+            %]
+
+            <dt>Alcohol:</dt>
+            [% INCLUDE util/select_new.html
+                name = 'client[0][alcohol_abuse]'
+                values  = [ 'Yes', 'No', 'Unknown' ]
+                default = objects.client.0.alcohol_abuse || client.alcohol_abuse || 'Unknown'
+                wraptag = 'dd'
+            %]
+
+            <dt>Gambling:</dt>
+            [% INCLUDE util/select_new.html
+                name = 'client[0][gambling_abuse]'
+                values  = [ 'Yes', 'No', 'Unknown' ]
+                default = objects.client.0.gambling_abuse || client.gambling_abuse || 'Unknown'
+                wraptag = 'dd'
+            %]
+        </dl>
+
+    </div>
+
+    <div class="client_column">
+        <h4>Household</h4> 
+        <dl class="inline household">
+            [% INCLUDE util/input_text.html
+                name    = 'client[0][household_annual_income]'
+                label   = 'Household annual income'
+                dl      = 1
+                value   = objects.client.0.household_annual_income || client.household_annual_income
+                size    = 10
+            %]
+            [% INCLUDE util/input_text.html
+                name    = 'client[0][household_population]'
+                label   = 'Number in household'
+                dl      = 1
+                value   = objects.client.0.household_population || client.household_population
+                size    = 3
+            %]
+            [% INCLUDE util/input_text.html
+                name    = 'client[0][household_population_under18]'
+                label   = 'Number of children'
+                dl      = 1
+                value   = objects.client.0.household_population_under18 || client.household_population_under18
+                size    = 3
+            %]
+            [% INCLUDE util/input_text.html
+                name    = 'client[0][dependents_count]'
+                label   = 'Number of dependents'
+                dl      = 1
+                value   = objects.client.0.dependents_count || client.dependents_count
+                size    = 3
+            %]
+        </dl>
+
+
+        <hr />
+        <h4>Employer</h4>
+
+        <dl class="inline">
+            [% INCLUDE util/checkbox.html
+                name    = 'no_employment'
+                value   = no_employment
+                label   = 'Client has no employer'
+                dl      = 1
+                reverse = 1
+            %]
+        </dl>
+
+        <dl class="inline section client_employment">
+            [% INCLUDE util/input_text.html
+                name    = 'name'
+                label   = 'Employer Name'
+                value   = name || client.relationship_primary('employment').rolodex.name
+                size    = 25
+                dl      = 1
+                required = 1
+            %]
+            [% INCLUDE util/input_text.html
+                name    = 'client_employer[0][job_title]'
+                label   = 'Occupation'
+                value   = objects.client_employer.0.job_title || client.relationship_primary('employment').job_title
+                size    = 25
+                dl      = 1
+            %]
+            [% INCLUDE util/input_text.html
+                name    = 'client_employer[0][supervisor]'
+                label   = 'Supervisor'
+                value   = objects.client_employer.0.supervisor || client.relationship_primary('employment').supervisor
+                size    = 25
+                dl      = 1
+            %]
+            [% INCLUDE util/composite/phone.html
+                dl = 1
+                ord  = 0
+                name = 'client_employer_phone'
+                size = 20
+                reverse = 1
+                no_type = 1
+                primary = 1
+                default = client.relationship_primary('employment').rolodex.phones.0
+                required = 1
+            %]
+        </dl>
+
+        <dl class="inline section client_employment">
+            [% INCLUDE util/composite/address.html
+                name = 'client_employer_address'
+                ord  = 0
+                default = client.relationship_primary('employment').rolodex.addresses.0
+                dl = 1
+                liftzip = 1
+                primary = 1
+            %]
+        </dl>
+    </div>
+
+    <hr />
+
+    <p class="save"><input type="submit" name="submit" value="Next step" /> or <a href="/">Postpone this intake</a></p>
+    <input type="hidden" name="client_employer_phone[0][rec_id]" value="[% client.relationship_primary('employment').rolodex.phones.0.id %]" />
+    <input type="hidden" name="client_id" id="client_id" value="[% client.id %]" />
+    <input type="hidden" name="client_employer_phone[0][active]" id="client_employer_phone[0][active]" value="on" />
+    <input type="hidden" name="op" id="op" value="step3_save" />
+</form>
+
+</div>

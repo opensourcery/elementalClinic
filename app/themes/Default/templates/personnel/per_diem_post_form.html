@@ -1,0 +1,39 @@
+[% IF confirm %]
+<h4><font color="blue">Your transaction was committed.</font></h4>
+[% END %]
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+
+<table border="0">
+    <tr>
+        <td><b>Authorization Type: </b></td>
+        <td><input type="radio" name="request" value="Scheduled Per Diem" checked="checked" />Scheduled Per Diem <input type="radio" name="request" value="Emergency On-Call" />Emergency On-Call</td>
+    </tr>
+    <tr>
+        <td>Number of Hours Needed: </td>
+        <td><input type="text" name="hours"  size="5" maxlength="10" /></td>
+    </tr>
+    <tr>
+        <td>Date(s): </td>
+        <td><input type="text" name="dates"  size="32" maxlength="30" /></td>
+    </tr>
+    <tr>
+        <td>Pay Period Ending: </td>
+        <td><input type="text" name="period" value="[% today %]" size="12" maxlength="10" /></td>
+    </tr>
+    <tr>
+        <td>Employee Job Title: </td>
+        <td><input type="text" name="position"  size="32" maxlength="30" /></td>
+    </tr>
+    <tr>
+        <td>Additional Comments: </td>
+        <td><textarea name="comment" rows="4" cols="50" wrap="1"></textarea></td>
+    </tr>
+</table>
+
+<p />
+
+<input type="submit" name="go" value="Submit" />
+<div>
+<input type="hidden" name=".cgifields" value="request" />
+</div>
+</form>

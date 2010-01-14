@@ -1,0 +1,75 @@
+--- #YAML:1.0
+loop_name:
+    ISA: interchange_control_header
+    TA1: interchange_ack
+    GS: functional_group_header
+    AK1: functional_group_response_header
+    AK9: functional_group_response_trailer
+    GE: functional_group_trailer
+    IEA: interchange_control_trailer
+
+ISA:
+    ISA:
+        0: interchange_control_header
+        1:
+        2:
+        3:
+        4:
+        5:
+        6: sender_interchange_id
+        7:
+        8: receiver_interchange_id
+        9: interchange_date
+        10: interchange_time
+        11:
+        12:
+        13: interchange_control_number
+        14: interchange_ack_requested
+        15: mode
+        16: composite_delimiter
+TA1:
+    TA1:
+        0: interchange_ack
+        1: orig_interchange_control_number
+        2: orig_interchange_date
+        3: orig_interchange_time
+        4: interchange_ack_code
+        5: interchange_note_code
+GS:
+    GS:
+        0: functional_group_header
+        1: functional_identifier_code 
+        2: sender_code
+        3: receiver_code
+        4: functional_group_date
+        5: functional_group_time
+        6: group_control_number
+        7: 
+        8: x12_version
+AK1:
+    AK1:
+        0: functional_group_response_header
+        1: identifier_code
+        2: group_control_number
+AK9:
+    AK9:
+        0: functional_group_response_trailer
+        1: ack_code
+        2: number_transaction_sets_included
+        3: number_transaction_sets_received
+        4: number_transaction_sets_accepted
+        5: syntax_error_code_1
+        6: syntax_error_code_2
+        7: syntax_error_code_3
+        8: syntax_error_code_4
+        9: syntax_error_code_5
+GE:
+    GE:
+        0: functional_group_trailer
+        1: transaction_set_count
+        2: group_control_number
+IEA:
+    IEA:
+        0: interchange_control_trailer
+        1: functional_group_count
+        2: interchange_control_number

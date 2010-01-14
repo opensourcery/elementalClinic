@@ -1,0 +1,101 @@
+[% INCLUDE global/client_head.html
+    navsec = 'home'
+    navpage = 'placement'
+%]
+[% MACRO rowclass( reset, noclass ) BLOCK;
+    IF ( reset == 'reset' ); global.ROWCLASS = 'odd'; END;
+    GET ( noclass == 'noclass' ) 
+        ? global.ROWCLASS
+        : 'class="'_ global.ROWCLASS _'"';
+    global.ROWCLASS = ( global.ROWCLASS == 'odd' ) ? 'even' : 'odd';
+    END
+%]
+
+<div id="center" class="client_box">
+    <h3>Treatment Programs</h3>
+
+    <ul>
+        <li>A treatment program is a series of events, all connected within the same <strong>program</strong>.</li>
+        <li>You may admit a client to a new program at any time, or discharge them from an active program.</li>
+    </ul>
+
+    <p id="show_new_program"><a href="TODO" class="local">Admit client to a new program &#187;</a></p>
+    [% INCLUDE placement/new_program.html %]
+
+    <ul id="expand_collapse">
+        <li><a href="TODO" id="expand_all"><em>+</em> Expand all</a></li>
+        <li><a href="TODO" id="collapse_all"><em>&#8211;</em> Collapse all</a></li>
+    </ul>
+
+    <div id="episode_graph">
+        <table id="year_labels">
+        <tr>
+        [% FOR year IN episode_graph_years %]
+            <td style="width:[% year.percent_of_graph %]%"><a name="[% year.year %]">[% year.year %]</a></td>
+        [% END %]
+        </tr>
+        </table>
+
+        <ul id="episode_selector">
+            [% FOR episode IN client_placement_episodes.reverse %]
+            <li id="episode_[% episode.id %]" class="[% ' active' IF episode.active %][% ' primary' IF episode.primary %]">
+                <p class="program_name">
+                    <a href="TODO"
+                        style="margin-left:[% episode.days_after_first_intake / days_since_first_intake * 100 %]%;width:[% episode.length_in_days / days_since_first_intake * 100 %]%;">
+                        [% episode.program %]
+                    </a>
+                </p>
+                [% INCLUDE episode %]
+            </li>
+            [% END %]
+        </ul>
+    </div>
+</div>
+
+[% BLOCK episode %]
+<div class="episode_details" id="episode_details_[% episode.id %]">
+    <table class="events">
+        <tr [% rowclass( 'reset' ) %]>
+            <td class="label">on</td>
+            <th>[% episode.intake.event_date.format_date %]</th>
+            <td colspan="2"><a href="TODO">Admitted <em>(read the intake record)</em></a></td>
+        </tr>
+        [% FOR event IN episode.events %]
+        <tr class="[% rowclass( undef, 'noclass' ) %][% ' active' IF episode.active && loop.last %]">
+            <td class="label">[% ( episode.active && loop.last ) ? 'since' : 'from' %]</td>
+            <th>[% event.event_date.format_date %]</th>
+            <td>receiving <strong>[% event.level_of_care %]</strong></td>
+            <td>with <strong>[% event.personnel %]</strong></td>
+        </tr>
+        [% END %]
+        [% IF episode.discharge %]
+        <tr [% rowclass %]>
+            <td class="label">on</td>
+            <th>[% episode.discharge.event_date.format_date %]</th>
+            <td colspan="2"><a href="TODO">Discharged <em>(read the discharge record)</em></a></td>
+        </tr>
+        [% END %]
+    </table>
+    [% IF episode.active %]
+        <ul class="controls">
+            [% IF episode.primary %]
+                <li>This is the <strong>primary program</strong>.</li>
+            [% ELSE %]
+                <li class="show_new_primary" id="show_new_primary_[% episode.id %]">
+                    <a href="TODO" class="local">Make this the primary program.</a>
+                    [% INCLUDE placement/new_primary.html %]
+                </li>
+            [% END %]
+            <li class="show_new_event" id="show_new_event_[% episode.id %]">
+                <a href="TODO" class="local">Create a new event</a> in this program.
+                [% INCLUDE placement/new_event.html %]
+            </li>
+            <li class="show_new_discharge" id="show_new_discharge_[% episode.id %]">
+                <a href="TODO" class="local">Discharge</a> this client.
+                [% INCLUDE placement/new_discharge.html %]
+            </li>
+        </ul>
+    [% END %]
+    <hr class="div" />
+</div>
+[% END %]

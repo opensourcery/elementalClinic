@@ -1,0 +1,33 @@
+<dl class="inline assessment_section" id="section_fields_[% section.id %]"[% ' style="display:none"' UNLESS loop.first %]>
+    [% IF current_assessment.editable %]
+        <dt class="label">[% creating_new ? 'New section label' : 'Section label' %]:</dt>
+        <dd class="label">
+            [% INCLUDE util/input_text.html
+                name    = 'section['_ section.rec_id _'][label]'
+                value   = creating_new ? '' : section.label
+            %]
+            <input type="hidden" name="[% 'section['_ section.rec_id _'][rec_id]' %]" value="[% section.rec_id %]"> 
+        </dd>
+    [% END %]
+    <dt>Fields:</dt>
+    <dd>
+    [% IF current_assessment.editable %]
+        <p class="fieldlist">
+            If choices is left blank the user will be allowed to type in their own value when creating an assessment.
+            Alternatively you may enter a list of acceptable options seperated by comma:
+            'option 1, option 2, option ...'
+        </p>
+    [% END %]
+        <ul>
+            [% FOR field IN section.section_fields %]
+                [% INCLUDE admin/assessment_template/_field.html
+                    include_new_field_trigger = ( loop.last && current_assessment.editable ) ? 1 : 0
+                    position = loop.count
+                %]
+            [% END %]
+            [% IF( ! section.section_fields ) AND current_assessment.editable %]
+                <li class="new_field"><a href="#">New field</a></li>
+            [% END %]
+        </ul>
+    </dd>
+</dl>

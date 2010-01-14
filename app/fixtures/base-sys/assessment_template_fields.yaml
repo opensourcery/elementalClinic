@@ -1,0 +1,512 @@
+
+1: 
+  assessment_template_section_id: 1
+  choices: ''
+  field_type: text::words
+  label: Admission reason
+  position: 1
+  rec_id: 1
+10: 
+  assessment_template_section_id: 2
+  choices: ''
+  field_type: text::words
+  label: Special dietary needs
+  position: 7
+  rec_id: 10
+11: 
+  assessment_template_section_id: 2
+  choices: ''
+  field_type: text::words
+  label: Medical conditions/problems
+  position: 8
+  rec_id: 11
+12: 
+  assessment_template_section_id: 2
+  choices: ''
+  field_type: text::words
+  label: Other alerts
+  position: 9
+  rec_id: 12
+13: 
+  assessment_template_section_id: 2
+  choices: ''
+  field_type: text::words
+  label: Notes
+  position: 10
+  rec_id: 13
+14: 
+  assessment_template_section_id: 3
+  choices: ''
+  field_type: text::words
+  label: Birth history
+  position: 1
+  rec_id: 14
+15: 
+  assessment_template_section_id: 3
+  choices: ''
+  field_type: text::words
+  label: Early childhood diseases
+  position: 2
+  rec_id: 15
+16: 
+  assessment_template_section_id: 3
+  choices: ''
+  field_type: text::words
+  label: Milestone asjustments
+  position: 3
+  rec_id: 16
+17: 
+  assessment_template_section_id: 3
+  choices: ''
+  field_type: text::words
+  label: Education history
+  position: 4
+  rec_id: 17
+18: 
+  assessment_template_section_id: 3
+  choices: ''
+  field_type: text::words
+  label: Social/relationship history
+  position: 5
+  rec_id: 18
+19: 
+  assessment_template_section_id: 3
+  choices: ''
+  field_type: text::words
+  label: Psychosexual history
+  position: 6
+  rec_id: 19
+2: 
+  assessment_template_section_id: 1
+  choices: ''
+  field_type: text::words
+  label: Referral reason
+  position: 2
+  rec_id: 2
+20: 
+  assessment_template_section_id: 3
+  choices: ''
+  field_type: text::words
+  label: Dating History
+  position: 7
+  rec_id: 20
+21: 
+  assessment_template_section_id: 4
+  choices: ''
+  field_type: text::words
+  label: Medical strengths/proactivity
+  position: 1
+  rec_id: 21
+22: 
+  assessment_template_section_id: 4
+  choices: ''
+  field_type: text::words
+  label: Medical vulnerabilities
+  position: 2
+  rec_id: 22
+23: 
+  assessment_template_section_id: 4
+  choices: ''
+  field_type: text::words
+  label: Diagnosis history for all physical disorders
+  position: 3
+  rec_id: 23
+24: 
+  assessment_template_section_id: 4
+  choices: ''
+  field_type: text::words
+  label: History of past illnesses
+  position: 4
+  rec_id: 24
+25: 
+  assessment_template_section_id: 4
+  choices: ''
+  field_type: text::words
+  label: Significant family illnesses
+  position: 5
+  rec_id: 25
+26: 
+  assessment_template_section_id: 4
+  choices: ''
+  field_type: text::words
+  label: Dental history
+  position: 6
+  rec_id: 26
+27: 
+  assessment_template_section_id: 4
+  choices: ''
+  field_type: text::words
+  label: Nutritional assessment/needs
+  position: 7
+  rec_id: 27
+28: 
+  assessment_template_section_id: 5
+  choices: Low, Normal, High
+  field_type: text::words
+  label: Psychomotor activity
+  position: 1
+  rec_id: 28
+29: 
+  assessment_template_section_id: 5
+  choices: Low, Normal, High
+  field_type: text::words
+  label: Speech tone/volume
+  position: 2
+  rec_id: 29
+3: 
+  assessment_template_section_id: 1
+  choices: ''
+  field_type: text::words
+  label: Social environment
+  position: 3
+  rec_id: 3
+30: 
+  assessment_template_section_id: 5
+  choices: Good, Poor
+  field_type: text::words
+  label: Impulse control
+  position: 3
+  rec_id: 30
+31: 
+  assessment_template_section_id: 5
+  choices: Spontaneous, Not Spontaneous
+  field_type: text::words
+  label: Speech flow
+  position: 4
+  rec_id: 31
+32: 
+  assessment_template_section_id: 5
+  choices: Angry, Anxious, Depressed, Happy, Enraged, Euphoric, Euthymic, Fearful, Friendly, Irritable, Neutral, Sad, Suspicious, Wistful, Other
+  field_type: text::words
+  label: Mood
+  position: 5
+  rec_id: 32
+33: 
+  assessment_template_section_id: 5
+  choices: Appropriate Inappropriate, Blunted, Flat
+  field_type: text::words
+  label: Affect
+  position: 6
+  rec_id: 33
+34: 
+  assessment_template_section_id: 5
+  choices: Oriented, Time Impaired, Person Impaired, Place Impaired
+  field_type: text::words
+  label: Orientation
+  position: 7
+  rec_id: 34
+35: 
+  assessment_template_section_id: 5
+  choices: Clear, Confused
+  field_type: text::words
+  label: Functional State
+  position: 8
+  rec_id: 35
+36: 
+  assessment_template_section_id: 5
+  choices: Appropriate, Mildly Impaired, Moderately Impaired, Severely Impaired
+  field_type: text::words
+  label: Relevency
+  position: 9
+  rec_id: 36
+37: 
+  assessment_template_section_id: 5
+  choices: Appropriate, Mildly Impaired, Moderately Impaired, Severely Impaired
+  field_type: text::words
+  label: Coherency
+  position: 10
+  rec_id: 37
+38: 
+  assessment_template_section_id: 5
+  choices: Good, Fair, Poor
+  field_type: text::words
+  label: Judgement
+  position: 11
+  rec_id: 38
+39: 
+  assessment_template_section_id: 5
+  choices: Good, Fair, Poor
+  field_type: text::words
+  label: Insight
+  position: 12
+  rec_id: 39
+4: 
+  assessment_template_section_id: 2
+  choices: ''
+  field_type: text::words
+  label: Danger to others
+  position: 1
+  rec_id: 4
+40: 
+  assessment_template_section_id: 5
+  choices: Above Average, Average, Below Average, Aphasia, Dyslexia, Learning Disability, Retardation
+  field_type: text::words
+  label: Intelligence
+  position: 13
+  rec_id: 40
+41: 
+  assessment_template_section_id: 5
+  choices: Not Evident, Mild, Moderate, Severe
+  field_type: text::words
+  label: Tangentiality
+  position: 14
+  rec_id: 41
+42: 
+  assessment_template_section_id: 5
+  choices: Not Evident, Mild, Moderate, Severe
+  field_type: text::words
+  label: Circumstantiality
+  position: 15
+  rec_id: 42
+43: 
+  assessment_template_section_id: 5
+  choices: Not Evident, Mild, Moderate, Severe
+  field_type: text::words
+  label: Blocking
+  position: 16
+  rec_id: 43
+44: 
+  assessment_template_section_id: 5
+  choices: Not Evident, Mild, Moderate, Severe
+  field_type: text::words
+  label: Neologisms
+  position: 17
+  rec_id: 44
+45: 
+  assessment_template_section_id: 5
+  choices: Not Evident, Mild, Moderate, Severe
+  field_type: text::words
+  label: Word salad
+  position: 18
+  rec_id: 45
+46: 
+  assessment_template_section_id: 5
+  choices: Not Evident, Mild, Moderate, Severe
+  field_type: text::words
+  label: Perseveration
+  position: 19
+  rec_id: 46
+47: 
+  assessment_template_section_id: 5
+  choices: Not Evident, Mild, Moderate, Severe
+  field_type: text::words
+  label: Echolalia
+  position: 20
+  rec_id: 47
+48: 
+  assessment_template_section_id: 5
+  choices: Not Present, Present
+  field_type: text::words
+  label: Delusions
+  position: 21
+  rec_id: 48
+49: 
+  assessment_template_section_id: 5
+  choices: Not Present, Present
+  field_type: text::words
+  label: Hallucination
+  position: 22
+  rec_id: 49
+5: 
+  assessment_template_section_id: 2
+  choices: ''
+  field_type: text::words
+  label: Danger to self
+  position: 2
+  rec_id: 5
+50: 
+  assessment_template_section_id: 5
+  choices: Not Present, Present
+  field_type: text::words
+  label: Suicidal ideation
+  position: 23
+  rec_id: 50
+51: 
+  assessment_template_section_id: 5
+  choices: Not Present, Present
+  field_type: text::words
+  label: Homicidal ideation
+  position: 24
+  rec_id: 51
+52: 
+  assessment_template_section_id: 5
+  choices: Not Present, Present
+  field_type: text::words
+  label: Obsession
+  position: 25
+  rec_id: 52
+53: 
+  assessment_template_section_id: 5
+  choices: None, Mild, Severe, Moderate
+  field_type: text::words
+  label: Recent memory impairment
+  position: 26
+  rec_id: 53
+54: 
+  assessment_template_section_id: 5
+  choices: None, Mild, Severe, Moderate
+  field_type: text::words
+  label: Remote memory impairment
+  position: 27
+  rec_id: 54
+55: 
+  assessment_template_section_id: 5
+  choices: ''
+  field_type: text::words
+  label: Appearance
+  position: 28
+  rec_id: 55
+56: 
+  assessment_template_section_id: 5
+  choices: ''
+  field_type: text::words
+  label: Manner
+  position: 29
+  rec_id: 56
+57: 
+  assessment_template_section_id: 5
+  choices: ''
+  field_type: text::words
+  label: Mood and affect notes/description
+  position: 30
+  rec_id: 57
+58: 
+  assessment_template_section_id: 5
+  choices: ''
+  field_type: text::words
+  label: Thought content notes/description
+  position: 31
+  rec_id: 58
+59: 
+  assessment_template_section_id: 6
+  choices: ''
+  field_type: text::words
+  label: Most recent difficulties/precipitating events
+  position: 1
+  rec_id: 59
+6: 
+  assessment_template_section_id: 2
+  choices: ''
+  field_type: text::words
+  label: Drug/alcahol abuse
+  position: 3
+  rec_id: 6
+60: 
+  assessment_template_section_id: 6
+  choices: ''
+  field_type: text::words
+  label: Past psychiatric history
+  position: 2
+  rec_id: 60
+61: 
+  assessment_template_section_id: 6
+  choices: ''
+  field_type: text::words
+  label: History of homelessness
+  position: 3
+  rec_id: 61
+62: 
+  assessment_template_section_id: 6
+  choices: ''
+  field_type: text::words
+  label: Patient description
+  position: 4
+  rec_id: 62
+63: 
+  assessment_template_section_id: 6
+  choices: ''
+  field_type: text::words
+  label: Work history
+  position: 5
+  rec_id: 63
+64: 
+  assessment_template_section_id: 6
+  choices: ''
+  field_type: text::words
+  label: Social functioning
+  position: 6
+  rec_id: 64
+65: 
+  assessment_template_section_id: 6
+  choices: ''
+  field_type: text::words
+  label: Addictive behaviors
+  position: 7
+  rec_id: 65
+66: 
+  assessment_template_section_id: 6
+  choices: ''
+  field_type: text::words
+  label: Social strengths
+  position: 8
+  rec_id: 66
+67: 
+  assessment_template_section_id: 6
+  choices: ''
+  field_type: text::words
+  label: Financial status
+  position: 9
+  rec_id: 67
+68: 
+  assessment_template_section_id: 6
+  choices: ''
+  field_type: text::words
+  label: Legal status
+  position: 10
+  rec_id: 68
+69: 
+  assessment_template_section_id: 6
+  choices: ''
+  field_type: text::words
+  label: Military service history
+  position: 11
+  rec_id: 69
+7: 
+  assessment_template_section_id: 2
+  choices: ''
+  field_type: text::words
+  label: Physical/sexual abuse
+  position: 4
+  rec_id: 7
+70: 
+  assessment_template_section_id: 6
+  choices: ''
+  field_type: text::words
+  label: Religious/spiritual/cultural orientation
+  position: 12
+  rec_id: 70
+8: 
+  assessment_template_section_id: 2
+  choices: ''
+  field_type: text::words
+  label: Medication side effects
+  position: 5
+  rec_id: 8
+9: 
+  assessment_template_section_id: 2
+  choices: ''
+  field_type: text::words
+  label: Needle disposal
+  position: 6
+  rec_id: 9
+71: 
+  assessment_template_section_id: 7
+  choices: ''
+  field_type: text::words
+  label: Why are you here today?
+  position: 1
+  rec_id: 71
+72: 
+  assessment_template_section_id: 7
+  choices: ''
+  field_type: text::words
+  label: Do you have any special needs?
+  position: 2
+  rec_id: 72
+73: 
+  assessment_template_section_id: 7
+  choices: ''
+  field_type: text::words
+  label: What are your current or regular medications?
+  position: 3
+  rec_id: 73

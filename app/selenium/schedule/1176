@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="" />
+<title>1176</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">1176</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/login.cgi?op=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login</td>
+	<td>clinic</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>dba</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>op</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>client_selector_link</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>search</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>search</td>
+	<td>davis</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@value='Search']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//a[contains(text(),'Schedule')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[@onclick='return add_appointment({&quot;client_id&quot;:&quot;1001&quot;,&quot;schedule_availability_id&quot;:&quot;&quot;,&quot;appt_time_display&quot;:&quot;8:15 a&quot;,&quot;appt_time&quot;:&quot;8:15&quot;,&quot;prefix&quot;:&quot;view_&quot;});']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>rolodex_id</td>
+	<td>label=Batts</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>location_id</td>
+	<td>label=Client Home</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Save']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[@onclick='return add_appointment({&quot;client_id&quot;:&quot;1001&quot;,&quot;schedule_availability_id&quot;:&quot;&quot;,&quot;appt_time_display&quot;:&quot;9:00 a&quot;,&quot;appt_time&quot;:&quot;9:00&quot;,&quot;prefix&quot;:&quot;view_&quot;});']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@value='Save']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Davis, Miles D</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>edit_appt_time</td>
+	<td>label=9:00 a - 1 appointments</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//option[@value='9:00']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Save']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>keywords</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>keywords</td>
+	<td>fromqa scheduling</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Submit ticket']</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

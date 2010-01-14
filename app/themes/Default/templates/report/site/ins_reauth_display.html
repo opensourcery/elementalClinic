@@ -1,0 +1,51 @@
+<table border="1">
+    <thead>
+    <tr>
+        <td colspan="6">
+            [% INCLUDE report/header.html %]
+            
+            <p>Mental Health Insurance Carrier: [% IF rolodex_name; rolodex_name; ELSE; "All Mental Health Insurance Carriers"; END %]</p>
+            <p>Date: [% start_date_facade %]</p>
+            
+            [% "<p>There was no data for this insurance carrier and date range.</p>" UNLESS data.0 %]
+
+        </td>
+    </tr>
+    </thead>
+
+    <tbody>
+    [% PROCESS header renewal = data.0 %]
+
+    [% FOR renewal IN data %]
+
+    [% IF( current_rolodex_id != renewal.client_insurance.rolodex.id ) %]
+        [% PROCESS header %]
+    [% END %]
+
+    <tr [% rowclass %]>
+        <td>[% renewal.end_date %]</td>
+        <td>[% renewal.start_date %]</td>
+        <td>[% renewal.client.eman %]</td>
+        <td>[% renewal.client.ssn %]</td>
+        <td>[% renewal.client.dob %]</td>
+        <td>[% renewal.client_insurance.insurance_id %]</td>
+    </tr>
+
+    [% END %]
+    </tbody>
+</table>
+
+    [% BLOCK header %]
+    [% current_rolodex_id = renewal.client_insurance.rolodex.id %]
+    <tr>
+        <th colspan="6"><h4>[% renewal.client_insurance.rolodex.name %]</h4></th>
+    </tr>
+    <tr>
+        <th>End Date</th>
+        <th>Start Date</th>
+        <th>Name</th>
+        <th>SSN</th>
+        <th>DOB</th>
+        <th>Insurance ID</th>
+    </tr>
+    [% END %]

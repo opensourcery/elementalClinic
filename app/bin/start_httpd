@@ -1,0 +1,319 @@
+#!/usr/bin/env perl
+# vim: ts=4 sts=4 sw=4
+use strict;
+use warnings;
+use YAML::Syck;
+
+=head1 NAME
+
+start_httpd
+
+=head1 SYNOPSIS
+
+    start_httpd [options] <branch>
+
+Start an Apache process running eMC, tail the log file.
+
+--bin, --module, and --port are required options either through the environment
+or through the commandline.  If not supplied, <branch> will be set to the
+current working directory.
+
+Each option has a corresponding environment argument (except the branch) which
+lets you save some time. These are listed next to the options below.
+
+    -p|--port       HTTPD_PORT          HTTPd Port
+    -d|--debug      HTTPD_DEBUG         Run HTTPd in foreground (preempts tail) 
+    -n|--notail     HTTPD_DO_TAIL       Tail error.log
+    -b|--bin        HTTPD_BIN_PATH      Path to apache2 binary
+    -m|--module     HTTPD_MODULE_PATH   Path to apache2 modules
+    -t|--template   HTTPD_TEMPLATE      Path to apache2 conf template
+    -c|--config     EMC_CONFIG_PATH     Path to eMC config.yaml
+    -T|--test       EMC_HTTPD_TEST      Run in testing mode; single worker,
+                                        test data inserted, start transaction
+       --theme      EMC_THEME           Name of theme to run 
+
+=cut
+
+use Getopt::Long;
+use File::Basename qw(dirname);
+use Cwd;
+use Pod::Usage;
+
+#
+# our variables - eventually to be stuffed via Getopt::Long
+#
+my $module_path = $ENV{HTTPD_MODULE_PATH};
+my $httpd       = $ENV{HTTPD_BIN_PATH};
+my $tail        = $ENV{HTTPD_DO_TAIL};
+my $debug       = $ENV{HTTPD_DEBUG};
+my $port        = $ENV{HTTPD_PORT};
+my $template    = $ENV{HTTPD_TEMPLATE};
+my $config      = $ENV{EMC_CONFIG_PATH};
+my $run_test    = $ENV{EMC_HTTPD_TEST};
+my $theme       = $ENV{EMC_THEME};
+
+my $notail = 0;
+
+GetOptions(
+    "--port=i"     => \$port,
+    "--debug=i"    => \$debug,
+    "--notail"     => \$notail,
+    "--bin=s"      => \$httpd,
+    "--module=s"   => \$module_path,
+    "--template=s" => \$template,
+    '--config=s'   => \$config,
+    '--test'       => \$run_test,
+    '--theme=s'    => \$theme,
+);
+
+$tail = !$notail;
+my $branch      = $ARGV[0] || cwd();
+$config ||= "$branch/config.yaml";
+$template = "$branch/etc/emc.httpd.conf" unless ( $template and -e $template );
+$httpd       ||= "/usr/sbin/apache2"        if -e "/usr/sbin/apache2";
+$module_path ||= "/usr/lib/apache2/modules" if -e "/usr/lib/apache2/modules";
+
+pod2usage unless ($httpd and $module_path and $port);
+
+#
+# Check the httpd path
+#
+my $found = qx(which $httpd);
+chomp $found;
+unless (-x $found) {
+	die "httpd path ($httpd) does not exist or is not executable";
+}
+
+#
+# Do a basic check on the module_path
+#
+die "module path '$module_path' is not valid" unless (-e $module_path and -d $module_path);
+
+#
+# Kill the httpd on that port if it's already running
+#
+
+my $executable_dir = dirname($0);
+
+system("sh $executable_dir/kill_httpd $port") if (-e "/tmp/httpd.$port.pid");
+sleep 2;
+
+#
+# read template, substitute vars
+#
+# {PORT} - port
+# {BRANCH} - branch
+# {POSTFIX} - our postfix of server-specific data
+# {PIDFILE} - pidfile directive
+# {MODULE_PATH} - path to apache modules
+# {CONFIG_PATH} - path to config.yaml
+#
+my $template_data;
+if (open(FILE, '<', $template)) {
+    local $/ = undef;
+    $template_data = <FILE>;
+    close(FILE);
+} else {
+    die "Couldn't locate template $template: $!"
+}
+
+my $c = YAML::Syck::LoadFile($config);
+if ( $theme ) {
+    $c->{theme} = $theme;
+}
+
+$c->{fixtures_dir} = "$branch/fixtures";
+if ( $c->{revision} && $c->{revision} eq 'DEV' ) {
+    my ($rev, $name);
+    if (-e "$branch/.svn") {
+        chomp($rev = qx(svnversion -n $branch));
+        $name = ("$branch/" =~ m{branches/(.+?)/})[0];
+    } elsif (-e "$branch/.git") {
+        chdir($branch);
+        my %info = map { chomp; split /:\s*/, $_, 2 } qx(git svn info);
+        $rev = $info{Revision};
+        ($name) = $info{URL} =~ m{/trunk$}
+            ? 'trunk'
+            : $info{URL} =~ m{/branches/(.+)};
+
+    } else {
+        # die?
+    }
+
+    $c->{revision} = "$rev: $name"
+}
+
+if ( $run_test ) {
+    require File::Path;
+    require File::Copy;
+    my $res_dir = "$branch/t/resource/tmp";
+    File::Path::rmtree($res_dir);
+    $c->{scanned_record_root} = "$res_dir/scanned";
+    $c->{stored_record_root}  = "$res_dir/stored";
+    File::Path::mkpath([ @{$c}{qw(scanned_record_root stored_record_root)} ]);
+    File::Copy::copy(
+        "$branch/t/resource/sample_scan.1.jpg",
+        "$res_dir/scanned/sample_scan.1.jpg",
+    );
+}
+my $emc_config = "/tmp/emc.$port.config";
+YAML::Syck::DumpFile($emc_config, $c);
+
+$template_data =~ s/{CONFIG_PATH}/$emc_config/ig;
+$template_data =~ s/{PORT}/$port/ig;
+$template_data =~ s/{BRANCH}/$branch/ig;
+$template_data =~ s/{MODULE_PATH}/$module_path/ig;
+$template_data =~ s/{HOST}/localhost/ig; # FIXME for now - if the tool needs to be expanded we can do this.
+
+#
+# Append a few things that are specific to this server:
+# PidFile
+# Error Log
+# Access Log
+# TypesConfig
+#
+
+my $pidfile = "PidFile /tmp/httpd.$port.pid\n";
+my $postfix = <<"END";
+ErrorLog /tmp/httpd.$port.error.log
+LogLevel debug
+CustomLog /tmp/httpd.$port.access.log combined
+END
+
+if (-f "/etc/mime.types") {
+    $postfix .= "TypesConfig /etc/mime.types\n";
+} elsif (-f "/opt/local/apache2/conf/mime.types") {
+    $postfix .= "TypesConfig /opt/local/apache2/conf/mime.types\n";
+} elsif (-f "/opt/local/etc/mime.types") {
+    $postfix .= "TypesConfig /opt/local/etc/mime.types\n";
+} else {
+    die "Couldn't find your mime.types file."
+}
+
+if ($run_test) {
+    # force things to be processed in order; we don't ever want more than one
+    # thread running at a time
+    $postfix .= <<'END';
+MaxClients 1
+ServerLimit 1
+<IfModule worker.c>
+    ThreadsPerChild 1
+</IfModule>
+END
+}
+
+$template_data =~ s/{PIDFILE}/$pidfile/ig;
+$template_data =~ s/{POSTFIX}/$postfix/ig;
+
+#
+# write out the config to a tempfile
+#
+
+my $tempfile = "/tmp/httpd.$port.conf";
+chomp $tempfile;
+
+if (open(FILE, '>', $tempfile)) {
+    print FILE $template_data;
+    close(FILE);
+} else {
+    die "Couldn't write to tempfile: $tempfile -- permissions issue or race condition: $!"
+}
+
+# now, do something similar for startup.pl
+# but just with {BRANCH}
+
+# FIXME make this configurable eventually - this could be done a lot better.
+my $startup_pl = '';
+if (open(FILE, '<', "$branch/etc/startup.pl")) {
+    local $/ = undef;
+    $startup_pl = <FILE>;
+    close(FILE);
+} else {
+    die "Couldn't open '$branch/etc/startup.pl' for reading: $!"
+}
+
+$startup_pl =~ s/{BRANCH}/$branch\/lib/ig;
+
+if (open(FILE, '>', "/tmp/startup.$port.pl")) {
+    if ($run_test) {
+        print FILE <<"END";
+\$eleMentalClinic::DB::RUN_TESTS = 1;
+\$eleMentalClinic::Test::FIXTURE_PATH = '$branch/fixtures/testdata-jazz';
+END
+    }
+    print FILE $startup_pl;
+    close(FILE);
+} else {
+    die "Couldn't open '/tmp/startup.$port.pl' for writing: $!";
+}
+
+#
+# construct the commandline:
+# $debug sets -X (run in foreground)
+#
+
+my $commandline = "$httpd -f $tempfile";
+$commandline .= " -X" if $debug;
+# we want backgrounding for tests, but still only one worker
+#$commandline .= " &" if $run_test;
+
+system($commandline) && do {
+    system("tail -n 20 /tmp/httpd.$port.error.log");
+    die "Couldn't start server: $commandline\n";
+};
+
+#
+# if $tail is set (and $debug is not), we start a tail on the error log
+#
+
+system("tail -f /tmp/httpd.$port.error.log") if ($tail && !$debug);
+
+__END__
+
+=head1 AUTHORS
+
+=over 4
+
+=item Erik Hollensbe L<erikh@opensourcery.com>
+
+=item Randall Hansen L<randall@opensourcery.com>
+
+=back
+
+=head1 BUGS
+
+We strive for perfection but are, in fact, mortal.  Please see
+L<https://prefect.opensourcery.com:444/projects/elementalclinic/report/1> for
+known bugs.
+
+=head1 SEE ALSO
+
+=over 4
+
+=item Project web site at: L<http://elementalclinic.org>
+
+=item Code management site at: L<https://prefect.opensourcery.com:444/projects/elementalclinic/>
+
+=back
+
+=head1 COPYRIGHT
+
+Copyright (C) 2007-2008 OpenSourcery, LLC
+
+This file is part of eleMental Clinic.
+
+eleMental Clinic is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation; either version 2 of the License, or (at your option) any
+later version.
+
+eleMental Clinic is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+this program; if not, write to the Free Software Foundation, Inc., 51 Franklin
+Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+eleMental Clinic is packaged with a copy of the GNU General Public License.
+Please see docs/COPYING in this distribution.

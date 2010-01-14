@@ -1,0 +1,219 @@
+/* selector.css
+ *
+ * this is a feature-specific stylesheet, intended for the selector design
+ * pattern.  that is, the user is presented with multiple objects of one type
+ * and may choose between them.  the list of objects and the current object
+ * properties are displayed the user may select a new object at any time.
+ */
+
+/* selector {{{ */
+div.selector {
+    padding : 6px 0;
+    margin : 60px 0;
+    width : 150px;
+    float : left;
+}
+ul.selector {
+    list-style : none;
+    background : #fff;
+    padding : 0;
+    border : 1px solid #aaa;
+    border-right-width : 0;
+    -moz-border-radius : 6px 0px 0px 6px;
+    margin : 0;
+}
+ul.selector li strong,
+ul.selector li a {
+    font-weight : normal;
+    padding : 3px 6px 3px 21px;
+    display : block;
+}
+ul.selector li.current strong,
+ul.selector li.current a {
+    font-weight : normal;
+    background : #fff url( ../../img/silk/bullet_go.png ) no-repeat 3px 50%;
+}
+p.new_this {
+    margin : -48px 0 0 -12px;
+    float : left;
+}
+p.cancel_this {
+    margin : 6px 0 0 12px;
+    float : left;
+}
+p.cancel_this a,
+p.new_this a,
+p.new_this input[type="submit"] {
+    padding : 5px 7px 5px 27px;
+    background : #fff url( ../../img/silk/add.png ) no-repeat 7px 50%;
+    border : 1px solid #fb0;
+    -moz-border-radius : 6px;
+    display : block;
+    cursor : pointer;
+}
+p.cancel_this a {
+    background-image : url( ../../img/silk/cross.png );
+}
+p.cancel_this a:hover,
+p.new_this a:hover,
+p.new_this input[type="submit"]:hover {
+    background-color : #f3f3f3;
+}
+/* }}} */
+/* selectee {{{ */
+div.selectee {
+    background : #fff;
+    padding : 12px;
+    border : 1px solid #fb0;
+    -moz-border-radius : 6px;
+    margin : 42px 0;
+    width : 750px;
+    position : relative;
+    float : left;
+}
+div.selectee ul.navigation {
+    padding : 0;
+}
+div.selectee div.content {
+    background : #ffe;
+    padding : 0 12px 12px 12px;
+    border : 1px solid #ddd;
+    margin : 0 0 12px 0;
+    -moz-border-radius : 6px;
+}
+div.selectee p.save_this {
+    text-align : left;
+    padding : 0;
+    background : transparent;
+    border : 0;
+    margin : 0;
+    float : left;
+}
+div.selectee p.save_this input[type="submit"] {
+    font-size : 13px;
+    font-weight : bold;
+    background : #f9f9f9 url( ../../img/silk/page_go.png ) no-repeat 7px 50%;
+    padding : 5px 7px 5px 27px;
+    border : 2px solid;
+    border-color : #ccc #333 #333 #ccc;
+    -moz-border-radius : 6px;
+    cursor : pointer;
+}
+div.selectee p.save_this input[type="submit"]:hover {
+    background-color : #eee;
+}
+div.selectee .display label {
+    font-weight : bold;
+    padding-right : .3em;
+}
+/* }}} */
+/* selectee navigation {{{ */
+div.selectee ul.navigation {
+    height : 12px;
+    margin : 1em 0 0 1em;
+}
+div.selectee ul.navigation li {
+    list-style : none;
+    margin-left : -1px;
+    float : left;
+}
+div.selectee ul.navigation li a {
+    color : #000;
+    font-weight : normal;
+    font-size : 14px;
+    background : #ffc;
+    padding : 2px 10px;
+    border : 1px solid #fb0;
+    display : block;
+}
+div.selectee ul.navigation li.first a {
+    -moz-border-radius : 6px 0 0 6px;
+}
+div.selectee ul.navigation li.last a {
+    -moz-border-radius : 0 6px 6px 0;
+}
+div.selectee ul.navigation li a:hover {
+    color : #000;
+    background : #fb0;
+}
+div.selectee ul.navigation li.current a {
+    color : #000;
+    background : #fb0;
+    border-color : #fb0;
+}
+/* }}} */
+/* print, edit, clone, delete, activate {{{*/
+ul.affect_this li {
+    display : inline;
+}
+input[type="submit"].print_this,
+input[type="submit"].edit_this,
+input[type="submit"].clone_this,
+input[type="submit"].delete_this,
+input[type="submit"].activate_this,
+a.print_this,
+a.edit_this,
+a.delete_this,
+a.activate_this,
+a.clone_this {
+    color : #00f;
+    font : bold 13px Tahoma,Verdana,Helvetica,Arial,sans-serif;
+    padding : 3px 5px 3px 25px;
+    background : url( ../../img/silk/noicon.png ) no-repeat 5px 50%;
+    border : 1px solid transparent;
+    -moz-border-radius : 6px 6px 0 0;
+    cursor : pointer;
+}
+input[type="submit"].print_this:hover,
+input[type="submit"].edit_this:hover,
+input[type="submit"].clone_this:hover,
+input[type="submit"].delete_this:hover,
+input[type="submit"].activate_this:hover,
+a.print_this:hover,
+a.edit_this:hover,
+a.delete_this:hover,
+a.activate_this:hover,
+a.clone_this:hover {
+    background-color : #eee;
+    border-color : #ccc;
+}
+input[type="submit"].print_this,
+a.print_this {
+    background-image : url( ../../img/silk/printer.png );
+}
+input[type="submit"].edit_this,
+a.edit_this {
+    background-image : url( ../../img/silk/page_edit.png );
+}
+input[type="submit"].clone_this,
+a.clone_this {
+    background-image : url( ../../img/silk/page_copy.png );
+}
+input[type="submit"].delete_this,
+a.delete_this {
+    background-image : url( ../../img/silk/page_delete.png );
+}
+input[type="submit"].activate_this,
+a.activate_this {
+    background-image : url( ../../img/silk/page_go.png );
+}
+/*}}}*/
+/* overrides for system_box {{{*/
+.system_box p.cancel_this a,
+.system_box p.new_this a,
+.system_box p.new_this input[type="submit"],
+.system_box div.selectee,
+.system_box div.selectee ul.navigation li a,
+.system_box div.selectee ul.navigation li.current a {
+    border-color : #60c;
+}
+.system_box div.selectee ul.navigation li.current a,
+.system_box div.selectee ul.navigation li a:hover {
+    color : #fff;
+    background-color : #60c;
+}
+.system_box div.selectee ul.navigation li a {
+    background-color : #dedeff;
+}
+/*}}}*/
+

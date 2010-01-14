@@ -1,0 +1,201 @@
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+
+<p />
+
+<b>&#149; Section One: Location, Time, Participants</b>
+
+<p />
+
+<table border="0">
+    <tr>
+        <td>Select Reporting Unit: </td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "unit"
+    s_values  = units
+    s_default = unit_lname
+%]</td>
+    </tr>
+    <tr>
+        <td>Site/Hospital/Campus Name: </td>
+        <td><input type="text" name="hosp"  size="32" maxlength="30" /></td>
+    </tr>
+    <tr>
+        <td>Unit Address: </td>
+        <td><input type="text" name="addr"  size="32" maxlength="30" /></td>
+    </tr>
+    <tr>
+        <td>Building: </td>
+        <td><input type="text" name="bldg"  size="32" maxlength="30" /></td>
+    </tr>
+    <tr>
+        <td>Unit Telephone Number: </td>
+        <td><input type="text" name="phone"  size="22" maxlength="20" /></td>
+    </tr>
+    <tr>
+        <td>Drill Date: </td>
+        <td><input type="text" name="start_date" value="[% today %]" size="12" maxlength="10" /></td>
+    </tr>
+    <tr>
+        <td>Day of Week Drill Occurred: </td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "day"
+    s_values  = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 
+        'Friday', 'Saturday', 'Sunday' ]
+    s_default = weekday
+%]</td>
+    </tr>
+    <tr>
+        <td>Time System Was Taken Offline: </td>
+        <td><input type="text" name="off_time"  size="10" maxlength="8" /></td>
+    </tr>
+    <tr>
+        <td>Start Time Of Drill (Exam: 8:00 AM): </td>
+        <td><input type="text" name="alarm_time"  size="10" maxlength="8" /></td>
+    </tr>
+    <tr>
+        <td>Shift (Exam: 8-4): </td>
+        <td><input type="text" name="shift"  size="12" maxlength="10" /></td>
+    </tr>
+    <tr>
+        <td>Staff Member Who Ran The Drill: </td>
+        <td><input type="text" name="oper1" value="[% staffname %]" size="32" maxlength="30" /></td>
+    </tr>
+    <tr>
+        <td>Time System Was Reset: </td>
+        <td><input type="text" name="reset_time"  size="10" maxlength="8" /></td>
+    </tr>
+    <tr>
+        <td>Staff Member Who Reset The System: </td>
+        <td><input type="text" name="oper12" value="[% staffname %]" size="32" maxlength="30" /></td>
+    </tr>
+    <tr>
+        <td>Device/Pull Station Activated: </td>
+        <td><input type="radio" name="pull_station" value="Yes" checked="checked" />Yes <input type="radio" name="pull_station" value="No" />No <input type="radio" name="pull_station" value="N/A" />N/A</td>
+    </tr>
+    <tr>
+        <td>Number of Staff Involved: </td>
+        <td><input type="text" name="amt_staff" value="1" size="3" maxlength="5" /></td>
+    </tr>
+    <tr>
+        <td>Number of Patients Involved: </td>
+        <td><input type="text" name="amt_pts"  size="3" maxlength="5" /></td>
+    </tr>
+    <tr>
+        <td>Number of Visitors Involved: </td>
+        <td><input type="text" name="visitors" value="0" size="3" maxlength="5" /></td>
+    </tr>
+</table>
+
+<p />
+
+<b>&#149; Section Two: Performance Criteria</b>
+
+<p />
+
+<table border="0">
+    <tr>
+        <td>Event Type (Drill / Emergency): </td>
+        <td><input type="radio" name="event" value="Drill" checked="checked" />Drill <input type="radio" name="event" value="Emergency" />Emergency</td>
+    </tr>
+    <tr>
+        <td>Evacuation Type (Total / Partial): </td>
+        <td><input type="radio" name="evac_type" value="Total" checked="checked" />Total <input type="radio" name="evac_type" value="Partial" />Partial</td>
+    </tr>
+    <tr>
+        <td>Was Evacuation Completed in 2 1/2 Minutes: </td>
+        <td><input type="radio" name="evac_ok" value="Yes" checked="checked" />Yes <input type="radio" name="evac_ok" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>Was Signal Functioning? </td>
+        <td><input type="radio" name="signal" value="Yes" checked="checked" />Yes <input type="radio" name="signal" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>Were Lights Functioning? </td>
+        <td><input type="radio" name="lights" value="Yes" checked="checked" />Yes <input type="radio" name="lights" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>Was Pull Station Functioning? </td>
+        <td><input type="radio" name="pull" value="Yes" checked="checked" />Yes <input type="radio" name="pull" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>Were Bells Functioning? </td>
+        <td><input type="radio" name="bells" value="Yes" checked="checked" />Yes <input type="radio" name="bells" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>PA System Functioning? </td>
+        <td><input type="radio" name="pa" value="Yes" checked="checked" />Yes <input type="radio" name="pa" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>Was Smoke Detector Functioning? </td>
+        <td><input type="radio" name="detector" value="Yes" checked="checked" />Yes <input type="radio" name="detector" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>Did Occupants Evacuate In An Orderly Manner: </td>
+        <td><input type="radio" name="orderly" value="Yes" checked="checked" />Yes <input type="radio" name="orderly" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>Did Person In Charge Take Command To Prevent Panic: </td>
+        <td><input type="radio" name="command" value="Yes" checked="checked" />Yes <input type="radio" name="command" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>Did All Occupants Participate In Drill: </td>
+        <td><input type="radio" name="take_part" value="Yes" checked="checked" />Yes <input type="radio" name="take_part" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>Were Occupants Familiar With Available Emergency Exits: </td>
+        <td><input type="radio" name="find_exit" value="Yes" checked="checked" />Yes <input type="radio" name="find_exit" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>Did Participants Seem Familiar With Drill Expectations: </td>
+        <td><input type="radio" name="familiar" value="Yes" checked="checked" />Yes <input type="radio" name="familiar" value="No" />No</td>
+    </tr>
+    <tr>
+        <td>Length Of Time Evacuation Took: </td>
+        <td><input type="text" name="length"  size="5" maxlength="15" /></td>
+    </tr>
+    <tr>
+        <td>Copy of Fire Drill Left With Person-In-Charge: </td>
+        <td><input type="radio" name="copied" value="Yes" checked="checked" />Yes <input type="radio" name="copied" value="No" />No</td>
+    </tr>
+</table>
+
+
+
+<p />
+
+<b>&#149; Section Three: Follow Up</b>
+
+<p />
+
+
+
+<table border="0">
+    <tr>
+        <td>List Areas for Improvement (explain briefly): </td>
+        <td><textarea name="improve" rows="6" cols="50" wrap="1"></textarea></td>
+    </tr>
+    <tr>
+        <td>Follow Up (None / Action Taken): </td>
+        <td><input type="text" name="follow_up"  size="67" maxlength="65" /></td>
+    </tr>
+    <tr>
+        <td>Drill Conductor: </td>
+        <td><input type="text" name="conductor" value="[% staffname %]" size="32" maxlength="30" /></td>
+    </tr>
+    <tr>
+        <td>List Deficiencies (explain briefly): </td>
+        <td><textarea name="deficiency" rows="6" cols="50" wrap="1"></textarea></td>
+    </tr>
+</table>
+
+
+<p />
+
+<input type="submit" name="go" value="Submit" />
+<input type="hidden" name="search_start" value="[% search_start %]" />
+<input type="hidden" name="search_end" value="[% search_end %]" />
+<div>
+</div>
+</form>

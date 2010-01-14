@@ -1,0 +1,53 @@
+<!--
+{
+'noshow' => '0',
+'chart' => '0',
+'client_id' => '1005',
+'schedule_availability_id' => '1002',
+'staff_id' => '1002',
+'auth_number' => '',
+'confirm_code_id' => undef,
+'appt_time' => '15:00',
+'notes' => '',
+'fax' => '0',
+'rec_id' => '1005',
+'payment_code_id' => '1002'
+}
+-->
+
+[% FOR item IN data %]
+    <h2>[% item.staff.name %]</h2>
+    [% staff_id = item.staff.staff_id %]
+<table>
+
+    <tr>
+        [% UNLESS staff_id %]
+            <th>
+                Staff Member
+            </th>
+        [% END %]
+        <th>
+            Client
+        </th>
+        <th>
+            Time
+        </th>
+    </tr>
+    [% FOR appt IN item.list %]
+        <tr>
+            [% UNLESS staff_id %]
+                <td>
+                    [% appt.staff.name %]
+                </td>
+            [% END %]
+            <td>
+                [% appt.client.name %]
+            </td>
+            <td>
+                [% appt.appt_time %]
+            </td>
+        </tr>
+    [% END %]
+
+</table>
+[% END %]

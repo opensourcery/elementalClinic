@@ -1,0 +1,51 @@
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+
+<table border="0">
+    <tr>
+        <td><b>Work Order ID: </b></td>
+        <td>[% row.rec_id %]</td>
+    </tr>
+    <tr>
+        <td><b>Submitted By: </b></td>
+        <td>[% staffname %]</td>
+    </tr>
+    <tr>
+        <td><b>Unit: </b> <td>[% row.unit_lname %]</td></td>
+    </tr>
+    <tr>
+        <td><b>Date: </b> <td>[% row.start_date %]</td></td>
+    </tr>
+    <tr>
+        <td><b>Work Order: </b></td>
+        <td>[% row.work_request %]</td>
+    </tr>
+    <tr>
+        <td><b>Location: </b></td>
+        <td>[% row.addr %]</td>
+    </tr>
+    <tr>
+        <td><b>Completed: </b></td>
+        <td>[% row.completed %]</td>
+    </tr>
+    <tr>
+        <td><b>Date Completed: </b></td>
+        <td>[% row.end_date %]</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td><b>Maintenance Notes: </b></td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+
+<table border="0">
+    <tr>
+        <td><hr /></td>
+    </tr>
+    <tr>
+        <td>[% work_note %]</td>
+    </tr>
+</table>

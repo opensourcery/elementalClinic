@@ -1,0 +1,142 @@
+        [% INCLUDE util/date_picker.html
+            label   = 'Diagnosis date'
+            name    = 'diagnosis_date'
+            value   = current_diagnosis.diagnosis_date || 'today'
+            wraptag = 'p'
+            required = 1
+        %]
+
+        <fieldset id="axis1">
+        <h5>Axis I</h5>
+            [% INCLUDE select_dsm_code
+                name    = 'diagnosis_1a'
+                label   = 'Primary'
+                codes   = eMC.department.dsm4_axis1
+            %]
+
+            [% INCLUDE select_dsm_code
+                name    = 'diagnosis_1b'
+                label   = 'Secondary'
+                codes   = eMC.department.dsm4_axis1
+            %]
+
+            [% INCLUDE select_dsm_code
+                name    = 'diagnosis_1c'
+                label   = 'Tertiary'
+                codes   = eMC.department.dsm4_axis1
+            %]
+        </fieldset>
+
+        <fieldset id="axis2">
+        <h5>Axis II</h5>
+            [% INCLUDE select_dsm_code
+                name    = 'diagnosis_2a'
+                label   = 'Primary'
+                codes   = eMC.department.dsm4_axis2
+            %]
+
+            [% INCLUDE select_dsm_code
+                name    = 'diagnosis_2b'
+                label   = 'Secondary'
+                codes   = eMC.department.dsm4_axis2
+            %]
+        </fieldset>
+
+        <fieldset id="axis3">
+            <h5>Axis III</h5>
+            [% INCLUDE util/textarea.html
+                name    = 'diagnosis_3'
+                cols    = 40
+                rows    = 5
+                value   = current_diagnosis.diagnosis_3
+            %]
+        </fieldset>
+
+        <fieldset id="axis4">
+            <h5>Axis IV</h5>
+            [% INCLUDE util/textarea.html
+                name    = 'diagnosis_4'
+                cols    = 40
+                rows    = 5
+                value   = current_diagnosis.diagnosis_4
+            %]
+        </fieldset>
+
+        <fieldset id="general">
+            [% INCLUDE util/input_text.html
+                name    = 'diagnosis_5_current'
+                label   = 'GAF <strong>(Axis V)</strong>'
+                value   = current_diagnosis.diagnosis_5_current
+                size    = 3
+                wraptag = 'p'
+            %]
+
+            [% INCLUDE util/textarea.html
+                name    = 'comment_text'
+                value   = current_diagnosis.comment_text
+                label   = 'Comments'
+                cols    = 100
+                rows    = 5
+                break   = 1
+                wraptag = 'p'
+            %]
+        </fieldset>
+
+
+        <input type="hidden" id="diagnosis_id" name="diagnosis_id" value="[% current_diagnosis.id %]" />
+        <input type="hidden" id="client_id" name="client_id" value="[% client.id %]" />
+        <p class="save_this"><input type="submit" name="op" id="op_save" value="Save diagnosis" /></p>
+        <p class="cancel_this"><a href="[% BASE_URI %]">Cancel</a></p>
+    <hr class="div" />
+
+[% BLOCK select_dsm_code %]
+<h6><label for="[% name %]">[% label %]: </label></h6>
+<p id="[% name %]_html" class="choose">
+    <select name="[% name %]" id="[% name %]" onchange="reset_manual('[% name %]');">
+    [% found = 0;
+        FOREACH code IN codes; code = "$code.name $code.description" %]
+        <option value="[% code %]"[% IF current_diagnosis.$name == code; ' selected="selected"'; found = 1; END -%]>[% code %]</option>
+    [% END -%]
+    </select>
+</p>
+<p class="choose">
+    <label for="[% name %]_manual">Search &amp; manual entry:</label><br />
+    <input type="text" name="[% name %]_manual" id="[% name %]_manual" size="60"
+        value="[% current_diagnosis.$name UNLESS found %]" onkeypress="return check_input_[% name %]( event )" />
+</p>
+
+<input type="hidden" name="[% name %]_keypressed" id="[% name %]_keypressed" value="0">
+
+<script type="text/javascript">
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function check_input_[% name %]( event ) {
+    
+    var key = event.keyCode
+    if( key == 13 ) { // enter
+        return false;
+    }
+   
+    var keypressed = document.getElementById( '[% name %]_keypressed' );
+
+    if ( keypressed.value == 0 ) {
+        keypressed.value = 1;
+
+        var codes = document.getElementById( '[% name %]' );
+        var select_html = "<select name='[% name %]' id='[% name %]' onchange=reset_manual('[% name %]')>";
+        select_html += "<option value='" + codes.options[0].value + "' ><strong>Searching...</strong></option>";
+        for ( var i = 1; i < codes.options.length; i++ ) {
+            select_html += "<option value='" + codes.options[i].value + "' style='display:none' >" + codes.options[i].value + '</option>';
+        }
+        select_html += '</select>';
+        
+        update_page( '[% name %]', select_html ); 
+        
+        // too slow to process on every key stroke, so set a timer
+        setTimeout( "get_diag_codes( '[% name %]' );", 1000 );
+    }
+}
+</script>
+
+[% END %]
+
+

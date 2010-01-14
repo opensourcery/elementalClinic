@@ -1,0 +1,45 @@
+tr.active {
+}
+table.episode {
+    width : 100%;
+}
+table.episode th {
+    border-bottom : 1px dotted #fb0;
+}
+table.episode th {
+    padding : 15px 0 0 0;
+}
+/* cells */
+table.episode th.type,
+table.episode th.action {
+    width : 15%;
+}
+table.episode th.date {
+    width : 15%;
+}
+table.episode th.program {
+    width : 25%;
+}
+table.episode th.staff {
+    width : 20%;
+}
+table.episode th.loc {
+    width : 25%;
+}
+/* placement */
+table.placement th,
+table.placement td {
+    padding-left : 20px;
+}
+table.episode td.edit {
+    font-size : 11px;
+    white-space : nowrap;
+    padding : 0 10px 0 0;
+}
+ul {
+    padding : 0 0 0 20px;
+    margin : 0 0 20px 0;
+}
+dl.inline.event_edit {
+    height : 1em; /* any height at all makes following content float at bottom, which is our goal  */
+}

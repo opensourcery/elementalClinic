@@ -1,0 +1,66 @@
+<dl class="email_query">
+
+<dt><label>Sort By:</label></dt>
+<dd>
+    [% INCLUDE util/select_new.html
+        name   = 'sort'
+        values = data.sort
+    %]
+    [% INCLUDE util/select_new.html
+        name   = 'order'
+        values = data.order
+        keyname = 'key'
+        valname = 'val'
+    %]
+</dd>
+
+<dt>
+    <label>Only Client:</label>
+</dt>
+<dd>
+    [% INCLUDE util/select_new.html
+        name   = 'client'
+        values = data.clients
+        keyname = 'client_id'
+        valname = 'name'
+    %]
+</dd>
+
+<dt>
+    <label>Date Range:</label>
+</dt>
+<dd>
+    [% INCLUDE util/date_picker.html
+        label = 'Start'
+        name  = 'start_date'
+    %]
+    <br />
+    [% INCLUDE util/date_picker.html
+        label = 'End'
+        name  = 'end_date'
+    %]
+    <br />
+    Specify start and/or end dates if you would like to list email sent within a time range.
+</dd>
+
+<!-- Search -->
+<dt>
+    <label>Text Search:</label>
+</dt>
+<dd>
+    <input name="search" size="60" />
+    <br />
+    Enter a search string to find within the email.
+</dd>
+<dt>
+    <label>Look In:</label>
+</dt>
+<dd>
+    [% FOR part IN data.parts %]
+        <input type="checkbox" name="contained_in" value="[% part %]" />
+        <label>[% part %]</label>
+    [% END %]
+    <br />
+    Select the parts of the message to check.
+</dd>
+</dl>

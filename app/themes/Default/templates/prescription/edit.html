@@ -1,0 +1,98 @@
+[% UNLESS current_user.rolodex_treaters_id %]
+<p>Only treaters may write prescriptions.</p>
+[% ELSE %]
+    <form method="[% Config.form_method %]" action="[% program %]" enctype="application/x-www-form-urlencoded">
+        <div class="minileft">
+        <dl class="inline">
+        <dt>Date:</dt>
+        <dd>
+        [% INCLUDE util/date_picker.html
+            name    = 'start_date'
+            value   = current.start_date || 'today'
+            dl      = 1
+        %]
+        </dd>
+
+        <dt>Medication:</dt>
+        <dd>
+        [% INCLUDE util/choose_valid_data.html
+            name    = 'medication'
+            table   = '_medication'
+            type    = 'select'
+            default = current.medication
+            use_id  = 0
+            dl      = 1
+        %]
+        </dd>
+
+        [% INCLUDE util/input_text.html
+            name    = 'dosage'
+            label   = 'Dosage'
+            value   = current.dosage
+            dl      = 1
+        %]
+
+        [% INCLUDE util/input_text.html
+            name    = 'frequency'
+            label   = 'Frequency'
+            value   = current.frequency
+            dl      = 1
+        %]
+
+        [% INCLUDE util/input_text.html
+            name    = 'quantity'
+            label   = 'Quantity'
+            value   = current.quantity
+            size    = 8
+            dl      = 1
+        %]
+
+        [% INCLUDE util/input_text.html
+            name    = 'num_refills'
+            label   = 'Refills'
+            value   = current.num_refills
+            size    = 2
+            dl      = 1
+        %]
+        </dl>
+        <hr class="div" />
+        <hr class="subtle" />
+        [% INCLUDE util/choose_valid_data.html
+            name    = 'print_header_id'
+            label   = 'Print header'
+            table   = '_print_header'
+            type    = 'select'
+            use_id  = 1
+            show_blank = 0
+            wraptag = 'p'
+        %]
+        </div>
+
+        <div class="miniright">
+        [% INCLUDE util/textarea.html
+            name    = 'instructions'
+            label   = 'Instructions'
+            value   = current.instructions
+            cols    = 60
+            rows    = 4
+            break   = 1
+            wraptag = 'p'
+        %]
+
+        [% INCLUDE util/textarea.html
+            name    = 'notes'
+            label   = 'Notes'
+            value   = current.notes
+            cols    = 60
+            rows    = 4
+            break   = 1
+            wraptag = 'p'
+        %]
+        </div>
+
+        <input type="hidden" name="client_id" value="[% client.id %]" />
+        <input type="hidden" name="rec_id" value="[% current.rec_id %]" />
+        <p class="save"><input type="submit" name="op" id="op_save" value="Save Prescription" /></p>
+    </form>
+    [% INCLUDE util/form_cancel.html %]
+[% END %]

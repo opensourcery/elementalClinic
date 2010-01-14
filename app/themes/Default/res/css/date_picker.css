@@ -1,0 +1,234 @@
+/* date picker container, table, and header {{{ */
+/* trigger */
+input.date_picker.with_trigger {
+    display : none;
+}
+input.date_picker.with_trigger.debug {
+    color : red;
+    border-color : red;
+    display : block;
+}
+a.date_picker_trigger {
+    color : #06c;
+    height : 17px;
+    cursor : pointer;
+}
+button.date_picker_button {
+    background : transparent url( '../img/icons/date_picker.gif' ) no-repeat top right;
+    border : 0;
+    margin : 0 0 0 6px;
+    vertical-align : top;
+    width : 17px;
+    height : 17px;
+    cursor : pointer;
+}
+input.date_picker_trigger {
+    color : #06c;
+    padding-right : 22px;
+    background : transparent url( '../img/icons/date_picker.gif' ) no-repeat top right;
+    height : 17px;
+    cursor : pointer;
+}
+/* calendar */
+div.date_picker {
+    background : url( ../img/date_picker_shadow.png ) no-repeat top left;
+    margin : -5px 0 0 -10px;
+    width : 252px;
+    height : 295px;
+    position : absolute;
+}
+div.date_picker.week_count4 {
+    background-image : url( ../img/date_picker_shadow4.png );
+    height : 265px;
+}
+div.date_picker.week_count6 {
+    background-image : url( ../img/date_picker_shadow6.png );
+    height : 325px;
+}
+div.date_picker.has_problems {
+    background-position : 0 20px;
+    height : 315px;
+}
+div.date_picker.has_problems.week_count4 {
+    height : 285px;
+}
+div.date_picker.has_problems.week_count6 {
+    height : 345px;
+}
+div.date_picker div.content {
+    background : #fff;
+    margin : 10px 0 0 10px;
+    width : 222px;
+}
+div.date_picker p.cancel_button {
+    float : right;
+    margin : -1px -1px 0 0;
+}
+div.date_picker_header {
+    padding : 6px 0 0 0;
+    background : #eee;
+    border-bottom : 1px solid #ddd;
+}
+/* selectors */
+p.selector {
+    text-align : center;
+}
+p.selector select {
+    font-size : 13px;
+}
+p.selector a {
+    color : #06c;
+    font-size : 12px;
+    line-height : 12px;
+    font-weight : bold;
+    padding : .5em;
+    cursor : pointer;
+}
+p.selector a em {
+    text-decoration : none;
+    font-style : normal;
+    padding : 0 3px;
+}
+/* table */
+div.date_picker table {
+    border-collapse : collapse;
+    margin : 6px;
+}
+div.date_picker table td,
+div.date_picker table th,
+div.date_picker table tr {
+    padding : 0;
+    margin : 0;
+}
+/* day names */
+div.date_picker tr.days {
+    background : #9cf;
+    background : #fff;
+}
+div.date_picker tr.days th {
+    color : #666;
+    font-size : 13px;
+    font-weight : normal;
+    text-align : center;
+}
+/* delete date */
+ul.date_picker_footer {
+    padding : 0;
+    margin : 0;
+}
+ul.date_picker_footer li {
+    text-align : center;
+    background : #eee;
+    border-top : 1px solid #ddd;
+    margin : 0;
+    width : 50%;
+    float : left;
+    list-style : none;
+}
+ul.date_picker_footer li a {
+    font-weight : bold;
+    padding : .3em 0;
+    display : block;
+    cursor : pointer;
+}
+/* cancel */
+ul.date_picker_footer li.date_picker_cancel a {
+    color : #009;
+    border-right : 1px solid #ddd;
+}
+ul.date_picker_footer li.date_picker_cancel a:hover {
+    background : #ddf;
+}
+/* delete */
+ul.date_picker_footer li.date_picker_delete a {
+    color : #900;
+}
+ul.date_picker_footer li.date_picker_delete a:hover {
+    background : #fdd;
+}
+/* }}} */
+/* calendar days {{{ */
+/* this month */
+div.date_picker td.this_month {
+    border : 1px solid #ddd;
+}
+div.date_picker td.this_month a {
+    color : #06c;
+    font : 14px/29px Verdana;
+    text-decoration : none;
+    text-align : center;
+    width : 29px;
+    height : 29px;
+    display : block;
+}
+div.date_picker td.this_month:hover {
+    background : #06c;
+}
+div.date_picker td.this_month:hover a {
+    color : #fff;
+}
+/* weekend */
+div.date_picker td.weekend {
+    background : #eee;
+}
+/* today */
+div.date_picker td.today {
+    background : #ccc;
+}
+div.date_picker td.today a {
+    font-weight : bold;
+}
+/* current */
+div.date_picker td.current {
+    background : #06c;
+}
+div.date_picker td.current a {
+    color : #fff;
+    font-weight : bold;
+}
+/* }}} */
+/* manual controls {{{ */
+.date_picker_controls {
+    background : #fff;
+}
+.date_picker_controls input {
+    color : #666;
+    font-size : 12px;
+    text-align : center;
+    padding : 1px 0;
+    border : 0;
+    border-bottom : 1px dotted #999;
+    margin : 0 1px;
+}
+.date_picker_controls input.current {
+    border-bottom : 1px solid #000;
+}
+.date_picker_controls input.problem {
+    color : #000;
+    background : #faa;
+    border-bottom : 2px solid #f00;
+}
+.date_picker_controls input:focus {
+    color : #000;
+    border-color : #333;
+}
+p.date_picker_problems {
+    color : #000;
+    text-align : center;
+    background : #faa;
+    border-bottom : 1px solid #f00;
+    margin : 0;
+    height : 18px;
+}
+/* }}} */
+
+/* Visibility hack for financial->tools->insurance Authorizations
+ * Put here in case this scenario occurs on other pages
+ */
+
+p.save a.date_picker_trigger {
+    background-color: #cccccc;
+    margin-right: -26px;
+    padding: 4px;
+    padding-right: 26px;
+}

@@ -1,0 +1,48 @@
+<h4><em>View prescription:</em> [% current.medication %] <em>on</em> [% current.start_date %]</h4>
+
+<dl class="inline">
+    <dt><strong>Dosage</strong></dt>
+    <dd>[% current.dosage %]</dd>
+
+    <dt><strong>Quantity</strong></dt>
+    <dd>[% current.quantity %]</dd>
+
+    <dt><strong>Frequency</strong></dt>
+    <dd>[% current.frequency %]</dd>
+
+    <dt><strong>Refills</strong></dt>
+    <dd>[% current.num_refills %]</dd>
+
+    <dt><strong>Treater</strong></dt>
+    <dd>[% current.rolodex.name %]</dd>
+
+    <dt><strong>Print date</strong></dt>
+    <dd>[% IF current.print_date; current.print_date;
+        ELSE; "Not yet printed.";
+        END -%]
+    </dd>
+<dl>
+
+<dl class="scriptext">
+    <dt><strong>Instructions:</strong></dt>
+    <dd>[% current.instructions %]</dd>
+
+    <dt><strong>Notes:</strong></dt>
+    <dd>[% current.notes %]</dd>
+</dl>
+
+[% IF( current.rolodex_treaters_id == current_user.rolodex_treaters_id ) %]
+    [% IF current.print_date %]
+    <p class="edit">Prescription has been printed and cannot be edited.</p>
+    [% ELSE %]
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+        <input type="hidden" name="client_id" id="client_id" value="[% client.client_id %]" />
+        <input type="hidden" name="prescription_id" id="prescription_id" value="[% current.rec_id %]" />
+        <input type="hidden" name="op" id="op" value="edit" />
+        <p class="edit"><input type="submit" name="submit" id="submit" value="Edit prescription" /></p>
+    </form>
+    [% END %]
+[% ELSE %]
+    <p class="edit">You are not the writer of this prescription and cannot edit it.</p>
+[% END %]
+

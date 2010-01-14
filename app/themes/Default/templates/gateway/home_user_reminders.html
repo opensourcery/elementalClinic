@@ -1,0 +1,56 @@
+<div id="reminders">
+    <h3>Reminders</h3>
+    <div class="preferences">
+        [% prefs_link = "user_prefs.cgi?op=save_one;return_to=$script;client_id=$client.id;pref=user_home_show_visit_frequency_reminders;value=" %]
+        <p class="label">Reminders:
+            [% IF current_user.pref.user_home_show_visit_frequency_reminders %]
+            <strong>Showing</strong> | <a href="[% "${prefs_link}0" %]">Do not show</a>
+            [% ELSE %]
+            <a href="[% "${prefs_link}1" %]">Show</a> | <strong>Not showing</strong>
+            [% END %]
+        </p>
+    </div>
+
+    [% UNLESS reminders %]
+    <p>Turn reminders on using the preferences link.  Beware that this feature may be slow if you have a heavy caseload or a long client history.</p>
+
+    [% ELSE %]
+        [% IF reminders.treatment_plans.0 %]
+        <h4>Treatment Plans</h4>
+        [% FOR tp IN reminders.treatment_plans %]
+            [% INCLUDE item
+                client  = tp.client
+                script  = "treatment"
+                message = "Plan ($tp.plan.start_date - $tp.plan.end_date) is over a year old."
+            %]
+        [% END %]
+        [% END %]
+
+        [% IF reminders.assessments.0 %]
+        <h4>Assessments</h4>
+        [% FOR ass IN reminders.assessments %]
+            [% INCLUDE item
+                client  = ass.client
+                script  = "assessment"
+                message = "MHA ($ass.assessment.start_date - $ass.assessment.end_date) is over a year old."
+            %]
+        [% END %]
+        [% END %]
+
+        [% IF reminders.overdue_clients.0 %]
+        <h4>Overdue Clients</h4>
+        [% FOR oc IN reminders.overdue_clients %]
+            [% INCLUDE item
+                client  = oc.client
+                script  = "progress_notes"
+                message = "Has not made required visits: $oc.overdue.visit_frequency per $oc.overdue.visit_interval" _ "."
+            %]
+        [% END %]
+        [% END %]
+    [% END %]
+</div>
+
+[% BLOCK item %]
+<dt><a href="[% script %].cgi?client_id=[% client.id %]">[% client.eman %]</a></dt>
+<dd>[% message %]</dd>
+[% END %]

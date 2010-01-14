@@ -1,0 +1,59 @@
+<table border="0">
+    <tr>
+        <td><b>Input By: </b></td>
+        <td>[% row_staff_name %]</td>
+    </tr>
+    <tr>
+        <td><b>Input On: </b></td>
+        <td>[% row_request_date %]</td>
+    </tr>
+    <tr>
+        <td><b>Unit ID: </b></td>
+        <td>([% row_unit_id %]) [% unit_name %]</td>
+    </tr>
+    <tr>
+        <td><b>Request Type: </b></td>
+        <td>[% row_request_type %]</td>
+    </tr>
+    <tr>
+        <td><b> Request:  </b></td>
+        <td>[% row_request_text %]</td>
+    </tr>
+    <tr>
+        <td><b> Response: </b></td>
+        <td><textarea name="request_complete" rows="8" cols="60" wrap="1">[% row_request_complete %]</textarea></td>
+    </tr>
+    <tr>
+        <td><b> CC: </b></td>
+        <td><input type="text" name="cc" value="[% row_addr %]" size="25" /></td>
+    </tr>
+</table>
+
+<p />
+
+<input type="hidden" name="staff_name" value="[% row_staff_name %]" />
+<input type="hidden" name="unit_id" value="[% row_unit_id %]" />
+<input type="hidden" name="request_date" value="[% row_request_date %]" />
+<input type="hidden" name="request_type" value="[% row_request_type %]" />
+<input type="hidden" name="request_text" value="[% row_request_text %]" />
+<input type="hidden" name="sdate" value="[% row_sdate %]" />
+<input type="hidden" name="rec_id" value="[% row_rec_id %]" />
+<input type="submit" name="go" value="Submit" />
+<p />
+
+<p />
+
+<a href="../charting/my_caseload.cgi?previous=[% program %]">My Caseload</a>
+
+<br />
+
+<a href="[% local %]">Return to [% Local %]</a>
+
+<br />
+
+<a href="../main.html">Return to Main Menu</a>
+
+<div>
+</div>
+</form>
+

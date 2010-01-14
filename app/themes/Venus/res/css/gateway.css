@@ -1,0 +1,121 @@
+#center {
+    margin : 10px 10px;
+}
+#personnel {
+    width : 210px;
+    float : left;
+    margin : 0 0 0 10px;
+}
+#clients {
+    width : 50%;
+    float : left;
+    margin : 0 10px;
+}
+#reminders {
+    width : 20%;
+    float : left;
+    margin : 10px 0 0 0;
+}
+#personnel h4,
+#clients h4,
+#reminders h4 {
+    border : none;
+}
+#or {
+    text-align : center;
+    border : none;
+    padding : 0;
+    margin : 0;
+}
+#reminders dl,
+#reminders dt,
+#reminders dd {
+    padding : 0;
+    margin : 0;
+}
+#personnel table {
+    width : 200px;
+    border-collapse : collapse;
+    border : 1px solid #000;
+    background : #fff;
+}
+#personnel table tr {
+    border-bottom : 1px solid #000;
+}
+#personnel table th {
+    font-weight : normal;
+}
+#personnel table td {
+    width : 150px;
+}
+#personnel table td div {
+    background : #999 url( "../img/background_bar_fff.png" ) no-repeat;
+    padding : 0 0 0 5px;
+    height : 1.5em;
+}
+
+h3 {
+    font-weight : bold;
+    border-bottom : 1px solid #000;
+    margin-bottom : 15px;
+}
+#client_search input[type="text"],
+#client_results select {
+    font-size : 12px;
+}
+#quick_patient_entry dl.inline dt {
+    width : 5em;
+}
+#quick_patient_entry dl.inline label {
+    font-size : 11px;
+}
+#quick_patient_entry dl.inline input {
+    font-size : 9px;
+}
+h5 {
+    border : none;
+    margin : 10px 0 0 0;
+}
+p.instructions {
+    font-size : .7em;
+}
+div.preferences {
+    background : #fefefe;
+    padding : 2px 5px;
+    border-bottom : 1px solid #999;
+    margin : 0 0 10px 0;
+}
+div.preferences p {
+    font-size : .7em;
+    padding : 0;
+    margin : 0;
+}
+div.preferences a {
+    font-weight : normal;
+}
+/* person_home page {{{*/
+#page {
+    padding-left : 230px;
+}
+#person_content,
+#person_select {
+    position : relative;
+    float : left;
+}
+#person_select {
+    width : 200px;
+    right : 230px;
+    margin-left : -100%;
+}
+#person_content {
+    border : 2px solid green;
+    width : 100%;
+}
+/*}}}*/
+
+h4.client_search_h4 {
+  border-bottom:1px solid #333333;
+  font-weight:bold;
+  margin:3px 0 7px;
+  padding:0 0 2px;
+}

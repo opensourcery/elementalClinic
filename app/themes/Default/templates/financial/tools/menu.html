@@ -1,0 +1,10 @@
+[%- FOR item IN [
+    { step => 1, label => 'Insurance Authorizations', },
+    { step => 2, label => 'Claims Processors', },
+    { step => 3, label => 'Validation Rules', },
+    { step => 4, label => 'Medicaid Claim Adjustment', },
+    { step => 5, label => 'Bounced Progress Notes', },
+    { step => 6, label => 'Manual Combined Notes', },
+]%]
+    <li[% ' class="active"' IF item.step == Current.step %]><a href="/financial.cgi?section=[% Current.section %];step=[% item.step %]">[% item.label %]</a></li>
+[%- END %]

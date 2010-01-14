@@ -1,0 +1,61 @@
+<div>
+    <h4>Combined Progress Notes to be Manually Billed</h4>
+    [% IF manual_notes.keys.0 %]
+        <div id="manual_note_groups">
+        [% FOR client IN manual_notes %]
+            [% FOR note_group IN client.value %]
+                [% INCLUDE util/form.html UNLESS note_group.value.deferred %]
+                <table class="manual_notes [% 'deferred' IF note_group.value.deferred %]">
+                    <tr>
+                        <th>ID</th>
+                        <th>Date</th>
+                        <th>Client</th>
+                        <th>Clinician</th>
+                        <th>Location</th>
+                        <th>Time</th>
+                    </tr>
+                    [% FOR note IN note_group.value.notes %]
+                    <tr [% 'class="deferred"' IF note_group.value.deferred %] >
+                        <td>[% UNLESS note_group.value.deferred %]<input type="hidden" name="note_ids" value="[% note.rec_id %]" />[% END %][% note.rec_id %]</td>
+                        <td>[% note.note_date %]</td>
+                        <td>[% note.client.eman %]</td>
+                        <td>[% note.personnel.eman %]</td>
+                        <td>[% note.location.name %]</td>
+                        <td>[% note.start_time %] - [% note.end_time %]</td>
+                    </tr>
+                    [% END %]
+                </table>
+                [% UNLESS note_group.value.deferred %]
+                    <p>
+                    Select a payer to bill for these notes:
+                    <br />
+                    [% FOREACH client_insurance = note_group.value.notes.0.get_mental_health_insurers %]
+                        <input type="radio" name="client_insurance_id" id="client_insurance_[% client_insurance.rec_id %]" value="[% client_insurance.rec_id %]" [% 'checked="checked"' IF client_insurance.rank == 1 %] />
+                        <label for="client_insurance_[% client_insurance.rec_id %]">
+                            [% client_insurance.rank _ ' ' _ client_insurance.rolodex.eman _ ' (insured: ' _ client_insurance.insured_name _ ')' %]
+                        </label><br />
+                    [% END %]
+                    </p>
+                    [% INCLUDE util/checkbox.html
+                        label   = 'Yes, I have filled out the paperwork to bill this group of notes.'
+                        name    = 'form_done' 
+                    %]
+                    <p>
+                        <input type="hidden" name="section" value="tools" />
+                        <input type="hidden" name="step" value="6" />
+                        <input type="hidden" name="op" value="tools_6_bill_manually" />
+                        <input type="submit" value="Mark Selected as Billed Manually &#187;" />
+                    </p>
+                    [% INCLUDE util/form_end.html %]
+                [% ELSE %]
+                <p>
+                    These notes have been billed and are waiting for a response from the payer. Manual billing is deferred. 
+                </p>
+                [% END %]
+            [% END # client.note_groups %]
+        [% END # manual_notes.clients %]
+        </div>
+    [% ELSE %]
+    <p>No combined notes are waiting for manual billing.</p>
+    [% END %]
+</div>

@@ -1,0 +1,226 @@
+[% INCLUDE util/errors.html %]
+[% action = group_note.rec_id ? 'Edit' : 'New' %]
+<div id="center" class="system_box">
+    <h3><em>[% action %] Group Progress Note for</em> [% group.name %]</h3>
+
+    <p class="return"><a href="groups.cgi?group_id=[% group.rec_id %]">&#171; Return to group</a></p>
+
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+
+    <div id="noteinfo">
+    <p>
+    [% INCLUDE util/date_picker.html
+        name    = 'note_date'
+        label   = 'On'
+        value   = group_note.note_date || 'today'
+        onblur  = 'return get_codes()'
+    %]
+
+    [% INCLUDE util/select_new.html
+        name    = 'start_time'
+        label   = 'from'
+        values  = start_times
+        default = group_note.start_time || '8:00'
+        keyname = 'key'
+        valname = 'val'
+    %]
+    [% INCLUDE util/select_new.html
+        name    = 'end_time'
+        label   = 'to'
+        values  = end_times
+        default = group_note.end_time || '9:00'
+        keyname = 'key'
+        valname = 'val'
+    %]
+    </p>
+
+    [%# INCLUDE util/choose_valid_data.html
+        name    = 'charge_code_id'
+        label   = 'Code'
+        table   = '_charge_code'
+        type    = 'select'
+        default = group_note.charge_code_id
+        use_id  = 1
+        use_desc    = 1
+        wraptag = 'p'
+        leading_hash = [ { value => '', name => 'Select a location', }, ]
+        onchange    = 'return get_codes()'
+    %]
+
+    [% INCLUDE util/choose_valid_charge_code.html
+        note    = group_note
+        required = 1
+    %]
+
+    <hr class="subtle" />
+
+    <dl class="inline">
+    <dt>Location</dt>
+    [% INCLUDE util/choose_valid_data.html
+        name   = 'note_location_id'
+        table  = '_prognote_location'
+        type    = 'select'
+        default = group_note.note_location_id
+        use_id  = 1
+        wraptag = 'dd'
+        onchange    = 'return get_codes()'
+    %]
+
+    <dt>Writer</dt>
+    [% INCLUDE util/select_new.html
+        action  = 'display'
+        name    = 'writer_id'
+        values  = department.get_writers
+        default = group_note.staff_id || current_user.staff_id
+        keyname = 'staff_id'
+        valname = 'eman'
+        wraptag = 'dd'
+        onchange    = 'return get_codes()'
+    %]
+
+    <dt>Rating</dt>
+    [% INCLUDE util/input_text.html
+        name    = 'outcome_rating'
+        value   = group_note.outcome_rating
+        size    = 3
+        wraptag = 'dd'
+    %]
+
+    <dt>Goal</dt>
+    <dd>
+        <strong>0: Simple progress note</strong>
+    </dd>
+    </dl>
+
+    <hr class="div" />
+    <hr class="subtle" />
+
+    <h5>Attendance</h5>
+    <div id="attendance">
+    [% action_values = [
+        { k => 'group_note', v => 'Group note' },
+        { k => 'no_show',    v => 'No-show' },
+        { k => 'none',       v => 'N/A' },
+    ] %]
+    [% MACRO rowclass BLOCK;
+        rn = loop.index % 2;
+        IF rn; 'class="even"'; ELSE; 'class="odd"'; END;
+        END
+    %]
+
+    [% IF group_note.rec_id    # if the note exists, we'll use attendance data,
+                            # rather than current group members %]
+        [% FOR member IN group_note.get_attendees %]
+        <div class="select_member_action">
+            <p [% rowclass %]>
+                [% INCLUDE util/radio_new.html
+                    name    = "action_$member.client.client_id"
+                    label   = member.client.eman
+                    values  = action_values
+                    valname = 'v'
+                    keyname = 'k'
+                    default = member.action
+                %]
+                <strong>[% member.client.eman %]</strong>
+            </p>
+        </div>
+        [% END %]
+    [% ELSE %]
+        [% FOR member IN group.get_members %]
+        <div class="select_member_action">
+            <p [% rowclass %]>
+                [% INCLUDE util/radio_new.html
+                    name    = "action_$member.client_id"
+                    label   = member.eman
+                    values  = action_values
+                    valname = 'v'
+                    keyname = 'k'
+                    default = 'group_note'
+                %]
+                <strong>[% member.eman %]</strong>
+            </p>
+        </div>
+        [% END %]
+    [% END %]
+    </div>
+    </div>
+    
+    <div id="noteitself">
+    [% IF group.default_note && ! group_note.note_body %]
+    <p>This is the <strong>group default note</strong>.</p>
+    [% END %]
+    [% INCLUDE util/textarea.html
+        name    = 'note_body'
+        value   = group_note.note_body || group.default_note
+        cols    = 56
+        rows    = 18
+        wraptag = 'p'
+    %]
+
+    <h5>Templates</h5>
+    [% INCLUDE util/choose_valid_data.html
+        label = '<strong>Progress</strong>'
+        name   = 'select_prognote_template'
+        table  = '_prognote_templates'
+        type    = 'select'
+        use_id  = 1
+        posttext = '<input type="submit" value="Insert" onclick="insert_template( \'prog\' );return false" />'
+        show_blank = 0
+        blankmsg = '<strong>Progress note</strong>: none created.'
+        wraptag = 'p'
+    %]
+
+    [% INCLUDE util/choose_valid_data.html
+        label = '<strong>Group</strong>'
+        name   = 'select_groupnote_template'
+        table  = '_groupnote_templates'
+        type    = 'select'
+        use_id  = 1
+        posttext = '<input type="submit" value="Insert" onclick="insert_template( \'group\' );return false" />'
+        show_blank = 0
+        blankmsg = '<strong>Group</strong>: none created.'
+        wraptag = 'p'
+    %]
+    </div>
+
+
+    <input type="hidden" name="group_note_id" value="[% group_note.rec_id %]" />
+    <input type="hidden" name="group_id" value="[% group.rec_id %]" />
+    <p class="save">
+        <input type="submit" name="op" id="op_save_temp" value="Save for later editing" />
+        <input type="submit" name="op" id="op_save_commit" value="Commit group note" />
+    </p>
+    </form>
+    <!-- this is a hack so that the javascript won't die when it can't find a client id -->
+    <input type="hidden" id="client_id" /> 
+</div>
+
+<script type="text/javascript">
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    var prog_tpls = new Array();
+    [% FOREACH p_tpl IN current_user.valid_data.list( '_prognote_templates' ) %]
+        prog_tpls[ [% p_tpl.rec_id %] ] = "[% p_tpl.description | replace('\n', '\\n')  %]";
+    [% END %]
+
+    var group_tpls = new Array();
+    [% FOREACH g_tpl IN current_user.valid_data.list( '_groupnote_templates' ) %]
+        group_tpls[ [% g_tpl.rec_id %] ] = "[% g_tpl.description | replace('\n', '\\n')  %]";
+    [% END %]
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function insert_template( ttype ) {
+    var template_id = document.getElementById( 'select_' + ttype + 'note_template' ).value
+
+    if( template_id ) {
+        var note_body = document.getElementById( 'note_body' );
+        var tpl
+        if( ttype == 'prog' ) {
+            tpl = prog_tpls[ template_id ]
+        }
+        else {
+            tpl = group_tpls[ template_id ]
+        }
+        note_body.value = note_body.value + "\n" + tpl + "\n"
+    }
+}
+</script>

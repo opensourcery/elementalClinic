@@ -1,0 +1,141 @@
+/* sub navigation {{{*/
+div.insurance_subnav_child {
+    clear : left;
+    border-top-width : 1px;
+    padding-top : 3px;
+}
+#insurance_nav {
+    list-style : none;
+    padding : 0;
+    margin : 0 0 0 .5em;
+    height : 1.5em;
+}
+#insurance_nav li {
+    border-top : 4px solid #fff;
+    float : left;
+}
+#insurance_nav li a {
+    padding : .3em .7em;
+    border : 1px solid #fb0;
+    border-bottom-color : #fff;
+    margin-left : -1px;
+    display : block;
+}
+#insurance_nav li a:hover {
+    background : #ffc;
+}
+#insurance_nav li.active {
+    background : #ffc;
+    border-top : 1px solid #fff;
+}
+#insurance_nav li.active a {
+    border-top : 4px solid #fb0;
+}
+/*}}}*/
+/* insurance information {{{*/
+/* holder */
+.left {
+    float : left;
+    width : 40%;
+}
+.right {
+    float : right;
+}
+dl.inline dt {
+    text-align : right;
+    float : left;
+    clear : left;
+    width : 15em;
+    margin : 0 0 5px 0;
+}
+/* block */
+div.insurance_block {
+    border : 2px solid #fb0;
+    margin : 10px 0;
+}
+div.insurance_block.active {
+    border-color : blue;
+}
+/* list */
+div.insurance {
+    padding : 5px;
+    border-bottom-width : 0;
+    cursor : pointer;
+}
+div.insurance:hover,
+div.authorizations dt:hover {
+    border-color : blue;
+    background : #fff url( '../img/bg_pointer_right.gif' ) no-repeat 95% 50%;
+}
+div.insurance:hover a,
+div.authorizations dt:hover a {
+    text-decoration : underline;
+}
+div.insurance.active,
+div.authorizations dt.active {
+    background : #fff url( '../img/bg_pointer_right.gif' ) no-repeat 95% 50%;
+}
+div.insurance p.rank {
+    color : blue;
+    font-size : 2em;
+    font-weight : bold;
+    margin-right : .3em;
+    float : left;
+}
+div.insurance p.name {
+    font-size : 1em;
+    padding : 0;
+    margin : 0;
+}
+div.insurance p.dates {
+    padding : 0;
+    margin : 0;
+}
+/*}}}*/
+/* authorizations {{{*/
+div.authorizations {
+    border-top : 1px dotted #ddd;
+}
+div.authorizations h6 {
+    font-size : .8em;
+    padding : 0 5px;
+    margin : 2px 0;
+    clear : both;
+}
+div.authorizations a {
+    font-size : 1em;
+    font-weight : strong;
+}
+div.authorizations dl {
+    padding : 0;
+    margin : 0;
+    list-style : none;
+}
+div.authorizations dt {
+    padding : 5px 8px;
+    cursor : pointer;
+}
+/*}}}*/
+/* misc {{{*/
+#authorization_pref {
+    font-size : .7em;
+    text-align : right;
+    padding : 3px;
+    background : #fff;
+    border : 1px dotted #fb0;
+    border-width : 0 0 1px 1px;
+}
+#authorization_pref a {
+    font-weight : normal;
+    text-decoration : underline;
+}
+#authorization_pref span {
+    margin : 0 10px;
+}
+/*}}}*/
+div.site_display {
+    width : 325px;
+}
+h5 {
+    margin-top : 1em;
+}

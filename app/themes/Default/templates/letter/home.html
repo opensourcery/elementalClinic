@@ -1,0 +1,135 @@
+[% INCLUDE global/client_head.html
+    navsec = 'letters'
+    navpage = 'letter'
+%]
+[% client_rolodex = client.filter_by_show_inactive( 'release_agencies', current_user.pref.rolodex_show_inactive ) %]
+[% UNLESS client.placement.personnel %]
+<div id="center" class="client_box">
+    <h4>No Staff</h4>
+    <p>This client doesn't have a clinician. You can do that on the <a href="placement.cgi?client_id=[% client.client_id %]">client placement</a> page.</p>
+</div>
+[% ELSIF not client_rolodex %]
+<div id="center" class="client_box">
+    <h4>No Rolodex Relationships</h4>
+    <p>This client doesn't have any Rolodex relationships.  Please create at least one Rolodex relationship in the <a href="rolodex.cgi?client_id=[% client.client_id %]">Rolodex</a>.</p>
+</div>
+[% ELSE %]
+[% action = (( op == 'save' && errors ) || op == 'save' || op == 'edit' || op == 'home' || op == 'rolodex_create_letter' ) ? 'edit' : 'display' %]
+<div id="left" class="client_box">
+    <h4>General Letter</h4>
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+        [% INCLUDE util/select_new.html
+            name    = 'relationship_info'
+            label   = 'Contact'
+            values  = relationships
+            keyname = 'key'
+            valname = 'val'
+            wraptag = 'p'
+            default = current.relationship_role _ '-' _ current.rolodex_relationship_id
+        %]
+
+        [% INCLUDE util/choose_valid_data.html
+            name    = 'print_header_id'
+            label   = 'Print header'
+            table   = '_print_header'
+            type    = 'select'
+            use_id  = 1
+            show_blank = 0
+            wraptag = 'p'
+            default = current.print_header_id
+        %]
+
+        [% INCLUDE util/select_new.html
+            name       = 'letter_type'
+            label      = 'Letter type'
+            values      = [ 'Initial', 'Periodic' ]
+            default    = current.letter_type
+            wraptag = 'p'
+        %]
+
+        [% INCLUDE util/textarea.html
+            name    = 'letter'
+            cols    = 80
+            rows    = 15
+            wraptag = 'p'
+            value   = current.letter
+        %]
+
+        <hr class="subtle" />
+
+        [% IF action == 'edit' %]
+        <p>
+        [% INCLUDE util/choose_valid_data.html
+            name       = 'choose_template'
+            label      = 'General Letter Templates'
+            table      = '_letter_templates'
+            type       = 'select'
+            use_id     = 1
+            show_blank = 0
+        %]
+        <input type="submit" value="Insert Template" onclick="insert_template();return false" />
+        </p>
+        [% END %]
+
+        <hr class="div" />
+
+        <input type="hidden" name="letter_id" value="[% current.rec_id %]" />
+        <input type="hidden" name="client_id" value="[% client.id %]" />
+        [% IF action == 'display' %]
+        <p class="edit"><input type="submit" name="op" value="Edit Letter" /></p>
+        [% ELSE %]
+        <p class="save"><input type="submit" name="op" id="op" value="Save Letter" /></p>
+        [% END %]
+    </form>
+    [% IF op == 'edit';
+        INCLUDE util/form_cancel.html;
+    END %]
+</div>
+
+
+<div id="right" class="client_box">
+    <h4>General Letter History <em>(date)</em></h4>
+    [% IF client.letter.history %]
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" id="chooser" name="chooser">
+        <select name="letter_id" id="letter_id" size="25" multiple="multiple" class="multibutton" ondblclick="document.forms['chooser'].submit()">
+            [% FOR letter IN client.letter.history;
+                selected = letter.rec_id == current.rec_id ? 'selected="selected"' : ''
+            %]
+            <option value="[% letter.rec_id %]" [% selected %]>[% letter.client_relationship.rolodex.eman_company %] ([% letter.sent_date %])</option>
+            [% END %]
+        </select>
+        <br />
+        <input type="hidden" name="client_id" value="[% client.id %]" />
+        <p class="view"><input type="submit" name="op" value="View Letter" /></p>
+        <p class="print"><input type="submit" name="op" value="Print Letters" /></p>
+        <input type="hidden" name="op" value="view">
+    </form>
+    [% ELSE %]
+        <p>No General letters.</p>
+    [% END %]
+    </div>
+
+    <script type="text/javascript">
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        var tpls = new Array();
+
+        [% FOREACH tpl IN current_user.valid_data.list( '_letter_templates' ) %]
+        [% name = "$client.fname $client.lname" %]
+        tpls[ [% tpl.rec_id %] ] = "[% tpl.description | replace('\n', '\\n') | replace('client.name', name) | replace('personnel.work_phone',  personnel.work_phone) %]";
+        [% END %]
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function insert_template() {
+    var template_id = document.getElementById( 'choose_template' ).value;
+    var letter_body = document.getElementById( 'letter' );
+
+    if( template_id ) {
+        letter_body.value = "\n" + tpls[ template_id ] + "\n"
+    }
+    else {
+        letter_body.value = ''
+    }
+}
+</script>
+[% END %]
+

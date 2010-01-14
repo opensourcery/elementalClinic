@@ -1,0 +1,70 @@
+[% allow_edit = 1 UNLESS allow_edit == 0 %]
+<ul class="goal_list">
+[% FOR goal = current.goals %]
+    <li id="goal_[% goal.rec_id %]_link">
+        <a onclick="return show_goal( '[% goal.rec_id %]' )">
+            [% goal.goal_name %]<br />
+            <span class="goal_dates">[% goal.start_date %] - [% goal.end_date %]</span>
+        </a>
+        [% IF show_clone %]
+        <span class="clone_control">
+            <input type="checkbox" name="goal_clone_[% goal.rec_id %]" id="goal_clone_[% goal.rec_id %]" />
+            <label for="goal_clone_[% goal.rec_id %]"> Clone me</label>
+        </span>
+        [% END %]
+    </li>
+[% END %]
+</ul>
+
+[% FOR goal = current.goals;
+    IF loop.first;
+        first_goal = goal;
+    END %]
+[% UNLESS( active_only AND goal.goal_stat != 'A' ) %]
+<div id="goal_[% goal.rec_id %]" class="goal">
+    <h4>[% goal.goal_name %]<br />
+        [% "<em>From</em> $goal.start_date" IF goal.start_date -%]
+        [% "<em>to</em> $goal.end_date" IF goal.end_date -%]
+        <em>|</em>
+    [% SWITCH goal.goal_stat;
+        CASE 'A'; 'Active';
+        CASE 'AT'; 'Attained';
+        CASE 'D'; 'Discontinued';
+    END %]
+    </h4>
+
+    <dl class="goaltext">
+        <dt>Problem description</dt>
+        <dd>[% goal.problem_description %]</dd>
+
+        <dt>Evaluation</dt>
+        <dd>[% goal.eval %]</dd>
+
+        <dt>Services provided</dt>
+        <dd>[% goal.serv %]</dd>
+
+        <dt>Objective</dt>
+        <dd>[% goal.goal %]</dd>
+
+        <dt>Comments</dt>
+        <dd>[% goal.comment_text %]</dd>
+    </dl>
+
+    [% IF allow_edit %]
+    <form method="[% Config.form_method %]" action="[% program %]" enctype="application/x-www-form-urlencoded">
+        <input type="hidden" name="client_id" value="[% client.id %]" />
+        <input type="hidden" name="plan_id" value="[% current.rec_id %]" />
+        <input type="hidden" name="goal_id" value="[% goal.rec_id %]" />
+        <input type="hidden" name="op" id="op" value="goal_edit" />
+        <p class="edit"><input type="submit" name="edit_button" id="edit_button" value="Edit Goal" /></p>
+    </form>
+    [% END %]
+
+    <hr class="div" />
+</div>
+[% END %]
+[% END %]
+<script type="text/javascript">
+document.onload = show_goal( [% first_goal.rec_id %] )
+</script>
+

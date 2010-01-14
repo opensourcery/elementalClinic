@@ -1,0 +1,21 @@
+.minileft_edit,
+.minileft_display {
+    float : left;
+    width : 75%;
+    margin-right : 20px;
+    margin-left : 20px;
+    margin-top : 40px;
+}
+.template_chooser {
+    float: left;
+    width: 20%;
+}
+hr.subtle {
+    clear : both !important;
+}
+dl.inline dd {
+    float : left;
+    clear : none;
+    margin : 0 0 5px 10px;
+    white-space : normal;
+}

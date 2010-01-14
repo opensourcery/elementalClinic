@@ -1,0 +1,24 @@
+---
+1001:
+  active: 1
+  client_id: 1003
+  comment_text: ~
+  contact_type_id: 3
+  rec_id: 1001
+  rolodex_contacts_id: 1001
+1002:
+  active: 1
+  client_id: 1003
+  comment_text: ~
+  contact_type_id: 3
+  rec_id: 1002
+  rolodex_contacts_id: 1002
+1003:
+  active: 0
+  client_id: 1003
+  comment_text: Those bastards won't sell my records anymore
+  contact_type_id: 9
+  rec_id: 1003
+  rolodex_contacts_id: 1003
+
+

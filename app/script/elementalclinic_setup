@@ -1,0 +1,5 @@
+#!/usr/bin/env perl
+
+use eleMentalClinic;
+use eleMentalClinic::App::Setup;
+eleMentalClinic::App::Setup->new_with_options->run;

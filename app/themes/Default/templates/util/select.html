@@ -1,0 +1,13 @@
+<!-- BEGIN util/select -->
+[% IF s_size; s_size = " size=\"$s_size\""; END -%]
+[% IF s_dbclick; s_dbclick = " onDblClick=\"$s_dbclick\""; END -%]
+[% IF s_label %]<label for="[% s_name %]">[% s_label %]: </label>[% END -%]
+<select name="[% s_name %]" id="[% s_name %]"[% s_size %][% s_dbclick %]>
+[% FOREACH s_value IN s_values;
+    this_key = s_keyname ? s_value.$s_keyname : s_value;
+    this_val = s_valname ? s_value.$s_valname : s_value;
+    -%]
+    <option value="[% this_key %]"[% IF this_key == s_default; ' selected="selected"'; END -%]>[% this_val %]</option>
+[% END -%]
+</select>
+<!-- END util/select -->

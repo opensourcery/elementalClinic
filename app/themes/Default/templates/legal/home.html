@@ -1,0 +1,122 @@
+[% INCLUDE global/client_head.html
+    navsec = 'history'
+    navpage = 'legal'
+%]
+
+[% UNLESS( current.rec_id || errors || op == 'create' );
+    current = client.legal_get_all.0;
+END %]
+[% action = (( op == 'save' && errors ) || op == 'create' || op == 'edit' || errors ) ? 'edit' : 'display' %]
+<div id="[% action == 'edit' ? 'center' : 'left' %]" class="client_box">
+    <h4>Legal Issue</h4>
+    [% IF current || op == 'create' %]
+    <form method="[% Config.form_method %]" action="[% program %]" enctype="application/x-www-form-urlencoded">
+        <div class="left_[% action %]">
+        <p>
+        [% INCLUDE util/date_picker.html
+            name    = 'start_date'
+            value   = current.start_date
+            label   = 'From'
+        %]
+        [% INCLUDE util/date_picker.html
+            name    = 'end_date'
+            value   = current.end_date
+            label   = 'to'
+        %]
+        </p>
+
+        [% INCLUDE util/select_new.html
+            name    = "status_id"
+            label   = 'Status'
+            values  = current_user.valid_data.list( '_legal_status' )
+            default = current.status_id
+            keyname = 'rec_id'
+            valname = 'name'
+            wraptag = 'p'
+        %]
+
+        [% INCLUDE util/select_new.html
+            name    = "location_id"
+            label   = 'Location'
+            values  = current_user.valid_data.list( '_legal_location' )
+            default = current.location_id
+            keyname = 'rec_id'
+            valname = 'name'
+            wraptag = 'p'
+        %]
+        </div>
+
+        <div class="right_[% action %]">
+        [% INCLUDE util/input_text.html
+            name    = 'reason'
+            label   = 'Reason'
+            value   = current.reason
+            size    = 35
+            wraptag = 'p'
+        %]
+
+        [% INCLUDE util/textarea.html
+            name    = 'comment_text'
+            label   = 'Comment'
+            value   = current.comment_text
+            cols    = 40
+            rows    = 5
+            wraptag = 'p'
+            break   = 1
+        %]
+        </div>
+
+        <input type="hidden" name="rec_id" value="[% current.rec_id %]" />
+        <input type="hidden" name="client_id" value="[% client.id %]" />
+        [% IF action == 'display' %]
+        <p class="edit"><input type="submit" name="op" id="op_edit" value="Edit" /></p>
+        [% ELSE %]
+        <p class="save"><input type="submit" name="op" id="op_save" value="Save" /></p>
+        [% END %]
+    </form>
+    [% END %]
+    [% IF action == 'edit';
+        INCLUDE util/form_cancel.html;
+    END %]
+
+</div>
+
+
+[% UNLESS action == 'edit' %]
+<div id="right" class="client_box">
+
+    <h4>Legal history</h4>
+    [% IF( legal_history = client.legal_get_all ) %]
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" id="chooser" name="chooser">
+        <select name="rec_id" id="rec_id" size="5" onchange="document.forms['chooser'].submit()">
+            [% FOR legal IN legal_history;
+                selected = legal.rec_id == current.rec_id ? 'selected="selected"' : ''
+            %]
+            <option value="[% legal.rec_id %]" [% selected %]>
+                [%- ( legal.start_date || legal.end_date )
+                    ? "$legal.start_date to $legal.end_date"
+                    : "No dates (id: $legal.rec_id)"
+                -%]
+            </option>
+            [% END %]
+        </select>
+        <input type="hidden" name="client_id" value="[% client.id %]" />
+        <input type="hidden" name="op" value="view" />
+        <input type="submit" name="subview" value="View" />
+    </form>
+
+    [% ELSE %]
+    <p>No legal history.</p>
+    [% END %]
+
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+        <input type="hidden" name="client_id" id="client_id" value="[% client.client_id %]" />
+        <input type="hidden" name="op" id="op" value="create" />
+        <p class="new"><input type="submit" name="op_new" id="op_new" value="New Legal Record" /></p>
+    </form>
+
+
+</div>
+[% END %]
+    [%# FOREACH issue IN client.legal_currents %]
+    [%# FOREACH issue IN client.legal_past_issues %]

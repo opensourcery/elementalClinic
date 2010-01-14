@@ -1,0 +1,38 @@
+div.center,
+div.wrap0,
+div.wrap1,
+div.wrap2,
+div.wrap3,
+div.site_box,
+div.content {
+    background : none !important;
+    border : 0 !important;
+}
+#page {
+    width : 100%;
+}
+#client_head {
+    display : none !important;
+}
+.force_on #client_head {
+    display : block !important;
+    border : 0;
+}
+#client_content {
+    background-color : #ddd;
+    border : 1px solid #999;
+}
+h3 {
+    font-weight : normal;
+}
+h3.page {
+    page-break-before : always;
+}
+p.sig {
+    border-bottom : 1px solid #000;
+    padding-top : 20px;
+}
+td.info {
+    vertical-align : top;
+    white-space : nowrap;
+}

@@ -1,0 +1,29 @@
+                <div class="client_head">
+                    <div class="client">
+                        <h4>[% note_client.eman %]</h4>
+                    </div>
+                    <ul>
+                    [%- IF( note_client.placement.is_admitted || note_client.placement.is_referral ) %]
+                        <li>Placed
+                            in <strong>[% note_client.placement.program.name %]</strong>
+                            <strong>[% note_client.placement.event_date.format_date %]</strong>
+                            [% "with <strong>$note_client.placement.personnel.name</strong>"
+                                IF note_client.placement.personnel %]
+                            [% "receiving <strong>$note_client.placement.level_of_care.name</strong>"
+                                IF note_client.placement.level_of_care %]
+                        </li>
+                    [%- END %]
+                    
+                        [% diagnosis = note_client.diagnosis_history.0 %]
+                        <li>Diagnosed with <strong>[% diagnosis.code( '1a' ) %]</strong> on <strong>[% diagnosis.diagnosis_date.format_date %]</strong></li>
+                    </ul>
+
+                    <ul class="insurers">
+                    [% insurers = note_client.insurance_bytype( 'mental health', 'active' ) %]
+                    [% FOR i IN insurers %]
+                        <li>Insurer #[% i.rank %]: <strong>[% i.rolodex.eman %]</strong></li>
+                    [% END %]
+                    </ul>
+
+                    <hr class="div" />
+                </div>

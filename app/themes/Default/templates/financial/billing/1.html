@@ -1,0 +1,84 @@
+[% IF( validation_sets || billing_cycles );
+    control_style = 'right';
+ELSE;
+    control_style = 'left';
+END %]
+<div class="finance [% control_style %]">
+[% INCLUDE util/form.html %]
+    <h4>What are you doing?</h4>
+    [% IF billing_cycles;
+        cycle_types = [
+            { key => 'validation', value => 'Validation only' },
+        ];
+        ELSE;
+        cycle_types = [
+            { key => 'billing',    value => 'Billing cycle' },
+            { key => 'validation', value => 'Validation only' },
+        ];
+    END %]
+    [% INCLUDE util/radio_new.html
+        name    = 'cycle_type'
+        values  = cycle_types
+        keyname = 'key'
+        valname = 'value'
+        break   = 1
+        default = cycle_type || 'validation'
+    %]
+    [% IF billing_cycles %]
+    <p>You have an active billing cycle, so you may not create another.</p>
+    [% END %]
+
+    <h4>Select progress notes</h4>
+    <dl class="inline">
+        <dt>From:</dt>
+        [% INCLUDE util/date_picker.html
+            name    = 'start_date'
+            value   = start_date || department.earliest_prognote.note_date
+            wraptag = 'dd'
+        %]
+
+        <dt>To:</dt>
+        [% INCLUDE util/date_picker.html
+            name    = 'end_date'
+            value   = end_date || 'today'
+            wraptag = 'dd'
+        %]
+    </dl>
+    <input type="hidden" name="op" value="billing_1_select" />
+    <p class="save"><input type="submit" name="submit" value="Select" /></p>
+    [% INCLUDE financial/session.html %]
+[% INCLUDE util/form_end.html %]
+</div>
+
+[% IF validation_sets || billing_cycles %]
+<div class="finance left">
+    [% IF validation_sets %]
+    <h4>Validation sets</h4>
+    <p>You have open validation sets.  Choose one below to continue.</p>
+    <ul>
+        [% FOR set IN validation_sets %]
+        <li>
+            <a href="[% script %]?op=select_validation_set;validation_set_id=[% set.id %]">
+            <strong>[% set.creation_date %]</strong>: <strong>[% set.personnel.eman %]</strong>
+            </a>
+        </li>
+        [% END %]
+    </ul>
+    [% END %]
+
+    [% IF billing_cycles %]
+    <h4>Billing cycles</h4>
+    <p>You have an open billing cycle.  You may only have one.</p>
+    <p>(If there's more than one here, we have a problem).</p>
+    <ul>
+        [% FOR cycle IN billing_cycles %]
+        <li>
+            <a href="[% script %]?op=select_validation_set;validation_set_id=[% cycle.validation_set.id %]">
+            <strong>[% cycle.creation_date %]</strong>: <strong>[% cycle.personnel.eman %]</strong>
+            </a>
+        </li>
+        [% END %]
+    </ul>
+    [% END %]
+</div>
+[% END %]

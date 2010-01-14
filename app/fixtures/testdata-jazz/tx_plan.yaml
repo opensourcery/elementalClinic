@@ -1,0 +1,27 @@
+---
+1001:
+  active: 1
+  assets: This is a list of assets
+  case_worker: Joe
+  chart_id: ~
+  client_id: 1002
+  debits: This is a list of debits
+  end_date: 2005-04-15
+  esof_date: ~
+  esof_id: ~
+  esof_name: ~
+  esof_note: ~
+  meets_dsm4: 1
+  needs_adl: 1
+  needs_focus: 1
+  needs_selfcare: 1
+  needs_skills: 1
+  needs_support: 1
+  period: ~
+  rec_id: 1001
+  src_worker: Jane
+  staff_id: 1001
+  start_date: 2005-01-15
+  supervisor: Jeff
+
+

@@ -1,0 +1,36 @@
+.first {
+    float : left;
+    width : 550px;
+    border-right : 1px solid #fb0;
+    margin-right : 10px;
+}
+.second {
+    float : left;
+    width : 400px;
+}
+.third {
+    border : 1px solid #fb0;
+    border-width : 2px 0 0 0;
+}
+hr.subtle {
+    clear : both !important;
+}
+/* simple-specific */
+dl.inline dt {
+    width : 8em;
+}
+
+#comment_text {
+  width: 98%;
+}
+
+#address1,
+#address2,
+#email {
+  width: 210px;
+}
+
+#center.client_box {
+  padding-top: 10px;
+  margin: 0;
+}

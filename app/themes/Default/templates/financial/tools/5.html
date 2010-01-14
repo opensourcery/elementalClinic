@@ -1,0 +1,27 @@
+<div>
+    <h4>Bounced Progress Notes</h4>
+    [% IF bounced_prognotes %]
+        <table id="bounced_prognotes">
+        <tr>
+            <th>Note ID</th>
+            <th>Note Date</th>
+            <th>Bounce Date</th>
+            <th>Client</th>
+            <th>Clinician</th>
+            <th>Supervisor</th>
+        </tr>
+        [% FOR bounced IN bounced_prognotes %]
+        <tr>
+            <td>[% bounced.prognote.id %]</td>
+            <td>[% bounced.prognote.note_date %]</td>
+            <td><strong>[% bounced.bounce_date %]</strong></td>
+            <td>[% bounced.prognote.client.eman %]</td>
+            <td>[% bounced.prognote.personnel.eman %]</td>
+            <td>[% bounced.prognote.personnel.Supervisor.eman %]</td>
+        </tr>
+        [% END %]
+        </table>
+    [% ELSE %]
+    <p>Good news!  No current bounced notes.</p>
+    [% END %]
+</div>

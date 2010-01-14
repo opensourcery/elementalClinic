@@ -1,0 +1,25 @@
+
+1: 
+  active: 1
+  addr: ~
+  city: ~
+  dept_id: 1001
+  description: ~
+  is_referral: 1
+  name: Referral
+  number: 100
+  rec_id: 1
+  state: ~
+  zip: ~
+2: 
+  active: 1
+  addr: ~
+  city: ~
+  dept_id: 1001
+  description: ~
+  is_referral: 0
+  name: Verified
+  number: 100
+  rec_id: 2
+  state: ~
+  zip: ~

@@ -1,0 +1,21 @@
+---
+1:
+  error_message: ""
+  name: "all notes"
+  rec_id: 1
+  rule_from: ""
+  rule_order: ""
+  rule_select: ""
+  rule_where: ""
+  scope: "system:default"
+  selects_pass: 1
+2:
+  error_message: ""
+  name: "all notes"
+  rec_id: 2
+  rule_from: ""
+  rule_order: ""
+  rule_select: ""
+  rule_where: ""
+  scope: "payer:default"
+  selects_pass: 1

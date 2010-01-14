@@ -1,0 +1,12 @@
+.email_query dd {
+    margin-bottom: 10px;
+}
+
+.email_hide_body {
+    display: none;
+}
+
+.email_show_body {
+    border-top: 1px solid #999999;
+    border-bottom: 2px solid #444444;
+}

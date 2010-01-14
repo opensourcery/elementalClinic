@@ -1,0 +1,25 @@
+
+1: 
+  active: 1
+  dept_id: 1001
+  description: ~
+  name: Alaskan native
+  rec_id: 1
+2: 
+  active: 1
+  dept_id: 1001
+  description: ~
+  name: Caucasian
+  rec_id: 2
+3: 
+  active: 1
+  dept_id: 1001
+  description: ~
+  name: Native American
+  rec_id: 3
+4: 
+  active: 1
+  dept_id: 1001
+  description: ~
+  name: African American
+  rec_id: 4

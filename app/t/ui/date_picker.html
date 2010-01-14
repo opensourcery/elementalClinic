@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Language" content="en-us" />
+    <meta http-equiv="imagetoolbar" content="false" />
+    <meta name="MSSmartTagsPreventParsing" content="true" />
+    <meta name="ROBOTS" content="ALL" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/res/css/base.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/res/css/theme.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/res/css/client_head.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/res/css/client_selector.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/res/css/date_picker.css" />
+    <style type="text/css">
+    dd {
+        margin-bottom : 2em;
+    }
+    </style>
+
+    <script type="text/javascript" src="/res/js/jquery.js"></script>
+    <script type="text/javascript">var THEME = 'Earth'</script>
+    <script type="text/javascript" src="/res/js/common/jquery.OpenSourceryCommon.js"></script>
+    <script type="text/javascript" src="/res/js/base.js"></script>
+    <script type="text/javascript" src="/res/js/date_picker.js"></script>
+</head>
+
+<body>
+
+<dl style="float:right;">
+    <dt>zero: empty</dt>
+    <dd>
+        <input type="text" name="zero" id="zero" value="" size="10" class="date_picker" />
+    </dd>
+</dl>
+
+<dl style="float:left;">
+    <dt>one: empty</dt>
+    <dd>
+        <input type="text" name="one" id="one" value="" size="10" class="date_picker" />
+        <p>Here is some text, just to mess things up.</p>
+    </dd>
+
+    <dt>two: invalid</dt>
+    <dd><input type="text" name="two" id="two" value="i am not a date" size="10" class="date_picker" /></dd>
+
+    <dt>three: past</dt>
+    <dd><input type="text" name="three" id="three" value="2001-06-15" size="10" class="date_picker" /></dd>
+
+    <dt>four: current-ish</dt>
+    <dd><input type="text" name="four" id="four" value="2008-2-2" size="10" class="date_picker" /></dd>
+
+    <dt>five: future</dt>
+    <dd><input type="text" name="five" id="five" value="2021-07-4" size="10" class="date_picker" /></dd>
+
+</dl>
+
+<h3>To do list:</h3>
+<ul>
+    <li>font size issues; test w/ different browser?</li>
+</ul>
+
+</body>
+</html>
+

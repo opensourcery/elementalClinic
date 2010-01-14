@@ -1,0 +1,101 @@
+[%#
+
+FIXME: nuke the next directive
+
+%]
+[% UNLESS track == 'preview' %]
+    [% note_clients = Current.validation_set.clients %]
+[% END %]
+
+[% UNLESS track == 'preview' %]
+    [% result_set_id = result_set_id || 'results_failed' %]
+    [% rules = rules
+        || ( Current.insurer
+            ? Current.validation_set.payer_rules_used( Current.insurer.id ).sort('name')
+            : Current.validation_set.system_rules_used.sort('name')
+            )
+    %]
+    [% result_sets = [
+        {
+            id      = 'results_failed'
+            label   = 'Failed'
+            count   = Current.validation_set.result_count( 0, Current.insurer.id )
+        },
+        {
+            id      = 'results_passed'
+            label   = 'Passed'
+            count   = Current.validation_set.result_count( 1, Current.insurer.id )
+        },
+        {
+            id      = 'results_all'
+            label   = 'All'
+            count   = Current.validation_set.result_count( '', Current.insurer.id )
+        },
+    ] %]
+        <ul class="toggle_menu">
+        [%- FOR result_set IN result_sets %]
+            [% IF result_set.id == result_set_id;
+                current_result_set = result_set;
+            END %]
+            [% IF result_set.count %]
+                <li id="[% result_set.id %]_nav"[% ' class="active"' IF result_set.id == result_set_id %]>
+                    <a href="[% script %]?op=billing_show_results;validation_set_id=[% Current.validation_set.id %];result_set_id=[% result_set.id %];section=billing;step=[% Current.step %];rolodex_id=[% Current.insurer.id %]">
+                        [% "$result_set.label ($result_set.count)" %]
+                    </a>
+                </li>
+            [% ELSE %]
+                <li id="[% result_set.id %]_nav"[% ' class="active"' IF result_set.id == result_set_id %]>
+                    <span>[% result_set.label %] (0)</span>
+                </li>
+            [% END %]
+        [%- END %]
+        </ul>
+[% END %]
+
+
+[% IF ! results %]
+<p>There are [% current_result_set.count %] results in this set.
+    <a href="#" onclick="return load_results( [% Current.validation_set.id %], '[% result_set_id %]', 0 [% ",$Current.insurer.id" IF Current.insurer %] )">
+        Display them &#187;</a>
+        <br />(This may take some time for large sets).
+</p>
+[% ELSE %]
+<div class="results_list toggle_content">
+[% FOR note IN results.sort( 'client_name' ) %]
+    [% current_client_id = note.client_id %]
+        [% IF( current_client_id != previous_client_id );
+            previous_client_id = note.client_id;
+            note_client = note_clients.${ note.client_id }
+        %]
+        [% UNLESS loop.first %]</table>[% END %]
+        [% INCLUDE financial/billing/note_client_info.html %]
+        <table>
+            <thead>
+            <tr class="labels">
+                [% UNLESS track == 'preview' %]
+                    <th class="button"></th>
+                    [% IF allow_bounce %]
+                        <th class="button"></th>
+                    [% END %]
+                    <th class="button"></th>
+                [% END %]
+                [% IF rules and Current.step == 3 %]
+                <th class="button"></th>
+                [% END %]
+                <th class="date">Date</th>
+                <th class="minutes">Minutes</th>
+                <th class="units">Units</th>
+                <th class="code">Code</th>
+                [% UNLESS track == 'preview' %]
+                    [% FOR rule IN rules %]
+                        <th class="rule [% 'last' IF loop.last %]">[% rule.rec_id %]</th>
+                    [% END %]
+                [% END %]
+            </tr>
+            </thead>
+            [% END %]
+            [% INCLUDE financial/billing/result_note.html %]
+        [% END %]<!-- FOR note  -->
+        </table>
+</div>
+[% END %]

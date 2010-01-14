@@ -1,0 +1,53 @@
+[%#
+  # NOTE that valid_data_charge_code is special-cased throughout this template
+  #
+%]
+    [% IF current_table.readonly %]
+        <p>Table is read-only; no changes are allowed.</p>
+    [% ELSE %]
+        <h5 id="item_action">[% ( edit && current_item.rec_id ) ? 'Edit' : 'Add' %] Item</h5>
+        <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" name="edit_item_form">
+        [% IF current_table.name == 'valid_data_charge_code'; INCLUDE lookup/valid_data_charge_code_edit.html; ELSE %]
+            <p>
+                <label for="name">Name: </label>
+                <input type="text" name="name" id="name" size="50" value="[% current_item.name %]" />
+                [% is_active = edit ? current_item.active : 1;
+                INCLUDE util/checkbox.html
+                    label = 'Active?'
+                    name  = 'active'
+                    value = is_active
+                    %]
+                [% IF current_user.valid_data.has_default( current_table.name ) %]
+                    [% INCLUDE util/checkbox.html
+                        label = 'Default'
+                        name = 'is_default'
+                        value = current_item.is_default
+                    %]
+                [% END %]
+
+            </p>
+
+            <p>
+                <label for="description">Description: </label><br />
+                <textarea name="description" id="description" rows="2" cols="80">[% current_item.description | replace('\\\n', "\n") %]</textarea>
+            </p>
+
+            [% extra_columns = current_user.valid_data.extra_columns( current_table.name ) %]
+            [% IF extra_columns.size; INCLUDE "lookup/${ current_table.name }_edit.html"; END %]
+        [% END # for charge code special case %]
+            
+            <input type="hidden" name="rec_id" id="rec_id" value="[% current_item.rec_id %]" />
+            <input type="hidden" name="table_name" id="table_name" value="[% current_table.name %]" />
+            <input type="hidden" name="op" id="op" value="save_item" />
+        [% IF current_item %]
+            <p class="save"><input type="submit" id="op_save" value="Save item" /></p>
+        </form>
+            [% INCLUDE util/form_cancel.html extras = {
+                table_name  => current_table.name,
+                group_id    => current_group.rec_id
+            } %]
+        [% ELSE %]
+            <p class="save"><input type="submit" id="op_save" value="Create item" /></p>
+        </form>
+        [% END %]
+    [% END %]

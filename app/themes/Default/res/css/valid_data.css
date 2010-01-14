@@ -1,0 +1,192 @@
+tr.even {
+    background : #dedede;
+}
+tr.odd {
+    background : #fff;
+}
+div.system_box {
+    position : relative;
+}
+/* layout */
+#admin_valid_data {
+    position : relative;
+}
+#tableform {
+    padding : 0 0 5px 0;
+    border-bottom : 2px solid #60c;
+    margin : 0 0 5px 0;
+    width : 60%;
+}
+#table {
+    width : 65%;
+    float : left;
+}
+#aux {
+/*     position : absolute; */
+/*     top : 10px; */
+/*     right : 5px; */
+    margin-top : -34px;
+    float : right;
+    width : 35%;
+}
+#table table {
+    width : 100%;
+}
+#table table td,
+div.toggle_content table td {
+    font-size : 12px;
+    height : 20px;
+}
+table td.is_active {
+    text-align : center;
+}
+table td.is_active strong {
+    color : green;
+    font-size : 1.4em;
+    line-height : 10px;
+    font-weight : bold;
+    width : 1em;
+}
+table td.is_active.inactive strong {
+    color : #900;
+}
+#table table td.description_only {
+    border-top : 1px dotted #666;
+}
+#table div.header {
+    height : 235px;
+    padding : 0 5px 0 0;
+}
+.minileft h6 {
+    font-size : .8em;
+    padding : 0;
+    margin : 0;
+}
+#table .minileft {
+    margin-top : 10px;
+}
+div.header_small {
+    height : 90px;
+}
+#table div.header_small {
+    padding : 0 5px 0 0;
+}
+
+tr.head th {
+    font-size : 13px;
+    text-align : left;
+    border-bottom : 2px solid #333;
+    padding : 0 20px 0 0;
+}
+tr.head.super th {
+    border-bottom : none;
+    padding-top: 10px;
+}
+th.current_group {
+    text-align : right;
+    font-weight : normal;
+}
+th.current_group span {
+    background : #bebebe;
+    padding : 0 3px 0 3px;
+}
+#table td {
+    padding : 2px 10px 2px 2px;
+}
+td.edit a {
+    font-weight : normal;
+    border-left : 1px solid #333;
+    padding-left : 5px;
+}
+.lookup_group {
+/*     font-weight : normal; */
+    text-align : center !important;
+    background : #bebebe;
+    padding : 0 3px 0 3px !important;
+}
+.even td.lookup_group {
+    background : #a3a3a3;
+}
+#items {
+    width : 400px;
+}
+ul.tabs {
+    list-style-type : none;
+    padding : 0;
+    margin : 0 0 0 10px;
+    height : 22px;
+    clear : both;
+    z-index : 10;
+}
+ul.tabs li {
+    float : left;
+    margin-left : -1px;
+}
+ul.tabs li.active {
+    z-index : 10;
+    border-color : #60c;
+    border-top : 2px solid #60c;
+}
+ul.tabs li a {
+    font-weight : normal !important;
+    padding : 3px 7px 1px 5px;
+    background : #ddd;
+    display : block;
+    height : 21px;
+    border : 1px solid #60c;
+}
+ul.tabs li.active a {
+    font-weight : bold !important;
+    padding-top : 1px;
+    background : #dedeff;
+    border-bottom : 1px solid #dedeff;
+    border-bottom : 1px solid red;
+}
+/* insurance and charge code stuff {{{*/
+div.toggle_content {
+    background : transparent;
+    padding : 0;
+    border-left : 1px solid #999;
+}
+div.toggle_content h5 {
+    margin : 3px 0;
+}
+div.toggle_menu {
+    height : 40px;
+}
+div.toggle_content div.header {
+    padding : 0 0 0 5px;
+    height : 232px; /* subtract 27 from #table div.header  */
+}
+div.toggle_content div.header_small {
+    padding : 0 0 0 5px;
+}
+#insurer_codes {
+    width : 100%;
+}
+#insurer_codes tr.head th {
+    padding : 0 5px;
+}
+tr.subhead {
+    height : 18px;
+}
+tr.subhead th {
+    font-weight : normal;
+    text-align : center;
+}
+#insurer_codes td.is_active {
+    border-bottom : 1px dotted #666;
+}
+tr.controls {
+    height : 20px;
+}
+tr.controls td {
+    text-align : center;
+    border-bottom : 1px dotted #666;
+}
+div.toggle_content .minileft {
+    float : none;
+    width : auto;
+    margin : 10px 20px 35px 20px;
+}
+/*}}}*/

@@ -1,0 +1,17 @@
+[% IF client.id;
+    report_track = 'client';
+    INCLUDE global/client_head.html
+        navsec = 'report';
+ELSE;
+    report_track = 'site';
+%]
+[% END %]
+
+<div id="center" class="[% report_track %]_box">
+    [% PROCESS global/rowclass.html %]
+    [% INCLUDE $report_template
+        data = report.data
+    %]
+
+</div>
+

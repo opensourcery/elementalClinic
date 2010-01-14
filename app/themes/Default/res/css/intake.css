@@ -1,0 +1,121 @@
+h4 {
+    font-size : 14px;
+    text-align : center;
+    border : 0;
+    margin-top : 7px;
+}
+.client_column {
+    width : 48%;
+    float : left;
+}
+.client_column.contact {
+    border-left : 1px solid #fb0;
+    width : 33%;
+}
+.client_column.contact.first {
+    border : 0;
+}
+.client_address,
+.client_phone,
+.client_emergency_contact {
+    margin : 10px 0 20px 0;
+}
+p#progress {
+    padding : .5em 0;
+    border-bottom : 1px solid #fb0;
+}
+p.add {
+    text-align : center;
+}
+p.add a {
+    font-size : 11px;
+    font-weight : normal;
+}
+p.add a em {
+    font-weight : bold;
+    font-size : 16px;
+    text-decoration : none;
+}
+dl.inline dd label {
+    margin-left : 0;
+}
+/* duplicates */
+#duplicates {
+    float : right;
+    width : 50%;
+}
+/* overrides */
+.client_column.placement h4 {
+    margin-top : 0;
+}
+.client_column.placement ul.checkbox {
+    margin-left : 8em;
+}
+dl.inline.household dt,
+dl.inline.referral dt {
+    width : 16em;
+}
+/* generalizable */
+ul.navigation {
+    list-style : none;
+    padding : 0 0 0 1em;
+    margin : 0;
+    height : 1.9em;
+    clear : both;
+}
+ul.navigation li {
+    float : left;
+}
+ul.navigation li a {
+    font-size : 1.3em;
+    font-weight : bold;
+    font-style : normal;
+    background : #fff;
+    padding : .3em .6em;
+    border : 1px solid #fb0;
+    display : block;
+}
+ul.navigation li em {
+    font-style : normal;
+    text-decoration : underline;
+}
+ul.navigation li a:hover {
+}
+ul.navigation li.current a {
+    background : #ffc;
+    border-bottom : 0;
+    height : 1.4em;
+}
+#content {
+    padding : 0 15px;
+    background : #fff;
+}
+div.client_box {
+    padding-top : 5px;
+}
+hr {
+    background-color : transparent;
+    clear : both;
+    padding : 0;
+    margin : 0;
+    height : 0;
+}
+dl.inline.wide_label dt {
+    width: 11em;
+}
+dl.inline.short_label dt {
+    width: 6em;
+}
+
+div.client_column_treater {
+    width: 40%;
+}
+div.client_column_assessment {
+    width: 60%;
+}
+
+#assessment {
+    margin: 0;
+    margin-bottom: 8px;
+    width: 95%
+}

@@ -1,0 +1,52 @@
+p.sigline {
+    font-size : 11px;
+    margin-top : 20px;
+    margin-bottom : 20px;
+    border-bottom : 2px solid #000;
+}
+li {
+    list-style-type : none;
+}
+li.active {
+    list-style-type : disc;
+}
+#patient {
+    width : 45%;
+    float : left;
+    margin : 5px 0 10px 0;
+}
+#treater {
+    width : 45%;
+    float : left;
+    margin : 5px 0 10px 10%;
+}
+h5 {
+    clear : both;
+    font-size : 16px;
+    margin-top : 30px;
+}
+p.print_header {
+    font-size : 16px;
+}
+table,
+p {
+    margin-right : 30px;
+    margin-left : 30px;
+}
+table {
+    border-collapse: collapse;
+}
+tr.even {
+    background-color : #ddd;
+    border-bottom : 1px solid #ccc;
+}
+tr.odd {
+    background-color : #fff;
+    border-bottom : 1px solid #ccc;
+}
+th {
+    padding : 3px 10px 2px 0;
+}
+td {
+    padding : 3px 10px 5px 30px;
+}

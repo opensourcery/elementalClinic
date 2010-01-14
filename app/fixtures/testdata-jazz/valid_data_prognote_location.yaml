@@ -1,0 +1,24 @@
+---
+1001:
+  active: 1
+  dept_id: 1001
+  description: The client lives here
+  facility_code: 12
+  name: Client Home
+  rec_id: 1001
+1002:
+  active: 1
+  dept_id: 1001
+  description: This could be anywhere
+  facility_code: 99
+  name: Other
+  rec_id: 1002
+1003:
+  active: 1
+  dept_id: 1001
+  description: Good place to start a band
+  facility_code: 53
+  name: Community Mental Health Center
+  rec_id: 1003
+
+

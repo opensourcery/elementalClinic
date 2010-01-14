@@ -1,0 +1,9 @@
+<p>
+    [% INCLUDE util/input_text.html name='number' label='Number' value=current_item.number size='20' %]
+    [% is_referral = edit ? current_item.is_referral : 1;
+        INCLUDE util/checkbox.html
+        label = 'Referral?'
+        name  = 'is_referral'
+        value = is_referral
+    %]
+</p>

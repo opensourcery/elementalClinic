@@ -1,0 +1,5 @@
+[%-
+    'Client is admitted'    IF client.placement.is_admitted;
+    'Client is a referral'  IF client.placement.is_referral;
+    'Client is inactive'    IF ! client.placement.active;
+%]

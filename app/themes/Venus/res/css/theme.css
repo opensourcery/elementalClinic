@@ -1,0 +1,376 @@
+/* COLORS
+client
+    background : #ffc
+    border :  #fb0
+site
+    background : #dedeff
+    border :  #60c
+*/
+/* header {{{*/
+#header {
+    background : #060;
+    height : auto;
+}
+h1 {
+/*     background : #fff url( '../img/elementalclinic.jpg' ) no-repeat center center; */
+    text-align : left;
+    width : auto;
+    height : auto;
+    background : transparent;
+    padding : 3px 5px;
+}
+h1 span {
+/*     display : none; */
+}
+/*}}}*/
+/* nav {{{*/
+#nav {
+    height : auto;
+}
+#nav ul {
+    padding : 0;
+    background : #ccc;
+    margin : 0;
+    height : 1.3em;
+}
+#nav ul li {
+    list-style : none;
+    padding : 0;
+    margin : 0;
+    float : left;
+}
+#nav ul li a {
+    color : #04a;
+    font-size : 1.1em;
+    font-weight : bold;
+    padding : .1em 1em;
+    display : block;
+    height : 1.3em;
+}
+#nav ul li a:hover {
+    color : #06f;
+}
+#nav ul li.active a {
+    color : #eee;
+    background : #04a;
+}
+/*}}}*/
+/* shadows {{{ */
+#shadow_only {
+    padding : 0;
+    margin : 0 0 5px 0;
+    height : 3px;
+    background-image : url( '../img/shadow.png' );
+    background-repeat : repeat-x;
+    background-position : bottom;
+    clear : both;
+}
+.wrap0,
+.wrap1,
+.wrap2,
+.wrap3 {
+    border : 1px dotted red;
+}
+/* }}} */
+/* colors {{{ */
+.client_box,
+.site_box,
+.system_box {
+/*     background-color : #fff; */
+    padding-top : 7px;
+/*     margin : 0; */
+}
+
+.client,
+.client_box {
+    background-color : #efe;
+}
+#client_content,
+.client_box {
+    padding : 0 7px 7px 7px;
+    border : 1px solid #060;
+    border-top-width : 4px;
+}
+#client_content {
+    border : none;
+    padding : 0;
+}
+
+.system,
+.site_box,
+.system_box {
+    background-color : #eee;
+}
+.site_box,
+.system_box {
+    padding : 7px;
+    border : 1px solid #060;
+}
+#client_head hr {
+    background-color : transparent;
+/*     color : #fb0; */
+    height : 1px;
+    padding : 0;
+    border-bottom : 1px dotted #f90;
+    margin : 5px 0 5px 0;
+    clear : both;
+}
+#client_head hr.div {
+    background-color : transparent;
+    border : none;
+}
+.client hr.subtle,
+.client_box hr.subtle {
+    padding : 0;
+    background : transparent;
+    border-bottom : 1px dotted #060;
+    margin : 5px 0 5px 0;
+    height : 1px;
+    clear : none;
+}
+.system hr.subtle,
+.site_box hr.subtle,
+.system_box hr.subtle {
+    padding : 0;
+    background : transparent;
+    border-bottom : 1px dotted #60c;
+    margin : 5px 0 5px 0;
+    height : 1px;
+    clear : none;
+}
+/* }}} */
+/* forms {{{ */
+input[type="submit"] {
+    font-size : 12px;
+    border : 1px solid #000; 
+    margin : 3px;
+}
+button {
+    font-size : 12px;
+    border : 1px solid #000; 
+    margin : 3px;
+}
+p.new {
+    text-align : right;
+    padding : 0px 8px 0px 8px;
+    background-color : #ccc;
+    border : 1px solid #999;
+    margin : 0;
+    clear : both;
+}
+p.save {
+    text-align : right;
+    padding : 3px 8px 3px 8px;
+    background-color : #666;
+    border : 1px solid #333;
+    margin : 0;
+    clear : both;
+}
+p.small {
+    padding : 1px 5px 1px 5px;
+    margin : 0;
+    clear : both;
+}
+p.small input[type="submit"],
+button.small {
+    font-size : 10px;
+    border : 1px solid #000; 
+    margin : 2px;
+}
+p.edit {
+    text-align : right;
+    padding : 2px 6px 2px 6px;
+    background-color : #aaa;
+    border : 1px solid #333;
+    margin : 0;
+    clear : both;
+}
+p.edit_text {
+    text-align : right;
+    padding : 2px 6px 2px 6px;
+    background-color : #ccc;
+    border : 1px solid #333;
+    margin : 0;
+    clear : both;
+}
+.print_head p.print {
+    text-align : right;
+    padding : 2px 6px 2px 6px;
+    background-color : #aaa;
+    border : 1px solid #333;
+    margin : 0;
+    clear : both;
+}
+form.cancel {
+/*     text-align : right; */
+    text-align : left;
+    padding : 3px 8px 3px 8px;
+    background-color : #999;
+    border : 1px solid #333;
+    margin : -33px 0 0 0;
+
+    display : inline;
+    float : left;
+}
+form.cancel p {
+    display : inline;
+    padding : 0;
+    margin : 0;
+}
+select.multibutton {
+    float : left;
+}
+p.print_edit {
+    padding : 2px 6px 2px 6px;
+    border : 1px solid #333;
+    margin : 0;
+
+    float : left;
+    background-color : #fff;
+    clear : left;
+}
+p.print_edit + p.edit {
+    clear : right;
+}
+/* }}} */
+/* footer {{{ */
+#footer p.copyright {
+    display : none;
+}
+/* }}} */
+/* help {{{
+ * I don't like using IDs for all these elements, but many of them
+ * need to be scriptable.
+ */
+#help {
+    position : absolute;
+    top : 2px;
+    right : 2px;
+    display : block !important;
+}
+#help_main,
+#help_link span {
+    display : none;
+}
+#help_link {
+    margin : 0;
+    padding : 0;
+}
+#help_link a {
+    background : transparent url( "../img/icons/help.png" ) no-repeat 100% 0px;
+    display : block;
+    width : 23px;
+    height : 23px;
+    float : right;
+}
+#help_link a:hover,
+#help_link.active a {
+    background-position : 0px -23px;
+    display : block;
+    width : 23px;
+    height : 23px;
+}
+#help_loading {
+    background : url( "../img/spinner.gif" ) no-repeat 10px 40px;
+    height : 90px;
+    display : none;
+}
+#help_loading p {
+    font-size : 20px;
+    font-weight : bold;
+    padding : 20px 0 0 60px;
+}
+/* main */
+#help_main {
+    padding : 0;
+    background : #efe;
+    border : 1px solid #060;
+    position : absolute;
+    top : 22px;
+    right : 0;
+    width : 700px;
+    min-height : 200px;
+    z-index : 100;
+    opacity : .95;
+}
+#help_menu {
+    padding : 0;
+    background : #afa;
+    margin : 0;
+    float : right;
+    width : 230px;
+    height : 100%;
+}
+#help_menu h4 {
+    margin : 10px;
+    margin-bottom : 0;
+}
+#help_menu ul {
+    list-style : none;
+    padding : 10px;
+    margin : 0;
+}
+#help_menu ul li {
+    padding-left : 15px;
+}
+#help_menu a {
+    color : #060;
+    font-size : 12px !important;
+    font-weight : normal;
+}
+#help_menu li.active {
+    color : #090;
+    font-size : 14px;
+    font-weight : bold;
+    padding-left : 0;
+}
+#help_menu li.active a {
+    font-weight : bold;
+}
+#help_menu li.active:before {
+    content : " \00AB ";
+}
+#help_description {
+    font-size : 1.1em;
+}
+#help_body,
+#help_loading {
+    float : left;
+    width : 450px;
+    padding : 10px;
+}
+#help_content li {
+    line-height : 1.4em;
+    padding-bottom : .3em;
+}
+#help_content tt {
+    font-size : 1.1em;
+}
+/* }}} */
+/* buttons {{{*/
+#close_button {
+    padding : 0;
+    background : transparent url( '../img/close_button.gif' ) no-repeat 100% 0;
+    margin : 2px;
+    display : block;
+    width : 24px;
+    height : 18px;
+    float : right;
+}
+#close_button span {
+    display : none;
+}
+#close_button:hover {
+    background : transparent url( '../img/close_button.gif' ) 100% -18px no-repeat;
+}
+/* }}} */
+tr.even {
+    background : #ccc;
+}
+tr.odd {
+    background : #eee;
+}
+fieldset.subtle {
+    border-color : #060;
+    border-style : dotted;
+}

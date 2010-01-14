@@ -1,0 +1,10 @@
+#left {
+    width : 350px;
+    position : absolute;
+    left : 10px;
+}
+#right {
+    width : 350px;
+    position : absolute;
+    left : 625px;
+}

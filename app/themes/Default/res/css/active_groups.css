@@ -1,0 +1,60 @@
+#group_status {
+    clear : both;
+}
+#groups_active, #groups_inactive {
+    padding-left : 10px;
+    padding-right : 10px;
+    float : left
+}
+#select_wrapper {
+    clear: all;
+    float: left;
+}
+#group_activity_tabs {
+    height:1.5em;
+    list-style-image:none;
+    list-style-position:outside;
+    list-style-type:none;
+    margin:0pt 0pt 0pt 0.5em;
+    padding:0pt;
+    
+}
+#group_activity_tabs .inactive, #group_activity_tabs .active, #group_activity_tabs input{
+    float : left;
+    padding: 4px;
+    margin: 0px;
+    margin-left: -1px;
+    border : 1px solid #60C;
+    width : 80px;
+    text-align: center;
+    text-transform: capitalize;
+}
+#group_activity_tabs .active{
+    background : #ffffff;
+}
+#active_menu_wrapper{
+    clear: both;
+    height: 2em;
+}
+#active_groups {
+    float: left;
+    margin-right: 30px;
+    width: 320px;
+}
+#inactive_groups {
+    float: left;
+    margin-Left: 30px;
+    width: 320px;
+}
+#mover_tools {
+    float: left;
+    text-align: center;
+}
+#mover_tools input {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+#mover_tools input[type="button"] {
+    border:1px solid #000000;
+    font-size:12px;
+}

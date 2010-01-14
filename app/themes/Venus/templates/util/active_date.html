@@ -1,0 +1,41 @@
+[% 
+    id = id || name;
+    wraptag = ( action == 'hidden' ) ? 0 : wraptag;
+    pref_date_format = current_user.pref.date_format;
+-%]
+[% IF action == 'display' %]
+    [% "<$wraptag>" IF wraptag %]
+    [% "$label: " IF label %]<strong id="[% id %]">[% value FILTER date_format(pref_date_format) %]</strong>
+    [% "</$wraptag>" IF wraptag %]
+[% ELSIF action == 'hidden' %]
+    <input type="hidden" name="[% name %]" value="[% value %]" />
+[% ELSE;
+    value = ( value == 'today' ) ? today_ymd : value;
+    value = ( value == 'year_from_today' ) ? year_from_today : value;
+    "<$wraptag>" IF wraptag;
+    required = required ? 'class="required"' : '';
+    onblur = onblur ? " onblur=\"$onblur\"" : '';
+    IF label -%]
+    <label for="[% id %]">[% label %]: </label>
+    [% END;
+    IF current_user.pref.active_date;
+        facade_size = pref_date_format == 'long'
+            ? 16
+            : 10
+    -%]
+        <input [% required %] type="text" name="[% name %]_facade" id="[% id %]_facade" size="[% facade_size %]" [% onblur %] />
+        <input type="hidden" name="[% name %]" id="[% id %]" value="[% value %]" />
+        <a class="calendar_icon" href="#"
+            onclick="return show_calendar( '[% id %]', document.getElementById( '[% id %]' ).value, '[% pref_date_format %]' )">
+            <img src="../res/Default/img/calendar_icon.gif" width="17" height="17" alt="Popup calendar" /></a>
+        <script language="JavaScript" type="text/javascript">
+            var element = document.getElementById( '[% id %]_facade' )
+            date_format = '[% pref_date_format %]'
+            element.addEventListener( 'keypress', alter_date, true )
+            init_facade( '[% id %]', '[% pref_date_format %]', '[% value %]' )
+        </script>
+    [% ELSE -%]
+        <input [% required %] type="text" name="[% name %]" id="[% id %]" size="10" value="[% value FILTER date_format(pref_date_format) %]" />
+    [% END -%]
+[% "</$wraptag>" IF wraptag %]
+[% END %]

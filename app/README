@@ -1,0 +1,83 @@
+INSTALLATION
+
+eleMentalClinic uses Module::Build for its installation.
+
+  perl Build.PL
+  ./Build
+  ./Build test
+  sudo ./Build install
+
+You will need PostgreSQL 8.2 or 8.3 configured, and a database user for
+eleMentalClinic.
+
+See the INSTALL file for more details on prerequisites, installation, and
+configuration.
+
+QUICKSTART
+
+*** To set up a fresh checkout:
+
+  perl Build.PL
+
+This will run `Build.PL` and set up a `Build` script for common development
+tasks.
+
+  ./Build prereq_report
+
+This gives a list of all dependencies, with versions and whether or not they
+are installed.
+
+  ./Build installdeps
+
+This will install all missing dependencies.
+
+  ./Build dev-setup
+
+This will prompt you for a database user and password.
+
+The database user you choose will need to be able to create and drop the
+'elementalclinic' database.
+
+If your database is named something other than 'elementalclinic', or is on a
+different host or port, you can configure those parameters by running
+`elementalclinic_setup` manually:
+
+  perl -Ilib script/elementalclinic_setup --db-name myclinic --db-host db.myclinic.com
+
+See `script/elementalclinic_setup` for more details.
+
+
+*** To load data into your database:
+
+  ./Build db-clean-dev
+
+This will load the basic schema and data necessary for eMC to function.
+
+  ./Build db-testdata-jazz
+
+This loads a set of test data, with appointments, progress notes, clients, etc.
+
+*** To run a test webserver:
+
+  script/elementalclinic_web_server.pl
+
+The test webserver starts on port 3000 by default.  To log on as the
+administrative user:
+
+  user: root
+  pass: password
+
+You will be prompted to change the password the first time you log in.
+
+*** To run the tests:
+
+  ./Build test
+
+Currently, the tests require Apache 2.2 and mod_perl2 installed to run; without
+them, the web tests (t/9XX and t/theme) will all fail noisily.
+
+If you loaded the testdata-jazz set, you'll need to clean the database before
+running the tests:
+
+  ./Build db-clean-dev
+  ./Build test

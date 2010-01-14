@@ -1,0 +1,103 @@
+
+1: 
+  active: 1
+  dept_id: 1001
+  description: Processed as Primary
+  name: 1
+  rec_id: 1
+10: 
+  active: 1
+  dept_id: 1001
+  description: Suspended - review pending
+  name: 17
+  rec_id: 10
+11: 
+  active: 1
+  dept_id: 1001
+  description: Processed as 1, Forwarded to Next Payer(s)
+  name: 19
+  rec_id: 11
+12: 
+  active: 1
+  dept_id: 1001
+  description: Processed as 2, Forwarded to Next Payer(s)
+  name: 20
+  rec_id: 12
+13: 
+  active: 1
+  dept_id: 1001
+  description: Processed as 3, Forwarded to Next Payer(s)
+  name: 21
+  rec_id: 13
+14: 
+  active: 1
+  dept_id: 1001
+  description: Reversal of Previous Payment
+  name: 22
+  rec_id: 14
+15: 
+  active: 1
+  dept_id: 1001
+  description: Not Our Claim, Forwarded to Next Payer(s)
+  name: 23
+  rec_id: 15
+16: 
+  active: 1
+  dept_id: 1001
+  description: Predetermination Pricing Only - No Payment
+  name: 25
+  rec_id: 16
+17: 
+  active: 1
+  dept_id: 1001
+  description: Reviewed
+  name: 27
+  rec_id: 17
+2: 
+  active: 1
+  dept_id: 1001
+  description: Processed as Secondary
+  name: 2
+  rec_id: 2
+3: 
+  active: 1
+  dept_id: 1001
+  description: Processed as Tertiary
+  name: 3
+  rec_id: 3
+4: 
+  active: 1
+  dept_id: 1001
+  description: Denied
+  name: 4
+  rec_id: 4
+5: 
+  active: 1
+  dept_id: 1001
+  description: Pended
+  name: 5
+  rec_id: 5
+6: 
+  active: 1
+  dept_id: 1001
+  description: Received, but not in process
+  name: 10
+  rec_id: 6
+7: 
+  active: 1
+  dept_id: 1001
+  description: Suspended
+  name: 13
+  rec_id: 7
+8: 
+  active: 1
+  dept_id: 1001
+  description: Suspended - investigation with field
+  name: 15
+  rec_id: 8
+9: 
+  active: 1
+  dept_id: 1001
+  description: Suspended - return with material
+  name: 16
+  rec_id: 9

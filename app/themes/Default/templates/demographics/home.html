@@ -1,0 +1,427 @@
+[% INCLUDE global/client_head.html
+    navsec = 'home'
+    navpage = 'demographics'
+%]
+[%
+    ordmap = {
+        '1' = 'Primary',
+        '2' = 'Secondary',
+        '3' = 'Tertiary'
+    }
+%]
+[% current = current || client %]
+[% action = (( op == 'save' && errors ) || op == 'edit' ) ? 'edit' : 'display' %]
+<form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+<div id="center" class="client_box">
+    <div class="first">
+    [% IF action == 'edit' %]
+    <dl class="inline">
+        [% INCLUDE util/input_text.html
+            name = 'fname'
+            label = 'First'
+            value = current.fname
+            size = '20'
+            dl = 1
+        %]
+        [% INCLUDE util/input_text.html
+            name = 'mname'
+            label = 'Middle'
+            value = current.mname
+            size = '1'
+            dl = 1
+        %]
+        [% INCLUDE util/input_text.html
+            name = 'lname'
+            label = 'Last'
+            value = current.lname
+            size = '20'
+            dl = 1
+        %]
+        [% INCLUDE util/input_text.html
+            name = 'name_suffix'
+            label = 'Suffix'
+            value = current.name_suffix
+            size = '5'
+            dl = 1
+        %]
+    </dl>
+    <hr class="subtle" />
+    <dl class="inline">
+        [% INCLUDE util/input_text.html
+            name = 'ssn'
+            label = 'SSN'
+            value = current.ssn_f
+            dl = 1
+        %]
+        [% INCLUDE util/date_picker.html
+            name    = 'dob'
+            value   = current.dob
+            label   = 'Birthdate'
+            dl = 1
+        %]
+    </dl>
+    <hr class="subtle" style="visibility: hidden" />
+    [% END %]
+
+    [% IF action != 'edit' %]
+    <fieldset id="address_chooser" class="contact_chooser addr">
+        [% addr_count = current.addresses.size %]
+        [% IF addr_count AND action != 'edit' %]
+            <legend>
+                <!-- uncomment these to use a cool, but ultimately not discoverable interface
+                <span class="left"></span>
+                <span id="addr_label_1" class="address label selected">Primary Address</span>
+                <span id="addr_label_2" class="address label">Secondary Address</span>
+                <span id="addr_label_3" class="address label">Tertiary Address</span>
+                <span class="right"></span>
+                -->
+
+                [%
+                    addr_values = addr_count > 2 ? [ 'Primary Address', 'Secondary Address', 'Tertiary Address' ]
+                                : addr_count > 1 ? [ 'Primary Address', 'Secondary Address', 'New Address' ]
+                                :                  [ 'Primary Address', 'New Address' ];
+                %]
+                [% INCLUDE util/select_new.html
+                    name    = 'address_chooser_select'
+                    values  = addr_values
+                    action  = 'edit'
+                    onchange = "emcChooser.select( '#address_chooser_select', 'addr' )"
+                %]
+            </legend>
+        [% END %]
+    [% END %]
+
+        [% addresses = current.addresses %]
+        [% selected = ' selected' %]
+        [% FOR ord IN [ 0 .. 2 ] %]
+            [% addr = addresses.$ord || input_addrs.$ord %]
+            [% ord = ord + 1 %]
+            <input type="hidden" name="id_[% ord %]_addr" value="[% addr.rec_id %]" />
+            <div id="addr_view_[% ord %]" class="[% action == 'edit' ? 'addr_edit' : 'addr_view' %][% selected %]">
+                [% IF action == 'edit' %]
+                    <fieldset class="contact_chooser">
+                        <legend>[% ordmap.$ord %] Address</legend>
+                [% END %]
+                <dl class="inline">
+                    [% INCLUDE util/input_text.html
+                        name='addr_' _ ord _ '_address1'
+                        label='Address'
+                        dl=1
+                        value=addr.address1
+                        size='40'
+                    %]
+                    [% INCLUDE util/input_text.html
+                        name='addr_' _ ord _ '_address2'
+                        label='Address 2'
+                        dl=1
+                        value=addr.address2
+                        size='40'
+                    %]
+                    [% INCLUDE util/input_text.html
+                        name='addr_' _ ord _ '_county'
+                        label='County'
+                        dl=1
+                        value=addr.county
+                        size='25'
+                    %]
+                    [% INCLUDE util/input_text.html
+                        name='addr_' _ ord _ '_city'
+                        label='City'
+                        dl=1
+                        value=addr.city
+                        size='25'
+                    %]
+                    <dt>State:</dt>
+                    <dd>
+                        [% INCLUDE util/input_text.html
+                            name='addr_' _ ord _ '_state'
+                            value=addr.state
+                            size='2'
+                        %]
+                        [% INCLUDE util/input_text.html
+                            name='addr_' _ ord _ '_post_code'
+                            label='Zip'
+                            value=addr.post_code
+                            size='10'
+                        %]
+                    </dd>
+                </dl>
+                [% IF action == 'edit' %]
+                    </fieldset>
+                [% END %]
+            </div>
+            [% selected = '' %]
+        [% END %]
+    [% IF action != 'edit' %]
+    </fieldset>
+    [% END %]
+
+    [% IF action != 'edit' %]
+    <fieldset id="phone_chooser" class="contact_chooser phn">
+        [% phn_count = current.phones.size %]
+        [% IF phn_count %]
+            <legend>
+                <!-- See comment on addresses above
+                <span class="left"></span>
+                <span id="phn_label_1" class="phone label selected">Primary Phone</span>
+                <span id="phn_label_2" class="phone label">Secondary Phone</span>
+                <span id="phn_label_3" class="phone label">Tertiary Phone</span>
+                <span class="right"></span>
+                -->
+
+               [%
+                   phn_values = phn_count > 2 ? [ 'Primary Phone', 'Secondary Phone', 'Tertiary Phone' ]
+                              : phn_count > 1 ? [ 'Primary Phone', 'Secondary Phone', 'New Phone' ]
+                              :                 [ 'Primary Phone', 'New Phone' ]
+               %]
+               [% INCLUDE util/select_new.html
+                   name    = 'phones_chooser_select'
+                   values  = phn_values
+                   action  = 'edit'
+                   onchange = "emcChooser.select( '#phones_chooser_select', 'phn' )"
+               %]
+            </legend>
+        [% END %]
+    [% END %]
+
+        [% phones = current.phones %]
+        [% selected = ' selected' %]
+        [% FOR ord IN [ 0 .. 2 ] %]
+            [% phn = phones.$ord || input_phns.$ord %]
+            [% ord = ord + 1 %]
+            <input type="hidden" name="id_[% ord %]_phn" value="[% phn.rec_id %]" />
+            <div id="phn_view_[% ord %]" class="[% action == 'edit' ? 'phn_edit' : 'phn_view' %][% selected %]">
+                [% IF action == 'edit' %]
+                    <fieldset class="contact_chooser">
+                        <legend>[% ordmap.$ord %] Phone</legend>
+                [% END %]
+                <dl class="inline">
+                    [% INCLUDE util/input_text.html
+                        name='phn_' _ ord _ '_phone_number'
+                        label='Phone Number'
+                        dl=1
+                        value=phn.phone_number
+                        size='20'
+                    %]
+                    [% INCLUDE util/input_text.html
+                        name='phn_' _ ord _ '_phone_type'
+                        label='Phone Type'
+                        dl=1
+                        value=phn.phone_type
+                        size='20'
+                    %]
+                    [% INCLUDE util/checkbox.html
+                        name='phn_' _ ord _ '_call_ok'
+                        label='May we call this number?'
+                        dl=1
+                        value=phn.call_ok
+                        has_value = phn.rec_id
+                    %]
+
+                    [% INCLUDE util/checkbox.html
+                        name='phn_' _ ord _ '_message_ok'
+                        label='May we leave a message?'
+                        dl=1
+                        value=phn.message_ok
+                        has_value = phn.rec_id
+                    %]
+                </dl>
+                [% IF action == 'edit' %]
+                    </fieldset>
+                [% END %]
+            </div>
+            [% selected = '' %]
+        [% END %]
+
+    [% IF action != 'edit' %]
+    </fieldset>
+    [% END %]
+
+    <hr class="subtle" />
+
+    <dl class="inline">
+        [% INCLUDE util/input_text.html name='email' label='Email' dl=1 value=current.email size='40' %]
+        [% INCLUDE util/checkbox.html 
+            name    = 'send_notifications' 
+            label   = 'Notifications' 
+            value   = current.send_notifications 
+            dl      = 1
+        %]
+    </dl>
+
+    <hr class="subtle" />
+
+    <dl class="inline">
+        [% INCLUDE util/input_text.html name='aka' label='Alias' dl=1 value=current.aka %]
+        [% INCLUDE util/input_text.html name='chart_id' label='Chart #' dl=1 value=current.chart_id size='18' %]
+    </dl>
+
+    <hr class="subtle" />
+
+    <dl class="inline">
+        <dt>Living Arrangement:</dt>
+        <dd>
+        [% INCLUDE util/choose_valid_data.html
+            name   = 'living_arrangement'
+            table  = '_living_arrangement'
+            type    = 'select'
+            default = current.living_arrangement
+            use_id  = 1
+        %]
+        </dd>
+
+        <dt>Consent to Treat:</dt>
+        <dd>
+        [% INCLUDE util/select_new.html
+            name    = 'consent_to_treat'
+            values  = [
+                { id  => 0, label => 'No', },
+                { id  => 1, label => 'Yes', },
+                ]
+            default = current.consent_to_treat || 0
+            keyname = 'id'
+            valname = 'label'
+        %]
+        </dd>
+
+        [% INCLUDE util/input_text.html name='state_specific_id' label='CPMS' dl=1 value=current.state_specific_id size='25' %]
+    </dl>
+
+    </div>
+
+    <div class="second">
+        <dl class="inline">
+            [% IF action != 'edit' %]
+            <dt>Date of Birth:</dt> 
+            <dd><strong>[% current.dob %]</strong></dd>
+            [% END %]
+
+            <dt>Sex:</dt>
+            [% INCLUDE util/choose_valid_data.html
+                name   = "sex"
+                table  = '_sex'
+                type    = 'select'
+                default = current.sex || 'Unknown'
+                wraptag = 'dd'
+            %]
+
+            <dt>Sexual Identity:</dt>
+            [% INCLUDE util/choose_valid_data.html
+                name   = "sexual_identity"
+                table  = '_sexual_identity'
+                type    = 'select'
+                default = current.sexual_identity || 'Unknown'
+                wraptag = 'dd'
+            %]
+
+            <dt>Education:</dt>
+            [% INCLUDE util/select_new.html
+                name   = "edu_level"
+                values  = [ 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16]
+                default = current.edu_level || 'Unknown'
+                wraptag = 'dd'
+            %]
+
+            <dt>Ethnicity:</dt>
+            [% INCLUDE util/choose_valid_data.html
+                name   = "race"
+                table  = '_race'
+                type    = 'select'
+                default = current.race
+                wraptag = 'dd'
+            %]
+
+            <dt>Marital:</dt>
+            [% INCLUDE util/choose_valid_data.html
+                name   = "marital_status"
+                table  = '_marital_status'
+                type    = 'select'
+                default = current.marital_status || 'Unknown'
+                wraptag = 'dd'
+            %]
+
+            <dt>Religion:</dt>
+            [% INCLUDE util/choose_valid_data.html
+                name   = "religion"
+                table  = '_religion'
+                type    = 'select'
+                default = current.religion
+                wraptag = 'dd'
+            %]
+
+            <dt>Language:</dt>
+            [% INCLUDE util/choose_valid_data.html
+                name   = "language_spoken"
+                table  = '_language'
+                type    = 'select'
+                default = current.language_spoken || 'Unknown'
+                wraptag = 'dd'
+            %]
+        </dl>
+
+        <hr class="div" />
+
+        <fieldset class="fourth">
+            <legend>History of abusing...</legend>
+            <dl class="inline">
+            <dt>Drugs:</dt>
+            [% INCLUDE util/select_new.html
+                name   = "substance_abuse"
+                values  = [ 'Yes', 'No', 'Unknown' ]
+                default = current.substance_abuse || 'Unknown'
+                wraptag = 'dd'
+            %]
+
+            <dt>Alcohol:</dt>
+            [% INCLUDE util/select_new.html
+                name   = "alcohol_abuse"
+                values  = [ 'Yes', 'No', 'Unknown' ]
+                default = current.alcohol_abuse || 'Unknown'
+                wraptag = 'dd'
+            %]
+
+            <dt>Gambling:</dt>
+            [% INCLUDE util/select_new.html
+                name   = "gambling_abuse"
+                values  = [ 'Yes', 'No', 'Unknown' ]
+                default = current.gambling_abuse || 'Unknown'
+                wraptag = 'dd'
+            %]
+            </dl>
+        </fieldset>
+
+        <fieldset class="third">
+            <legend>Comments</legend>
+            <dl class="inline">
+                [% INCLUDE util/textarea.html
+                    name    = 'comment_text'
+                    value   = current.comment_text
+                    break   = 1
+                    wraptag = 'p'
+                    rows    = 8
+                    cols    = 50 
+                %]
+            </dl>    
+        </fieldset>
+
+    </div>
+
+    <input type="hidden" name="client_id" value="[% client.id %]" />
+    [% IF action == 'edit' %]
+    <p class="save"><input type="submit" name="op" id="op_save" value="Save Client" /></p>
+    [% ELSE %]
+    <p class="edit"><input type="submit" name="op" id="op_edit" value="Edit" /></p>
+    [% END %]
+</form>
+[% IF action == 'edit';
+    INCLUDE util/form_cancel.html;
+END %]
+
+    [% IF client.intake.assessment_id %]
+    <div id="intake_assessment">
+        <p><a href="/assessment.cgi?client_id=[% client.id %];assessment_id=[% client.intake.assessment_id %]">View assessment from most recent intake</a></p>
+    </div>
+    [% END %]
+
+</div>
+

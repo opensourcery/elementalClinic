@@ -1,0 +1,27 @@
+<div class="client_address [% class %]">
+    <dl class="inline client_address">
+        [% INCLUDE util/composite/address.html
+            name = 'client_address'
+            ord  = ordinal
+            required = locally_required
+            default = client.addresses.$ordinal || objects.client_address.$ordinal
+            dl = 1
+            rec_id = client.addresses.$ordinal.rec_id
+            reverse = 1
+            liftzip = 1
+        %]
+        <dt></dt>
+        <dd>
+            <div class="address_selector">
+                <input type="radio" id="client_address_primary_[% ordinal %]" name="client_address_primary" value="[% ordinal %]"[% ' checked="checked"' IF client_address_primary == ordinal %]/>
+                <label for="client_address_primary_[% ordinal %]">Primary address</label>
+            </div>
+        </dd>
+    </dl>
+
+    <hr />
+
+    [% IF ( loop.last OR !loop ) AND (( ordinal + 1 ) < MAX_ADDRESSES ) %]
+    <p class="add address" id="add_address_[% ordinal + 1 %]"><a href="[% script %]?op=step2;add_new=address;client_id=[% client.id %]"><em>+</em> Add another address</a></p>
+    [% END %]
+</div>

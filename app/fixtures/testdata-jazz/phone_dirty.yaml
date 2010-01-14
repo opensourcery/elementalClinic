@@ -1,0 +1,336 @@
+1100:
+  rolodex_id: 1101
+  phone_number: 111-222-3333
+1106:
+  rolodex_id: 1102
+  phone_number: 111-222-4444
+1124:
+  rolodex_id: 1105
+  phone_number: 503-111-2222
+1130:
+  rolodex_id: 1106
+  phone_number: 225-5336
+1133:
+  rolodex_id: 1106
+  phone_number: 1-800-452-7390
+1136:
+  rolodex_id: 1107
+  phone_number: 243-2962
+1139:
+  rolodex_id: 1107
+  phone_number: 877-605-3229
+1142:
+  rolodex_id: 1108
+  phone_number: 503-802-7000
+1148:
+  rolodex_id: 1109
+  phone_number: 503-574-6300
+1151:
+  rolodex_id: 1109
+  phone_number: 877-245-4077
+1154:
+  rolodex_id: 1110
+  phone_number: 503-227-4381
+1166:
+  rolodex_id: 1201
+  phone_number: 111-222-3333
+1172:
+  rolodex_id: 1202
+  phone_number: 111-222-4444
+1190:
+  rolodex_id: 1205
+  phone_number: 503-111-2222
+1196:
+  rolodex_id: 1206
+  phone_number: 503-225-5336
+1199:
+  rolodex_id: 1206
+  phone_number: 1-800-452-7390
+1202:
+  rolodex_id: 1207
+  phone_number: 503-243-2962
+1205:
+  rolodex_id: 1207
+  phone_number: 877-605-3229
+1208:
+  rolodex_id: 1208
+  phone_number: 503-802-7000
+1214:
+  rolodex_id: 1209
+  phone_number: 503-574-6300
+1217:
+  rolodex_id: 1209
+  phone_number: 877-245-4077
+1220:
+  rolodex_id: 1210
+  phone_number: 503-227-4381
+1232:
+  rolodex_id: 1301
+  phone_number: 111-222-3333
+1238:
+  rolodex_id: 1302
+  phone_number: 111-222-3333
+1247:
+  rolodex_id: 1303
+  phone_number: 233-2333
+1256:
+  rolodex_id: 1305
+  phone_number: 503-111-2222
+1262:
+  rolodex_id: 1306
+  phone_number: 503-225-5336
+1265:
+  rolodex_id: 1306
+  phone_number: 1-800-452-7390
+1268:
+  rolodex_id: 1307
+  phone_number: 503-243-2962
+1271:
+  rolodex_id: 1307
+  phone_number: 877-605-3229
+1274:
+  rolodex_id: 1308
+  phone_number: 503-802-7000
+1280:
+  rolodex_id: 1309
+  phone_number: 503-574-6300
+1283:
+  rolodex_id: 1309
+  phone_number: 877-245-4077
+1286:
+  rolodex_id: 1310
+  phone_number: 503-227-4381
+1298:
+  rolodex_id: 1401
+  phone_number: 503-216-1234
+1301:
+  rolodex_id: 1401
+  phone_number: 503-216-2032
+1304:
+  rolodex_id: 1402
+  phone_number: 503-216-1234
+1307:
+  rolodex_id: 1402
+  phone_number: 503-216-2032
+1310:
+  rolodex_id: 1403
+  phone_number: 503-216-1234
+1313:
+  rolodex_id: 1403
+  phone_number: 503-216-2032
+1316:
+  rolodex_id: 1404
+  phone_number: 503-216-1234
+1319:
+  rolodex_id: 1404
+  phone_number: 503-216-2032
+1322:
+  rolodex_id: 1405
+  phone_number: 503-216-1234
+1325:
+  rolodex_id: 1405
+  phone_number: 503-216-2032
+1328:
+  rolodex_id: 1406
+  phone_number: 503-216-1234
+1331:
+  rolodex_id: 1406
+  phone_number: 503-216-2032
+1334:
+  rolodex_id: 1407
+  phone_number: 503-216-1234
+1337:
+  rolodex_id: 1407
+  phone_number: 503-216-2032
+1340:
+  rolodex_id: 1408
+  phone_number: 503-216-1234
+1343:
+  rolodex_id: 1408
+  phone_number: 503-216-2032
+1346:
+  rolodex_id: 1409
+  phone_number: 503-216-1234
+1349:
+  rolodex_id: 1409
+  phone_number: 503-216-2032
+1352:
+  rolodex_id: 1410
+  phone_number: 503-216-1234
+1355:
+  rolodex_id: 1410
+  phone_number: 503-216-2032
+1358:
+  rolodex_id: 1411
+  phone_number: 503-216-1234
+1361:
+  rolodex_id: 1411
+  phone_number: 503-216-2032
+1364:
+  rolodex_id: 1412
+  phone_number: 503-216-1234
+1370:
+  rolodex_id: 1413
+  phone_number: 503-216-1234
+1373:
+  rolodex_id: 1413
+  phone_number: 503-216-2032
+1376:
+  rolodex_id: 1414
+  phone_number: 503-216-1234
+1379:
+  rolodex_id: 1414
+  phone_number: 503-216-2032
+1382:
+  rolodex_id: 1415
+  phone_number: 503-216-1234
+1385:
+  rolodex_id: 1415
+  phone_number: 503-216-2032
+1388:
+  rolodex_id: 1416
+  phone_number: 503-216-1234
+1391:
+  rolodex_id: 1416
+  phone_number: 503-216-2032
+1394:
+  rolodex_id: 1417
+  phone_number: 503-216-1234
+1397:
+  rolodex_id: 1417
+  phone_number: 503-216-2032
+1400:
+  rolodex_id: 1418
+  phone_number: 503-216-1234
+1403:
+  rolodex_id: 1418
+  phone_number: 503-216-2032
+1406:
+  rolodex_id: 1419
+  phone_number: 503-216-1234
+1409:
+  rolodex_id: 1419
+  phone_number: 503-216-2032
+1412:
+  rolodex_id: 1420
+  phone_number: 503-216-1234
+1415:
+  rolodex_id: 1420
+  phone_number: 503-216-2032
+1418:
+  rolodex_id: 1501
+  phone_number: 503-295-6707
+1421:
+  rolodex_id: 1501
+  phone_number: 1-800-926-6707
+1424:
+  rolodex_id: 1502
+  phone_number: 503-295-6707
+1427:
+  rolodex_id: 1502
+  phone_number: 1-800-926-6707
+1430:
+  rolodex_id: 1503
+  phone_number: 503-295-6707
+1433:
+  rolodex_id: 1503
+  phone_number: 1-800-926-6707
+1436:
+  rolodex_id: 1504
+  phone_number: 503-295-6707
+1439:
+  rolodex_id: 1504
+  phone_number: 1-800-926-6707
+1442:
+  rolodex_id: 1505
+  phone_number: 503-295-6707
+1445:
+  rolodex_id: 1505
+  phone_number: 1-800-926-6707
+1448:
+  rolodex_id: 1506
+  phone_number: 503-295-6707
+1451:
+  rolodex_id: 1506
+  phone_number: 1-800-926-6707
+1454:
+  rolodex_id: 1507
+  phone_number: 503-295-6707
+1457:
+  rolodex_id: 1507
+  phone_number: 1-800-926-6707
+1460:
+  rolodex_id: 1508
+  phone_number: 503-295-6707
+1463:
+  rolodex_id: 1508
+  phone_number: 1-800-926-6707
+1466:
+  rolodex_id: 1509
+  phone_number: 503-295-6707
+1469:
+  rolodex_id: 1509
+  phone_number: 1-800-926-6707
+1472:
+  rolodex_id: 1510
+  phone_number: 503-295-6707
+1475:
+  rolodex_id: 1510
+  phone_number: 1-800-926-6707
+1478:
+  rolodex_id: 1511
+  phone_number: 541-388-3307
+1481:
+  rolodex_id: 1511
+  phone_number: 1-800-777-1502
+1484:
+  rolodex_id: 1512
+  phone_number: 503-295-6707
+1487:
+  rolodex_id: 1512
+  phone_number: 1-800-926-6707
+1490:
+  rolodex_id: 1513
+  phone_number: 1-800-592-6804
+1493:
+  rolodex_id: 1513
+  phone_number: 1-888-261-1756
+1496:
+  rolodex_id: 1514
+  phone_number: 1-800-592-6804
+1499:
+  rolodex_id: 1514
+  phone_number: 1-888-261-1756
+1502:
+  rolodex_id: 1515
+  phone_number: 1-800-592-6804
+1505:
+  rolodex_id: 1515
+  phone_number: 1-888-261-1756
+1508:
+  rolodex_id: 1516
+  phone_number: 1-800-592-6804
+1511:
+  rolodex_id: 1516
+  phone_number: 1-888-261-1756
+1514:
+  rolodex_id: 1517
+  phone_number: 1-800-592-6804
+1517:
+  rolodex_id: 1517
+  phone_number: 1-888-261-1756
+1520:
+  rolodex_id: 1518
+  phone_number: 1-800-592-6804
+1526:
+  rolodex_id: 1519
+  phone_number: 503-295-6707
+1529:
+  rolodex_id: 1519
+  phone_number: 1-800-926-6707
+1532:
+  rolodex_id: 1520
+  phone_number: 503-295-6707
+1535:
+  rolodex_id: 1520
+  phone_number: 1-800-926-6707

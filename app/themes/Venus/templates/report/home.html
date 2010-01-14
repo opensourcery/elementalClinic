@@ -1,0 +1,20 @@
+[% IF report_track == 'client';
+
+   INCLUDE global/person_home.html
+           navpage = 'report'
+           variant = 'client'
+           include = 'report/report.html';
+
+ELSE;
+    INCLUDE util/errors.html
+%]
+
+<div class="system_box" style="margin-bottom:10px;">
+    <h2>Site Reports</h2>
+    <p>Administrators and regular staff show different reports as well as different filters. For instance, regular staff reports only show the reporter's own activities while administrator reports cover all staff.</p>
+</div>
+
+[% INCLUDE report/report.html %]
+
+[%  END %]
+

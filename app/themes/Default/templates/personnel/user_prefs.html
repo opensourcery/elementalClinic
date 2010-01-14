@@ -1,0 +1,117 @@
+[% INCLUDE util/errors.html %]
+<div id="content_plain">
+<div id="left" class="system_box">
+    <h2>
+        Preferences for <strong>[% current_user.login %]</strong> ([% current_user.fname %] [% current_user.lname %])
+        <br />
+        <a class="return" href="[% referer %]">&#171; Return to previous page</a>
+    </h2>
+
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" name="preferences_form">
+
+    [% IF save_successful %]
+    <p>Preferences saved successfully.</p>
+    [% END %]
+        
+        <dl>
+        [% FOR one IN current_user.pref.pref_descriptions;
+            NEXT IF available_preferences && not available_preferences.defined(one.method);
+            method_name = one.method
+            current_value = current_user.pref.$method_name
+            checked = current_value
+                ? ' checked="checked"'
+                : ''
+            %]
+            <dt>
+                [% one.name %]:
+                [% IF one.type == 'boolean' %]
+                    [% INCLUDE util/checkbox.html
+                        name    = method_name
+                        value   = current_user.pref.$method_name
+                    %]
+
+                [% ELSIF one.type == 'integer' %]
+                    <input type="text" name="[% method_name %]" id="[% method_name %]" value="[% current_value %]" size="4" />
+
+                [% ELSIF one.type == 'lookup' %]
+                    [% INCLUDE util/select_new.html
+                        values    = one.lookup
+                        name      = method_name
+                        default   = current_value
+                        keyname   = 'key'
+                        valname   = 'value'
+                        %]
+
+                [% ELSIF one.type == 'valid_data' %]
+                    [% INCLUDE util/choose_valid_data.html
+                        name   = method_name
+                        table  = one.valid_data
+                        type    = 'select'
+                        use_id  = 1
+                        default = current_value
+                        force_valid = 1
+                        leading_hash = one.leading_hash
+                        exclude_id1 = one.exclude_id1 
+                    %]
+
+                [% ELSE %]
+                    <input type="text" name="[% method_name %]" id="[% method_name %]" value="[% current_value %]" />
+                [% END %]
+            </dt>
+            <dd>
+                <label for="[% method_name %]">[% one.desc %]</label>
+            </dd>
+        [% END %]
+        </dl>
+
+        <input type="hidden" name="ref_script" value="[% ref_script %]" />
+        <input type="hidden" name="ref_client_id" value="[% ref_client_id %]" /> 
+        <input type="hidden" name="op" id="op" value="save_prefs" />
+        <p class="save"><input type="submit" id="update" value="Save Preferences" /></p>
+    </form>
+</div>
+
+
+<div id="right" class="system_box">
+    <h3>Change password</h3>
+
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" name="password_form">
+    <ul>
+        <li>Password must be between 6 and 24 characters long.</li>
+    </ul>
+
+    <dl class="inline">
+    [% INCLUDE util/input_text.html
+        name    = 'password'
+        label   = 'Current password'
+        size    = 12
+        maxlength = 24
+        dl      = 1
+        password = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'new_password'
+        label   = 'New password'
+        size    = 12
+        maxlength = 24
+        dl      = 1
+        password = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'new_password2'
+        label   = 'Verify new password'
+        size    = 12
+        maxlength = 24
+        dl      = 1
+        password = 1
+    %]
+    <input type="hidden" name="ref_script" value="[% ref_script %]" />
+    <input type="hidden" name="ref_client_id" value="[% ref_client_id %]" /> 
+    <input type="hidden" name="op" value="change_password" /> 
+    <p class="save"><input type="submit" value="Change Password" /></p>
+    </form>
+
+</div>
+</div>

@@ -1,0 +1,29 @@
+# this is a list of all the reports in every theme.  commenting out a report from this list will disable it globally.
+---
+- allergy
+- client_list
+- client_prognote
+- client_termination
+- clinic_schedule
+- cover_sheet
+- data_sheet
+- encounter
+- hospital
+- ins_reauth
+- last_visit_bystaff
+- legal
+- medication
+- mh_totals
+- monthly_status
+#- prognote
+- renewals
+- site_prognote
+- site_prognote_caseload
+- uncommitted_prognotes
+- verification_expirations
+- verifications
+- zip_count
+- email
+- access
+- security_log
+- appointments

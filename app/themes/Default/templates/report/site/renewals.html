@@ -1,0 +1,44 @@
+<p>This report lists patients according to their renewal date status and other criteria selected below:</p>
+<hr/>
+
+[% INCLUDE util/date_picker.html
+    label   = 'Due (on or before)'
+    name    = 'end_date'
+    value   = 'today'
+    wraptag = 'p'
+%]
+
+[% INCLUDE util/input_text.html
+            label='State'
+            name='state'
+            size='2'
+            wraptag = 'p'
+            value = state
+ %]
+
+[% INCLUDE util/input_text.html
+            label='Zip Code'
+            name='zip_code'
+            size='5'
+            wraptag = 'p'
+            value = zip_code
+ %]
+
+[% INCLUDE util/input_text.html
+            label='Area Code'
+            name='area_code'
+            size='3'
+            wraptag = 'p'
+            value = area_code
+ %]
+<p>Just set 'Due (on or before)' to see all patients due for renewal by the given date.</p>
+<hr/>
+<p>If for some reason, you also want to filter out renewals from before a certain date, you may also set:</p>
+[% INCLUDE util/date_picker.html
+    label   = 'Ignore before'
+    name    = 'start_date'
+    wraptag = 'p'
+    value = start_date
+%]
+
+

@@ -1,0 +1,121 @@
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+
+<table border="0">
+    <tr>
+        <td>Select Unit: </td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "unit"
+    s_values  = units
+    s_default = unit_lname
+%]</td>
+    </tr>
+    <tr>
+        <td>Select Item Category/Code: </td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "item_code"
+    s_values  = data
+    s_default = item_code
+%]</td>
+    </tr>
+    <tr>
+        <td />
+    </tr>
+    <tr>
+        <td />
+        <td><a href="purchase_code.cgi">Add An Item Category/Code</a></td>
+    </tr>
+    <tr>
+        <td />
+    </tr>
+    <tr>
+        <td>[% red %] * Request Date: [% off %]</td>
+        <td><input type="text" name="init_date" value="[% row_init_date %]" size="12" maxlength="10" /> [% red %] * Use Valid Format 
+          (<small>YYYY-MM-DD</small>) 
+          or leave blank. [% off %]</td>
+    </tr>
+    <tr>
+        <td />
+    </tr>
+    <tr>
+        <td>Item Needed (Description): </td>
+        <td><textarea name="item_desc" rows="5" cols="50">[% row_item_desc %]</textarea></td>
+    </tr>
+    <tr>
+        <td>Price </td>
+        <td><input type="text" name="item_price" value="[% row_item_price %]" size="15" maxlength="25" /></td>
+    </tr>
+    <tr>
+        <td> Quantity </td>
+        <td><input type="text" name="item_amt" value="[% row_item_amt %]" size="5" maxlength="15" /></td>
+    </tr>
+    <tr>
+        <td>Vendor Name: </td>
+        <td><input type="text" name="vendor_name" value="[% row_vendor_name %]" size="62" maxlength="60" /></td>
+    </tr>
+    <tr>
+        <td>Comments: </td>
+        <td><textarea name="comment_text" rows="10" cols="50">[% row_comment_text %]</textarea></td>
+    </tr>
+    <tr>
+        <td>Contract Info: </td>
+        <td><input type="text" name="contract_id" value="[% row_contract_id %]" size="62" maxlength="60" /></td>
+    </tr>
+    <tr>
+        <td>Approved By Director: </td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "approved"
+    s_values  = [ 'No', 'Yes' ]
+    s_default = row_approved
+%]</td>
+    </tr>
+    <tr>
+        <td>[% red %] * Approved On: [% off %]</td>
+        <td><input type="text" name="approve_date" value="[% row_approve_date %]" size="12" maxlength="10" /> [% red %] * Use Valid Format 
+          (<small>YYYY-MM-DD</small>) 
+          or leave blank. [% off %]</td>
+    </tr>
+    <tr>
+        <td>Account Number: </td>
+        <td><input type="text" name="acct_num" value="[% row_acct_num %]" size="62" maxlength="60" /></td>
+    </tr>
+    <tr>
+        <td>[% red %] * Sent to Finance for <br /> Capital Authorization: [% off %]</td>
+        <td><input type="text" name="auth_date" value="[% row_auth_date %]" size="12" maxlength="10" /> [% red %] * Use Valid Format 
+          (<small>YYYY-MM-DD</small>) 
+          or leave blank. [% off %]</td>
+    </tr>
+    <tr>
+        <td>Capital Authorization <br /> (Enter Number): </td>
+        <td><input type="text" name="cap_auth" value="[% row_cap_auth %]" size="62" maxlength="60" /></td>
+    </tr>
+    <tr>
+        <td>[% red %] * Sent to Purchasing: [% off %] </td>
+        <td><input type="text" name="send_date" value="[% row_send_date %]" size="12" maxlength="10" /> [% red %] * Use Valid Format 
+          (<small>YYYY-MM-DD</small>) 
+          or leave blank. [% off %]</td>
+    </tr>
+    <tr>
+        <td>Purchase Order Number: </td>
+        <td><input type="text" name="po_num" value="[% row_po_num %]" size="62" maxlength="60" /></td>
+    </tr>
+    <tr>
+        <td>[% red %] * Received On: [% off %] </td>
+        <td><input type="text" name="rcvd_date" value="[% row_rcvd_date %]" size="12" maxlength="10" /> [% red %] * Use Valid Format 
+          (<small>YYYY-MM-DD</small>) 
+          or leave blank. [% off %]</td>
+    </tr>
+</table>
+
+<p />
+
+<input type="submit" name="go" value="Submit Query" />
+<input type="hidden" name="rec_id" value="[% rec_id %]" />
+<input type="hidden" name="search_start" value="[% search_start %]" />
+<input type="hidden" name="search_end" value="[% search_end %]" />
+<input type="hidden" name="unit_name" value="[% unit_name %]" />
+<div>
+</div>
+</form>

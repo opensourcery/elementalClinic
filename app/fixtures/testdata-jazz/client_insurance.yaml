@@ -1,0 +1,528 @@
+---
+1001:
+  carrier_contact: Miles
+  carrier_type: dental
+  client_id: 1003
+  co_pay_amount: 15.00
+  comment_text: ~
+  deductible_amount: 20.00
+  end_date: 2005-05-16
+  insurance_id: ~
+  insurance_name: In Walked Bud
+  insurance_type_id: ~
+  insured_addr: ~
+  insured_addr2: ~
+  insured_city: ~
+  insured_dob: ~
+  insured_employer: ~
+  insured_fname: ~
+  insured_group: ~
+  insured_group_id: ~
+  insured_lname: ~
+  insured_mname: ~
+  insured_name: ~
+  insured_name_suffix: ~
+  insured_phone: ~
+  insured_postcode: ~
+  insured_relationship_id: 1
+  insured_sex: ~
+  insured_state: ~
+  license_required: none
+  other_dob: ~
+  other_employer: ~
+  other_group: ~
+  other_name: ~
+  other_plan: ~
+  other_plan_name: ~
+  other_sex: ~
+  patient_insurance_id: ~
+  rank: 1
+  rec_id: 1001
+  rolodex_insurance_id: 1002
+  start_date: 2004-11-15
+1002:
+  carrier_contact: Jim
+  carrier_type: medical
+  client_id: 1003
+  co_pay_amount: 30.00
+  comment_text: Insurance woo.
+  deductible_amount: 50.00
+  end_date: 2004-05-11
+  insurance_id: 7
+  insurance_name: Straight No Chaser
+  insurance_type_id: ~
+  insured_addr: 123 Anystreet
+  insured_addr2: ~
+  insured_city: San Bernadino
+  insured_dob: 1957-2-27
+  insured_employer: Buddy Rich Big Band
+  insured_fname: Buddy
+  insured_group: pianos
+  insured_group_id: ~
+  insured_lname: Rich
+  insured_mname: ~
+  insured_name: ~
+  insured_name_suffix: ~
+  insured_phone: 8314567890
+  insured_postcode: 95060
+  insured_relationship_id: 1
+  insured_sex: Male
+  insured_state: CA
+  license_required: dog
+  other_dob: ~
+  other_employer: ~
+  other_group: ~
+  other_name: ~
+  other_plan: ~
+  other_plan_name: ~
+  other_sex: ~
+  patient_insurance_id: ~
+  rank: 1
+  rec_id: 1002
+  rolodex_insurance_id: 1003
+  start_date: 2002-05-01
+1003:
+  carrier_contact: Artie Shaw
+  carrier_type: mental health
+  client_id: 1003
+  co_pay_amount: 59.00
+  comment_text: ~
+  deductible_amount: 69.00
+  end_date: ~
+  insurance_id: 0141
+  insurance_name: Ruby My Dear
+  insurance_type_id: 9
+  insured_addr: 10 Rue Flavel
+  insured_addr2: Suite 6
+  insured_city: Paris
+  insured_dob: 1913-12-10
+  insured_employer: none
+  insured_fname: Nica
+  insured_group: Baroness
+  insured_group_id: ~
+  insured_lname: de Koenigswarter
+  insured_mname: ~
+  insured_name: Nica de Koenigswarter
+  insured_name_suffix: ~
+  insured_phone: 17028319
+  insured_postcode: 10044
+  insured_relationship_id: 14
+  insured_sex: Female
+  insured_state: NY
+  license_required: none
+  other_dob: ~
+  other_employer: ~
+  other_group: ~
+  other_name: ~
+  other_plan: ~
+  other_plan_name: ~
+  other_sex: ~
+  patient_insurance_id: ~
+  rank: 1
+  rec_id: 1003
+  rolodex_insurance_id: 1006
+  start_date: 2003-01-01
+1004:
+  carrier_contact: Coleman Hawkins
+  carrier_type: mental health
+  client_id: 1003
+  co_pay_amount: 0.00
+  comment_text: Little Hootie Cootie
+  deductible_amount: 29.00
+  end_date: ~
+  insurance_id: white keys
+  insurance_name: Well You Needn't
+  insurance_type_id: 10
+  insured_addr: 123 Downuptown St
+  insured_addr2: ~
+  insured_city: New York
+  insured_dob: 1924-9-27
+  insured_employer: Blue Note
+  insured_fname: Bud
+  insured_group: pianists
+  insured_group_id: ~
+  insured_lname: Powell
+  insured_mname: ~
+  insured_name: Bud Powell
+  insured_name_suffix: ~
+  insured_phone: 9210472814
+  insured_postcode: 10271
+  insured_relationship_id: 26
+  insured_sex: Male
+  insured_state: NY
+  license_required: none
+  other_dob: ~
+  other_employer: ~
+  other_group: ~
+  other_name: ~
+  other_plan: ~
+  other_plan_name: ~
+  other_sex: ~
+  patient_insurance_id: ~
+  rank: 2
+  rec_id: 1004
+  rolodex_insurance_id: 1005
+  start_date: 2004-03-28
+1005:
+  carrier_contact: Coleman Hawkins
+  carrier_type: mental health
+  client_id: 1003
+  co_pay_amount: 0.00
+  comment_text: Little Hootie Cootie
+  deductible_amount: 29.00
+  end_date: 2006-07-15
+  insurance_id: white keys
+  insurance_name: Well You Needn't
+  insurance_type_id: 10
+  insured_addr: 123 Downuptown St
+  insured_addr2: ~
+  insured_city: New York
+  insured_dob: 1924-9-27
+  insured_employer: Blue Note
+  insured_fname: Bud
+  insured_group: pianists
+  insured_group_id: ~
+  insured_lname: Powell
+  insured_mname: ~
+  insured_name: Bud Powell
+  insured_name_suffix: ~
+  insured_phone: 9210472814
+  insured_postcode: 10271
+  insured_relationship_id: 26
+  insured_sex: ~
+  insured_state: NY
+  license_required: none
+  other_dob: ~
+  other_employer: ~
+  other_group: ~
+  other_name: ~
+  other_plan: ~
+  other_plan_name: ~
+  other_sex: ~
+  patient_insurance_id: ~
+  rank: 3
+  rec_id: 1005
+  rolodex_insurance_id: 1004
+  start_date: 2005-07-15
+1006:
+  carrier_contact: Eric Dolphy
+  carrier_type: mental health
+  client_id: 1001
+  co_pay_amount: 4.00
+  comment_text: Selim
+  deductible_amount: 8.00
+  end_date: 1993-03-13
+  insurance_id: 8
+  insurance_name: Sivad
+  insurance_type_id: 6
+  insured_addr: 1600 Pennsylvania Ave.
+  insured_addr2: ~
+  insured_city: Washington
+  insured_dob: 1912-1-12
+  insured_employer: Rialto
+  insured_fname: White
+  insured_group: Tenspots
+  insured_group_id: ~
+  insured_lname: Woman
+  insured_mname: ~
+  insured_name: White Woman
+  insured_name_suffix: ~
+  insured_phone: 900-372-5839
+  insured_postcode: 20001
+  insured_relationship_id: 12
+  insured_sex: Female
+  insured_state: DC
+  license_required: none
+  other_dob: ~
+  other_employer: ~
+  other_group: ~
+  other_name: ~
+  other_plan: ~
+  other_plan_name: ~
+  other_sex: ~
+  patient_insurance_id: ~
+  rank: 1
+  rec_id: 1006
+  rolodex_insurance_id: 1003
+  start_date: 1985-05-23
+1007:
+  carrier_contact: Duke Ellington
+  carrier_type: mental health
+  client_id: 1004
+  co_pay_amount: 90.00
+  comment_text: Doo bee doobie doo
+  deductible_amount: 100.00
+  end_date: ~
+  insurance_id: 543210000A
+  insurance_name: Tisket
+  insurance_type_id: 9
+  insured_addr: 457 151 St Uptown
+  insured_addr2: ~
+  insured_city: New York
+  insured_dob: 1898-9-26
+  insured_employer: Rialto
+  insured_fname: George
+  insured_group: triangle
+  insured_group_id: ~
+  insured_lname: Gershwin
+  insured_mname: ~
+  insured_name: George Gershwin
+  insured_name_suffix: ~
+  insured_phone: 2015936782
+  insured_postcode: 10165
+  insured_relationship_id: 19
+  insured_sex: Male
+  insured_state: NY
+  license_required: yes
+  other_dob: ~
+  other_employer: ~
+  other_group: ~
+  other_name: ~
+  other_plan: ~
+  other_plan_name: ~
+  other_sex: ~
+  patient_insurance_id: ~
+  rank: 1
+  rec_id: 1007
+  rolodex_insurance_id: 1006
+  start_date: 2005-02-01
+1008:
+  carrier_contact: Duke Ellington
+  carrier_type: mental health
+  client_id: 1004
+  co_pay_amount: 90.00
+  comment_text: Doo bee doobie doo
+  deductible_amount: 100.00
+  end_date: 2006-02-15
+  insurance_id: GF45678A
+  insurance_name: Tisket
+  insurance_type_id: 10
+  insured_addr: 457 151 St Uptown
+  insured_addr2: ~
+  insured_city: New York
+  insured_dob: 1898-9-26
+  insured_employer: Rialto
+  insured_fname: George
+  insured_group: triangle
+  insured_group_id: ~
+  insured_lname: Gershwin
+  insured_mname: ~
+  insured_name: George Gershwin
+  insured_name_suffix: ~
+  insured_phone: 2015936782
+  insured_postcode: 10165
+  insured_relationship_id: 19
+  insured_sex: Male
+  insured_state: NY
+  license_required: yes
+  other_dob: ~
+  other_employer: ~
+  other_group: ~
+  other_name: ~
+  other_plan: ~
+  other_plan_name: ~
+  other_sex: ~
+  patient_insurance_id: ~
+  rank: 2
+  rec_id: 1008
+  rolodex_insurance_id: 1007
+  start_date: 2005-02-15
+1009:
+  carrier_contact: Bud
+  carrier_type: dental
+  client_id: 1005
+  co_pay_amount: 15.00
+  comment_text: ~
+  deductible_amount: 20.00
+  end_date: 2005-05-16
+  insurance_id: ~
+  insurance_name: In Walked Miles
+  insurance_type_id: ~
+  insured_addr: ~
+  insured_addr2: ~
+  insured_city: ~
+  insured_dob: ~
+  insured_employer: ~
+  insured_fname: ~
+  insured_group: ~
+  insured_group_id: ~
+  insured_lname: ~
+  insured_mname: ~
+  insured_name: ~
+  insured_name_suffix: ~
+  insured_phone: ~
+  insured_postcode: ~
+  insured_relationship_id: 1
+  insured_sex: ~
+  insured_state: ~
+  license_required: none
+  other_dob: ~
+  other_employer: ~
+  other_group: ~
+  other_name: ~
+  other_plan: ~
+  other_plan_name: ~
+  other_sex: ~
+  patient_insurance_id: ~
+  rank: 1
+  rec_id: 1009
+  rolodex_insurance_id: 1001
+  start_date: 2004-11-15
+1010:
+  carrier_contact: providence contact
+  carrier_type: mental health
+  client_id: 1005
+  co_pay_amount: 15.00
+  comment_text: ~
+  deductible_amount: 20.00
+  end_date: ~
+  insurance_id: AA00000A
+  insurance_name: Value Plus Plan
+  insurance_type_id: ~
+  insured_addr: 456 Main St.
+  insured_addr2: ~
+  insured_city: Portland
+  insured_dob: 1904-09-27
+  insured_employer: ~
+  insured_fname: Bud
+  insured_group: Musical Group
+  insured_group_id: 4444
+  insured_lname: Powell
+  insured_mname: J
+  insured_name: ~
+  insured_name_suffix: I
+  insured_phone: (111) 222-3333
+  insured_postcode: 97225
+  insured_relationship_id: 10
+  insured_sex: Male
+  insured_state: OR
+  license_required: none
+  other_dob: ~
+  other_employer: ~
+  other_group: ~
+  other_name: ~
+  other_plan: ~
+  other_plan_name: ~
+  other_sex: ~
+  patient_insurance_id: BB00000A
+  rank: 1
+  rec_id: 1010
+  rolodex_insurance_id: 1003
+  start_date: 2004-11-15
+1011:
+  carrier_contact: ~
+  carrier_type: mental health
+  client_id: 1005
+  co_pay_amount: 15.00
+  comment_text: ~
+  deductible_amount: 20.00
+  end_date: ~
+  insurance_id: AA00000A
+  insurance_name: Medicare
+  insurance_type_id: 9
+  insured_addr: ~
+  insured_addr2: ~
+  insured_city: ~
+  insured_dob: ~
+  insured_employer: ~
+  insured_fname: ~
+  insured_group: Musical Group
+  insured_group_id: 4444
+  insured_lname: ~
+  insured_mname: ~
+  insured_name: ~
+  insured_name_suffix: ~
+  insured_phone: ~
+  insured_postcode: ~
+  insured_relationship_id: 1
+  insured_sex: ~
+  insured_state: ~
+  license_required: none
+  other_dob: ~
+  other_employer: ~
+  other_group: ~
+  other_name: ~
+  other_plan: ~
+  other_plan_name: ~
+  other_sex: ~
+  patient_insurance_id: ~
+  rank: 2
+  rec_id: 1011
+  rolodex_insurance_id: 1006
+  start_date: 2006-07-15
+1012:
+  carrier_contact: OMAP contact
+  carrier_type: mental health
+  client_id: 1002
+  co_pay_amount: 15.00
+  comment_text: ~
+  deductible_amount: 20.00
+  end_date: 2005-05-16
+  insurance_id: ABC0000A
+  insurance_name: XIX Medicaid
+  insurance_type_id: 10
+  insured_addr: ~
+  insured_addr2: ~
+  insured_city: ~
+  insured_dob: ~
+  insured_employer: ~
+  insured_group: Group Name
+  insured_group_id: 123456
+  insured_name: ~
+  insured_phone: ~
+  insured_postcode: ~
+  insured_relationship_id: 1
+  insured_sex: ~
+  insured_state: ~
+  license_required: none
+  other_dob: ~
+  other_employer: ~
+  other_group: ~
+  other_name: ~
+  other_plan: ~
+  other_plan_name: ~
+  other_sex: ~
+  patient_insurance_id: ~
+  rank: 1
+  rec_id: 1012
+  rolodex_insurance_id: 1004
+  start_date: 2004-11-15
+1013:
+  carrier_contact: OMAP contact
+  carrier_type: mental health
+  client_id: 1004
+  co_pay_amount: 15.00
+  comment_text: ~
+  deductible_amount: 20.00
+  end_date: 2002-05-16
+  insurance_id: ABC0000A
+  insurance_name: XIX Medicaid
+  insurance_type_id: 10
+  insured_addr: ~
+  insured_addr2: ~
+  insured_city: ~
+  insured_dob: ~
+  insured_employer: ~
+  insured_group: Group Name
+  insured_group_id: 123456
+  insured_name: ~
+  insured_phone: ~
+  insured_postcode: ~
+  insured_relationship_id: 1
+  insured_sex: ~
+  insured_state: ~
+  license_required: none
+  other_dob: ~
+  other_employer: ~
+  other_group: ~
+  other_name: ~
+  other_plan: ~
+  other_plan_name: ~
+  other_sex: ~
+  patient_insurance_id: ~
+  rank: 1
+  rec_id: 1013
+  rolodex_insurance_id: 1004
+  start_date: 2001-11-15
+
+

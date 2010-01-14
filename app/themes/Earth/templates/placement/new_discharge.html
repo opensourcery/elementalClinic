@@ -1,0 +1,17 @@
+<div class="create_new_discharge" id="create_new_discharge_[% episode.id %]">
+    <dl class="form">
+        [% INCLUDE util/active_date.html
+            name    = 'discharge_date'
+            label   = 'Discharge date'
+            value   = 'today'
+            dl      = 1
+        %]
+    </dl>
+
+    <p class="save delete">
+        <input type="submit" name="submit" value="Discharge client" />
+        or <a class="cancel_new_discharge" href="TODO">Cancel</a>
+    </p>
+    <p><strong>Note:</strong> Client will be discharged immediately, and then you will complete the discharge record.</p>
+    <input type="hidden" name="client_id" id="client_id" value="[% client.id %]" />
+</div>

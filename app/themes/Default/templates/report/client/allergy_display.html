@@ -1,0 +1,35 @@
+<table border="0">
+    <thead>
+        <tr><td>
+                [% INCLUDE report/header.html %]
+        </td></tr>
+    </thead>
+    <tbody>
+        <tr><td>
+        <table>
+            <tr>
+                <th style="text-align:left">Providers:</th>
+            </tr>
+            [% FOR name IN data.physicians %]
+            <tr [% rowclass %]>
+                <td>[% name %]</td>
+            </tr>
+            [% END %]
+        </table>
+
+        <table>
+            <tr>
+                <th>Allergy</th>
+                <th>Status</th>
+            </tr>
+            [% FOR allergy IN data.allergies %]
+            <tr [% rowclass %]>
+                <td>[% allergy.allergy %]</td>
+                <td>[% allergy.active ? 'Active' : 'Not active' %]</td>
+            </tr>
+            [% END %]
+        </table>
+        </td>
+        </tr>
+    </tbody>
+</table>

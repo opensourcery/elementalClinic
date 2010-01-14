@@ -1,0 +1,34 @@
+<!-- BEGIN util/radio_new -->
+[%#
+REQUIRED
+    - name
+    - values
+
+OPTIONAL
+    - valname
+    - keyname
+    - default
+    - break
+-%]
+[% IF action == 'display';
+    FOR value IN values;
+        this_key = keyname ? value.$keyname : value;
+        IF this_key == default;
+            this_val = valname ? value.$valname : value;
+        END;
+    END
+    -%]
+    <p>val: [% this_val %]</p>
+[%- ELSE %]
+[% FOREACH value = values;
+    this_key = keyname ? value.$keyname : value;
+    this_val = valname ? value.$valname : value;
+-%]
+[%- "<$wraptag>" IF wraptag %]
+    <input type="radio" name="[% name %]" id="[% name %]_[% this_key %]" value="[% this_key %]"
+        [%- ' checked="checked"' IF this_key == default %] />
+    <label for="[% name %]_[% this_key %]">[% this_val %]</label>[% '<br />' IF break %]
+[% "</$wraptag>" IF wraptag %]
+[%- END %]
+[%- END %]
+<!-- END util/radio_new -->

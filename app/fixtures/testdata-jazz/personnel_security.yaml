@@ -1,0 +1,55 @@
+--- 
+1000: 
+  active: 1
+  admin: 1
+  financial: 0
+  scanner: 1
+  service_coordinator: 1
+  supervisor: 1
+  writer: 1
+  reports: 0
+1001: 
+  active: 1
+  admin: 0
+  financial: 0
+  scanner: 0
+  service_coordinator: 1
+  supervisor: 0
+  writer: 1
+  reports: 0
+1002: 
+  active: 1
+  admin: 0
+  financial: 0
+  scanner: 0
+  service_coordinator: 1
+  supervisor: 0
+  writer: 1
+  reports: 0
+1003: 
+  active: 1
+  admin: 0
+  financial: 0
+  scanner: 0
+  service_coordinator: 0
+  supervisor: 0
+  writer: 1
+  reports: 0
+1004: 
+  active: 1
+  admin: 0
+  financial: 1
+  scanner: 0
+  service_coordinator: 0
+  supervisor: 0
+  writer: 0
+  reports: 0
+1005: 
+  active: 1
+  admin: 0
+  financial: 1
+  scanner: 1
+  service_coordinator: 1
+  supervisor: 1
+  writer: 0
+  reports: 0

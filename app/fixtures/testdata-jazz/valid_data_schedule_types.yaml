@@ -1,0 +1,19 @@
+---
+1001:
+  active: 1
+  dept_id: 1001
+  description: ''
+  name: 15-minute appointments
+  rec_id: 1001
+  schedule_interval: 15
+  schedule_multiplier: 1
+1002:
+  active: 1
+  dept_id: 1001
+  description: ''
+  name: '15-minute appointments, double-booked'
+  rec_id: 1002
+  schedule_interval: 15
+  schedule_multiplier: 2
+
+

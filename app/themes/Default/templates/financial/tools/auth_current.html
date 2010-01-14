@@ -1,0 +1,41 @@
+    <h4>Insurance Authorization</h4>
+        <dl class="inline">
+            [% action = 'display' %]
+            [% INCLUDE util/input_text.html
+                name    = 'client'
+                value   = client.eman
+                label   = 'Client'
+                dl      = 1
+            %] 
+            [% INCLUDE util/input_text.html
+                name    = 'allowed_amount'
+                value   = current_auth.allowed_amount
+                label   = 'Allowed amount'
+                dl      = 1
+            %] 
+            [% INCLUDE util/input_text.html
+                name    = 'code'
+                value   = current_auth.code
+                label   = 'Code'
+                dl      = 1
+            %] 
+            [% INCLUDE util/input_text.html
+                name    = 'type'
+                value   = current_auth.type
+                label   = 'Type'
+                dl      = 1
+            %] 
+            [% INCLUDE util/input_text.html
+                name    = 'start_date'
+                value   = current_auth.start_date
+                label   = 'Start date'
+                dl      = 1
+            %] 
+            [% INCLUDE util/input_text.html
+                name    = 'end_date'
+                value   = current_auth.end_date
+                label   = 'End date'
+                dl      = 1
+            %] 
+        </dl>
+        <hr class="div" />

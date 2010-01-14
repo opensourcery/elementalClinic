@@ -1,0 +1,75 @@
+div.client_box {
+    float : left;
+}
+
+div#file_list {
+    float : left;
+    margin : 5px 0 0 5px;
+}
+
+div.client_box table {
+    margin : 10px 0 0 0;
+    border : 5px solid #fff;
+    float : left;
+    border-collapse : collapse;
+    background : #fff;
+}
+div.client_box td {
+    padding : 0;
+    border-bottom : 1px dashed #eee;
+}
+div.client_box tr.selected a,
+div.client_box tr.selected p {
+    background : #eee;
+}
+div.client_box a:hover {
+    background : #eee;
+    text-decoration : none;
+}
+td.description a {
+    margin : 0;
+    padding : 10px 2px 1px 2px;
+    display : block;
+    width : 200px;
+    overflow : hidden;
+    height : 1.2em;
+    color : #000;
+    font-size : 12px;
+    font-weight : normal;
+}
+td.created p {
+    margin : 0;
+    padding : 10px 2px 1px 2px;
+    height : 1.2em;
+    text-align : right;
+}
+
+div.client_file {
+    float : left;
+    margin : 0 0 0 20px;
+    padding : 5px;
+}
+div.client_file img {
+    width : 400px;
+    padding-bottom : 2px;
+}
+div.client_file form input {
+    margin : 5px 0 0 0;
+}
+div#wrong_patient {
+    float : left;
+    width : 100px;
+    margin : 10px;
+}
+div#wrong_patient p {
+    float : left;
+    padding : 5px;
+    margin : 0;
+}
+form.scanned_record_desc_form {
+    margin : 10px 0 2px 0;
+    padding : 0;
+}
+form.client_scanned_record_form {
+    float : left;
+}

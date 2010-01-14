@@ -1,0 +1,176 @@
+[%#
+OPTIONAL
+    name:       The name prefix for each phone field.
+    simple:     Only show the 'phone_number' field.
+    ord:        If there are multiple phonees with this prefix(name) provide
+                an ordinal
+    wraptag:    Wrap the section with the given tag Defaults to none, or 'div'
+                if wrapid or wrapclass are set.
+    wrapid:     ID to wrap around the section (used in wraptag, or <div> with no
+                wraptag
+    wrapclass:  css classes to wrap around the section <div> unless wraptag is
+                specified
+    required:   Make phone_number required.
+    default:    Object to take values from
+    dl:         Format each field as part of a dl.
+    size:       Size for input text fields (phone number) default: 20
+    rec_id:     rec_id for the phone object (automatically taken from default
+                if present)
+    hidden:     Hash of hidden input values (set name, or object prefix+ord will
+                be prefixed)
+    toggle:     Show the active/inactive toggle.
+    reverse:    Passed into checkboxes
+    no_type:    Do not show type
+    primary:    Create a new entry as primary if there is an ordinal and
+                ordinal is 0
+-%]
+
+[%# {{{ Find values -%]
+
+[%-
+    size = size ? size : 20;
+
+    prefix = name ? ord.defined ? name _ '[' _ ord _ ']['
+                                : name _ '_'
+                  : '';
+
+    postfix = name && ord.defined ? ']' : '';
+
+    number_name  = prefix _ 'phone_number' _ postfix;
+    number_value = $number_name || objects.$name.$ord.phone_number || default.phone_number;
+
+    type_name  = prefix _ 'phone_type' _ postfix;
+    type_value = $type_name || objects.$name.$ord.phone_type || default.phone_type;
+
+    call_ok_name  = prefix _ 'call_ok' _ postfix;
+    call_ok_value = $call_ok_name || objects.$name.$ord.call_ok || default.call_ok;
+
+    message_name = prefix _ 'message_ok'   _ postfix;
+    message_value = $message_name || objects.$name.$ord.message_ok || default.message_ok;
+
+    # When no name is provided create a prefix for the following fields
+    prefix = prefix || 'phone_';
+
+    rec_id_name  = prefix _ 'rec_id'  _ postfix;
+    rec_id_value = $rec_id_name || objects.$name.$ord.rec_id || default.rec_id || rec_id;
+
+    active_name  = prefix _ 'active' _ postfix;
+    active_value = $active_name || objects.$name.$ord.active || default.active || (rec_id_value ? 0 : 1);
+
+    primary_name  = prefix _ 'primary_entry' _ postfix;
+    primary_value = $primary_name || objects.$name.$ord.primary_entry || default.primary_entry || ((ord == 0 && !rec_id_value) ? 1 : 0);
+-%]
+
+[%# }}} -%]
+
+[% IF wraptag || wrapid || wrapclass %]
+<[% wraptag || 'div' %]
+    [% IF wrapid %] id="[% wrapid %]" [% END %]
+    [% IF wrapclass %]class="[% wrapclass %]"[% END %]
+>
+[% END %]
+
+[%# {{{ Main Fields -%]
+
+[% INCLUDE util/input_text.html
+    name  = number_name
+    label = 'Phone Number'
+    dl    = dl
+    value = number_value
+    size  = size
+    required = required
+%]
+
+[% UNLESS simple || no_type %]
+    [% INCLUDE util/input_text.html
+        name  = type_name
+        label = 'Phone Type'
+        dl    = dl
+        value = type_value
+        size  = size
+        required = 0
+    %]
+[% END %]
+[% UNLESS simple %]
+    [% INCLUDE util/checkbox.html
+        name  = call_ok_name
+        label = 'May we call this number?'
+        dl    = dl
+        value = call_ok_value
+        has_value = rec_id_value
+        required = 0
+    %]
+    [% INCLUDE util/checkbox.html
+        name  = message_name
+        label = 'May we leave a message?'
+        dl    = 1
+        value = message_value
+        has_value = rec_id_value
+        required = 0
+    %]
+    [% IF toggle %]
+        [% INCLUDE util/checkbox.html
+           name    = active_name
+           value   = active_value
+           label   = 'Active'
+           dl      = dl
+           reverse = reverse
+           required = 0
+        %]
+    [% END %]
+[% END %]
+
+[%# }}} -%]
+
+[%# {{{ Hidden Fields -%]
+
+[% IF dl %]
+    <dt class="hidden_inputs_title" style="display: none" />
+    <dd class="hidden_inputs" style="display: none">
+[% END %]
+
+[% IF rec_id_value && !simple %]
+    <input
+        type="hidden"
+        name="[% rec_id_name %]"
+        value="[% rec_id_value %]"
+    />
+[% END %]
+
+[% UNLESS simple || toggle %]
+    [% INCLUDE util/checkbox.html
+       name    = active_name
+       value   = active_value
+       dl      = 0
+    %]
+[% END %]
+
+[% IF primary %]
+    <input
+        type="hidden"
+        name="[% primary_name %]"
+        value="[% primary_value %]"
+    />
+[% END %]
+
+[% IF hidden %]
+    [% FOREACH item in hidden %]
+        [% iname = item.key %]
+        [% fname = prefix _ iname  _ postfix %]
+        <input
+            type="hidden"
+            name="[% fname %]"
+            value="[% $fname || objects.$name.$ord.$iname || default.$iname || item.value %]"
+        />
+    [% END %]
+[% END %]
+
+[% IF dl %]
+    </dd>
+[% END %]
+
+[%# }}} -%]
+
+[% IF wraptag || wrapid || wrapclass %]
+</[% wraptag || 'div' %]>
+[% END %]

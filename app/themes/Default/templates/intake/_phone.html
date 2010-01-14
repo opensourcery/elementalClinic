@@ -1,0 +1,25 @@
+<div class="client_phone [% class %]">
+    <dl class="inline client_phone">
+        [% INCLUDE util/composite/phone.html
+            name = 'client_phone'
+            size = 20
+            ord  = ordinal
+            dl   = 1
+            required = 1
+            default  = objects.client_phone.$ordinal || client.phones.$ordinal
+            toggle   = 0
+            reverse  = 1
+        %]
+        <dt></dt>
+        <dd>
+            <div class="phone_selector">
+                <input type="radio" id="client_phone_primary_[% ordinal %]" name="client_phone_primary" value="[% ordinal %]"[% ' checked="checked"' IF client_phone_primary == ordinal %]/>
+                <label for="client_phone_primary_[% ordinal %]">Primary phone</label>
+            </div>
+        </dd>
+    </dl>
+    <hr />
+    [% IF ( loop.last OR !loop ) AND (( ordinal + 1 ) < MAX_PHONES ) %]
+    <p class="add phone" id="add_phone_[% ordinal + 1 %]"><a href="[% script %]?op=step2;add_new=phone;client_id=[% client.id %]"><em>+</em> Add another phone number</a></p>
+    [% END %]
+</div>

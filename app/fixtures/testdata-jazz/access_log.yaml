@@ -1,0 +1,1365 @@
+1001:
+  rec_id: 1001
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1002:
+  rec_id: 1002
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1003:
+  rec_id: 1003
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1004:
+  rec_id: 1004
+  logged: 2008-11-05 15:00:00
+  from_session: 1
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1005:
+  rec_id: 1005
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1006:
+  rec_id: 1006
+  logged: 2008-11-05 15:00:00
+  from_session: 1
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1007:
+  rec_id: 1007
+  logged: 2008-11-05 15:00:00
+  from_session: 1
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1008:
+  rec_id: 1008
+  logged: 2008-11-05 15:00:00
+  from_session: 1
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1009:
+  rec_id: 1009
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1010:
+  rec_id: 1010
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1011:
+  rec_id: 1011
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1012:
+  rec_id: 1012
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1013:
+  rec_id: 1013
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1014:
+  rec_id: 1014
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1015:
+  rec_id: 1015
+  logged: 2008-11-05 15:00:00
+  from_session: 1
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1016:
+  rec_id: 1016
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1017:
+  rec_id: 1017
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1018:
+  rec_id: 1018
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1019:
+  rec_id: 1019
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1020:
+  rec_id: 1020
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1021:
+  rec_id: 1021
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1022:
+  rec_id: 1022
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1023:
+  rec_id: 1023
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1024:
+  rec_id: 1024
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1025:
+  rec_id: 1025
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1026:
+  rec_id: 1026
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1027:
+  rec_id: 1027
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1028:
+  rec_id: 1028
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1029:
+  rec_id: 1029
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1030:
+  rec_id: 1030
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1031:
+  rec_id: 1031
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1032:
+  rec_id: 1032
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1033:
+  rec_id: 1033
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1034:
+  rec_id: 1034
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1035:
+  rec_id: 1035
+  logged: 2008-11-05 15:00:00
+  from_session: 1
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1036:
+  rec_id: 1036
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1037:
+  rec_id: 1037
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1038:
+  rec_id: 1038
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1039:
+  rec_id: 1039
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1040:
+  rec_id: 1040
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1041:
+  rec_id: 1041
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1042:
+  rec_id: 1042
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1043:
+  rec_id: 1043
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1044:
+  rec_id: 1044
+  logged: 2008-11-05 15:00:00
+  from_session: 1
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1045:
+  rec_id: 1045
+  logged: 2008-11-05 15:00:00
+  from_session: 1
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1046:
+  rec_id: 1046
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1047:
+  rec_id: 1047
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1048:
+  rec_id: 1048
+  logged: 2008-11-05 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1049:
+  rec_id: 1049
+  logged: 2008-11-05 15:00:00
+  from_session: 1
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1050:
+  rec_id: 1050
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1051:
+  rec_id: 1051
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1052:
+  rec_id: 1052
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1053:
+  rec_id: 1053
+  logged: 2008-11-06 15:00:00
+  from_session: 1
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1054:
+  rec_id: 1054
+  logged: 2008-11-06 15:00:00
+  from_session: 1
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1055:
+  rec_id: 1055
+  logged: 2008-11-06 15:00:00
+  from_session: 1
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1056:
+  rec_id: 1056
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1057:
+  rec_id: 1057
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1058:
+  rec_id: 1058
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1059:
+  rec_id: 1059
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1060:
+  rec_id: 1060
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1061:
+  rec_id: 1061
+  logged: 2008-11-06 15:00:00
+  from_session: 1
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1062:
+  rec_id: 1062
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1063:
+  rec_id: 1063
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1064:
+  rec_id: 1064
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1065:
+  rec_id: 1065
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1066:
+  rec_id: 1066
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1067:
+  rec_id: 1067
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1068:
+  rec_id: 1068
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1069:
+  rec_id: 1069
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1070:
+  rec_id: 1070
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1071:
+  rec_id: 1071
+  logged: 2008-11-06 15:00:00
+  from_session: 1
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1072:
+  rec_id: 1072
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1073:
+  rec_id: 1073
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1074:
+  rec_id: 1074
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1075:
+  rec_id: 1075
+  logged: 2008-11-06 15:00:00
+  from_session: 1
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1076:
+  rec_id: 1076
+  logged: 2008-11-06 15:00:00
+  from_session: 1
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1077:
+  rec_id: 1077
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1078:
+  rec_id: 1078
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1079:
+  rec_id: 1079
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1080:
+  rec_id: 1080
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1081:
+  rec_id: 1081
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1082:
+  rec_id: 1082
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1083:
+  rec_id: 1083
+  logged: 2008-11-06 15:00:00
+  from_session: 1
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1084:
+  rec_id: 1084
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1085:
+  rec_id: 1085
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1086:
+  rec_id: 1086
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1087:
+  rec_id: 1087
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1088:
+  rec_id: 1088
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1089:
+  rec_id: 1089
+  logged: 2008-11-06 15:00:00
+  from_session: 1
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1090:
+  rec_id: 1090
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1091:
+  rec_id: 1091
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1092:
+  rec_id: 1092
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1093:
+  rec_id: 1093
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1094:
+  rec_id: 1094
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1095:
+  rec_id: 1095
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1096:
+  rec_id: 1096
+  logged: 2008-11-06 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1097:
+  rec_id: 1097
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1098:
+  rec_id: 1098
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1099:
+  rec_id: 1099
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1100:
+  rec_id: 1100
+  logged: 2008-11-10 15:00:00
+  from_session: 1
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1101:
+  rec_id: 1101
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1102:
+  rec_id: 1102
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1103:
+  rec_id: 1103
+  logged: 2008-11-10 15:00:00
+  from_session: 1
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1104:
+  rec_id: 1104
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1105:
+  rec_id: 1105
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1106:
+  rec_id: 1106
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1107:
+  rec_id: 1107
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1108:
+  rec_id: 1108
+  logged: 2008-11-10 15:00:00
+  from_session: 1
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1109:
+  rec_id: 1109
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1110:
+  rec_id: 1110
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1111:
+  rec_id: 1111
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1112:
+  rec_id: 1112
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1113:
+  rec_id: 1113
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1114:
+  rec_id: 1114
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1115:
+  rec_id: 1115
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1116:
+  rec_id: 1116
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1117:
+  rec_id: 1117
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1118:
+  rec_id: 1118
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1119:
+  rec_id: 1119
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1120:
+  rec_id: 1120
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1121:
+  rec_id: 1121
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1122:
+  rec_id: 1122
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1123:
+  rec_id: 1123
+  logged: 2008-11-10 15:00:00
+  from_session: 1
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1124:
+  rec_id: 1124
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1125:
+  rec_id: 1125
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1126:
+  rec_id: 1126
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1127:
+  rec_id: 1127
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1128:
+  rec_id: 1128
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1129:
+  rec_id: 1129
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1130:
+  rec_id: 1130
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1131:
+  rec_id: 1131
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1132:
+  rec_id: 1132
+  logged: 2008-11-10 15:00:00
+  from_session: 1
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1133:
+  rec_id: 1133
+  logged: 2008-11-10 15:00:00
+  from_session: 1
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1134:
+  rec_id: 1134
+  logged: 2008-11-10 15:00:00
+  from_session: 1
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1135:
+  rec_id: 1135
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1136:
+  rec_id: 1136
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1137:
+  rec_id: 1137
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1138:
+  rec_id: 1138
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1139:
+  rec_id: 1139
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1140:
+  rec_id: 1140
+  logged: 2008-11-10 15:00:00
+  from_session: 1
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1141:
+  rec_id: 1141
+  logged: 2008-11-10 15:00:00
+  from_session: 1
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1142:
+  rec_id: 1142
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1143:
+  rec_id: 1143
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1144:
+  rec_id: 1144
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1145:
+  rec_id: 1145
+  logged: 2008-11-10 15:00:00
+  from_session: 1
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1146:
+  rec_id: 1146
+  logged: 2008-11-10 15:00:00
+  from_session: 1
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1147:
+  rec_id: 1147
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1148:
+  rec_id: 1148
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1149:
+  rec_id: 1149
+  logged: 2008-11-10 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1150:
+  rec_id: 1150
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1151:
+  rec_id: 1151
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1152:
+  rec_id: 1152
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1153:
+  rec_id: 1153
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1154:
+  rec_id: 1154
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1155:
+  rec_id: 1155
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1156:
+  rec_id: 1156
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1157:
+  rec_id: 1157
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1158:
+  rec_id: 1158
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1159:
+  rec_id: 1159
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1160:
+  rec_id: 1160
+  logged: 2008-11-14 15:00:00
+  from_session: 1
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1161:
+  rec_id: 1161
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1162:
+  rec_id: 1162
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1163:
+  rec_id: 1163
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1164:
+  rec_id: 1164
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1001
+1165:
+  rec_id: 1165
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1166:
+  rec_id: 1166
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1167:
+  rec_id: 1167
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1168:
+  rec_id: 1168
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1169:
+  rec_id: 1169
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1170:
+  rec_id: 1170
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1171:
+  rec_id: 1171
+  logged: 2008-11-14 15:00:00
+  from_session: 1
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1172:
+  rec_id: 1172
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1173:
+  rec_id: 1173
+  logged: 2008-11-14 15:00:00
+  from_session: 1
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1174:
+  rec_id: 1174
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1175:
+  rec_id: 1175
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1176:
+  rec_id: 1176
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1177:
+  rec_id: 1177
+  logged: 2008-11-14 15:00:00
+  from_session: 1
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1178:
+  rec_id: 1178
+  logged: 2008-11-14 15:00:00
+  from_session: 1
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1179:
+  rec_id: 1179
+  logged: 2008-11-14 15:00:00
+  from_session: 1
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1180:
+  rec_id: 1180
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1002
+1181:
+  rec_id: 1181
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1182:
+  rec_id: 1182
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1183:
+  rec_id: 1183
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1184:
+  rec_id: 1184
+  logged: 2008-11-14 15:00:00
+  from_session: 1
+  object_id: 1001
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1185:
+  rec_id: 1185
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1186:
+  rec_id: 1186
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1187:
+  rec_id: 1187
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1188:
+  rec_id: 1188
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1189:
+  rec_id: 1189
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1190:
+  rec_id: 1190
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1191:
+  rec_id: 1191
+  logged: 2008-11-14 15:00:00
+  from_session: 1
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1192:
+  rec_id: 1192
+  logged: 2008-11-14 15:00:00
+  from_session: 1
+  object_id: 1004
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1193:
+  rec_id: 1193
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1194:
+  rec_id: 1194
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1005
+1195:
+  rec_id: 1195
+  logged: 2008-11-14 15:00:00
+  from_session: ~
+  object_id: 1002
+  object_type: eleMentalClinic::Client
+  staff_id: 1005

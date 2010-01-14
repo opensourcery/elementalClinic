@@ -1,0 +1,12 @@
+[% RETURN UNLESS( current_user.financial || current_user.admin ) %]
+<h5>Level of care</h5>
+[% INCLUDE util/form.html %]
+[% IF client.placement.level_of_care_locked %]
+    <p>Client level of care is <strong>locked</strong>.  Only financial personnel may make changes.</p>
+    <input type="submit" name="op" value="Unlock" />
+[% ELSE %]
+    <p>Client level of care is <strong>not locked</strong>.  Any clinician may change it.</p>
+    <input type="submit" name="op" value="Lock" />
+[% END %]
+<input type="hidden" name="client_id" value="[% client.id %]" />
+[% INCLUDE util/form_end.html %]

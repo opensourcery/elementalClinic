@@ -1,0 +1,15 @@
+
+1: 
+  active: 1
+  dept_id: 1001
+  description: ~
+  is_married: 0
+  name: Single
+  rec_id: 1
+2: 
+  active: 1
+  dept_id: 1001
+  description: ~
+  is_married: 1
+  name: Married
+  rec_id: 2

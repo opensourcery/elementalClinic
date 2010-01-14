@@ -1,0 +1,44 @@
+[% UNLESS data.data.0 %]
+    This client has no progress notes.
+[% ELSE %]
+    <table>
+        <thead>
+        <tr>
+            <td colspan="6">
+            
+            [% INCLUDE report/header.html %]
+            [% IF client.personnel.name; "<p>Case Manager: $client.personnel.name</p>"; END %] 
+            <p><strong>
+            Report From: [% start_date_facade %] To: [% end_date_facade %] For: [% data.staff || 'All Staff' %]
+            </strong>
+            </p>
+
+            </td>
+        </tr>
+        <tr>
+            <th>Date</th>
+            <th>Billing Code</th>
+            <th>Time</th>
+            <th>Location</th>
+            <th>Plan</th>
+            <th>Staff</th>
+        </tr>
+        </thead>
+        <tbody>
+        [% FOREACH entry = data.data %]
+        <tr [% rowclass %]>
+            <td>[% entry.date %]</td>
+            <td>[% entry.code %]</td>
+            <td>[% entry.duration %]</td>
+            <td>[% entry.location %]</td>
+            <td>[% entry.plan %]</td>
+            <td class="nowrap">[% entry.staff.eman %]</td>
+        </tr>
+        <tr [% rowclass %]>
+            <td></td>
+            <td colspan="5">[% entry.note %]</td>
+        </tr>
+        [% END %]
+        </tbody>
+    </table>
+[% END %]

@@ -1,0 +1,99 @@
+[% insurers = Current.validation_set.insurers.sort('name') %]
+[% Current.insurer = Current.insurer || insurers.first %]
+[% validation_results = Current.validation_set.results( undef, Current.insurer.id ) %]
+<div class="controls submenu">
+    <h4>Payers for these notes</h4>
+    <table>
+        <tr>
+            <th>Payer</th>
+            <th>Validated?</th>
+        </tr>
+        [% FOR insurer IN insurers %]
+        <tr[% ' class="active"' IF insurer.id == Current.insurer.id %]>
+            <td><a href="[% script %]?section=billing;step=4;rolodex_id=[% insurer.id %]">[% insurer.name %]</a></td>
+            <td class="[% Current.validation_set.payer_is_validated( insurer.id ) ? 'boolean yes' : 'boolean no' %]">
+                [% Current.validation_set.payer_is_validated( insurer.id ) ? 'Yes' : 'No' %]
+            </td>
+        </tr>
+        [% END %]
+    </table>
+
+    <hr />
+
+    <h4>Validation rules</h4>
+    [% INCLUDE util/form.html %]
+        [% IF validation_results %]
+            [% INCLUDE financial/billing/rules.html
+                rules   = Current.validation_set.payer_rules_used( Current.insurer.id ).sort('name')
+                track   = 'results'
+                selected_rules  = selected_rules
+            %]
+        [% ELSE %]
+            [% INCLUDE financial/billing/rules.html
+                rules   = Current.validation_set.payer_rules( Current.insurer.id )
+                track   = 'validate'
+                selected_rules  = selected_rules
+            %]
+        [% END %]
+        <hr class="subtle" />
+
+        [% IF( Current.validation_set.step >= 4 && !validation_results ) %]
+            [% IF force_confirm %]
+                <p>You didn't select any rules.  This is fine, but you must confirm that you intend to validate.</p>
+                <input type="hidden" name="confirm" value="1" />
+                <p class="save"><input type="submit" name="submit" value="Confirm Payer Validation" /></p>
+            [% ELSE %]
+                <p class="save"><input type="submit" name="submit" value="Payer Validation" /></p>
+            [% END %]
+            <input type="hidden" name="section" value="billing" />
+            <input type="hidden" name="step" value="4" />
+            <input type="hidden" name="rolodex_id" value="[% Current.insurer.id %]" />
+            <input type="hidden" name="op" value="billing_4_validate" />
+        [% END %]
+    [% INCLUDE util/form_end.html %]
+</div>
+
+<!-- may need to INCLUDE results here instead  -->
+<div id="prognote_list">
+[% IF validation_results %]
+    [% INCLUDE financial/billing/results.html
+        rules   = Current.validation_set.payer_rules_used( Current.insurer.id ).sort('name')
+        result_sets = [
+            {
+                id      = 'results'
+                label   = 'All notes'
+                results = validation_results
+            },
+            {
+                id      = 'results_passed'
+                label   = 'Passed notes'
+                results = Current.validation_set.results( 1, Current.insurer.id )
+            },
+            {
+                id      = 'results_failed'
+                label   = 'Failed notes'
+                results = Current.validation_set.results( 0, Current.insurer.id )
+            },
+        ]
+    %]
+[% ELSE;
+    INCLUDE financial/billing/notes.html
+    filter_by_insurer   = Current.insurer
+; END %]
+
+[% IF Current.validation_set.billing_cycle %]
+    [% IF Current.validation_set.billing_cycle.payer_validation_complete %]
+        [% INCLUDE util/form.html %]
+            <input type="hidden" name="section" value="billing" />
+            <input type="hidden" name="step" value="5" />
+            <p class="save"><input type="submit" name="submit" value="Begin Billing" /></p>
+        [% INCLUDE util/form_end.html %]
+    [% ELSE %]
+        <hr class="subtle" />
+        <p>Cannot proceed to billing until all payer validation is complete.</p>
+    [% END %]
+[% ELSE %]
+    <p>May not bill from a validation set.</p>
+[% END %]
+
+</div>

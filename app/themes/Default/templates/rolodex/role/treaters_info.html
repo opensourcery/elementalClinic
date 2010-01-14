@@ -1,0 +1,9 @@
+[%- IF rel.last_visit %]
+Last visit: <strong>[% rel.last_visit %]</strong>;
+[%- END %]
+[%- IF rel.treater_agency %]
+Agency: <strong>[% rel.treater_agency %]</strong>;
+[%- END %]
+[%- IF rel.treater_type_id %]
+Type: <strong>[% current_user.valid_data.get( '_treater_types', rel.treater_type_id ).name %]</strong>
+[%- END %]

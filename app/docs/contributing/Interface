@@ -1,0 +1,13 @@
+User Interface Standards
+------------------------
+
+UI must be as intuitive as possible
+- In this case, we take "intuitive" to mean "works like the rest of the
+  application."
+
+Standards-compliant XHTML for markup<
+- Some of the markup in the current UI does not validate; we will fix these
+  issues in time.  All new UI must be compliant.
+
+Standards-compliant CSS for layout
+- All layout is done with CSS.  Tabular data is represented with tables.

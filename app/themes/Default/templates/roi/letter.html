@@ -1,0 +1,70 @@
+[% 
+    client = release.client;
+    rolodex = release.rolodex;
+%]
+
+[% INCLUDE global/print_head.html
+    header_only = 1
+    print_header    = release.print_header
+%]
+
+<p>
+    [% client.fname %] [% client.lname %]<br />
+    SSN: [% client.ssn_f %]<br />
+    DOB: [% client.dob %]
+</p>
+
+<p>I authorize [% Config.org_name %] to contact:</p>
+
+<p>
+    [% release.rolodex.lname ? "$release.rolodex.fname $release.rolodex.lname<br />" : '' %]
+    [% release.rolodex.name ? "$release.rolodex.name<br />" : '' %]
+    [% "$release.rolodex.addr<br />" IF release.rolodex.addr %]
+    [% "$release.rolodex.addr_2<br />" IF release.rolodex.addr_2 %]
+    [% release.rolodex.city %], [% release.rolodex.state %] [% release.rolodex.post_code %]
+    <br />
+    [% release.rolodex.phone_f %]    
+</p>
+<br />
+
+[% IF release.release_from || release.release_to %]
+    <ul class="release_item">
+    [% IF release.release_from %]
+    <li>[% current_user.valid_data.get( '_release_bits', 1 ).description | replace('\\\n', "<br />") | replace('\n', "<br />") %]</li>
+    [% END %]
+    [% IF release.release_to %]
+    <li>[% current_user.valid_data.get( '_release_bits', 2 ).description | replace('\\\n', "<br />") | replace('\n', "<br />") %]</li>
+    [% END %]
+    </ul>
+[% END %]
+
+[% IF( list_normal = release.release_list_normal_names ) %]
+<div class="info_normal">
+    <p>By initialing below, I specifically authorize the release of the following information:</p>
+    <ul class="release_item">
+    [% FOR item IN list_normal %]
+        <li>[% item %]</li>
+    [% END %]
+    </ul>
+</div>
+[% END %]
+
+[% IF( list_normal = release.release_list_sensitive_names ) %]
+<div class="info_sensitive">
+    <p><strong>By initialing below, I specifically authorize the release of the following highly sensitive information, if such are a part of my record:</strong></p>
+    <ul class="release_item">
+    [% FOR item IN list_normal %]
+        <li><strong>[% item %]</strong></li>
+    [% END %]
+    </ul>
+</div>
+[% END %]
+
+[% UNLESS release.release_list_sensitive_names OR release.release_list_normal_names %]
+<p>No release items were recorded.</p>
+[% END %]
+
+<p class="legal">[% current_user.valid_data.get( '_release_bits', 3 ).description | replace('\\\n', "<br />") | replace('\n', "<br />") %]</p>
+
+<p class="sigline">Client or guardian / Date</p>
+<p class="sigline">Witness / Date</p>

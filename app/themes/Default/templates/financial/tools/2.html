@@ -1,0 +1,194 @@
+<div class="submenu">
+<h4>Claims Processors</h4>
+<ul>
+[% FOR cp IN claims_processors %]
+    <li[% ' class="active"' IF cp.id == claims_processor.id %]><a href="[% script %]?op=claims_processor_edit;section=tools;step=2;claims_processor_id=[% cp.id %]">[% cp.name %]</a></li>
+[% END %]
+</ul>
+</div>
+
+<div class="subcontent">
+[% IF( cp = claims_processor ) %]
+[% INCLUDE util/form.html %]
+
+    <h5>Credentials [% '<span class="attention">are expired</span>' IF cp.password_expired %]</h5>
+    <dl class="inline">
+    [% INCLUDE util/input_text.html
+        name    = 'username'
+        label   = 'User name'
+        value   = cp.username
+        size    = 20
+        dl      = 1
+        required    = 1
+    %]
+    [% INCLUDE util/input_text.html
+        name    = 'password'
+        label   = 'Password'
+        value   = cp.password
+        size    = 20
+        dl      = 1
+        required    = 1
+        password    = 1
+    %]
+    </dl>
+
+    <fieldset>
+    <legend>Password</legend>
+    <dl class="inline">
+    [% INCLUDE util/date_picker.html
+        name    = 'password_expires'
+        label   = 'Expires'
+        value   = cp.password_expires
+        dl      = 1
+    %]
+    [% INCLUDE util/input_text.html
+        name    = 'password_active_days'
+        label   = 'Active days'
+        value   = cp.password_active_days
+        size    = 3
+        dl      = 1
+    %]
+    [% INCLUDE util/input_text.html
+        name    = 'password_min_char'
+        label   = 'Minimum characters'
+        value   = cp.password_min_char
+        size    = 2
+        dl      = 1
+    %]
+    </dl>
+    </fieldset>
+
+    <hr class="div" />
+
+    <h5>General</h5>
+    <dl class="inline">
+    [% INCLUDE util/input_text.html
+        name    = 'name'
+        label   = 'Name'
+        value   = cp.name
+        size    = 30
+        dl      = 1
+    %]
+    [% INCLUDE util/checkbox.html
+        name    = 'send_production_files'
+        label   = "Send 837s in Production mode instead of Test mode:"
+        value   = cp.send_production_files 
+        dl      = 1
+    %]
+    [% INCLUDE util/checkbox.html
+        name    = 'requires_rendering_provider_ids'
+        label   = 'Requires each clinician send their NPI (or personnel id as below):'
+        value   = cp.requires_rendering_provider_ids 
+        dl      = 1
+    %]
+    [% INCLUDE util/checkbox.html
+        name    = 'send_personnel_id'
+        label   = "Send a clinician's personel ID instead of NPI:"
+        value   = cp.send_personnel_id 
+        dl      = 1
+    %]
+    </dl>
+
+    <hr class="div" />
+    <h5>837 details</h5>
+    <dl class="inline">
+    [% INCLUDE util/input_text.html
+        name    = 'interchange_id_qualifier'
+        label   = 'Interchange id qualifier'
+        value   = cp.interchange_id_qualifier
+        size    = 2
+        dl      = 1
+    %]
+    [% INCLUDE util/input_text.html
+        name    = 'interchange_id'
+        label   = 'Interchange ID'
+        value   = cp.interchange_id
+        size    = 15
+        dl      = 1
+    %]
+    [% INCLUDE util/input_text.html
+        name    = 'code'
+        label   = 'Code'
+        value   = cp.code
+        size    = 15
+        dl      = 1
+    %]
+    [% INCLUDE util/input_text.html
+        name    = 'primary_id'
+        label   = 'Primary ID'
+        value   = cp.primary_id
+        size    = 30
+        dl      = 1
+    %]
+    [% INCLUDE util/input_text.html
+        name    = 'clinic_trading_partner_id'
+        label   = 'Trading partner ID'
+        value   = cp.clinic_trading_partner_id
+        size    = 15
+        dl      = 1
+    %]
+    [% INCLUDE util/input_text.html
+        name    = 'clinic_submitter_id'
+        label   = 'Submitter ID'
+        value   = cp.clinic_submitter_id
+        size    = 30
+        dl      = 1
+    %]
+    [% INCLUDE util/input_text.html
+        name    = 'template_837'
+        label   = 'Template for 837'
+        value   = cp.template_837
+        size    = 30
+        dl      = 1
+    %]
+    </dl>
+
+    <hr class="div" />
+
+    <h5>Connection information</h5>
+    <dl class="inline">
+    [% INCLUDE util/input_text.html
+        name    = 'sftp_host'
+        label   = 'SFTP host'
+        value   = cp.sftp_host
+        size    = 50
+        dl      = 1
+    %]
+    [% INCLUDE util/input_text.html
+        name    = 'sftp_port'
+        label   = 'SFTP port'
+        value   = cp.sftp_port
+        size    = 5
+        dl      = 1
+    %]
+    [% INCLUDE util/input_text.html
+        name    = 'put_directory'
+        label   = 'SFTP directory to put files'
+        value   = cp.put_directory
+        size    = 50
+        dl      = 1
+    %]
+    [% INCLUDE util/input_text.html
+        name    = 'get_directory'
+        label   = 'SFTP directory to get files'
+        value   = cp.get_directory
+        size    = 50
+        dl      = 1
+    %]
+    [% INCLUDE util/input_text.html
+        name    = 'dialup_number'
+        label   = 'Dialup number'
+        value   = cp.dialup_number
+        size    = 15
+        dl      = 1
+    %]
+    </dl>
+
+    <input type="hidden" name="claims_processor_id" value="[% cp.rec_id %]" />
+    <input type="hidden" name="section" value="tools" />
+    <input type="hidden" name="step" value="2" />
+    <input type="hidden" name="op" value="tools_2_save" />
+    <p class="save"><input type="submit" name="op" id="op" value="Save Claims Processor" /></p>
+[% INCLUDE util/form_end.html %]
+[% END %]
+</div>

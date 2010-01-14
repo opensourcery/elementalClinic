@@ -1,0 +1,41 @@
+[% IF confirm %]
+<h4><font color="blue">Your transaction was committed.</font></h4>
+[% END %]
+[% IF count %]
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+<table border="0">
+    <tr>
+        <td><b>&#149; Update Employee Evaluation History: </b></td>
+        <td><input type="submit" name="go" value="Update" /></td>
+    </tr>
+    <tr>
+        <td><b>&#149; View Evaluation Schedule(s) By Unit: </b></td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "unit"
+    s_values  = units
+%]</td>
+        <td><input type="submit" name="go" value="View" /></td>
+    </tr>
+</table>
+<input type="hidden" name="ID" value="[% id %]" /><div></div></form>
+[% ELSE %]
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+<table border="0">
+    <tr>
+        <td><b>&#149; Enter A New Evaluation Record:</b></td>
+        <td><input type="submit" name="go" value="Enter" /></td>
+    </tr>
+    <tr>
+        <td><b>&#149; View Evaluation History(s) By Unit: </b></td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "unit"
+    s_values  = units
+%]</td>
+        <td><input type="submit" name="go" value="View" /></td>
+    </tr>
+</table>
+<input type="hidden" name="ID" value="[% id %]" /><div></div></form>
+
+[% END %]

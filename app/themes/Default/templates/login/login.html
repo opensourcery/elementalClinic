@@ -1,0 +1,82 @@
+<div id="center" class="system_box" style="margin-top:50px;">
+
+<h4>Login</h4>
+
+[% INCLUDE util/errors.html %]
+
+[% IF expired %]
+<p>We're sorry: your <strong>login has expired</strong>.  To continue working, please login again.</p>
+[% END %]
+
+[% IF logged_out %]
+<p>You have been <strong>logged out</strong>.</p>
+<script language="JavaScript" type="text/javascript">
+    if( window.opener ) {
+        self.close()
+        window.opener.location.href = 'login.cgi?op=logged_out'
+    }
+</script>
+[% END %]
+
+[% IF full_screen && success %]
+<p>Login successful; eleMentalClinic should open in a new window.<br /><br />You may close this window or surf to another site.  You may also <a href="login.cgi">login again</a>.</p>
+
+[% ELSE %]
+
+<form method="[% Config.form_method %]" action="/login.cgi" name="login_form" id="login_form" enctype="application/x-www-form-urlencoded">
+    <p>
+        <label for="login">Login:</label>
+        <input type="text" name="login" id="login" size="12" maxlength="24" />
+    </p>
+    <p>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" size="12" maxlength="24" />
+    </p>
+        
+    <input type="hidden" name="previous" value="[% previous %]" />
+    <p class="login_button"><input type="submit" name="op" value="Login" /></p>
+</form>
+[% END %]
+
+</div>
+
+<script language="JavaScript" type="text/javascript">
+    var full_screen = [% full_screen ? 'true' : 'false' %]
+    /* login success
+     */
+    if( [% success ? 'true' : 'false' %] ) {
+        /* use popup
+         */
+        if( full_screen ) {
+            if( window.opener ) {
+                window.location.href = '[% previous %]'
+            }
+            /* user has been logged out, but is still in popup window
+             */
+            else {
+                window.onload = function() {
+                    /* "dev" detection allows developers see the query string,
+                     * even with full_screen enabled if the URI ends with .dev,
+                     * this turns 'location' on in the popup
+                     */
+                    var show_location = window.location.href.match( /\.dev\// )
+                        ? 'yes'
+                        : 'no'
+                    var emc = window.open( '[% previous %]', 'eMC', 'width=1020, height=730, resizable=yes, scrollbars=yes, toolbar=no, location='+ show_location +', directories=no, status=no, menubar=yes' )
+                    emc.moveTo( 0,0 )
+                }
+            }
+        }
+        /* do not use popup
+         * do we need anything at all here?
+         */
+        else {
+        }
+    }
+    /* login failure
+     */
+    else {
+        login_form = document.getElementById( 'login_form' )
+        window.onload = login_form.login.focus()
+    }
+</script>

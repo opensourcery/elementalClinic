@@ -1,0 +1,67 @@
+[% IF confirm %]
+<h4><font color="blue">Your transaction was committed.</font></h4>
+[% END %]
+
+[% IF data %]
+
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+<table align="center" border="1">
+    <tr>
+        <th>Nr.</th>
+        <th>Year</th>
+        <th>Make/Model</th>
+        <th>Type</th>
+        <th>Colour</th>
+        <th>Licence</th>
+        <th>Unit</th>
+    </tr>
+    [% FOREACH listii = list; listii; END %]
+</table>
+<p />
+<table align="center" border="0">
+    <tr>
+        <td><b>&#149; View An Existing Record: </b></td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "view"
+    s_values  = data
+%]</td>
+        <td><input type="submit" name="go" value="View" /></td>
+    </tr>
+    <tr>
+        <td><b>&#149; Update An Existing Record: </b></td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "update"
+    s_values  = data
+%]</td>
+        <td><input type="submit" name="go" value="Update" /></td>
+    </tr>
+    <tr>
+        <td><b>&#149; Remove An Existing Record: </b></td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "remove"
+    s_values  = data
+%]</td>
+        <td><input type="submit" name="go" value="Remove" /></td>
+    </tr>
+    <tr>
+        <td><b>&#149; Enter A New Record:</b></td>
+        <td><input type="submit" name="go" value="Enter" /></td>
+    </tr>
+</table>
+<div></div></form>
+
+[% ELSE %]
+
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+<table border="0">
+    <tr>
+        <td><b>Enter A New Record:</b></td>
+        <td><input type="submit" name="go" value="Enter" /></td>
+    </tr>
+</table>
+<div></div></form>
+
+[% END %]

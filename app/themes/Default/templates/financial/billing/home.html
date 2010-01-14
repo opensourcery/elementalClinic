@@ -1,0 +1,13 @@
+<div id="current_set">
+[% IF Current.validation_set %]
+    <p class="note">Current</p>
+    <p class="label">
+        <strong>[% Current.validation_set.billing_cycle ? 'Billing cycle' : 'Validation set' %]</strong>
+        created <strong>[% Current.validation_set.creation_date.format_date %]</strong>
+        by <strong>[% Current.validation_set.personnel.eman %]</strong>
+    </p>
+[% ELSE %]
+    <p class="note">No active validation set or billing cycle.</p>
+[% END %]
+</div>
+

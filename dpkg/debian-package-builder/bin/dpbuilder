@@ -1,0 +1,9 @@
+#!/usr/bin/perl;
+use strict;
+use warnings;
+use Debian::Package::Builder;
+use Data::Dumper;
+
+parse_params();
+find_dists();
+build_packages();

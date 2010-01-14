@@ -1,0 +1,58 @@
+#!/usr/bin/env perl
+use eleMentalClinic;
+
+use strict;
+use warnings;
+use Cwd;
+use Getopt::Long;
+use YAML::Syck;
+
+my $branch = cwd;
+GetOptions(
+  'branch=s' => \$branch,
+);
+
+$branch = Cwd::abs_path($branch);
+
+use lib;
+lib->import("$branch/lib");
+require eleMentalClinic::Config::Defaults;
+my $config = "$branch/config.yaml";
+my $path   = $ARGV[0];
+
+unless (-e $config) {
+  die "No such file: $config\n";
+}
+
+unless ($path) {
+  die "Usage: $0 [--branch /path/to/branch] <config key>\n";
+}
+
+my $cfg = {
+  eleMentalClinic::Config::Defaults->new->stage1,
+  %{ YAML::Syck::LoadFile($config) },
+};
+my $out;
+if ($path eq 'passwd') {
+  # special-cased to write and return a pgpass file
+  $out = "$branch/.pgpass";
+  open my $fh, '>', $out or die "Can't open $out: $!";
+  chmod 0600, $out or die "Can't chmod $out: $!";
+  printf {$fh} "%s:%d:%s:%s:%s\n",
+    $cfg->{host},
+    $cfg->{port},
+    $cfg->{dbname},
+    $cfg->{dbuser},
+    $cfg->{passwd},
+  ;
+  close $fh;
+} else {
+  $out = $cfg;
+  for (split /\./, $path) {
+    $out = $out->{$_};
+    exit 0 unless $out;
+  }
+}
+
+# Since this is mostly used by make, quote any shell characters or spaces
+print quotemeta($out);

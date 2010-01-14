@@ -1,0 +1,42 @@
+---
+1001:
+  account_id: 1
+  certification_date: 1984-08-06
+  client_id: 1004
+  comment_text: Payment from Chick Webb
+  end_date: 1999-08-04
+  has_direct_deposit: 0
+  income_amount: 300.00
+  is_recurring_income: 0
+  rec_id: 1001
+  recertification_date: 1995-03-15
+  source_type_id: 1
+  start_date: 1999-05-18
+1002:
+  account_id: 541
+  certification_date: 1993-09-26
+  client_id: 1003
+  comment_text: Baroness Pannonica de Koenigswarter
+  end_date: 1997-02-26
+  has_direct_deposit: 1
+  income_amount: 1500.00
+  is_recurring_income: 0
+  rec_id: 1002
+  recertification_date: 1993-10-26
+  source_type_id: 1
+  start_date: 1996-02-26
+1003:
+  account_id: 3
+  certification_date: 1992-06-26
+  client_id: 1004
+  comment_text: Ella Fitzgerald and Her Famous Orchestra payment
+  end_date: 1989-03-23
+  has_direct_deposit: 0
+  income_amount: 13000.00
+  is_recurring_income: 0
+  rec_id: 1003
+  recertification_date: 1992-11-27
+  source_type_id: 1
+  start_date: 1981-09-03
+
+

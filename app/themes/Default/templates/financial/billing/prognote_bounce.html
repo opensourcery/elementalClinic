@@ -1,0 +1,40 @@
+[% INCLUDE util/errors.html IF( ajax ) %]
+<div id="prognote_bounce">
+    <h4>Bounce Prognote</h4>
+
+    <dl class="inline fields">
+        <dt>To:</dt>
+        <dd>[% prognote.personnel.eman %]</dd>
+
+        [% IF( rules_failed = prognote.validation_rules_failed( Current.validation_set.id )) %]
+        <dt>Rules failed:</dt>
+        <dd>
+            <ul>
+                [% FOR rule IN rules_failed %]
+                <li>[% rule.name %]</li>
+                [% END %]
+            </ul>
+        </dd>
+        [% ELSE %]
+        <dt>No rules failed.  Hit 'Cancel' if you won't want to bounce this note.</dt>
+        [% END %]
+    </dl>
+
+    <dl class="inline message">
+        [% INCLUDE util/textarea.html
+            name    = 'bounce_message'
+            label   = 'Message'
+            cols    = 50
+            rows    = 5
+            dl      = 1
+        %]
+    </dl>
+
+    <p class="save"><input type="submit" name="submit" value="Bounce note" onclick="return prognote_bounce([% prognote.id %])" /></p>
+
+    <form class="cancel" method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+        <input type="hidden" name="section" value="billing" />
+        <input type="hidden" name="step" value="3" />
+        <p><input type="submit" name="cancel" value="Cancel" onclick="return prognote_bounce_cancel()" /></p>
+    </form>
+</div>

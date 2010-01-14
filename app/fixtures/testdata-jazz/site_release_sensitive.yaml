@@ -1,0 +1,18 @@
+---
+- active: 1
+  dept_id: 1001
+  description: ~
+  name: A.I.D.S. Status
+  rec_id: 2
+- active: 1
+  dept_id: 1001
+  description: ~
+  name: Drug/Alcohol abuse treatment
+  rec_id: 3
+- active: 1
+  dept_id: 1001
+  description: ~
+  name: H.I.V. test and results
+  rec_id: 1
+
+

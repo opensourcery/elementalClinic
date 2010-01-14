@@ -1,0 +1,67 @@
+.first {
+    float : left;
+    width : 500px;
+    border-right : 1px solid #fb0;
+    margin-right : 10px;
+}
+.second {
+    float : left;
+    width : 450px;
+}
+.fourth, .third {
+    border : 1px solid #fb0;
+    border-width : 2px 0 0 0;
+}
+hr.subtle {
+    clear : both !important;
+}
+#intake_assessment {
+    margin-top : 2em;
+}
+
+fieldset.contact_chooser {
+    border: none;
+    border-top: 1px dotted #FFBB00;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding: 0px;
+    width: 488px;
+    padding-left: 10px;
+}
+
+fieldset.contact_chooser span.left {
+    margin-right: -20px;
+    margin-left: 2px;
+    padding-right: 40px;
+    background: transparent url(../img/arrow_left.png) no-repeat;
+    background-position: left;
+    cursor: pointer;
+}
+fieldset.contact_chooser span.right {
+    margin-left: -20px;
+    margin-right: 2px;
+    padding-left: 40px;
+    background: transparent url(../img/arrow_right.png) no-repeat;
+    background-position: right;
+    cursor: pointer;
+}
+
+fieldset.contact_chooser span.label {
+    display: none;
+}
+
+fieldset.contact_chooser span.label.selected {
+    display: inline;
+}
+
+div.addr_view,
+div.phn_view {
+    display: none;
+}
+
+div.addr_view.selected,
+div.phn_view.selected {
+    padding-top: 2px;
+    display: block;
+    border: none;
+}

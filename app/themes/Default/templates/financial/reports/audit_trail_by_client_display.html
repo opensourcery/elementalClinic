@@ -1,0 +1,54 @@
+<table border="1">
+    <thead>
+    <tr>
+        <td colspan="4">
+            [% INCLUDE financial/reports/header.html %]
+            [% "<p>There was no data for this report.</p>" UNLESS current_report.data.0 %]
+        </td>
+    </tr>
+
+    <tr>
+        <th colspan="2"></th>
+        <th><strong>[% last_month.date_month_name %], [% last_month.date_year %]</strong></th>
+        <th colspan="4"><strong>[% this_month.date_month_name %], [% this_month.date_year %]</strong></th>
+    </tr>
+
+    <tr>
+        <th>Client</th>
+        <th>Level of care</th>
+        <th>Balance</th>
+        <th>Billings</th>
+        <th>Payments</th>
+        <th>Writeoffs</th>
+        <th>Balance</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    [% FOR client IN current_report.data;
+        totals.previous_balance           = totals.previous_balance           + client.previous_balance;
+        totals.this_month_billings_total  = totals.this_month_billings_total  + client.this_month_billings_total;
+        totals.this_month_payments_total  = totals.this_month_payments_total  + client.this_month_payments_total;
+        totals.this_month_writeoffs_total = totals.this_month_writeoffs_total + client.this_month_writeoffs_total;
+        totals.this_month_balance         = totals.this_month_balance         + client.this_month_balance;
+    %]
+    <tr [% rowclass %]>
+        <td>[% client.client_name %]</td>
+        <td>[% client.level_of_care %]</td>
+        <td>$ [% client.previous_balance %]</td>
+        <td>$ [% client.this_month_billings_total %]</td>
+        <td>$ [% client.this_month_payments_total %]</td>
+        <td>$ [% client.this_month_writeoffs_total %]</td>
+        <td>$ [% client.this_month_balance %]</td>
+    </tr>
+    [% END %]
+    <tr [% rowclass %]>
+        <th colspan="2">Totals</th>
+        <th>$ [% totals.previous_balance %]</th>
+        <th>$ [% totals.this_month_billings_total %]</th>
+        <th>$ [% totals.this_month_payments_total %]</th>
+        <th>$ [% totals.this_month_writeoffs_total %]</th>
+        <th>$ [% totals.this_month_balance %]</th>
+    </tr>
+    </tbody>
+</table>

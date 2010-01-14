@@ -1,0 +1,196 @@
+[% action = ( op == 'edit' || op == 'create' || ( op == 'save' && errors )) ? 'edit' : 'display' %]
+<div class="minileft_[% action %]">
+<form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" name="personnel_demographics">
+
+<dl class="inline">
+    [% INCLUDE util/input_text.html
+        name    = 'fname'
+        label   = 'First name'
+        value   = current.fname
+        dl      = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'lname'
+        label   = 'Last name'
+        value   = current.lname
+        dl      = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'ssn'
+        label   = 'SSN'
+        value   = current.ssn
+        dl      = 1
+    %]
+
+    <dt>Birth date:</dt>
+    [% INCLUDE util/date_picker.html
+        name    = 'dob'
+        wraptag = 'dd'
+        value   = current.dob
+    %]
+</dl>
+
+    <hr class="div" />
+    <hr class="div" />
+    <hr class="subtle" />
+
+<dl class="inline">
+    [% INCLUDE util/input_text.html
+        name    = 'addr'
+        label   = 'Address'
+        value   = current.addr
+        size    = 40
+        dl      = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'city'
+        label   = 'City'
+        value   = current.city
+        size    = 25
+        dl      = 1
+    %]
+
+    <dt><label for="state">State</label>:</dt>
+    <dd>
+    [% INCLUDE util/input_text.html
+        name    = 'state'
+        value   = current.state
+        size    = 2
+    %]
+
+    <label for="zip_code">Zip</label>:
+    [% INCLUDE util/input_text.html
+        name    = 'zip_code'
+        value   = current.zip_code
+        size    = 10
+    %]
+    </dd>
+
+    [% INCLUDE util/input_text.html
+        name    = 'home_phone'
+        label   = 'Home phone'
+        value   = current.home_phone
+        dl      = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'credentials'
+        label   = 'Credentials'
+        value   = current.credentials
+        dl      = 1
+    %]
+</dl>
+
+    <hr class="div" />
+    <hr class="subtle" />
+
+<dl class="inline">
+    <dt>Sex:</dt>
+    [% INCLUDE util/choose_valid_data.html
+        name   = "sex"
+        table  = '_sex'
+        type    = 'select'
+        default = current.sex || 'Unknown'
+        wraptag = 'dd'
+    %]
+
+    <dt>Ethnicity:</dt>
+    [% INCLUDE util/choose_valid_data.html
+        name   = "race"
+        table  = '_race'
+        type    = 'select'
+        default = current.race || 'Unknown'
+        wraptag = 'dd'
+    %]
+
+    <dt>Marital:</dt>
+    [% INCLUDE util/choose_valid_data.html
+        name   = "marital_status"
+        table  = '_marital_status'
+        type    = 'select'
+        default = current.marital_status || 'Unknown'
+        wraptag = 'dd'
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'next_kin'
+        label   = 'Next of kin'
+        value   = current.next_kin
+        dl      = 1
+    %]
+</dl>
+
+    <hr class="div" />
+    <hr class="subtle" />
+
+<dl class="inline">
+    [% INCLUDE util/input_text.html
+        name    = 'hours_week'
+        label   = 'Hours/week'
+        value   = current.hours_week
+        dl      = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'job_title'
+        label   = 'Job title'
+        value   = current.job_title
+        dl      = 1
+    %]
+
+    <dt>Employ date:</dt>
+    [% INCLUDE util/date_picker.html
+        name    = 'date_employ'
+        wraptag = 'dd'
+        value   = current.date_employ
+    %]
+
+    [%# INCLUDE util/input_text.html
+        name    = 'super_visor'
+        label   = 'Supervisor'
+        value   = current.super_visor
+        dl      = 1
+    %]
+
+    [%# INCLUDE util/input_text.html
+        name    = 'super_visor_2'
+        label   = 'Supervisor #2'
+        value   = current.super_visor_2
+        dl      = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'work_phone'
+        label   = 'Work phone'
+        value   = current.work_phone
+        dl      = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'work_fax'
+        label   = 'Work FAX'
+        value   = current.work_fax
+        dl      = 1
+    %]
+</dl>
+
+    <input type="hidden" name="staff_id" value="[% current.staff_id %]" />
+    <input type="hidden" name="dept_id" value="[% current.dept_id %]" />
+    <input type="hidden" name="unit_id" value="[% current.unit_id %]" />
+    [% IF action == 'edit' %]
+    <p class="save"><input type="submit" name="op" id="op_save" value="Save" /></p>
+    [% ELSE %]
+    <p class="edit"><input type="submit" name="op" id="op_edit" value="Edit" /></p>
+    [% END %]
+</form>
+[% IF action == 'edit' %]
+<form class="cancel" method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+    <input type="hidden" name="staff_id" id="staff_id" value="[% current.staff_id %]" />
+    <p><input type="submit" name="op" id="op" value="Cancel" /></p>
+</form>
+[% END %]
+
+</div>

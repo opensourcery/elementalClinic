@@ -1,0 +1,401 @@
+---
+1001: 
+  rec_id: 1001
+  client_assessment_id: 1002
+  template_field_id: 1101 
+  value: Life 
+1002: 
+  rec_id: 1002
+  client_assessment_id: 1002
+  template_field_id: 1102 
+  value: Seems to be searching for something.
+1003: 
+  rec_id: 1003
+  client_assessment_id: 1002
+  template_field_id: 1103 
+  value: Mother
+1004: 
+  rec_id: 1004
+  client_assessment_id: 1002
+  template_field_id: 1104 
+  value: Average
+1005: 
+  rec_id: 1005
+  client_assessment_id: 1002
+  template_field_id: 1105 
+  value: Sad
+1006: 
+  rec_id: 1006
+  client_assessment_id: 1002
+  template_field_id: 1106 
+  value: Steals shiney objects
+1007: 
+  rec_id: 1007
+  client_assessment_id: 1002
+  template_field_id: 1107 
+  value: 
+1008: 
+  rec_id: 1008
+  client_assessment_id: 1002
+  template_field_id: 1108 
+  value: Knives and Axes
+1009: 
+  rec_id: 1009
+  client_assessment_id: 1002
+  template_field_id: 1109 
+  value: Distrust of Authority
+1010: 
+  rec_id: 1010
+  client_assessment_id: 1002
+  template_field_id: 1110 
+  value: Enjoys fighting
+1011: 
+  rec_id: 1011
+  client_assessment_id: 1003
+  template_field_id: 1101 
+  value: Pressure 
+1012: 
+  rec_id: 1012
+  client_assessment_id: 1003
+  template_field_id: 1102 
+  value: Likeable personality
+1013: 
+  rec_id: 1013
+  client_assessment_id: 1003
+  template_field_id: 1103 
+  value: Mother
+1014: 
+  rec_id: 1014
+  client_assessment_id: 1003
+  template_field_id: 1104 
+  value: Healthy
+1015: 
+  rec_id: 1015
+  client_assessment_id: 1003
+  template_field_id: 1105 
+  value: Depressed
+1016: 
+  rec_id: 1016
+  client_assessment_id: 1003
+  template_field_id: 1106 
+  value: Long wrap sheet
+1017: 
+  rec_id: 1017
+  client_assessment_id: 1003
+  template_field_id: 1107 
+  value: History of abuse.
+1018: 
+  rec_id: 1018
+  client_assessment_id: 1003
+  template_field_id: 1108 
+  value: Sidearm
+1030: 
+  rec_id: 1030
+  client_assessment_id: 1004
+  template_field_id: 1074 
+  value: Yes
+1031: 
+  rec_id: 1031
+  client_assessment_id: 1004
+  template_field_id: 1075
+  value: Yes
+1032: 
+  rec_id: 1032
+  client_assessment_id: 1004
+  template_field_id: 1077
+  value: Seeing spiders can prompt suacidal episode.
+1033: 
+  rec_id: 1033
+  client_assessment_id: 1004
+  template_field_id: 1079
+  value: Incoherant
+1034: 
+  rec_id: 1034
+  client_assessment_id: 1004
+  template_field_id: 1081
+  value: Pink Elephants
+1035: 
+  rec_id: 1035
+  client_assessment_id: 1004
+  template_field_id: 1083
+  value: Very Intelligent
+1036: 
+  rec_id: 1036
+  client_assessment_id: 1005
+  template_field_id: 1001 
+  value: Wondering what it all means.
+1037: 
+  rec_id: 1037
+  client_assessment_id: 1005
+  template_field_id: 1002
+  value: Needs help finding answers.
+1038: 
+  rec_id: 1038
+  client_assessment_id: 1005
+  template_field_id: 1004 
+  value: yes
+1039: 
+  rec_id: 1039
+  client_assessment_id: 1005
+  template_field_id: 1005
+  value: yes
+1040: 
+  rec_id: 1040
+  client_assessment_id: 1005
+  template_field_id: 1009 
+  value: yes
+1041: 
+  rec_id: 1041
+  client_assessment_id: 1005
+  template_field_id: 1010 
+  value: yes
+1042: 
+  rec_id: 1042
+  client_assessment_id: 1005
+  template_field_id: 1012 
+  value: yes
+1043: 
+  rec_id: 1043
+  client_assessment_id: 1005
+  template_field_id: 1015
+  value: Active
+1044: 
+  rec_id: 1044
+  client_assessment_id: 1005
+  template_field_id: 1016
+  value: Hepatitis C
+1045: 
+  rec_id: 1045
+  client_assessment_id: 1005
+  template_field_id: 1017
+  value: Dropped out of highschool
+1047: 
+  rec_id: 1047
+  client_assessment_id: 1005
+  template_field_id: 1021
+  value: Braces at age 8
+1048: 
+  rec_id: 1048
+  client_assessment_id: 1005
+  template_field_id: 1026
+  value: Peanut Allergy
+1049: 
+  rec_id: 1049
+  client_assessment_id: 1005
+  template_field_id: 1029 
+  value: Unkept
+1050: 
+  rec_id: 1050
+  client_assessment_id: 1005
+  template_field_id: 1032
+  value: Incoherent
+1051: 
+  rec_id: 1051
+  client_assessment_id: 1005
+  template_field_id: 1033
+  value: Thinks he is God.
+1052: 
+  rec_id: 1052
+  client_assessment_id: 1005
+  template_field_id: 1036
+  value: Pink Elephants
+1053: 
+  rec_id: 1053
+  client_assessment_id: 1005
+  template_field_id: 1040
+  value: Very intelligent
+1054: 
+  rec_id: 1054
+  client_assessment_id: 1005
+  template_field_id: 1060
+  value: Poor
+1055: 
+  rec_id: 1055
+  client_assessment_id: 1005
+  template_field_id: 1061
+  value: yes
+1056: 
+  rec_id: 1056
+  client_assessment_id: 1005
+  template_field_id: 1062
+  value: On the run
+1057: 
+  rec_id: 1057
+  client_assessment_id: 1005
+  template_field_id: 1063
+  value: Veteran
+1058: 
+  rec_id: 1058
+  client_assessment_id: 1005
+  template_field_id: 1069 
+  value: Good Listener
+1060: 
+  rec_id: 1060
+  client_assessment_id: 1006
+  template_field_id: 1101 
+  value: Pressure 
+1061: 
+  rec_id: 1061
+  client_assessment_id: 1006
+  template_field_id: 1102 
+  value: Likeable
+1062: 
+  rec_id: 1062
+  client_assessment_id: 1006
+  template_field_id: 1103 
+  value: Relatives
+1063: 
+  rec_id: 1063
+  client_assessment_id: 1006
+  template_field_id: 1104 
+  value: Healthy
+1064: 
+  rec_id: 1064
+  client_assessment_id: 1006
+  template_field_id: 1105 
+  value: Happy
+1065: 
+  rec_id: 1065
+  client_assessment_id: 1006
+  template_field_id: 1106 
+  value: 
+1066: 
+  rec_id: 1066
+  client_assessment_id: 1006
+  template_field_id: 1107 
+  value: 
+1067: 
+  rec_id: 1067
+  client_assessment_id: 1006
+  template_field_id: 1108 
+  value: Machine Guns
+1068: 
+  rec_id: 1068
+  client_assessment_id: 1006
+  template_field_id: 1109 
+  value: Very Defiant
+1069: 
+  rec_id: 1069
+  client_assessment_id: 1006
+  template_field_id: 1110 
+  value: Random acts of violence.
+1070: 
+  rec_id: 1070
+  client_assessment_id: 1007
+  template_field_id: 1101 
+  value: Life 
+1071: 
+  rec_id: 1071
+  client_assessment_id: 1007
+  template_field_id: 1102 
+  value: Manipulative
+1072: 
+  rec_id: 1072
+  client_assessment_id: 1007
+  template_field_id: 1103 
+  value: Father
+1073: 
+  rec_id: 1073
+  client_assessment_id: 1007
+  template_field_id: 1104 
+  value: Unhealthy
+1074: 
+  rec_id: 1074
+  client_assessment_id: 1007
+  template_field_id: 1105 
+  value: Depressed
+1075: 
+  rec_id: 1075
+  client_assessment_id: 1007
+  template_field_id: 1106 
+  value: Vehicle theft
+1076: 
+  rec_id: 1076
+  client_assessment_id: 1007
+  template_field_id: 1107 
+  value: Yes
+1077: 
+  rec_id: 1077
+  client_assessment_id: 1007
+  template_field_id: 1108 
+  value: 
+1078: 
+  rec_id: 1078
+  client_assessment_id: 1007
+  template_field_id: 1109 
+  value: Somewhat Defiant
+1079: 
+  rec_id: 1079
+  client_assessment_id: 1007
+  template_field_id: 1110 
+  value: 
+1080: 
+  rec_id: 1080
+  client_assessment_id: 1008
+  template_field_id: 1101 
+  value: Pressure 
+1081: 
+  rec_id: 1081
+  client_assessment_id: 1008
+  template_field_id: 1102 
+  value: Afraid to be happy
+1082: 
+  rec_id: 1082
+  client_assessment_id: 1008
+  template_field_id: 1103 
+  value: Both parents
+1083: 
+  rec_id: 1083
+  client_assessment_id: 1008
+  template_field_id: 1104 
+  value: Average
+1084: 
+  rec_id: 1084
+  client_assessment_id: 1008
+  template_field_id: 1105 
+  value: Angry
+1085: 
+  rec_id: 1085
+  client_assessment_id: 1008
+  template_field_id: 1106 
+  value: When hungry
+1086: 
+  rec_id: 1086
+  client_assessment_id: 1008
+  template_field_id: 1107 
+  value:
+1087: 
+  rec_id: 1087
+  client_assessment_id: 1008
+  template_field_id: 1108 
+  value:
+1088: 
+  rec_id: 1088
+  client_assessment_id: 1008
+  template_field_id: 1109 
+  value: Yes
+1089: 
+  rec_id: 1089
+  client_assessment_id: 1008
+  template_field_id: 1110 
+  value: Yes
+1090:
+  rec_id: 1090
+  client_assessment_id: 1002
+  template_field_id: 1111
+  value: 'n/a'
+1091:
+  rec_id: 1091
+  client_assessment_id: 1009
+  template_field_id: 1112
+  value: prozac, insulin
+1092:
+  rec_id: 1092
+  client_assessment_id: 1009
+  template_field_id: 1113
+  value: diabetic
+1093:
+  rec_id: 1093
+  client_assessment_id: 1009
+  template_field_id: 1114
+  value: prefers a round sound with no attitude in it

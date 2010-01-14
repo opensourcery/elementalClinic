@@ -1,0 +1,24 @@
+[% INCLUDE util/select_new.html
+    name    = 'rolodex_id'
+    label   = 'Mental Health Insurance Carrier'
+    values  = data
+    keyname = 'rec_id'
+    valname = 'name'
+    wraptag = 'p'
+    leading_blank = 'All Mental Health Insurance Carriers'    
+%]
+
+
+[% INCLUDE util/date_picker.html
+    label   = 'Start'
+    name    = 'start_date'
+    value   = 'today'
+    wraptag = 'p'
+%]
+
+[% INCLUDE util/date_picker.html
+    label   = 'End'
+    name    = 'end_date'
+    value   = 'today'
+    wraptag = 'p'
+%]

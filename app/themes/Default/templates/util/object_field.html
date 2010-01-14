@@ -1,0 +1,20 @@
+[%#
+    include = input template
+    type    = object type
+    id      = object identifier
+    ord     = synonym for id
+    field   = object field name
+
+    type[id][field]
+-%]
+
+[%
+    id = id || ord;
+    name = type _ '[' _ id _ '][' _ field _ ']';
+%]
+
+[% INCLUDE $include
+    name = name
+    default = $name || default
+    value = $name || value
+%]

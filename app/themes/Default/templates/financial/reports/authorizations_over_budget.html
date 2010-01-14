@@ -1,0 +1,37 @@
+[% INCLUDE util/date_picker.html
+    label   = 'Date'
+    name    = 'start_date'
+    value   = 'today'
+    wraptag = 'p'
+%]
+
+[% INCLUDE util/select_new.html
+    name    = 'staff_id'
+    label   = 'Staff'
+    values  = department.get_service_coordinators
+    keyname = 'staff_id'
+    valname = 'eman'
+    wraptag = 'p'
+    leading_blank = 'All Staff'
+%]
+
+[% INCLUDE util/choose_valid_data.html
+    name    = 'program_id'
+    label   = 'Program'
+    table   = '_program'
+    type    = 'select'
+    use_id  = 1
+    leading_hash    = [{ name => 'All programs' }]
+    wraptag = 'p'
+%]
+
+[% INCLUDE util/choose_valid_data.html
+    name    = 'level_of_care_id'
+    label   = 'Level of care'
+    table   = '_level_of_care'
+    type    = 'select'
+    use_id  = 1
+    leading_hash    = [{ name => 'All levels' }]
+    wraptag = 'p'
+%]
+

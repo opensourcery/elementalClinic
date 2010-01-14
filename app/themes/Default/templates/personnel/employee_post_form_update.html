@@ -1,0 +1,214 @@
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+
+<table border="0">
+    <tr>
+        <td><br /></td>
+    </tr>
+    <tr>
+        <td><b>&#149; Identifying Data</b></td>
+    </tr>
+    <tr>
+        <td><br /></td>
+    </tr>
+    <tr>
+        <td><b>First Name: </b></td>
+        <td><input type="text" name="fname" value="[% row_fname %]" size="17" maxlength="15" /></td>
+    </tr>
+    <tr>
+        <td><b>Last Name: </b></td>
+        <td><input type="text" name="lname" value="[% row_lname %]" size="17" maxlength="15" /></td>
+    </tr>
+    <tr>
+        <td><b>Employee ID: </b></td>
+        <td>[% rec_id %]</td>
+    </tr>
+    <tr>
+        <td><b>Currently Employed: </b></td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "active"
+    s_values  = ['Yes', 'No']
+    s_default = row_active
+%]</td>
+    </tr>
+    <tr>
+        <td><br /></td>
+    </tr>
+    <tr>
+        <td><b>&#149; Personal Information</b></td>
+    </tr>
+    <tr>
+        <td><br /></td>
+    </tr>
+    <tr>
+        <td><b>Address: </b></td>
+        <td><input type="text" name="addr" value="[% row_addr %]" size="42" maxlength="40" /></td>
+    </tr>
+    <tr>
+        <td><b>City: </b></td>
+        <td><input type="text" name="city" value="[% row_city %]" size="42" maxlength="40" /></td>
+    </tr>
+    <tr>
+        <td><b>Emergency Contact: </b></td>
+        <td><input type="text" name="next_kin" value="[% row_next_kin %]" size="50" maxlength="50" /></td>
+    </tr>
+    <tr>
+        <td><b>Emer/Home Phone: </b></td>
+        <td><input type="text" name="home_phone" value="[% row_home_phone %]" size="16" maxlength="14" /></td>
+    </tr>
+    <tr>
+        <td><b><font color = red>Date of Birth: </font></b></td>
+        <td><input type="text" name="dob" value="[% row_dob %]" size="12" maxlength="10" /> <font color = red>* Use Valid Date (mm-dd-yyyy or yyyy-mm-dd) Or Leave Blank</font></td>
+    </tr>
+    <tr>
+        <td><b>Social Security Number: </b></td>
+        <td><input type="text" name="ssn" value="[% row_ssn %]" size="13" maxlength="11" /></td>
+    </tr>
+    <tr>
+        <td><b>Sex: </b></td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "sex"
+    s_values  = sex
+    s_default = row_sex
+%]</td>
+    </tr>
+    <tr>
+        <td><b>Ethnicity: </b></td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "race"
+    s_values  = race
+    s_default = row_race
+%]</td>
+    </tr>
+    <tr>
+        <td><b>Marital Status: </b></td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "marital_status"
+    s_values  = marital
+    s_default = row_marital_status
+%]</td>
+    </tr>
+    <tr>
+        <td><br /></td>
+    </tr>
+    <tr>
+        <td><b>&#149; Employment</b></td>
+    </tr>
+    <tr>
+        <td><br /></td>
+    </tr>
+    <tr>
+        <td><b>Job Title: </b></td>
+        <td><input type="text" name="job_title" value="[% row_job_title %]" size="47" maxlength="45" /></td>
+    </tr>
+    <tr>
+        <td><b><font color = red>Date of Employment: </font></b></td>
+        <td><input type="text" name="date_employ" value="[% row_date_employ %]" size="12" maxlength="10" /> <font color = red><small>* Use Valid Date (YYYY-MM-DD or YYYY-MM-DD) Or Leave Blank</small></font></td>
+    </tr>
+    <tr>
+        <td><b>Department</b></td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "dept"
+    s_values  = dept
+    s_default = row_dept_name
+%]</td>
+    </tr>
+    <tr>
+        <td><b>Primary Unit</b></td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "unit"
+    s_values  = units
+    s_default = row_unit_lname
+%]</td>
+    </tr>
+    <tr>
+        <td><b>Supervisor (1): </b></td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "super_visor"
+    s_values  = super_visor
+    s_default = row_supervisor
+%]</td>
+    </tr>
+    <tr>
+        <td><b>Supervisor (2): </b></td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "super_visor_2"
+    s_values  = super_visor_2
+    s_default = row_super_visor_2
+%]</td>
+    </tr>
+    <tr>
+        <td><b>Work Phone: </b></td>
+        <td><input type="text" name="work_phone" value="[% row_work_phone %]" size="16" maxlength="14" /></td>
+    </tr>
+    <tr>
+        <td><b><font color = red>Admin ID: </font></b></td>
+        <td><input type="text" name="admin_id" value="[% row_admin_id %]" size="16" maxlength="14" /> <font color = red>* Use Integers (Whole Numbers) Or Leave Blank</font></td>
+    </tr>
+    <tr>
+        <td><b>Commercial Drivers License: </b></td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "cdl"
+    s_values  = ['Yes', 'No']
+    s_default = row_cdl
+%]</td>
+    </tr>
+    <tr>
+        <td><b>Eligible for Overtime: </b></td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "over_time"
+    s_values  = ['Yes', 'No']
+    s_default = row_over_time
+%]</td>
+    </tr>
+    <tr>
+        <td><b>US Citizen: </b></td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "us_citizen"
+    s_values  = ['Yes', 'No']
+    s_default = row_us_citizen
+%]</td>
+    </tr>
+    <tr>
+        <td><b>Withholding Code: </b></td>
+        <td><input type="text" name="with_hold" value="[% row_with_hold %]" size="16" maxlength="14" /></td>
+    </tr>
+    <tr>
+        <td><br /></td>
+    </tr>
+    <tr>
+        <td><b>&#149; Performance Evaluations</b></td>
+    </tr>
+    <tr>
+        <td><br /></td>
+    </tr>
+    <tr>
+        <td><b><font color = red>Last Evaluation: </font></b></td>
+        <td><input type="text" name="start_date" value="[% eval_start_date %]" size="12" maxlength="10" /> <font color = red>* Use Valid Date (mm-dd-yyyy or yyyy-mm-dd) Or Leave Blank</font></td>
+    </tr>
+    <tr>
+        <td><b><font color = red>Evaluation Due: </font></b></td>
+        <td><input type="text" name="end_date" value="[% eval_end_date %]" size="12" maxlength="10" /> <font color = red><small>* Use Valid Date (YYYY-MM-DD or YYYY-MM-DD) Or Leave Blank</small></font></td>
+    </tr>
+    <tr>
+        <td><b>Evaluation Note: </b></td>
+        <td><textarea name="comment_text" rows="10" cols="60">[% eval_comment_text %]</textarea></td>
+    </tr>
+</table>
+<p />
+
+<input type="submit" name="go" value="Submit Query" />
+<input type="hidden" name="rec_id" value="[% rec_id %]" />
+<div>
+</div>
+</form>

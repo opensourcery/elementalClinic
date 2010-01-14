@@ -1,0 +1,80 @@
+[% validation_results = Current.validation_set.results %]
+<div class="controls">
+    [% INCLUDE financial/billing/key.html
+        bounce      = 1
+        billable    = 1
+        bill_manually = 1
+    %]
+    <div id="rules">
+        <h4>Validation rules</h4>
+        [% IF validation_results %]
+            [% INCLUDE financial/billing/rules.html
+                rules   = Current.validation_set.system_rules_used.sort('name')
+                track   = 'results'
+                selected_rules  = selected_rules
+            %]
+        [% ELSE %]
+            [% INCLUDE util/form.html %]
+            [% INCLUDE financial/billing/rules.html
+                rules   = Current.validation_set.system_rules.sort('name')
+                track   = 'validate'
+                selected_rules  = selected_rules
+            %]
+        [% END %]
+        <hr class="subtle" />
+
+        [% IF( Current.validation_set.step == 3
+                && Current.validation_set.status != 'Validated'
+                && Current.validation_set.status != 'Complete' ) %]
+            [% IF force_confirm %]
+            <p>You didn't select any rules.  This is fine, but you must confirm that you intend to validate.</p>
+            <input type="hidden" name="confirm" value="1" />
+            <p class="save"><input type="submit" name="submit" value="Confirm System Validation" /></p>
+            [% ELSE %]
+            <p class="save"><input type="submit" name="submit" value="System Validation" /></p>
+            [% END %]
+            <input type="hidden" name="section" value="billing" />
+            <input type="hidden" name="step" value="3" />
+            <input type="hidden" name="op" value="billing_3_validate" />
+        [% END %]
+    </div>
+
+    <div id="prognote_list">
+        [% IF validation_results %]
+            [% INCLUDE financial/billing/results.html
+                rules   = Current.validation_set.system_rules_used.sort('name')
+                result_sets = [
+                    {
+                        id      = 'results'
+                        label   = 'All'
+                        results = validation_results
+                    },
+                    {
+                        id      = 'results_passed'
+                        label   = 'Passed'
+                        results = Current.validation_set.results( 1 )
+                    },
+                    {
+                        id      = 'results_failed'
+                        label   = 'Failed'
+                        results = Current.validation_set.results( 0 )
+                    },
+                ]
+            %]
+        [% ELSE;
+            INCLUDE financial/billing/notes.html;
+        END %]
+    </div>
+
+    [% IF( # Current.validation_set.billing_cycle && # this disallows validation sets from payer validation
+            Current.validation_set.step >= 3
+            && ( Current.validation_set.status == 'Validated'
+              || Current.validation_set.status == 'Complete' )
+         ) %]
+        [% INCLUDE util/form.html %]
+        <input type="hidden" name="section" value="billing" />
+        <input type="hidden" name="step" value="4" />
+        <p class="save"><input type="submit" name="submit" value="Payer Validation" /></p>
+        [% INCLUDE util/form_end.html %]
+    [% END %]
+</div>

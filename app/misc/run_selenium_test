@@ -1,0 +1,15 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use Test::More 'no_plan';
+use eleMentalClinic::Test::Selenium;
+my $self = eleMentalClinic::Test::Selenium->new_with_server(
+    server => { theme => 'Earth' },
+);
+
+my ($file) = @ARGV;
+$self->start;
+$self->admin_login;
+eval { $self->run_file($file) };
+is($@, '', "ran $file without dying");

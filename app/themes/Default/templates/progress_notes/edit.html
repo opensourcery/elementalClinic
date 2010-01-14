@@ -1,0 +1,33 @@
+[% INCLUDE global/client_head.html
+    navsec = 'clinical'
+    navpage = 'progress_notes'
+%]
+
+[% INCLUDE progress_notes/note.html
+    commit_only = 1
+    label_action = 'Edit'
+%]
+
+<script type="text/javascript">
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function Tpl( id, text ) {
+    this.id   = id;
+    this.text = text;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    var tpls = new Array();
+    [% FOREACH tpl IN current_user.valid_data.list( '_prognote_templates' ) %]
+        tpls[ [% tpl.rec_id %] ] = "[% tpl.description | replace('\n', '\\n')  %]";
+    [% END %]
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function insert_template() {
+    var template_id = document.getElementById( 'select_template' ).value
+    var note_body = document.getElementById( 'note_body' );
+
+    if( template_id ) {
+        note_body.value = note_body.value + "\n" + tpls[ template_id ] + "\n"
+    }
+}
+</script>

@@ -1,0 +1,511 @@
+1101:
+  rolodex_id: 1101
+  address1: 123 Jazz
+  address2: ~
+  city: New Orleans
+  post_code: 12345
+  state: LA
+1102:
+  rolodex_id: 1102
+  address1: 456 Desolation Row
+  address2: ~
+  city: New Orleans
+  post_code: 12345
+  state: LA
+1103:
+  rolodex_id: 1103
+  address1: 666 crossroads lane
+  address2: ~
+  city: longview
+  post_code: 44666
+  state: tx
+1104:
+  rolodex_id: 1104
+  address1: 668 Evil Way
+  address2: ~
+  city: Old Orleans
+  post_code: 02468
+  state: LA
+1105:
+  rolodex_id: 1105
+  address1: 246 NW 23rd Ave
+  address2: ~
+  city: Portland
+  post_code: 97000
+  state: OR
+1106:
+  rolodex_id: 1106
+  address1: PO Box 1271
+  address2: ~
+  city: Portland
+  post_code: 97207
+  state: OR
+1107:
+  rolodex_id: 1107
+  address1: 601 SW 2nd Avenue
+  address2: ~
+  city: Portland
+  post_code: 97204
+  state: OR
+1108:
+  rolodex_id: 1108
+  address1: 13221 SW 68th
+  address2: ~
+  city: Portland
+  post_code: 97223
+  state: OR
+1109:
+  rolodex_id: 1109
+  address1: PO Box 4327
+  address2: ~
+  city: Portland
+  post_code: 97208-4327
+  state: OR
+1110:
+  rolodex_id: 1110
+  address1: 1111 SW Stark St
+  address2: ~
+  city: Portland
+  post_code: 97200
+  state: OR
+1111:
+  rolodex_id: 1111
+  address1: ~
+  address2: ~
+  city: ~
+  post_code: ~
+  state: ~
+1201:
+  rolodex_id: 1201
+  address1: 123 Jazz St
+  address2: ~
+  city: New Orleans
+  post_code: 12345
+  state: LA
+1202:
+  rolodex_id: 1202
+  address1: 123 Jazz St
+  address2: ~
+  city: New Orleans
+  post_code: 12345
+  state: LA
+1203:
+  rolodex_id: 1203
+  address1: 666 Crossroads Lane
+  address2: ~
+  city: Longview
+  post_code: 44666
+  state: TX
+1204:
+  rolodex_id: 1204
+  address1: 668 Devil Way
+  address2: ~
+  city: New Orleans
+  post_code: 02468
+  state: LA
+1205:
+  rolodex_id: 1205
+  address1: 246 NW 23rd Ave
+  address2: ~
+  city: Portland
+  post_code: 97000
+  state: OR
+1206:
+  rolodex_id: 1206
+  address1: PO Box 1271
+  address2: ~
+  city: Portland
+  post_code: 97207-1271
+  state: OR
+1207:
+  rolodex_id: 1207
+  address1: 601 SW Second Avenue
+  address2: Suite 100
+  city: Portland
+  post_code: 97204-3154
+  state: OR
+1208:
+  rolodex_id: 1208
+  address1: 13221 SW 68th Pkwy
+  address2: ~
+  city: PORTLAND
+  post_code: 97223
+  state: OR
+1209:
+  rolodex_id: 1209
+  address1: P.O. Box 4327
+  address2: ~
+  city: Portland
+  post_code: 97208-4327
+  state: WA
+1210:
+  rolodex_id: 1210
+  address1: 1111 SW Stark
+  address2: ~
+  city: Portland
+  post_code: 97200-1234
+  state: OR
+1211:
+  rolodex_id: 1211
+  address1: ~
+  address2: ~
+  city: ~
+  post_code: 97206-4321
+  state: ~
+1301:
+  rolodex_id: 1301
+  address1: 123 Jazz St
+  address2: ~
+  city: New Orleans
+  post_code: 12344
+  state: LA
+1302:
+  rolodex_id: 1302
+  address1: 123 Jazz St
+  address2: ~
+  city: New Orleans
+  post_code: 12345
+  state: LA
+1303:
+  rolodex_id: 1303
+  address1: 666 Crossroads Lane
+  address2: ~
+  city: Longview
+  post_code: 44666
+  state: TX
+1304:
+  rolodex_id: 1304
+  address1: 668 Devil Way
+  address2: ~
+  city: New Orleans
+  post_code: 02468
+  state: LA
+1305:
+  rolodex_id: 1305
+  address1: 246 NW 23rd Ave
+  address2: ~
+  city: Portland
+  post_code: 97000
+  state: OR
+1306:
+  rolodex_id: 1306
+  address1: P.O. Box 1271
+  address2: ~
+  city: Portland
+  post_code: 97207-1271
+  state: OR
+1307:
+  rolodex_id: 1307
+  address1: 601 SW Second Avenue
+  address2: ~
+  city: Portland
+  post_code: 97204-3154
+  state: OR
+1308:
+  rolodex_id: 1308
+  address1: 13221 SW 68th Pkwy
+  address2: ~
+  city: Portland
+  post_code: 97223
+  state: OR
+1309:
+  rolodex_id: 1309
+  address1: P.O. Box 4327
+  address2: ~
+  city: Portland
+  post_code: 97208-4327
+  state: OR
+1310:
+  rolodex_id: 1310
+  address1: 1111 SW Stark
+  address2: ~
+  city: Portland
+  post_code: 97200
+  state: OR
+1311:
+  rolodex_id: 1311
+  address1: ~
+  address2: ~
+  city: ~
+  post_code: ~
+  state: ~
+1401:
+  rolodex_id: 1401
+  address1: 9205 SW Barnes Road
+  address2: ~
+  city: Portland
+  post_code: 97225
+  state: OR
+1402:
+  rolodex_id: 1402
+  address1: 9205 sw Barnes Road
+  address2: ~
+  city: Portland
+  post_code: 97225
+  state: OR
+1403:
+  rolodex_id: 1403
+  address1: 9205 SW Barnes Road
+  address2: ~
+  city: Portland
+  post_code: 97225
+  state: OR
+1404:
+  rolodex_id: 1404
+  address1: 9205 SW Barnes Road
+  address2: ~
+  city: Portland
+  post_code: 97225
+  state: OR
+1405:
+  rolodex_id: 1405
+  address1: 9205 SW Barnes Road
+  address2: ~
+  city: Portland
+  post_code: 97225
+  state: OR
+1406:
+  rolodex_id: 1406
+  address1: 9205 SW Barnes Road
+  address2: ~
+  city: Portland
+  post_code: 97225
+  state: OR
+1407:
+  rolodex_id: 1407
+  address1: 9205 SW Barnes Road
+  address2: ~
+  city: Portland
+  post_code: 97225
+  state: OR
+1408:
+  rolodex_id: 1408
+  address1: 9205 SW Barnes
+  address2: ~
+  city: Portland
+  post_code: 97225
+  state: OR
+1409:
+  rolodex_id: 1409
+  address1: 9205 SW Barnes St
+  address2: ~
+  city: Portland
+  post_code: 97225
+  state: OR
+1410:
+  rolodex_id: 1410
+  address1: 9205 SW Barnes Rd
+  address2: ~
+  city: Portland
+  post_code: 97225
+  state: OR
+1411:
+  rolodex_id: 1411
+  address1: 9205 SW Barnes Rd
+  address2: ~
+  city: Portland
+  post_code: 97225
+  state: OR
+1412:
+  rolodex_id: 1412
+  address1: 9205 SW Barnes Road
+  address2: ~
+  city: Portland
+  post_code: 97225-1234
+  state: OR
+1413:
+  rolodex_id: 1413
+  address1: 9205 SW Barnes Road
+  address2: ~
+  city: Portland
+  post_code: 97224
+  state: OR
+1414:
+  rolodex_id: 1414
+  address1: 9205 southwest Barnes Rd
+  address2: ~
+  city: Portland
+  post_code: 97225
+  state: OR
+1415:
+  rolodex_id: 1415
+  address1: 9205 SW Barnes Road
+  address2: ~
+  city: Portland
+  post_code: 97225
+  state: OR
+1416:
+  rolodex_id: 1416
+  address1: 9205 SW Barnes Rod
+  address2: ~
+  city: Portland
+  post_code: 97225
+  state: OR
+1417:
+  rolodex_id: 1417
+  address1: 9205 SW Barnes Road
+  address2: ~
+  city: Portland
+  post_code: 97225
+  state: OR
+1418:
+  rolodex_id: 1418
+  address1: 9205 SW Barnes Road
+  address2: ~
+  city: Portland
+  post_code: 97225
+  state: OR
+1419:
+  rolodex_id: 1419
+  address1: 9206 SW Barnes Rd
+  address2: ~
+  city: Portland
+  post_code: 97225
+  state: OR
+1420:
+  rolodex_id: 1420
+  address1: 9205 SW Barnes Rd.
+  address2: ~
+  city: Portland
+  post_code: 97225
+  state: OR
+1501:
+  rolodex_id: 1501
+  address1: 2020 SW Fourth
+  address2: Suite 1000
+  city: Portland
+  post_code: 97201
+  state: OR
+1502:
+  rolodex_id: 1502
+  address1: 2020 SW Fourth Ave
+  address2: Suite 1000
+  city: Portland
+  post_code: 97201
+  state: OR
+1503:
+  rolodex_id: 1503
+  address1: 2020 SW Fourth
+  address2: Suite 1000
+  city: Portland
+  post_code: 97201
+  state: OR
+1504:
+  rolodex_id: 1504
+  address1: 2020 SW Fourth Ave
+  address2: Ste 1000
+  city: Portland
+  post_code: 97201
+  state: OR
+1505:
+  rolodex_id: 1505
+  address1: 2020 SW Fourth
+  address2: Suite 1000
+  city: Portland
+  post_code: 97201
+  state: OR
+1506:
+  rolodex_id: 1506
+  address1: 2020 sw fourth
+  address2: suite 1000
+  city: portland
+  post_code: 97201
+  state: or
+1507:
+  rolodex_id: 1507
+  address1: P.O. Box 10128
+  address2: ~
+  city: Eugene
+  post_code: 97440
+  state: OR
+1508:
+  rolodex_id: 1508
+  address1: PO Box 10128
+  address2: ~
+  city: Eugene
+  post_code: 97440
+  state: OR
+1509:
+  rolodex_id: 1509
+  address1: PO. Box 10128
+  address2: ~
+  city: Eugene
+  post_code: 97440
+  state: OR
+1510:
+  rolodex_id: 1510
+  address1: P.O. Box 10128
+  address2: ~
+  city: Eugene
+  post_code: 97440
+  state: OR
+1511:
+  rolodex_id: 1511
+  address1: 815 SW Bond
+  address2: ~
+  city: Bend
+  post_code: 97702
+  state: OR
+1512:
+  rolodex_id: 1512
+  address1: P.O. Box 7709
+  address2: ~
+  city: Bend
+  post_code: 97708-7709
+  state: OR
+1513:
+  rolodex_id: 1513
+  address1: P.O. Box 91059
+  address2: ~
+  city: Seattle
+  post_code: 98111
+  state: WA
+1514:
+  rolodex_id: 1514
+  address1: PO Box 91059
+  address2: ~
+  city: Seattle
+  post_code: 98111
+  state: WA
+1515:
+  rolodex_id: 1515
+  address1: P.O. Box 91059
+  address2: ~
+  city: Seattle
+  post_code: 98111
+  state: WA
+1516:
+  rolodex_id: 1516
+  address1: PO Box 91059
+  address2: ~
+  city: Seattle
+  post_code: 98111
+  state: WA
+1517:
+  rolodex_id: 1517
+  address1: PO Box 91059
+  address2: ~
+  city: Seattle
+  post_code: 98111
+  state: WA
+1518:
+  rolodex_id: 1518
+  address1: P.O. Box 91059
+  address2: ~
+  city: Seattle
+  post_code: 98111-1234
+  state: WA
+1519:
+  rolodex_id: 1519
+  address1: P.O. Box 10128
+  address2: ~
+  city: Eugene
+  post_code: 97440
+  state: OR
+1520:
+  rolodex_id: 1520
+  address1: PO Box 10128
+  address2: ~
+  city: Eugene
+  post_code: 9744
+  state: OR

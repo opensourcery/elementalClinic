@@ -1,0 +1,33 @@
+<b>&#149; Update A Physical Exam</b>
+
+<p />
+
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+
+<table border="0">
+    <tr>
+        <td>Physical Due By: </td>
+        <td><input type="text" name="start_date" value="[% row.start_date %]" size="12" maxlength="10" /></td>
+    </tr>
+    <tr>
+        <td>Physical Completed: </td>
+        <td><input type="text" name="end_date" value="[% row.end_date %]" size="12" maxlength="10" /></td>
+    </tr>
+    <tr>
+        <td>Doctor's Name: </td>
+        <td><input type="text" name="physician" value="[% row.physician %]" size="27" maxlength="25" /></td>
+    </tr>
+    <tr>
+        <td>Examination Site: </td>
+        <td><input type="text" name="location" value="[% row.location %]" size="62" maxlength="60" /></td>
+    </tr>
+</table>
+
+<p />
+
+<input type="submit" name="go" value="Submit Query" />
+<input type="hidden" name="ID" value="[% id %]" />
+<input type="hidden" name="rec_id" value="[% rec_id %]" />
+<div>
+</div>
+</form>

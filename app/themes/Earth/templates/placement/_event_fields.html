@@ -1,0 +1,33 @@
+    [% INCLUDE util/active_date.html
+        name    = 'event_date'
+        value   = event_date || 'today'
+        label   = 'Date'
+        dl      = 1
+    %]
+
+    [% INCLUDE util/select_new.html
+        name    = 'staff_id'
+        values  = department.get_service_coordinators
+        label   = 'Service coordinator'
+        default = client.placement.staff_id
+        keyname = 'staff_id'
+        valname = 'eman'
+        leading_blank   = 'Optional'
+        dl      = 1
+    %]
+
+    <dt><label for="level_of_care_id">Level of care:</label></dt>
+    [% INCLUDE util/choose_valid_data.html
+        name   = 'level_of_care_id'
+        table  = '_level_of_care'
+        type    = 'select'
+        default = client.placement.level_of_care_id
+        use_id  = 1
+        leading_hash    = [{ name => 'Optional' }]
+        action  = episode.level_of_care_locked ? 'display' : 'edit'
+        wraptag = 'dd'
+    %]
+    [% IF episode.level_of_care_locked %]
+    <p><strong>Level of care</strong> has been locked by Financial.  Any other placement information may be changed.</p>
+    [% END %]
+

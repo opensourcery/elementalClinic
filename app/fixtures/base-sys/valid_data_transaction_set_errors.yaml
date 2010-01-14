@@ -1,0 +1,127 @@
+
+1: 
+  active: 1
+  dept_id: 1001
+  description: Transaction Set Not Supported
+  name: 1
+  rec_id: 1
+10: 
+  active: 1
+  dept_id: 1001
+  description: Requested Service (Authentication or Encrypted) Not Available
+  name: 10
+  rec_id: 10
+11: 
+  active: 1
+  dept_id: 1001
+  description: Unknown Security Recipient
+  name: 11
+  rec_id: 11
+12: 
+  active: 1
+  dept_id: 1001
+  description: Incorrect Message Length (Encryption Only)
+  name: 12
+  rec_id: 12
+13: 
+  active: 1
+  dept_id: 1001
+  description: Message Authentication Code Failed
+  name: 13
+  rec_id: 13
+14: 
+  active: 1
+  dept_id: 1001
+  description: Unknown Security Originator
+  name: 15
+  rec_id: 14
+15: 
+  active: 1
+  dept_id: 1001
+  description: Syntax Error in Decrypted Text
+  name: 16
+  rec_id: 15
+16: 
+  active: 1
+  dept_id: 1001
+  description: Security Not Supported
+  name: 17
+  rec_id: 16
+17: 
+  active: 1
+  dept_id: 1001
+  description: Transaction Set Control Number Not Unique within the Functional Group
+  name: 23
+  rec_id: 17
+18: 
+  active: 1
+  dept_id: 1001
+  description: S3E Security End Segment Missing for S3S Security Start Segment
+  name: 24
+  rec_id: 18
+19: 
+  active: 1
+  dept_id: 1001
+  description: S3S Security Start Segment Missing for S3E Security End Segment
+  name: 25
+  rec_id: 19
+2: 
+  active: 1
+  dept_id: 1001
+  description: Transaction Set Trailer Missing
+  name: 2
+  rec_id: 2
+20: 
+  active: 1
+  dept_id: 1001
+  description: S4E Security End Segment Missing for S4S Security Start Segment
+  name: 26
+  rec_id: 20
+21: 
+  active: 1
+  dept_id: 1001
+  description: S4S Security Start Segment Missing for S4E Security End Segment
+  name: 27
+  rec_id: 21
+3: 
+  active: 1
+  dept_id: 1001
+  description: Transaction Set Control Number in Header and Trailer Do Not Match
+  name: 3
+  rec_id: 3
+4: 
+  active: 1
+  dept_id: 1001
+  description: Number of Included Segments Does Not Match Actual Count
+  name: 4
+  rec_id: 4
+5: 
+  active: 1
+  dept_id: 1001
+  description: One or More Segments in Error
+  name: 5
+  rec_id: 5
+6: 
+  active: 1
+  dept_id: 1001
+  description: Missing or Invalid Transaction Set Identifier
+  name: 6
+  rec_id: 6
+7: 
+  active: 1
+  dept_id: 1001
+  description: Missing or Invalid Transaction Set Control Number
+  name: 7
+  rec_id: 7
+8: 
+  active: 1
+  dept_id: 1001
+  description: Authentication Key Name Unknown
+  name: 8
+  rec_id: 8
+9: 
+  active: 1
+  dept_id: 1001
+  description: Encryption Key Name Unknown
+  name: 9
+  rec_id: 9

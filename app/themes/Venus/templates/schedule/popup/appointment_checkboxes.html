@@ -1,0 +1,24 @@
+<ul class="booleans">
+    [% INCLUDE util/checkbox.html
+        name    = 'noshow'
+        id      = "${prefix}appointment_noshow"
+        label   = 'No show'
+        value   = appointment.noshow
+        wraptag = 'li'
+    %]
+    [% INCLUDE util/checkbox.html
+        name    = 'fax'
+        id      = "${prefix}appointment_fax"
+        label   = 'FAX'
+        value   = appointment.fax
+        wraptag = 'li'
+    %]
+    [% INCLUDE util/checkbox.html
+        name    = 'chart'
+        id      = "${prefix}appointment_chart"
+        label   = 'Chart'
+        value   = appointment.chart
+        wraptag = 'li'
+    %]
+</ul>
+

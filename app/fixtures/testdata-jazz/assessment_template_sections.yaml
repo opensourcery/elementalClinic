@@ -1,0 +1,61 @@
+--- 
+1001: 
+  label: Admission
+  position: 0
+  rec_id: 1001
+  assessment_template_id: 1001
+1002: 
+  label: Alerts
+  position: 1
+  rec_id: 1002
+  assessment_template_id: 1001
+1003: 
+  label: Development
+  position: 2
+  rec_id: 1003
+  assessment_template_id: 1001
+1004: 
+  label: Medical
+  position: 3
+  rec_id: 1004
+  assessment_template_id: 1001
+1005: 
+  label: Mental
+  position: 4
+  rec_id: 1005
+  assessment_template_id: 1001
+1006: 
+  label: Psycho Social
+  position: 5
+  rec_id: 1006
+  assessment_template_id: 1001
+1007: 
+  label: Intake
+  position: 0
+  rec_id: 1007
+  assessment_template_id: 1004
+1008: 
+  label: Alerts
+  position: 0
+  rec_id: 1008
+  assessment_template_id: 1003
+1009: 
+  label: Mental
+  position: 1
+  rec_id: 1009
+  assessment_template_id: 1003
+1010: 
+  label: Misc
+  position: 0
+  rec_id: 1010
+  assessment_template_id: 1006
+1011: 
+  label: Alerts
+  position: 1
+  rec_id: 1011
+  assessment_template_id: 1006
+1012:
+  label: Intake
+  position: 1
+  rec_id: 1012
+  assessment_template_id: 1007

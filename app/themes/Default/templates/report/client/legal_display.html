@@ -1,0 +1,33 @@
+<table>
+    <thead>
+    <tr>
+        <td colspan="6">
+            [% INCLUDE report/header.html %]
+
+            [% "<p>This client has no legal history.</p>" UNLESS data.legal_history %]
+        </td>
+    </tr>
+    [% IF data.legal_history %]
+    <tr>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Location</th>
+        <th>Status</th>
+        <th>Reason</th>
+        <th>Comment</th>
+    </tr>
+    [% END %]
+    </thead>
+    <tbody>
+    [% FOR entry IN data.legal_history %]
+    <tr [% rowclass %]>
+        <td>[% entry.start_date %]</td>
+        <td>[% entry.end_date %]</td>
+        <td>[% entry.location %]</td>
+        <td>[% entry.status %]</td>
+        <td>[% entry.reason %]</td>
+        <td>[% entry.comment %]</td>
+    </tr>
+    [% END %]
+    </tbody>
+</table>

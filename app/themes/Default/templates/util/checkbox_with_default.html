@@ -1,0 +1,27 @@
+<!-- BEGIN util/checkbox_with_default -->
+[%#
+    REQUIRED
+    prefix
+    name
+
+    OPTIONAL
+    id
+    value
+    wraptag
+    label
+-%]
+[%  id = id || name;
+    IF value; checked = ' checked="checked"'; END;
+-%]
+[% "<$wraptag>" IF wraptag %]
+[% IF action == 'display' %]
+    [% "$label:" IF label -%] <strong>[% value ? 'Yes' : 'No' %]</strong>
+[% ELSE %]
+    <input type="hidden" name="[% prefix %]_[% name %]_seen" value="1" />
+    <input type="checkbox" name="[% prefix %]_[% name %]_checked" id="[% prefix %]_[% id %]" [% checked %] />
+    [% IF label -%]
+    <label for="[% id %]">[% label %]</label>
+    [% END -%]
+[% "</$wraptag>" IF wraptag %]
+[% END %]
+<!-- END util/checkbox_with_default -->

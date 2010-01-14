@@ -1,0 +1,100 @@
+<div id="content">
+
+  <h2>
+    eleMentalClinic has encountered
+    [% IF exceptions.size < 1 %]
+      an unknown error.
+    [% ELSIF exceptions.size > 1 %]
+      [% exceptions.size %] errors.
+    [% ELSE %]
+      an error.
+    [% END %]
+  </h2>
+
+  <p>
+  An error has occured in eleMentalClinic. This page allows you to send an error
+  report containing useful information. If you do not wish to send an error
+  report you may click on any of the navigation links above. <b>Sending error
+  reports helps us improve eleMentalClinic</b>. Reports allow us to address
+  errors so that they will be fixed in future versions of eleMentalClinic.
+  </p>
+
+  <p>
+  All error reports will be sent to
+  <b>[% Config.send_errors_to || "Address not set" %]</b>.
+  Please check the information below, it may contain confidential client
+  information such as social security numbers. You can obfuscate any or all
+  data fields, and any words you wish in the reports. Client confidentiality
+  always comes first, but be aware that more information helps us solve the
+  issue.
+  </p>
+
+  <p>
+    Any text that looks like <span class="obfuscatable">this</span> may be
+    clicked to obfuscate it. Once obfuscated the text will look like <span
+    class="obfuscated">this</span>.
+  </p>
+
+  <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" id="error_form">
+
+    <div id="data-field-set">
+      <a id="show-fields">Show Fields</a>
+      <a id="hide-fields" style="display: none">Hide Fields</a>
+      <div id="data-fields" style="display: none">
+        <table>
+          [% counter = 0 %]
+          [% FOR p IN cgi_params.pairs %]
+          [% zebra = counter % 2 ? 'odd' : 'even' %]
+          [% counter = counter + 1 %]
+          <tr class="[% zebra %]">
+            <td class="field">[% p.key %]</td>
+            <td class="obfuscatable">[% p.value %]</td>
+            <td style="display: none">
+                [% id = "sent_var_" _ p.key %]
+                <input type="hidden" id="[% id %]" name="[% id %]" value="[% p.value %]" />
+            </td>
+          </tr>
+          [% END %]
+        </table>
+      </div>
+    </div>
+
+    <br />
+
+    <div id="exception_list">
+      <small>Click on an error message for more details.</small>
+      <dl>
+      [% counter = 0 %]
+      [% FOR ex IN exceptions %]
+        [% counter = counter + 1 %]
+        <dt>
+            <input type="checkbox" name="send" id="send" value="[% ex %]" checked="checked" />
+            <input type="hidden" name="exceptions" id="exceptions" value="[% ex %]" />
+            <input type="hidden" name="exception[% counter %]name" id="exception[% counter %]name" value="[% ex %]" />
+        </dt>
+        <dd><a class="report_link" id="exception[% counter %]" href="[% script %]" target="_new">[% ex %]</a></dd>
+      [% END %]
+      </dl>
+      [% IF Config.send_errors_to %]
+      <dl>
+        <dt>
+          <input type="submit" name="op" id="op" value="Submit Report" />
+        </dt>
+        <dd>
+          <p>This will send the selected reports to the configured email address.</p>
+        </dd>
+      </dl>
+      [% ELSE %]
+        <p>Error reporting email address not set. Address must be set in
+        configuration before errors can be reported. Please contact your system
+        administrator.</p>
+      [% END %]
+    </div>
+
+    <div id="exception">
+      <pre id="exception-text">
+      </pre>
+    </div>
+  </form>
+
+</div>

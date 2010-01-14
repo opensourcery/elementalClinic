@@ -1,0 +1,23 @@
+[% "<p>There was no data for this report.</p>" UNLESS data.0 %]
+
+<table>
+    <thead>
+    <tr>
+        <td colspan="2">
+            [% INCLUDE report/header.html %]
+        </td>
+    </tr>        
+    <tr>
+        <th>Zip Code</th>
+        <th>Count</th>
+    </tr>
+    </thead>
+    <tbody>
+    [% FOR entry IN data %]
+    <tr [% rowclass %]>
+        <td>[% entry.post_code %]</td>
+        <td>[% entry.count %]</td>
+    </tr>
+    [% END %]
+    </tbody>
+</table>

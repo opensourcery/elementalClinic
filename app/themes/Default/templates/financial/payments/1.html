@@ -1,0 +1,119 @@
+<div class="submenu payments">
+    <h4>Master Payments</h4>
+    [% INCLUDE util/icon_add.html
+        href    = "$script?op=payments_1_new;section=payments;step=1"
+        icon_label   = 'New master payment'
+    %]
+    <ul>
+    [% FOR payment IN billing_payments %]
+    <li[% ' class="active"' IF payment.id == current_payment.id %]>
+        <a href="[% script %]?section=payments;step=1;billing_payment_id=[% payment.id %]">[% payment.date_received %]: [% payment.rolodex.name %]</a>
+    </li>
+    [% END %]
+    </ul>
+</div>
+
+<div class="subcontent">
+[% IF current_payment %]
+    [% action = current_payment.is_electronic ? 'display' : 'edit' %]
+    [% IF current_payment.id %]
+    <h4>[% current_payment.date_received %]: [% current_payment.rolodex.name %]</h4>
+    [% ELSE %]
+    <h4>New Payment</h4>
+    [% END %]
+
+    [% UNLESS current_payment.is_electronic %]
+    [% INCLUDE util/form.html %]
+    [% END %]
+    <dl class="inline minileft">
+        [% INCLUDE util/select_new.html
+            name    = 'rolodex_id'
+            label   = 'Insurer'
+            values  = insurers
+            default = current_payment.rolodex_id
+            keyname = 'id'
+            valname = 'name'
+            leading_blank   = 'Choose an insurer ...'
+            dl      = 1
+            required    = 1
+        %]
+        [% INCLUDE util/date_picker.html
+            name    = 'payment_date'
+            label   = current_payment.payment_method == 'CHK' ? 'Check date' : 'Payment date'
+            value   = current_payment.payment_date || 'today'
+            dl      = 1
+            required    = 1
+        %]
+        [% INCLUDE util/input_text.html
+            name    = 'payment_amount'
+            label   = current_payment.payment_method == 'CHK' ? 'Check amount' : 'Payment amount'
+            value   = current_payment.payment_amount
+            dl      = 1
+            required    = 1
+        %]
+        [% INCLUDE util/date_picker.html
+            name    = 'date_received'
+            label   = 'Receipt date'
+            value   = current_payment.date_received || 'today'
+            dl      = 1
+        %]
+        [% INCLUDE util/input_text.html
+            name    = 'payment_number'
+            label   = current_payment.payment_method == 'CHK' ? 'Check number' : 'Payment number'
+            value   = current_payment.payment_number
+            dl      = 1
+        %]
+        [% IF current_payment.entered_by_staff_id %]
+        <dt>Recorded by:</dt>
+        <dd><strong>[% current_payment.personnel.eman %]</strong></dd>
+        [% END %]
+    </dl>
+
+    [% IF current_payment.is_electronic %]
+    [% action = 'display' %]
+    <dl class="inline miniright">
+        [% INCLUDE util/input_text.html
+            name    = 'payment_company_id'
+            label   = 'Payment company ID'
+            value   = current_payment.payment_company_id
+            dl      = 1
+        %]
+        [% INCLUDE util/input_text.html
+            name    = 'interchange_date'
+            label   = 'EDI date'
+            value   = current_payment.interchange_date
+            dl      = 1
+        %]
+        [% INCLUDE util/input_text.html
+            name    = 'is_production'
+            label   = 'Test Mode?'
+            value   = current_payment.is_production == 1 ? 'No' : 'Yes'
+            dl      = 1
+        %]
+        [% INCLUDE util/input_text.html
+            name    = 'payment_method'
+            label   = 'Payment method'
+            value   = current_payment.payment_method == 'CHK' ? 'Check' : current_payment.payment_method
+            dl      = 1
+        %]
+        [% INCLUDE util/input_text.html
+            name    = 'transaction_handling_code'
+            label   = 'Transaction handling'
+            value   = current_user.valid_data.get_byname( '_transaction_handling', current_payment.transaction_handling_code ).description
+            dl      = 1
+        %]
+    </dl>
+    [% END %]
+    [% UNLESS current_payment.is_electronic %]
+    <input type="hidden" name="billing_payment_id" value="[% current_payment.id %]" />
+    <input type="hidden" name="entered_by_staff_id" value="[% current_payment.entered_by_staff_id %]" />
+    <input type="hidden" name="op" value="payments_1_save" />
+    <p class="save"><input type="submit" value="Save Payment" /></p>
+    [% INCLUDE financial/session.html %]
+    [% INCLUDE util/form_end.html %]
+    [% END %]
+[% ELSE %]
+    <p>Please select or create a Master Payment.</p>
+[% END %]
+    <hr class="div" />
+</div>

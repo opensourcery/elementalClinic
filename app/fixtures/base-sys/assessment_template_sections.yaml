@@ -1,0 +1,37 @@
+
+1: 
+  assessment_template_id: 1
+  label: Admission
+  position: 1
+  rec_id: 1
+2: 
+  assessment_template_id: 1
+  label: Alerts
+  position: 2
+  rec_id: 2
+3: 
+  assessment_template_id: 1
+  label: Development
+  position: 3
+  rec_id: 3
+4: 
+  assessment_template_id: 1
+  label: Medical
+  position: 4
+  rec_id: 4
+5: 
+  assessment_template_id: 1
+  label: Mental
+  position: 5
+  rec_id: 5
+6: 
+  assessment_template_id: 1
+  label: Psycho Social
+  position: 6
+  rec_id: 6
+7: 
+  assessment_template_id: 2
+  label: Intake
+  position: 1
+  rec_id: 7
+

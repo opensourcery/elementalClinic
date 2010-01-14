@@ -1,0 +1,148 @@
+<div id="center" class="client_box"><div id="current_note">
+    <h4>[% label_action %] Progress Note</h4>
+
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+
+    [% INCLUDE progress_notes/bounce_controls.html IF( label_action == 'Bounced' ) %]
+
+    <div id="noteinfo">
+    <p>
+    [% INCLUDE util/date_picker.html
+        name    = 'note_date'
+        label   = 'On'
+        value   = current.note_date || 'today'
+        onchange    = "return get_codes( '$Config.theme' )"
+        required = 1
+    %]
+
+    [% INCLUDE util/select_new.html
+        name    = 'start_time'
+        label   = 'from'
+        values  = start_times
+        default = current.start_time || '8:00'
+        keyname = 'key'
+        valname = 'val'
+    %]
+    [% INCLUDE util/select_new.html
+        name    = 'end_time'
+        label   = 'to'
+        values  = end_times
+        default = current.end_time || '9:00'
+        keyname = 'key'
+        valname = 'val'
+    %]
+    </p>
+
+    [% INCLUDE util/choose_valid_charge_code.html
+        note    = current
+        required = 1
+    %]
+
+    <hr class="subtle" />
+
+    <dl class="inline">
+    <dt>Location</dt>
+    [% INCLUDE util/choose_valid_data.html
+        name   = 'note_location_id'
+        table  = '_prognote_location'
+        type    = 'select'
+        default = current.note_location_id
+        use_id  = 1
+        wraptag = 'dd'
+        leading_hash = [ { value => '', name => 'Select a location', }, ]
+        onchange    = "return get_codes( '$Config.theme' )"
+    %]
+
+    <dt>Writer</dt>
+    [% INCLUDE util/select_new.html
+        action  = 'display'
+        name    = 'writer_id'
+        values  = department.get_writers
+        default = current.staff_id || current_user.staff_id
+        keyname = 'staff_id'
+        valname = 'eman'
+        wraptag = 'dd'
+        onchange    = "return get_codes( '$Config.theme' )"
+    %]
+    </dl>
+
+    <dl class="inline">
+    <dt>Rating</dt>
+    [% INCLUDE util/input_text.html
+        name    = 'outcome_rating'
+        value   = current.outcome_rating
+        size    = 3
+        wraptag = 'dd'
+    %]
+
+    <dt>Goal</dt>
+    <dd>
+    [% UNLESS( recent_goals = client.treatment_plans.0.goals );
+        recent_goals = [{ rec_id = 0, goal_name = '0: Simple progress note (no goals defined)' }];
+        END;
+        INCLUDE util/select_new.html
+            name    = 'goal_id'
+            values  = recent_goals
+            default = current.goal_id
+            keyname = 'rec_id'
+            valname = 'goal_name'
+            truncate_to = 50
+            leading_blank = 'Select a goal'
+    %]
+    </dd>
+    </dl>
+
+    <hr class="div" />
+    <hr class="subtle" />
+
+    [% INCLUDE util/choose_valid_data.html
+        name   = 'select_template'
+        table  = '_prognote_templates'
+        type    = 'select'
+        use_id  = 1
+        posttext = '<input type="submit" value="Insert Template" onclick="insert_template();return false" />'
+        show_blank = 0
+        blankmsg = '<strong>Templates:</strong> no templates have been created.'
+        wraptag = 'p'
+    %]
+    </div>
+    
+    <div id="noteitself">
+    [% INCLUDE util/textarea.html
+        name    = 'note_body'
+        value   = current.note_body
+        cols    = 56
+        rows    = 12
+        wraptag = 'p'
+    %]
+
+    [% INCLUDE util/checkbox.html
+        name    = 'unbillable_per_writer'
+        label   = 'Entered as billable in error; mark as non-billable.'
+        value   = current.unbillable_per_writer
+        wraptag = 'p'
+    %]
+    </div>
+
+    <input type="hidden" name="client_id" value="[% client.id %]" />
+    <input type="hidden" name="rec_id" value="[% current.rec_id %]" />
+    <input type="hidden" name="created" value="[% current.created %]" />
+    <input type="hidden" name="billing_status" value="[% current.billing_status %]" />
+    [% IF( label_action == 'Bounced' ) %]
+        <p class="save">
+            <input type="submit" name="op" id="op_bounce_commit" value="Bounce Back" />
+        </p>
+    [% ELSE %]
+        [% UNLESS( current.locked || ( action == 'display' )) %]
+        <p class="save">
+            [% UNLESS commit_only %]
+            <input type="submit" name="op" id="op_save_temp" value="Save for later editing" />
+            [% END %]
+            <input type="submit" name="op" id="op_save_commit" value="Digitally sign and commit" />
+        </p>
+        [% END %]
+    [% END %]
+    </form>
+    <hr class="div" />
+    [% INCLUDE util/form_cancel.html UNLESS( action == 'display' ) %]
+</div></div>

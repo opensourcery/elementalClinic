@@ -1,0 +1,161 @@
+---
+1306:
+  carrier_contact: Duke Ellington
+  carrier_type: medical
+  client_id: 1004
+  co_pay_amount: 90.00
+  comment_text: Doo bee doobie doo
+  deductible_amount: 100.00
+  end_date: 1999-06-08
+  insurance_id: Brown
+  insurance_name: Tisket
+  insured_addr: 457 151 St Uptown
+  insured_city: New York
+  insured_dob: 1898-9-26
+  insured_employer: Rialto
+  insured_group: triangle
+  insured_name: Ella Fitzgerald
+  insured_phone: 2015936782
+  insured_postcode: 10165
+  insured_sex: Female
+  insured_state: NY
+  license_required: yes
+  other_dob: ~
+  other_employer: ~
+  other_group: ~
+  other_name: ~
+  other_plan: ~
+  other_plan_name: ~
+  other_sex: ~
+  rank: 1
+  rec_id: 1306
+  rolodex_insurance_id: 1302
+  start_date: 1987-12-15
+1307:
+  carrier_contact: BB
+  carrier_type: dental
+  client_id: 1004
+  co_pay_amount: 90.00
+  comment_text: Doo bee doobie doo
+  deductible_amount: 100.00
+  end_date: 1999-06-08
+  insurance_id: 12345-xqfz-12
+  insurance_name: Tisket
+  insured_addr: 457 151 St Uptown
+  insured_city: New York
+  insured_dob: 1898-9-26
+  insured_employer: Rialto
+  insured_group: triangle
+  insured_name: Ella Fitzgerald
+  insured_phone: 2015936782
+  insured_postcode: 10165
+  insured_sex: Female
+  insured_state: NY
+  license_required: yes
+  other_dob: ~
+  other_employer: ~
+  other_group: ~
+  other_name: ~
+  other_plan: ~
+  other_plan_name: ~
+  other_sex: ~
+  rank: 1
+  rec_id: 1307
+  rolodex_insurance_id: 1307
+  start_date: 1987-12-15
+1401:
+  carrier_contact: Carl Perkins
+  carrier_type: medical
+  client_id: 1002
+  co_pay_amount: 90.00
+  comment_text: rockabilly
+  deductible_amount: 100.00
+  end_date: 1999-06-08
+  insurance_id: 45678-1992
+  insurance_name: Blue Suede
+  insured_addr: 706 Union Ave
+  insured_city: Memphis
+  insured_dob: 1898-9-26
+  insured_employer: Sun Entertainment
+  insured_group: sun
+  insured_name: Sam Phillips
+  insured_phone: 2015936782
+  insured_postcode: 37212
+  insured_sex: Male
+  insured_state: TN
+  license_required: yes
+  other_dob: ~
+  other_employer: ~
+  other_group: ~
+  other_name: ~
+  other_plan: ~
+  other_plan_name: ~
+  other_sex: ~
+  rank: 1
+  rec_id: 1401
+  rolodex_insurance_id: 1401
+  start_date: 1987-12-15
+1402:
+  carrier_contact: Carl Perkins
+  carrier_type: dental
+  client_id: 1002
+  co_pay_amount: 90.00
+  comment_text: "Homer Simpson's Brain: 'Dental Plan!'"
+  deductible_amount: 100.00
+  end_date: 1999-06-08
+  insurance_id: 45678-1992
+  insurance_name: Blue Cross / Blue Suede
+  insured_addr: 706 Union Ave
+  insured_city: Memphis
+  insured_dob: 1898-9-26
+  insured_employer: Sun Entertainment
+  insured_group: sun
+  insured_name: Sam Phillips
+  insured_phone: 2015936782
+  insured_postcode: 37212
+  insured_sex: Male
+  insured_state: TN
+  license_required: yes
+  other_dob: ~
+  other_employer: ~
+  other_group: ~
+  other_name: ~
+  other_plan: ~
+  other_plan_name: ~
+  other_sex: ~
+  rank: 1
+  rec_id: 1402
+  rolodex_insurance_id: 1402
+  start_date: 1987-12-15
+1403:
+  carrier_contact: Carl Perkins
+  carrier_type: mental health
+  client_id: 1002
+  co_pay_amount: 90.00
+  comment_text: ~
+  deductible_amount: 100.00
+  end_date: 1999-06-08
+  insurance_id: 45678-1992
+  insurance_name: Blue Cross / Blue Suede
+  insured_addr: 706 Union Ave
+  insured_city: Memphis
+  insured_dob: 1898-9-26
+  insured_employer: Sun Entertainment
+  insured_group: sun
+  insured_name: Sam Phillips
+  insured_phone: 2015936782
+  insured_postcode: 37212
+  insured_sex: Male
+  insured_state: TN
+  license_required: yes
+  other_dob: ~
+  other_employer: ~
+  other_group: ~
+  other_name: ~
+  other_plan: ~
+  other_plan_name: ~
+  other_sex: ~
+  rank: 1
+  rec_id: 1403
+  rolodex_insurance_id: 1201
+  start_date: 1987-12-15

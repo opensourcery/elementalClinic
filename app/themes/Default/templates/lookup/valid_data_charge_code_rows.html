@@ -1,0 +1,16 @@
+                    <tr class="[% IF rowclass; "even"; ELSE; "odd"; END %]">
+                        [% INCLUDE lookup/table_row_active_indicator.html
+                            active  = row.active
+                        %]
+                        <td>[% edit_link %][% row.name %][% end_link %]</td>
+                        <td>[% row.min_allowable_time %] &#8211; [% row.max_allowable_time %]</td>
+                        <td>[% row.minutes_per_unit %] min.</td>
+                        <td>$[% row.dollars_per_unit %]</td>
+                        <td>[% row.max_units_allowed_per_encounter %]</td>
+                        <td>[% row.max_units_allowed_per_day %]</td>
+                        <td>[% row.cost_calculation_method %]</td>
+                    </tr>
+                    <tr class="[% IF rowclass; "even"; ELSE; "odd"; END %]">
+                        <td></td>
+                        <td colspan="10" class="description_only">[% row.description | replace('\\\n', "\n") %]</td>
+                    </tr>

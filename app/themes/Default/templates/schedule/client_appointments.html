@@ -1,0 +1,45 @@
+<h3>Appointments</h3>
+[% SET view_prefix = "view_" %]
+[% SET delete_prefix = "delete_" %]
+<div id="appointment_table">
+    <table border="0">
+    <thead>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Doctor</th>
+        <th>Location</th>
+        <th>Confirm</th>
+        <th>Pay</th>
+        <th title="Fax">F</th>
+        <th title="Chart">C</th>
+        <th title="No Show">NS</th>
+        <th />
+    </thead>
+    [% FOR appt IN appointments %]
+    <tr>
+        <td>[% appt.schedule_availability.date FILTER date_format(current_user.pref.date_format) %]</td>
+        <td><a href="[% script %]?op=appointment_edit&rec_id=[% appt.rec_id %]" onclick="return edit_appointment( '[% script %]', [% appt.client_id %], [% appt.id %] )">[% appt.appt_time FILTER time_format('12') %]</a></td>
+        <td>[% appt.schedule_availability.rolodex.lname %]</td>
+        <td>[% appt.schedule_availability.location %]</td>
+        <td>[% appt.confirm_code %]</td>
+        <td>[% appt.payment_code %]</td>
+        <td>[% appt.fax ? 'Y' : 'N' %]</td>
+        <td>[% appt.chart ? 'Y' : 'N' %]</td>
+        <td>[% appt.noshow ? 'Y' : 'N' %]</td>
+        <td class="delete">
+            [%
+                appclient = appt.client( current_user );
+                delete_name = appclient.lname _ ', ' _ appclient.fname;
+                delete_location = appt.schedule_availability.location;
+                delete_time = appt.appt_time FILTER time_format('12');
+                delete_doctor = appt.rolodex.eman;
+            %]
+            <a href="[% script %]?op=appointment_remove&rec_id=[% appt.rec_id %]" onclick="return delete_appointment( '[% delete_prefix %]', event, [% appt.rec_id %], '[% delete_name %]', '[% delete_time %]m', '[% delete_doctor %]', '[% delete_location %]')" title="Delete appointment"><span>delete</span></a>
+        </td>
+    </tr>
+    [% END %]
+    </table>
+</div>
+
+[%- INCLUDE schedule/popup/appointment.html prefix="$view_prefix" %]
+[%- INCLUDE schedule/popup/delete.html prefix="$delete_prefix" %]

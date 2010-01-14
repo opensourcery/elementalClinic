@@ -1,0 +1,27 @@
+<div id="person_content">
+    [% IF not suppress_client_header and variant == 'client' and client.id %]
+        [% PROCESS global/client_head.html %]
+    [% ELSIF variant == 'doctor' %]
+        [% PROCESS global/doctor_head.html %]
+    [% END %]
+
+    [% INCLUDE util/errors.html %]
+
+    <div id="content">
+        [% IF content %]
+            [% content %]
+        [% ELSIF include %]
+            [% INCLUDE "$include" %]
+        [% ELSE %]
+            <p>Please select a [% variant %].</p>
+        [% END %]
+    </div><!--content-->
+</div><!--person_content-->
+
+<div id="person_select" class="system_box">
+    [% IF variant == 'client' %]
+        [% INCLUDE gateway/home_client_select.html %]
+    [% ELSIF variant == 'doctor' %]
+        [% INCLUDE gateway/home_doctor_select.html %]
+    [% END %]
+</div><!--person_select-->

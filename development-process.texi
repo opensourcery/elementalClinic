@@ -1,0 +1,278 @@
+\input texinfo
+@setfilename development-process.texi
+@settitle Development Process: A Checklist
+
+@copying
+Copyright @copyright{} 2008 OpenSourcery, LLC
+@end copying
+
+@titlepage
+@title Development Process: A Checklist
+@author Erik Hollensbe
+@page
+@vskip 0pt plus 1filll
+@insertcopying
+
+@end titlepage
+
+@contents
+@node Top
+
+@chapter Introduction
+
+This is a detailed list of procudures when handling a certain set of situation
+that are crucial to the forward development of the eleMentalClinic application
+and its framework.
+
+The expectation is that deviating from these processes is the @b{exception},
+not the @b{rule}. Therefore, it is a contract between the maintainer(s) of this
+document and the developers to follow this documentation and ensure its
+accuracy to current best practices.
+
+@chapter All Development
+
+These practices apply to all aspects of development.
+
+@section Testing
+
+Making any modifications to the application follows this workflow:
+
+@enumerate
+@item Test the case
+@item Watch the test fail
+@item Fix the code until the tests pass 
+@end enumerate
+
+The tests should adequately test problems with the application and expose any
+bugs that may be relevant to this cycle of development. That is, fixing the
+code that causes the tests to pass should also fix the bug by side effect. If
+this is not the case, repeat steps 1-3 until it does.
+
+Note that views are currently hard to test accurately in our environment. Also,
+legacy controllers cannot be tested. However, both new controllers and all
+models can be tested.
+
+@section Method Definitons
+
+All methods should have a leading and trailing line marker. It looks something like this:
+
+@cartouche
+@verbatim
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+@end verbatim
+@end cartouche
+
+Or a deviation thereof.
+
+All methods should have a snippet of POD (@b{not comments}) describing, at
+minimum its input and output. If the method is cryptically named or complex in
+logic, a description of what the method does should be in order. Whether that
+method should be renamed or its logic should be refactored is an exercise left
+to the situation, and mostly, to the reader.
+
+@section File Headers and Footers
+
+File headers should have a description (in POD) of the class/package
+implemented and the purpose of it.
+
+The module return value for the purposes of import() (the literal 1 at the end
+of most perl packages) is @code{'eleMental'}. Don't gripe how this is
+deprecated in 5.8. This is historic and flavorful. It goes good with steak. 
+
+Copyright and Author information goes at the bottom. Please use the existing
+template found in many other files. If you made edits, please add your name and
+OpenSourcery email to the list.
+
+@chapter Themes
+
+These processes apply to development of Controller/View themes, such as
+Default, Mercury, Venus, and Earth.
+
+@section Guidelines for writing new views
+
+Randall, can you fill this in?
+
+@section Guidelines for writing new controllers
+
+First, let's see if you need to write a new controller. Follow the flow here,
+and if you answer @i{No} to any of the @b{(stop)} segments, you probably
+shouldn't be adding a new controller.
+
+@enumerate
+@item Does it create new functionality not covered in Default or the current theme? @b{(stop)}
+@item Is this theme Default?
+@itemize @bullet
+@item If so, are we intending to add this to all themes? @b{(stop)}
+@item If not, are we doing specific functionality for a theme? @b{(stop)}
+@end itemize
+@item Can we add this functionality elsewhere? @b{(stop)}
+@end enumerate
+
+If you do need to add a new controller, here are some things that are @b{required} for new controllers:
+
+@itemize @bullet
+@item It must be testable (use the return syntax instead of doing the template processing)
+@item It must have tests before method bodies exist
+@item It must leverage ValidOp constraints. 
+@end itemize
+
+Try to clone and modify an existing controller if you're just bringing slightly
+new functionality to a theme from Default.
+
+@section Porting and Change Propogation for Models and Migrations
+
+If you make changes to a model or migration, these things should be handled:
+
+@enumerate
+@item Run the test suite
+@item Write controller tests for items that may be affected by the change
+@item Make any changes to theme controllers
+@item Ensure that those changes make it into Default.
+@end enumerate
+
+It's @b{extremely} important that Default is stable -- it's the basis for all
+other themes.
+
+@chapter Framework
+
+These processes apply to @code{::Base}, @code{::CGI}, @code{::DB}, the scripts
+in @code{bin/}, and anything with the word @code{Dispatch} in it.
+
+@section Achtung! Stop!
+
+Be very aware that you are making a global change to the application. The
+framework is a very sensitive part of the code and your changes will affect
+every iota of code that powers the application, no matter what part of the
+framework you touch.
+
+That said, use your best judgment when making changes and really examine
+whether or not the change you're making belongs in the framework, or MVC code.
+
+@section Scripts
+
+These predominantly live in @code{bin/} and have utility to the code, but are
+not a part of the code themselves.
+
+Scripts should share in the UNIX tradition and @i{do one thing and do it well}.
+They should also have these components:
+
+@enumerate
+@item A help output accessible via @code{-h} and @code{--help}
+@item Accurate Help
+@item Proper use of STDOUT and STDERR (for inclusion in Makefiles)
+@item Proper use of the environment (e.g., should have a command line switch to override environment and should not need to be changed frequently)
+@end enumerate
+
+@section Dispatcher
+
+The dispatcher is special because it gets at the core of the application and
+must be developed in pure @code{mod_perl}. The dispatcher cannot use any of the
+eleMentalClinic framework or application logic.
+
+That said, the dispatcher must:
+
+@enumerate
+@item Target our current Apache requirement (as of this writing, that's 2.2.x)
+@item Target our current recommended configuration.
+@item Target our current mod_perl and Perl environment
+@item Not break, under any circumstances.
+@end enumerate
+
+Items 1-3 are covered in the versioned @code{INSTALL} document.
+
+Regarding #3, the dispatcher should be able to handle several hours of fuzz
+testing without breaking anything in the Dispatcher itself.
+
+@section Framework libraries
+
+@code{::CGI}, @code{::Base}, @code{::DB} are libraries that control the Framework.
+
+Framework modules should have:
+
+@itemize @bullet
+@item Code that drives the rest of the application in a application-agnostic fashion.
+@item Nothing else
+@end itemize
+
+That is, @code{::Base} should not have application logic in it, and @code{::DB}
+should not expect any information about a schema to exist. Likewise,
+@code{::CGI} should not know about a specific controller's parameters.
+
+@chapter Models
+
+These processes apply to development of damn near everything in the lib/
+directory that isn't covered by ``Framework'' above.
+
+@chapter Migrations
+
+These processes apply to everything in the @code{database/schema} directory.
+
+@section Achtung! Stop!
+
+@b{Modifying existing migrations can compromise the upgrade path for an
+application}. Don't do it, ideally ever.
+
+Also, take great care in creating migrations that run before a pre-existing
+one. This is preferable to modifying an existing one, but keep in mind that you
+are doing the same level of damage to the upgrade path. This should never be
+done in stable/frozen trees.
+
+@section Creating a new migration
+
+Creating a new migration works like so:
+
+@enumerate
+@item Create a new, numbered migration that follows the others
+@item Fill it with SQL
+@end enumerate
+
+It's is @b{OK} and in fact @b{preferable} that you use a migration to undo an
+old migration instead of editing the old migrations. In otherwords, when faced
+with a situation where a migration will change something that a previous
+migration changed, @b{do not} change the old migration. Create a new one that
+migrates the already-migrated information.
+
+@section Testing migrations
+
+Migrations should be tested against a clone of a production database before any
+kind of deployment happens. Coordinate with a client or a lead developer to
+ensure this happens.
+
+@chapter Old Versions
+
+These processes apply to development on previous versions of eleMentalClinic.
+
+@section Fixing a bug in two versions
+
+When we have to backport a fix, follow these steps:
+
+@enumerate
+@item Follow the general development logic in the earliest version first
+@item Follow the ``Porting Changes'' logic below 
+@end enumerate
+
+It's important that the fix gets applied in the earliest version first because
+the logic will progress as the versions change, and modifications will cascade
+but may create more regressions as we progress up the version list.
+
+@section Porting changes
+
+This is the process for porting changes:
+
+@enumerate
+@item Port your tests
+@item Run the tests suite and ensure it fails
+@item Port your changes
+@item Run the test suite and ensure it passes
+@item If you are porting a controller which has tests in a new version, write controller tests
+@end enumerate
+
+These steps ensure that the changes get equally applied to all versions. 
+
+@section Identifying Ports
+
+In Trac, please ensure that all revisions in a port go in the log so that the
+ticket owner and the administrators are aware that multiple commits were
+applied to differing versions of the application.
+
+@bye

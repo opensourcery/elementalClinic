@@ -1,0 +1,129 @@
+[% INCLUDE global/client_head.html
+    navsec = 'history'
+    navpage = 'hospitalizations'
+%]
+
+[% UNLESS( current.rec_id || errors || op == 'create' );
+    current = client.hospital_history.0;
+END %]
+[% action = (( op == 'save' && errors ) || op == 'create' || op == 'edit' ) ? 'edit' : 'display' %]
+<div id="[% action == 'edit' ? 'center' : 'left' %]" class="client_box">
+    <h4>Hospitalization</h4>
+    [% IF current || op == 'create' %]
+    <form method="[% Config.form_method %]" action="[% program %]" enctype="application/x-www-form-urlencoded">
+        <div class="left_[% action %]">
+        <p>
+        [% INCLUDE util/date_picker.html
+            label   = 'From'
+            name    = 'start_date'
+            value   = current.start_date
+        %]
+        [% INCLUDE util/date_picker.html
+            label   = 'to'
+            name    = 'end_date'
+            value   = current.end_date
+        %]
+        </p>
+
+        [% INCLUDE util/input_text.html
+            name    = 'hospital'
+            label   = 'Hospital'
+            value   = current.hospital
+            wraptag = 'p'
+        %]
+
+        [% INCLUDE util/input_text.html
+            name    = 'addr'
+            label   = 'Address'
+            value   = current.addr
+            wraptag = 'p'
+        %]
+
+        [% INCLUDE util/input_text.html
+            name    = 'htype'
+            label   = 'Type'
+            value   = current.htype
+            wraptag = 'p'
+        %]
+
+        [% INCLUDE util/checkbox.html
+            name    = 'state_hosp'
+            label   = 'State hospital?'
+            value   = current.state_hosp
+            wraptag = 'p'
+        %]
+
+        [% INCLUDE util/checkbox.html
+            name    = 'voluntary'
+            label   = 'Voluntary?'
+            value   = current.voluntary
+            wraptag = 'p'
+        %]
+        </div>
+
+        <div class="right_[% action %]">
+        [% INCLUDE util/textarea.html
+            name    = 'reason'
+            label   = 'Reason'
+            value   = current.reason
+            wraptag = 'p'
+            break   = 1
+            cols    = 50
+            rows    = 4
+        %]
+
+        [% INCLUDE util/textarea.html
+            name    = 'comments'
+            label   = 'Comments'
+            value   = current.comments
+            wraptag = 'p'
+            break   = 1
+            cols    = 50
+            rows    = 4
+        %]
+        </div>
+
+        <input type="hidden" name="rec_id" value="[% current.rec_id %]" />
+        <input type="hidden" name="client_id" value="[% client.id %]" />
+        [% IF action == 'display' %]
+        <p class="edit"><input type="submit" name="op" id="op_edit" value="Edit" /></p>
+        [% ELSE %]
+        <p class="save"><input type="submit" name="op" id="op_save" value="Save" /></p>
+        [% END %]
+    </form>
+    [% END %]
+    [% IF action == 'edit';
+        INCLUDE util/form_cancel.html;
+    END %]
+
+</div>
+
+[% UNLESS action == 'edit' %]
+<div id="right" class="client_box">
+
+    <h4>Hospitalization history</h4>
+    [% IF( hospital_history = client.hospital_history ) %]
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" id="chooser" name="chooser">
+        <select name="rec_id" id="rec_id" size="5" onchange="document.forms['chooser'].submit()">
+            [% FOR hosp IN hospital_history;
+                selected = hosp.rec_id == current.rec_id ? 'selected="selected"' : ''
+            %]
+            <option value="[% hosp.rec_id %]" [% selected %]>[% hosp.start_date || "No date (id: $hosp.rec_id)" %]</option>
+            [% END %]
+        </select>
+        <input type="hidden" name="client_id" value="[% client.id %]" />
+        <input type="hidden" name="op" value="view" />
+        <input type="submit" name="subview" value="View" />
+    </form>
+    [% ELSE %]
+    <p>No hospitalization history.</p>
+    [% END %]
+
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+        <input type="hidden" name="client_id" id="client_id" value="[% client.client_id %]" />
+        <input type="hidden" name="op" id="op" value="create" />
+        <p class="new"><input type="submit" name="op_new" id="op_new" value="New Inpatient Record" /></p>
+    </form>
+
+</div>
+[% END %]

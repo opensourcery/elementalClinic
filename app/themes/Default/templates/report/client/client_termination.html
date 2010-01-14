@@ -1,0 +1,10 @@
+[% IF data.size %]
+[% INCLUDE util/select_new.html
+    name    = 'event_date'
+    label   = 'Discharge date'
+    values  = data
+    wraptag = 'p'
+%]
+[% ELSE %]
+<p>This client has not been discharged.</p>
+[% END %]

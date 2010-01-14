@@ -1,0 +1,43 @@
+[% INCLUDE global/client_head.html
+    navsec = 'clinical'
+    navpage = 'assessment'
+%]
+[% BASE_URI ="$script?client_id=$client.id;";
+    IF current_assessment.id;
+        BASE_URI = BASE_URI _ "assessment_id=$current_assessment.id;";
+    END
+%]
+[% title_prefix = '';
+    IF current_assessment.id;
+        IF op == 'clone'; title_prefix = 'Cloning'; END;
+        IF op == 'edit'; title_prefix = 'Editing'; END;
+        IF op == 'print'; title_prefix = 'Printing'; END;
+        title_prefix = title_prefix _' ';
+    END
+%]
+[% UNLESS fields %]
+    [% fields = current_assessment.all_fields %]
+[% END %]
+
+
+[% IF( op == 'create'); action = 'edit'; END %]
+
+<div id="center" class="client_box clinician">
+    <div class="selector">
+        <ul class="selector">
+        [% FOR assess IN assessments %]
+            [%- IF current_assessment.id == assess.id %]
+            <li class="current"><strong>[% assess.start_date.format_date_medium %]</strong></li>
+            [% ELSE %]
+            <li><a href="[% script %]?client_id=[% client.id %];assessment_id=[% assess.id %]">[% assess.start_date.format_date_medium %]</a></li>
+            [% END %]
+        [% END %]
+        </ul>
+    </div>
+
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+        [% INCLUDE assessment/form.html %]
+    </form>
+
+    <hr class="div" />
+</div>

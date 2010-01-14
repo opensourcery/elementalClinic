@@ -1,0 +1,13 @@
+<!-- BEGIN util/active_group_menu -->
+        <ul id="group_activity_tabs">
+            [% FOR item IN [ 'active', 'inactive', 'all' ] %]
+                <li class="activity">
+                    [% IF group_filter == item %]
+                        <input type="submit" name="group_filter" value="[% item %]" class="active">
+                    [% ELSE %]
+                        <input type="submit" name="group_filter" value="[% item %]" />
+                    [% END %]
+                </li>
+            [% END %]
+        </ul>
+<!-- END util/active_group_menu -->

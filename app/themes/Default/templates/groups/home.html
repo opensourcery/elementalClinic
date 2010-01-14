@@ -1,0 +1,242 @@
+[% action = (( op == 'group_save' && errors ) || op == 'group_edit' || op == 'group_create' ) ? 'edit' : 'display' %]
+[% INCLUDE util/errors.html %]
+
+<div id="content">
+[% IF action == 'display' %]
+<div id="left" class="system_box">
+
+    <h2>Groups</h2>
+
+    <div id="active_menu_wrapper">
+        <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+            <input type="hidden" name="group_id" value="[% current.rec_id %]" />
+            [% INCLUDE util/active_group_menu.html %]
+        </form>
+    </div>
+
+    [% IF groups.size %]
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" id="chooser" name="chooser">
+
+        [% INCLUDE util/select_new.html
+            name    = 'group_id'
+            values  = groups
+            default = current.rec_id
+            keyname = 'rec_id'
+            valname = 'name'
+            onchange    = "document.forms['chooser'].submit()"
+            size    = 25
+            action  = '' #select_new behavior requires this since the page has action set to display
+        %]
+
+        <input type="submit" name="op" value="View" />
+    </form>
+    <br />
+    [% ELSE %]
+    <p>No [% group_filter == 'all' ? '' : group_filter %] groups.</p>
+    [% END %]
+
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+        <input type="submit" name="op" value="New Group" />
+    </form>
+</div>
+[% END %]
+
+[% IF groups.size || op == 'group_create' || ( op == 'group_save' && errors ) %]
+<div id="right" class="system_box">
+
+    [% UNLESS ( current || ( op == 'group_save' && errors )) || op == 'group_create' %]
+    <p>Please select a group.</p>
+    [% ELSE %]
+
+    <h3>[% (( op == 'group_create' ) || ( op == 'group_save' && errors )) ? 'New Group' : current.name %]</h3>
+    <div id="group_props_[% action %]">
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+        [% IF action == 'edit' %]
+        [% INCLUDE util/input_text.html
+            name        = 'name'
+            value       = current.name
+            label       = 'Name'
+            wraptag     = 'p'
+            required    = 1
+            size        = 50
+        %]
+        [% END %]
+        [% INCLUDE util/textarea.html
+            name    = 'description'
+            value   = current.description
+            label   = 'Description'
+            break   = 1
+            wraptag = 'p'
+            rows    = 5
+            cols    = 60
+        %]
+
+        [% INCLUDE util/textarea.html
+            name    = 'default_note'
+            value   = current.default_note
+            label   = 'Default note'
+            break   = 1
+            wraptag = 'p'
+            rows    = 5
+            cols    = 60
+        %]
+
+        <input type="hidden" name="group_id" value="[% current.rec_id %]" />
+        [% IF action == 'display' %]
+        <p class="edit"><input type="submit" name="op" id="op_edit" value="Edit Group" /></p>
+        [% ELSE %]
+        <p class="save"><input type="submit" name="op" id="op_save" value="Save Group" /></p>
+        [% END %]
+    </form>
+    [% IF action == 'edit';
+        INCLUDE util/form_cancel.html
+        extras => { group_id => current.rec_id };
+    END %]
+    </div>
+
+    [% UNLESS action == 'edit' %]
+    <div id="current_members">
+    <h4>Members</h4>
+    [% IF ( members = current.get_members ) %]
+    <ul>
+        [% FOR client IN members %]
+        <li>
+            [% client.eman %]
+            <a href="groups.cgi?op=client_group_detail&group_id=[% current.rec_id %]&client_id=[% client.id %]"
+                style="padding-left:15px;font-weight:normal;">(group history &#187;)</a>
+        </li>
+        [% END %]
+    </ul>
+    [% ELSE %]
+    <p>No members.</p>
+    [% END %]
+
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+        <input type="hidden" name="group_id" value="[% current.rec_id %]" />
+        <p class="edit"><input type="submit" name="op" id="op_mem_edit" value="Edit Membership" /></p>
+    </form>
+    </div>
+    [% END %]
+
+    [% UNLESS action == 'edit' %]
+    <div id="group_history">
+    <h4>History</h4>
+        [% IF ( notes = current.get_notes ) %]
+
+        <form method="[% Config.form_method %]" action="group_notes.cgi" enctype="application/x-www-form-urlencoded" id="history_chooser" name="history_chooser">
+            <select name="group_note_id" id="group_note_id" size="10" onchange="document.forms['history_chooser'].submit()">
+                [% FOR note IN notes;
+                    val = note.note_date;
+                    UNLESS note.all_committed;
+                        val = "$val (uncommitted)";
+                        uncommitted = 1;
+                    END %]
+                %]
+                <option value="[% note.rec_id %]">[% val %]</option>
+                [% END %]
+            </select>
+            <input type="hidden" name="op" value="group_note_detail" />
+        </form>
+
+        [% ELSE %]
+        <p>No notes.</p>
+        [% END %]
+    [% END %]
+
+    [% IF action == 'display' %]
+    [% IF members && ! uncommitted %]
+    <form method="[% Config.form_method %]" action="group_notes.cgi" enctype="application/x-www-form-urlencoded">
+        <input type="hidden" name="group_id" value="[% current.rec_id %]" />
+        <p class="new"><input type="submit" name="op" id="op_newnote" value="New Group Note" /></p>
+    </form>
+    [% ELSIF uncommitted %]
+    <p>Only one uncommitted note is allowed per group; you must commit the most recent note before you can create a new one.</p>
+    [% ELSE %]
+    <p>To <strong>create a group note</strong>, first add members to your group.</p>
+    [% END %]
+    [% END %]
+    </div>
+
+    [% IF action == 'display' %]
+    <div id="group_access">
+    <h4>Group Access</h4>
+
+    <div id="access_left">
+        <h5>Current Access</h5>
+        <table id="access">
+            [% FOR person IN personnel.values %]
+                <tr class="access_name">
+                    <td class="access_name" valign="top" rowspan="[% person.size %]">[% person.0.role.direct_personnel.name %]</dt>
+                    [% PROCESS accessrow item=person.shift class=" first" %]
+                </tr>
+                [% FOR item IN person %]
+                    <tr class="access_cause">
+                        [% PROCESS accessrow item=item class="" %]
+                    </tr>
+                [% END %]
+                </dd>
+            [% END %]
+        </table>
+    </div>
+
+    <div id="access_right">
+        [% IF current_user.admin %]
+        <h5>Grant Access</h5>
+        <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+            <input type="hidden" name="group_id" value="[% current.rec_id %]" />
+
+            [% INCLUDE util/select_new.html
+                name = 'staff_id'
+                values = unassociated
+                keyname = 'staff_id'
+                valname = 'name'
+                show_blank = 1
+                blankmsg = 'no unassociated personnel'
+                action = 'edit'
+            %]
+
+            <p class="edit"><input id="op" name="op" value="Grant Access" type="submit" /></p>
+
+        </form>
+        [% END %]
+    </div>
+
+    <div id="group_status">
+    <h4>Group Status</h4>
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+        <input type="hidden" name="group_id" value="[% current.rec_id %]" />
+        <p>
+            [% IF current.active %]
+                <input type="checkbox" name="group_active" id="group_active" checked />
+            [% ELSE %]
+                <input type="checkbox" name="group_active" id="group_active" />
+            [% END %]
+            <label for="group_active"> Group is active</label>
+        </p>
+        <p class="save"><input type="submit" name="op" id="status_submit" value="Apply Status Changes" /></p>
+    </form>
+    </div>
+    [% END %]
+    [% END %]
+</div>
+[% END %]
+
+</div>
+<!--
+Group membership at the time of the note
+Group attendance
+All group note information for that meeting
+Links to individual notes
+-->
+
+[% BLOCK accessrow %]
+    [% IF current_user.admin %]
+        <td class="access_cause[% class %]">
+        [% IF item.direct %]
+            <a href="?op=revoke_access&group_id=[% current.rec_id %]&staff_id=[% item.role.staff_id %]">Remove</a>
+        [% ELSE %]
+            indirect ([% item.get_cause.role.name %])
+        [% END %]
+        </td>
+    [% END %]
+[% END %]

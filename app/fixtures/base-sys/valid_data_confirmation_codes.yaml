@@ -1,0 +1,43 @@
+
+1: 
+  active: 1
+  dept_id: 1001
+  description: Confirmed
+  name: Conf
+  rec_id: 1
+2: 
+  active: 1
+  dept_id: 1001
+  description: Left Message
+  name: Mess
+  rec_id: 2
+3: 
+  active: 1
+  dept_id: 1001
+  description: phone was Busy
+  name: Busy
+  rec_id: 3
+4: 
+  active: 1
+  dept_id: 1001
+  description: N/A
+  name: N/A
+  rec_id: 4
+5: 
+  active: 1
+  dept_id: 1001
+  description: CXL-TODAY
+  name: CXL-TODAY
+  rec_id: 5
+6: 
+  active: 1
+  dept_id: 1001
+  description: CXL
+  name: CXL
+  rec_id: 6
+7: 
+  active: 1
+  dept_id: 1001
+  description: Walk-in
+  name: Walk-in
+  rec_id: 7

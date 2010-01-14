@@ -1,0 +1,62 @@
+[% IF case_load %]
+<b>&#149; Current Caseload: </b>
+<p />
+<table border="0">
+    <tr>
+        <th><u>Patient</u></th>
+    </tr>
+    [% FOREACH patient IN case_load %]
+      <tr><td>[% patient.lname %], [% patient.fname %]</td></tr>
+    [% END %]
+</table>
+<p />
+[% END %]
+<b>&#149; Enter A Supervision Note</b>
+
+<p />
+
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+
+<table border="0">
+    <tr>
+        <td>Select Unit: </td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "unit_name"
+    s_values  = units
+    s_default = unit_name
+%]</td>
+    </tr>
+    <tr>
+        <td>Supervision Date: </td>
+        <td><input type="text" name="start_date" value="[% today %]" size="12" maxlength="10" /></td>
+    </tr>
+    <tr>
+        <td>Enter Issues Discussed: </td>
+        <td><input type="text" name="issue_list"  size="62" maxlength="60" /></td>
+    </tr>
+    <tr>
+        <td>List Charts Reviewed:</td>
+        <td><input type="text" name="chart_list"  size="62" maxlength="60" /></td>
+    </tr>
+    <tr>
+        <td>Administrative Notes: </td>
+        <td><textarea name="admin_note" rows="4" cols="50" wrap="1"></textarea></td>
+    </tr>
+    <tr>
+        <td>Clinical Notes: </td>
+        <td><textarea name="clinic_note" rows="4" cols="50" wrap="1"></textarea></td>
+    </tr>
+    <tr>
+        <td>Supervisor's Suggestions: </td>
+        <td><textarea name="suggest_note" rows="4" cols="50" wrap="1"></textarea></td>
+    </tr>
+</table>
+
+<p />
+
+<input type="submit" name="go" value="Submit" />
+<input type="hidden" name="ID" value="[% id %]" />
+<div>
+</div>
+</form>

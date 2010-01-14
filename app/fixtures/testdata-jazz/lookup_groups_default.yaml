@@ -1,0 +1,17 @@
+---
+1:
+  active: 1
+  description: Global charge codes are always available.
+  name: Global
+  parent_id: 3
+  rec_id: 1
+  system: 1
+2:
+  active: 1
+  description: 'Charge codes for which note body, location, writer and goal are not required.'
+  name: No validation required
+  parent_id: 3
+  rec_id: 2
+  system: 1
+
+

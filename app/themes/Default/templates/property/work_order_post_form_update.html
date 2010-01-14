@@ -1,0 +1,54 @@
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+
+<table border="0">
+    <tr>
+        <td><b>Submitted By: </b></td>
+        <td>[% staffname %]</td>
+    </tr>
+    <tr>
+        <td><b>Unit: </b> <td>[% row.unit_lname %]</td></td>
+    </tr>
+    <tr>
+        <td><b>Date: </b> <td>[% row.start_date %]</td></td>
+    </tr>
+    <tr>
+        <td><b>Work Order: </b></td>
+        <td>[% row.work_request %]</td>
+    </tr>
+    <tr>
+        <td><b>Location: </b></td>
+        <td>[% row.addr %]</td>
+    </tr>
+    <tr>
+        <td><b>Notes: </b></td>
+        <td>[% work_note %]</td>
+    </tr>
+    <tr>
+        <td><b>Completed: </b></td>
+        <td>
+[% INCLUDE util/radio.html
+    r_name   = "completed"
+    r_values  = [ 'Yes', 'No' ]
+    r_default = row.completed
+%]</td>
+    </tr>
+    <tr>
+        <td><b>Date Completed: </b></td>
+        <td><input type="text" name="end_date" value="[% row.end_date %]" size="12" maxlength="10" /></td>
+    </tr>
+    <tr>
+        <td><b>Maintenance Notes: </b></td>
+        <td><textarea name="work_note" rows="4" cols="50" wrap="1"></textarea></td>
+    </tr>
+</table>
+
+<p />
+
+<input type="submit" name="go" value="Submit Query" />
+<input type="hidden" name="rec_id" value="[% rec_id %]" />
+<input type="hidden" name="note" value="[% row.work_note %]" />
+<input type="hidden" name="search_start" value="[% search_start %]" />
+<input type="hidden" name="search_end" value="[% search_end %]" />
+<div>
+</div>
+</form>

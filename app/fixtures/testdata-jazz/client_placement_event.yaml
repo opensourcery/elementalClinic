@@ -1,0 +1,181 @@
+---
+1001:
+  client_id: 1001
+  dept_id: 1001
+  event_date: 2005-05-04
+  input_date: 2005-05-05 08:00:00
+  level_of_care_id: 1003
+  level_of_care_locked: 0
+  program_id: 1002
+  rec_id: 1001
+  staff_id: 1001
+  intake_id: 1001
+  discharge_id: ~
+1002:
+  client_id: 1002
+  dept_id: 1001
+  event_date: 2005-03-17
+  input_date: 2005-04-05 08:00:00
+  level_of_care_id: 1001
+  level_of_care_locked: 0
+  program_id: 1001
+  rec_id: 1002
+  staff_id: 1001
+  intake_id: 1002
+  discharge_id: ~
+1003:
+  client_id: 1003
+  dept_id: 1001
+  event_date: 2005-03-01
+  input_date: 2005-03-02 08:00:00
+  level_of_care_id: 1001
+  level_of_care_locked: 0
+  program_id: 1
+  rec_id: 1003
+  staff_id: 1000
+  intake_id: 1006
+  discharge_id: ~
+1004:
+  client_id: 1004
+  dept_id: 1001
+  event_date: 2005-04-06
+  input_date: 2005-04-06 08:00:00
+  level_of_care_id: 1001
+  level_of_care_locked: 0
+  program_id: 1001
+  rec_id: 1004
+  staff_id: 1001
+  intake_id: 1003
+  discharge_id: ~
+1005:
+  client_id: 1005
+  dept_id: 1001
+  event_date: 2005-05-20
+  input_date: 2005-05-20 08:00:00
+  level_of_care_id: 1004
+  level_of_care_locked: 0
+  program_id: 1
+  rec_id: 1005
+  staff_id: 1001
+  intake_id: 1007
+  discharge_id: ~
+1006:
+  client_id: 1006
+  dept_id: 1001
+  event_date: 2005-05-20
+  input_date: 2005-05-20 08:00:00
+  level_of_care_id: 1004
+  level_of_care_locked: 0
+  program_id: 1004
+  rec_id: 1006
+  staff_id: 1003
+  intake_id: 1004
+  discharge_id: ~
+1007:
+  client_id: 1001
+  dept_id: ~
+  event_date: 2006-03-15
+  input_date: 2006-03-15 08:00:00
+  level_of_care_id: ~
+  level_of_care_locked: 0
+  program_id: ~
+  rec_id: 1007
+  staff_id: ~
+  intake_id: ~
+  discharge_id: 1001
+1008:
+  client_id: 1002
+  dept_id: ~
+  event_date: 2006-01-05
+  input_date: 2006-01-05 08:00:00
+  level_of_care_id: ~
+  level_of_care_locked: 0
+  program_id: ~
+  rec_id: 1008
+  staff_id: ~
+  intake_id: ~
+  discharge_id: 1002
+1009:
+  client_id: 1003
+  dept_id: 1001
+  event_date: 2005-03-17
+  input_date: 2005-03-17 08:00:00
+  level_of_care_id: 1001
+  level_of_care_locked: 0
+  program_id: 1002
+  rec_id: 1009
+  staff_id: 1002
+  intake_id: ~
+  discharge_id: ~
+1010:
+  client_id: 1003
+  dept_id: 1001
+  event_date: 2005-03-18
+  input_date: 2005-03-30 08:00:00
+  level_of_care_id: 1001
+  level_of_care_locked: 0
+  program_id: 1001
+  rec_id: 1010
+  staff_id: 1002
+  intake_id: ~
+  discharge_id: ~
+1011:
+  client_id: 1003
+  dept_id: 1001
+  event_date: 2005-03-25
+  input_date: 2005-03-25 08:00:00
+  level_of_care_id: 1001
+  level_of_care_locked: 0
+  program_id: 1002
+  rec_id: 1011
+  staff_id: 1002
+  intake_id: ~
+  discharge_id: ~
+1012:
+  client_id: 1003
+  dept_id: 1001
+  event_date: 2005-03-25
+  input_date: 2005-03-25 09:00:00
+  level_of_care_id: 1001
+  level_of_care_locked: 0
+  program_id: 1001
+  rec_id: 1012
+  staff_id: 1002
+  intake_id: ~
+  discharge_id: ~
+1013:
+  client_id: 1003
+  dept_id: 1001
+  event_date: 2005-04-01
+  input_date: 2005-04-05 08:00:00
+  level_of_care_id: 1002
+  level_of_care_locked: 0
+  program_id: 1001
+  rec_id: 1013
+  staff_id: 1002
+  intake_id: ~
+  discharge_id: ~
+1014:
+  client_id: 1004
+  dept_id: ~
+  event_date: 2006-01-15
+  input_date: 2006-01-15 08:00:00
+  level_of_care_id: ~
+  level_of_care_locked: 0
+  program_id: ~
+  rec_id: 1014
+  staff_id: ~
+  intake_id: ~
+  discharge_id: 1003
+1015:
+  client_id: 1004
+  dept_id: 1001
+  event_date: 2006-03-06
+  input_date: 2006-03-06 09:15:00
+  level_of_care_id: 1001
+  level_of_care_locked: 0
+  program_id: 1001
+  rec_id: 1015
+  staff_id: 1001
+  intake_id: 1005
+  discharge_id: ~

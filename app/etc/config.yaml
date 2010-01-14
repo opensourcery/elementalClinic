@@ -1,0 +1,46 @@
+# Configuration file for eleMental Clinic
+# USAGE:
+# copy this file to /etc/elementalclinic/config.yaml
+# change items in ALL CAPS as appropriate for your local configuration
+
+# theme  : Default
+# dbtype : postgres
+# dbname : DATABASE
+# dbuser : USER
+# passwd : PASSWORD
+# host   : HOST
+# port   : 5432
+# log_conf_path: /etc/elementalclinic/log.conf
+# report_config: /etc/elementalclinic/report.yaml
+# exception_log_path: /var/log/elementalclinic/exceptions
+
+# ECS/Billing Storage
+
+# Path to directory where eMC may write outbound EDI files (like the 837)
+# edi_out_root: /var/spool/elementalclinic/edi_out
+
+# Path where eMC expects to find incoming EDI files for reading (like the 835)
+# edi_in_root: /var/spool/elementalclinic/edi_in
+
+# Path to directory where eMC may write outbound PDF files 
+# pdf_out_root: /var/spool/elementalclinic/pdf_out
+
+# ECS/Billing Configuration
+# All these files are bundled with eleMentalClinic; you should only need to put
+# your own versions in /etc/elementalclinic if you are doing something unusual.
+
+# Paths to files that define field limits
+# ecs_fieldlimits: /etc/elementalclinic/ecs/fieldlimits_837.yaml
+# hcfa_fieldlimits: /etc/elementalclinic/hcfa/fieldlimits_hcfa.yaml
+
+# Paths to files used when reading 835 files
+# ecs835_cf_file: /etc/elementalclinic/ecs/835_004010X091.cf
+# ecs835_yaml_file: /etc/elementalclinic/ecs/read_835.yaml
+
+# Paths to files used when reading 997 files
+# ecs997_cf_file: /etc/elementalclinic/ecs/997.cf
+# ecs997_yaml_file: /etc/elementalclinic/ecs/read_997.yaml
+
+# Paths to files used when reading ta1 files
+# ecsta1_cf_file: /etc/elementalclinic/ecs/ta1.cf
+# ecsta1_yaml_file: /etc/elementalclinic/ecs/read_ta1.yaml

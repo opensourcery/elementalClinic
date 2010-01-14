@@ -1,0 +1,9 @@
+[%- FOR item IN [
+    { step => 1, label => 'Home', },
+]%]
+    [% IF( item.step == 1 || ( Current.validation_set && Current.validation_set.step >= item.step )) %]
+    <li[% ' class="active"' IF item.step == Current.step %]><a href="/financial.cgi?section=[% Current.section %];step=[% item.step %]">[% item.label %]</a></li>
+    [% ELSE %]
+    <li><a class="unavailable">[% item.label %]</a></li>
+    [% END %]
+[%- END %]

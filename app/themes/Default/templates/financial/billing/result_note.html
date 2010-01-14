@@ -1,0 +1,56 @@
+[% rowclass = ( loop.index % 2 ) ? ' even' : ' odd' %]
+[% rule_count = rules ? 1 : 0 %]
+            <tr id="note_[% note.id %]" class="[%
+                ( note.billing_status == 'Unbillable' ) ? 'unbillable' : 'billable';
+                ( note.pass ) ? ' passed' : ' unpassed';
+                ( note.bill_manually ) ? ' bill_manually' : ' bill_emc';
+                rowclass
+            %] controls">
+                [% UNLESS track == 'preview' %]
+                    [% INCLUDE financial/billing/button_billable.html %]
+                    [% IF allow_bounce %]
+                    <td class="button">
+                        [% IF note.bounced %]
+                        <a title="This note has been bounced."><span>^</span></a>
+                        [% ELSIF note.pass %]
+                        <a title="This note passed validation and cannot be bounced."><span>^</span></a>
+                        [% ELSIF note.billing_status == 'Unbillable' %]
+                        <a title="This note is unbillable and cannot be bounced."><span>^</span></a>
+                        [% ELSE %]
+                        <a class="toggle_bounce" title="Bounce to clinician"
+                            onclick="return bounce_prognote([% note.id %])"
+                            href="[% script %]?op=prognote_bounce;prognote_id=[% note.id %];section=billing;step=[% Current.step %][% ";rolodex_id=$Current.insurer.id" IF Current.insurer %]"><span>^</span></a>
+                        [% END %]
+                    </td>
+                    [% END %]
+                    [% INCLUDE financial/billing/button_manualbill.html IF Current.step == 3 %]
+                [% END %]
+                [% IF rules %]
+                <td class="button all_pass [% note.pass ? 'pass' : 'fail' %]">
+                    <a title="Toggle valid status"
+                        onclick="return toggle_prognote_validity([% note.id _','_ note.validation_prognote_id %])"
+                        href="[% script %]?op=prognote_toggle_validity;validation_prognote_id=[% note.validation_prognote_id %];current_validity=[% note.pass %];section=billing;step=[% Current.step %][% ";rolodex_id=$Current.insurer.id" IF Current.insurer %]">
+                        <span></span>
+                    </a>
+                </td>
+                [% END %]
+
+                    <td class="date">[% note.start_date.format_date_time %]</td>
+                    <td class="minutes">[% note.note_duration %]</td>
+                    <td class="units">[% note.note_units %]</td>[% # TODO prognote doesn't store units, service line does %]
+                    <td class="code">[% note.charge_code_name %]</td>
+
+                [% UNLESS track == 'preview' %]
+                    [% FOR rule IN rules;
+                        rule_count = rule_count + 1;
+                        rule_key = "rule_"_ rule.id;
+                        rule.status = note.${ rule_key };
+                    %]
+                    <td class="rule [% rule.status ? 'pass' : 'fail' %][% ' last' IF loop.last %]"></td>
+                    [% END %]
+                [% END %]
+            </tr>
+            <tr class="note_body[% rowclass %]">
+                <td colspan="[% IF rules; '4'; ELSE; '3'; END %]"></td>
+                <td colspan="[% rule_count + 3 %]"><p>By <strong>[% note.writer %]</strong> at <strong>[% note.location_name %]</strong>:<br />[% note.note_body %]</p></td>
+            </tr>

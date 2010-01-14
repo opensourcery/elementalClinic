@@ -1,0 +1,38 @@
+<table border="1">
+    <thead>
+    <tr>
+        <td colspan="10">
+                [% INCLUDE report/header.html %]
+                
+                <p>Staff Member: [% staff_name %]</p>
+                [% "<p>There was no data for this staff member.</p>" UNLESS data.0 %]
+        </td>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip Code</th>
+        <th>SSN</th>
+        <th>DOB</th>
+        <th>Mental Health Coverage</th>
+    </tr>
+    </thead>
+    <tbody>
+    [% FOR entry IN data %]
+    <tr [% rowclass %]>
+        <td class="nowrap">[% entry.lname %], [% entry.fname %]</td>
+        <td>[% entry.phone %]</td>
+        <td>[% entry.addr %]</td>
+        <td class="nowrap">[% entry.city %]</td>
+        <td>[% entry.state %]</td>
+        <td>[% entry.post_code %]</td>
+        <td>[% entry.ssn %]</td>
+        <td>[% entry.dob %]</td>
+        <td>[% entry.mh_coverage %]</td>
+    </tr>
+    [% END %]
+    </tbody>
+</table>

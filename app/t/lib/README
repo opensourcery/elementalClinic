@@ -1,0 +1,11 @@
+Test files are laid out under one of two hierarchies, based on their function.
+
+t/<test type> -- tests for things like Mechanize
+
+<theme name> -- theme-specific support code
+
+<theme name>/t -- theme-specific test cases
+
+so e.g. t/Mechanize/Report.pm is the generic test case for Report controllers,
+while Default/t/Mechanize/Report.pm is the test case for the Default theme's
+Report controller.

@@ -1,0 +1,37 @@
+
+1: 
+  active: 1
+  dept_id: 1001
+  description: ~
+  name: Home Owner
+  rec_id: 1
+2: 
+  active: 1
+  dept_id: 1001
+  description: ~
+  name: Homeless
+  rec_id: 2
+3: 
+  active: 1
+  dept_id: 1001
+  description: ~
+  name: Lives with friends
+  rec_id: 3
+4: 
+  active: 1
+  dept_id: 1001
+  description: ~
+  name: Group Home
+  rec_id: 4
+5: 
+  active: 1
+  dept_id: 1001
+  description: ~
+  name: Nursing Home
+  rec_id: 5
+6: 
+  active: 1
+  dept_id: 1001
+  description: ~
+  name: Other
+  rec_id: 6

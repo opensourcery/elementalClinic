@@ -1,0 +1,91 @@
+[% action = ( op == 'edit_security' || ( op == 'save_security' && errors )) ? 'edit' : 'display' %]
+    <fieldset id="security">
+        <legend>Security</legend>
+    [% UNLESS op == 'create' || ( op == 'save' && errors ) %]
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" id="security_form" name="security_form" style="float:left;">
+
+        <dl class="inline">
+        [% INCLUDE util/input_text.html
+            name    = 'login'
+            label   = 'Login'
+            value   = current.login
+            size    = 12
+            maxlength = 24
+            dl      = 1
+        %]
+            <dd><em>Login must be between 6 and 24 characters long.</em></dd>
+
+        [% IF action == 'edit' %]
+        [% INCLUDE util/input_text.html
+            name    = 'password1'
+            label   = 'Password'
+            size    = 12
+            maxlength = 24
+            dl      = 1
+            password = 1
+        %]
+        [% INCLUDE util/input_text.html
+            name    = 'password2'
+            label   = 'Verify password'
+            size    = 12
+            maxlength = 24
+            dl      = 1
+            password = 1
+        %]
+        <dd><em>Password must be between 6 and 12 characters long.</em></dd>
+        <hr class="div" />
+        <hr class="div" />
+        <hr class="subtle" />
+        [% END %]
+
+        <dt>
+        [% INCLUDE util/checkbox.html
+            name    = 'password_expired'
+            value   = current.password_expired
+        %]
+        </dt>
+        <dd><label for="password_expired">Force password change</label></dd>
+
+        [% FOR role IN current.security_roles.sort_roles_by_homepage %]
+            [% rname = role.name %]
+            [% UNLESS rname == 'financial' || rname == 'supervisor' %]
+                [% INCLUDE util/checkbox.html
+                    name    = 'role_' _ role.id
+                    value   = current.has_role( role )
+                    wraptag = 'dt'
+                %]
+                <dd><label for="[% rname %]">[% rname %]</label></dd>
+            [% END %]
+        [% END %]
+
+        </dl>
+
+        [% IF action == 'edit' %]
+        <hr class="div" />
+        <hr class="div" />
+        <hr class="subtle" />
+        <h5>Notes</h5>
+        <ul>
+            <li>Only enter a password if you want to change it; the user's password will <strong>not</strong> appear here.</li>
+            <li>To prevent someone from logging into the system, set their login blank <strong>or</strong> turn off 'Active.'</li>
+            <li>You <strong>can</strong> deactivate your own account, so be careful.</li>
+        </ul>
+        [% END %]
+
+        <input type="hidden" name="staff_id" value="[% current.staff_id %]" />
+        [% IF action == 'edit' %]
+        <p class="save"><input type="submit" name="op" id="op_save" value="Save security" /></p>
+        [% ELSE %]
+        <p class="edit"><input type="submit" name="op" id="op_edit" value="Edit security" /></p>
+        [% END %]
+    </form>
+    [% IF action == 'edit' %]
+    <form class="cancel" method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+        <input type="hidden" name="staff_id" id="staff_id" value="[% current.staff_id %]" />
+        <p><input type="submit" name="op" id="op" value="Cancel" /></p>
+    </form>
+    [% END %]
+    [% ELSE %]
+    <p>Security must be set after creating a new person.</p>
+    [% END %]
+    </fieldset>

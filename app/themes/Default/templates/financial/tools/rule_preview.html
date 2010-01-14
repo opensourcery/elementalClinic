@@ -1,0 +1,57 @@
+[%-
+    end_date    = end_date || today_ymd;
+    start_date  = start_date || end_date.date_calc( '-14d' )
+    query       = current_rule.validation_query( start_date, end_date, insurer.id )
+%]
+    <h4>Select progress notes</h4>
+    [% INCLUDE util/form.html %]
+    <p>
+        [% INCLUDE util/date_picker.html
+            label   = 'From'
+            name    = 'start_date'
+            value   = start_date
+        %]
+
+        [% INCLUDE util/date_picker.html
+            label   = 'to'
+            name    = 'end_date'
+            value   = end_date
+        %]
+    </p>
+
+    [% IF current_rule.scope == 'payer' %]
+        <p>This is a payer rule; please pick a payer:</p>
+        [% INCLUDE util/select_new.html
+            name    = 'payer_id'
+            default = insurer.id
+            values  = insurers,
+            keyname = 'id'
+            valname = 'eman'
+            wraptag = 'p'
+            required    = 1
+        %]
+    [% END %]
+
+        <input type="hidden" name="validation_set_id" value="[% validation_set.id %]" />
+        <input type="hidden" name="validation_rule_id" value="[% current_rule.id %]" />
+        <input type="hidden" name="op" value="validation_rule_results" />
+        <p class="save" style="clear:none;"><input type="submit" name="submit" value="Preview Rule" /></p>
+    [% INCLUDE util/form_end.html %]
+
+    <h5>Query</h5>
+    <pre>[% query %]</pre>
+
+    [% IF result_sets %]
+        <h5>Results</h5>
+        [% INCLUDE financial/billing/results.html
+            # rules   = current_rule
+            Current = Current
+            note_clients = note_clients
+            track   = 'preview'
+            # result_sets = result_sets
+            results = result_sets.0.results
+        %]
+        <hr class="div" />
+    [% ELSIF( ! errors ) %]
+    <p><strong>No notes</strong> for selected date range.</p>
+    [% END %]

@@ -1,0 +1,17 @@
+
+    [% INCLUDE global/print_head.html
+        name    = 'Report'
+        a_href  = "$script?client_id=$client.id;report_track=$report_track"
+        a_label = 'Reporting'
+        date = ''
+    %]
+
+    <h3>
+        <strong>[% report.label %]</strong> [%-
+        IF client.id %]
+        report for <strong>[% client.eman %]</strong> [% IF client.ssn_f; "($client.ssn_f)<br />"; END %]
+        [% IF client.placement.program; client.placement.program.name %] program [% END %]<br />
+        CPMS #: [% client.state_specific_id %]
+        [% END -%]
+    </h3>
+

@@ -1,0 +1,95 @@
+[% IF adjustment %]
+
+    [% INCLUDE financial/tools/medicaid_adjustment.html %]
+
+[% ELSE %]
+<div class="submenu payments">
+    <ul class="toggle_menu">
+        <li[% ' class="active"' IF 1 %]>
+            <a href="[% script %]?section=tools;step=4">Clients</a>
+        </li>
+    </ul>
+
+    <div class="toggle_content">
+        <form id="clientform">
+            [% INCLUDE util/select_new.html
+                name        = "client_id"
+                onchange    = "document.forms['clientform'].submit()"
+                size        = 20
+                values      = eMC.department.clients
+                default     = client.id
+                keyname     = 'id'
+                valname     = 'eman'
+            %]
+            [% INCLUDE financial/session.html %]
+        </form>
+    </div>
+</div>
+
+<div class="subcontent">
+        
+    [% IF client.id %]
+        <h4>[% client.eman %]</h4>
+
+        [% IF payments %]
+
+            [% FOR payment IN payments %]
+                <div class="payment">
+                <h5>Payment [% payment.value.payment_date _ ' #' _ payment.value.payment_number %]</h5> 
+                [% FOR billing_claim IN payment.value.billing_claims %]
+                    <h6>
+                    [% billing_claim.value.personnel.eman %], claim billed 
+                    [% billing_claim.value.billed_date.format_date_remove_time %]
+                    </h6>
+                    [% INCLUDE util/form.html %]
+                    <table class="transactions">
+                        <tr>
+                            <th>Date</th>
+                            <th>Code</th>
+                            <th>Billed</th>
+                            <th>units</th>
+                            <th>Paid</th>
+                            <th>units</th>
+                            <th></th>
+                        </tr>
+                    [% FOR transaction IN billing_claim.value.transactions %]
+                        <tr>
+                            [% prognote = transaction.billing_service.billing_prognotes.0.prognote %]
+                            <td>[% prognote.note_date.format_date %]</td>
+                            <td class="code">[% prognote.charge_code.name %]</td>
+                            <td>$[% transaction.billing_service.billed_amount %]</td>
+                            <td>[% transaction.billing_service.billed_units %]</td>
+                            <td>$[% transaction.paid_amount %]</td>
+                            <td>[% transaction.paid_units %]</td>
+                            <td>
+                            [% INCLUDE util/checkbox.html
+                                name    = 'transaction_' _ transaction.rec_id
+                            %]
+                            </td>
+                        </tr>
+                    [% END %]
+                    </table>
+                    <p class="adjust">
+                        <input type="hidden" name="client_id" value="[% client_id %]" />
+                        <input type="hidden" name="section" value="tools" />
+                        <input type="hidden" name="step" value="4" />
+                        <input type="hidden" name="op" value="tools_4_select_notes" />
+                        <input type="submit" value="Adjust Selected &#187;" />
+                    </p>
+                    [% INCLUDE util/form_end.html %]
+                [% END %]
+                </div>
+            [% END %]
+
+        [% ELSE %]
+        <p>No Medicaid transactions found for [% client.fname %].</p>
+        <p class="tip">Is medicaid_rolodex_id ([% eMC.config.medicaid_rolodex_id || 'null' %][% IF eMC.config.medicaid_rolodex_id; ', ' _ rolodex.name; END %]) set correctly in Configuration?</p>
+        [% END %]
+
+    [% ELSE %]
+    <p>Please select a client.</p>
+    [% END %]
+
+</div>
+[% END %]
+

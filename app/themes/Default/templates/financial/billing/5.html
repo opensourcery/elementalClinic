@@ -1,0 +1,80 @@
+[% insurers = Current.validation_set.insurers.sort('name') %]
+<div class="controls submenu">
+    <h4>Choose a Payer to Bill</h4>
+    <table>
+        <tr>
+            <th>Payer</th>
+            <th>Validated?</th>
+            <th>Claim</th>
+            <th>Billed?</th>
+        </tr>
+        [% FOR insurer IN insurers;
+            insurer.is_validated = Current.validation_set.payer_is_validated( insurer.id );
+            insurer.has_billable_notes = Current.validation_set.billing_cycle.payer_has_billable_notes( insurer.id )
+        %]
+        <tr[% ' class="active"' IF insurer.id == Current.insurer.id %]>
+            <td>[% insurer.name %]</td>
+            <td class="[% insurer.is_validated ? 'boolean yes' : 'boolean no' %]">
+                [% IF insurer.is_validated %]
+                Yes
+                [% ELSE %]
+                <a href="[% script %]?section=billing;step=4;rolodex_id=[% insurer.id %]">&#171; No</a>
+                [% END %]
+            </td>
+            [% IF( insurer.is_validated && insurer.has_billable_notes ) %]
+                [% billing_file = Current.validation_set.billing_cycle.get_billing_files( insurer.id ).0 %]
+                [% billing_method = insurer.claims_processor_id ? 'ecs' : 'hcfa' %]
+                <td>
+                    <a href="[% script %]?section=billing;step=5;billing_file_id=[% billing_file.rec_id %];op=billing_5_[% billing_method %]">
+                        [% insurer.claims_processor_id ? 'EDI' : 'HCFA' %] &#187;
+                    </a><br>
+                    <span class="mode">[% IF billing_method == 'ecs'; billing_file.is_production ? 'Production mode' : 'Test mode'; END %]</span>
+                </td>
+                <td class="[% billing_file.submission_date ? 'boolean yes' : 'boolean no' %]">
+                    [% billing_file.submission_date || "No" %]
+                </td>
+            [% ELSIF insurer.is_validated %]
+                <td>
+                    <strong>No billable notes</strong>
+                </td>
+            [% END %]
+        </tr>
+        [% END %]
+    </table>
+
+    <hr />
+    
+</div>
+
+[% IF write_result %]
+<div class="subcontent">
+    <h4>Results:</h4>
+    <div class="connection_details">
+    [% write_result %]
+    </div>
+</div>
+[% END %]
+
+[% IF department.deferred_log %]
+<div class="subcontent">
+    <h4>Warnings:</h4>
+    <div class="connection_details">
+        <pre>
+[% department.deferred_log %]
+        </pre>
+    </div>
+</div>
+[% END %]
+
+[% INCLUDE financial/common/download_results.html %]
+
+[% IF connect_log %]
+<div class="subcontent">
+    <h4>Connection Results:</h4>
+    <div class="connection_details">
+        <pre>
+[% connect_log %]
+        </pre>
+    </div>
+</div>
+[% END %]

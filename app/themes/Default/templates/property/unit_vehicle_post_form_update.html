@@ -1,0 +1,65 @@
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+
+<table border="0">
+    <tr>
+        <td>Vehicle Year: </td>
+        <td><input type="text" name="auto_year" value="[% row_auto_year %]" size="6" maxlength="4" /></td>
+    </tr>
+    <tr>
+        <td>Vehicle Make/Model: </td>
+        <td><input type="text" name="auto_model" value="[% row_auto_model %]" size="52" maxlength="50" /></td>
+    </tr>
+    <tr>
+        <td>Vehicle Type: </td>
+        <td><input type="text" name="auto_type" value="[% row_auto_type %]" size="52" maxlength="50" /></td>
+    </tr>
+    <tr>
+        <td>Vehicle Colour: </td>
+        <td><input type="text" name="auto_colour" value="[% row_auto_colour %]" size="27" maxlength="25" /></td>
+    </tr>
+    <tr>
+        <td>Vehicle ID Number (VIN): </td>
+        <td><input type="text" name="auto_vin" value="[% row_auto_vin %]" size="52" maxlength="50" /></td>
+    </tr>
+    <tr>
+        <td>Vehicle Licence Plate: </td>
+        <td><input type="text" name="auto_licence" value="[% row_auto_licence %]" size="27" maxlength="25" /></td>
+    </tr>
+    <tr>
+        <td>Assigned To Unit: </td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "unit_lname"
+    s_values  = units
+    s_default = row_unit_lname
+%]</td>
+    </tr>
+    <tr>
+        <td>* Event Date: </td>
+        <td><input type="text" name="reg_date" value="[% row_reg_date %]" size="12" maxlength="10" /></td>
+    </tr>
+    <tr>
+        <td>* Date Inspection Is Due: </td>
+        <td><input type="text" name="inspect_date" value="[% row_inspect_date %]" size="12" maxlength="10" /></td>
+    </tr>
+    <tr>
+        <td><font color=red>* Valid Date Format: </font></td>
+        <td><font color=red>YYYY-MM-DD</font></td>
+    </tr>
+    <tr>
+        <td>Mail Expiration Notice To: </td>
+        <td><textarea name="email_remind" rows="4" cols="60">[% row_email_remind %]</textarea></td>
+    </tr>
+    <tr>
+        <td>Remarks: </td>
+        <td><textarea name="auto_note" rows="10" cols="60">[% row_auto_note %]</textarea></td>
+    </tr>
+</table>
+
+<p />
+
+<input type="submit" name="go" value="Submit Query" />
+<input type="hidden" name="rec_id" value="[% row_rec_id %]" />
+<div>
+</div>
+</form>

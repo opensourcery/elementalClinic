@@ -1,0 +1,15 @@
+[% INCLUDE util/select_new.html
+    name    = 'billing_payment_id'
+    label   = 'Select a payment'
+    values  = billing_payments
+    keyname = 'rec_id'
+    valname = 'label_rolodex'
+    wraptag = 'p'
+    leading_blank   = 'Select a payment'
+%]
+
+[% INCLUDE util/input_text.html
+    name    = 'payment_number'
+    label   = '<strong>OR</strong> enter a payment #'
+    wraptag = 'p'
+%]

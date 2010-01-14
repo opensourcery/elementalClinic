@@ -1,0 +1,70 @@
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+
+<table border="0">
+    <tr>
+        <td>Select Reporting Unit:</td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "unit"
+    s_values  = units
+    s_default = unit_lname
+%]</td>
+    </tr>
+    <tr>
+        <td>Address: </td>
+        <td><input type="text" name="addr"  size="32" maxlength="30" /></td>
+    </tr>
+    <tr>
+        <td>Drill Date:</td>
+        <td><input type="text" name="start_date" value="[% today %]" size="12" maxlength="10" /></td>
+    </tr>
+    <tr>
+        <td>Time Of Drill (Format 12:00 PM): </td>
+        <td><input type="text" name="alarm_time"  size="10" maxlength="8" /></td>
+    </tr>
+    <tr>
+        <td>Staff Member Who Ran The Drill:</td>
+        <td><input type="text" name="conductor" value="[% staffname %]" size="32" maxlength="30" /></td>
+    </tr>
+    <tr>
+        <td>Number of Staff Involved:</td>
+        <td><input type="text" name="amt_staff"  size="5" maxlength="3" /></td>
+    </tr>
+    <tr>
+        <td>Number of Patients Involved: </td>
+        <td><input type="text" name="amt_pts"  size="5" maxlength="3" /></td>
+    </tr>
+    <tr>
+        <td>Disaster Scenario: </td>
+        <td><input type="text" name="drill_type"  size="66" maxlength="64" /></td>
+    </tr>
+    <tr>
+        <td>(Flood, Blackout, Gas Leak, etc.)</td>
+    </tr>
+</table>
+
+<p />
+
+<table border="0">
+    <tr>
+        <td>List Actions Taken / Notifications Made (explain briefly): </td>
+    </tr>
+    <tr>
+        <td><textarea name="actions" rows="6" cols="50" wrap="1"></textarea></td>
+    </tr>
+    <tr>
+        <td>Follow Up (None / Describe): </td>
+    </tr>
+    <tr>
+        <td><textarea name="follow_up" rows="6" cols="50" wrap="1"></textarea></td>
+    </tr>
+</table>
+
+<p />
+
+<input type="submit" name="go" value="Submit" />
+<input type="hidden" name="search_start" value="[% search_start %]" />
+<input type="hidden" name="search_end" value="[% search_end %]" />
+<div>
+</div>
+</form>

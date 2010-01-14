@@ -1,0 +1,46 @@
+<div class="client_box">
+    <h4>Scanned Records</h4>
+
+    <div id="file_list">
+    [% IF files.0 %]
+        <h5>Select a file</h5>
+        <table>
+            [% FOR file IN files %]
+            <tr [% IF file.rec_id == selected_file.rec_id; 'class="selected"'; END %]>
+                <td class="description">
+                    <a href="[% script %]?client_id=[% file.client_id %]&amp;client_scanned_record_id=[% file.rec_id %]" title="[% file.description %]">
+                            [% IF file.description; file.description; ELSE; '(no description)'; END %]
+                    </a>
+                </td>
+                <td class="created"><p>[% file.created FILTER remove(' .*') # strip off time if present %]</p></td>
+            </tr>
+            [% END %]
+        </table>
+    [% ELSE %]
+        <p>The patient has no scanned files.</p>
+    [% END %]
+    </div>
+
+[% IF selected_file %]
+    <div class="client_file">
+        <a target="_blank" href="[% script %]?op=view_file;client_scanned_record_id=[% selected_file.rec_id %]"><img src="[% script %]?op=view_file;client_scanned_record_id=[% selected_file.rec_id %]" alt="[% selected_file.filename %]" /></a><br />
+        <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" class="scanned_record_desc_form" name="scanned_record_desc_form">
+            <textarea name="description" class="description" rows="2" cols="40">[% selected_file.description | replace('\\\n', "\n") %]</textarea>
+            <br />
+            <input type="hidden" name="client_scanned_record_id" value="[% selected_file.rec_id %]" />
+            <input type="hidden" name="client_id" value="[% selected_file.client_id %]" />
+            <input type="submit" name="op" value="Update Description" />
+        </form>
+    </div>
+    <div id="wrong_patient">
+        <p>Click here</p>
+        <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" class="client_scanned_record_form" name="client_scanned_record_form" onsubmit="return confirmWrongClient()">
+            <input type="hidden" name="wrong_client_scanned_record_id" value="[% selected_file.rec_id %]" />
+            <input type="hidden" name="client_id" value="[% selected_file.client_id %]" />
+            <input type="submit" name="op" value="Wrong Patient" id="wrong_patient" />
+        </form>
+        <p>if this file doesn't belong to this patient.</p>
+    </div>
+[% END %]
+
+</div>

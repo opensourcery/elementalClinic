@@ -1,0 +1,27 @@
+---
+1001:
+  active: 1
+  dept_id: 1001
+  description: test-CXL
+  name: test-CXL
+  rec_id: 1001
+1002:
+  active: 1
+  dept_id: 1001
+  description: test-Walk-in
+  name: test-Walk-in
+  rec_id: 1002
+1003:
+  active: 1
+  dept_id: 1001
+  description: test-Confirmed
+  name: test-Conf
+  rec_id: 1003
+1004:
+  active: 1
+  dept_id: 1001
+  description: Left Message
+  name: test-Mess
+  rec_id: 1004
+
+

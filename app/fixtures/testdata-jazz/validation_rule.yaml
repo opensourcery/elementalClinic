@@ -1,0 +1,184 @@
+---
+1001:
+  error_message: ''
+  name: All notes
+  rec_id: 1001
+  rule_from: ''
+  rule_order: ''
+  rule_select: ''
+  rule_where: ''
+  scope: system
+  selects_pass: 1
+1002:
+  error_message: ''
+  name: No notes
+  rec_id: 1002
+  rule_from: ''
+  rule_order: ''
+  rule_select: ''
+  rule_where: AND 1 = 0
+  scope: system
+  selects_pass: 1
+1003:
+  error_message: 'Clients must have street address, city, state, and postal code.'
+  name: Clients must have address
+  rec_id: 1003
+  rule_from: ', client, address'
+  rule_order: ''
+  rule_select: ''
+  rule_where: |-2
+    
+    AND prognote.client_id = client.client_id
+    AND client.client_id = address.client_id
+    AND address.primary_entry = true
+    AND address.address1  IS NOT NULL AND address.address1    != ''
+    AND address.city      IS NOT NULL AND address.city        != ''
+    AND address.post_code IS NOT NULL AND address.post_code   != ''
+    AND address.state     IS NOT NULL AND address.state       != ''
+            
+  scope: system
+  selects_pass: 1
+1004:
+  error_message: Charge code must exist and be active.
+  name: Charge code is active
+  rec_id: 1004
+  rule_from: ', valid_data_charge_code'
+  rule_order: ''
+  rule_select: ''
+  rule_where: |-2
+    
+    AND prognote.charge_code_id = valid_data_charge_code.rec_id
+    AND valid_data_charge_code.active = 1
+            
+  scope: system
+  selects_pass: 1
+1005:
+  error_message: Charge code is not accepted by insurer.
+  name: Charge code is accepted by insurer
+  rec_id: 1005
+  rule_from: |-2
+    
+    LEFT OUTER JOIN 
+        insurance_charge_code_association
+        ON prognote.charge_code_id = insurance_charge_code_association.valid_data_charge_code_id
+            
+  rule_order: ''
+  rule_select: ''
+  rule_where: |-2
+    
+    AND insurance_charge_code_association.rolodex_id = ?
+    AND insurance_charge_code_association.acceptable = FALSE
+            
+  scope: payer
+  selects_pass: 0
+1006:
+  error_message: ''
+  name: 'All pass, payer-specific test.'
+  rec_id: 1006
+  rule_from: ''
+  rule_order: ''
+  rule_select: ''
+  rule_where: ''
+  scope: payer
+  selects_pass: 1
+1007:
+  error_message: ''
+  name: 'All fail, payer-specific test.'
+  rec_id: 1007
+  rule_from: ''
+  rule_order: ''
+  rule_select: ''
+  rule_where: ''
+  scope: payer
+  selects_pass: 0
+1008:
+  error_message: ''
+  name: 'All pass, payer-specific test.'
+  rec_id: 1008
+  rule_from: ''
+  rule_order: ''
+  rule_select: ''
+  rule_where: ''
+  scope: payer
+  selects_pass: 1
+1009:
+  error_message: ''
+  name: 'Arbitrary: excludes note from July 7, 2006.'
+  rec_id: 1009
+  rule_from: ''
+  rule_order: ''
+  rule_select: ''
+  rule_where: |-2
+    
+    AND DATE( start_date ) != DATE( '2006-07-07' )
+            
+  scope: system
+  selects_pass: 1
+1010:
+  error_message: ''
+  name: Duplicate detection (test only).
+  rec_id: 1010
+  rule_from: ''
+  rule_order: ''
+  rule_select: ''
+  rule_where: |-2
+    
+    AND prognote.rec_id < 1100
+            
+  scope: system
+  selects_pass: 1
+1011:
+  error_message: ''
+  name: Paid notes are excluded.
+  rec_id: 1011
+  rule_from: ''
+  rule_order: ''
+  rule_select: ''
+  rule_where: |-2
+    
+    AND ( prognote.billing_status != 'Paid' OR prognote.billing_status IS NULL )
+            
+  scope: system
+  selects_pass: 1
+1012:
+  error_message: ''
+  name: '"Unbillable per writer" notes are excluded.'
+  rec_id: 1012
+  rule_from: ''
+  rule_order: ''
+  rule_select: ''
+  rule_where: |-2
+    
+    AND prognote.unbillable_per_writer IS NOT TRUE
+            
+  scope: system
+  selects_pass: 1
+1013:
+  error_message: ''
+  name: Notes that must be combined with previously billed notes.
+  rec_id: 1013
+  rule_from: |-2
+    
+     inner join view_identical_prognotes as identical
+       on prognote.rec_id = identical.source_rec_id
+            
+  rule_order: ''
+  rule_select: ''
+  rule_where: |-2
+    
+    AND
+    (
+        -- identical was previously billed, but prognote has never been billed
+        ( identical.rec_id IN (SELECT prognote_id FROM view_prognote_billed)
+          AND prognote.rec_id NOT IN (SELECT prognote_id FROM view_prognote_billed) ) 
+    
+        OR 
+        -- prognote was previously billed, but identical has never been billed
+        ( prognote.rec_id IN (SELECT prognote_id FROM view_prognote_billed)
+          AND identical.rec_id NOT IN (SELECT prognote_id FROM view_prognote_billed) )
+    )
+            
+  scope: system
+  selects_pass: 0
+
+

@@ -1,0 +1,120 @@
+div.system_box {
+    position : relative;
+}
+/* layout */
+#tableform {
+    padding : 0 0 5px 0;
+    border-bottom : 2px solid #60c;
+    margin : 0 0 5px 0;
+}
+#table {
+    width : 70%;
+    float : left;
+}
+#table table {
+    width : 100%;
+}
+#table table td,
+#groups table td {
+    font-size : 12px;
+    height : 1.6em;
+}
+#groups {
+    width : 28%;
+    float : left;
+    border-left : 1px solid #999;
+}
+#table div.header,
+#groups div.header {
+    height : 225px;
+}
+#table div.header {
+    padding : 0 5px 0 0;
+}
+#groups div.header {
+    padding : 0 0 0 5px;
+}
+
+div.header_small {
+    height : 90px;
+}
+#table div.header_small {
+    padding : 0 5px 0 0;
+}
+#groups div.header_small {
+    padding : 0 0 0 5px;
+}
+
+tr.head th {
+    font-size : 13px;
+    text-align : left;
+    border-bottom : 2px solid #333;
+    padding : 0 20px 0 0;
+}
+tr.head.super th {
+    border: 0;
+}
+th.current_group {
+    text-align : right;
+    font-weight : normal;
+}
+th.current_group span {
+    background : #bebebe;
+    padding : 0 3px 0 3px;
+}
+#table td {
+    padding : 2px 10px 2px 2px;
+}
+td.edit a {
+    font-weight : normal;
+    border-left : 1px solid #333;
+    padding-left : 5px;
+}
+.lookup_group {
+/*     font-weight : normal; */
+    text-align : center !important;
+    background : #bebebe;
+    padding : 0 3px 0 3px !important;
+}
+.even td.lookup_group {
+    background : #a3a3a3;
+}
+#items {
+    width : 400px;
+}
+ul.tabs {
+    list-style-type : none;
+    padding : 0;
+    margin : 0 0 0 10px;
+    height : 22px;
+    clear : both;
+    z-index : 10;
+}
+ul.tabs li {
+    float : left;
+    margin-left : -1px;
+}
+ul.tabs li.active {
+    z-index : 10;
+    border-color : #60c;
+    border-top : 2px solid #60c;
+}
+ul.tabs li a {
+    font-weight : normal !important;
+    padding : 3px 7px 1px 5px;
+    background : #ddd;
+    display : block;
+    height : 21px;
+    border : 1px solid #60c;
+}
+ul.tabs li.active a {
+    font-weight : bold !important;
+    padding-top : 1px;
+    background : #dedeff;
+    border-bottom : 1px solid #dedeff;
+    border-bottom : 1px solid red;
+}
+.minileft h6 {
+    margin: 0;
+    padding: 0;
+}

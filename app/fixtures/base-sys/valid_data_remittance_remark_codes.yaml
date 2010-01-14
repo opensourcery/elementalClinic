@@ -1,0 +1,3943 @@
+
+1: 
+  active: 1
+  dept_id: 1001
+  description: X-ray not taken within the past 12 months or near enough to the start of treatment.
+  name: M1
+  rec_id: 1
+10: 
+  active: 1
+  dept_id: 1001
+  description: Equipment purchases are limited to the first or the tenth month of medical necessity.
+  name: M10
+  rec_id: 10
+100: 
+  active: 1
+  dept_id: 1001
+  description: "Begin to report the Universal Product Number on claims for items of this type. We will soon begin to deny payment for items of this type if billed without the correct UPN. Note: (Deactivated eff. 1/31/2004) Consider using M99"
+  name: M98
+  rec_id: 100
+101: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid Universal Product Number/Serial Number. Note: (Modified 2/28/03)"
+  name: M99
+  rec_id: 101
+102: 
+  active: 1
+  dept_id: 1001
+  description: We do not pay for an oral anti-emetic drug that is not administered for use immediately before, at, or within 48 hours of administration of a covered chemotherapy drug.
+  name: M100
+  rec_id: 102
+103: 
+  active: 1
+  dept_id: 1001
+  description: "Begin to report a G1-G5 modifier with this HCPCS. We will soon begin to deny payment for this service if billed without a G1-G5 modifier. Note: (Deactivated eff. 1/31/2004) Consider using M78"
+  name: M101
+  rec_id: 103
+104: 
+  active: 1
+  dept_id: 1001
+  description: Service not performed on equipment approved by the FDA for this purpose.
+  name: M102
+  rec_id: 104
+105: 
+  active: 1
+  dept_id: 1001
+  description: Information supplied supports a break in therapy. However, the medical information we have for this patient does not support the need for this item as billed. We have approved payment for this item at a reduced level, and a new capped rental period will begin with the delivery of this equipment.
+  name: M103
+  rec_id: 105
+106: 
+  active: 1
+  dept_id: 1001
+  description: Information supplied supports a break in therapy. A new capped rental period will begin with delivery of the equipment. This is the maximum approved under the fee schedule for this item or service.
+  name: M104
+  rec_id: 106
+107: 
+  active: 1
+  dept_id: 1001
+  description: Information supplied does not support a break in therapy. The medical information we have for this patient does not support the need for this item as billed. We have approved payment for this item at a reduced level, and a new capped rental period will not begin.
+  name: M105
+  rec_id: 107
+108: 
+  active: 1
+  dept_id: 1001
+  description: "Information supplied does not support a break in therapy. A new capped rental period will not begin. This is the maximum approved under the fee schedule for this item or service. Note: (Deactivated eff. 1/31/2004) Consider using MA 31"
+  name: M106
+  rec_id: 108
+109: 
+  active: 1
+  dept_id: 1001
+  description: Payment reduced as 90-day rolling average hematocrit for ESRD patient exceeded 36.5%.
+  name: M107
+  rec_id: 109
+11: 
+  active: 1
+  dept_id: 1001
+  description: DME, orthotics and prosthetics must be billed to the DME carrier who services the patient's zip code.
+  name: M11
+  rec_id: 11
+110: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid provider identifier for the provider who interpreted the diagnostic test. Note: (Deactivated eff. 6/2/05)"
+  name: M108
+  rec_id: 110
+111: 
+  active: 1
+  dept_id: 1001
+  description: We have provided you with a bundled payment for a teleconsultation. You must send 25 percent of the teleconsultation payment to the referring practitioner.
+  name: M109
+  rec_id: 111
+112: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid provider identifier for the provider from whom you purchased interpretation services. Note: (Deactivated eff. 6/2/05)"
+  name: M110
+  rec_id: 112
+113: 
+  active: 1
+  dept_id: 1001
+  description: We do not pay for chiropractic manipulative treatment when the patient refuses to have an x-ray taken.
+  name: M111
+  rec_id: 113
+114: 
+  active: 1
+  dept_id: 1001
+  description: The approved amount is based on the maximum allowance for this item under the DMEPOS Competitive Bidding Demonstration.
+  name: M112
+  rec_id: 114
+115: 
+  active: 1
+  dept_id: 1001
+  description: Our records indicate that this patient began using this service(s) prior to the current round of the DMEPOS Competitive Bidding Demonstration. Therefore, the approved amount is based on the allowance in effect prior to this round of bidding for this item.
+  name: M113
+  rec_id: 115
+116: 
+  active: 1
+  dept_id: 1001
+  description: "This service was processed in accordance with rules and guidelines under the Competitive Bidding Demonstration Project. If you would like more information regarding this project, contact your local contractor. Note: (Modified 8/1/06)"
+  name: M114
+  rec_id: 116
+117: 
+  active: 1
+  dept_id: 1001
+  description: This item is denied when provided to this patient by a non-demonstration supplier.
+  name: M115
+  rec_id: 117
+118: 
+  active: 1
+  dept_id: 1001
+  description: "Paid under the Competitive Bidding Demonstration project. Project is ending, and future services may not be paid under this project. Note: (Modified 2/1/04)"
+  name: M116
+  rec_id: 118
+119: 
+  active: 1
+  dept_id: 1001
+  description: "Not covered unless submitted via electronic claim. Note: (Modified 6/30/03)"
+  name: M117
+  rec_id: 119
+12: 
+  active: 1
+  dept_id: 1001
+  description: Diagnostic tests performed by a physician must indicate whether purchased services are included on the claim.
+  name: M12
+  rec_id: 12
+120: 
+  active: 1
+  dept_id: 1001
+  description: Letter to follow containing further information.
+  name: M118
+  rec_id: 120
+121: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid/ deactivated/withdrawn National Drug Code (NDC). Note: (Modified 2/28/03, 4/1/04)"
+  name: M119
+  rec_id: 121
+122: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid provider identifier for the substituting physician who furnished the service(s) under a reciprocal billing or locum tenens arrangement. Note: (Deactivated eff. 6/2/05)"
+  name: M120
+  rec_id: 122
+123: 
+  active: 1
+  dept_id: 1001
+  description: We pay for this service only when performed with a covered cryosurgical ablation.
+  name: M121
+  rec_id: 123
+124: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid level of subluxation. Note: (Modified 2/28/03)"
+  name: M122
+  rec_id: 124
+125: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid name, strength, or dosage of the drug furnished. Note: (Modified 2/28/03)"
+  name: M123
+  rec_id: 125
+126: 
+  active: 1
+  dept_id: 1001
+  description: "Missing indication of whether the patient owns the equipment that requires the part or supply. Note: (Modified 2/28/03) Related to N230"
+  name: M124
+  rec_id: 126
+127: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid information on the period of time for which the service/supply/equipment will be needed. Note: (Modified 2/28/03)"
+  name: M125
+  rec_id: 127
+128: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid individual lab codes included in the test. Note: (Modified 2/28/03)"
+  name: M126
+  rec_id: 128
+129: 
+  active: 1
+  dept_id: 1001
+  description: "Missing patient medical record for this service. Note: (Modified 2/28/03) Related to N237"
+  name: M127
+  rec_id: 129
+13: 
+  active: 1
+  dept_id: 1001
+  description: "Only one initial visit is covered per specialty per medical group. Note: (Modified 6/30/03)"
+  name: M13
+  rec_id: 13
+130: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid date of the patient\xE2\x80\x99s last physician visit. Note: (Deactivated eff. 6/2/05)"
+  name: M128
+  rec_id: 130
+131: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid indicator of x-ray availability for review. Note: (Modified 2/28/03, 6/30/03)"
+  name: M129
+  rec_id: 131
+132: 
+  active: 1
+  dept_id: 1001
+  description: "Missing invoice or statement certifying the actual cost of the lens, less discounts, and/or the type of intraocular lens used. Note: (Modified 2/28/03) Related to N231"
+  name: M130
+  rec_id: 132
+133: 
+  active: 1
+  dept_id: 1001
+  description: "Missing physician financial relationship form. Note: (Modified 2/28/03) Related to N239"
+  name: M131
+  rec_id: 133
+134: 
+  active: 1
+  dept_id: 1001
+  description: "Missing pacemaker registration form. Note: (Modified 2/28/03) Related to N235"
+  name: M132
+  rec_id: 134
+135: 
+  active: 1
+  dept_id: 1001
+  description: Claim did not identify who performed the purchased diagnostic test or the amount you were charged for the test.
+  name: M133
+  rec_id: 135
+136: 
+  active: 1
+  dept_id: 1001
+  description: "Performed by a facility/supplier in which the provider has a financial interest. Note: (Modified 6/30/03)"
+  name: M134
+  rec_id: 136
+137: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid plan of treatment. Note: (Modified 2/28/03)"
+  name: M135
+  rec_id: 137
+138: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid indication that the service was supervised or evaluated by a physician. Note: (Modified 2/28/03)"
+  name: M136
+  rec_id: 138
+139: 
+  active: 1
+  dept_id: 1001
+  description: Part B coinsurance under a demonstration project.
+  name: M137
+  rec_id: 139
+14: 
+  active: 1
+  dept_id: 1001
+  description: No separate payment for an injection administered during an office visit, and no payment for a full office visit if the patient only received an injection.
+  name: M14
+  rec_id: 14
+140: 
+  active: 1
+  dept_id: 1001
+  description: Patient identified as a demonstration participant but the patient was not enrolled in the demonstration at the time services were rendered. Coverage is limited to demonstration participants.
+  name: M138
+  rec_id: 140
+141: 
+  active: 1
+  dept_id: 1001
+  description: Denied services exceed the coverage limit for the demonstration.
+  name: M139
+  rec_id: 141
+142: 
+  active: 1
+  dept_id: 1001
+  description: "Service not covered until after the patient\xE2\x80\x99s 50th birthday, i.e., no coverage prior to the day after the 50th birthday. Note: (Deactivated eff. 1/30/2004) Consider using M82"
+  name: M140
+  rec_id: 142
+143: 
+  active: 1
+  dept_id: 1001
+  description: "Missing physician certified plan of care. Note: (Modified 2/28/03) Related to N238"
+  name: M141
+  rec_id: 143
+144: 
+  active: 1
+  dept_id: 1001
+  description: "Missing American Diabetes Association Certificate of Recognition. Note: (Modified 2/28/03) Related to N226"
+  name: M142
+  rec_id: 144
+145: 
+  active: 1
+  dept_id: 1001
+  description: We have no record that you are licensed to dispensed drugs in the State where located.
+  name: M143
+  rec_id: 145
+146: 
+  active: 1
+  dept_id: 1001
+  description: Pre-/post-operative care payment is included in the allowance for the surgery/procedure.
+  name: M144
+  rec_id: 146
+147: 
+  active: 1
+  dept_id: 1001
+  description: "If you do not agree with what we approved for these services, you may appeal our decision. To make sure that we are fair to you, we require another individual that did not process your initial claim to conduct the appeal. However, in order to be eligible for an appeal, you must write to us within 120 days of the date you received this notice, unless you have a good reason for being late. Note: (Modified 10/31/02, 6/30/03, 8/1/05)"
+  name: MA01
+  rec_id: 147
+148: 
+  active: 1
+  dept_id: 1001
+  description: "If you do not agree with this determination, you have the right to appeal. You must file a written request for an appeal within 180 days of the date you receive this notice. Note: (Modified 10/31/02, 6/30/03, 8/1/05, 12/29/05, 8/1/06)"
+  name: MA02
+  rec_id: 148
+149: 
+  active: 1
+  dept_id: 1001
+  description: "If you do not agree with the approved amounts and $100 or more is in dispute (less deductible and coinsurance), you may ask for a hearing within six months of the date of this notice. To meet the $100, you may combine amounts on other claims that have been denied, including reopened appeals if you received a revised decision. You must appeal each claim on time. Note: (Deactivated eff. 10/1/06) Consider using MA02 (Modified 10/31/02, 6/30/03, 8/1/05, 11/18/05)"
+  name: MA03
+  rec_id: 149
+15: 
+  active: 1
+  dept_id: 1001
+  description: Separately billed services/tests have been bundled as they are considered components of the same procedure. Separate payment is not allowed.
+  name: M15
+  rec_id: 15
+150: 
+  active: 1
+  dept_id: 1001
+  description: Secondary payment cannot be considered without the identity of or payment information from the primary payer. The information was either not reported or was illegible.
+  name: MA04
+  rec_id: 150
+151: 
+  active: 1
+  dept_id: 1001
+  description: "Incorrect admission date patient status or type of bill entry on claim. Note: (Deactivated eff. 10/16/03) Consider using MA30, MA40 or MA43"
+  name: MA05
+  rec_id: 151
+152: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid beginning and/or ending date(s). Note: (Deactivated eff. 8/1/04) Consider using MA31"
+  name: MA06
+  rec_id: 152
+153: 
+  active: 1
+  dept_id: 1001
+  description: The claim information has also been forwarded to Medicaid for review.
+  name: MA07
+  rec_id: 153
+154: 
+  active: 1
+  dept_id: 1001
+  description: You should also submit this claim to the patient's other insurer for potential payment of supplemental benefits. We did not forward the claim information as the supplemental coverage is not with a Medigap plan, or you do not participate in Medicare.
+  name: MA08
+  rec_id: 154
+155: 
+  active: 1
+  dept_id: 1001
+  description: Claim submitted as unassigned but processed as assigned. You agreed to accept assignment for all claims.
+  name: MA09
+  rec_id: 155
+156: 
+  active: 1
+  dept_id: 1001
+  description: The patient's payment was in excess of the amount owed. You must refund the overpayment to the patient.
+  name: MA10
+  rec_id: 156
+157: 
+  active: 1
+  dept_id: 1001
+  description: "Payment is being issued on a conditional basis. If no-fault insurance, liability insurance, Workers' Compensation, Department of Veterans Affairs, or a group health plan for employees and dependents also covers this claim, a refund may be due us. Please contact us if the patient is covered by any of these sources. Note: (Deactivated eff. 1/31/2004) Consider using M32"
+  name: MA11
+  rec_id: 157
+158: 
+  active: 1
+  dept_id: 1001
+  description: You have not established that you have the right under the law to bill for services furnished by the person(s) that furnished this (these) service(s).
+  name: MA12
+  rec_id: 158
+159: 
+  active: 1
+  dept_id: 1001
+  description: You may be subject to penalties if you bill the patient for amounts not reported with the PR (patient responsibility) group code.
+  name: MA13
+  rec_id: 159
+16: 
+  active: 1
+  dept_id: 1001
+  description: "Please see our web site, mailings, or bulletins for more details concerning this policy/procedure/decision. Note: (Reactivated 4/1/04, Modified 11/18/05)"
+  name: M16
+  rec_id: 16
+160: 
+  active: 1
+  dept_id: 1001
+  description: Patient is a member of an employer-sponsored prepaid health plan. Services from outside that health plan are not covered. However, as you were not previously notified of this, we are paying this time. In the future, we will not pay you for non-plan services.
+  name: MA14
+  rec_id: 160
+161: 
+  active: 1
+  dept_id: 1001
+  description: Your claim has been separated to expedite handling. You will receive a separate notice for the other services reported.
+  name: MA15
+  rec_id: 161
+162: 
+  active: 1
+  dept_id: 1001
+  description: The patient is covered by the Black Lung Program. Send this claim to the Department of Labor, Federal Black Lung Program, P.O. Box 828, Lanham-Seabrook MD 20703.
+  name: MA16
+  rec_id: 162
+163: 
+  active: 1
+  dept_id: 1001
+  description: We are the primary payer and have paid at the primary rate. You must contact the patient's other insurer to refund any excess it may have paid due to its erroneous primary payment.
+  name: MA17
+  rec_id: 163
+164: 
+  active: 1
+  dept_id: 1001
+  description: The claim information is also being forwarded to the patient's supplemental insurer. Send any questions regarding supplemental benefits to them.
+  name: MA18
+  rec_id: 164
+165: 
+  active: 1
+  dept_id: 1001
+  description: Information was not sent to the Medigap insurer due to incorrect/invalid information you submitted concerning that insurer. Please verify your information and submit your secondary claim directly to that insurer.
+  name: MA19
+  rec_id: 165
+166: 
+  active: 1
+  dept_id: 1001
+  description: "Skilled Nursing Facility (SNF) stay not covered when care is primarily related to the use of an urethral catheter for convenience or the control of incontinence. Note: (Modified 6/30/03)"
+  name: MA20
+  rec_id: 166
+167: 
+  active: 1
+  dept_id: 1001
+  description: SSA records indicate mismatch with name and sex.
+  name: MA21
+  rec_id: 167
+168: 
+  active: 1
+  dept_id: 1001
+  description: Payment of less than $1.00 suppressed.
+  name: MA22
+  rec_id: 168
+169: 
+  active: 1
+  dept_id: 1001
+  description: Demand bill approved as result of medical review.
+  name: MA23
+  rec_id: 169
+17: 
+  active: 1
+  dept_id: 1001
+  description: Payment approved as you did not know, and could not reasonably have been expected to know, that this would not normally have been covered for this patient. In the future, you will be liable for charges for the same service(s) under the same or similar conditions.
+  name: M17
+  rec_id: 17
+170: 
+  active: 1
+  dept_id: 1001
+  description: "Christian Science Sanitarium/ Skilled Nursing Facility (SNF) bill in the same benefit period. Note: (Modified 6/30/03)"
+  name: MA24
+  rec_id: 170
+171: 
+  active: 1
+  dept_id: 1001
+  description: A patient may not elect to change a hospice provider more than once in a benefit period.
+  name: MA25
+  rec_id: 171
+172: 
+  active: 1
+  dept_id: 1001
+  description: Our records indicate that you were previously informed of this rule.
+  name: MA26
+  rec_id: 172
+173: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid entitlement number or name shown on the claim. Note: (Modified 2/28/03)"
+  name: MA27
+  rec_id: 173
+174: 
+  active: 1
+  dept_id: 1001
+  description: Receipt of this notice by a physician or supplier who did not accept assignment is for information only and does not make the physician or supplier a party to the determination. No additional rights to appeal this decision, above those rights already provided for by regulation/instruction, are conferred by receipt of this notice.
+  name: MA28
+  rec_id: 174
+175: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid provider name, city, state, or zip code. Note: (Deactivated eff. 6/2/05)"
+  name: MA29
+  rec_id: 175
+176: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid type of bill. Note: (Modified 2/28/03)"
+  name: MA30
+  rec_id: 176
+177: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid beginning and ending dates of the period billed. Note: (Modified 2/28/03)"
+  name: MA31
+  rec_id: 177
+178: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid number of covered days during the billing period. Note: (Modified 2/28/03)"
+  name: MA32
+  rec_id: 178
+179: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid noncovered days during the billing period. Note: (Modified 2/28/03)"
+  name: MA33
+  rec_id: 179
+18: 
+  active: 1
+  dept_id: 1001
+  description: "Certain services may be approved for home use. Neither a hospital nor a Skilled Nursing Facility (SNF) is considered to be a patient's home. Note: (Modified 6/30/03)"
+  name: M18
+  rec_id: 18
+180: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid number of coinsurance days during the billing period. Note: (Modified 2/28/03)"
+  name: MA34
+  rec_id: 180
+181: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid number of lifetime reserve days. Note: (Modified 2/28/03)"
+  name: MA35
+  rec_id: 181
+182: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid patient name. Note: (Modified 2/28/03)"
+  name: MA36
+  rec_id: 182
+183: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid patient's address. Note: (Modified 2/28/03)"
+  name: MA37
+  rec_id: 183
+184: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid birth date. Note: (Deactivated eff. 6/2/05)"
+  name: MA38
+  rec_id: 184
+185: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid gender. Note: (Modified 2/28/03)"
+  name: MA39
+  rec_id: 185
+186: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid admission date. Note: (Modified 2/28/03)"
+  name: MA40
+  rec_id: 186
+187: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid admission type. Note: (Modified 2/28/03)"
+  name: MA41
+  rec_id: 187
+188: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid admission source. Note: (Modified 2/28/03)"
+  name: MA42
+  rec_id: 188
+189: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid patient status. Note: (Modified 2/28/03)"
+  name: MA43
+  rec_id: 189
+19: 
+  active: 1
+  dept_id: 1001
+  description: "Missing oxygen certification/re-certification. Note: (Modified 2/28/03) Related to N234"
+  name: M19
+  rec_id: 19
+190: 
+  active: 1
+  dept_id: 1001
+  description: No appeal rights. Adjudicative decision based on law.
+  name: MA44
+  rec_id: 190
+191: 
+  active: 1
+  dept_id: 1001
+  description: As previously advised, a portion or all of your payment is being held in a special account.
+  name: MA45
+  rec_id: 191
+192: 
+  active: 1
+  dept_id: 1001
+  description: The new information was considered, however, additional payment cannot be issued. Please review the information listed for the explanation.
+  name: MA46
+  rec_id: 192
+193: 
+  active: 1
+  dept_id: 1001
+  description: Our records show you have opted out of Medicare, agreeing with the patient not to bill Medicare for services/tests/supplies furnished. As result, we cannot pay this claim. The patient is responsible for payment.
+  name: MA47
+  rec_id: 193
+194: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid name or address of responsible party or primary payer. Note: (Modified 2/28/03)"
+  name: MA48
+  rec_id: 194
+195: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid six-digit provider identifier for home health agency or hospice for physician(s) performing care plan oversight services. Note: (Deactivated eff.8/1/04) Consider using MA76"
+  name: MA49
+  rec_id: 195
+196: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid Investigational Device Exemption number for FDA-approved clinical trial services. Note: (Modified 2/28/03)"
+  name: MA50
+  rec_id: 196
+197: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid CLIA certification number for laboratory services billed by physician office laboratory. Note: (Deactivated eff. 2/5/05) Consider using MA120"
+  name: MA51
+  rec_id: 197
+198: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid date. Note: (Deactivated eff. 6/2/05)"
+  name: MA52
+  rec_id: 198
+199: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid Competitive Bidding Demonstration Project identification. Note: (Modified 2/1/04)"
+  name: MA53
+  rec_id: 199
+2: 
+  active: 1
+  dept_id: 1001
+  description: Not paid separately when the patient is an inpatient.
+  name: M2
+  rec_id: 2
+20: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid HCPCS. Note: (Modified 2/28/03)"
+  name: M20
+  rec_id: 20
+200: 
+  active: 1
+  dept_id: 1001
+  description: Physician certification or election consent for hospice care not received timely.
+  name: MA54
+  rec_id: 200
+201: 
+  active: 1
+  dept_id: 1001
+  description: Not covered as patient received medical health care services, automatically revoking his/her election to receive religious non-medical health care services.
+  name: MA55
+  rec_id: 201
+202: 
+  active: 1
+  dept_id: 1001
+  description: Our records show you have opted out of Medicare, agreeing with the patient not to bill Medicare for services/tests/supplies furnished. As result, we cannot pay this claim. The patient is responsible for payment, but under Federal law, you cannot charge the patient more than the limiting charge amount.
+  name: MA56
+  rec_id: 202
+203: 
+  active: 1
+  dept_id: 1001
+  description: Patient submitted written request to revoke his/her election for religious non-medical health care services.
+  name: MA57
+  rec_id: 203
+204: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid release of information indicator. Note: (Modified 2/28/03)"
+  name: MA58
+  rec_id: 204
+205: 
+  active: 1
+  dept_id: 1001
+  description: The patient overpaid you for these services. You must issue the patient a refund within 30 days for the difference between his/her payment and the total amount shown as patient responsibility on this notice.
+  name: MA59
+  rec_id: 205
+206: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid patient relationship to insured. Note: (Modified 2/28/03)"
+  name: MA60
+  rec_id: 206
+207: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid social security number or health insurance claim number. Note: (Modified 2/28/03)"
+  name: MA61
+  rec_id: 207
+208: 
+  active: 1
+  dept_id: 1001
+  description: Telephone review decision.
+  name: MA62
+  rec_id: 208
+209: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid principal diagnosis. Note: (Modified 2/28/03)"
+  name: MA63
+  rec_id: 209
+21: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid place of residence for this service/item provided in a home. Note: (Modified 2/28/03)"
+  name: M21
+  rec_id: 21
+210: 
+  active: 1
+  dept_id: 1001
+  description: Our records indicate that we should be the third payer for this claim. We cannot process this claim until we have received payment information from the primary and secondary payers.
+  name: MA64
+  rec_id: 210
+211: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid admitting diagnosis. Note: (Modified 2/28/03)"
+  name: MA65
+  rec_id: 211
+212: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid principal procedure code. Note: (Modified 12/2/04) Related to N303"
+  name: MA66
+  rec_id: 212
+213: 
+  active: 1
+  dept_id: 1001
+  description: Correction to a prior claim.
+  name: MA67
+  rec_id: 213
+214: 
+  active: 1
+  dept_id: 1001
+  description: We did not crossover this claim because the secondary insurance information on the claim was incomplete. Please supply complete information or use the PLANID of the insurer to assure correct and timely routing of the claim.
+  name: MA68
+  rec_id: 214
+215: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid remarks. Note: (Modified 2/28/03)"
+  name: MA69
+  rec_id: 215
+216: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid provider representative signature. Note: (Modified 2/28/03)"
+  name: MA70
+  rec_id: 216
+217: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid provider representative signature date. Note: (Modified 2/28/03)"
+  name: MA71
+  rec_id: 217
+218: 
+  active: 1
+  dept_id: 1001
+  description: The patient overpaid you for these assigned services. You must issue the patient a refund within 30 days for the difference between his/her payment to you and the total of the amount shown as patient responsibility and as paid to the patient on this notice.
+  name: MA72
+  rec_id: 218
+219: 
+  active: 1
+  dept_id: 1001
+  description: Informational remittance associated with a Medicare demonstration. No payment issued under fee-for-service Medicare as patient has elected managed care.
+  name: MA73
+  rec_id: 219
+22: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid number of miles traveled. Note: (Modified 2/28/03)"
+  name: M22
+  rec_id: 22
+220: 
+  active: 1
+  dept_id: 1001
+  description: This payment replaces an earlier payment for this claim that was either lost, damaged or returned.
+  name: MA74
+  rec_id: 220
+221: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid patient or authorized representative signature. Note: (Modified 2/28/03)"
+  name: MA75
+  rec_id: 221
+222: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid provider identifier for home health agency or hospice when physician is performing care plan oversight services. Note: (Modified 2/28/03, 2/1/04)"
+  name: MA76
+  rec_id: 222
+223: 
+  active: 1
+  dept_id: 1001
+  description: "The patient overpaid you. You must issue the patient a refund within 30 days for the difference between the patient\xE2\x80\x99s payment less the total of our and other payer payments and the amount shown as patient responsibility on this notice."
+  name: MA77
+  rec_id: 223
+224: 
+  active: 1
+  dept_id: 1001
+  description: "The patient overpaid you. You must issue the patient a refund within 30 days for the difference between our allowed amount total and the amount paid by the patient. Note: (Deactivated eff. 1/31/2004) Consider using MA59"
+  name: MA78
+  rec_id: 224
+225: 
+  active: 1
+  dept_id: 1001
+  description: Billed in excess of interim rate.
+  name: MA79
+  rec_id: 225
+226: 
+  active: 1
+  dept_id: 1001
+  description: Informational notice. No payment issued for this claim with this notice. Payment issued to the hospital by its intermediary for all services for this encounter under a demonstration project.
+  name: MA80
+  rec_id: 226
+227: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid provider/supplier signature. Note: (Modified 2/28/03)"
+  name: MA81
+  rec_id: 227
+228: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid provider/supplier billing number/identifier or billing name, address, city, state, zip code, or phone number. Note: (Deactivated eff. 6/2/05)"
+  name: MA82
+  rec_id: 228
+229: 
+  active: 1
+  dept_id: 1001
+  description: "Did not indicate whether we are the primary or secondary payer. Note: (Modified 8/1/05)"
+  name: MA83
+  rec_id: 229
+23: 
+  active: 1
+  dept_id: 1001
+  description: "Missing invoice. Note: (Modified 8/1/05)"
+  name: M23
+  rec_id: 23
+230: 
+  active: 1
+  dept_id: 1001
+  description: Patient identified as participating in the National Emphysema Treatment Trial but our records indicate that this patient is either not a participant, or has not yet been approved for this phase of the study. Contact Johns Hopkins University, the study coordinator, to resolve if there was a discrepancy.
+  name: MA84
+  rec_id: 230
+231: 
+  active: 1
+  dept_id: 1001
+  description: "Our records indicate that a primary payer exists (other than ourselves); however, you did not complete or enter accurately the insurance plan/group/program name or identification number. Enter the PlanID when effective. Note: (Deactivated eff. 8/1/04) Consider using MA92"
+  name: MA85
+  rec_id: 231
+232: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid group or policy number of the insured for the primary coverage. Note: (Deactivated eff. 8/1/04) Consider using MA92"
+  name: MA86
+  rec_id: 232
+233: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid insured's name for the primary payer. Note: (Deactivated eff. 8/1/04) Consider using MA92"
+  name: MA87
+  rec_id: 233
+234: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid insured's address and/or telephone number for the primary payer. Note: (Modified 2/28/03)"
+  name: MA88
+  rec_id: 234
+235: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid patient's relationship to the insured for the primary payer. Note: (Modified 2/28/03)"
+  name: MA89
+  rec_id: 235
+236: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid employment status code for the primary insured. Note: (Modified 2/28/03)."
+  name: MA90
+  rec_id: 236
+237: 
+  active: 1
+  dept_id: 1001
+  description: This determination is the result of the appeal you filed.
+  name: MA91
+  rec_id: 237
+238: 
+  active: 1
+  dept_id: 1001
+  description: "Missing plan information for other insurance. Note: (Modified 2/1/04) Related to N245"
+  name: MA92
+  rec_id: 238
+239: 
+  active: 1
+  dept_id: 1001
+  description: "Non-PIP (Periodic Interim Payment) claim. Note: (Modified 6/30/03)"
+  name: MA93
+  rec_id: 239
+24: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid number of doses per vial. Note: (Modified 2/28/03)"
+  name: M24
+  rec_id: 24
+240: 
+  active: 1
+  dept_id: 1001
+  description: "Did not enter the statement \xE2\x80\x9CAttending physician not hospice employee\xE2\x80\x9D on the claim form to certify that the rendering physician is not an employee of the hospice. Note: (Reactivated 4/1/04, Modified 8/1/05)"
+  name: MA94
+  rec_id: 240
+241: 
+  active: 1
+  dept_id: 1001
+  description: "De-activate and refer to M51. Note: (Modified 2/28/03)"
+  name: MA95
+  rec_id: 241
+242: 
+  active: 1
+  dept_id: 1001
+  description: Claim rejected. Coded as a Medicare Managed Care Demonstration but patient is not enrolled in a Medicare managed care plan.
+  name: MA96
+  rec_id: 242
+243: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid Medicare Managed Care Demonstration contract number. Note: (Modified 2/28/03)"
+  name: MA97
+  rec_id: 243
+244: 
+  active: 1
+  dept_id: 1001
+  description: "Claim Rejected. Does not contain the correct Medicare Managed Care Demonstration contract number for this beneficiary. Note: (Deactivated eff. 10/16/03) Consider using MA97"
+  name: MA98
+  rec_id: 244
+245: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid Medigap information. Note: (Modified 2/28/03)"
+  name: MA99
+  rec_id: 245
+246: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid date of current illness or symptoms. Note: (Modified 2/28/03, 3/30/05)"
+  name: MA100
+  rec_id: 246
+247: 
+  active: 1
+  dept_id: 1001
+  description: "A Skilled Nursing Facility (SNF) is responsible for payment of outside providers who furnish these services/supplies to residents. Note: (Modified 6/30/03)"
+  name: MA101
+  rec_id: 247
+248: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid name or provider identifier for the rendering/referring/ ordering/ supervising provider. Note: (Deactivated eff. 8/1/04) Consider using M68"
+  name: MA102
+  rec_id: 248
+249: 
+  active: 1
+  dept_id: 1001
+  description: Hemophilia Add On.
+  name: MA103
+  rec_id: 249
+25: 
+  active: 1
+  dept_id: 1001
+  description: "Payment has been adjusted because the information furnished does not substantiate the need for this level of service. If you believe the service should have been fully covered as billed, or if you did not know and could not reasonably have been expected to know that we would not pay for this level of service, or if you notified the patient in writing in advance that we would not pay for this level of service and he/she agreed in writing to pay, ask us to review your claim within 120 days of the date of this notice. If you do not request a appeal, we will, upon application from the patient, reimburse him/her for the amount you have collected from him/her in excess of any deductible and coinsurance amounts. We will recover the reimbursement from you as an overpayment. Note: (Modified 10/1/02, 6/30/03, 8/1/05)"
+  name: M25
+  rec_id: 25
+250: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid date the patient was last seen or the provider identifier of the attending physician. Note: (Deactivated eff. 1/31/2004) Consider using M128 or M57"
+  name: MA104
+  rec_id: 250
+251: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid provider number for this place of service. Note: (Deactivated eff. 6/2/05)"
+  name: MA105
+  rec_id: 251
+252: 
+  active: 1
+  dept_id: 1001
+  description: "PIP (Periodic Interim Payment) claim. Note: (Modified 6/30/03)"
+  name: MA106
+  rec_id: 252
+253: 
+  active: 1
+  dept_id: 1001
+  description: Paper claim contains more than three separate data items in field 19.
+  name: MA107
+  rec_id: 253
+254: 
+  active: 1
+  dept_id: 1001
+  description: Paper claim contains more than one data item in field 23.
+  name: MA108
+  rec_id: 254
+255: 
+  active: 1
+  dept_id: 1001
+  description: Claim processed in accordance with ambulatory surgical guidelines.
+  name: MA109
+  rec_id: 255
+256: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid information on whether the diagnostic test(s) were performed by an outside entity or if no purchased tests are included on the claim. Note: (Modified 2/28/03)"
+  name: MA110
+  rec_id: 256
+257: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid purchase price of the test(s) and/or the performing laboratory's name and address. Note: (Modified 2/28/03)"
+  name: MA111
+  rec_id: 257
+258: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid group practice information. Note: (Modified 2/28/03)"
+  name: MA112
+  rec_id: 258
+259: 
+  active: 1
+  dept_id: 1001
+  description: Incomplete/invalid taxpayer identification number (TIN) submitted by you per the Internal Revenue Service. Your claims cannot be processed without your correct TIN, and you may not bill the patient pending correction of your TIN. There are no appeal rights for unprocessable claims, but you may resubmit this claim after you have notified this office of your correct TIN.
+  name: MA113
+  rec_id: 259
+26: 
+  active: 1
+  dept_id: 1001
+  description: Payment has been adjusted because the information furnished does not substantiate the need for this level of service. If you have collected any amount from the patient for this level of service /any amount that exceeds the limiting charge for the less extensive service, the law requires you to refund that amount to the patient within 30 days of receiving this notice.
+  name: M26
+  rec_id: 26
+260: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid information on where the services were furnished. Note: (Modified 2/28/03)"
+  name: MA114
+  rec_id: 260
+261: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid physical location (name and address, or PIN) where the service(s) were rendered in a Health Professional Shortage Area (HPSA). Note: (Modified 2/28/03)"
+  name: MA115
+  rec_id: 261
+262: 
+  active: 1
+  dept_id: 1001
+  description: "Did not complete the statement \"Homebound\" on the claim to validate whether laboratory services were performed at home or in an institution. Note: (Reactivated 4/1/04)"
+  name: MA116
+  rec_id: 262
+263: 
+  active: 1
+  dept_id: 1001
+  description: This claim has been assessed a $1.00 user fee.
+  name: MA117
+  rec_id: 263
+264: 
+  active: 1
+  dept_id: 1001
+  description: Coinsurance and/or deductible amounts apply to a claim for services or supplies furnished to a Medicare-eligible veteran through a facility of the Department of Veterans Affairs. No Medicare payment issued.
+  name: MA118
+  rec_id: 264
+265: 
+  active: 1
+  dept_id: 1001
+  description: Provider level adjustment for late claim filing applies to this claim.
+  name: MA119
+  rec_id: 265
+266: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid CLIA certification number. Note: (Modified 2/28/03)"
+  name: MA120
+  rec_id: 266
+267: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid x-ray date. Note: (Modified 12/2/04)"
+  name: MA121
+  rec_id: 267
+268: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid initial treatment date. Note: (Modified 12/2/04)"
+  name: MA122
+  rec_id: 268
+269: 
+  active: 1
+  dept_id: 1001
+  description: Your center was not selected to participate in this study, therefore, we cannot pay for these services.
+  name: MA123
+  rec_id: 269
+27: 
+  active: 1
+  dept_id: 1001
+  description: "requirements for refund are in 1824(I) of the Social Security Act and 42CFR411.408. The section specifies that physicians who knowingly and willfully fail to make appropriate refunds may be subject to civil monetary penalties and/or exclusion from the program. If you have any questions about this notice, please contact this office. Note: (Modified 10/1/02, 6/30/03, 8/1/05. Also refer to N356)"
+  name: The
+  rec_id: 27
+270: 
+  active: 1
+  dept_id: 1001
+  description: "Processed for IME only. Note: (Deactivated eff. 1/31/2004) Consider using Reason Code 74"
+  name: MA124
+  rec_id: 270
+271: 
+  active: 1
+  dept_id: 1001
+  description: Per legislation governing this program, payment constitutes payment in full.
+  name: MA125
+  rec_id: 271
+272: 
+  active: 1
+  dept_id: 1001
+  description: "Pancreas transplant not covered unless kidney transplant performed. Note: (New Code 10/12/01)"
+  name: MA126
+  rec_id: 272
+273: 
+  active: 1
+  dept_id: 1001
+  description: "Reserved for future use. Note: (Deactivated eff. 6/2/05)"
+  name: MA127
+  rec_id: 273
+274: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid FDA approval number. Note: (Modified 2/28/03, 3/30/05)"
+  name: MA128
+  rec_id: 274
+275: 
+  active: 1
+  dept_id: 1001
+  description: "This provider was not certified for this procedure on this date of service. Note: (Deactivated eff. 1/31/2004) Consider using MA120 and Reason Code B7"
+  name: MA129
+  rec_id: 275
+276: 
+  active: 1
+  dept_id: 1001
+  description: Your claim contains incomplete and/or invalid information, and no appeal rights are afforded because the claim is unprocessable. Please submit a new claim with the complete/correct information.
+  name: MA130
+  rec_id: 276
+277: 
+  active: 1
+  dept_id: 1001
+  description: Physician already paid for services in conjunction with this demonstration claim. You must have the physician withdraw that claim and refund the payment before we can process your claim.
+  name: MA131
+  rec_id: 277
+278: 
+  active: 1
+  dept_id: 1001
+  description: Adjustment to the pre-demonstration rate.
+  name: MA132
+  rec_id: 278
+279: 
+  active: 1
+  dept_id: 1001
+  description: Claim overlaps inpatient stay. Rebill only those services rendered outside the inpatient stay.
+  name: MA133
+  rec_id: 279
+28: 
+  active: 1
+  dept_id: 1001
+  description: The patient has been relieved of liability of payment of these items and services under the limitation of liability provision of the law. You, the provider, are ultimately liable for the patient's waived charges, including any charges for coinsurance, since the items or services were not reasonable and necessary or constituted custodial care, and you knew or could reasonably have been expected to know, that they were not covered.
+  name: M27
+  rec_id: 28
+280: 
+  active: 1
+  dept_id: 1001
+  description: Missing/incomplete/invalid provider number of the facility where the patient resides.
+  name: MA134
+  rec_id: 280
+281: 
+  active: 1
+  dept_id: 1001
+  description: "You may appeal this decision in writing within the required time limits following receipt of this notice by following the instructions included in your contract or plan benefit documents. Note: (Modified 2/28/03)"
+  name: N1
+  rec_id: 281
+282: 
+  active: 1
+  dept_id: 1001
+  description: This allowance has been made in accordance with the most appropriate course of treatment provision of the plan.
+  name: N2
+  rec_id: 282
+283: 
+  active: 1
+  dept_id: 1001
+  description: "Missing consent form. Note: (Modified 2/28/03) Related to N228"
+  name: N3
+  rec_id: 283
+284: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid prior insurance carrier EOB. Note: (Modified 2/28/03)"
+  name: N4
+  rec_id: 284
+285: 
+  active: 1
+  dept_id: 1001
+  description: EOB received from previous payer. Claim not on file.
+  name: N5
+  rec_id: 285
+286: 
+  active: 1
+  dept_id: 1001
+  description: "Under FEHB law (U.S.C. 8904(b)), we cannot pay more for covered care than the amount Medicare would have allowed if the patient were enrolled in Medicare Part A and/or Medicare Part B. Note: (Modified 2/28/03)"
+  name: N6
+  rec_id: 286
+287: 
+  active: 1
+  dept_id: 1001
+  description: Processing of this claim/service has included consideration under Major Medical provisions.
+  name: N7
+  rec_id: 287
+288: 
+  active: 1
+  dept_id: 1001
+  description: Crossover claim denied by previous payer and complete claim data not forwarded. Resubmit this claim to this payer to provide adequate data for adjudication.
+  name: N8
+  rec_id: 288
+289: 
+  active: 1
+  dept_id: 1001
+  description: "Adjustment represents the estimated amount a previous payer may pay. Note: (Modified 11/18/05)"
+  name: N9
+  rec_id: 289
+29: 
+  active: 1
+  dept_id: 1001
+  description: "may appeal this determination. You may ask for an appeal regarding both the coverage determination and the issue of whether you exercised due care. The appeal request must be filed within 120 days of the date you receive this notice. You must make the request through this office. Note: (Modified 10/1/02, 8/1/05)"
+  name: You
+  rec_id: 29
+290: 
+  active: 1
+  dept_id: 1001
+  description: "Claim/service adjusted based on the findings of a review organization/professional consult/manual adjudication/medical or dental advisor. Note: (Modified 10/31/02)"
+  name: N10
+  rec_id: 290
+291: 
+  active: 1
+  dept_id: 1001
+  description: Denial reversed because of medical review.
+  name: N11
+  rec_id: 291
+292: 
+  active: 1
+  dept_id: 1001
+  description: Policy provides coverage supplemental to Medicare. As member does not appear to be enrolled in Medicare Part B, the member is responsible for payment of the portion of the charge that would have been covered by Medicare.
+  name: N12
+  rec_id: 292
+293: 
+  active: 1
+  dept_id: 1001
+  description: Payment based on professional/technical component modifier(s).
+  name: N13
+  rec_id: 293
+294: 
+  active: 1
+  dept_id: 1001
+  description: Payment based on a contractual amount or agreement, fee schedule, or maximum allowable amount.
+  name: N14
+  rec_id: 294
+295: 
+  active: 1
+  dept_id: 1001
+  description: Services for a newborn must be billed separately.
+  name: N15
+  rec_id: 295
+296: 
+  active: 1
+  dept_id: 1001
+  description: Family/member Out-of-Pocket maximum has been met. Payment based on a higher percentage.
+  name: N16
+  rec_id: 296
+297: 
+  active: 1
+  dept_id: 1001
+  description: "Per admission deductible. Note: (Deactivated eff. 8/1/04) Consider using Reason Code 1"
+  name: N17
+  rec_id: 297
+298: 
+  active: 1
+  dept_id: 1001
+  description: "Payment based on the Medicare allowed amount. Note: (Deactivated eff. 1/31/2004) Consider using N14"
+  name: N18
+  rec_id: 298
+299: 
+  active: 1
+  dept_id: 1001
+  description: Procedure code incidental to primary procedure.
+  name: N19
+  rec_id: 299
+3: 
+  active: 1
+  dept_id: 1001
+  description: Equipment is the same or similar to equipment already being used.
+  name: M3
+  rec_id: 3
+30: 
+  active: 1
+  dept_id: 1001
+  description: This does not qualify for payment under Part B when Part A coverage is exhausted or not otherwise available.
+  name: M28
+  rec_id: 30
+300: 
+  active: 1
+  dept_id: 1001
+  description: Service not payable with other service rendered on the same date.
+  name: N20
+  rec_id: 300
+301: 
+  active: 1
+  dept_id: 1001
+  description: "Your line item has been separated into multiple lines to expedite handling. Note: (Modified 8/1/05)"
+  name: N21
+  rec_id: 301
+302: 
+  active: 1
+  dept_id: 1001
+  description: "This procedure code was added/changed because it more accurately describes the services rendered. Note: (Modified 10/31/02, 2/28/03)"
+  name: N22
+  rec_id: 302
+303: 
+  active: 1
+  dept_id: 1001
+  description: "Patient liability may be affected due to coordination of benefits with other carriers and/or maximum benefit provisions. Note: (Modified 8/13/01)"
+  name: N23
+  rec_id: 303
+304: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid Electronic Funds Transfer (EFT) banking information. Note: (Modified 2/28/03)"
+  name: N24
+  rec_id: 304
+305: 
+  active: 1
+  dept_id: 1001
+  description: This company has been contracted by your benefit plan to provide administrative claims payment services only. This company does not assume financial risk or obligation with respect to claims processed on behalf of your benefit plan.
+  name: N25
+  rec_id: 305
+306: 
+  active: 1
+  dept_id: 1001
+  description: "Missing itemized bill. Note: (Modified 2/28/03) Related to N232"
+  name: N26
+  rec_id: 306
+307: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid treatment number. Note: (Modified 2/28/03)"
+  name: N27
+  rec_id: 307
+308: 
+  active: 1
+  dept_id: 1001
+  description: Consent form requirements not fulfilled.
+  name: N28
+  rec_id: 308
+309: 
+  active: 1
+  dept_id: 1001
+  description: "Missing documentation/orders/notes/summary/report/chart. Note: (Modified 2/28/03, 8/1/05) Related to N225"
+  name: N29
+  rec_id: 309
+31: 
+  active: 1
+  dept_id: 1001
+  description: "Missing operative report. Note: (Modified 2/28/03) Related to N233"
+  name: M29
+  rec_id: 31
+310: 
+  active: 1
+  dept_id: 1001
+  description: "Patient ineligible for this service. Note: (Modified 6/30/03)"
+  name: N30
+  rec_id: 310
+311: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid prescribing provider identifier. Note: (Modified 12/2/04)"
+  name: N31
+  rec_id: 311
+312: 
+  active: 1
+  dept_id: 1001
+  description: "Claim must be submitted by the provider who rendered the service. Note: (Modified 6/30/03)"
+  name: N32
+  rec_id: 312
+313: 
+  active: 1
+  dept_id: 1001
+  description: No record of health check prior to initiation of treatment.
+  name: N33
+  rec_id: 313
+314: 
+  active: 1
+  dept_id: 1001
+  description: "Incorrect claim form/format for this service. Note: (Modified 11/18/05)"
+  name: N34
+  rec_id: 314
+315: 
+  active: 1
+  dept_id: 1001
+  description: Program integrity/utilization review decision.
+  name: N35
+  rec_id: 315
+316: 
+  active: 1
+  dept_id: 1001
+  description: "Claim must meet primary payer\xE2\x80\x99s processing requirements before we can consider payment."
+  name: N36
+  rec_id: 316
+317: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid tooth number/letter. Note: (Modified 2/28/03)"
+  name: N37
+  rec_id: 317
+318: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid place of service. Note: (Deactivated eff. 2/5/05) Consider using M77"
+  name: N38
+  rec_id: 318
+319: 
+  active: 1
+  dept_id: 1001
+  description: Procedure code is not compatible with tooth number/letter.
+  name: N39
+  rec_id: 319
+32: 
+  active: 1
+  dept_id: 1001
+  description: "Missing pathology report. Note: (Modified 8/1/04, 2/28/03) Related to N236"
+  name: M30
+  rec_id: 32
+320: 
+  active: 1
+  dept_id: 1001
+  description: "Missing x-ray. Note: (Modified 2/1/04) Related to N242"
+  name: N40
+  rec_id: 320
+321: 
+  active: 1
+  dept_id: 1001
+  description: "Authorization request denied. Note: (Deactivated eff. 10/16/03) Consider using Reason Code 39"
+  name: N41
+  rec_id: 321
+322: 
+  active: 1
+  dept_id: 1001
+  description: No record of mental health assessment.
+  name: N42
+  rec_id: 322
+323: 
+  active: 1
+  dept_id: 1001
+  description: Bed hold or leave days exceeded.
+  name: N43
+  rec_id: 323
+324: 
+  active: 1
+  dept_id: 1001
+  description: "Payer\xE2\x80\x99s share of regulatory surcharges, assessments, allowances or health care-related taxes paid directly to the regulatory authority. Note: (Deactivated eff. 10/16/03) Consider using Reason Code 137"
+  name: N44
+  rec_id: 324
+325: 
+  active: 1
+  dept_id: 1001
+  description: Payment based on authorized amount.
+  name: N45
+  rec_id: 325
+326: 
+  active: 1
+  dept_id: 1001
+  description: Missing/incomplete/invalid admission hour.
+  name: N46
+  rec_id: 326
+327: 
+  active: 1
+  dept_id: 1001
+  description: Claim conflicts with another inpatient stay.
+  name: N47
+  rec_id: 327
+328: 
+  active: 1
+  dept_id: 1001
+  description: Claim information does not agree with information received from other insurance carrier.
+  name: N48
+  rec_id: 328
+329: 
+  active: 1
+  dept_id: 1001
+  description: Court ordered coverage information needs validation.
+  name: N49
+  rec_id: 329
+33: 
+  active: 1
+  dept_id: 1001
+  description: "Missing radiology report. Note: (Modified 8/1/04, 2/28/03) Related to N240"
+  name: M31
+  rec_id: 33
+330: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid discharge information. Note: (Modified 2/28/03)"
+  name: N50
+  rec_id: 330
+331: 
+  active: 1
+  dept_id: 1001
+  description: Electronic interchange agreement not on file for provider/submitter.
+  name: N51
+  rec_id: 331
+332: 
+  active: 1
+  dept_id: 1001
+  description: Patient not enrolled in the billing provider's managed care plan on the date of service.
+  name: N52
+  rec_id: 332
+333: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid point of pick-up address. Note: (Modified 2/28/03)"
+  name: N53
+  rec_id: 333
+334: 
+  active: 1
+  dept_id: 1001
+  description: Claim information is inconsistent with pre-certified/authorized services.
+  name: N54
+  rec_id: 334
+335: 
+  active: 1
+  dept_id: 1001
+  description: Procedures for billing with group/referring/performing providers were not followed.
+  name: N55
+  rec_id: 335
+336: 
+  active: 1
+  dept_id: 1001
+  description: "Procedure code billed is not correct/valid for the services billed or the date of service billed. Note: (Modified 2/28/03)"
+  name: N56
+  rec_id: 336
+337: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid prescribing date. Note: (Modified 12/2/04) Related to N304"
+  name: N57
+  rec_id: 337
+338: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid patient liability amount. Note: (Modified 2/28/03)"
+  name: N58
+  rec_id: 338
+339: 
+  active: 1
+  dept_id: 1001
+  description: Please refer to your provider manual for additional program and provider information.
+  name: N59
+  rec_id: 339
+34: 
+  active: 1
+  dept_id: 1001
+  description: This is a conditional payment made pending a decision on this service by the patient's primary payer. This payment may be subject to refund upon your receipt of any additional payment for this service from another payer. You must contact this office immediately upon receipt of an additional payment for this service.
+  name: M32
+  rec_id: 34
+340: 
+  active: 1
+  dept_id: 1001
+  description: "A valid NDC is required for payment of drug claims effective October 02. Note: (Deactivated eff. 1/31/2004) Consider using M119"
+  name: N60
+  rec_id: 340
+341: 
+  active: 1
+  dept_id: 1001
+  description: Rebill services on separate claims.
+  name: N61
+  rec_id: 341
+342: 
+  active: 1
+  dept_id: 1001
+  description: Inpatient admission spans multiple rate periods. Resubmit separate claims.
+  name: N62
+  rec_id: 342
+343: 
+  active: 1
+  dept_id: 1001
+  description: Rebill services on separate claim lines.
+  name: N63
+  rec_id: 343
+344: 
+  active: 1
+  dept_id: 1001
+  description: The "from" and "to" dates must be different.
+  name: N64
+  rec_id: 344
+345: 
+  active: 1
+  dept_id: 1001
+  description: "Procedure code or procedure rate count cannot be determined, or was not on file, for the date of service/provider. Note: (Modified 2/28/03)"
+  name: N65
+  rec_id: 345
+346: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid documentation. Note: (Deactivated eff. 2/5/05) Consider using N29 or N225."
+  name: N66
+  rec_id: 346
+347: 
+  active: 1
+  dept_id: 1001
+  description: "Professional provider services not paid separately. Included in facility payment under a demonstration project. Apply to that facility for payment, or resubmit your claim if: the facility notifies you the patient was excluded from this demonstration; or if you furnished these services in another location on the date of the patient's admission or discharge from a demonstration hospital. If services were furnished in a facility not involved in the demonstration on the same date the patient was discharged from or admitted to a demonstration facility, you must report the provider ID number for the non-demonstration facility on the new claim."
+  name: N67
+  rec_id: 347
+348: 
+  active: 1
+  dept_id: 1001
+  description: Prior payment being canceled as we were subsequently notified this patient was covered by a demonstration project in this site of service. Professional services were included in the payment made to the facility. You must contact the facility for your payment. Prior payment made to you by the patient or another insurer for this claim must be refunded to the payer within 30 days.
+  name: N68
+  rec_id: 348
+349: 
+  active: 1
+  dept_id: 1001
+  description: "PPS (Prospective Payment System) code changed by claims processing system. Insufficient visits or therapies. Note: (Modified 6/30/03)"
+  name: N69
+  rec_id: 349
+35: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid UPIN for the ordering/referring/performing provider. Note: (Deactivated eff. 8/1/04) Consider using M68"
+  name: M33
+  rec_id: 35
+350: 
+  active: 1
+  dept_id: 1001
+  description: "Home health consolidated billing and payment applies. Note: (Modified 2/28/02)"
+  name: N70
+  rec_id: 350
+351: 
+  active: 1
+  dept_id: 1001
+  description: "Your unassigned claim for a drug or biological, clinical diagnostic laboratory services or ambulance service was processed as an assigned claim. You are required by law to accept assignment for these types of claims. Note: (Modified 2/21/02, 6/30/03)"
+  name: N71
+  rec_id: 351
+352: 
+  active: 1
+  dept_id: 1001
+  description: "PPS (Prospective Payment System) code changed by medical reviewers. Not supported by clinical records. Note: (Modified 6/30/03)"
+  name: N72
+  rec_id: 352
+353: 
+  active: 1
+  dept_id: 1001
+  description: "A Skilled Nursing Facility is responsible for payment of outside providers who furnish these services/supplies under arrangement to its residents. Note: (Deactivated eff. 1/31/04) Consider using MA101 or N200"
+  name: N73
+  rec_id: 353
+354: 
+  active: 1
+  dept_id: 1001
+  description: Resubmit with multiple claims, each claim covering services provided in only one calendar month.
+  name: N74
+  rec_id: 354
+355: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid tooth surface information. Note: (Modified 2/28/03)"
+  name: N75
+  rec_id: 355
+356: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid number of riders. Note: (Modified 2/28/03)"
+  name: N76
+  rec_id: 356
+357: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid designated provider number. Note: (Modified 2/28/03)"
+  name: N77
+  rec_id: 357
+358: 
+  active: 1
+  dept_id: 1001
+  description: The necessary components of the child and teen checkup (EPSDT) were not completed.
+  name: N78
+  rec_id: 358
+359: 
+  active: 1
+  dept_id: 1001
+  description: Service billed is not compatible with patient location information.
+  name: N79
+  rec_id: 359
+36: 
+  active: 1
+  dept_id: 1001
+  description: "Claim lacks the CLIA certification number. Note: (Deactivated eff. 8/1/04) Consider using MA120"
+  name: M34
+  rec_id: 36
+360: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid prenatal screening information. Note: (Modified 2/28/03)"
+  name: N80
+  rec_id: 360
+361: 
+  active: 1
+  dept_id: 1001
+  description: Procedure billed is not compatible with tooth surface code.
+  name: N81
+  rec_id: 361
+362: 
+  active: 1
+  dept_id: 1001
+  description: Provider must accept insurance payment as payment in full when a third party payer contract specifies full reimbursement.
+  name: N82
+  rec_id: 362
+363: 
+  active: 1
+  dept_id: 1001
+  description: No appeal rights. Adjudicative decision based on the provisions of a demonstration project.
+  name: N83
+  rec_id: 363
+364: 
+  active: 1
+  dept_id: 1001
+  description: Further installment payments forthcoming.
+  name: N84
+  rec_id: 364
+365: 
+  active: 1
+  dept_id: 1001
+  description: Final installment payment.
+  name: N85
+  rec_id: 365
+366: 
+  active: 1
+  dept_id: 1001
+  description: A failed trial of pelvic muscle exercise training is required in order for biofeedback training for the treatment of urinary incontinence to be covered.
+  name: N86
+  rec_id: 366
+367: 
+  active: 1
+  dept_id: 1001
+  description: Home use of biofeedback therapy is not covered.
+  name: N87
+  rec_id: 367
+368: 
+  active: 1
+  dept_id: 1001
+  description: This payment is being made conditionally. An HHA episode of care notice has been filed for this patient. When a patient is treated under a HHA episode of care, consolidated billing requires that certain therapy services and supplies, such as this, be included in the HHA's payment. This payment will need to be recouped from you if we establish that the patient is concurrently receiving treatment under a HHA episode of care.
+  name: N88
+  rec_id: 368
+369: 
+  active: 1
+  dept_id: 1001
+  description: Payment information for this claim has been forwarded to more than one other payer, but format limitations permit only one of the secondary payers to be identified in this remittance advice.
+  name: N89
+  rec_id: 369
+37: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid pre-operative photos or visual field results. Note: (Deactivated eff. 2/5/05) Consider using N178"
+  name: M35
+  rec_id: 37
+370: 
+  active: 1
+  dept_id: 1001
+  description: Covered only when performed by the attending physician.
+  name: N90
+  rec_id: 370
+371: 
+  active: 1
+  dept_id: 1001
+  description: Services not included in the appeal review.
+  name: N91
+  rec_id: 371
+372: 
+  active: 1
+  dept_id: 1001
+  description: This facility is not certified for digital mammography.
+  name: N92
+  rec_id: 372
+373: 
+  active: 1
+  dept_id: 1001
+  description: A separate claim must be submitted for each place of service. Services furnished at multiple sites may not be billed in the same claim.
+  name: N93
+  rec_id: 373
+374: 
+  active: 1
+  dept_id: 1001
+  description: Claim/Service denied because a more specific taxonomy code is required for adjudication.
+  name: N94
+  rec_id: 374
+375: 
+  active: 1
+  dept_id: 1001
+  description: "This provider type/provider specialty may not bill this service. Note: (New code 7/31/01, Modified 2/28/03)"
+  name: N95
+  rec_id: 375
+376: 
+  active: 1
+  dept_id: 1001
+  description: "Patient must be refractory to conventional therapy (documented behavioral, pharmacologic and/or surgical corrective therapy) and be an appropriate surgical candidate such that implantation with anesthesia can occur. Note: (New code 8/24/01)"
+  name: N96
+  rec_id: 376
+377: 
+  active: 1
+  dept_id: 1001
+  description: "Patients with stress incontinence, urinary obstruction, and specific neurologic diseases (e.g., diabetes with peripheral nerve involvement) which are associated with secondary manifestations of the above three indications are excluded. Note: (New code 8/24/01)"
+  name: N97
+  rec_id: 377
+378: 
+  active: 1
+  dept_id: 1001
+  description: "Patient must have had a successful test stimulation in order to support subsequent implantation. Before a patient is eligible for permanent implantation, he/she must demonstrate a 50 percent or greater improvement through test stimulation. Improvement is measured through voiding diaries. Note: (New code 8/24/01)"
+  name: N98
+  rec_id: 378
+379: 
+  active: 1
+  dept_id: 1001
+  description: "Patient must be able to demonstrate adequate ability to record voiding diary data such that clinical results of the implant procedure can be properly evaluated. Note: (New code 8/24/01)"
+  name: N99
+  rec_id: 379
+38: 
+  active: 1
+  dept_id: 1001
+  description: This is the 11th rental month. We cannot pay for this until you indicate that the patient has been given the option of changing the rental to a purchase.
+  name: M36
+  rec_id: 38
+380: 
+  active: 1
+  dept_id: 1001
+  description: "PPS (Prospect Payment System) code corrected during adjudication. Note: (New code 9/14/01. Modified 6/30/03)"
+  name: N100
+  rec_id: 380
+381: 
+  active: 1
+  dept_id: 1001
+  description: "Additional information is needed in order to process this claim. Please resubmit the claim with the identification number of the provider where this service took place. The Medicare number of the site of service provider should be preceded with the letters \"HSP\" and entered into item #32 on the claim form. You may bill only one site of service provider number per claim. Note: (Deactivated eff. 1/31/04) Consider uisng MA105"
+  name: N101
+  rec_id: 381
+382: 
+  active: 1
+  dept_id: 1001
+  description: "This claim has been denied without reviewing the medical record because the requested records were not received or were not received timely. Note: (New code 10/31/01)"
+  name: N102
+  rec_id: 382
+383: 
+  active: 1
+  dept_id: 1001
+  description: "Social Security records indicate that this patient was a prisoner when the service was rendered. This payer does not cover items and services furnished to an individual while they are in State or local custody under a penal authority, unless under State or local law, the individual is personally liable for the cost of his or her health care while incarcerated and the State or local government pursues such debt in the same way and with the same vigor as any other debt. Note: (Modified 6/30/03)"
+  name: N103
+  rec_id: 383
+384: 
+  active: 1
+  dept_id: 1001
+  description: "This claim/service is not payable under our claims jurisdiction area. You can identify the correct Medicare contractor to process this claim/service through the CMS website at www.cms.hhs.gov. Note: (New code 1/29/02, Modified 10/31/02)"
+  name: N104
+  rec_id: 384
+385: 
+  active: 1
+  dept_id: 1001
+  description: "This is a misdirected claim/service for an RRB beneficiary. Submit paper claims to the RRB carrier: Palmetto GBA, P.O. Box 10066, Augusta, GA 30999. Call 866-749-4301 for RRB EDI information for electronic claims processing. Note: (New code 1/29/02)"
+  name: N105
+  rec_id: 385
+386: 
+  active: 1
+  dept_id: 1001
+  description: "Payment for services furnished to Skilled Nursing Facility (SNF) inpatients (except for excluded services) can only be made to the SNF. You must request payment from the SNF rather than the patient for this service. Note: (New code 1/31/02)"
+  name: N106
+  rec_id: 386
+387: 
+  active: 1
+  dept_id: 1001
+  description: "Services furnished to Skilled Nursing Facility (SNF) inpatients must be billed on the inpatient claim. They cannot be billed separately as outpatient services. Note: (New code 1/31/02)"
+  name: N107
+  rec_id: 387
+388: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid upgrade information. Note: (Modified 2/28/03)"
+  name: N108
+  rec_id: 388
+389: 
+  active: 1
+  dept_id: 1001
+  description: "This claim was chosen for complex review and was denied after reviewing the medical records. Note: (New Code 2/26/02)"
+  name: N109
+  rec_id: 389
+39: 
+  active: 1
+  dept_id: 1001
+  description: Service not covered when the patient is under age 35.
+  name: M37
+  rec_id: 39
+390: 
+  active: 1
+  dept_id: 1001
+  description: "This facility is not certified for film mammography. Note: (New Code 2/28/02)"
+  name: N110
+  rec_id: 390
+391: 
+  active: 1
+  dept_id: 1001
+  description: "No appeal right except duplicate claim/service issue. This service was included in a claim that has been previously billed and adjudicated. Note: (New Code 2/28/02)"
+  name: N111
+  rec_id: 391
+392: 
+  active: 1
+  dept_id: 1001
+  description: "This claim is excluded from your electronic remittance advice. Note: (New Code 2/28/02)"
+  name: N112
+  rec_id: 392
+393: 
+  active: 1
+  dept_id: 1001
+  description: "Only one initial visit is covered per physician, group practice or provider. Note: (New Code 4/16/02. Modified 6/30/03)"
+  name: N113
+  rec_id: 393
+394: 
+  active: 1
+  dept_id: 1001
+  description: "During the transition to the Ambulance Fee Schedule, payment is based on the lesser of a blended amount calculated using a percentage of the reasonable charge/cost and fee schedule amounts, or the submitted charge for the service. You will be notified yearly what the percentages for the blended payment calculation will be. Note: (New Code 5/30/02)"
+  name: N114
+  rec_id: 394
+395: 
+  active: 1
+  dept_id: 1001
+  description: "This decision was based on a local medical review policy (LMRP) or Local Coverage Determination (LCD).An LMRP/LCD provides a guide to assist in determining whether a particular item or service is covered. A copy of this policy is available at http://www.cms.hhs.gov/mcd, or if you do not have web access, you may contact the contractor to request a copy of the LMRP/LCD. Note: (Modified 4/1/04)"
+  name: N115
+  rec_id: 395
+396: 
+  active: 1
+  dept_id: 1001
+  description: "This payment is being made conditionally because the service was provided in the home, and it is possible that the patient is under a home health episode of care. When a patient is treated under a home health episode of care, consolidated billing requires that certain therapy services and supplies, such as this, be included in the home health agency\xE2\x80\x99s (HHA\xE2\x80\x99s) payment. This payment will need to be recouped from you if we establish that the patient is concurrently receiving treatment under an HHA episode of care. Note: (New Code 6/30/02)"
+  name: N116
+  rec_id: 396
+397: 
+  active: 1
+  dept_id: 1001
+  description: "This service is paid only once in a patient\xE2\x80\x99s lifetime. Note: (New Code 7/30/02. Modified 6/30/03)"
+  name: N117
+  rec_id: 397
+398: 
+  active: 1
+  dept_id: 1001
+  description: "This service is not paid if billed more than once every 28 days. Note: (New Code 7/30/02)"
+  name: N118
+  rec_id: 398
+399: 
+  active: 1
+  dept_id: 1001
+  description: "This service is not paid if billed once every 28 days, and the patient has spent 5 or more consecutive days in any inpatient or Skilled /nursing Facility (SNF) within those 28 days. Note: (New Code 7/30/02. Modified 6/30/03)"
+  name: N119
+  rec_id: 399
+4: 
+  active: 1
+  dept_id: 1001
+  description: This is the last monthly installment payment for this durable medical equipment.
+  name: M4
+  rec_id: 4
+40: 
+  active: 1
+  dept_id: 1001
+  description: The patient is liable for the charges for this service as you informed the patient in writing before the service was furnished that we would not pay for it, and the patient agreed to pay.
+  name: M38
+  rec_id: 40
+400: 
+  active: 1
+  dept_id: 1001
+  description: "Payment is subject to home health prospective payment system partial episode payment adjustment. Patient was transferred/discharged/readmitted during payment episode. Note: (New Code 8/9/02. Modified 6/30/03)"
+  name: N120
+  rec_id: 400
+401: 
+  active: 1
+  dept_id: 1001
+  description: "Medicare Part B does not pay for items or services provided by this type of practitioner for beneficiaries in a Medicare Part A covered Skilled Nursing Facility (SNF) stay. Note: (New Code 9/9/02. Modified 8/1/04, 6/30/03)"
+  name: N121
+  rec_id: 401
+402: 
+  active: 1
+  dept_id: 1001
+  description: "Add-on code cannot be billed by itself. Note: (New Code 9/12/02, Modified 8/1/05)"
+  name: N122
+  rec_id: 402
+403: 
+  active: 1
+  dept_id: 1001
+  description: "This is a split service and represents a portion of the units from the originally submitted service. Note: (New Code 9/24/02)"
+  name: N123
+  rec_id: 403
+404: 
+  active: 1
+  dept_id: 1001
+  description: "Payment has been denied for the/made only for a less extensive service/item because the information furnished does not substantiate the need for the (more extensive) service/item. The patient is liable for the charges for this service/item as you informed the patient in writing before the service/item was furnished that we would not pay for it, and the patient agreed to pay. Note: (New Code 9/26/02)"
+  name: N124
+  rec_id: 404
+405: 
+  active: 1
+  dept_id: 1001
+  description: Payment has been (denied for the/made only for a less extensive) service/item because the information furnished does not substantiate the need for the (more extensive) service/item. If you have collected any amount from the patient, you must refund that amount to the patient within 30 days of receiving this notice.
+  name: N125
+  rec_id: 405
+406: 
+  active: 1
+  dept_id: 1001
+  description: "requirements for a refund are in \xC2\xA71834(a)(18) of the Social Security Act (and in \xC2\xA7\xC2\xA71834(j)(4) and 1879(h) by cross-reference to \xC2\xA71834(a)(18)). Section 1834(a)(18)(B) specifies that suppliers which knowingly and willfully fail to make appropriate refunds may be subject to civil money penalties and/or exclusion from the Medicare program. If you have any questions about this notice, please contact this office. Note: (New Code 9/26/02, Modified 8/1/05. Also refer to N356)"
+  name: The
+  rec_id: 406
+407: 
+  active: 1
+  dept_id: 1001
+  description: "Social Security Records indicate that this individual has been deported. This payer does not cover items and services furnished to individuals who have been deported. Note: (New Code 10/17/02)"
+  name: N126
+  rec_id: 407
+408: 
+  active: 1
+  dept_id: 1001
+  description: "This is a misdirected claim/service for a United Mine Workers of America (UMWA) beneficiary. Please submit claims to them. Note: (New Code 10/31/02) Modified 8/1/04"
+  name: N127
+  rec_id: 408
+409: 
+  active: 1
+  dept_id: 1001
+  description: "This amount represents the prior to coverage portion of the allowance. Note: (New Code 10/31/02)"
+  name: N128
+  rec_id: 409
+41: 
+  active: 1
+  dept_id: 1001
+  description: "The patient is not liable for payment for this service as the advance notice of non-coverage you provided the patient did not comply with program requirements. Note: (Modified 2/1/04)"
+  name: M39
+  rec_id: 41
+410: 
+  active: 1
+  dept_id: 1001
+  description: "This amount represents the dollar amount not eligible due to the patient's age. Note: (New Code 10/31/02)"
+  name: N129
+  rec_id: 410
+411: 
+  active: 1
+  dept_id: 1001
+  description: "Consult plan benefit documents for information about restrictions for this service. Note: (New Code 10/31/02)"
+  name: N130
+  rec_id: 411
+412: 
+  active: 1
+  dept_id: 1001
+  description: "Total payments under multiple contracts cannot exceed the allowance for this service. Note: (New Code 10/31/02)"
+  name: N131
+  rec_id: 412
+413: 
+  active: 1
+  dept_id: 1001
+  description: "Payments will cease for services rendered by this US Government debarred or excluded provider after the 30 day grace period as previously notified. Note: (New Code 10/31/02)"
+  name: N132
+  rec_id: 413
+414: 
+  active: 1
+  dept_id: 1001
+  description: "Services for predetermination and services requesting payment are being processed separately. Note: (New Code 10/31/02)"
+  name: N133
+  rec_id: 414
+415: 
+  active: 1
+  dept_id: 1001
+  description: "This represents your scheduled payment for this service. If treatment has been discontinued, please contact Customer Service. Note: (New Code 10/31/02)"
+  name: N134
+  rec_id: 415
+416: 
+  active: 1
+  dept_id: 1001
+  description: "Record fees are the patient's responsibility and limited to the specified co-payment. Note: (New Code 10/31/02)"
+  name: N135
+  rec_id: 416
+417: 
+  active: 1
+  dept_id: 1001
+  description: "To obtain information on the process to file an appeal in Arizona, call the Department's Consumer Assistance Office at (602) 912-8444 or (800) 325-2548. Note: (New Code 10/31/02)"
+  name: N136
+  rec_id: 417
+418: 
+  active: 1
+  dept_id: 1001
+  description: "The provider acting on the Member's behalf, may file an appeal with the Payer. The provider, acting on the Member's behalf, may file a complaint with the State Insurance Regulatory Authority without first filing an appeal, if the coverage decision involves an urgent condition for which care has not been rendered. The address may be obtained from the State Insurance Regulatory Authority. Note: (New Code 10/31/02) Modified 8/1/04, 2/28/03)"
+  name: N137
+  rec_id: 418
+419: 
+  active: 1
+  dept_id: 1001
+  description: "In the event you disagree with the Dental Advisor's opinion and have additional information relative to the case, you may submit radiographs to the Dental Advisor Unit at the subscriber's dental insurance carrier for a second Independent Dental Advisor Review. Note: (New Code 10/31/02)"
+  name: N138
+  rec_id: 419
+42: 
+  active: 1
+  dept_id: 1001
+  description: Claim must be assigned and must be filed by the practitioner's employer.
+  name: M40
+  rec_id: 42
+420: 
+  active: 1
+  dept_id: 1001
+  description: "Under the Code of Federal Regulations, Chapter 32, Section 199.13 a non-participating provider is not an appropriate appealing party. Therefore, if you disagree with the Dental Advisor's opinion, you may appeal the determination if appointed in writing, by the beneficiary, to act as his/her representative. Should you be appointed as a representative, submit a copy of this letter, a signed statement explaining the matter in which you disagree, and any radiographs and relevant information to the subscriber's Dental insurance carrier within 90 days from the date of this letter. Note: (New Code 10/31/02)"
+  name: N139
+  rec_id: 420
+421: 
+  active: 1
+  dept_id: 1001
+  description: "You have not been designated as an authorized OCONUS provider therefore are not considered an appropriate appealing party. If the beneficiary has appointed you, in writing, to act as his/her representative and you disagree with the Dental Advisor's opinion, you may appeal by submitting a copy of this letter, a signed statement explaining the matter in which you disagree, and any relevant information to the subscriber's Dental insurance carrier within 90 days from the date of this letter. Note: (New Code 10/31/02)"
+  name: N140
+  rec_id: 421
+422: 
+  active: 1
+  dept_id: 1001
+  description: "The patient was not residing in a long-term care facility during all or part of the service dates billed. Note: (New Code 10/31/02)"
+  name: N141
+  rec_id: 422
+423: 
+  active: 1
+  dept_id: 1001
+  description: "The original claim was denied. Resubmit a new claim, not a replacement claim. Note: (New Code 10/31/02)"
+  name: N142
+  rec_id: 423
+424: 
+  active: 1
+  dept_id: 1001
+  description: "The patient was not in a hospice program during all or part of the service dates billed. Note: (New Code 10/31/02)"
+  name: N143
+  rec_id: 424
+425: 
+  active: 1
+  dept_id: 1001
+  description: "The rate changed during the dates of service billed. Note: (New Code 10/31/02)"
+  name: N144
+  rec_id: 425
+426: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid provider identifier for this place of service. Note: (Deactivated eff. 6/2/05)"
+  name: N145
+  rec_id: 426
+427: 
+  active: 1
+  dept_id: 1001
+  description: "Missing screening document. Note: (Modified 8/1/04) Related to N243"
+  name: N146
+  rec_id: 427
+428: 
+  active: 1
+  dept_id: 1001
+  description: "Long term care case mix or per diem rate cannot be determined because the patient ID number is missing, incomplete, or invalid on the assignment request. Note: (New Code 10/31/02)"
+  name: N147
+  rec_id: 428
+429: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid date of last menstrual period. Note: (New Code 10/31/02)"
+  name: N148
+  rec_id: 429
+43: 
+  active: 1
+  dept_id: 1001
+  description: We do not pay for this as the patient has no legal obligation to pay for this.
+  name: M41
+  rec_id: 43
+430: 
+  active: 1
+  dept_id: 1001
+  description: "Rebill all applicable services on a single claim. Note: (New Code 10/31/02)"
+  name: N149
+  rec_id: 430
+431: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid model number. Note: (New Code 10/31/02)"
+  name: N150
+  rec_id: 431
+432: 
+  active: 1
+  dept_id: 1001
+  description: "Telephone contact services will not be paid until the face-to-face contact requirement has been met. Note: (New Code 10/31/02)"
+  name: N151
+  rec_id: 432
+433: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid replacement claim information. Note: (New Code 10/31/02)"
+  name: N152
+  rec_id: 433
+434: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid room and board rate. Note: (New Code 10/31/02)"
+  name: N153
+  rec_id: 434
+435: 
+  active: 1
+  dept_id: 1001
+  description: "This payment was delayed for correction of provider's mailing address. Note: (New Code 10/31/02)"
+  name: N154
+  rec_id: 435
+436: 
+  active: 1
+  dept_id: 1001
+  description: "Our records do not indicate that other insurance is on file. Please submit other insurance information for our records. Note: (New Code 10/31/02)"
+  name: N155
+  rec_id: 436
+437: 
+  active: 1
+  dept_id: 1001
+  description: "The patient is responsible for the difference between the approved treatment and the elective treatment. Note: (New Code 10/31/02)"
+  name: N156
+  rec_id: 437
+438: 
+  active: 1
+  dept_id: 1001
+  description: "Transportation to/from this destination is not covered. Note: (New Code 2/28/03, Modified 2/1/04)"
+  name: N157
+  rec_id: 438
+439: 
+  active: 1
+  dept_id: 1001
+  description: "Transportation in a vehicle other than an ambulance is not covered. Note: (New Code 2/28/03)"
+  name: N158
+  rec_id: 439
+44: 
+  active: 1
+  dept_id: 1001
+  description: The medical necessity form must be personally signed by the attending physician.
+  name: M42
+  rec_id: 44
+440: 
+  active: 1
+  dept_id: 1001
+  description: "Payment denied/reduced because mileage is not covered when the patient is not in the ambulance. Note: (New Code 2/28/03)"
+  name: N159
+  rec_id: 440
+441: 
+  active: 1
+  dept_id: 1001
+  description: "The patient must choose an option before a payment can be made for this procedure/ equipment/ supply/ service. Note: (New Code 2/28/03, Modified 2/1/04)"
+  name: N160
+  rec_id: 441
+442: 
+  active: 1
+  dept_id: 1001
+  description: "This drug/service/supply is covered only when the associated service is covered. Note: (New Code 2/28/03)"
+  name: N161
+  rec_id: 442
+443: 
+  active: 1
+  dept_id: 1001
+  description: "This is an alert. Although your claim was paid, you have billed for a test/specialty not included in your Laboratory Certification. Your failure to correct the laboratory certification information will result in a denial of payment in the near future. Note: (New Code 2/28/03)"
+  name: N162
+  rec_id: 443
+444: 
+  active: 1
+  dept_id: 1001
+  description: "Medical record does not support code billed per the code definition. Note: (New Code 2/28/03)"
+  name: N163
+  rec_id: 444
+445: 
+  active: 1
+  dept_id: 1001
+  description: "Transportation to/from this destination is not covered. Note: (Deactivated eff. 1/31/04) Consider using N157"
+  name: N164
+  rec_id: 445
+446: 
+  active: 1
+  dept_id: 1001
+  description: "Transportation in a vehicle other than an ambulance is not covered. Note: (Deactivated eff. 1/31/04) Consider using N158)"
+  name: N165
+  rec_id: 446
+447: 
+  active: 1
+  dept_id: 1001
+  description: "Payment denied/reduced because mileage is not covered when the patient is not in the ambulance. Note: (Deactivated eff. 1/31/04) Consider using N159"
+  name: N166
+  rec_id: 447
+448: 
+  active: 1
+  dept_id: 1001
+  description: "Charges exceed the post-transplant coverage limit. Note: (New Code 2/28/03)"
+  name: N167
+  rec_id: 448
+449: 
+  active: 1
+  dept_id: 1001
+  description: "The patient must choose an option before a payment can be made for this procedure/ equipment/ supply/ service. Note: (Deactivated eff. 1/31/04) Consider using N160"
+  name: N168
+  rec_id: 449
+45: 
+  active: 1
+  dept_id: 1001
+  description: "Payment for this service previously issued to you or another provider by another carrier/intermediary. Note: (Deactivated eff. 1/31/04) Consider using Reason Code 23"
+  name: M43
+  rec_id: 45
+450: 
+  active: 1
+  dept_id: 1001
+  description: "This drug/service/supply is covered only when the associated service is covered. Note: (Deactivated eff. 1/31/04) Consider using N161"
+  name: N169
+  rec_id: 450
+451: 
+  active: 1
+  dept_id: 1001
+  description: "A new/revised/renewed certificate of medical necessity is needed. Note: (New Code 2/28/03)"
+  name: N170
+  rec_id: 451
+452: 
+  active: 1
+  dept_id: 1001
+  description: "Payment for repair or replacement is not covered or has exceeded the purchase price. Note: (New Code 2/28/03)"
+  name: N171
+  rec_id: 452
+453: 
+  active: 1
+  dept_id: 1001
+  description: "The patient is not liable for the denied/adjusted charge(s) for receiving any updated service/item. Note: (New Code 2/28/03)"
+  name: N172
+  rec_id: 453
+454: 
+  active: 1
+  dept_id: 1001
+  description: "No qualifying hospital stay dates were provided for this episode of care. Note: (New Code 2/28/03)"
+  name: N173
+  rec_id: 454
+455: 
+  active: 1
+  dept_id: 1001
+  description: "This is not a covered service/procedure/ equipment/bed, however patient liability is limited to amounts shown in the adjustments under group \"PR\". Note: (New Code 2/28/03)"
+  name: N174
+  rec_id: 455
+456: 
+  active: 1
+  dept_id: 1001
+  description: "Missing Review Organization Approval. Note: (Modified 8/1/04) Related to N241"
+  name: N175
+  rec_id: 456
+457: 
+  active: 1
+  dept_id: 1001
+  description: "Services provided aboard a ship are covered only when the ship is of United States registry and is in United States waters. In addition, a doctor licensed to practice in the United States must provide the service. Note: (New Code 2/28/03)"
+  name: N176
+  rec_id: 457
+458: 
+  active: 1
+  dept_id: 1001
+  description: "We did not send this claim to patient\xE2\x80\x99s other insurer. They have indicated no additional payment can be made. Note: (New Code 2/28/03. Modified 6/30/03)"
+  name: N177
+  rec_id: 458
+459: 
+  active: 1
+  dept_id: 1001
+  description: "Missing pre-operative photos or visual field results. Note: (Modified 8/1/04) Related to N244"
+  name: N178
+  rec_id: 459
+46: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid condition code. Note: (Modified 2/28/03)"
+  name: M44
+  rec_id: 46
+460: 
+  active: 1
+  dept_id: 1001
+  description: "Additional information has been requested from the member. The charges will be reconsidered upon receipt of that information. Note: (New Code 2/28/03)"
+  name: N179
+  rec_id: 460
+461: 
+  active: 1
+  dept_id: 1001
+  description: "This item or service does not meet the criteria for the category under which it was billed. Note: (New Code 2/28/03)"
+  name: N180
+  rec_id: 461
+462: 
+  active: 1
+  dept_id: 1001
+  description: "Additional information has been requested from another provider involved in the care of this member. The charges will be reconsidered upon receipt of that information. Note: (New Code 2/28/03)"
+  name: N181
+  rec_id: 462
+463: 
+  active: 1
+  dept_id: 1001
+  description: "This claim/service must be billed according to the schedule for this plan. Note: (New Code 2/28/03)"
+  name: N182
+  rec_id: 463
+464: 
+  active: 1
+  dept_id: 1001
+  description: "This is a predetermination advisory message, when this service is submitted for payment additional documentation as specified in plan documents will be required to process benefits. Note: (New Code 2/28/03)"
+  name: N183
+  rec_id: 464
+465: 
+  active: 1
+  dept_id: 1001
+  description: "Rebill technical and professional components separately. Note: (New Code 2/28/03)"
+  name: N184
+  rec_id: 465
+466: 
+  active: 1
+  dept_id: 1001
+  description: "Do not resubmit this claim/service. Note: (New Code 2/28/03)"
+  name: N185
+  rec_id: 466
+467: 
+  active: 1
+  dept_id: 1001
+  description: "Non-Availability Statement (NAS) required for this service. Contact the nearest Military Treatment Facility (MTF) for assistance. Note: (New Code 2/28/03)"
+  name: N186
+  rec_id: 467
+468: 
+  active: 1
+  dept_id: 1001
+  description: "You may request a review in writing within the required time limits following receipt of this notice by following the instructions included in your contract or plan benefit documents. Note: (New Code 2/28/03)"
+  name: N187
+  rec_id: 468
+469: 
+  active: 1
+  dept_id: 1001
+  description: "The approved level of care does not match the procedure code submitted. Note: (New Code 2/28/03)"
+  name: N188
+  rec_id: 469
+47: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid occurrence code(s). Note: (Modified 12/2/04) Related to N299"
+  name: M45
+  rec_id: 47
+470: 
+  active: 1
+  dept_id: 1001
+  description: "This service has been paid as a one-time exception to the plan's benefit restrictions. Note: (New Code 2/28/03)"
+  name: N189
+  rec_id: 470
+471: 
+  active: 1
+  dept_id: 1001
+  description: "Missing contract indicator. Note: (Modified 8/1/04) Related to N229"
+  name: N190
+  rec_id: 471
+472: 
+  active: 1
+  dept_id: 1001
+  description: "The provider must update insurance information directly with payer. Note: (New Code 2/28/03)"
+  name: N191
+  rec_id: 472
+473: 
+  active: 1
+  dept_id: 1001
+  description: "Patient is a Medicaid/Qualified Medicare Beneficiary. Note: (New Code 2/28/03)"
+  name: N192
+  rec_id: 473
+474: 
+  active: 1
+  dept_id: 1001
+  description: "Specific federal/state/local program may cover this service through another payer. Note: (New Code 2/28/03)"
+  name: N193
+  rec_id: 474
+475: 
+  active: 1
+  dept_id: 1001
+  description: "Technical component not paid if provider does not own the equipment used. Note: (New Code 2/28/03)"
+  name: N194
+  rec_id: 475
+476: 
+  active: 1
+  dept_id: 1001
+  description: "The technical component must be billed separately. Note: (New Code 2/28/03)"
+  name: N195
+  rec_id: 476
+477: 
+  active: 1
+  dept_id: 1001
+  description: "Patient eligible to apply for other coverage which may be primary. Note: (New Code 2/28/03)"
+  name: N196
+  rec_id: 477
+478: 
+  active: 1
+  dept_id: 1001
+  description: "The subscriber must update insurance information directly with payer. Note: (New Code 2/28/03)"
+  name: N197
+  rec_id: 478
+479: 
+  active: 1
+  dept_id: 1001
+  description: "Rendering provider must be affiliated with the pay-to provider. Note: (New Code 2/28/03)"
+  name: N198
+  rec_id: 479
+48: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid occurrence span code(s). Note: (Modified 12/2/04) Related to N300"
+  name: M46
+  rec_id: 48
+480: 
+  active: 1
+  dept_id: 1001
+  description: "Additional payment/recoupment approved based on payer-initiated review/audit. Note: (New Code 2/28/03, Modified 8/1/06)"
+  name: N199
+  rec_id: 480
+481: 
+  active: 1
+  dept_id: 1001
+  description: "The professional component must be billed separately. Note: (New Code 2/28/03)"
+  name: N200
+  rec_id: 481
+482: 
+  active: 1
+  dept_id: 1001
+  description: "A mental health facility is responsible for payment of outside providers who furnish these services/supplies to residents. Note: (New Code 2/28/03)"
+  name: N201
+  rec_id: 482
+483: 
+  active: 1
+  dept_id: 1001
+  description: "Additional information/explanation will be sent separately. Note: (New Code 6/30/03)"
+  name: N202
+  rec_id: 483
+484: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid anesthesia time/units. Note: (New Code 6/30/03)"
+  name: N203
+  rec_id: 484
+485: 
+  active: 1
+  dept_id: 1001
+  description: "Services under review for possible pre-existing condition. Send medical records for prior 12 months. Note: (New Code 6/30/03)"
+  name: N204
+  rec_id: 485
+486: 
+  active: 1
+  dept_id: 1001
+  description: "Information provided was illegible. Note: (New Code 6/30/03)"
+  name: N205
+  rec_id: 486
+487: 
+  active: 1
+  dept_id: 1001
+  description: "The supporting documentation does not match the claim. Note: (New Code 6/30/03)"
+  name: N206
+  rec_id: 487
+488: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid weight. Note: (New Code 6/30/03, Modified 11/18/05)"
+  name: N207
+  rec_id: 488
+489: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid DRG code. Note: (New Code 6/30/03)"
+  name: N208
+  rec_id: 489
+49: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid internal or document control number. Note: (Modified 2/28/03)"
+  name: M47
+  rec_id: 49
+490: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/invalid/incomplete taxpayer identification number (TIN). Note: (New Code 6/30/03)"
+  name: N209
+  rec_id: 490
+491: 
+  active: 1
+  dept_id: 1001
+  description: "You may appeal this decision. Note: (New Code 6/30/03)"
+  name: N210
+  rec_id: 491
+492: 
+  active: 1
+  dept_id: 1001
+  description: "You may not appeal this decision. Note: (New Code 6/30/03)"
+  name: N211
+  rec_id: 492
+493: 
+  active: 1
+  dept_id: 1001
+  description: "Charges processed under a Point of Service benefit. Note: (New Code 2/1/04)"
+  name: N212
+  rec_id: 493
+494: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid facility/discrete unit DRG/DRG exempt status information. Note: (New Code 4/1/04)"
+  name: N213
+  rec_id: 494
+495: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid history of the related initial surgical procedure(s). Note: (New Code 4/1/04)"
+  name: N214
+  rec_id: 495
+496: 
+  active: 1
+  dept_id: 1001
+  description: "A payer providing supplemental or secondary coverage shall not require a claims determination for this service from a primary payer as a condition of making its own claims determination. Note: (New Code 4/1/04)"
+  name: N215
+  rec_id: 496
+497: 
+  active: 1
+  dept_id: 1001
+  description: "Patient is not enrolled in this portion of our benefit package. Note: (New Code 4/1/04)"
+  name: N216
+  rec_id: 497
+498: 
+  active: 1
+  dept_id: 1001
+  description: "We pay only one site of service per provider per claim. Note: (New Code 8/1/04)"
+  name: N217
+  rec_id: 498
+499: 
+  active: 1
+  dept_id: 1001
+  description: "You must furnish and service this item for as long as the patient continues to need it. We can pay for maintenance and/or servicing for the time period specified in the contract or coverage manual. Note: (New Code 8/1/04)"
+  name: N218
+  rec_id: 499
+5: 
+  active: 1
+  dept_id: 1001
+  description: Monthly rental payments can continue until the earlier of the 15th month from the first rental month, or the month when the equipment is no longer needed.
+  name: M5
+  rec_id: 5
+50: 
+  active: 1
+  dept_id: 1001
+  description: "Payment for services furnished to hospital inpatients (other than professional services of physicians) can only be made to the hospital. You must request payment from the hospital rather than the patient for this service. Note: (Deactivated eff. 1/31/04) Consider using M97"
+  name: M48
+  rec_id: 50
+500: 
+  active: 1
+  dept_id: 1001
+  description: "Payment based on previous payer's allowed amount. Note: (New Code 8/1/04)"
+  name: N219
+  rec_id: 500
+501: 
+  active: 1
+  dept_id: 1001
+  description: "See the payer's web site or contact the payer's Customer Service department to obtain forms and instructions for filing a provider dispute. Note: (New Code 8/1/04)"
+  name: N220
+  rec_id: 501
+502: 
+  active: 1
+  dept_id: 1001
+  description: "Missing Admitting History and Physical report. Note: (New Code 8/1/04)"
+  name: N221
+  rec_id: 502
+503: 
+  active: 1
+  dept_id: 1001
+  description: "Incomplete/invalid Admitting History and Physical report. Note: (New Code 8/1/04)"
+  name: N222
+  rec_id: 503
+504: 
+  active: 1
+  dept_id: 1001
+  description: "Missing documentation of benefit to the patient during initial treatment period. Note: (New Code 8/1/04)"
+  name: N223
+  rec_id: 504
+505: 
+  active: 1
+  dept_id: 1001
+  description: "Incomplete/invalid documentation of benefit to the patient during initial treatment period. Note: (New Code 8/1/04)"
+  name: N224
+  rec_id: 505
+506: 
+  active: 1
+  dept_id: 1001
+  description: "Incomplete/invalid documentation/orders/notes/summary/report/chart. Note: (New Code 8/1/04, Modified 8/1/05)"
+  name: N225
+  rec_id: 506
+507: 
+  active: 1
+  dept_id: 1001
+  description: "Incomplete/invalid American Diabetes Association Certificate of Recognition. Note: (New Code 8/1/04)"
+  name: N226
+  rec_id: 507
+508: 
+  active: 1
+  dept_id: 1001
+  description: "Incomplete/invalid Certificate of Medical Necessity. Note: (New Code 8/1/04)"
+  name: N227
+  rec_id: 508
+509: 
+  active: 1
+  dept_id: 1001
+  description: "Incomplete/invalid consent form. Note: (New Code 8/1/04)"
+  name: N228
+  rec_id: 509
+51: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid value code(s) or amount(s). Note: (Modified 2/28/03)"
+  name: M49
+  rec_id: 51
+510: 
+  active: 1
+  dept_id: 1001
+  description: "Incomplete/invalid contract indicator. Note: (New Code 8/1/04)"
+  name: N229
+  rec_id: 510
+511: 
+  active: 1
+  dept_id: 1001
+  description: "Incomplete/invalid indication of whether the patient owns the equipment that requires the part or supply. Note: (New Code 8/1/04)"
+  name: N230
+  rec_id: 511
+512: 
+  active: 1
+  dept_id: 1001
+  description: "Incomplete/invalid invoice or statement certifying the actual cost of the lens, less discounts, and/or the type of intraocular lens used. Note: (New Code 8/1/04)"
+  name: N231
+  rec_id: 512
+513: 
+  active: 1
+  dept_id: 1001
+  description: "Incomplete/invalid itemized bill. Note: (New Code 8/1/04)"
+  name: N232
+  rec_id: 513
+514: 
+  active: 1
+  dept_id: 1001
+  description: "Incomplete/invalid operative report. Note: (New Code 8/1/04)"
+  name: N233
+  rec_id: 514
+515: 
+  active: 1
+  dept_id: 1001
+  description: "Incomplete/invalid oxygen certification/re-certification. Note: (New Code 8/1/04)"
+  name: N234
+  rec_id: 515
+516: 
+  active: 1
+  dept_id: 1001
+  description: "Incomplete/invalid pacemaker registration form. Note: (New Code 8/1/04)"
+  name: N235
+  rec_id: 516
+517: 
+  active: 1
+  dept_id: 1001
+  description: "Incomplete/invalid pathology report. Note: (New Code 8/1/04)"
+  name: N236
+  rec_id: 517
+518: 
+  active: 1
+  dept_id: 1001
+  description: "Incomplete/invalid patient medical record for this service. Note: (New Code 8/1/04)"
+  name: N237
+  rec_id: 518
+519: 
+  active: 1
+  dept_id: 1001
+  description: "Incomplete/invalid physician certified plan of care. Note: (New Code 8/1/04)"
+  name: N238
+  rec_id: 519
+52: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid revenue code(s). Note: (Modified 2/28/03)"
+  name: M50
+  rec_id: 52
+520: 
+  active: 1
+  dept_id: 1001
+  description: "Incomplete/invalid physician financial relationship form. Note: (New Code 8/1/04)"
+  name: N239
+  rec_id: 520
+521: 
+  active: 1
+  dept_id: 1001
+  description: "Incomplete/invalid radiology report. Note: (New Code 8/1/04)"
+  name: N240
+  rec_id: 521
+522: 
+  active: 1
+  dept_id: 1001
+  description: "Incomplete/invalid Review Organization Approval. Note: (New Code 8/1/04)"
+  name: N241
+  rec_id: 522
+523: 
+  active: 1
+  dept_id: 1001
+  description: "Incomplete/invalid x-ray. Note: (New Code 8/1/04)"
+  name: N242
+  rec_id: 523
+524: 
+  active: 1
+  dept_id: 1001
+  description: "Incomplete/invalid/not approved screening document. Note: (New Code 8/1/04)"
+  name: N243
+  rec_id: 524
+525: 
+  active: 1
+  dept_id: 1001
+  description: "Incomplete/invalid pre-operative photos/visual field results. Note: (New Code 8/1/04)"
+  name: N244
+  rec_id: 525
+526: 
+  active: 1
+  dept_id: 1001
+  description: "Incomplete/invalid plan information for other insurance. Note: (New Code 8/1/04)"
+  name: N245
+  rec_id: 526
+527: 
+  active: 1
+  dept_id: 1001
+  description: "State regulated patient payment limitations apply to this service. Note: (New Code 12/2/04)"
+  name: N246
+  rec_id: 527
+528: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid assistant surgeon taxonomy. Note: (New Code 12/2/04)"
+  name: N247
+  rec_id: 528
+529: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid assistant surgeon name. Note: (New Code 12/2/04)"
+  name: N248
+  rec_id: 529
+53: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid procedure code(s). Note: (Modified 12/2/04) Related to N301"
+  name: M51
+  rec_id: 53
+530: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid assistant surgeon primary identifier. Note: (New Code 12/2/04)"
+  name: N249
+  rec_id: 530
+531: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid assistant surgeon secondary identifier. Note: (New Code 12/2/04)"
+  name: N250
+  rec_id: 531
+532: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid attending provider taxonomy. Note: (New Code 12/2/04)"
+  name: N251
+  rec_id: 532
+533: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid attending provider name. Note: (New Code 12/2/04)"
+  name: N252
+  rec_id: 533
+534: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid attending provider primary identifier. Note: (New Code 12/2/04)"
+  name: N253
+  rec_id: 534
+535: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid attending provider secondary identifier. Note: (New Code 12/2/04)"
+  name: N254
+  rec_id: 535
+536: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid billing provider taxonomy. Note: (New Code 12/2/04)"
+  name: N255
+  rec_id: 536
+537: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid billing provider/supplier name. Note: (New Code 12/2/04)"
+  name: N256
+  rec_id: 537
+538: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid billing provider/supplier primary identifier. Note: (New Code 12/2/04)"
+  name: N257
+  rec_id: 538
+539: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid billing provider/supplier address. Note: (New Code 12/2/04)"
+  name: N258
+  rec_id: 539
+54: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid \xE2\x80\x9Cfrom\xE2\x80\x9D date(s) of service. Note: (Modified 2/28/03)"
+  name: M52
+  rec_id: 54
+540: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid billing provider/supplier secondary identifier. Note: (New Code 12/2/04)"
+  name: N259
+  rec_id: 540
+541: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid billing provider/supplier contact information. Note: (New Code 12/2/04)"
+  name: N260
+  rec_id: 541
+542: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid operating provider name. Note: (New Code 12/2/04)"
+  name: N261
+  rec_id: 542
+543: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid operating provider primary identifier. Note: (New Code 12/2/04)"
+  name: N262
+  rec_id: 543
+544: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid operating provider secondary identifier. Note: (New Code 12/2/04)"
+  name: N263
+  rec_id: 544
+545: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid ordering provider name. Note: (New Code 12/2/04)"
+  name: N264
+  rec_id: 545
+546: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid ordering provider primary identifier. Note: (New Code 12/2/04)"
+  name: N265
+  rec_id: 546
+547: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid ordering provider address. Note: (New Code 12/2/04)"
+  name: N266
+  rec_id: 547
+548: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid ordering provider secondary identifier. Note: (New Code 12/2/04)"
+  name: N267
+  rec_id: 548
+549: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid ordering provider contact information. Note: (New Code 12/2/04)"
+  name: N268
+  rec_id: 549
+55: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid days or units of service. Note: (Modified 2/28/03)"
+  name: M53
+  rec_id: 55
+550: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid other provider name. Note: (New Code 12/2/04)"
+  name: N269
+  rec_id: 550
+551: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid other provider primary identifier. Note: (New Code 12/2/04)"
+  name: N270
+  rec_id: 551
+552: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid other provider secondary identifier. Note: (New Code 12/2/04)"
+  name: N271
+  rec_id: 552
+553: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid other payer attending provider identifier. Note: (New Code 12/2/04)"
+  name: N272
+  rec_id: 553
+554: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid other payer operating provider identifier. Note: (New Code 12/2/04)"
+  name: N273
+  rec_id: 554
+555: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid other payer other provider identifier. Note: (New Code 12/2/04)"
+  name: N274
+  rec_id: 555
+556: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid other payer purchased service provider identifier. Note: (New Code 12/2/04)"
+  name: N275
+  rec_id: 556
+557: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid other payer referring provider identifier. Note: (New Code 12/2/04)"
+  name: N276
+  rec_id: 557
+558: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid other payer rendering provider identifier. Note: (New Code 12/2/04)"
+  name: N277
+  rec_id: 558
+559: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid other payer service facility provider identifier. Note: (New Code 12/2/04)"
+  name: N278
+  rec_id: 559
+56: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid total charges. Note: (Modified 2/28/03)"
+  name: M54
+  rec_id: 56
+560: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid pay-to provider name. Note: (New Code 12/2/04)"
+  name: N279
+  rec_id: 560
+561: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid pay-to provider primary identifier. Note: (New Code 12/2/04)"
+  name: N280
+  rec_id: 561
+562: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid pay-to provider address. Note: (New Code 12/2/04)"
+  name: N281
+  rec_id: 562
+563: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid pay-to provider secondary identifier. Note: (New Code 12/2/04)"
+  name: N282
+  rec_id: 563
+564: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid purchased service provider identifier. Note: (New Code 12/2/04)"
+  name: N283
+  rec_id: 564
+565: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid referring provider taxonomy. Note: (New Code 12/2/04)"
+  name: N284
+  rec_id: 565
+566: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid referring provider name. Note: (New Code 12/2/04)"
+  name: N285
+  rec_id: 566
+567: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid referring provider primary identifier. Note: (New Code 12/2/04)"
+  name: N286
+  rec_id: 567
+568: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid referring provider secondary identifier. Note: (New Code 12/2/04)"
+  name: N287
+  rec_id: 568
+569: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid rendering provider taxonomy. Note: (New Code 12/2/04)"
+  name: N288
+  rec_id: 569
+57: 
+  active: 1
+  dept_id: 1001
+  description: We do not pay for self-administered anti-emetic drugs that are not administered with a covered oral anti-cancer drug.
+  name: M55
+  rec_id: 57
+570: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid rendering provider name. Note: (New Code 12/2/04)"
+  name: N289
+  rec_id: 570
+571: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid rendering provider primary identifier. Note: (New Code 12/2/04)"
+  name: N290
+  rec_id: 571
+572: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid rending provider secondary identifier. Note: (New Code 12/2/04)"
+  name: N291
+  rec_id: 572
+573: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid service facility name. Note: (New Code 12/2/04)"
+  name: N292
+  rec_id: 573
+574: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid service facility primary identifier. Note: (New Code 12/2/04)"
+  name: N293
+  rec_id: 574
+575: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid service facility primary address. Note: (New Code 12/2/04)"
+  name: N294
+  rec_id: 575
+576: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid service facility secondary identifier. Note: (New Code 12/2/04)"
+  name: N295
+  rec_id: 576
+577: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid supervising provider name. Note: (New Code 12/2/04)"
+  name: N296
+  rec_id: 577
+578: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid supervising provider primary identifier. Note: (New Code 12/2/04)"
+  name: N297
+  rec_id: 578
+579: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid supervising provider secondary identifier. Note: (New Code 12/2/04)"
+  name: N298
+  rec_id: 579
+58: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid payer identifier. Note: (Modified 2/28/03)"
+  name: M56
+  rec_id: 58
+580: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid occurrence date(s). Note: (New Code 12/2/04)"
+  name: N299
+  rec_id: 580
+581: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid occurrence span date(s). Note: (New Code 12/2/04)"
+  name: N300
+  rec_id: 581
+582: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid procedure date(s). Note: (New Code 12/2/04)"
+  name: N301
+  rec_id: 582
+583: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid other procedure date(s). Note: (New Code 12/2/04)"
+  name: N302
+  rec_id: 583
+584: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid principal procedure date. Note: (New Code 12/2/04)"
+  name: N303
+  rec_id: 584
+585: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid dispensed date. Note: (New Code 12/2/04)"
+  name: N304
+  rec_id: 585
+586: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid accident date. Note: (New Code 12/2/04)"
+  name: N305
+  rec_id: 586
+587: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid acute manifestation date. Note: (New Code 12/2/04)"
+  name: N306
+  rec_id: 587
+588: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid adjudication or payment date. Note: (New Code 12/2/04)"
+  name: N307
+  rec_id: 588
+589: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid appliance placement date. Note: (New Code 12/2/04)"
+  name: N308
+  rec_id: 589
+59: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid provider identifier. Note: (Deactivated eff. 6/2/05)"
+  name: M57
+  rec_id: 59
+590: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid assessment date. Note: (New Code 12/2/04)"
+  name: N309
+  rec_id: 590
+591: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid assumed or relinquished care date. Note: (New Code 12/2/04)"
+  name: N310
+  rec_id: 591
+592: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid authorized to return to work date. Note: (New Code 12/2/04)"
+  name: N311
+  rec_id: 592
+593: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid begin therapy date. Note: (New Code 12/2/04)"
+  name: N312
+  rec_id: 593
+594: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid certification revision date. Note: (New Code 12/2/04)"
+  name: N313
+  rec_id: 594
+595: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid diagnosis date. Note: (New Code 12/2/04)"
+  name: N314
+  rec_id: 595
+596: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid disability from date. Note: (New Code 12/2/04)"
+  name: N315
+  rec_id: 596
+597: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid disability to date. Note: (New Code 12/2/04)"
+  name: N316
+  rec_id: 597
+598: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid discharge hour. Note: (New Code 12/2/04)"
+  name: N317
+  rec_id: 598
+599: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid discharge or end of care date. Note: (New Code 12/2/04)"
+  name: N318
+  rec_id: 599
+6: 
+  active: 1
+  dept_id: 1001
+  description: You must furnish and service this item for as long as the patient continues to need it. We can pay for maintenance and/or servicing for every 6 month period after the end of the 15th paid rental month or the end of the warranty period.
+  name: M6
+  rec_id: 6
+60: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid claim information. Resubmit claim after corrections. Note: (Deactivated eff. 2/5/05)"
+  name: M58
+  rec_id: 60
+600: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid hearing or vision prescription date. Note: (New Code 12/2/04)"
+  name: N319
+  rec_id: 600
+601: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid Home Health Certification Period. Note: (New Code 12/2/04)"
+  name: N320
+  rec_id: 601
+602: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid last admission period. Note: (New Code 12/2/04)"
+  name: N321
+  rec_id: 602
+603: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid last certification date. Note: (New Code 12/2/04)"
+  name: N322
+  rec_id: 603
+604: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid last contact date. Note: (New Code 12/2/04)"
+  name: N323
+  rec_id: 604
+605: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid last seen/visit date. Note: (New Code 12/2/04)"
+  name: N324
+  rec_id: 605
+606: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid last worked date. Note: (New Code 12/2/04)"
+  name: N325
+  rec_id: 606
+607: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalide last x-ray date. Note: (New Code 12/2/04)"
+  name: N326
+  rec_id: 607
+608: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid other insured birth date. Note: (New Code 12/2/04)"
+  name: N327
+  rec_id: 608
+609: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid Oxygen Saturation Test date. Note: (New Code 12/2/04)"
+  name: N328
+  rec_id: 609
+61: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid \xE2\x80\x9Cto\xE2\x80\x9D date(s) of service. Note: (Modified 2/28/03)"
+  name: M59
+  rec_id: 61
+610: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid patient birth date. Note: (New Code 12/2/04)"
+  name: N329
+  rec_id: 610
+611: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid patient death date. Note: (New Code 12/2/04)"
+  name: N330
+  rec_id: 611
+612: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid physician order date. Note: (New Code 12/2/04)"
+  name: N331
+  rec_id: 612
+613: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid prior hospital discharge date. Note: (New Code 12/2/04)"
+  name: N332
+  rec_id: 613
+614: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid prior placement date. Note: (New Code 12/2/04)"
+  name: N333
+  rec_id: 614
+615: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid re-evaluation date. Note: (New Code 12/2/04)"
+  name: N334
+  rec_id: 615
+616: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid referral date. Note: (New Code 12/2/04)"
+  name: N335
+  rec_id: 616
+617: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid replacement date. Note: (New Code 12/2/04)"
+  name: N336
+  rec_id: 617
+618: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid secondary diagnosis date. Note: (New Code 12/2/04)"
+  name: N337
+  rec_id: 618
+619: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid shipped date. Note: (New Code 12/2/04)"
+  name: N338
+  rec_id: 619
+62: 
+  active: 1
+  dept_id: 1001
+  description: "Missing Certificate of Medical Necessity. Note: (Modified 8/1/04, 6/30/03) Related to N227"
+  name: M60
+  rec_id: 62
+620: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid similar illness or symptom date. Note: (New Code 12/2/04)"
+  name: N339
+  rec_id: 620
+621: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid subscriber birth date. Note: (New Code 12/2/04)"
+  name: N340
+  rec_id: 621
+622: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid surgery date. Note: (New Code 12/2/04)"
+  name: N341
+  rec_id: 622
+623: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid test performed date. Note: (New Code 12/2/04)"
+  name: N342
+  rec_id: 623
+624: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid Transcutaneous Electrical Nerve Stimulator (TENS) trial start date. Note: (New Code 12/2/04)"
+  name: N343
+  rec_id: 624
+625: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid Transcutaneous Electrical Nerve Stimulator (TENS) trial end date. Note: (New Code 12/2/04)"
+  name: N344
+  rec_id: 625
+626: 
+  active: 1
+  dept_id: 1001
+  description: "Date range not valid with units submitted. Note: (New Code 3/30/05)"
+  name: N345
+  rec_id: 626
+627: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid oral cavity designation code. Note: (New Code 3/30/05)"
+  name: N346
+  rec_id: 627
+628: 
+  active: 1
+  dept_id: 1001
+  description: "Your claim for a referred or purchased service cannot be paid because payment has already been made for this same service to another provider by a payment contractor representing the payer. Note: (New Code 3/30/05)"
+  name: N347
+  rec_id: 628
+629: 
+  active: 1
+  dept_id: 1001
+  description: "You chose that this service/supply/drug would be rendered/supplied and billed by a different practitioner/supplier. Note: (New Code 8/1/05)"
+  name: N348
+  rec_id: 629
+63: 
+  active: 1
+  dept_id: 1001
+  description: We cannot pay for this as the approval period for the FDA clinical trial has expired.
+  name: M61
+  rec_id: 63
+630: 
+  active: 1
+  dept_id: 1001
+  description: "The administration method and drug must be reported to adjudicate this service. Note: (New Code 8/1/05)"
+  name: N349
+  rec_id: 630
+631: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid description of service for a Not Otherwise Classified (NOC) code or an Unlisted procedure. Note: (New Code 8/1/05)"
+  name: N350
+  rec_id: 631
+632: 
+  active: 1
+  dept_id: 1001
+  description: "Service date outside of the approved treatment plan service dates. Note: (New Code 8/1/05)"
+  name: N351
+  rec_id: 632
+633: 
+  active: 1
+  dept_id: 1001
+  description: "There are no scheduled payments for this service. Submit a claim for each patient visit. Note: (New Code 8/1/05)"
+  name: N352
+  rec_id: 633
+634: 
+  active: 1
+  dept_id: 1001
+  description: "Benefits have been estimated, when the actual services have been rendered, additional payment will be considered based on the submitted claim. Note: (New Code 8/1/05)"
+  name: N353
+  rec_id: 634
+635: 
+  active: 1
+  dept_id: 1001
+  description: "Incomplete/invalid invoice. Note: (New Code 8/1/05)"
+  name: N354
+  rec_id: 635
+636: 
+  active: 1
+  dept_id: 1001
+  description: "The law permits exceptions to the refund requirement in two cases: - If you did not know, and could not have reasonably been expected to know, that we would not pay for this service; or - If you notified the patient in writing before providing the service that you believed that we were likely to deny the service, and the patient signed a statement agreeing to pay for the service."
+  name: N355
+  rec_id: 636
+637: 
+  active: 1
+  dept_id: 1001
+  description: you come within either exception, or if you believe the carrier was wrong in its determination that we do not pay for this service, you should request appeal of this determination within 30 days of the date of this notice. Your request for review should include any additional information necessary to support your position.
+  name: If
+  rec_id: 637
+638: 
+  active: 1
+  dept_id: 1001
+  description: you request an appeal within 30 days of receiving this notice, you may delay refunding the amount to the patient until you receive the results of the review. If the review decision is favorable to you, you do not need to make any refund. If, however, the review is unfavorable, the law specifies that you must make the refund within 15 days of receiving the unfavorable review decision.
+  name: If
+  rec_id: 638
+639: 
+  active: 1
+  dept_id: 1001
+  description: law also permits you to request an appeal at any time within 120 days of the date you receive this notice. However, an appeal request that is received more than 30 days after the date of this notice, does not permit you to delay making the refund. Regardless of when a review is requested, the patient will be notified that you have requested one, and will receive a copy of the determination.
+  name: The
+  rec_id: 639
+64: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid treatment authorization code. Note: (Modified 2/28/03)"
+  name: M62
+  rec_id: 64
+640: 
+  active: 1
+  dept_id: 1001
+  description: "patient has received a separate notice of this denial decision. The notice advises that he/she may be entitled to a refund of any amounts paid, if you should have known that we would not pay and did not tell him/her. It also instructs the patient to contact our office if he/she does not hear anything about a refund within 30 days. Note: (New Code 8/1/05, Modified 11/18/05)"
+  name: The
+  rec_id: 640
+641: 
+  active: 1
+  dept_id: 1001
+  description: "This service is not covered when performed with, or subsequent to, a non-covered service. Note: (New Code 8/1/05)"
+  name: N356
+  rec_id: 641
+642: 
+  active: 1
+  dept_id: 1001
+  description: "Time frame requirements between this service/procedure/supply and a related service/procedure/supply have not been met. Note: (New Code 11/18/05)"
+  name: N357
+  rec_id: 642
+643: 
+  active: 1
+  dept_id: 1001
+  description: "This decision may be reviewed if additional documentation as described in the contract or plan benefit documents is submitted. Note: (New Code 11/18/05)"
+  name: N358
+  rec_id: 643
+644: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid height. Note: (New Code 11/18/05)"
+  name: N359
+  rec_id: 644
+645: 
+  active: 1
+  dept_id: 1001
+  description: "Coordination of benefits has not been calculated when estimating benefits for this pre-determination. Submit payment information from the primary payer with the secondary claim. Note: (New Code 11/18/05)"
+  name: N360
+  rec_id: 645
+646: 
+  active: 1
+  dept_id: 1001
+  description: "Charges are adjusted based on multiple diagnostic imaging procedure rules. Note: (New Code 11/18/05)"
+  name: N361
+  rec_id: 646
+647: 
+  active: 1
+  dept_id: 1001
+  description: "The number of Days or Units of Service exceeds our acceptable maximum. Note: (New Code 11/18/05)"
+  name: N362
+  rec_id: 647
+648: 
+  active: 1
+  dept_id: 1001
+  description: "Alert: in the near future we are implementing new policies/procedures that would affect this determination. Note: (New Code 11/18/05)"
+  name: N363
+  rec_id: 648
+649: 
+  active: 1
+  dept_id: 1001
+  description: "According to our agreement, you must waive the deductible and/or coinsurance amounts. Note: (New Code 11/18/05)"
+  name: N364
+  rec_id: 649
+65: 
+  active: 1
+  dept_id: 1001
+  description: "We do not pay for more than one of these on the same day. Note: (Deactivated eff. 1/31/04) Consider using M86"
+  name: M63
+  rec_id: 65
+650: 
+  active: 1
+  dept_id: 1001
+  description: "This procedure code is not payable. It is for reporting/information purposes only. Note: (New Code 4/1/06)"
+  name: N365
+  rec_id: 650
+651: 
+  active: 1
+  dept_id: 1001
+  description: "Requested information not provided. The claim will be reopened if the information previously requested is submitted within one year after the date of this denial notice. Note: (New Code 4/1/06)"
+  name: N366
+  rec_id: 651
+652: 
+  active: 1
+  dept_id: 1001
+  description: "The claim information has been forwarded to a Health Savings Account processor for review. Note: (New Code 4/1/06)"
+  name: N367
+  rec_id: 652
+653: 
+  active: 1
+  dept_id: 1001
+  description: "You must appeal the determination of the previously ajudicated claim. Note: (New Code 4/1/06)"
+  name: N368
+  rec_id: 653
+654: 
+  active: 1
+  dept_id: 1001
+  description: "Alert: Although this claim has been processed, it is deficient according to state legislation/regulation. Note: (New Code 4/1/06)"
+  name: N369
+  rec_id: 654
+655: 
+  active: 1
+  dept_id: 1001
+  description: "Billing exceeds the rental months covered/approved by the payer. Note: (New Code 8/1/06)"
+  name: N370
+  rec_id: 655
+656: 
+  active: 1
+  dept_id: 1001
+  description: "Alert: title of this equipment must be transferred to the patient. Note: (New Code 8/1/06)"
+  name: N371
+  rec_id: 656
+657: 
+  active: 1
+  dept_id: 1001
+  description: "Only reasonable and necessary maintenance/service charges are covered. Note: (New Code 8/1/06)"
+  name: N372
+  rec_id: 657
+66: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid other diagnosis. Note: (Modified 2/28/03)"
+  name: M64
+  rec_id: 66
+67: 
+  active: 1
+  dept_id: 1001
+  description: One interpreting physician charge can be submitted per claim when a purchased diagnostic test is indicated. Please submit a separate claim for each interpreting physician.
+  name: M65
+  rec_id: 67
+68: 
+  active: 1
+  dept_id: 1001
+  description: Our records indicate that you billed diagnostic tests subject to price limitations and the procedure code submitted includes a professional component. Only the technical component is subject to price limitations. Please submit the technical and professional components of this service as separate line items.
+  name: M66
+  rec_id: 68
+69: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid other procedure code(s). Note: (Modified 12/2/04) Related to N302"
+  name: M67
+  rec_id: 69
+7: 
+  active: 1
+  dept_id: 1001
+  description: No rental payments after the item is purchased, or after the total of issued rental payments equals the purchase price.
+  name: M7
+  rec_id: 7
+70: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid attending, ordering, rendering, supervising or referring physician identification. Note: (Deactivated eff. 6/2/05)"
+  name: M68
+  rec_id: 70
+71: 
+  active: 1
+  dept_id: 1001
+  description: "Paid at the regular rate as you did not submit documentation to justify the modified procedure code. Note: (Modified 2/1/04)"
+  name: M69
+  rec_id: 71
+72: 
+  active: 1
+  dept_id: 1001
+  description: NDC code submitted for this service was translated to a HCPCS code for processing, but please continue to submit the NDC on future claims for this item.
+  name: M70
+  rec_id: 72
+73: 
+  active: 1
+  dept_id: 1001
+  description: Total payment reduced due to overlap of tests billed.
+  name: M71
+  rec_id: 73
+74: 
+  active: 1
+  dept_id: 1001
+  description: "Did not enter full 8-digit date (MM/DD/CCYY). Note: (Deactivated eff. 10/16/03) Consider using MA52"
+  name: M72
+  rec_id: 74
+75: 
+  active: 1
+  dept_id: 1001
+  description: "The HPSA/Physician Scarcity bonus can only be paid on the professional component of this service. Rebill as separate professional and technical components. Note: (Modified 8/1/04)"
+  name: M73
+  rec_id: 75
+76: 
+  active: 1
+  dept_id: 1001
+  description: "This service does not qualify for a HPSA/Physician Scarcity bonus payment. Note: (Modified 12/2/04)"
+  name: M74
+  rec_id: 76
+77: 
+  active: 1
+  dept_id: 1001
+  description: Allowed amount adjusted. Multiple automated multichannel tests performed on the same day combined for payment.
+  name: M75
+  rec_id: 77
+78: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid diagnosis or condition. Note: (Modified 2/28/03)"
+  name: M76
+  rec_id: 78
+79: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid place of service. Note: (Modified 2/28/03)"
+  name: M77
+  rec_id: 79
+8: 
+  active: 1
+  dept_id: 1001
+  description: We do not accept blood gas tests results when the test was conducted by a medical supplier or taken while the patient is on oxygen.
+  name: M8
+  rec_id: 8
+80: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid HCPCS modifier. Note: (Modified 2/28/03, Deactivated eff. 5/18/06) Consider using Reason Code 4"
+  name: M78
+  rec_id: 80
+81: 
+  active: 1
+  dept_id: 1001
+  description: "Missing/incomplete/invalid charge. Note: (Modified 2/28/03)"
+  name: M79
+  rec_id: 81
+82: 
+  active: 1
+  dept_id: 1001
+  description: "Not covered when performed during the same session/date as a previously processed service for the patient. Note: (Modified 10/31/02)"
+  name: M80
+  rec_id: 82
+83: 
+  active: 1
+  dept_id: 1001
+  description: "You are required to code to the highest level of specificity. Note: (Modified 2/1/04)"
+  name: M81
+  rec_id: 83
+84: 
+  active: 1
+  dept_id: 1001
+  description: Service is not covered when patient is under age 50.
+  name: M82
+  rec_id: 84
+85: 
+  active: 1
+  dept_id: 1001
+  description: Service is not covered unless the patient is classified as at high risk.
+  name: M83
+  rec_id: 85
+86: 
+  active: 1
+  dept_id: 1001
+  description: "Medical code sets used must be the codes in effect at the time of service. Note: (Modified 2/1/04)"
+  name: M84
+  rec_id: 86
+87: 
+  active: 1
+  dept_id: 1001
+  description: Subjected to review of physician evaluation and management services.
+  name: M85
+  rec_id: 87
+88: 
+  active: 1
+  dept_id: 1001
+  description: "Service denied because payment already made for same/similar procedure within set time frame. Note: (Modified 6/30/03)"
+  name: M86
+  rec_id: 88
+89: 
+  active: 1
+  dept_id: 1001
+  description: Claim/service(s) subjected to CFO-CAP prepayment review.
+  name: M87
+  rec_id: 89
+9: 
+  active: 1
+  dept_id: 1001
+  description: This is the tenth rental month. You must offer the patient the choice of changing the rental to a purchase agreement.
+  name: M9
+  rec_id: 9
+90: 
+  active: 1
+  dept_id: 1001
+  description: "We cannot pay for laboratory tests unless billed by the laboratory that did the work. Note: (Deactivated eff. 8/1/04) Consider using Reason Code B20"
+  name: M88
+  rec_id: 90
+91: 
+  active: 1
+  dept_id: 1001
+  description: Not covered more than once under age 40.
+  name: M89
+  rec_id: 91
+92: 
+  active: 1
+  dept_id: 1001
+  description: Not covered more than once in a 12 month period.
+  name: M90
+  rec_id: 92
+93: 
+  active: 1
+  dept_id: 1001
+  description: Lab procedures with different CLIA certification numbers must be billed on separate claims.
+  name: M91
+  rec_id: 93
+94: 
+  active: 1
+  dept_id: 1001
+  description: "Services subjected to review under the Home Health Medical Review Initiative. Note: (Deactivated eff. 8/1/04.)"
+  name: M92
+  rec_id: 94
+95: 
+  active: 1
+  dept_id: 1001
+  description: Information supplied supports a break in therapy. A new capped rental period began with delivery of this equipment.
+  name: M93
+  rec_id: 95
+96: 
+  active: 1
+  dept_id: 1001
+  description: Information supplied does not support a break in therapy. A new capped rental period will not begin.
+  name: M94
+  rec_id: 96
+97: 
+  active: 1
+  dept_id: 1001
+  description: Services subjected to Home Health Initiative medical review/cost report audit.
+  name: M95
+  rec_id: 97
+98: 
+  active: 1
+  dept_id: 1001
+  description: The technical component of a service furnished to an inpatient may only be billed by that inpatient facility. You must contact the inpatient facility for technical component reimbursement. If not already billed, you should bill us for the professional component only.
+  name: M96
+  rec_id: 98
+99: 
+  active: 1
+  dept_id: 1001
+  description: Not paid to practitioner when provided to patient in this place of service. Payment included in the reimbursement issued the facility.
+  name: M97
+  rec_id: 99

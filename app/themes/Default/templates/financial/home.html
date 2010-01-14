@@ -1,0 +1,41 @@
+[% Current.section = Current.section || default_section %]
+[%# set in controller instead -- Current.step = Current.step || 1 %]
+[% INCLUDE personnel/role_selector.html %]
+<div id="center" class="system_box financial">
+    [% INCLUDE global/working.html %]
+    <h2 class="screen">Financial</h2>
+    <ul id="financial_nav">
+        [% FOR nav IN [
+            { section => 'home', label => 'Home', }
+            { section => 'billing', label => 'Billing', }
+            { section => 'payments', label => 'Payments', }
+            { section => 'reports', label => 'Reports', }
+            { section => 'tools', label => 'Tools', }
+        ] %]
+        <li[% ' class="active"' IF nav.section == Current.section %]>
+            <a href="/financial.cgi?section=[% nav.section %]">[% nav.label %]</a>
+        </li>
+        [% END %]
+    </ul>
+
+    <div id="content">
+        <ul id="menu">
+            [% INCLUDE "financial/${ Current.section }/menu.html" %]
+        </ul>
+        <div id="main">
+            [% INCLUDE util/errors.html errors = error_message ? error_message : errors %]
+            [% INCLUDE "financial/${ Current.section }/home.html" %]
+            [% TRY; INCLUDE "financial/${ Current.section }/${ Current.step }.html";
+                CATCH
+            %]
+                <h4>Template Error</h4>
+                <p>No step template or error in: <strong>[% "financial/${ Current.section }/${ Current.step }.html" %]</strong></p>
+                <p>Type: <strong>[% error.type %]</strong></p>
+                <p>Info: <strong>[% error.info %]</strong></p>
+            [% END %]
+        </div>
+        <hr class="div" />
+    </div>
+    <input type="hidden" id="step" value="[% Current.step %]" />
+    <input type="hidden" id="section" value="[% Current.section %]" />
+</div>

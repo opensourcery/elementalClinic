@@ -1,0 +1,59 @@
+---
+1001:
+  bounce_date: 2006-08-15
+  bounce_message: Please correct the problems with this note.
+  bounced_by_staff_id: 1004
+  prognote_id: 1243
+  rec_id: 1001
+  response_date: 2006-08-18
+  response_message: My bad
+1002:
+  bounce_date: 2006-08-15
+  bounce_message: Please correct the problems with this note.
+  bounced_by_staff_id: 1004
+  prognote_id: 1244
+  rec_id: 1002
+  response_date: 2006-08-18
+  response_message: Oops
+1003:
+  bounce_date: 2006-08-15
+  bounce_message: Please correct the problems with this note.
+  bounced_by_staff_id: 1004
+  prognote_id: 1245
+  rec_id: 1003
+  response_date: ~
+  response_message: ~
+1004:
+  bounce_date: 2006-08-15
+  bounce_message: Please correct the problems with this note.
+  bounced_by_staff_id: 1004
+  prognote_id: 1257
+  rec_id: 1004
+  response_date: ~
+  response_message: ~
+1005:
+  bounce_date: 2006-08-15
+  bounce_message: Please correct the problems with this note.
+  bounced_by_staff_id: 1004
+  prognote_id: 1258
+  rec_id: 1005
+  response_date: 2006-08-21
+  response_message: ~
+1006:
+  bounce_date: 2006-08-15
+  bounce_message: Please correct the problems with this note.
+  bounced_by_staff_id: 1004
+  prognote_id: 1259
+  rec_id: 1006
+  response_date: ~
+  response_message: ~
+1007:
+  bounce_date: 2006-09-15
+  bounce_message: Please correct the problems with this note.
+  bounced_by_staff_id: 1004
+  prognote_id: 1260
+  rec_id: 1007
+  response_date: 2006-09-16
+  response_message: ~
+
+

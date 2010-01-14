@@ -1,0 +1,31 @@
+Installing eleMental Clinic on Mac OSX
+--------------------------------------
+
+0. Introduction
+    Installing eleMental Clinic on OSX is a little bit different (i.e. more
+    difficult) than installing it on, say, Ubuntu or other Debian-based
+    distros. This guide will point out some important differences.
+
+1. Install MacPorts
+
+    One major difference with OSX is the notable lack of a package manager. If
+    you do not already have MacPorts/DarwinPorts, get it now. Mount the image
+    and install. Then you can just `port search *package*` to find the name of
+    a package and `sudo port install *package*` to install it.
+
+    Note that you may have to add the install path for MacPorts packages to
+    your $PATH -- the default path is /opt/local
+
+    If you don't want to install MacPorts, good luck. This guide will likely
+    not help you.
+
+2. Apache and Perl
+
+    OSX comes preinstalled with both of these, but MacPorts doesn't play nice
+    with them. Instead, install the versions of Apache2, Perl, and mod_perl2
+    with MacPorts, as well as Postgres8.2 and any other packages you need.
+
+    Unfortunately, many of the Debian packages for Perl modules do not have
+    corresponding MacPorts packages, and dh-make-perl does not exist for
+    MacPorts, so they must be installed through CPAN. Make sure that you are
+    installing them using the MacPorts cpan binary, not through /usr/bin/cpan

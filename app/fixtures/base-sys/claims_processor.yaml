@@ -1,0 +1,74 @@
+---
+1001:
+  clinic_submitter_id: PROVIDER
+  clinic_trading_partner_id: tp000000
+  code: ORDHSOMAP
+  dialup_number: ~
+  get_directory: /
+  interchange_id: ORDHSOMAP
+  interchange_id_qualifier: ZZ
+  name: OREGON DHS OMAP
+  password: ~
+  password_active_days: 60
+  password_expires: 2006-04-30
+  password_min_char: 8
+  primary_id: ORDHSOMAP
+  put_directory: /
+  rec_id: 1001
+  requires_rendering_provider_ids: 0
+  send_personnel_id: 0
+  send_production_files: 0
+  sftp_host: sftp.test.com
+  sftp_port: 22
+  template_837: write_837
+  username: ~
+1002:
+  clinic_submitter_id: PROVIDER
+  clinic_trading_partner_id: 999999999
+  code: MHO
+  dialup_number: ~
+  get_directory: /HOME/download
+  interchange_id: 931211733
+  interchange_id_qualifier: ZZ
+  name: PHTECH
+  password: ~
+  password_active_days: ~
+  password_expires: 2006-06-30
+  password_min_char: ~
+  primary_id: 931211733
+  put_directory: /HOME/upload/testfiles
+  rec_id: 1002
+  requires_rendering_provider_ids: 0
+  send_personnel_id: 0
+  send_production_files: 0
+  sftp_host: sftp.phtech.com
+  sftp_port: 22
+  template_837: write_837
+  username: username
+1003:
+  clinic_submitter_id: OR00000
+  clinic_trading_partner_id: OR00000
+  code: 0042
+  dialup_number: 19712440200
+  get_directory: ~
+  interchange_id: 00824
+  interchange_id_qualifier: ZZ
+  name: MEDICARE B OF OREGON
+  password: ~
+  password_active_days: 60
+  password_expires: 2006-02-28
+  password_min_char: 8
+  primary_id: 00835
+  put_directory: ~
+  rec_id: 1003
+  requires_rendering_provider_ids: 1
+  send_personnel_id: 0
+  send_production_files: 0
+  sftp_host: ~
+  sftp_port: ~
+  template_837: write_837
+  username: ~
+
+
+
+

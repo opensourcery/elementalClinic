@@ -1,0 +1,37 @@
+[% INCLUDE util/input_text.html
+    name    = 'job_title'
+    label   = 'Job title'
+    value   = entry.job_title
+    wraptag = 'p'
+%]
+
+[% INCLUDE util/input_text.html
+    name    = 'supervisor'
+    label   = 'Supervisor'
+    value   = entry.supervisor
+    wraptag = 'p'
+%]
+
+[% INCLUDE util/date_picker.html
+    name    = 'start_date'
+    value   = entry.start_date
+    label   = 'Start date'
+    wraptag = 'p'
+%]
+
+[% INCLUDE util/date_picker.html
+    name    = 'end_date'
+    value   = entry.end_date
+    label   = 'End date'
+    wraptag = 'p'
+%]
+
+[% INCLUDE util/textarea.html
+    name    = 'comment_text'
+    label   = 'Comment'
+    break   = 1
+    value   = entry.comment_text
+    cols    = 60
+    rows    = 3
+    wraptag = 'p'
+%]

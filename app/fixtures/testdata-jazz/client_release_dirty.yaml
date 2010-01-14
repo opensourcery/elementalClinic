@@ -1,0 +1,56 @@
+---
+1101:
+  client_id: 1001
+  print_date: ~
+  print_header_id: 1
+  rec_id: 1101
+  release_from: 1
+  release_list: '2,3,11,1,9,12,5,7'
+  release_to: 0
+  renewal_date: 2005-11-01
+  rolodex_id: 1109
+  standard: ~
+1102:
+  client_id: 1001
+  print_date: ~
+  print_header_id: 1
+  rec_id: 1102
+  release_from: 0
+  release_list: '2,3,11,1,9'
+  release_to: 1
+  renewal_date: 2006-05-02
+  rolodex_id: 1109
+  standard: ~
+1103:
+  client_id: 1001
+  print_date: ~
+  print_header_id: 1
+  rec_id: 1103
+  release_from: 0
+  release_list: '2,3,11,9'
+  release_to: 1
+  renewal_date: 2005-05-02
+  rolodex_id: 1108
+  standard: ~
+1104:
+  client_id: 1001
+  print_date: ~
+  print_header_id: 1
+  rec_id: 1104
+  release_from: 0
+  release_list: '1,2'
+  release_to: 1
+  renewal_date: 2005-06-01
+  rolodex_id: 1108
+  standard: ~
+1105:
+  client_id: 1001
+  print_date: ~
+  print_header_id: 1
+  rec_id: 1105
+  release_from: 0
+  release_list: '5,6'
+  release_to: 1
+  renewal_date: 2005-07-01
+  rolodex_id: 1105
+  standard: ~

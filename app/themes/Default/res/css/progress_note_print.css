@@ -1,0 +1,45 @@
+div.note {
+/*     border : 3px solid #666; */
+/*     border-width : 3px 0; */
+}
+div.note h3 {
+    font-size : 16px;
+    padding : 0;
+    border-bottom : 2px solid #000;
+    margin : 0;
+}
+div.info {
+    font-size : 12px;
+    padding : 0 0 0 10px;
+    border-left : 4px solid #999;
+    margin : 0px 0 10px 20px;
+}
+div.diagnosis {
+    padding : 5px;
+    background : #ccc;
+    margin : 0 0 10px 0;
+}
+div.diagnosis h4 {
+    border : 0;
+    padding : 0;
+    margin : 0;
+    font-size : .8em;
+}
+div.diagnosis h5 {
+    padding : 0;
+    margin : 0;
+    font-size : .8em;
+}
+div.diagnosis p {
+    font-size : .8em;
+}
+table.prognote {
+    border : none;
+}
+table.prognote td {
+    border : none;
+}
+p.body {
+    margin-left : 35px;
+    padding-right : 50px;
+}

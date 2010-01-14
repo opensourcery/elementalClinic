@@ -1,0 +1,74 @@
+[% action = 'edit' %]
+<div id="content">
+[% INCLUDE util/errors.html %]
+<div class="system_box">
+
+
+<div id="file">
+<h4>Next scanned file:</h4>
+[% IF file %]
+    <a target="_blank" href="[% script %]?op=view_file;filename=[% file %]">
+        <img src="[% script %]?op=view_file;filename=[% file %]" alt="[% file %]" />
+    </a><br />
+    [% file %]
+[% ELSE %]
+    <p>No scanned files.</p>
+[% END %]
+</div>
+    
+<div id="file_details">
+    
+    <div id="client_search">
+        <h4>Patient Search</h4>
+        <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" id="search_pref" name="search_pref" onsubmit="return search_clients( 'scanned_record', '[% Config.theme %]' )">
+            [% INCLUDE util/input_text.html
+                name    = 'search'
+                value   = search
+                size    = 20
+            %]
+        </form>
+    </div>
+
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" id="scanned_record_form" name="scanned_record_form">
+        
+        <div id="client_results">
+            <h4>Results</h4>
+            <p id="client_results_control">
+            [% IF client.id and client.eman %]
+                <select id="client_id" name="client_id">
+                    <option value="[% client.id %]">[% client.eman %]</option>
+                </select>
+            [% ELSE %]
+                Search for patients...
+            [% END %]
+            </p>
+        </div>
+        
+        <div id="associate">
+            
+            <h4>Description:</h4>
+            <textarea name="description" id="description" rows="2" cols="40">[% description | replace('\\\n', "\n") %]</textarea>
+            <br />
+            <input type="hidden" name="filename" value="[% file %]" />
+            <input type="submit" name="op" value="Associate File with Patient" />
+            <br />
+            <input type="submit" name="op" value="Invalid File" id="invalid_file_button" onclick="return confirmInvalid()" />
+        </div>
+    </form>
+
+    <h4 id="history">History:</h4>
+    <table>
+        [% FOR file IN history %]
+        <tr>
+            <td><a href="/client_scanned_record.cgi?client_id=[% file.client_id %]">[% file.client_name %]</a></td>
+            <td><img src="/client_scanned_record.cgi?op=view_file;client_scanned_record_id=[% file.rec_id %]" width="50" alt="[% file.filename %]" /></td>
+            <td>[% file.created %]</td>
+        </tr>
+        [% END %]
+    </table>
+
+</div>
+
+
+</div>
+</div>

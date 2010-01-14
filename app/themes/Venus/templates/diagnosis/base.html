@@ -1,0 +1,73 @@
+[% INCLUDE global/client_head.html
+    navsec = 'clinical'
+    navpage = 'diagnosis'
+%]
+[% BASE_URI ="$script?client_id=$client.id;";
+    IF current_diagnosis.id;
+        BASE_URI = BASE_URI _ "diagnosis_id=$current_diagnosis.id;";
+    END
+%]
+[% title_prefix = '';
+    IF current_diagnosis;
+        IF op == 'clone'; title_prefix = 'Cloning'; END;
+        IF op == 'edit'; title_prefix = 'Editing'; END;
+        title_prefix = title_prefix _' ';
+    END
+%]
+
+<div id="center">
+  <div id="left" class="client_box">
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" id="diag_select_form" name="diag_select_form">
+        <input type="submit" id="update" value="Choose Diagnosis &gt;&gt;" /><br />
+
+        <select name="diagnosis_id" id="diagnosis_id" size="25" onchange="document.forms['diag_select_form'].submit()">
+          [% FOR diagnosis IN diagnoses %]
+                <option value="[% diagnosis.id %]" [% ' selected="selected"' IF diagnosis.id == current_diagnosis.id %]>
+                  [% diagnosis.diagnosis_date.format_date_medium %]
+                </option>
+          [% END %]
+        </select>
+        <input type="hidden" id="client_id" name="client_id" value="[% client.id %]" />
+        <input type="hidden" id="op" name="op" value="view" />
+    </form>
+  </div>
+
+  <div id="right" class="client_box">
+      <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" name="diagnosis_form">
+          <div id="diagnosis" class="selectee">
+
+              [% IF current_diagnosis %]
+                  <h3>
+                      <em>[% title_prefix %]Diagnosis:</em> [% current_diagnosis.diagnosis_date.format_date_medium %]</h4>    
+                  </h3>
+              [% ELSIF op == 'create' %]
+                  <h3>New Diagnosis</h3>
+              [% END %]
+
+              <div id="diagnosis_controls">
+                <ul class="affect_this">
+                    <li><a href="[% BASE_URI _ 'op=create' %]" class="new_this">New</a></li>
+                  [% IF current_diagnosis.id %]
+                    <li><a href="[% BASE_URI _ 'op=edit' %]" class="edit_this">Edit</a></li>
+                    <li><a href="[% BASE_URI _ 'op=clone' %]" class="clone_this">Clone</a></li>
+                  [% END %]
+                </ul>
+              </div>
+
+              [% IF current_diagnosis.id || op == 'clone' || op == 'create' %]
+
+                  [% IF op == 'home' || op == 'view' || op == 'save' %]
+                      [% INCLUDE diagnosis/view.html %]
+                  [% ELSE %]
+                      [% INCLUDE diagnosis/edit.html %]
+                  [% END %]
+
+              [% ELSE %]
+                  <p>No diagnosis on record.</p>
+              [% END %]
+
+          </div>
+      </form>
+      <hr class="div" />
+  </div>
+</div>

@@ -1,0 +1,81 @@
+#center {
+    width : 95%;
+}
+h3 {
+    margin-bottom : 20px;
+}
+h3 em {
+    font-style : normal;
+    font-weight : normal;
+}
+#group_history {
+    clear : both;
+}
+h4 {
+    padding-top : 30px;
+}
+/* member page */
+#client_list {
+    width : 250px;
+    margin-left : 30px;
+    float : left;
+}
+#member_list {
+    text-align : right;
+    width : 250px;
+    float : left;
+}
+#client_filter {
+    width : 8em;
+    float : left;
+    border : 1px solid #666;
+    margin : 0 20px 0 0;
+}
+p.add_member,
+p.rm_member {
+    margin-top : 10px;
+    text-align : center;
+    width : 10em;
+}
+p.rm_member {
+    float : right;
+}
+p.return {
+    margin : -15px 0 20px 0;
+    clear : both;
+}
+form#caseload_pref ul {
+    list-style-type : none;
+    padding : 0;
+    margin : 0;
+}
+
+#access_left {
+    width: 60%;
+    float: left;
+}
+
+#access_right {
+    width: 35%;
+    float: right;
+}
+
+#access {
+    border-spacing: 0px;
+}
+
+td.access_name {
+    text-align: left;
+    border-top: 1px solid #555555;
+    width: 160px;
+    padding-top: 4px;
+}
+
+td.access_cause {
+    text-align: left;
+}
+
+td.access_cause.first {
+    padding-top: 4px;
+    border-top: 1px solid #555555;
+}

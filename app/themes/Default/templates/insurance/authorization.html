@@ -1,0 +1,65 @@
+[% IF( authorization && authorization.id ) %]
+<h4><em>Authorization:</em> [% authorization.type %]: [% authorization.start_date %] to [% authorization.end_date %]</h4>
+[% ELSE %]
+<h4>New Authorization</h4>
+[% END %]
+
+[% IF action == 'edit' %]
+[% INCLUDE util/form.html %]
+[% END %]
+
+    <dl class="inline">
+        <dt><label for="start_date">Authorization start:</label></dt>
+        [% INCLUDE util/date_picker.html
+            name    = 'start_date'
+            value   = authorization.start_date || start_date || 'today'
+            wraptag = 'dd'
+            required    = 1
+        %]
+
+        <dt><label for="end_date">Authorization end:</label></dt>
+        [% INCLUDE util/date_picker.html
+            name    = 'end_date'
+            value   = authorization.end_date || end_date
+            wraptag = 'dd'
+            required    = 1
+        %]
+    </dl>
+
+    <hr class="div" />
+    <hr class="subtle" />
+
+    <dl class="inline">
+        [% INCLUDE util/input_text.html
+            name    = 'type'
+            label   = 'Type'
+            value   = authorization.type || type
+            size    = 30
+            dl      = 1
+            required    = 1
+        %]
+        [% INCLUDE util/input_text.html
+            name    = 'code'
+            label   = 'Authorization ref. #'
+            value   = authorization.code || code
+            size    = 30
+            dl      = 1
+            required    = 1
+        %]
+        [% INCLUDE util/input_text.html
+            name    = 'allowed_amount'
+            label   = 'Allowed amount'
+            value   = authorization.allowed_amount || allowed_amount
+            size    = 30
+            dl      = 1
+            required    = 1
+        %]
+    </dl>
+
+[% IF action == 'edit' %]
+    <input type="hidden" name="client_insurance_id" value="[% current_insurance.id %]" />
+    <input type="hidden" name="authorization_id" value="[% authorization.id %]" />
+    <input type="hidden" name="client_id" value="[% client.id %]" />
+    <p class="save"><input type="submit" name="op" id="op" value="Save Authorization" /></p>
+[% INCLUDE util/form_end.html %]
+[% END %]

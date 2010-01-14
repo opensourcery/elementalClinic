@@ -1,0 +1,46 @@
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+
+<b>&#149; Set The Search Range For View/Update</b>
+
+<p />
+
+<table border="0">
+    <tr>
+        <td>Select Unit: </td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "unit_name"
+    s_values  = units
+%]</td>
+    </tr>
+    <tr>
+        <td>Start Date For Search: </td>
+        <td><input type="text" name="search_start" value="[% search_start %]" size="12" maxlength="10" /></td>
+    </tr>
+    <tr>
+        <td>End Date For Search: </td>
+        <td><input type="text" name="search_end" value="[% today %]" size="12" maxlength="10" /></td>
+    </tr>
+</table>
+
+<p />
+
+<input type="submit" name="go" value="Search" />
+<div>
+</div>
+</form>
+
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+
+<table border="0">
+    <tr>
+        <td><b>&#149; Submit A Purchase Order: </b></td>
+        <td><input type="submit" name="go" value="Enter" /></td>
+    </tr>
+</table>
+
+<input type="hidden" name="search_start" value="[% search_start %]" />
+<input type="hidden" name="search_end" value="[% today %]" />
+<div>
+</div>
+</form>

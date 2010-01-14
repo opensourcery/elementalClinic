@@ -1,0 +1,19 @@
+[% INCLUDE util/select_new.html
+    name    = 'contact_type_id'
+    label   = 'Type of contact'
+    values  = current_user.valid_data.list( '_contact_type' )
+    default = entry.contact_type_id
+    keyname = 'rec_id'
+    valname = 'name'
+    wraptag = 'p'
+%]
+
+[% INCLUDE util/textarea.html
+    name    = 'comment_text'
+    label   = 'Comment'
+    break   = 1
+    value   = entry.comment_text
+    cols    = 60
+    rows    = 3
+    wraptag = 'p'
+%]

@@ -1,0 +1,28 @@
+    <div id="client_head">
+        [% IF rolodex.rec_id %]
+        <div id="client_content" class="client">
+            <div class="mini">
+                <div class="primary">
+                    <h2>[% rolodex.lname %], [% rolodex.fname %]</h2>
+                </div>
+
+                <div class="demographics">
+                    <p><strong>[% rolodex.phone_f %]</strong></p>
+                    <p>[% rolodex.address.address_web %]</p>
+                </div>
+            </div>
+        </div>
+
+        <ul>
+            <li>
+                <a [% ' class="active"' IF navpage == 'schedule' -%]
+                href="/schedule.cgi?op=doctor;rolodex_id=[% rolodex.id %]">Schedule</a>
+            </li>
+            <li>
+                <a [% ' class="active"' IF navpage == 'demographics' -%]
+                href="/rolodex.cgi?rolodex_id=[% rolodex.id %]">Demographics</a>
+            </li>
+        </ul>
+        [% END %]
+    </div>
+

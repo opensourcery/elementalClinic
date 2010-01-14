@@ -1,0 +1,14 @@
+[%- FOR item IN [
+    { step => 1, label => 'Begin', },
+    { step => 2, label => 'Review notes', },
+    { step => 3, label => 'System validation', },
+    { step => 4, label => 'Payer validation', },
+    { step => 5, label => 'Billing', },
+    { step => 0, label => 'Finish', },
+]%]
+    [% IF( item.step == 1 || ( Current.validation_set && Current.validation_set.step >= item.step )) %]
+    <li[% ' class="active"' IF item.step == Current.step %]><a href="/financial.cgi?section=[% Current.section %];step=[% item.step %]">[% item.label %]</a></li>
+    [% ELSE %]
+    <li><a class="unavailable">[% item.label %]</a></li>
+    [% END %]
+[%- END %]

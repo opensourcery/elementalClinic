@@ -1,0 +1,106 @@
+<div id="content">
+
+[% INCLUDE util/errors.html %]
+[% INCLUDE intake/_header.html %]
+
+<form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+    <div class="client_column placement">
+        <h4>Placement</h4>
+        <dl class="inline">
+            [% INCLUDE util/select_new.html
+                name    = 'program_id'
+                values  = department.list_programs( 'admission' )
+                label   = 'Program'
+                keyname = 'rec_id'
+                valname = 'full_name'
+                use_id  = 1
+                dl      = 1
+                leading_blank = 'Choose...'
+                required = 1
+            %]
+            [% INCLUDE util/date_picker.html
+                name    = 'event_date'
+                label   = 'Date'
+                value   = event_date || 'today'
+                wraptag = 'p'
+                dl      = 1
+            %]
+            [% INCLUDE util/select_new.html
+                name    = 'staff_id'
+                label   = 'Staff'
+                values  = department.get_service_coordinators
+                default = client.placement.staff_id
+                keyname = 'staff_id'
+                valname = 'eman'
+                leading_blank   = 'Optional'
+                dl      = 1
+            %]
+            <dt>Level of care</dt>
+            <dd>
+            [% INCLUDE util/choose_valid_data.html
+                name    = 'level_of_care_id'
+                table   = '_level_of_care'
+                type    = 'select'
+                default = client.placement.level_of_care_id
+                use_id  = 1
+                leading_hash    = [{ name => 'Optional' }]
+                action  = loc_locked ? 'display' : 'edit'
+            %]
+            </dd>
+        </dl>
+    </div>
+
+    <div class="client_column placement">
+        <h4>Referral</h4>
+        <ul class="checkbox">
+            [% INCLUDE util/radio_new.html
+                name    = 'is_referral'
+                values  = [
+                    { key => 0, value => 'Client is not a referral' },
+                    { key => 1, value => 'Client is a referral' },
+                ]
+                keyname = 'key'
+                valname = 'value'
+                default = 0
+                wraptag = 'li'
+            %]
+        </ul>
+
+        <hr />
+
+        <dl class="inline referral" id="referral_fields">
+            [% INCLUDE util/select_new.html
+                name    = 'rolodex_id'
+                label   = 'Referral Source'
+                values  = referrals_list
+                keyname = 'rec_id'
+                valname = 'name_f'
+                dl      = 1
+                show_blank = 0
+                leading_blank = 'Choose...'
+                blankmsg = '<strong>No referral sources:</strong> You must give at least one Rolodex entry a "Referral Source" role.'
+                required = 1
+            %]
+
+            [% INCLUDE util/input_text.html
+                name    = 'agency_contact'
+                label   = 'Agency contact'
+                dl      = 1
+            %]
+
+            [% INCLUDE util/input_text.html
+                name    = 'agency_type'
+                label   = 'Agency type'
+                dl      = 1
+            %]
+        </dl>
+    </div>
+
+    <hr />
+
+    <p class="save"><input id="admit_button" type="submit" name="submit" value="Admit Client" /> or <a href="/">Postpone this intake</a></p>
+    <input type="hidden" name="client_id" id="client_id" value="[% client.id %]" />
+    <input type="hidden" name="op" id="op" value="step5_save" />
+</form>
+
+</div>

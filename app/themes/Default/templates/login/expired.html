@@ -1,0 +1,23 @@
+<div id="center" class="system_box" style="margin-top:50px;">
+
+<h4>Reset Password</h4>
+
+[% INCLUDE util/errors.html %]
+
+<p>We're sorry: your <strong>password has expired</strong>.  Please enter a new password to continue.</p>
+
+<form method="[% Config.form_method %]" action="/login.cgi" name="expired_form" id="expired_form" enctype="application/x-www-form-urlencoded">
+    <p>
+        <label for="new_password_a">New Password:</label>
+        <input type="password" name="new_password_a" id="new_password_b" size="12" maxlength="24" value="" />
+    </p>
+    <p>
+        <label for="new_password_b">Verify New Password:</label>
+        <input type="password" name="new_password_b" id="new_password_b" size="12" maxlength="24" value="" />
+    </p>
+
+    <input type="hidden" name="previous" value="[% previous %]" />
+    <p class="login_button"><input type="submit" name="op" value="Save Password" /></p>
+</form>
+
+</div>

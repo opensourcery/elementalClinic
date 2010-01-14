@@ -1,0 +1,25 @@
+[% IF confirm %]
+<h4><font color="blue">Your transaction was committed.</font></h4>
+[% END %]
+
+<table border="0">
+    <tr>
+        <td>Start Date for Search: </td>
+        <td><input type="text" name="sdate" value="[% sdate %]" size="12" /></td>
+    </tr>
+    <tr>
+        <td>End Date for Search: </td>
+        <td><input type="text" name="edate" value="[% today %]" size="12" maxlength="10" /></td>
+    </tr>
+</table>
+<p />
+<input type="submit" name="go" value="Set Date" /><p />
+<a href="../charting/my_caseload.cgi?previous=[% program %]">My Caseload</a>
+<br />
+<a href="[% local %]">Return to [% Local %]</a>
+<br />
+<a href="../main.html">Return to Main Menu</a>
+<div>
+</div>
+</form>
+

@@ -1,0 +1,38 @@
+
+<table width="96%">
+    <tr>
+        <th width="60px">Sent Date</th>
+        <th width="200px">Recipients</th>
+        <th>Subject</th>
+    </tr>
+[% loopcount = 0 %]
+[% FOR entry IN data %]
+    [% loopcount = loopcount + 1 %]
+    <tr>
+        <td>
+            [% entry.send_date %]
+        </td>
+        <td>
+            <ul>
+            [% FOR recipient IN entry.recipient_data %]
+                <li>
+                    [% recipient.email %]
+                    [% IF recipient.lname %]
+                        <br />
+                        <a href="/clientoverview.cgi?client_id=[% recipient.client_id %]&op=home">
+                            [% recipient.lname %], [% recipient.fname %]
+                        </a>
+                    [% END %]
+                </li>
+            [% END %]
+            </ul>
+        </td>
+        <td>
+            <a OnClick="toggle_body('#body-' + [% loopcount %])">[% entry.subject %]</a>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3" class="email_hide_body" id="body-[% loopcount %]"><pre>[% entry.body %]</pre></td>
+    </tr>
+[% END %]
+</table>

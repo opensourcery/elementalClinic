@@ -1,0 +1,13 @@
+            <td class="button billable">
+                [% IF( note.billing_status == 'Unbillable' );
+                    class   = 'unbillable'
+                    unclass = 'billable';
+                ELSE;
+                    class   = 'billable'
+                    unclass = 'unbillable';
+                END %]
+                <a title="Note #[% note.id %] is [% class %]; click to set note [% unclass %]"
+                    onclick="return toggle_prognote_billable([% note.id %])"
+                    href="[% script %]?op=prognote_toggle_billable;prognote_id=[% note.id %];section=billing;step=[% Current.step %][% ";rolodex_id=$Current.insurer.id" IF Current.insurer %]">
+                <span>$</span>
+            </a></td>

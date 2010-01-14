@@ -1,0 +1,82 @@
+h5 {
+    color : #000;
+    text-align : center;
+    padding : 10px 0 0 0;
+    margin : 0 0 5px 0;
+    clear : left;
+    border-top : 1px dotted #fb0;
+}
+h5.top_display,
+h5.top_edit {
+    padding : 0;
+    border : none;
+}
+h5.hidden,
+h5.top_hidden {
+    display : none;
+}
+div.actions {
+    width : 120px;
+}
+#assessment_menu {
+    list-style-type : none;
+    padding : 0;
+    margin : 0;
+    height : 20px;
+    background-color : #ddd;
+}
+#assessment_menu li {
+    display : inline;
+}
+#assessment_menu a {
+    font-size : 11px;
+    color : #666;
+    display : block;
+    padding : 1px 7px 3px 7px;
+    border : 1px solid #ddd;
+    border-top : 3px solid #ddd;
+    border-bottom : none;
+    margin : 0 10px 0 0;
+    float : left;
+}
+#assessment_menu a.active {
+    font-weight : bold;
+    color : #000;
+    border-top : 3px solid #666;
+    background-color : #fff;
+}
+#assessment_menu a:hover {
+    color : #000;
+    text-decoration : underline;
+}
+#assessment_part {
+    border : 1px solid #ddd;
+    border-width : 0 1px 1px 1px;
+    clear : both;
+    padding : 5px;
+    background-color : #fff;
+}
+.left_edit {
+    width : 45%;
+    float : left;
+}
+.leftmin_edit {
+    float : left;
+    margin-right : 5%;
+}
+.right_edit {
+    width : 45%;
+    margin-left : 55%;
+}
+.rightmin_edit {
+    width : 30%;
+    margin-left : 65%;
+}
+.leftmin_display {
+    float : left;
+    margin-right : 5%;
+    width : 45%;
+}
+dl.inline dt {
+    width : 10em;
+}

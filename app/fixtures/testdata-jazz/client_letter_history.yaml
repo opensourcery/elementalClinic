@@ -1,0 +1,21 @@
+---
+1001:
+  client_id: 1005
+  letter: Hi!
+  letter_type: Initial
+  print_header_id: 1
+  rec_id: 1001
+  relationship_role: treaters
+  rolodex_relationship_id: 1001
+  sent_date: 2002-06-03
+1002:
+  client_id: 1005
+  letter: How are you?
+  letter_type: Periodic
+  print_header_id: 1
+  rec_id: 1002
+  relationship_role: treaters
+  rolodex_relationship_id: 1001
+  sent_date: 2004-06-03
+
+

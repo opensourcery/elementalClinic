@@ -1,0 +1,24 @@
+<div id="help">
+    <p id="help_link"><a onclick="return help_toggle()"><span>Help</span></a></p>
+    <div id="help_main">
+        <div id="help_menu">
+            <a id="close_button" href="#" onclick="return help_toggle()" title="Close help"><span>Close help</span></a>
+            <h4>Available Help</h4>
+            <ul id="help_list">
+                [% FOR helper IN Help.help %]
+                <li id="help_[% helper.name %]" [% ' class="active"' IF helper.name == 'default' %]>
+                    <a onclick="return show_help( '[% helper.name %]' )">[% helper.label %]</a>
+                </li>
+                [% END %]
+            </ul>
+        </div>
+
+        <div id="help_body">
+        [% INCLUDE help/content.html helper = Help.get_helper( 'default' ) %]
+        </div>
+        <div id="help_loading">
+            <h4>...</h4>
+            <p>Loading ...</p>
+        </div>
+    </div>
+</div>

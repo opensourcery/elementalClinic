@@ -1,0 +1,90 @@
+[% read835 = billing_payment.read835 %]
+    <div class="connection_details">
+    <h4>
+    Remittance Advice (835)
+    </h4>
+    <p>
+    Sender: [% read835.get_payer_name %] ([%read835.get_sender_interchange_id %])<br />
+    Sent: [% read835.get_interchange_date %] [% read835.get_interchange_time %]<br />
+    Test Mode: [% IF read835.is_production; 'No'; ELSE; 'Yes'; END %]<br />
+    <a href="[% script %]?section=payments;step=1;billing_payment_id=[% billing_payment.id %]">Master Payment details</a>
+    </p>
+
+    <p>
+    Payer Contact: [% read835.get_payer_contact.name %]
+    [% IF read835.get_payer_contact.phone; '<br />Phone: ' _ read835.get_payer_contact.phone; END; -%]
+    [% IF read835.get_payer_contact.extension; '<br />Ext: ' _ read835.get_payer_contact.extension; END; -%]
+    [% IF read835.get_payer_contact.fax; '<br />Fax: ' _ read835.get_payer_contact.fax; END; -%]
+    [% IF read835.get_payer_contact.email; '<br />Email: ' _ read835.get_payer_contact.email; END; %]
+    </p>
+
+    <table class="claim_list">
+        [% FOR claim IN read835.get_claims %]
+        <tr class="head">
+            <th colspan="2">[% claim.patient.lname %], [% claim.patient.fname %]</th>
+            <th colspan="3" class="status">[% current_user.valid_data.get_byname( '_claim_status_codes', claim.status_code ).description %]</th>
+        </tr>
+        [% IF claim.corrected_patient -%]
+        <tr>
+            <td>Corrected Client Name: [% claim.corrected_patient.lname %] [% claim.corrected_patient.fname %]</td>
+        </tr>
+        [% END -%]
+        [% IF claim.deductions.0 %]
+            [% # TODO %]
+        [% END %]
+        <tr class="labels">
+            <th>Date</th>
+            <th>Code</th>
+            <th>Billed</th>
+            <th>Paid</th>
+            <th>Units</th>
+        </tr>
+        [% rowclass = 0 -%]
+        [% FOR note IN claim.service_lines %] [% rowclass = rowclass * -1 + 1 %]
+        <tr class="[% IF rowclass; "even"; ELSE; "odd"; END %]">
+            <td class="note_date">[% note.service_date %]</td>
+            <td class="note_code">
+                [% note.payment_info.medical_procedure.code %][% FOR modifier IN note.payment_info.medical_procedure.modifiers; modifier; END %]
+                [% IF note.payment_info.submitted_medical_procedure.code %]
+                    <strong>Submitted Code: [% note.payment_info.submitted_medical_procedure.code %]
+                        [% FOR modifier IN note.payment_info.submitted_medical_procedure.modifiers; modifier; END %]
+                    </strong>
+                [% END -%]
+            </td>
+            <td class="billed">$ [% note.payment_info.line_item_charge_amount %]</td>
+            <td class="paid">$ [% note.payment_info.line_item_provider_payment_amount %]</td>
+            <td class="units">[% note.payment_info.units_of_service_paid_count %] [% IF note.payment_info.original_units_of_service; 'of ' _ note.payment_info.original_units_of_service_count; END %]</td>
+        </tr>
+        [% IF note.deductions.0 -%]
+        [% FOR deduction IN note.deductions %]
+        <tr class="[% IF rowclass; "even"; ELSE; "odd"; END %] deduction">
+            <td>
+                <strong>Deduction: [% deduction.group_code %]</strong>
+            </td>
+            <td colspan="4">
+                [% current_user.valid_data.get_byname( '_adjustment_group_codes', deduction.group_code ).description %]<br />
+            </td>
+        </tr>
+        <tr class="[% IF rowclass; "even"; ELSE; "odd"; END %] deduction">
+            <td colspan="3">
+                <strong>[% deduction.reason_code %]</strong>
+                [% current_user.valid_data.get_byname( '_claim_adjustment_codes', deduction.reason_code ).description %]
+            </td>
+            <td class="amount">$ [% deduction.deduction_amount %]</td>
+            <td class="units">[% deduction.deduction_quantity %]</td>
+        </tr>
+        [% END -%]
+        [% END -%]
+        [% IF note.remarks.0 %]
+        <tr class="[% IF rowclass; "even"; ELSE; "odd"; END %]">
+            <td colspan="5" class="remark"><strong>Remarks</strong><br />
+            [% FOR remark IN note.remarks -%]
+                [% remark.code %]: [% current_user.valid_data.get_byname( '_remittance_remark_codes', remark.code ).description %]<br />
+            [% END %]
+            </td>
+        </tr>
+        [% END -%]
+        [% END -%]
+    [% END %]
+    </table>
+    </div>

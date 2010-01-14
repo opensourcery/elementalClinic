@@ -1,0 +1,11 @@
+<h3 class="screen">Reports</h3>
+
+<div class="submenu">
+    <ul>
+        [% FOR report IN financial_reports %]
+        <li[% ' class="active"' IF 0 %]>
+            <a href="[% script %]?section=reports;report_name=[% report.name %]">[% report.label %]</a>
+        </li>
+        [% END %]
+    </ul>
+</div>

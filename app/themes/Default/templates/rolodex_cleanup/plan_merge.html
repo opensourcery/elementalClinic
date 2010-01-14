@@ -1,0 +1,165 @@
+[% INCLUDE util/errors.html %]
+
+<script language="JavaScript" type="text/javascript" >
+    function updateme( id, text ){
+        document.getElementById( id ).value = text;
+    }
+
+    function isblank(s) {
+        for(var i = 0; i < s.length; i++) {
+            var c = s.charAt(i);
+            if ((c != ' ') && (c != '\n') && (c != '\t')) return false;
+        }
+        return true;
+    }
+    function required_fields(){
+        var name = document.getElementById( 'name' ).value;
+        var fname = document.getElementById( 'fname' ).value;
+        var lname = document.getElementById( 'lname' ).value;
+        if ( ((name == null) || (name == "") || isblank(name)) &&
+           ( ((fname == null) || (fname == "") || isblank(fname)) || 
+             ((lname == null) || (lname == "") || isblank(lname)) )){
+            alert('Rolodex requires either an organization name or a first and last name.');
+            return false;
+        }
+        return true;
+    }
+</script>
+    
+<div id="content">
+
+    <div class="system_box">
+        <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" onsubmit="return required_fields()">
+        <table class="plan_merge" border="1">
+            <tr class="final_top">
+                <td colspan="10"><h3>Final Rolodex Entry</h3><br /></td>
+            </tr>
+            <tr class="final_middle">
+                <td rowspan="3"></td>
+                <td rowspan="3">
+                    [% INCLUDE util/input_text.html
+                        label   = 'Organization'
+                        name    = 'name'
+                        size    = 20
+                        break   = 1
+                    %]<br />
+                    [% INCLUDE util/input_text.html
+                        label   = 'First Name'
+                        name    = 'fname'
+                        size    = 20
+                        break   = 1
+                    %]<br />
+                    [% INCLUDE util/input_text.html
+                        label   = 'Last Name'
+                        name    = 'lname'
+                        size    = 20
+                        break   = 1
+                    %]<br />
+                </td>
+                <td>Credentials</td>
+                <td>Phone Numbers</td>
+                <td>Address 1 and 2</td>
+                <td>City</td>
+                <td>State</td>
+                <td>Zip</td>
+            </tr>
+            <tr class="final_middle">
+                <td>[% INCLUDE util/input_text.html
+                    name    = 'credentials'
+                    size    = 10
+                %]</td>
+                <td>[% INCLUDE util/input_text.html
+                    name    = 'phone'
+                    size    = 15
+                %]</td>
+                <td>[% INCLUDE util/input_text.html
+                    name    = 'addr'
+                    size    = 25
+                %]</td>
+                <td>[% INCLUDE util/input_text.html
+                    name    = 'city'
+                    size    = 15
+                %]</td>
+                <td>[% INCLUDE util/input_text.html
+                    name    = 'state'
+                    size    = 2
+                %]</td>
+                <td><p class="right">[% INCLUDE util/input_text.html
+                    name    = 'post_code'
+                    size    = 10
+                %]</p></td>
+            </tr>
+            <tr class="final_middle">
+                <td></td>
+                <td>[% INCLUDE util/input_text.html
+                    name    = 'phone_2'
+                    size    = 15
+                %]</td>
+                <td>[% INCLUDE util/input_text.html
+                    name    = 'addr_2'
+                    size    = 25
+                %]</td>
+                <td colspan="3"></td>
+            </tr>
+            <tr class="final_bottom">
+                <td colspan="10">
+                    <p class="edit"><input type="submit" name="op" value="Merge >>" /></p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="10">
+                    <br />
+                    <h3>Rolodex Entries to Merge</h3>
+                    <ul>
+                        <li>Click on any of the fields to select them for the final merged record. </li>
+                        <li>Clear the checkbox for any records you do not want to get merged in.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Merge?</td>
+                <td>Name</td>
+                <td>Credentials</td>
+                <td>Phone Numbers</td>
+                <td>Address 1 and 2</td>
+                <td>City</td>
+                <td>State</td>
+                <td>Zip</td>
+            </tr>
+        [% IF custom %]
+            <input type="hidden" name="all_rolodex" value="1" />
+        [% ELSE %]
+            [% INCLUDE merge_entry entry = rolodex %]
+        [% END %]
+        [%- FOR entry IN rolodex_matching %]
+            [% INCLUDE merge_entry %]
+        [%- END %]
+        </table>
+        </form>
+    </div>
+    
+</div>
+[% BLOCK merge_entry %]
+        <tr class="entries">
+            <td class="check">
+                [% INCLUDE util/checkbox.html
+                    name    = "merge_$entry.rec_id"
+                    value   = 1
+                %]
+                <p>[% entry.rec_id %]</p>
+            </td>
+            <td class="entry_cell">
+                <span>Organization:</span> <a href="javascript:updateme( 'name', '[% entry.name %]')">[% entry.name %]</a><br />
+                <span>First Name:</span> <a href="javascript:updateme( 'fname', '[% entry.fname %]')">[% entry.fname %]</a><br />
+                <span>Last Name:</span> <a href="javascript:updateme( 'lname', '[% entry.lname %]')">[% entry.lname %]</a><br />
+            </td>
+            <td class="entry_cell"><a href="javascript:updateme( 'credentials', '[% entry.credentials %]')">[% entry.credentials %]</a></td>
+            <td class="entry_cell"><a href="javascript:updateme( 'phone', '[% entry.phone %]')">[% entry.phone %]</a><br />
+                                    <a href="javascript:updateme( 'phone_2', '[% entry.phone_2 %]')">[% entry.phone_2 %]</a></td>
+            <td class="entry_cell"><a href="javascript:updateme( 'addr', '[% entry.addr %]')">[% entry.addr %]</a><br />
+                                    <a href="javascript:updateme( 'addr_2', '[% entry.addr_2 %]')">[% entry.addr_2 %]</a></td>
+            <td class="entry_cell"><a href="javascript:updateme( 'city', '[% entry.city %]')">[% entry.city %]</a></td>
+            <td class="entry_cell"><a href="javascript:updateme( 'state', '[% entry.state %]')">[% entry.state %]</a></td>
+            <td class="entry_cell"><a href="javascript:updateme( 'post_code', '[% entry.post_code %]')">[% entry.post_code %]</a></td>
+        </tr>
+[% END %]

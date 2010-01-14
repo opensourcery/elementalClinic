@@ -1,0 +1,12 @@
+<div class="site_display">
+    <h4>Doctors</h4>
+    <div id="rolodex_entries">
+        [% INCLUDE rolodex/rolodex_entries.html %]
+    </div>
+
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" name="Create Doctor">
+<!--FIXME - should be able to remove this?        <input type="hidden" name="client_id" value="[% client.id %]" />-->
+        <p class="save"><input type="submit" name="op" id="op_new" value="New Doctor" />
+</p>
+    </form>
+</div>

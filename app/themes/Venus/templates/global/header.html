@@ -1,0 +1,24 @@
+[% BLOCK global/header/help %]
+[% Help.add(
+    'default',
+    'patient_lookup',
+    'patient_quick_intake',
+    'patient_appointment_new',
+    'patient_appointment_modify',
+    'patient_verification',
+    'clinic_schedule'
+) %]
+[% END %]
+
+[% BLOCK global/header/nav %]
+<ul>
+    <li><a href="/schedule.cgi?op=home;withclient=no">Schedule</a></li>
+    <li><a href="/">Patients</a></li>
+    <li><a href="/rolodex.cgi">Doctors</a></li>
+    <li><a href="/report.cgi">Reports</a></li>
+    [% IF current_user.scanner || current_user.admin %]<li><a href="/scanned_record.cgi">Scanned Records</a></li>[% END %]
+    [% IF current_user.admin %]<li><a href="/admin.cgi">Admin &amp; Setup</a></li>[% END %]
+</ul>
+[% END %]
+
+[% INCLUDE Base:global/header.html %]

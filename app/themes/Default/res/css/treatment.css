@@ -1,0 +1,106 @@
+div.treatment_print {
+    font-family : Tahoma,Verdana,Helvetica,Arial,sans-serif;
+    font-size : 10pt;
+}
+dl.treatment dd {
+    font-weight : bold;
+}
+dd.text {
+    font-weight : normal !important;
+    font-style : italic;
+}
+dl.goaltext dt {
+    font-style : italic;
+    border-bottom : 1px solid #999;
+}
+dl.goaltext dd {
+    margin : 0 0 15px 20px;
+}
+#current_plan {
+    background : #fff;
+    border : 1px solid #fb0;
+    padding : 7px;
+}
+#current_plan dl.inline dd {
+    font-weight : bold;
+}
+#current_plan p.sub {
+    font-size : .8em;
+    padding : 0;
+    margin : -5px 0 10px 0;
+}
+#goals {
+}
+#goals p.new {
+    margin : 0 0 10px 0;
+}
+#goals h3 {
+    font-weight : bold;
+    background-color : #ffc;
+    padding : 2px 0 1px 10px;
+}
+#goals div h4 {
+    font-size : 14px;
+    border-bottom : 2px solid #fb0;
+}
+#goals div {
+    background-color : #fff;
+    padding : 7px;
+    border : 1px solid #fb0;
+    margin : 0;
+    width : 452px;
+    float : left;
+    display : none;
+}
+#goals div.active_goal {
+    display : block;
+}
+hr.subtle {
+    clear : both !important;
+}
+/* goal list {{{*/
+ul.goal_list {
+    list-style : none;
+    padding : 0;
+    margin : 0;
+    width : 140px;
+    float : left;
+    border : 1px solid #666;
+    border-width : 1px 0 1px 1px;
+}
+ul.goal_list li {
+    font-size : .7em;
+    padding : 3px;
+    background : #eee;
+    border : 1px solid transparent;
+    border-bottom-color : #fb0;
+}
+ul.goal_list a {
+    display : block;
+}
+ul.goal_list li a span.goal_dates {
+    color : #666;
+    font-weight : normal;
+    text-decoration : none;
+}
+ul.goal_list li em {
+    font-style : normal;
+}
+ul.goal_list li.active_goal {
+    background : #fff;
+    border-bottom-color : #fb0;
+}
+ul.goal_list li span.clone_control {
+    font-weight : bold;
+    display : block;
+}
+/*}}}*/
+h3.treatment {
+    margin-bottom : 0px;
+}
+h4.treatment {
+    margin : 2px;
+}
+h5.treatment {
+    margin : 0px;
+}

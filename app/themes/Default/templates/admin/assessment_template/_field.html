@@ -1,0 +1,30 @@
+<li class="section_field">
+    <dl class="fieldlist">
+    [% INCLUDE util/input_text.html
+        name    = 'field['_ field.rec_id _'][label]'
+        value   = field.label
+        label   = 'Name'
+        dl      = 1
+    %]
+    [% IF( action == 'edit' ) || field.choices %]
+        [% INCLUDE util/input_text.html
+            name    = 'field['_ field.rec_id _'][choices]'
+            value   = field.choices
+            label   = 'Choices'
+            dl      = 1
+        %]
+    [% END %]
+    [% IF current_assessment.editable %]
+    <dt>
+        <label>Actions:</label>
+    </dt>
+    <dd>
+        <a title="Remove this field" position="[% field.position %]" section_id="[% section.id || section_id %]">Remove This Field</a>
+    </dd>
+    [% END %]
+    </dl>
+    <input type="hidden" name="[% 'field['_ field.rec_id _'][rec_id]' %]" value="[% field.rec_id %]"> 
+</li>
+[% IF include_new_field_trigger %]
+    <li class="new_field"><a href="#">New field</a></li>
+[% END %]

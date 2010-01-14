@@ -1,0 +1,35 @@
+---
+1001:
+  active: 1
+  dept_id: 1001
+  description: ~
+  name: Maintenance
+  rec_id: 1001
+  visit_frequency: 2
+  visit_interval: year
+1002:
+  active: 1
+  dept_id: 1001
+  description: ~
+  name: Rehabilitation
+  rec_id: 1002
+  visit_frequency: 3
+  visit_interval: month
+1003:
+  active: 1
+  dept_id: 1001
+  description: ~
+  name: Intensive Community Services
+  rec_id: 1003
+  visit_frequency: 2
+  visit_interval: week
+1004:
+  active: 1
+  dept_id: 1001
+  description: ~
+  name: Residential Treatment Home
+  rec_id: 1004
+  visit_frequency: 1
+  visit_interval: month
+
+

@@ -1,0 +1,44 @@
+    <div class="client_[% action %]">
+        <h4>All Client relationships</h4>
+
+        [% INCLUDE rolodex/relationship_preferences.html %]
+        <hr class="div" />
+
+        [% FOR role_name IN [ 'contacts', 'employment', 'treaters' ];
+            role = rolodex.roles( role_name )
+            relationships = current_user.client_relationships_by_pref(
+                client.id,
+                role.name,
+            );
+            IF relationships
+        %]
+            <div class="relationships_byrole">
+            <h5>[% role.description %]</h5>
+            [% FOR rel IN relationships %]
+            <table class="relationships" border="0">
+                <tr class="main">
+                    [% IF( ! current_user.financial && (( role.name == 'mental_health_insurance' ) || ( role.name == 'medical_insurance' ) || ( role.name == 'dental_insurance' ))) %]
+                    <th><div>[% rel.rolodex.eman %]</div></th>
+                    [% ELSE %]
+                    <th><div><a href="[% script %]?client_id=[% client.id %];rolodex_id=[% rel.rolodex.rec_id %];relationship_id=[% rel.rec_id %];role_name=[% role.name %];op=relationship_edit">[% rel.rolodex.eman %]</a></div></th>
+                    [% END %]
+                    <td>
+                        [% rel.rolodex.phone.phone_number_web %]
+                        [% rel.rolodex.address.address_web %]
+                    </td>
+                    <td rowspan="2" class="actions">
+                        <a href="roi.cgi?op=create;client_id=[% client.id %];rolodex_id=[% rel.rolodex.rec_id %]">New release</a><br />
+                        <a href="letter.cgi?op=rolodex_create_letter;client_id=[% client.id %];rolodex_relationship_id=[% rel.rec_id %];relationship_role=[% role_name %]">New letter</a>
+                    </td>
+                </tr>
+                <tr class="aux">
+                    <td colspan="5">
+                        [% INCLUDE "rolodex/role/${ role.name }_info.html" %]
+                    </td>
+                </tr>
+            </table>
+            [% END %]
+            </div>
+            [% END %]
+        [% END %]
+    </div>

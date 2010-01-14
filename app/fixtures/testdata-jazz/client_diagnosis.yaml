@@ -1,0 +1,115 @@
+---
+1001:
+  client_id: 1003
+  comment_text: No diagnosis was ever made public.
+  diagnosis_1a: 296.80 Bipolar Disorder NOS
+  diagnosis_1b: 295.14 Schizophrenia Disorganized Type Chronic Acute Exac
+  diagnosis_1c: 295.12 Schizophrenia Disorganized Type Chronic
+  diagnosis_2a: 301.90 Personality Disorder NOS
+  diagnosis_2b: 301.20 Schizoid Personality Disorder
+  diagnosis_3: He would seldom speak.
+  diagnosis_4: He would wear odd clothes and hats and had an unusual percussive manner in playing piano.
+  diagnosis_5_current: 45
+  diagnosis_5_highest: ~
+  diagnosis_date: 2005-03-02
+  rec_id: 1001
+1002:
+  client_id: 1003
+  comment_text: No diagnosis was ever made public.
+  diagnosis_1a: 296.60 Bipolar I Disorder Most Recent Episode Mixed Unspecified
+  diagnosis_1b: 295.14 Schizophrenia Disorganized Type Chronic Acute Exac
+  diagnosis_1c: 295.12 Schizophrenia Disorganized Type Chronic
+  diagnosis_2a: 301.00 Paranoid Personality Disorder
+  diagnosis_2b: 312.34 Intermittent Explosive Disorder
+  diagnosis_3: Coat
+  diagnosis_4: Hat
+  diagnosis_5_current: 23
+  diagnosis_5_highest: ~
+  diagnosis_date: 2005-03-17
+  rec_id: 1002
+1003:
+  client_id: 1001
+  comment_text: ~
+  diagnosis_1a: 292.89 Other/Unknown Substance Intoxication
+  diagnosis_1b: 300.30 Obsessive Compulsive Disorder
+  diagnosis_1c: 000.00 No Data Available
+  diagnosis_2a: 301.83 Borderline Personality Disorder
+  diagnosis_2b: 301.81 Narcissistic Personality Disorder
+  diagnosis_3: Playing in the jazz clubs of New York Davis was in frequent contact with users and dealers of illegal drugs and by 1950 in common with many of his contemporaries he had developed a serious heroin addiction.
+  diagnosis_4: No one was more aware of this than Davis himself and in 1954 he returned to East St. Louis and with the help and encouragement of his father he kicked heroin locking himself away from society until free of the drug.
+  diagnosis_5_current: 25
+  diagnosis_5_highest: ~
+  diagnosis_date: 2005-05-04
+  rec_id: 1003
+1004:
+  client_id: 1001
+  comment_text: ~
+  diagnosis_1a: 292.89 Other/Unknown Substance Intoxication
+  diagnosis_1b: 300.30 Obsessive Compulsive Disorder
+  diagnosis_1c: 000.00 No Data Available
+  diagnosis_2a: 301.83 Borderline Personality Disorder
+  diagnosis_2b: 301.81 Narcissistic Personality Disorder
+  diagnosis_3: Playing in the jazz clubs of New York Davis was in frequent contact with users and dealers of illegal drugs and by 1950 in common with many of his contemporaries he had developed a serious heroin addiction.
+  diagnosis_4: No one was more aware of this than Davis himself and in 1954 he returned to East St. Louis and with the help and encouragement of his father he kicked heroin locking himself away from society until free of the drug.
+  diagnosis_5_current: 25
+  diagnosis_5_highest: ~
+  diagnosis_date: 2005-07-20
+  rec_id: 1004
+1005:
+  client_id: 1002
+  comment_text: ~
+  diagnosis_1a: 292.89 Other/Unknown Substance Intoxication
+  diagnosis_1b: 300.30 Obsessive Compulsive Disorder
+  diagnosis_1c: 000.00 No Data Available
+  diagnosis_2a: 301.83 Borderline Personality Disorder
+  diagnosis_2b: 301.81 Narcissistic Personality Disorder
+  diagnosis_3: Orchid.
+  diagnosis_4: Tuna.
+  diagnosis_5_current: 42
+  diagnosis_5_highest: ~
+  diagnosis_date: 2005-03-20
+  rec_id: 1005
+1006:
+  client_id: 1004
+  comment_text: ~
+  diagnosis_1a: 292.89 Other/Unknown Substance Intoxication
+  diagnosis_1b: 300.30 Obsessive Compulsive Disorder
+  diagnosis_1c: 000.00 No Data Available
+  diagnosis_2a: 301.83 Borderline Personality Disorder
+  diagnosis_2b: 301.81 Narcissistic Personality Disorder
+  diagnosis_3: ~
+  diagnosis_4: ~
+  diagnosis_5_current: 21
+  diagnosis_5_highest: ~
+  diagnosis_date: 2005-04-20
+  rec_id: 1006
+1007:
+  client_id: 1005
+  comment_text: ~
+  diagnosis_1a: 292.89 Other/Unknown Substance Intoxication
+  diagnosis_1b: 300.30 Obsessive Compulsive Disorder
+  diagnosis_1c: 000.00 No Data Available
+  diagnosis_2a: 301.83 Borderline Personality Disorder
+  diagnosis_2b: 301.81 Narcissistic Personality Disorder
+  diagnosis_3: ~
+  diagnosis_4: ~
+  diagnosis_5_current: 21
+  diagnosis_5_highest: ~
+  diagnosis_date: 2006-02-04
+  rec_id: 1007
+1008:
+  client_id: 1004
+  comment_text: ~
+  diagnosis_1a: 292.89 Other/Unknown Substance Intoxication
+  diagnosis_1b: 300.30 Obsessive Compulsive Disorder
+  diagnosis_1c: 000.00 No Data Available
+  diagnosis_2a: 301.83 Borderline Personality Disorder
+  diagnosis_2b: 301.81 Narcissistic Personality Disorder
+  diagnosis_3: ~
+  diagnosis_4: ~
+  diagnosis_5_current: 21
+  diagnosis_5_highest: ~
+  diagnosis_date: 2006-03-07
+  rec_id: 1008
+
+

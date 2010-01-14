@@ -1,0 +1,173 @@
+[% current_client = current_client || client %]
+<script type="text/javascript">
+/* This is providing dynamic resizing of the height of resize_element
+** so that its scrollbar will work properly.  See base.js live_resize().
+*/
+    var resize_percentage = 62 /* integer; percentage of the windeow that we want the element sized for */
+    var resize_element = "right" /* string; element to resize */
+</script>
+<div id="right" class='client_box'>
+    <div id="appointments">[% INCLUDE clientoverview/appointments_history.html %]</div>
+</div><!--appointments-->
+<div id="left" class='client_box'>
+    <form name="client_form" method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+        <p>
+            [% INCLUDE util/input_text.html name='fname' label='First' value=current_client.fname size='19' %]
+            [% INCLUDE util/input_text.html name='mname' label='M' value=current_client.mname size='1' %]
+        </p>
+        <p>
+            [% INCLUDE util/input_text.html name='lname' label='Last' value=current_client.lname size='19' %]
+        </p>
+        <p>
+            [% INCLUDE util/date_picker.html
+                name    = 'dob'
+                value   = current_client.dob
+                label   = 'Birthdate'
+            %]
+        </p>
+
+        <hr class="subtle" />
+    
+        <dl class="inline">
+            <dt>Doctor:</dt>
+            [% INCLUDE util/select_new.html
+                name    = 'primary_treater_rolodex_id'
+                wraptag = 'dd' 
+                values  = rolodex_treaters
+                default = current_client.get_primary_treater.rolodex.rec_id
+                leading_blank = '(No Doctor)'
+                no_choose_blank = 1
+                keyname = 'rec_id'
+                valname = 'lname'
+            %]
+            <dt>Renewal:</dt>
+            [% INCLUDE util/date_picker.html
+                name    = 'renewal_date'
+                value   = current_client.renewal_date
+                wraptag = 'dd' 
+            %]
+        </dl>
+    
+        <hr class="subtle" />
+    
+        <dl class="inline">
+   
+            [% INCLUDE util/input_text.html
+              name='phone'
+              label='Phone'
+              dl=1
+              value=phone || current_client.phone_f
+              size='20'
+            %]
+            [%# INCLUDE util/input_text.html name='phone_2' label='2nd Phone' dl=1 value=current_client.phone2_f size='20' %]
+            [% INCLUDE util/input_text.html name='email' label='Email' dl=1 value=current_client.email size='20' %]
+
+            <dt>Send Email Notifications:</dt>
+            [% INCLUDE util/checkbox.html
+                name    = 'send_notifications'
+                value   = current_client.send_notifications
+                dl      = 1
+                wraptag = 'dd'
+            %]
+                
+            <dt>Don't Call:</dt>
+            [% INCLUDE util/select_new.html
+                name    = 'dont_call'
+                wraptag = 'dd' 
+                values  = [
+                    { id  => 0, label => 'No', },
+                    { id  => 1, label => 'Yes', },
+                ]
+                default = current_client.dont_call || 0
+                keyname = 'id'
+                valname = 'label'
+            %]
+        </dl>
+   
+        <hr class="subtle" />
+    
+        [% INCLUDE util/textarea.html
+            name    = 'comment_text'
+            value   = current_client.comment_text
+            label   = 'Comments'
+            break   = 1
+            wraptag = 'p'
+            rows    = 1
+            cols    = 28 
+        %]
+    
+        <hr class="div" />
+    
+        <input type="hidden" name="client_id" value="[% client.id %]" />
+        <p class="save"><input type="submit" name="op" id="op_save" value="Save Patient" /></p>
+    
+    </form>
+</div> <!-- end client_details-->
+<div id="notes" class='client_box'>
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" name="notes_form">
+        <input type="hidden" name="client_id" value="[% client.id %]" />
+    <table>
+        <thead>
+            <th>Date</th>
+            <th>Type</th>
+            <th>Note</th>
+            <th>Staff</th>
+        </thead>
+        <tr class="save">
+            <td>
+            [% INCLUDE util/date_picker.html
+                name    = 'start_date'
+                value   = current_note.start_date
+            %]
+            </td>
+            <td>
+            [% INCLUDE util/select_new.html
+                name    = 'note_header'
+                values  = note_header_options 
+                default = 12
+                    # FIXME - this should default to Other (which is currently 12...but that could change)
+                keyname = 'id'
+                valname = 'label'
+                onchange = 'return insert_note_body()'
+            %]
+            <td>
+            [% INCLUDE util/textarea.html
+                name='note_body'
+                value=current_note.note_body
+                rows    = 1
+                cols    = 45
+            %]
+            </td>
+            <td class='save'>
+            <input type="submit" name="op" id="op_save_note" value="Add Note" />
+            </td>
+        </tr>
+        [% FOR item IN display_items %]
+        <tr>
+            <td>[% item.date FILTER date_format(current_user.pref.date_format) %]</td>
+            <td>[% item.type %]</td>
+            <td>
+                [% IF item.mail_id %]
+                    <a 
+                        class="mailsubject" 
+                        id="subject-[% item.mail_id %]" 
+                        OnClick="ToggleVisible([% item.mail_id %])"
+                    >[% item.subject %]</a>
+                    <div 
+                        class="mailmessage_hide" 
+                        name="message-[% item.mail_id %]" 
+                        id="message-[% item.mail_id %]" 
+                    >
+                        [% item.content %]
+                    </div>
+                [% ELSE %]
+                    [% item.body %]
+                [% END %]
+            </td>
+            <td>[% item.writer %]</td>
+        </tr>
+        [% END %]
+    </table>
+    </form>
+</div> <!-- end notes-->
+

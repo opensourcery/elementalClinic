@@ -1,0 +1,128 @@
+[% INCLUDE global/client_head.html
+    navsec = 'home'
+    navpage = 'placement'
+%]
+<!--
+    intake event (referral or not)
+        < next event
+        > previous discharge
+    
+    change event
+        < next discharge
+        > previous intake
+    
+    discharge event
+        < next intake event
+        > previous event
+-->
+
+[%-
+    IF event_to_edit.program.is_referral;
+        restrict_program_type = 'referral';
+    ELSE;
+        restrict_program_type = 'admission';
+    END;
+    IF event_to_edit.discharge;
+        restrict_program = 1;
+        restrict_staff = 1;
+        restrict_level_of_care = 1;
+    END;
+# set explanatory notes
+    IF event_to_edit.is_intake;
+        previous_date_note = 'discharge';
+        event_type = event_to_edit.referral ? 'a referral' : 'an admission';
+    ELSIF event_to_edit.discharge;
+        next_date_note = 'intake';
+        event_type = 'a discharge';
+    ELSE;
+        previous_date_note = 'intake';
+        next_date_note = 'discharge';
+        event_type = 'an';
+    END
+%]
+
+<div id="center" class="client_box">
+    <h4>[% INCLUDE placement/client_status.html %]</h4>
+
+    <p class="highlight">You are editing [% event_type %] event.  Please be careful.</p>
+
+    <h5>Notes, restrictions</h5>
+    <ul>
+    [% IF event_to_edit.discharge %]
+        <li>You may only edit the date.</li>
+    [% ELSE %]
+        <li><strong>Program</strong> must be the same type (i.e. <strong>[% restrict_program_type %]</strong>).</li>
+    [% END %]
+    [%- IF event_to_edit.previous_date_limit %]
+        <li><strong>Date</strong> must be after the previous [% previous_date_note %] event: [% event_to_edit.previous_date_limit %].</li>
+    [%- END %]
+    [%- IF event_to_edit.next_date_limit %]
+        <li><strong>Date</strong> must be before the next [% next_date_note %] event: [% event_to_edit.next_date_limit %].</li>
+    [%- END %]
+    </ul>
+
+<fieldset class="subtle">
+    <legend>Change Placement Event</legend>
+    <form method="[% Config.form_method %]" name="placement_event" action="[% script %]" enctype="application/x-www-form-urlencoded">
+        <dl class="inline event_edit">
+        <label for="event_date"><dt>Event date</dt></label>
+        [% INCLUDE util/date_picker.html
+            name    = 'event_date'
+            value   = event_to_edit.event_date
+            wraptag = 'dd'
+        %]
+
+        [% UNLESS restrict_program;
+            INCLUDE util/select_new.html
+            name    = 'program_id'
+            label   = 'Program'
+            values  = department.list_programs( restrict_program_type )
+            default = event_to_edit.program_id
+            keyname = 'rec_id'
+            valname = 'full_name'
+            use_id  = 1
+            dl      = 1
+        ; ELSE %]
+            <dt>Program:</dt>
+            <dd>cannot change</dd>
+        [% END %]
+
+        [% UNLESS restrict_staff;
+           INCLUDE util/select_new.html
+            name    = 'staff_id'
+            label   = 'Staff'
+            values  = department.get_service_coordinators
+            default = event_to_edit.staff_id
+            keyname = 'staff_id'
+            valname = 'eman'
+            dl      = 1
+            leading_blank   = 'Optional'
+        ; ELSE %]
+            <dt>Staff:</dt>
+            <dd>cannot change</dd>
+        [% END %]
+
+        <dt>Level of care:</dt>
+        [% UNLESS restrict_level_of_care;
+           INCLUDE util/choose_valid_data.html
+            name   = 'level_of_care_id'
+            table  = '_level_of_care'
+            type    = 'select'
+            default = event_to_edit.level_of_care_id
+            use_id  = 1
+            wraptag = 'dd'
+            leading_hash    = [{ name => 'Optional' }]
+        ; ELSE %]
+            <dd>cannot change</dd>
+        [% END %]
+        </dl>
+
+        <input type="hidden" name="client_id" value="[% client.id %]" />
+        <input type="hidden" name="event_id" value="[% event_to_edit.rec_id %]" />
+        <input type="hidden" name="op" value="event_save" />
+        <p class="save"><input type="submit" name="submit" value="Alter event" /></p>
+    </form>
+    [% INCLUDE util/form_cancel.html %]
+</fieldset>
+
+</div>

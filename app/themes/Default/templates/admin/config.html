@@ -1,0 +1,423 @@
+[%# XXX there are several Venus-specific blocks in here -- they should be
+reconciled %]
+<div id="content">
+[% INCLUDE util/errors.html %]
+<div id="center" class="system_box">
+
+    <h2>Admin: Configuration</h2>
+
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" name="config_form" id="config_form">
+    <div class="minileft">
+        <h3>Security</h3>
+        <dl class="configuration">
+            <dt><label for="logout_time">Login, force timeout:</label>
+            [% INCLUDE util/input_text.html
+                name    = 'logout_time'
+                value   = logout_time || Config.logout_time
+                size    = 3
+            %]
+            </dt> 
+            <dd>Every user will be automatically logged out after this <strong>number of minutes</strong>, unless "Logout for inactivity" is set.</dd>
+
+            <dt><label for="logout_inactive">Logout for inactivity:</label>
+            [% INCLUDE util/input_text.html
+                name    = 'logout_inactive'
+                value   = logout_inactive || Config.logout_inactive
+                size    = 3
+            %]
+            </dt> 
+            <dd>If non-zero, users will be logged out after this <strong>number of minutes</strong>.</dd>
+            
+            <dt><label for="password_expiration_days">Password Expiration Days:</label>
+            [% INCLUDE util/input_text.html
+                name    = 'password_expiration_days'
+                value   = password_expiration_days || Config.password_expiration_days
+                size    = 5
+            %]
+            </dt>
+            <dd>If non-zero, users will be required to change their password after this <strong>number of days</strong></dd>
+        </dl>
+
+        <h3>Progress notes</h3>
+        <dl class="configuration">
+            <dt><label for="edit_prognote">Edit after commit?</label>
+            [% INCLUDE util/select_new.html
+                name    = 'edit_prognote'
+                default = edit_prognote || Config.edit_prognote
+                values  = [
+                    { key => 0, value => 'No' },
+                    { key => 1, value => 'Yes' },
+                ]
+                keyname = 'key'
+                valname = 'value'
+            %]
+            </dt> 
+            <dd>Should progress notes be editable by clinicians after they have been committed?</dd>
+
+            <dt><label for="prognote_min_duration_minutes">Minimum duration:</label>
+            [% INCLUDE util/input_text.html
+                name    = 'prognote_min_duration_minutes'
+                value   = prognote_min_duration_minutes || Config.prognote_min_duration_minutes
+                size    = 3
+            %]
+            </dt> 
+            <dd>Shortest allowable progress note, <strong>in minutes</strong>.</dd>
+
+            <dt><label for="prognote_max_duration_minutes">Maximum duration:</label>
+            [% INCLUDE util/input_text.html
+                name    = 'prognote_max_duration_minutes'
+                value   = prognote_max_duration_minutes || Config.prognote_max_duration_minutes
+                size    = 3
+            %]
+            </dt> 
+            <dd>Longest allowable progress note, <strong>in minutes</strong>.</dd>
+
+            <dt><label for="prognote_bounce_grace">Grace time:</label>
+            [% INCLUDE util/input_text.html
+                name    = 'prognote_bounce_grace'
+                value   = prognote_bounce_grace || Config.prognote_bounce_grace
+                size    = 3
+            %]
+            </dt> 
+            <dd><strong>Number of days</strong> after which clinician's supervisor is notified of bounced progress note.</dd>
+        </dl>
+
+        <h3>Electronic Claims</h3>
+        <dl class="configuration">
+            <dt><label for="cp_credentials_expire_warning">Credentials expiration:</label>
+            [% INCLUDE util/input_text.html
+                name    = 'cp_credentials_expire_warning'
+                value   = cp_credentials_expire_warning || Config.cp_credentials_expire_warning
+                size    = 3
+            %]
+            </dt> 
+            <dd><strong>Number of days</strong> before Claims Processor credentials will expire that Financial users are warned.</dd>
+            
+            <dt><label for="edi_contact_staff_id">EDI Contact:</label>
+            [% INCLUDE util/select_new.html
+                name    = 'edi_contact_staff_id'
+                default = edi_contact_staff_id || Config.edi_contact_staff_id
+                values  = department.get_financial_personnel
+                keyname = 'staff_id'
+                valname = 'eman'
+            %]
+            </dt> 
+            <dd>Contact person for electronic claims.</dd>
+            
+            <dt><label for="modem_port">Modem Port:</label>
+            [% INCLUDE util/input_text.html
+                name    = 'modem_port'
+                value   = modem_port || Config.modem_port || '/dev/modem'
+                size    = 15
+            %]
+            </dt> 
+            <dd>Serial port for the modem.</dd>
+
+            <dt><label for="silent_modem">Silent Modem:</label>
+            [% INCLUDE util/checkbox.html
+                name    = 'silent_modem'
+                value   = silent_modem || Config.silent_modem
+            %]
+            </dt> 
+            <dd>Modem is silent when dialing out.</dd>
+        </dl>
+        <h3>EMC Email Configuration</h3>
+        <dl class="configuration">
+            <dt><label for="send_mail_as">Send As:</label>
+            [% INCLUDE util/input_text.html
+                name    = 'send_mail_as'
+                value   = send_mail_as || Config.send_mail_as
+                size    = 30
+            %]
+            </dt>
+            <dd>Email address messages will be sent from.</dd>
+
+            <dt><label for="send_errors_to">Send errors to:</label>
+            [% INCLUDE util/input_text.html
+                name    = 'send_errors_to'
+                value   = send_errors_to || Config.send_errors_to
+                size    = 30
+            %]
+            </dt>
+            <dd>Email address to which error reports should be sent. This
+            should be an internal address where reports can be reviewed by a
+            system administrator, and if necessary forwarded to
+            OpenSourcery.</dd>
+
+            <dt><label for="default_mail_template">Default Mail Template:</label>
+            [% INCLUDE util/select_new.html
+                name    = 'default_mail_template'
+                default = default_mail_template || Config.default_mail_template
+                values  = mailtemplates
+                keyname = 'rec_id'
+                valname = 'name'
+                leading_blank   = 'None'
+            %]
+            </dt>
+
+            <dt>
+                <label for="send_test_to">Send Test:</label>
+
+                [% INCLUDE util/input_text.html
+                    name    = 'send_test_to'
+                    size    = 30
+                %]
+                <input type="button" value="Send Test" onclick="$('#op').attr( 'value', 'Send Test' ).click();"/>
+            </dt>
+            <dd>
+            Enter an address above and click 'Send Test' to send a test email message to that address.
+            </dd>
+
+        </dl>
+
+        <h3>Appointments</h3>
+        <dl class="configuration">
+            [% IF Config.Theme.controller_can('Schedule') %]
+            <dt><label for="quick_schedule_availability">Quick Schedule
+                Availability:</label></dt>
+            [% INCLUDE util/checkbox.html
+                name = 'quick_schedule_availability'
+                value = quick_schedule_availability || Config.quick_schedule_availability
+            %]
+            <dd>If enabled, doctors can be automatically added to the schedule
+            when making a new appointment.
+
+            If disabled, doctors must be manually added to the schedule by an
+            administrator before new appointments for them can be scheduled.
+            </dd>
+            [% END %]
+
+            <dt><label for="appointment_template">Appointment Template:</label>
+            [% INCLUDE util/select_new.html
+                name    = 'appointment_template'
+                default = appointment_template || Config.appointment_template
+                values  = mailtemplates
+                keyname = 'rec_id'
+                valname = 'name'
+                leading_blank   = 'None'
+            %]
+            </dt>
+            <dd>Default template to use for appointment notifications.</dd>
+
+            <dt><label for="appointment_notification_days">Appointment Notification Interval:</label>
+            [% INCLUDE util/input_text.html
+                name    = 'appointment_notification_days'
+                value   = appointment_notification_days || Config.appointment_notification_days
+                size    = 5
+            %]
+            <dd>
+            How many days in advance notifications for appointments should be sent out. 
+            If you would like them sent out mutiple times use a comma to
+            seperate the number of days. Example: '7,1' will send out 2
+            notifications, one 7 days before and appointment, the second on the
+            day before the appointment.
+            </dd>
+
+        </dl>
+    </div>
+
+    <div class="minileft">
+        <h3>Your organization</h3>
+        <dl class="configuration">
+            <dt><label for="org_name">Name:</label>
+            [% INCLUDE util/input_text.html
+                name    = 'org_name'
+                value   = org_name || Config.org_name
+                size    = 30
+            %]
+            </dt> 
+            <dd>Legal name of your organization.</dd>
+
+            <dt><label for="org_tax_id">Tax ID:</label>
+            [% INCLUDE util/input_text.html
+                name    = 'org_tax_id'
+                value   = org_tax_id || Config.org_tax_id
+                size    = 30
+            %]
+            </dt> 
+            <dd>Federal (?) Tax ID of your organization.</dd>
+
+            <dt><label for="org_national_provider_id">National Provider ID:</label>
+            [% INCLUDE util/input_text.html
+                name    = 'org_national_provider_id'
+                value   = org_national_provider_id || Config.org_national_provider_id
+                size    = 10
+            %]
+            </dt> 
+            <dd>National Provider Identifier of your organization.</dd>
+
+            <dt><label for="org_medicaid_provider_number">Medicaid Provider ID:</label>
+            [% INCLUDE util/input_text.html
+                name    = 'org_medicaid_provider_number'
+                value   = org_medicaid_provider_number || Config.org_medicaid_provider_number
+                size    = 30
+            %]
+            </dt> 
+            <dt><label for="org_medicare_provider_number">Medicare Provider ID:</label>
+            [% INCLUDE util/input_text.html
+                name    = 'org_medicare_provider_number'
+                value   = org_medicare_provider_number || Config.org_medicare_provider_number 
+                size    = 30
+            %]
+            </dt> 
+            <dd></dd>
+
+            <dt><label for="org_street1">Street address:</label>
+            [% INCLUDE util/input_text.html
+                name    = 'org_street1'
+                value   = org_street1 || Config.org_street1
+                size    = 30
+            %]
+            </dt> 
+
+            <dt><label for="org_street2">Street address 2:</label>
+            [% INCLUDE util/input_text.html
+                name    = 'org_street2'
+                value   = org_street2 || Config.org_street2
+                size    = 30
+            %]
+            </dt> 
+
+            <dt><label for="org_city">City:</label>
+            [% INCLUDE util/input_text.html
+                name    = 'org_city'
+                value   = org_city || Config.org_city
+                size    = 30
+            %]
+            </dt> 
+
+            <dt><label for="org_state">State:</label>
+            [% INCLUDE util/input_text.html
+                name    = 'org_state'
+                value   = org_state || Config.org_state
+                size    = 2
+            %]
+            </dt> 
+
+            <dt><label for="org_zip">Zip code:</label>
+            [% INCLUDE util/input_text.html
+                name    = 'org_zip'
+                value   = org_zip || Config.org_zip
+                size    = 10
+            %]
+            </dt> 
+        </dl>
+
+        <h3>Debugging</h3>
+        <dl class="configuration">
+            <dt><label for="form_method">Form method:</label>
+            [% INCLUDE util/select_new.html
+                name    = 'form_method'
+                default = form_method || Config.form_method
+                values  = [ 'post', 'get' ]
+            %]
+            </dt> 
+            <dd>Should be 'post' unless you're debugging.</dd>
+        </dl>
+        
+        <h3>Insurance</h3>
+        <p>
+            The system needs to know which mental health insurance is OHP, which one is Medicare, which is Medicaid and which is General Fund.
+            This is so we don't have to guess by looking at the insurance's name.
+        </p>
+        <dl class="configuration">
+            <dt><label for="ohp_rolodex_id">OHP:</label>
+            [% INCLUDE util/select_new.html
+                name    = 'ohp_rolodex_id'
+                default = ohp_rolodex_id || Config.ohp_rolodex_id
+                values  = rolodexes
+                keyname = 'rec_id'
+                valname = 'name'
+                leading_blank   = 'None'
+            %]
+            </dt> 
+            <dt><label for="medicare_rolodex_id">Medicare:</label>
+            [% INCLUDE util/select_new.html
+                name    = 'medicare_rolodex_id'
+                default = medicare_rolodex_id || Config.medicare_rolodex_id
+                values  = rolodexes
+                keyname = 'rec_id'
+                valname = 'name'
+                leading_blank   = 'None'
+            %]
+            </dt> 
+            <dt><label for="medicare_rolodex_id">General Fund:</label>
+            [% INCLUDE util/select_new.html
+                name    = 'generalfund_rolodex_id'
+                default = generalfund_rolodex_id || Config.generalfund_rolodex_id
+                values  = rolodexes
+                keyname = 'rec_id'
+                valname = 'name'
+                leading_blank   = 'None'
+            %]
+            </dt>
+            <dt><label for="medicaid_rolodex_id">Medicaid:</label>
+            [% INCLUDE util/select_new.html
+                name    = 'medicaid_rolodex_id'
+                default = medicaid_rolodex_id || Config.medicaid_rolodex_id
+                values  = rolodexes
+                keyname = 'rec_id'
+                valname = 'name'
+                leading_blank   = 'None'
+            %]
+            </dt> 
+        </dl>
+
+        <h3>PDF Printing</h3>
+        <p>Move the printed PDF over by X, Y <strong>points</strong>, in order to line up with a form.</p>
+        <dl class="configuration">
+            <dt><label for="pdf_move_x">Move Right (X):</label>
+            [% INCLUDE util/input_text.html
+                name    = 'pdf_move_x'
+                value   = pdf_move_x || Config.pdf_move_x
+                size    = 3
+            %]
+            </dt> 
+            <dd>Negative number moves the print to the left.</dd>
+            <dt><label for="pdf_move_y">Move Up (Y):</label>
+            [% INCLUDE util/input_text.html
+                name    = 'pdf_move_y'
+                value   = pdf_move_y || Config.pdf_move_y
+                size    = 3
+            %]
+            </dt> 
+            <dd>Negative number moves the print down.</dd>
+        </dl>
+        [% IF Config.theme == 'Venus' %]
+        <h3>Renewal Reminders</h3>
+        <dl class="configuration">
+            <dt><label for="renewal_template">Renewal Template:</label>
+            [% INCLUDE util/select_new.html
+                name    = 'renewal_template'
+                default = renewal_template || Config.renewal_template
+                values  = mailtemplates
+                keyname = 'rec_id'
+                valname = 'name'
+                leading_blank   = 'None'
+            %]
+            </dt> 
+            <dd>Default template to use for renewal notifications.</dd>
+
+            <dt><label for="renewal_notification_days">Renewal Notification Interval:</label>
+            [% INCLUDE util/input_text.html
+                name    = 'renewal_notification_days'
+                value   = renewal_notification_days || Config.renewal_notification_days
+                size    = 5
+            %]
+            <dd>
+            How many days in advance notifications for renewals should be sent out. 
+            If you would like them sent out mutiple times use a comma to
+            seperate the number of days. Example: '7,1' will send out 2
+            notifications, one 7 days before and appointment, the second on the
+            day before the appointment.
+            </dd>
+        </dl>
+        [% END %]
+    </div>
+    <input type="hidden" name="dept_id" id="dept_id" value="[% current_user.dept_id %]" />
+    <p class="save"><input type="submit" name="op" id="op" value="Save configuration" /></p>
+</form>
+[% INCLUDE util/form_cancel.html %]
+
+</div>
+</div>

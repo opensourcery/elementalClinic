@@ -1,0 +1,115 @@
+
+1: 
+  active: 1
+  dept_id: 1001
+  description: $160
+  name: $160
+  rec_id: 1
+10: 
+  active: 1
+  dept_id: 1001
+  description: $200 Renew
+  name: $200 Renew
+  rec_id: 10
+11: 
+  active: 1
+  dept_id: 1001
+  description: $180PPD
+  name: $180PPD
+  rec_id: 11
+12: 
+  active: 1
+  dept_id: 1001
+  description: $180 Renew/PPD
+  name: $180 Renew/PPD
+  rec_id: 12
+13: 
+  active: 1
+  dept_id: 1001
+  description: $150 SSI
+  name: $150 SSI
+  rec_id: 13
+14: 
+  active: 1
+  dept_id: 1001
+  description: $150 SSI Renew
+  name: $150 SSI Renew
+  rec_id: 14
+15: 
+  active: 1
+  dept_id: 1001
+  description: $150 INC
+  name: $150 INC
+  rec_id: 15
+16: 
+  active: 1
+  dept_id: 1001
+  description: $150 INC Renew
+  name: $150 INC Renew
+  rec_id: 16
+17: 
+  active: 1
+  dept_id: 1001
+  description: $250
+  name: $250
+  rec_id: 17
+18: 
+  active: 1
+  dept_id: 1001
+  description: $175 INC
+  name: $175 INC
+  rec_id: 18
+19: 
+  active: 1
+  dept_id: 1001
+  description: "$? See Note: Special"
+  name: "$? See Note: Special"
+  rec_id: 19
+2: 
+  active: 1
+  dept_id: 1001
+  description: $160 Renew
+  name: $160 Renew
+  rec_id: 2
+3: 
+  active: 1
+  dept_id: 1001
+  description: $150 PPD
+  name: $150 PPD
+  rec_id: 3
+4: 
+  active: 1
+  dept_id: 1001
+  description: $150 Renew/PPD
+  name: $150 Renew/PPD
+  rec_id: 4
+5: 
+  active: 1
+  dept_id: 1001
+  description: $120 OHP
+  name: $120 OHP
+  rec_id: 5
+6: 
+  active: 1
+  dept_id: 1001
+  description: $120 OHP Renew
+  name: $120 OHP Renew
+  rec_id: 6
+7: 
+  active: 1
+  dept_id: 1001
+  description: $120 SSI
+  name: $120 SSI
+  rec_id: 7
+8: 
+  active: 1
+  dept_id: 1001
+  description: $120 SSI Renew
+  name: $120 SSI Renew
+  rec_id: 8
+9: 
+  active: 1
+  dept_id: 1001
+  description: $200
+  name: $200
+  rec_id: 9

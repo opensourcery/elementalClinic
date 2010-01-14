@@ -1,0 +1,146 @@
+#current_note {
+}
+#current_note dl.inline {
+    padding : 0;
+    margin : 0 15px 0 0;
+}
+#current_note dl.inline dt,
+#current_note dl.inline dd {
+    margin-top : 2px;
+    margin-bottom : 2px;
+}
+p.save_temp {
+    text-align : right;
+    padding : 3px 8px 3px 8px;
+    background-color : #999;
+    border : 1px solid #333;
+    margin : 0;
+    float : left;
+}
+p.save_commit {
+    text-align : right;
+    padding : 3px 8px 3px 8px;
+    background-color : #666;
+    border : 1px solid #333;
+    margin : 0;
+}
+/* group notes styles */
+#uncommitted_groupnotes {
+    border-width : 1px;
+    margin-top : 10px;
+}
+#uncommitted_groupnotes h5 {
+    margin : 5px 0 0 0;
+}
+#uncommitted_groupnotes p {
+    color : #000;
+}
+#uncommitted_groupnotes ul {
+    margin : 0;
+}
+#uncommitted_groupnotes li {
+    font-size : 12px;
+}
+/* end group notes styles */
+/* previous note */
+#previous_notes {
+    border-width : 1px;
+    margin-top : 10px;
+}
+#previous_notes dl.inline {
+    border-right : 1px dotted #fb0;
+    float : left;
+    width : 200px;
+}
+#previous_notes dl.inline dt,
+#previous_notes dl.inline dd {
+    font-size : 11px;
+}
+#previous_notes dl.inline dt {
+    width : 5em;
+}
+#previous_notes dl.inline dd {
+    font-weight : bold;
+}
+h5 {
+    font-size : 12px;
+    border-bottom : 1px solid #000;
+    margin : 10px 0 3px 0;
+    padding : 0;
+}
+h5 + p {
+    color : #333;
+    padding : 1px 0 3px 3px;
+}
+h5 + p strong {
+    color : #000;
+}
+h5 + p .sep {
+    font-weight : bold;
+    color : #333;
+    margin-right : 7px;
+}
+p.print_as {
+    float : right;
+}
+.old_note {
+    margin : 5px 0 0 0;
+}
+.old_note p {
+    font-size : 11px;
+    padding : 0;
+    margin : 0;
+}
+.old_note span.Unbilled {
+    color : red;
+}
+.old_note span.Billed {
+    color : green;
+}
+.old_note span.Rejected {
+    color : red;
+}
+.old_note span.Paid {
+    color : black;
+}
+p.edit_note {
+    float : right;
+}
+p.edit_note a {
+    color : #666;
+}
+p.note {
+    font-size : 12px;
+    line-height : 18px;
+    background-color : #fff;
+    padding : 0 5px 0 5px;
+    border : 1px solid #333;
+}
+#noteinfo {
+    float : left;
+    width : 450px;
+    border-right : 1px dotted #fb0;
+}
+#noteitself {
+    margin-left : 470px;
+}
+
+p#valid_charge_codes {
+    height : 30px;
+}
+/* bouncing {{{*/
+div.bounce_controls {
+    margin : 0 0 1em 0;
+}
+#bounce {
+    width : 45%;
+    float : left;
+}
+#bounce dd {
+    white-space : normal;
+}
+#respons {
+    width : 45%;
+    float : left;
+}
+/*}}}*/

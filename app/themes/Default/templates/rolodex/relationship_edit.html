@@ -1,0 +1,78 @@
+[% INCLUDE global/client_head.html
+    navsec = 'rolodex'
+%]
+
+<div id="center" class="client_box">
+    <h4><em>[% op == 'relationship_new' ? 'Create new' : 'Edit existing' %]</em> [% current_role.description %] <em>relationship with</em> [% rolodex.eman %]</h4>
+
+    [% UNLESS current_user.pref.rolodex_show_inactive %]
+    [% IF( inactive_relationships = client.relationship_byrole( current_role.name, undef, 0 )) %]
+    <div class="current_inactive_relationships">
+        <p>This client has <strong>inactive relationships</strong> of this type with the following entities.  There is nothing wrong with creating a new relationship; this list is for information only.</p>
+        <ul>[% FOR rel IN inactive_relationships %]
+            [% IF rel.rolodex.rec_id == rolodex.rec_id %]
+            <strong><li>[% rel.rolodex.eman %] : [% rel.rec_id %] : [% rel.active %]</li></strong>
+            [% ELSE %]
+            <li>[% rel.rolodex.eman %]</li>
+            [% END %]
+        [% END %]</ul>
+    </div>
+    [% END %]
+    [% END %]
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+
+        [% INCLUDE "rolodex/role/${ current_role.name }.html"
+            entry = relationship
+            action = 'edit'
+        %]
+
+        <hr class="div" />
+
+        <hr class="subtle" />
+        [% UNLESS current_role.name == 'referral' %]
+            [% UNLESS rolodex.generic %]
+            [%  is_private = 1 IF rolodex.client_id;
+                INCLUDE util/checkbox.html
+                name    = 'private'
+                label   = 'Private: available to this client only.'
+                value   = is_private
+                wraptag = 'p'
+            %]
+            [% ELSE %]
+            <p>This Rolodex entry is <strong>generic</strong>.  You can edit the client's relationship data, but cannot make the Rolodex private.  To change this, please see the administrator.</p>
+            [% END %]
+        [% END %]
+        [% IF relationship.rec_id; # active is true by default for new relationships
+            INCLUDE util/checkbox.html
+            name    = 'active'
+            label   = 'Active: inactive relationships are not displayed.'
+            value   = relationship.active
+            wraptag = 'p'
+        %]
+        [% ELSE %]
+        <input type="hidden" name="active" value="on" />
+        [% END %]
+
+        <input type="hidden" name="rolodex_id" value="[% rolodex.rec_id %]" />
+        <input type="hidden" name="relationship_id" value="[% relationship.rec_id %]" />
+        <input type="hidden" name="role_name" value="[% current_role.name %]" />
+        <input type="hidden" name="client_id" value="[% client.id %]" />
+        <p class="save">
+            <input
+                type="submit"
+                name="op"
+                id="op"
+                value="Save Relationship"
+                [% IF current_role.name == 'referral' %]
+                    disabled="1"
+                    readonly="1"
+                [% END %]
+            />
+        </p>
+    </form>
+    [% INCLUDE util/form_cancel.html
+        extras = { relationship_id => relationship.rec_id }
+    %]
+
+    <hr class="div" />
+</div>

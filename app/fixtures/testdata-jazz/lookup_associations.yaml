@@ -1,0 +1,118 @@
+---
+1001:
+  lookup_group_id: 1001
+  lookup_item_id: 1002
+  lookup_table_id: 28
+  rec_id: 1001
+1002:
+  lookup_group_id: 1004
+  lookup_item_id: 1002
+  lookup_table_id: 28
+  rec_id: 1002
+1003:
+  lookup_group_id: 1005
+  lookup_item_id: 1002
+  lookup_table_id: 28
+  rec_id: 1003
+1004:
+  lookup_group_id: 1002
+  lookup_item_id: 1003
+  lookup_table_id: 28
+  rec_id: 1004
+1005:
+  lookup_group_id: 1003
+  lookup_item_id: 1003
+  lookup_table_id: 28
+  rec_id: 1005
+1006:
+  lookup_group_id: 1004
+  lookup_item_id: 1003
+  lookup_table_id: 28
+  rec_id: 1006
+1007:
+  lookup_group_id: 1005
+  lookup_item_id: 1003
+  lookup_table_id: 28
+  rec_id: 1007
+1008:
+  lookup_group_id: 1006
+  lookup_item_id: 1003
+  lookup_table_id: 28
+  rec_id: 1008
+1009:
+  lookup_group_id: 1001
+  lookup_item_id: 1004
+  lookup_table_id: 28
+  rec_id: 1009
+1010:
+  lookup_group_id: 1002
+  lookup_item_id: 1004
+  lookup_table_id: 28
+  rec_id: 1010
+1011:
+  lookup_group_id: 1003
+  lookup_item_id: 1004
+  lookup_table_id: 28
+  rec_id: 1011
+1012:
+  lookup_group_id: 1004
+  lookup_item_id: 1004
+  lookup_table_id: 28
+  rec_id: 1012
+1013:
+  lookup_group_id: 1005
+  lookup_item_id: 1004
+  lookup_table_id: 28
+  rec_id: 1013
+1014:
+  lookup_group_id: 1003
+  lookup_item_id: 1002
+  lookup_table_id: 12
+  rec_id: 1014
+1015:
+  lookup_group_id: 1005
+  lookup_item_id: 1002
+  lookup_table_id: 12
+  rec_id: 1015
+1016:
+  lookup_group_id: 1001
+  lookup_item_id: 1003
+  lookup_table_id: 12
+  rec_id: 1016
+1017:
+  lookup_group_id: 1004
+  lookup_item_id: 1003
+  lookup_table_id: 12
+  rec_id: 1017
+1018:
+  lookup_group_id: 1005
+  lookup_item_id: 1003
+  lookup_table_id: 12
+  rec_id: 1018
+1019:
+  lookup_group_id: 1004
+  lookup_item_id: 1004
+  lookup_table_id: 12
+  rec_id: 1019
+1020:
+  lookup_group_id: 1006
+  lookup_item_id: 1004
+  lookup_table_id: 12
+  rec_id: 1020
+1021:
+  lookup_group_id: 1001
+  lookup_item_id: 1
+  lookup_table_id: 28
+  rec_id: 1021
+1022:
+  lookup_group_id: 1004
+  lookup_item_id: 1
+  lookup_table_id: 28
+  rec_id: 1022
+1023:
+  lookup_group_id: 1006
+  lookup_item_id: 1
+  lookup_table_id: 28
+  rec_id: 1023
+
+

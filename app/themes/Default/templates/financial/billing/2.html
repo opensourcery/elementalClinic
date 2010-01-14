@@ -1,0 +1,24 @@
+[% INCLUDE financial/billing/key.html
+    bounce      = 0
+    billable    = 1
+%]
+
+<ul class="toggle_menu">
+    <li[% ' class="active"' UNLESS( op == 'billing_2_unselected' ) %]>
+        <a href="[% script %]?section=billing;step=2">Selected</a>
+    </li>
+    <li[% ' class="active"' IF( op == 'billing_2_unselected' ) %]>
+        <a href="[% script %]?op=billing_2_unselected;section=billing;step=2">Not selected</a>
+    </li>
+</ul>
+<div class="toggle_content" id="prognote_list">
+    [% INCLUDE financial/billing/notes.html
+        no_toggle_billable = ( op == 'billing_2_unselected' ) ? 1 : 0
+    %]
+</div>
+
+[% INCLUDE util/form.html %]
+    <input type="hidden" name="section" value="billing" />
+    <input type="hidden" name="step" value="3" />
+    <p class="save"><input type="submit" name="submit" value="Begin Validation" /></p>
+[% INCLUDE util/form_end.html %]

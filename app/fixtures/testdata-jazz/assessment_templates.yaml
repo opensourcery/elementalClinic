@@ -1,0 +1,50 @@
+1001: 
+  active_end: 2007-05-31
+  active_start: 2007-05-16
+  created_date: 2007-05-15
+  name: Default Assessment
+  rec_id: 1001
+  staff_id: 1001
+1002: 
+  active_end: ~
+  active_start: ~
+  created_date: 2008-02-28
+  name: Incomplete
+  rec_id: 1002
+  staff_id: 1001
+1003: 
+  active_end: 2007-07-02
+  active_start: 2007-06-02
+  created_date: 2007-06-01
+  name: Simple assessment
+  rec_id: 1003
+  staff_id: 1001
+1004: 
+  intake_end: ~
+  intake_start: 2008-02-28
+  is_intake: 1
+  created_date: 2008-02-28
+  name: Simple intake assessment
+  rec_id: 1004
+  staff_id: 1001
+1005: 
+  active_end: 2008-02-29 
+  active_start: 2008-02-28 
+  created_date: 2008-02-28
+  name: Simple intake assessment part deux
+  rec_id: 1005
+  staff_id: 1001
+1006: 
+  active_end: ~
+  active_start: 2006-02-28 
+  created_date: 2000-02-28
+  name: Short Assessment
+  rec_id: 1006
+  staff_id: 1001
+1007:
+  active_end: 2000-02-28
+  active_start: 2000-02-28
+  created_date: 2000-02-28
+  name: Intake Migration
+  rec_id: 1007
+  staff_id: 1001

@@ -1,0 +1,27 @@
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+
+<table border="0">
+    <tr>
+        <td>Select Unit for Report: </td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "unit"
+    s_values  = units
+%]</td>
+    </tr>
+    <tr>
+        <td>Start Date for Search: </td>
+        <td><input type="text" name="start_date" value="[% start_date %]" size="12" maxlength="10" /></td>
+    </tr>
+    <tr>
+        <td>End Date for Search: </td>
+        <td><input type="text" name="end_date" value="[% today %]" size="12" maxlength="10" /></td>
+    </tr>
+</table>
+
+<p />
+
+<input type="submit" name="go" value="Search" />
+<div>
+</div>
+</form>

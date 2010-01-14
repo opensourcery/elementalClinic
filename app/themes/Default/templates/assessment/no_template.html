@@ -1,0 +1,27 @@
+[% INCLUDE global/client_head.html
+    navsec = 'clinical'
+    navpage = 'assessment'
+%]
+
+<div id="center" class="client_box clinician">
+    
+    <h2>No Active Assessment Template</h2>
+
+    [% IF admin %]
+        <p>
+            There is currently no active assessment template. Without a
+            template it is impossible to create an assessment. Please 
+            <a href="/admin_assessment_templates.cgi">click here</a> to 
+            create a new template.
+        </p>
+    [% ELSE %]
+        <p>
+            There is currently no active assessment template. Without a
+            template it is impossible to create an assessment. Templates must
+            be created and activated by an administrator. Please contact your
+            local administrator to create an active template.
+        </p>
+    [% END %]
+
+    <hr class="div" />
+</div>

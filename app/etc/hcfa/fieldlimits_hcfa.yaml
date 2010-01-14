@@ -1,0 +1,39 @@
+# note that some fields allow one more character than this
+# but I chose the most restrictive lengths to work for all of them
+#
+# dates are allowed extra characters because get_date_f adds 2 
+# spaces in between the numbers, for formatting
+#
+# regular hash keys
+address: 1, 29
+address1: 1, 28
+charge_amount: 1, 9
+city: 2, 23
+citystatezip: 2, 29
+client_id: 1, 14
+contact_number: 1, 14
+dob: 1, 12
+employer_id: 1, 15
+employer_or_school_name: 1, 28
+end_date: 1, 12
+facility_code: 1, 2
+gender: 1, 1
+group_number: 1, 28
+insurance_id: 2, 29
+insurance_name: 1, 28
+name: 1, 29
+national_provider_id: 2, 10
+phone: 1, 15
+service: 1, 6
+start_date: 1, 12
+state: 2, 3
+subscriber_dob: 1, 12
+subscriber_gender: 1, 1
+subscriber_name: 1, 28
+taxonomy_code: 1, 30
+units: 1, 3
+zip: 3, 12
+# arrays
+diagnosis_code_pointers: 1, 4
+diagnosis_codes: 1, 8
+modifiers: 2, 2

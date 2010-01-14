@@ -1,0 +1,141 @@
+---
+1001:
+  addr: 321 Dead Way
+  addr_2: ~
+  admit_note: ~
+  after_care: He is interred in the Woodlawn Cemetery in The Bronx New York.
+  audit_trail: ~
+  chart_id: ~
+  city: The Bronx
+  client_contests_termination: 0
+  client_id: 1001
+  client_placement_event_id: 1007
+  committed: 1
+  criminal_justice: 1
+  discharge_note: Miles Davis continued to tour and perform regularly through the last years of his life before succumbing to a stroke in September 1991 at the age of 65.
+  education: 15
+  employability_factor: ~
+  employment_status: F
+  esof_date: ~
+  esof_id: ~
+  esof_name: ~
+  esof_note: ~
+  final_diag_id: 1004
+  history_clinical: ~
+  history_medical: ~
+  history_psych: ~
+  income: 6000.00
+  initial_diag_id: 1003
+  last_contact_date: 2005-06-17
+  phone: (718) 627-0100
+  physician: LMP name
+  post_code: 11223
+  rec_id: 1001
+  ref_agency: ~
+  ref_cont: Morbid Man
+  ref_date: ~
+  sent_mental_stat: ~
+  sent_other: ~
+  sent_physical: ~
+  sent_psycho_social: ~
+  sent_summary: ~
+  sent_to: Woodlawn Cemetery
+  sent_tx_plan: ~
+  staff_name: Ima Therapist
+  state: NY
+  termination_notice_sent_date: 1991-09-28
+  termination_reason: Client deceased
+1002:
+  addr: 456 River Way
+  addr_2: ~
+  admit_note: ~
+  after_care: His ashes were scattered in the Ganges River.
+  audit_trail: ~
+  chart_id: ~
+  city: Kolkata
+  client_contests_termination: 0
+  client_id: 1002
+  client_placement_event_id: 1008
+  committed: 1
+  criminal_justice: 1
+  discharge_note: 'Mingus died aged 56 in Cuernavaca, Mexico, where he had traveled for treatment and convalescence.'
+  education: 15
+  employability_factor: ~
+  employment_status: F
+  esof_date: ~
+  esof_id: ~
+  esof_name: ~
+  esof_note: ~
+  final_diag_id: ~
+  history_clinical: ~
+  history_medical: ~
+  history_psych: ~
+  income: 6000.00
+  initial_diag_id: 1005
+  last_contact_date: 2001-07-02
+  phone: 1.234.567
+  physician: Ima Physician
+  post_code: 123
+  rec_id: 1002
+  ref_agency: ~
+  ref_cont: ~
+  ref_date: ~
+  sent_mental_stat: ~
+  sent_other: ~
+  sent_physical: ~
+  sent_psycho_social: ~
+  sent_summary: ~
+  sent_to: ~
+  sent_tx_plan: ~
+  staff_name: Ima Therapist
+  state: West Bengal
+  termination_notice_sent_date: 2006-03-20
+  termination_reason: Client deceased
+1003:
+  addr: 789 Nook Way
+  addr_2: ~
+  admit_note: ~
+  after_care: 'She is interred in the Inglewood Park Cemetery in Inglewood, California.'
+  audit_trail: ~
+  chart_id: ~
+  city: Inglewood
+  client_contests_termination: 0
+  client_id: 1004
+  client_placement_event_id: 1014
+  committed: 1
+  criminal_justice: 0
+  discharge_note: Ella died of diabetes.
+  education: 9
+  employability_factor: ~
+  employment_status: F
+  esof_date: ~
+  esof_id: ~
+  esof_name: ~
+  esof_note: ~
+  final_diag_id: ~
+  history_clinical: ~
+  history_medical: ~
+  history_psych: ~
+  income: 3000.00
+  initial_diag_id: 1006
+  last_contact_date: 1999-01-31
+  phone: 1.234.5678
+  physician: Ima Physician
+  post_code: 90220
+  rec_id: 1003
+  ref_agency: ~
+  ref_cont: ~
+  ref_date: ~
+  sent_mental_stat: ~
+  sent_other: ~
+  sent_physical: ~
+  sent_psycho_social: ~
+  sent_summary: ~
+  sent_to: ~
+  sent_tx_plan: ~
+  staff_name: Betty Clinician
+  state: California
+  termination_notice_sent_date: 2006-01-16
+  termination_reason: Client left of her own accord.
+
+

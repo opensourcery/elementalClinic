@@ -1,0 +1,21 @@
+<script language="JavaScript" SRC="../bin/calendar.js"></script><form method="post" action="[% program %]" enctype="application/x-www-form-urlencoded" name="cal">
+<table border="0">
+    <tr>
+        <td>Start Date: </td>
+        <td><input type="Text" name="start_date" value="[% default_start %]">
+                 <a href= "javascript:show_calendar4('document.cal.start_date', 
+         document.cal.start_date.value);">
+         <img src="../bin/cal.gif" border="0" alt="Display Calendar">
+         </a></td>
+    </tr>
+    <tr>
+        <td>End Date: </td>
+        <td><input type="Text" name="end_date" value="[% default_end %]">
+                 <a href= "javascript:show_calendar4('document.cal.end_date', 
+         document.cal.end_date.value);">
+         <img src="../bin/cal.gif" border="0" alt="Display Calendar">
+         </a></td>
+    </tr>
+</table>
+<input type="submit" name=".submit" /><div></div></form>
+

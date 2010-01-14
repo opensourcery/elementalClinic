@@ -1,0 +1,27 @@
+#chooser {
+    float : left;
+}
+.minileft_edit {
+    float : left;
+    width : 45%;
+    margin-right : 20px;
+}
+.miniright_edit {
+    float : right;
+    width : 45%;
+}
+.minileft_display {
+    float : left;
+    width : 35%;
+    margin-right : 20px;
+}
+.miniright_display {
+    float : right;
+    width : 35%;
+}
+hr.subtle {
+    clear : both !important;
+}
+#security label {
+    margin : 0 !important;
+}

@@ -1,0 +1,47 @@
+[% "<p>There was no data for this report.</p>" UNLESS data.0 %]
+[% pref_date_format = current_user.pref.date_format -%]
+<div id="verifications_display">
+<table border="1">
+    <thead>
+    <tr>
+        <td colspan="8">
+            [% INCLUDE report/header.html %]
+        </td>
+    </tr>
+	<tr>
+		<td colspan="8">
+			State of Oregon DHS/OMMP<br/>
+			OMMP FAX:(971)673-1278<br/>
+			Physician Verification<br/>
+			[% today_ymd FILTER date_format(pref_date_format) %]<br/>
+			THC FOUNDATION MEDICAL CLINIC<br/>
+			(503)281-5100<br/>
+			FAX: (503) 235-0120<br/>
+		</td>
+	</tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th>APID#</th>
+        <th>First Name</th>
+        <th>MI</th>
+        <th>Last Name</th>
+        <th>DOB</th>
+        <th>Doctor</th>
+		<th>VerDate</th>
+    </tr>
+    [% FOR record IN data %]
+    <tr [% rowclass %]>
+        <td>[% record.apid_num %]</td>
+        <td>[% record.fname %]</td>
+        <td>[% record.mname %]</td>
+        <td>[% record.lname %]</td>
+        <td>[% record.dob FILTER date_format(pref_date_format)%]</td>
+		<td>[% record.doctor %]</td>
+		<td>[% record.verif_date FILTER date_format(pref_date_format)%]</td>
+	</tr>
+    [% END %]
+    [% #END %]
+</tbody>
+</table>
+</div>

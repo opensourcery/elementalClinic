@@ -1,0 +1,10 @@
+[% cancel_op = extras.op || 'Cancel' %]
+<form class="cancel" method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" id="[% id || 'cancel_form' %]">
+    <input type="hidden" name="client_id" id="client_id" value="[% client.id %]" />
+    [%- FOR x IN extras; NEXT IF( x == 'op' ) %]
+    <input type="hidden" name="[% x.key %]" id="[% x.key %]" value="[% x.value %]" />
+    [%- END %]
+    <input type="hidden" name="op" id="op" value="[% cancel_op %]" /></p>
+    <p><input type="submit" name="submit" value="Cancel" /></p>
+</form>
+

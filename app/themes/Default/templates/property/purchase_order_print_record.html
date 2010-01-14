@@ -1,0 +1,63 @@
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+
+<table border="0">
+    <tr>
+        <td><b>Submitted By: </b></td>
+        <td>[% staffname %]</td>
+    </tr>
+    <tr>
+        <td><b>For Unit: </b> <td>[% row_unit_lname %]</td></td>
+    </tr>
+    <tr>
+        <td><b>Submitted On: </b></td>
+        <td>[% row_init_date %]</td>
+    </tr>
+    <tr>
+        <td><b>Contract ID/Information: </b></td>
+        <td>[% row_contract_id %]</td>
+    </tr>
+    <tr>
+        <td><b>Account Number: </b></td>
+        <td>[% row_acct_num %]</td>
+    </tr>
+    <tr>
+        <td><b>Vendor Name: </b></td>
+        <td>[% row_vendor_name %]</td>
+    </tr>
+    <tr>
+        <td><b>Item Description: </b></td>
+        <td>[% row_item_desc %]</td>
+    </tr>
+    <tr>
+        <td><b>Item Price: </b></td>
+        <td>[% row_item_price %]</td>
+    </tr>
+    <tr>
+        <td><b>Item Amount: </b></td>
+        <td>[% row_item_amt %]</td>
+    </tr>
+    <tr>
+        <td><b>Price Extension: </b></td>
+        <td>[% row_item_exten %]</td>
+    </tr>
+    <tr>
+        <td><b>Sent to Finance (Authorization): </b></td>
+        <td>[% row_auth_date %]</td>
+    </tr>
+    <tr>
+        <td><b>Capital Authorization Number: </b></td>
+        <td>[% row_cap_auth %]</td>
+    </tr>
+    <tr>
+        <td><b>Sent to Purchasing: </b></td>
+        <td>[% row_send_date %]</td>
+    </tr>
+    <tr>
+        <td><b>Purchase Order Number: </b></td>
+        <td> [% row_po_num %]</td>
+    </tr>
+    <tr>
+        <td><b>Received On: </b></td>
+        <td>[% row_rcvd_date %]</td>
+    </tr>
+</table>

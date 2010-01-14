@@ -1,0 +1,6 @@
+[% IF client.id;
+  INCLUDE global/client_head.html navsec = 'schedule';
+  END %]
+
+[% INCLUDE schedule/calendar.html %]
+[% INCLUDE schedule/add.html %]

@@ -1,0 +1,221 @@
+[% IF confirm %]
+<h4><font color="blue">Your transaction was committed.</font></h4>
+[% END %]
+<p />
+
+
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+
+<table border="0">
+    <tr>
+        <td>Highest Level of Education Completed: </td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "max_level"
+    s_values  = ['High School','Associate Degree', 
+                 'Bachelors Degree', 'Masters Degree', 
+                 'Doctorate', 'Other', 'No Data']
+    s_default = row.max_level
+%]</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td><h4>Bachelors Degree</h4></td>
+    </tr>
+    <tr>
+        <td>Bachelors Degree Detail: </td>
+        <td><input type="text" name="degree_1" value="[% row.degree_1 %]" size="50" maxlength="50" /></td>
+    </tr>
+    <tr>
+        <td>(Exam: B.S. from Berkeley)</td>
+    </tr>
+    <tr>
+        <td>Is Employee A Registered Nurse: </td>
+        <td>
+[% INCLUDE util/radio.html
+    r_name   = "licence_1"
+    r_values  = [ 'Y', 'N' ]
+    r_default = row.licence_1
+%]</td>
+
+    </tr>
+    <tr>
+        <td>RN License ID Number (if app): </td>
+        <td><input type="text" name="licence_1_id" value="[% row.licence_1_id %]" size="20" maxlength="50" /></td>
+    </tr>
+    <tr>
+        <td>RN License Expiration Date* : </td>
+        <td><input type="text" name="licence_1_exp" value="[% row.licence_1_exp %]" size="10" maxlength="50" /></td>
+    </tr>
+    <tr>
+        <td><font color = red> * Use a Valid Date Format </font></td>
+        <td><font color = red> (Or Leave Field Empty) </font></td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td><h4>Masters Degree</h4></td>
+    </tr>
+    <tr>
+        <td>Masters Degree Detail: </td>
+        <td><input type="text" name="degree_2" value="[% row.degree_2 %]" size="50" maxlength="50" /></td>
+    </tr>
+    <tr>
+        <td>(Exam: M.S.W. from MIT)</td>
+    </tr>
+    <tr>
+        <td>Is Employee A Certified Social Worker: </td>
+    <td>
+[% INCLUDE util/radio.html
+    r_name   = "licence_2"
+    r_values  = [ 'Y', 'N' ]
+    r_default = row.licence_2
+%]</td>
+
+    </tr>
+    <tr>
+        <td>CSW License ID Number (if app): </td>
+        <td><input type="text" name="licence_2_id" value="[% row.licence_2_id %]" size="20" maxlength="50" /></td>
+    </tr>
+    <tr>
+        <td>CSW License Expiration Date: </td>
+        <td><input type="text" name="licence_2_exp" value="[% row.licence_2_exp %]" size="10" maxlength="50" /></td>
+    </tr>
+    <tr>
+        <td><font color = red> * Use a Valid Date Format </font></td>
+        <td><font color = red> (Or Leave Field Empty) </font></td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td><h4>Doctoral Degree</h4></td>
+    </tr>
+    <tr>
+        <td>Doctorate Degree Detail: </td>
+        <td><input type="text" name="degree_3" value="[% row.degree_3 %]" size="50" maxlength="50" /></td>
+    </tr>
+    <tr>
+        <td>(Exam: Ph.D from Poly Tech)</td>
+    </tr>
+    <tr>
+        <td>Is Employee A Licensed Psychologist: </td>
+    <td>
+[% INCLUDE util/radio.html
+    r_name   = "licence_3"
+    r_values  = [ 'Y', 'N' ]
+    r_default = row.licence_3
+%]</td>
+
+    </tr>
+    <tr>
+        <td>License ID Number (if app): </td>
+        <td><input type="text" name="licence_3_id" value="[% row.licence_3_id %]" size="20" maxlength="50" /></td>
+    </tr>
+    <tr>
+        <td>License Expiration Date: </td>
+        <td><input type="text" name="licence_3_exp" value="[% row.licence_3_exp %]" size="10" maxlength="50" /></td>
+    </tr>
+    <tr>
+        <td><font color = red> * Use a Valid Date Format </font></td>
+        <td><font color = red> (Or Leave Field Empty) </font></td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td><h4>Medical Degree</h4></td>
+    </tr>
+    <tr>
+        <td>Medical Degree Detail: </td>
+        <td><input type="text" name="degree_4" value="[% row.degree_4 %]" size="50" maxlength="50" /></td>
+    </tr>
+    <tr>
+        <td>(Exam: M.D. from MIT) </td>
+    </tr>
+    <tr>
+        <td>Is Employee A Licensed Medical Doctor: </td>
+    <td>
+[% INCLUDE util/radio.html
+    r_name   = "licence_4"
+    r_values  = [ 'Y', 'N' ]
+    r_default = row.licence_4
+%]</td>
+
+    </tr>
+    <tr>
+        <td>MD License ID Number (if app): </td>
+        <td><input type="text" name="licence_4_id" value="[% row.licence_4_id %]" size="20" maxlength="50" /></td>
+    </tr>
+    <tr>
+        <td>MD License Expiration Date: </td>
+        <td><input type="text" name="licence_4_exp" value="[% row.licence_4_exp %]" size="10" maxlength="50" /></td>
+    </tr>
+    <tr>
+        <td><font color = red> * Use a Valid Date Format </font></td>
+        <td><font color = red> (Or Leave Field Empty) </font></td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td><h4>Other Degree</h4></td>
+    </tr>
+    <tr>
+        <td>Other Degree Detail: </td>
+        <td><input type="text" name="degree_5" value="[% row.degree_5 %]" size="50" maxlength="50" /></td>
+    </tr>
+    <tr>
+        <td>Is Employee A Licensed Professional: </td>
+    <td>
+[% INCLUDE util/radio.html
+    r_name   = "licence_5"
+    r_values  = [ 'Y', 'N' ]
+    r_default = row.licence_5
+%]</td>
+
+    </tr>
+    <tr>
+        <td>License ID</b> Number (if app): </td>
+        <td><input type="text" name="licence_5_id" value="[% row.licence_5_id %]" size="20" maxlength="50" /></td>
+    </tr>
+    <tr>
+        <td>License Expiration Date: </td>
+        <td><input type="text" name="licence_5_exp" value="[% row.licence_5_exp %]" size="12" maxlength="10" /></td>
+    </tr>
+    <tr>
+        <td><font color = red> * Use a Valid Date Format </font></td>
+        <td><font color = red> (Or Leave Field Empty) </font></td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td><h4>Professional Certificates</h4></td>
+    </tr>
+    <tr>
+        <td>Professional Certificate (1): </td>
+        <td><input type="text" name="cert_1" value="[% row.cert_1 %]" size="50" maxlength="50" /></td>
+    </tr>
+    <tr>
+        <td>Professional Certificate (2): </td>
+        <td><input type="text" name="cert_2" value="[% row.cert_2 %]" size="50" maxlength="50" /></td>
+    </tr>
+</table>
+
+<p />
+
+<input type="submit" name="go" value="Submit Query" />
+<input type="hidden" name="ID" value="[% id %]" />
+<div>
+<input type="hidden" name=".cgifields" value="licence_2" />
+<input type="hidden" name=".cgifields" value="licence_4" />
+<input type="hidden" name=".cgifields" value="licence_3" />
+<input type="hidden" name=".cgifields" value="licence_1" />
+<input type="hidden" name=".cgifields" value="licence_5" />
+</div>
+</form>
+

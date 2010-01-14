@@ -1,0 +1,29 @@
+--- 
+3: 
+  member_id: 11
+  rec_id: 3
+  role_id: 1
+4: 
+  member_id: 11
+  rec_id: 4
+  role_id: 8
+5: 
+  member_id: 11
+  rec_id: 5
+  role_id: 10
+6: 
+  member_id: 11
+  rec_id: 6
+  role_id: 9
+7: 
+  member_id: 11
+  rec_id: 7
+  role_id: 7
+8: 
+  member_id: 11
+  rec_id: 8
+  role_id: 4
+9: 
+  rec_id: 9
+  member_id: 5
+  role_id: 12

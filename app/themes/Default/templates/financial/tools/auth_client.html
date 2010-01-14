@@ -1,0 +1,7 @@
+    <h4>No Current Insurance Authorization</h4>
+    <p>Client: <strong>[% client.eman %]</strong></p>
+    [% IF( insurer = client.mental_health_provider ) %]
+    <p>Primary mental health insurance: <strong>[% client.mental_health_provider.rolodex.name %]</strong></p>
+    [% ELSE %]
+    <p>Client has no primary mental health insurance.</p>
+    [% END %]

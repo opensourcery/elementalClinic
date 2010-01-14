@@ -1,0 +1,34 @@
+<div id="personnel">
+    <h3>Your Information</h3>
+    [% UNLESS current_user.hours_week %]
+        <p>Cannnot show productivity information.  Please ask the administrator to enter your average hours per week.</p>
+    [% ELSE %]
+        <div id="productivity">
+            <h4>Productivity</h4>
+            <p>Assigned: <strong>[% current_user.hours_week %] hours/week</strong></p>
+            <table>
+            <tr>
+                <th>Week</th>
+                <td>
+                    <div style="background-position:[% current_user.productivity.week * 1.5 %]px 0%;">
+                    <strong>[% current_user.productivity_week %]</strong> %</div>
+                </td>
+            </tr>
+            <tr>
+                <th>Month</th>
+                <td>
+                    <div style="background-position:[% current_user.productivity.month * 1.5 %]px 0%;">
+                    <strong>[% current_user.productivity_month %]</strong> %</div>
+                </td>
+            </tr>
+            <tr>
+                <th>Year</th>
+                <td>
+                    <div style="background-position:[% current_user.productivity.year * 1.5 %]px 0%;">
+                    <strong>[% current_user.productivity_year %]</strong> %</div>
+                </td>
+            </tr>
+            </table>
+        </div>
+    [% END %]
+</div>

@@ -1,0 +1,42 @@
+            <h4>Filter ...</h4>
+            <div class="placement">
+                <h5>Placement</h5>
+                <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" id="caseload_pref" name="caseload_pref">
+                    [% 
+                        placement_filters = [
+                            { key =>'0',         label => 'All' },
+                            { key => 'caseload', label => 'My Caseload', },
+                            { key => 'active',   label => 'Active', },
+                            { key => 'inactive', label => 'Inactive', },
+                        ] 
+                    %]
+                    [% INCLUDE util/select_new.html
+                        name    = 'client_list_filter'
+                        values  = placement_filters
+                        size    = placement_filters.size
+                        default = current_user.pref.client_list_filter
+                        keyname = 'key'
+                        valname = 'label'
+                        onchange = onchange 
+                    %]
+                </form>
+            </div>
+
+            <div class="program">
+                <h5>Program</h5>
+                <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www/form-urlencoded" id="program_pref" name="program_pref">
+                    [% INCLUDE util/choose_valid_data.html
+                        name   = 'client_program_list_filter'
+                        table  = '_program'
+                        type    = 'select'
+                        size    = 'fit'
+                        use_id  = 1
+                        default = current_user.pref.client_program_list_filter
+                        force_valid = 1
+                        blankmsg = 'There are no programs.  Please contact the Administrator and have them add a program.'
+                        leading_hash = [ { value =>'0', name => 'All', }, ]
+                        onchange = onchange
+                        active_only = 1
+                    %] 
+                </form>
+            </div>

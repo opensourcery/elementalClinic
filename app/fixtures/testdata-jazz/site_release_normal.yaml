@@ -1,0 +1,53 @@
+---
+- active: 1
+  dept_id: 1001
+  description: ~
+  name: Financial
+  rec_id: 11
+- active: 1
+  dept_id: 1001
+  description: ~
+  name: History and Assessments
+  rec_id: 9
+- active: 1
+  dept_id: 1001
+  description: ~
+  name: Lab Reports
+  rec_id: 6
+- active: 1
+  dept_id: 1001
+  description: ~
+  name: Legal
+  rec_id: 12
+- active: 1
+  dept_id: 1001
+  description: ~
+  name: Medical/Physical Health
+  rec_id: 5
+- active: 1
+  dept_id: 1001
+  description: ~
+  name: Medication Information
+  rec_id: 7
+- active: 1
+  dept_id: 1001
+  description: ~
+  name: Progress Notes/Visit Notes
+  rec_id: 10
+- active: 1
+  dept_id: 1001
+  description: ~
+  name: Psychiatric and Mental Illness
+  rec_id: 4
+- active: 1
+  dept_id: 1001
+  description: ~
+  name: Social-Psychological
+  rec_id: 8
+- active: 1
+  dept_id: 1001
+  description: ~
+  name: Termination or Discharge Summary
+  rec_id: 13
+
+

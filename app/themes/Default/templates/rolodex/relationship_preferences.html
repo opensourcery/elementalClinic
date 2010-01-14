@@ -1,0 +1,16 @@
+        <p id="relationships_pref">
+        <span>Display preferences:</span>
+            [% prefs_link = "user_prefs.cgi?op=save_one;return_to=$script;client_id=$client.id;pref=rolodex_show_inactive;value=";
+            IF current_user.pref.rolodex_show_inactive %]
+            <a href="[% "${prefs_link}0" %]">Active only</a> | <strong>Active &amp; inactive</strong>
+            [% ELSE %]
+            <strong>Active only</strong> | <a href="[% "${prefs_link}1" %]">Active &amp; inactive</a>
+            [% END %]
+        <span><strong>|</strong></span>
+            [% prefs_link = "user_prefs.cgi?op=save_one;return_to=$script;client_id=$client.id;pref=rolodex_show_private;value=";
+            IF current_user.pref.rolodex_show_private %]
+            <a href="[% "${prefs_link}0" %]">Public only</a> | <strong>Public &amp; private</strong>
+            [% ELSE %]
+            <strong>Public only</strong> | <a href="[% "${prefs_link}1" %]">Public &amp; private</a>
+            [% END %]
+        </p>

@@ -1,0 +1,48 @@
+    <div id="client_head">
+        <div id="client_content" class="client">
+            <div class="mini">
+                <div class="primary">
+                    <h2>[% client.lname %], [% client.fname %] [% client.mname %]</h2>
+                </div>
+
+                <div class="demographics">
+                    <p><strong>[% client.phone_f %]</strong></p>
+                    <p>
+                        [% address = client.address %]
+                        [% address.address1 %],
+                        [% "$address.address2," IF address.address2 %]
+                        [% "$address.city $address.state, " IF address.city || address.state %] [% address.post_code %]
+                    </p>
+                    <p>Called: <strong>[% client.last_called || 'never' %]</strong></p>
+                </div>
+
+                <div class="demographics">
+                    <p>Doctor: <strong>[% client.get_primary_treater.rolodex.lname %]</strong></p>
+                    <p>Renewal: <strong>[% client.renewal_date %]</strong></p>
+                    <p title="[% client.diagnosis_history.0.diagnosis_1a %]">Diagnosis: <strong>[% client.diagnosis_history.0.diagnosis_1a FILTER truncate(32) %]</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <ul>
+            <li><a [% ' class="active"' IF navpage == 'clientoverview' -%]
+                href="/clientoverview.cgi?client_id=[% client.id %]">Home</a></li>
+            <li><a [% ' class="active"' IF navpage == 'schedule' -%]
+                href="/schedule.cgi?client_id=[% client.id %];withclient=yes">Schedule</a></li>
+            <li><a [% ' class="active"' IF navpage == 'demographics' -%]
+                href="/demographics.cgi?client_id=[% client.id %]">Demographics</a></li>
+            <li><a [% ' class="active"' IF navpage == 'verification' -%]
+                href="/verification.cgi?client_id=[% client.id %]">Verification</a></li>
+            <li><a [% ' class="active"' IF navpage == 'diagnosis' -%]
+                href="/diagnosis.cgi?client_id=[% client.id %]">Conditions</a></li>
+            <li><a [% ' class="active"' IF navpage == 'report' -%]
+                href="/report.cgi?report_track=client;client_id=[% client.id %]">Reports</a></li>
+            <li><a [% ' class="active"' IF navpage == 'client_scanned_record' -%]
+                href="/client_scanned_record.cgi?client_id=[% client.id %]">Scans</a></li>
+            <li><a [% ' class="active"' IF navpage == 'assessment' -%]
+                href="/assessment.cgi?client_id=[% client.id %]">Assessment</a></li>
+            <li><a [% ' class="active"' IF navpage == 'clientpermissions' -%]
+                href="/clientpermissions.cgi?client_id=[% client.id %]">Access</a></li>
+        </ul>
+    </div>
+

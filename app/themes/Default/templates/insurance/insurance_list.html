@@ -1,0 +1,46 @@
+[% RETURN UNLESS insurers %]
+<div class="insurance_list">
+<h5>[% label %]</h5>
+[% FOR insurance IN insurers;
+    ins_href="$script?op=insurance_view;client_id=$client.id;insurer_type=$type;client_insurance_id=$insurance.id"
+    %]
+    <div class="insurance_block [% ' active' IF( current_insurance.id == insurance.id ) %]">
+        <div class="insurance [% ' active' IF(( current_insurance.id == insurance.id ) && ! current_authorization ) %]" onclick="window.location='[% ins_href %]';return false;">
+            <p class="rank">[% insurance.rank %]</p>
+            <p class="name"><a href="[% ins_href %]">[% insurance.rolodex.eman %]</a></p>
+            <p class="dates"><strong>[% insurance.start_date %]</strong> to [% insurance.end_date ? "<strong>$insurance.end_date</strong>" : '(No end date)' %]</p>
+        </div>
+
+        <div class="authorizations">
+            <h6>
+                Authorizations
+                [% IF(( navtab == 'active' ) && ( action == 'edit' )) %]
+                <a href="[% script %]?op=authorization_new;client_id=[% client.id %];client_insurance_id=[% insurance.id %]">New &#187;</a>
+                [% END %]
+            </h6>
+            [% authorizations = insurance.all_authorizations %]
+            [% UNLESS( authorizations ) %]
+                <p>This insurance has no authorizations.</p>
+            [% ELSE %]
+                <dl>
+                [% FOR auth IN authorizations;
+                    auth_href="$script?op=authorization_view;client_id=$client.id;insurer_type=$type;client_insurance_id=$insurance.id;authorization_id=$auth.id"
+                    %]
+                    <dt class=" [% ' active' IF( current_authorization.id == auth.id ) %]" onclick="window.location='[% auth_href %]';return false;">
+                        <a href="[% auth_href %]">[% auth.type %] (# [% auth.code %])</a>
+                    </dt>
+                    <dd>
+                        [% auth.start_date %] to [% auth.end_date %]:
+                            <strong>[% ( auth.capitation_time_percent < 100 ) ? auth.capitation_time_percent _'%' : 'Ended' %]</strong><br />
+                        [% IF auth.allowed_amount %]
+                        $[% auth.capitation_amount || 0 %] of $[% auth.allowed_amount %]:
+                            <strong>[% auth.capitation_amount_percent %]%</strong>
+                        [% END %]
+                    </dd>
+                [% END %]
+                </dl>
+            [% END %]
+        </div>
+    </div>
+[% END %]
+</div>

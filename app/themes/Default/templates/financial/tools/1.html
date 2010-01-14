@@ -1,0 +1,75 @@
+[% IF( ! current_auth && client && client.mental_health_provider.authorization );
+    current_auth = client.mental_health_provider.authorization;
+END %]
+<div class="submenu insurance_authorizations">
+<h4>Insurance Authorizations</h4>
+    [% INCLUDE util/form.html %]
+        <p class="save">
+            [% INCLUDE util/date_picker.html
+                name    = 'auth_month'
+                value   = auth_month || 'today'
+            %]
+            <input type="submit" name="op" value="Change month" />
+        </p>
+        [% INCLUDE financial/session.html %]
+    [% INCLUDE util/form_end.html %]
+
+    <ul class="toggle_menu">
+        <li[% ' class="active"' IF Session.client_insurance_authorization_subnav == 'current' %]>
+            <a href="[% script %]?section=tools;step=1;client_insurance_authorization_subnav=current">[% auth_month.format_date_month_name _' expirations' %]</a>
+        </li>
+        <li[% ' class="active"' IF Session.client_insurance_authorization_subnav == 'all' %]>
+            <a href="[% script %]?section=tools;step=1;client_insurance_authorization_subnav=all">All clients</a>
+        </li>
+    </ul>
+
+    <div class="toggle_content">
+        [% IF auths_expiring; INCLUDE financial/tools/auths_expiring.html; END %]
+        [% IF auths_all; INCLUDE financial/tools/auths_all.html; END %]
+    </div>
+
+</div>
+
+<div class="subcontent insurance_authorizations">
+    [% IF current_auth;
+        INCLUDE financial/tools/auth_current.html;
+    ELSIF( client.id );
+        INCLUDE financial/tools/auth_client.html;
+    ELSE %]
+        <p>No current authorization or client.  Please choose one.</p>
+    [% END %]
+
+    [% IF client.id %]
+            [% IF( requests = client.insurance_authorization_requests ) %]
+                <h4>Authorization Requests</h4>
+                <ul>
+                    [% FOR request IN requests %]
+                    <li><a href="[% script %]?op=client_insurance_authorization_request_print;client_insurance_authorization_request_id=[% request.id %];section=tools;step=1">[% request.date_requested %] &#187;</a></li>
+                    [% END %]
+                </ul>
+            [% END %]
+
+            <h4>New Authorization Request</h4>
+            [% action   = 'edit' %]
+            [% INCLUDE util/form.html %]
+                [% INCLUDE util/date_picker.html
+                    name    = 'start_date'
+                    label   = 'Start date'
+                    value   = current_auth.authorization_request.start_date || 'today'
+                    wraptag = 'p'
+                %]
+                [% INCLUDE util/date_picker.html
+                    name    = 'end_date'
+                    label   = 'End date'
+                    value   = current_auth.authorization_request.end_date || 'today'
+                    wraptag = 'p'
+                %]
+
+                <input type="hidden" name="client_insurance_authorization_id" value="[% current_auth.id %]" />
+                <input type="hidden" name="op" value="client_insurance_authorization_request_save" />
+                <input type="hidden" name="client_id" value="[% client.id %]" />
+                [% INCLUDE financial/session.html %]
+                <p class="save"><input type="submit" value="Create Authorization Request" /></p>
+            [% INCLUDE util/form_end.html %]
+    [% END %]
+</div>

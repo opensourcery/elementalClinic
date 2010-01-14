@@ -1,0 +1,175 @@
+= PERMISSIONS SYSTEM README =
+
+ * This document covers the permission changes in migrations 437 and 439.
+ * This document only covers the schema, not the code
+
+==437 Initial Permissions Enhancement==
+
+In 437 permissions were added to emc. Previously the only permissions were a
+set of roles that governed what controller could be accessed. 437 migrates
+these roles into the personnel_role table.
+
+Roles are a way to group personnel. There are special roles (with the field
+special_name populated). Special roles are admin, all_clients, and all_groups.
+Aside from behavior associated with special roles the only thing roles afford
+is a way to associate personnel with clients.
+
+There are 2 types of roles, system roles and personnel roles. System roles are
+roles that stand alone. Personnel roles are roles that are associated with a
+single staff member. A role may not be both a system role and a personnel role.
+
+Personnel are associated with a role when their personnel role is added as a
+member of the role you want them in. in 437 memberships were tracked in the
+personnel_role_member table. This was a simple association between a member
+role and a parent role.
+
+Clients are associated with personnel in one of two ways. A staff member can be
+associated with a client because of a direct association betweenthe client and
+a role the staff member is a member of. A staff member can also be associated
+with a client because of a direct association between a group the client is in
+and a role the staff member is a member of.
+
+437 relied on the code to handle all special role behavior, as well as
+calculating the role membership tree and client association tree. The one big
+flaw with 437 was speed. 437 was incredibly slow. Caching was added to make the
+application speed more than acceptible using test data. However when used with
+real-world data the caching proved insufficient and the speed was unreasonable.
+
+==439==
+
+439 was written to address the speed issues in 439. For starters it would track
+the membership higherarchy in realtime as operations occured. It would provide
+several views to make instant access to membership information possible. In
+addition the all_clients special role now works via a trigger on the client
+table that adds a client-role association on insert. Client associations also
+gained views that make querying client access much faster.
+
+The primary method used to increase speed in 439 is a move from reliance on
+run-time application code to a database that is always current. Previously
+checking if a staff member had access to a client required the application to
+create an internal map of the staff members role memberships. Once the map was
+complete it would check each role to see if it had acces through any of the
+possible methods.
+
+With the database tracking role memberships it is now possible to create a view
+that lists every role and client association both direct and indirect. Role
+memberships can also be quered against views that show all, direct, and
+indirect. Triggers on the role_membership table update the tree whenever a new
+membership is added. Indirect memberships are always current. The membership
+tracking cascades on deletes, so deleting all the required items when a
+membership is removed occurs for free.
+
+The one projected downside of this method is database size. With a complicated
+role higherarchy there is the potential for a huge table. Currently however
+users of emC cannot create arbitrary system roles. There is no projected need
+to create complex system roles, as such I decided the speed vs size ratio here
+was acceptible.
+
+The real meat of the schema is in the add_membership() function used in the
+add_membership trigger. Whenever a row is added to the role_membership table
+the function will fire off and insert more values for the indirect memberships.
+First it adds indirect memberships between the new member and it'd new parent's
+parents. Once complete it moves on to adding indirect membership entrees for
+it's children to the new parent. Since these entrees enter the same table as
+the initial new membership, the function recursivly handles things up and down
+the tree.
+
+Indirect memberships populate 2 special fields: direct_cause and
+indirect_cause. These will always be the primary key for a membership entree.
+direct_cause will be the association between the member and the parent
+responsible for the current membership. indirect cause will always be the
+association between the parent responsible and the role it brings you into.
+
+When a user is added as a member of a group, group permissions are granted to
+any role that has access to that client. This is done with a trigger. The
+migration itself populates the initial list of group permissions using 2
+passes.
+
+May views have also been added. These views simplify information lookup. See
+the list below for a list of all tables/views.
+
+
+These tables were dropped in 437, they used to hold the names of roles.
+ * personnel_security_role;
+ * security_role;
+
+These tables were added in 437
+ * personnel_role
+   Defines all the roles
+
+ * personnel_role_member
+   Holds role memberships (role->role associations)
+   -Removed in 439
+
+ * personnel_role_client_permission
+   Direct client permissions granted to personnel
+   -Renamed to direct_client_permission in 439
+
+ * personnel_role_group_permission
+   Direct group permissions granted to personnel
+   -Renamed to direct_group_permission in 439
+
+These tables were added in 439
+ * role_membership
+   Replaced personnel_role_member
+   Holds role memberships, both direct and indirect. Always current because of
+   a trigger.
+
+These tables were removed in 439
+ * personnel_role_member (see role_membership)
+
+These tables were renamed in 439
+ * personnel_role_group_permission  -> direct_group_permission
+ * personnel_role_client_permission -> direct_client_permission
+
+These triggers were added in 439
+ * add_membership
+   When a membership is added this trigger will synchronize all membership
+   associations.
+
+ * add_client
+   When a client is created this trigger grants all_clients access to the
+   client.
+
+ * add_group
+   When a group is created this trigger grants all_groups access to the group.
+
+ * add_group_member
+   When a client is added to a group this trigger grants group permissions to
+   all personnel with access to the client.
+
+These views were added in 439
+ * role_member
+   The complete list of role->role associations
+
+ * direct_role_member
+   The complete list of direct role->role associations
+
+ * indirect_role_member
+   The complete list of indirect role->role associations
+
+ * group_permission
+   The complete list of group permissions
+
+ * indirect_group_permission
+   The complete list of indirect group permissions
+
+ * group_to_client_permission
+   Complete list of client permissions granted because of a group permission
+
+ * indirect_client_permission
+   Complete list of indirect client permissions (includes group_to_client_permission)
+
+ * coordinator_client_permission
+   Client permissions granted via events (as coordinator)
+
+ * client_permission
+   Complete list of client permissions, every one is listed here (unique)
+
+ * client_permission_map
+   A complete map of everyone with access to a client, and a row for each method by which they are granted access.
+
+ * client_user_role_map
+   Same as client_permission_map, except that system roles have been filtered.
+   Also shows staff_id
+

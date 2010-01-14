@@ -1,0 +1,72 @@
+[% INCLUDE global/client_head.html
+    navsec = 'clinical'
+    navpage = 'allergies'
+%]
+
+<div id="left" class="client_box">
+
+    <h4>[% op == 'edit' ? 'Edit' : 'New' %] Allergy</h4>
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+
+    [% INCLUDE util/input_text.html
+        name    = 'allergy'
+        label   = 'Allergy'
+        value   = current.allergy
+        wraptag = 'p'
+        required = 1
+    %]
+
+    [% IF current.created %]
+    <p>Created on: <strong>[% current.created %]</strong></p>
+    [% END %]
+
+    [% IF op == 'edit' || errors %]
+
+        [% INCLUDE util/checkbox.html
+            name    = 'active'
+            label   = 'Active?'
+            value   = current.active
+            wraptag = 'p'
+        %]
+
+
+    [% ELSE %]
+
+    [% END %]
+        <input type="hidden" name="allergy_id" id="allergy_id" value="[% current.rec_id %]" />
+        <input type="hidden" name="created" id="created" value="[% current.created %]" />
+        <input type="hidden" name="client_id" id="client_id" value="[% client.client_id %]" />
+        <input type="hidden" name="op" id="op" value="save" />
+        <p class="save"><input type="submit" name="submit" id="submit" value="Save allergy" /></p>
+    </form>
+    [% IF op == 'edit';
+        INCLUDE util/form_cancel.html;
+    END %]
+</div>
+
+
+<div id="right" class="client_box">
+
+    [% IF( allergies = client.allergies( 1 )) %]
+        <h4>Active allergies</h4>
+        [% INCLUDE allergy_list %]
+        [% ELSE %]
+        <p>No active allergies.</p>
+    [% END %]
+
+    [% IF( allergies = client.allergies( 0 )) %]
+        <h4>Inactive allergies</h4>
+        [% INCLUDE allergy_list %]
+        [% ELSE %]
+        <p>No inactive allergies.</p>
+    [% END %]
+
+</div>
+
+[% BLOCK allergy_list %]
+    <ul>
+        [% FOR allergy IN allergies %]
+        <li><a href="[% script %]?op=edit&allergy_id=[% allergy.rec_id %]&client_id=[% client.id %]">[% allergy.allergy %]</a>[% ", $allergy.created" IF allergy.created %]</li>
+        [% END %]
+    </ul>
+[% END %]

@@ -1,0 +1,41 @@
+---
+1001:
+  audit_trail: ~
+  client_id: 1003
+  dosage: 12 mg
+  end_date: ~
+  frequency: twice daily
+  inject_date: ~
+  instructions: Take orally.
+  location: ~
+  medication: Asprin
+  no_subs: ~
+  notes: ~
+  num_refills: 9
+  print_date: 2005-05-31
+  print_header_id: 1
+  quantity: 2
+  rec_id: 1001
+  rolodex_treaters_id: 1001
+  start_date: 1984-07-18
+1002:
+  audit_trail: ~
+  client_id: 1003
+  dosage: 3
+  end_date: ~
+  frequency: once ever
+  inject_date: ~
+  instructions: ~
+  location: ~
+  medication: Asprin
+  no_subs: ~
+  notes: We only have one medication at this time
+  num_refills: 2
+  print_date: ~
+  print_header_id: 1
+  quantity: 5
+  rec_id: 1002
+  rolodex_treaters_id: 1001
+  start_date: 1978-03-11
+
+

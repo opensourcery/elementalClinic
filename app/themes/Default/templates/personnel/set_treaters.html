@@ -1,0 +1,70 @@
+<div id="content">
+[% INCLUDE util/errors.html %]
+<div id="left" class="system_box">
+
+    <h4>Current treater associations</h4>
+
+    [% IF current_treaters.0.staff_id %]
+    <table cellspacing="0" border="1">
+        <tr class="head">
+            <th>Staff ID</th>
+            <th>Name</th>
+            <th>Rolodex</th>
+            <th class="edit"></th>
+        </tr>
+    [% rowclass = 0 %]
+    [% FOR row IN current_treaters %] [% rowclass = rowclass * -1 + 1 %]
+        <tr class="[% IF rowclass; "even"; ELSE; "odd"; END %]">
+            <td>[% row.staff_id %]</td>
+            <td>[% row.fname %] [% row.lname %]</td>
+            <td>[% row.name %]</td>
+            <td class="edit"><a href="[% script %]?op=delete_item&staff_id=[% row.staff_id %]">delete</a></td>
+        </tr>
+    [% END %]
+    </table>
+    [% ELSE %]
+    <p>Currently no staff members are associated with treaters.</p>
+    [% END %]
+
+</div>
+
+
+<div id="right" class="system_box">
+
+    <h4>Make new association</h4>
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+
+    <table>
+    <tr>
+    <td>
+        <label for="staff_id"><strong>Staff</strong></label><br />
+        <select name="staff_id" id="staff_id" size="20">
+            [% FOREACH person IN staff %]
+            <option value="[% person.staff_id %]">[% person.eman %]</option>
+            [% END %]
+        </select>
+    </td>
+
+    <td>
+        <input type="hidden" name="op" id="op" value="associate" /> 
+        <p class="edit"><input type="submit" name="associate_button" id="associate_button" value="Associate" /></p>
+    </td>
+
+    <td>
+        <label for="staff_id"><strong>Treaters</strong></label><br />
+        [% INCLUDE util/select.html
+            s_name     = 'treater_id'
+            s_values   = treaters
+            s_keyname = 'rec_id'
+            s_valname =  'name_f'
+            s_size      = 20
+        %]
+    </td>
+    </tr>
+    </table>
+
+    </form>
+</div>
+
+
+  

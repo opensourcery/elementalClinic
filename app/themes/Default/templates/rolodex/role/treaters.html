@@ -1,0 +1,34 @@
+[% INCLUDE util/input_text.html
+    name    = 'treater_agency'
+    label   = 'Agency'
+    value   = entry.treater_agency
+    wraptag = 'p'
+%]
+
+[% INCLUDE util/choose_valid_data.html
+    name   = 'treater_type_id'
+    label  = 'Treater type' 
+    table  = '_treater_types'
+    type    = 'select'
+    default = entry.treater_type_id
+    use_id  = 1
+    wraptag = 'p'
+%]
+
+[% INCLUDE util/input_text.html
+    name    = 'treater_license'
+    label   = 'License'
+    value   = entry.treater_license
+    wraptag = 'p'
+%]
+
+<p>
+[% INCLUDE util/date_picker.html
+    name    = 'last_visit'
+    value   = entry.last_visit
+    label   = 'Last visit'
+    default = entry.last_visit
+%]
+</p>
+
+<input type="hidden" name="rolodex_treaters_id" value="[% rolodex.rolodex_treaters_id %]" />

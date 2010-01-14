@@ -1,0 +1,81 @@
+[% current = current || client %]
+[% border = 'style="border-top: solid 1px #555555;"' %]
+
+<div id="center">
+    <div class="client_box" id="left">
+        <h4>Staff members with permission to view this client's records</h4>
+        <table id="association_table">
+            <tr>
+                <th>staff</th>
+                [% IF current_user.admin %]
+                    <th>why?</th>
+                [% END %]
+            </tr>
+
+            [% FOR key IN permissions.keys.sort() %]
+                [% set = permissions.$key %]
+                <tr>
+                    <td rowspan="[% set.size %]" valign="top" class="first" >
+                        [% name = set.0.staff.lname _ ", " _ set.0.staff.fname %]
+                        [% IF current_user.admin %]
+                            <a href="personnel.cgi?staff_id=[% set.0.staff_id %]">[% name %]</a>
+                        [% ELSE %]
+                            [% name %]
+                        [% END %]
+                    </td>
+                    [% PROCESS rolerow item=set.shift class='first' %]
+                </tr>
+
+                [% WHILE (item = set.shift) %]
+                    <tr>
+                        [% PROCESS rolerow item=item class='additional' %]
+                    </tr>
+                [% END %]
+
+            [% END %]
+
+        </table>
+    </div>
+
+    [% IF current_user.admin && unassociated.size %]
+    <div class="client_box" id="right">
+        <h4>Grant access</h4>
+
+        <form
+            method="[% Config.form_method %]"
+            action="[% script %]"
+            enctype="application/x-www-form-urlencoded"
+            id="add_staff_to_client"
+        >
+            [% INCLUDE util/select_new.html
+                name = 'staff_id'
+                values = unassociated
+                keyname = 'staff_id'
+                valname = 'name'
+            %]
+
+            <input id="client_id" name="client_id" value="[% client.id %]" type="hidden" />
+            <input id="op" name="op" value="Grant" type="submit" />
+        </form>
+    </div>
+    [% END %]
+</div>
+
+
+[% BLOCK rolerow %]
+    [% IF current_user.admin %]
+        <td class="assoc_method direct_assoc_method [% class %]">
+            [% item.reason_name %]
+        </td>
+        [% IF item.reason == 'direct' %]
+            <td class="assoc_control assoc_control_remove [% class %]">
+                <a href="[% script %]?op=remove&client_id=[% client.id %]&staff_id=[% item.staff_id %]">Remove</a>
+            </td>
+        [% ELSE %]
+            <td class="assoc_control assoc_control_remove [% class %]">
+                &nbsp;
+            </td>
+        [% END %]
+    [% END %]
+[% END %]
+

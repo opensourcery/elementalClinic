@@ -1,0 +1,114 @@
+<div id="content">
+    [% INCLUDE util/errors.html %] 
+    <div id="center" class="system_box">
+        <h2>Configurable Assessment</h2>
+
+        <div class="selector">
+            <ul class="selector">
+                <li class="header">Active</li>
+                [% INCLUDE assessment_link assessment = assessment_active %]
+
+                <li class="header">Intake</li>
+                [% INCLUDE assessment_link assessment = assessment_intake %]
+
+                <li class="header">In Progress</li>
+                [% FOR assessment IN assessments_in_progress %]
+                    [% INCLUDE assessment_link %]
+                [% END %]
+
+                <li class="header">Archived</li>
+                [% FOR assessment IN assessments_archived %]
+                    [% INCLUDE assessment_link %]
+                [% END %]
+            </ul>
+        </div>
+
+        <div id="assessments" class="selectee">
+
+            <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+                <div id="new_template">
+                <p class="new_this">
+                    <input type="submit" name="op" id="op_new" value="Create a new assessment template:" />
+                    [% INCLUDE util/input_text.html
+                        name    = 'new_name'
+                        value   = new_name
+                        size    = 35
+                    %]
+                </div>
+            </form>
+
+            [% action = (current_assessment.editable) ? 'edit' : 'display' %]
+            <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+                <h4>
+                [% INCLUDE util/input_text.html
+                    label   = 'Name'
+                    name    = 'name'
+                    value   = current_assessment.name
+                    size    = 30
+                %]
+                <br />
+                [% INCLUDE util/checkbox.html
+                    label   = 'Use as intake assessment?'
+                    name    = 'is_intake'
+                    reverse = 1
+                    value   = is_intake || current_assessment.is_intake
+                    wraptag = 'small'
+                %]
+                </h4>
+
+                <ul class="navigation">
+                    [% FOR section IN current_assessment.sections %]
+                        [% INCLUDE admin/assessment_template/_section_navigation.html
+                            no_class_for_last_item  = 1
+                        %]
+                    [% END %]
+                    [% IF current_assessment.editable %]
+                    <li id="new_section_trigger" class="last"><a href="#">New section</a></li>
+                    [% END %]
+                </ul>
+                <div id="properties">
+                    [% FOR section IN current_assessment.sections %]
+                        [% INCLUDE admin/assessment_template/_section_content.html %]
+                    [% END %]
+                    <div class="assessment_section" id="new_section" style="display:none">
+                        <h5>Create a new section</h5>
+                        [% INCLUDE util/input_text.html
+                            label   = 'New section label'
+                            name    = 'new_section_label'
+                            wraptag = 'p'
+                        %]
+                        <p>
+                            <input type="submit" name="new_section_create" id="new_section_create" value="Create new section" />
+                            or <a id="new_section_cancel" class="cancel" href="">Cancel</a>
+                        </p>
+                    </div>
+                    <hr class="div" />[%# FIXME this sucks %]
+                </div>
+
+                [% IF current_assessment.created_date %]
+                    <p class="created">Created <strong>[% current_assessment.created_date %]</strong> by <strong>[% current_assessment.personnel.eman %]</strong></p>
+                [% END %]
+
+                <input type="hidden" name="assessment_id" id="assessment_id" value="[% current_assessment.id %]" />
+                <input type="hidden" id="part_id" name="part_id" value="[% part_id %]" />
+                <ul class="affect_this">
+                [% IF current_assessment.editable %]
+                    <li><input type="submit" name="op" id="op_delete" class="delete_this" value="Delete" /></li>
+                    <li><input type="submit" name="op" id="op_activate" class="activate_this" value="Activate" /></li>
+                [% ELSIF current_assessment.active %]
+                    <li>To deactivate a template you must activate a new one.</li>
+                [% END %]
+                    <li><input type="submit" name="op" id="op_clone" class="clone_this" value="Clone" /></li>
+                </ul>
+                [% IF current_assessment.editable %]
+                    <p class="save_this"><input type="submit" name="op" id="op_save" value="Save assessment" /></p>
+                [% END %]
+            </form>
+        </div>
+
+        <hr class="div" />[%# FIXME this sucks %]
+    </div>
+</div>
+[% BLOCK assessment_link %]
+    <li[% ' class="current"' IF current_assessment.id == assessment.id %]><a href="[% script %]?assessment_id=[% assessment.id %]">[% assessment.name %]</a></li>
+[% END %]

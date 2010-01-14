@@ -1,0 +1,276 @@
+[% INCLUDE global/mini_client.html
+    navsec = 'entitlements'
+%]
+<div id="center">
+
+<form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+[% ent = client.entitlement %]
+
+<fieldset class="stacker">
+    <legend>Identifying Information</legend>
+    [% INCLUDE util/checkbox.html
+        label = 'Is Housing Services the Representative Payee?'
+        name  = 'rep_payee'
+        value = ent.rep_payee
+        wraptag = 'p'
+    %]
+
+    [% INCLUDE util/checkbox.html
+        label = 'Does patient self-pay?'
+        name  = 'self_pay'
+        value = ent.self_pay
+        wraptag = 'p'
+    %]
+
+    <p>
+    [% INCLUDE util/checkbox.html
+        label = 'US citizen?'
+        name  = 'us_citizen'
+        value = ent.us_citizen
+    %]
+
+    [% INCLUDE util/checkbox.html
+        label = 'US veteran?'
+        name  = 'us_veteran'
+        value = ent.us_veteran
+    %]
+    </p>
+
+    [% INCLUDE util/input_text.html
+        name    = 'css_id'
+        label   = 'CSS ID'
+        value   = ent.css_id
+        wraptag = 'p'
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'bank_account'
+        label   = 'Bank account #'
+        value   = ent.bank_account
+        wraptag = 'p'
+    %]
+
+    <hr />
+
+    <p>
+    [% INCLUDE util/checkbox.html
+        label = 'Medicaid?'
+        name  = 'm_caid'
+        value = ent.m_caid
+    %]
+    |
+    [% INCLUDE util/input_text.html
+        name    = 'mcaid_id'
+        label   = 'ID'
+        value   = ent.mcaid_id
+    %]
+    </p>
+
+    <p>
+    [% INCLUDE util/checkbox.html
+        label = 'Medicare?'
+        name  = 'm_care'
+        value = ent.m_care
+    %]
+    |
+    [% INCLUDE util/input_text.html
+        name    = 'mcare_id'
+        label   = 'ID'
+        value   = ent.mcare_id
+    %]
+    </p>
+</fieldset>
+
+
+<fieldset class="stacked">
+    <legend>Social Security</legend>
+    <div class="stacker">
+        <p>
+        [% INCLUDE util/input_text.html
+            name    = 'ssd_amt'
+            label   = 'SS amount'
+            value   = ent.ssd_amt
+            size    = 7
+        %]
+
+        [% INCLUDE util/checkbox.html
+            label = 'Direct deposit?'
+            name  = 'ss_direct'
+            value = ent.ss_direct
+        %]
+        </p>
+
+        <p>
+            [% INCLUDE util/date_picker.html
+                label   = 'SS certification'
+                name    = 'ssd_cert'
+                value   = ent.ssd_cert
+            %]
+        </p>
+
+        <p>
+            [% INCLUDE util/date_picker.html
+                label   = 'Re-certification'
+                name    = 'ssd_recert'
+                value   = ent.ssd_recert
+            %]
+        </p>
+
+    </div>
+
+    <div class="stacked">
+        [% INCLUDE util/input_text.html
+            name    = 'ssi_amt'
+            label   = 'SSI amount'
+            value   = ent.ssi_amt
+            wraptag = 'p'
+            size    = 7
+        %]
+
+        <p>
+            [% INCLUDE util/date_picker.html
+                label   = 'SSI certification'
+                name    = 'ssi_cert'
+                value   = ent.ssi_cert
+            %]
+        </p>
+
+        <p>
+            [% INCLUDE util/date_picker.html
+                label   = 'Re-certification'
+                name    = 'ssi_recert'
+                value   = ent.ssi_recert
+            %]
+        </p>
+    </div>
+
+</fieldset>
+
+<hr class="div" />
+
+
+
+<fieldset class="stacked">
+    <legend>Public Asssistance</legend>
+    [% INCLUDE util/input_text.html
+        name    = 'pa_case'
+        label   = 'ID'
+        value   = ent.pa_case
+        wraptag = 'p'
+    %]
+
+    <p>
+    [% INCLUDE util/input_text.html
+        name    = 'pa_amt'
+        label   = 'Amount'
+        value   = ent.pa_amt
+        size    = 7
+    %]
+
+    [% INCLUDE util/checkbox.html
+        label = 'Direct deposit?'
+        name  = 'pa_direct'
+        value = ent.pa_direct
+    %]
+    </p>
+
+    <p>
+        [% INCLUDE util/date_picker.html
+            label   = 'Certification'
+            name    = 'pa_cert'
+            value   = ent.pa_cert
+        %]
+    </p>
+
+    <p>
+        [% INCLUDE util/date_picker.html
+            label   = 'Re-certification'
+            name    = 'pa_recert'
+            value   = ent.pa_recert
+        %]
+    </p>
+</fieldset>
+
+
+<fieldset class="stack">
+    <legend>Food Stamps</legend>
+    [% INCLUDE util/input_text.html
+        name    = 'fs_id'
+        label   = 'ID'
+        value   = ent.fs_id
+        wraptag = 'p'
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'fs_amt'
+        label   = 'Amount'
+        value   = ent.fs_amt
+        wraptag = 'p'
+        size    = 7
+    %]
+
+    <p>
+        [% INCLUDE util/date_picker.html
+            label   = 'Certification'
+            name    = 'fs_cert'
+            value   = ent.fs_cert
+        %]
+    </p>
+
+    <p>
+        [% INCLUDE util/date_picker.html
+            label   = 'Re-certification'
+            name    = 'fs_recert'
+            value   = ent.fs_recert
+        %]
+    </p>
+</fieldset>
+
+
+<fieldset class="stacked">
+    <legend>Other Income</legend>
+    [% INCLUDE util/input_text.html
+        name    = 'alimony'
+        label   = 'Alimony'
+        value   = ent.alimony
+        wraptag = 'p'
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'pension'
+        label   = 'Pension'
+        value   = ent.pension
+        wraptag = 'p'
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'private'
+        label   = 'Private'
+        value   = ent.private
+        wraptag = 'p'
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'wages'
+        label   = 'Wages'
+        value   = ent.wages
+        wraptag = 'p'
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'va'
+        label   = 'Veteran\'s Benefits'
+        value   = ent.va
+        wraptag = 'p'
+    %]
+</fieldset>
+
+<hr class="div" />
+
+    <input type="hidden" name="op" value="save" />
+    <input type="hidden" name="rec_id" value="[% ent.rec_id %]" />
+    <input type="hidden" name="client_id" value="[% client.id %]" />
+    <p class="save"><input type="submit" name="submit" value="Save" /></p>
+</form>
+
+</div>

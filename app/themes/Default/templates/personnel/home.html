@@ -1,0 +1,43 @@
+[% action = ( op == 'edit' || op == 'create' || ( op == 'save' && errors )) ? 'edit' : 'display' %]
+<div id="content">
+[% INCLUDE util/errors.html %]
+<div id="center" class="system_box">
+
+[% UNLESS op == 'create' || op == 'edit' || op == 'edit_security' || errors %]
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" name="chooser" id="chooser" style="float:left;">
+        <p class="view"><input type="submit" name="op" id="op_view" value="View person" /> </p>
+        <select name="staff_id" id="staff_id" onchange="document.forms['chooser'].submit()" size="30">
+        [% FOREACH one = current_user.get_all %]
+            <option value="[% one.staff_id %]"[% IF one.staff_id == current.staff_id; ' selected="selected"'; END %]>[% one.eman %]</option>
+        [% END %]
+        </select>
+        <br />
+        <p class="new"><input type="submit" name="op" id="op_new" value="New person" /> </p>
+    </form>
+[% ELSE %]
+    <h3>[% "$current.fname $current.lname" %]</h3>
+[% END %]
+
+[% PROCESS personnel/home/sub_categories %]
+
+<hr class="div" />
+
+</div>
+</div>
+
+[% BLOCK personnel/home/sub_categories %]
+    [% IF current.staff_id || op == 'create' || action == 'edit' %]
+        [% INCLUDE personnel/home_demographics.html %]
+        <div id="widgets">
+            <ul class="controls">
+                <li><a id="control_security" class="inactive" onclick="return show_widget( 'security' )">Security</a></li>
+                <li><a id="control_charge_codes" class="inactive" onclick="return show_widget( 'charge_codes' )">Charge codes</a></li>
+                <li><a id="control_supervision" class="inactive" onclick="return show_widget( 'supervision' )">Supervision</a></li>
+            </ul>
+            [% INCLUDE personnel/home_security.html %]
+            [% INCLUDE personnel/home_charge_codes.html %]
+            [% INCLUDE personnel/home_supervision.html %]
+            <input type="hidden" name="current_widget" id="current_widget" value="[% current_widget || 'security' %]" />
+        </div>
+    [% END %]
+[% END %]

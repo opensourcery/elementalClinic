@@ -1,0 +1,42 @@
+<table border="1">
+    <thead>
+    <tr>
+        <td colspan="4">
+            [% INCLUDE report/header.html %]
+            
+            <p>Staff Member: [% staff_name %]</p>
+            <p>Start: [% start_date_facade %]</p>
+            <p>End: [% end_date_facade %]</p>
+            
+            [% "<p>There was no data for this staff member between those dates.</p>" UNLESS data.data.0 %]
+
+        </td>
+    </tr>
+    </thead>
+    <tbody>
+    [% FOR entry IN data.data %]
+    <tr>
+        <th colspan="4"><h4><em>Billing code:</em> [% entry.code %]</h4></th>
+    </tr>
+    <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Writer</th>
+    </tr>
+    [% FOR record IN entry.data %]
+    <tr [% rowclass %]>
+        <td>[% record.start_date %]</td>
+        <td>[% record.duration %]</td>
+        <td>[% record.writer %]</td>
+    [% END %]
+    <tr>
+        <td><strong>Total:</strong></td>
+        <td colspan="2">[% entry.total %]</td>
+    </tr>
+    [% END %]
+    <tr>
+        <td><strong>Total Hours:</strong></td>
+        <td colspan="2">[% data.total %]</td>
+    </tr>
+    </tbody>
+</table>

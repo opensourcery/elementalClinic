@@ -1,0 +1,10 @@
+---
+name: Test
+description: 
+theme_index: Allergies
+allowed_controllers:
+  - Login
+  - Test
+  - Allergies
+  # so that the link shows up, like in Default
+  - Schedule

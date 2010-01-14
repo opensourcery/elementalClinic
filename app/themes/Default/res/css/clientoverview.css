@@ -1,0 +1,95 @@
+/* Controls layout for the client overview (base client, apptmnt history and notes) */
+
+/*{{{ Client Details */
+#client_details {
+    position : relative;
+}
+
+hr.subtle {
+    clear : both !important;
+}
+/* simple-specific */
+dl.inline dt {
+    width : 6em;
+}
+/*}}}*/
+/*{{{ Appointments History */
+#left {
+    padding-top: 7px;
+}
+#appointments th {
+    font-weight : bold;
+}
+#appointments th,
+#appointments td {
+    text-align : center;
+}
+#appointment_table {
+    height : 90%;
+    background: #ffc;
+    border: 1px solid #ffbb00;
+}
+#appointment_table table {
+    width : 100%;
+    border-collapse: collapse;
+}
+#appointment_table tr:hover {
+    background : #ccc;
+}
+/*}}}*/
+/*{{{ Notes Subform */
+#notes {
+    padding-top: 7px;
+    clear : both;
+}
+#notes table {
+    width : 100%;
+}
+#notes td.save {
+    background-color : #666;
+    border : 1px solid #333;
+}
+#notes tr:hover {
+    background : #cfc;
+}
+#notes tr.save:hover {
+    background-color : #efe;
+}
+#notes td.save:hover {
+    background-color : #666;
+}
+/*}}}*/
+
+a.mailsubject:hover {
+    text-decoration: none;
+}
+
+.mailmessage_hide {
+    display: none;
+}
+
+.mailmessage_show {
+    border: 1px solid #afa;
+    padding: 4px;
+}
+
+#comment_text {
+  width: 98%;
+}
+
+#fname, #lname, #phone, #email {
+    width: 134px;
+}
+
+tr.save td {
+
+}
+
+tr.save td.save {
+    width: 80px;
+    min-width: 0;
+}
+
+#note_body {
+    width: 97%;
+}

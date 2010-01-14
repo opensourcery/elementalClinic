@@ -1,0 +1,47 @@
+[%-
+    # very similar to gateway/uncommitted_prognotes.html
+    # would be nice, but non-trivial, to merge these two
+%]
+    [% user_reporters = current_user.reporters_with_bounced_prognotes %]
+    [% user_bounced_prognotes = current_user.bounced_prognotes %]
+    [% RETURN UNLESS( user_reporters || user_bounced_prognotes ) %]
+    [% overdue_count = 0 %]
+    <div class="prognote_block bounced">
+        [% IF user_bounced_prognotes %]
+            <h4>Your Bounced Notes</h4>
+            <dl>
+                [% PROCESS staff_notes      # 'PROCESS'ing so the overdue_count variable comes back
+                    bounced_prognotes   = user_bounced_prognotes
+                    note_action         = 'bounce_respond'
+                %]
+            </dl>
+        [% END %]
+        [% IF user_reporters %]
+            <h4>Bounced Notes</h4>
+            <dl>
+                [% FOR staff IN user_reporters;
+                    PROCESS staff_notes     # 'PROCESS'ing so the overdue_count variable comes back
+                    bounced_prognotes   = staff.bounced_prognotes
+                    note_action         = 'view'
+                ;END %]
+            </dl>
+        [% END %]
+        [% IF overdue_count %]
+        <p id="overdue_explanation">Overdue notes are <span class="attention">red</span>.</p>
+        [% END %]
+    </div>
+
+[% BLOCK staff_notes %]
+            <dt>[% staff.eman %]</dt>
+            <dd>
+                <ul>
+                [% FOR bounce IN bounced_prognotes;
+                    IF bounce.overdue; overdue_count = overdue_count + 1; END
+                    %]
+                    <li[% ' class="attention"' IF bounce.overdue %]><a href="/progress_notes.cgi?op=[% note_action %];client_id=[% bounce.prognote.client_id %];rec_id=[% bounce.prognote.id %]">
+                        [% bounce.prognote.id %] on [% bounce.prognote.note_date %]
+                    </a></li>
+                [% END %]
+                </ul>
+            </dd>
+[% END %]

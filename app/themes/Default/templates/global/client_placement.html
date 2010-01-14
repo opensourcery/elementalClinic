@@ -1,0 +1,20 @@
+[% IF client.placement.is_admitted %]
+    <p><em>Admitted</em> on <strong>[% client.placement.admit_date %]</strong></p>
+[% ELSIF client.placement.is_referral %]
+    <p><em>Referral</em>
+    [%- " from <strong>$client.placement.referral.rolodex.name</strong>" IF client.placement.referral.rolodex.name -%]
+    [%- " on <strong>$client.placement.referral.referral_date</strong>" IF client.placement.referral.referral_date -%]
+    </p>
+[% ELSE %]
+    <p><em>Discharged</em> on [% client.placement.last_discharge.placement_event.event_date %]</p>
+[% END %]
+[% IF client.placement.is_admitted %]
+    <p>
+        Placed <strong>[% client.placement.event_date %]</strong>
+        in <strong>[% client.placement.program.name %]</strong>
+        [% "with <strong>$client.placement.personnel.name</strong>"
+            IF client.placement.personnel %]
+        [% "receiving <strong>$client.placement.level_of_care.name</strong>"
+            IF client.placement.level_of_care %]
+    </p>
+[% END %]

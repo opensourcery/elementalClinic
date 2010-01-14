@@ -1,0 +1,133 @@
+---
+100008:
+  member_id: 1013
+  rec_id: 100008
+  role_id: 10
+100009:
+  member_id: 1013
+  rec_id: 100009
+  role_id: 8
+100010:
+  member_id: 1013
+  rec_id: 100010
+  role_id: 4
+100011:
+  member_id: 1012
+  rec_id: 100011
+  role_id: 10
+100012:
+  member_id: 1012
+  rec_id: 100012
+  role_id: 8
+100013:
+  member_id: 1012
+  rec_id: 100013
+  role_id: 4
+100014:
+  member_id: 1016
+  rec_id: 100014
+  role_id: 5
+100015:
+  member_id: 1016
+  rec_id: 100015
+  role_id: 9
+100016:
+  member_id: 1016
+  rec_id: 100016
+  role_id: 8
+100017:
+  member_id: 1016
+  rec_id: 100017
+  role_id: 4
+100018:
+  member_id: 1016
+  rec_id: 100018
+  role_id: 7
+100019:
+  member_id: 1015
+  rec_id: 100019
+  role_id: 5
+100020:
+  member_id: 1015
+  rec_id: 100020
+  role_id: 4
+100021:
+  member_id: 1011
+  rec_id: 100021
+  role_id: 1
+100022:
+  member_id: 1011
+  rec_id: 100022
+  role_id: 10
+100023:
+  member_id: 1011
+  rec_id: 100023
+  role_id: 9
+100024:
+  member_id: 1011
+  rec_id: 100024
+  role_id: 8
+100025:
+  member_id: 1011
+  rec_id: 100025
+  role_id: 4
+100026:
+  member_id: 1011
+  rec_id: 100026
+  role_id: 7
+100027:
+  member_id: 1014
+  rec_id: 100027
+  role_id: 10
+100028:
+  member_id: 1014
+  rec_id: 100028
+  role_id: 4
+100029:
+  member_id: 1011
+  rec_id: 100029
+  role_id: 2
+100030:
+  member_id: 1012
+  rec_id: 100030
+  role_id: 2
+100031:
+  member_id: 1013
+  rec_id: 100031
+  role_id: 2
+100032:
+  member_id: 1014
+  rec_id: 100032
+  role_id: 2
+100033:
+  member_id: 1015
+  rec_id: 100033
+  role_id: 2
+100034:
+  member_id: 1016
+  rec_id: 100034
+  role_id: 2
+100035:
+  member_id: 1011
+  rec_id: 100035
+  role_id: 3
+100036:
+  member_id: 1012
+  rec_id: 100036
+  role_id: 3
+100037:
+  member_id: 1013
+  rec_id: 100037
+  role_id: 3
+100038:
+  member_id: 1014
+  rec_id: 100038
+  role_id: 3
+100039:
+  member_id: 1015
+  rec_id: 100039
+  role_id: 3
+100040:
+  member_id: 1016
+  rec_id: 100040
+  role_id: 3

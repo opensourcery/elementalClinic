@@ -1,0 +1,37 @@
+[%- # date calculations
+    prev    = Calendar.date_calc( '-1m' )
+    next    = Calendar.date_calc( '+1m' )
+-%]
+[%- MACRO calendar_link(date) BLOCK -%]
+[%- month = date.year _ '-' _ date.month -%]
+[%- Controller.uri_with({
+    calendar = month,
+    op = '',
+    location_id = '',
+    rolodex_id  = '',
+}) -%]
+[%- END -%]
+    <thead>
+        <tr>
+            <th class="label" colspan="7" valign="bottom">
+                  <a class="previous" href="[% calendar_link(prev) %]">
+                      <span class="pointy_previous">&#171;</span>
+                      <span class="label_previous">[% prev.Month %]<br />[% prev.year %]</span>
+                  </a>
+                  <a class="next" href="[% calendar_link(next) %]">
+                      <span class="pointy_next">&#187;</span>
+                      <span class="label_next">[% next.Month %]<br />[% next.year %]</span>
+                  </a>
+                  <span class="current_sched"><strong>[% month %] [% year %]</strong></span>
+            </th>
+        </tr>
+        <tr class="day_names">
+            <th>S</th>
+            <th>M</th>
+            <th>Tu</th>
+            <th>W</th>
+            <th>Th</th>
+            <th>F</th>
+            <th>S</th>
+        </tr>
+    </thead>

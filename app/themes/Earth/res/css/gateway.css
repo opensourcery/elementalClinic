@@ -1,0 +1,176 @@
+#center {
+    margin : 0 20px;
+    width : 95%;
+    float : left;
+}
+#personnel {
+    width : 210px;
+    float : left;
+    margin : 0 0 0 10px;
+}
+#progress_notes {
+    width : 50%;
+    float : left;
+    margin : 0 10px;
+}
+#partial_intakes {
+    clear : both;
+}
+#reminders {
+    width : 20%;
+    float : left;
+    margin : 0;
+}
+#personnel h4,
+#progress_notes h4,
+#reminders h4 {
+    border : none;
+}
+#or {
+    text-align : center;
+    border : none;
+    padding : 0;
+    margin : 0;
+}
+#reminders dl,
+#reminders dt,
+#reminders dd {
+    padding : 0;
+    margin : 0;
+}
+#personnel table {
+    width : 200px;
+    border-collapse : collapse;
+    border : 1px solid #000;
+    background : #fff;
+}
+#personnel table tr {
+    border-bottom : 1px solid #000;
+}
+#personnel table th {
+    font-weight : normal;
+}
+#personnel table td {
+    width : 150px;
+}
+#personnel table td div {
+    background : #999 url( "../img/background_bar_fff.png" ) no-repeat;
+    padding : 0 0 0 5px;
+    height : 1.5em;
+}
+
+h3 {
+    font-weight : bold;
+    border-bottom : 1px solid #000;
+    margin-bottom : 15px;
+}
+#search_filter,
+#client_results {
+    float : left;
+    width : 45%;
+}
+#search_only,
+#filter_only {
+    border : 1px solid #60c;
+    padding : 5px;
+    -moz-border-radius : 8px;
+}
+#filter_only {
+    -moz-border-radius : 0 0 8px 8px;
+}
+#search_only {
+    -moz-border-radius : 8px 8px 0 0;
+}
+
+#client_filters {
+    width : 8em;
+    float : left;
+    margin : 0 20px 0 0;
+}
+#client_filter {
+    border : 1px solid #666;
+}
+#client_filters ul {
+    padding : 0;
+}
+#client_filters li {
+    list-style-type : none;
+    padding : 0;
+    margin : 0;
+}
+#clientform {
+    padding-left : 6em;
+}
+#client_search {
+    border : 1px solid #666;
+    margin : 0 20px 0 0;
+    font-size : 12px;
+    width : 20em;
+}
+#client_search ul {
+    padding : 0;
+}
+#client_search li {
+    list-style-type : none;
+    padding : 0;
+    margin : 0;
+}
+h5 {
+    border : none;
+    margin : 10px 0 0 0;
+}
+p.instructions {
+    font-size : .7em;
+}
+div.preferences {
+    background : #fefefe;
+    padding : 2px 5px;
+    border-bottom : 1px solid #999;
+    margin : 0 0 10px 0;
+}
+div.preferences p {
+    font-size : .7em;
+    padding : 0;
+    margin : 0;
+}
+div.preferences a {
+    font-weight : normal;
+}
+/* bounced notes {{{*/
+div.prognote_block {
+    background : #efefff;
+    padding : 0 1em;
+    border : 1px solid #60c;
+    margin : 0 .2em;
+    width : 40%;
+    float : left;
+    -moz-border-radius : 8px;
+}
+div.prognote_block.uncommitted {
+    float : right;
+}
+div.prognote_block dl,
+div.prognote_block dd ul {
+    padding : 0;
+    margin : 0;
+}
+div.prognote_block dl dt {
+}
+div.prognote_block dl dd {
+    padding : 0;
+    margin : 0 0 1em 0;
+}
+div.prognote_block dd ul li a {
+    font-weight : normal;
+}
+div.prognote_block dd ul li {
+    margin : 0 0 0 1em;
+}
+div.prognote_block h4 {
+    font-size : .9em;
+    color : #333;
+}
+div.prognote_block #overdue_explanation {
+    font-style : italic;
+}
+/*}}}*/

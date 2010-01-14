@@ -1,0 +1,4 @@
+INSERT INTO validation_rule (name, rule_select, rule_from, rule_where, rule_order, selects_pass, error_message, scope)
+    VALUES ('all notes', '', '', '', '', true, '', 'system:default');
+INSERT INTO validation_rule (name, rule_select, rule_from, rule_where, rule_order, selects_pass, error_message, scope)
+    VALUES ('all notes', '', '', '', '', true, '', 'payer:default');

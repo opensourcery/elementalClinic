@@ -1,0 +1,32 @@
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+
+<b>Set The Search Range </b>
+
+<p />
+
+<table border="0">
+    <tr>
+        <td>Start Date For Search: </td>
+        <td><input type="text" name="start_date" value="[% start_date %]" size="12" maxlength="10" /></td>
+    </tr>
+    <tr>
+        <td>End Date For Search: </td>
+        <td><input type="text" name="end_date" value="[% today %]" size="12" maxlength="10" /></td>
+    </tr>
+    <tr>
+        <td>Select Department: </td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "dept"
+    s_values  = dept
+    s_default = dept_name
+%]</td>
+    </tr>
+</table>
+
+<p />
+
+<input type="submit" name="go" value="Search" />
+<div>
+</div>
+</form>

@@ -1,0 +1,77 @@
+/* appointments.css */
+#add_appointment {
+    left: -155px;
+}
+#delete_appointment {
+    left : -45px;
+}
+#appointments {
+    background: #efe;
+}
+#delete_appointment .content,
+#add_appointment .content {
+    border-color: #060;
+}
+
+#delete_appointment h5,
+#add_appointment h5 {
+    background: #060;
+}
+#delete_appointment h6,
+#add_appointment h6 {
+    color: #060;
+}
+
+#appointments tr:hover {
+    background: #cfc;
+}
+
+/* schedule.css */
+
+div.filters {
+    border-color: #090
+}
+
+th.label strong {
+    color: #060;
+    background: #efe;
+}
+
+th a.previous:hover {
+    border-color: #66f;
+}
+
+table.calendar tr.day_names th {
+    background: #060;
+}
+
+table.calendar td.scheduled {
+    background: #dfd;
+    border-color: #060;
+}
+
+table.calendar td.scheduled a:hover {
+    background : #bfb;
+}
+
+/* clientoverview.css */
+#appointment_table {
+  background: #fff;
+  border: none;
+}
+
+#appointment_table tr:hover {
+  background: #cfc;
+}
+
+#assessment.selectee {
+    width: 75%;
+}
+
+#assessment.selectee h4 {
+    margin-top: 24px;
+}
+
+#assessment.selectee ul.affect_this {
+    left: -32px;
+}

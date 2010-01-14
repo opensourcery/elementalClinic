@@ -1,0 +1,49 @@
+
+1: 
+  active: 1
+  dept_id: 1001
+  description: Unrecognized segment ID
+  name: 1
+  rec_id: 1
+2: 
+  active: 1
+  dept_id: 1001
+  description: Unexpected segment
+  name: 2
+  rec_id: 2
+3: 
+  active: 1
+  dept_id: 1001
+  description: Mandatory segment missing
+  name: 3
+  rec_id: 3
+4: 
+  active: 1
+  dept_id: 1001
+  description: Loop Occurs Over Maximum Times
+  name: 4
+  rec_id: 4
+5: 
+  active: 1
+  dept_id: 1001
+  description: Segment Exceeds Maximum Use
+  name: 5
+  rec_id: 5
+6: 
+  active: 1
+  dept_id: 1001
+  description: Segment Not in Defined Transaction Set
+  name: 6
+  rec_id: 6
+7: 
+  active: 1
+  dept_id: 1001
+  description: Segment Not in Proper Sequence
+  name: 7
+  rec_id: 7
+8: 
+  active: 1
+  dept_id: 1001
+  description: Segment Has Data Element Errors
+  name: 8
+  rec_id: 8

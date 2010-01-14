@@ -1,0 +1,127 @@
+#!/usr/bin/env perl 
+
+use strict;
+use warnings;
+
+use eleMentalClinic;
+use eleMentalClinic::DB::Migration;
+use Getopt::Long;
+use Pod::Usage;
+use eleMentalClinic::Config;
+use File::ShareDir;
+
+our ( $from, $to, $up, $down, $dbv, $set_version, $help, $drop, $create, $recreate, $tag );
+
+GetOptions(
+      "from|f=i"      => \$from,
+      "to|t=i"        => \$to,
+      "down"          => \$down,
+      "version"       => \$dbv,
+      "set-version=i" => \$set_version,
+      "help"          => \&help,
+      "upgrade"       => sub { $tag = 'upgrade' },
+      "drop|D"        => \$drop,
+      "create|C"      => \$create,
+      "recreate|R"    => \$recreate,
+      "tag|T=s"       => \$tag,
+);
+
+$up = $down ? 0 : 1;
+
+if ( $recreate ) {
+    $drop = 1;
+    $create = 1;
+}
+
+if ( $create or $drop ) {
+    dropdb() if ( $drop );
+    sleep(2); #A delay is needed.
+    createdb() if ( $create );
+}
+
+my $m = new eleMentalClinic::DB::Migration;
+my $version = $m->get_version;
+if ($dbv) {
+    print "Database version is '".$m->get_version."'\n";
+}
+elsif ($set_version) {
+    $m->update_version(int $set_version);
+    print "Updated version to '$set_version'\n";
+} 
+elsif ( $to or $from ) {
+    $m->migrate(
+        up => $up,
+        to_version => $to,
+        from_version => $from,
+        extra_tag => $tag ? [ $tag ] : [], 
+        dir => $ENV{ELEMENTALCLINIC_DB_SCHEMA_DIR} || (
+            -e 'database/schema'
+            ? 'database/schema'
+            : (File::ShareDir::dist_dir('eleMentalClinic') .  '/database/schema')
+        ),
+    );
+}
+else {
+    help() unless $create or $drop;
+}
+
+exit(0);
+
+#####################################################################
+sub help {
+    pod2usage(join("", <DATA>));
+    exit 0;
+}
+
+sub get_db_params {
+    my ($db_user, $db_port ) =
+      @ENV{qw(ELEMENTALCLINIC_DB_USER ELEMENTALCLINIC_DB_PORT)};
+    $db_user         ||= eleMentalClinic::Config->new->stage1->dbuser;
+    $db_port         ||= eleMentalClinic::Config->new->stage1->port;
+
+    my $sqlparams;
+    $sqlparams .= " -U$db_user" if ($db_user);
+    $sqlparams .= " -p$db_port" if ($db_port);
+}
+
+sub createdb {
+    print "Creating database...\n";
+   
+    my ( $db ) = @ENV{qw( ELEMENTALCLINIC_DB_NAME )};
+    $db ||= eleMentalClinic::Config->new->stage1->dbname;
+
+    my $sqlparams = get_db_params();
+
+    my $output = qx( createdb $sqlparams $db 2>&1 );
+
+    if ( $? ) {
+        die( "There was an error creating the database, cannot continue:\n$output\n" );
+    }
+}
+
+sub dropdb {
+    print "Dropping database...\n";
+    
+    my ( $db ) = @ENV{qw( ELEMENTALCLINIC_DB_NAME )};
+    $db ||= eleMentalClinic::Config->new->stage1->dbname;
+
+    my $sqlparams = get_db_params();
+
+    my $output = qx( dropdb $sqlparams $db 2>&1 );
+
+    if ( $? ) {
+        print "There was an error dropping the database, will continue:\n$output\n";
+    }
+}
+__DATA__
+    --from, -f #            Database Version override - Roll up/down from version #
+    --to, -t #              Roll to version # (can overshoot this number to get the latest)
+    --down, -d              Roll "down"
+    --version, -v           Get the version stored in the DB
+    --set-version, -s #     Explicitly set the database version to x
+    --help, -h              This help
+    --create, -C            Create the database
+    --drop, -D              Drop the database
+    --recreate, -R          Recreate the database (Drop & Create)
+    --tag, -T string        Extra 'tag' to run (e.g. 'upgrade')
+    --upgrade               Shortcut for '--tag upgrade'

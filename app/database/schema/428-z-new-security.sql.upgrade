@@ -1,0 +1,10 @@
+COPY security_role (name) FROM stdin;
+active
+admin
+service_coordinator
+writer
+financial
+supervisor
+scanner
+reports
+\.

@@ -1,0 +1,40 @@
+<!--
+            date => DATE or Range
+            items => [
+                {
+                    staff => STAFF,
+                    objects => [
+                        object => OBJECT,
+                        count => #,
+                        session_count => #,
+                    ]
+                },
+-->
+
+[% FOR set IN data %]
+<div>
+<h2>[% set.date %]</h2>
+    [% FOR item IN set.items %]
+            <table>
+                <tr>
+                    <th colspan="3">
+                        [% item.staff.name %]
+                    </th>
+                </tr>
+                <tr>
+                    <th>Data Accessed</th>
+                    <th>Total Times Accessed</th>
+                    <th>Involuntarily Accessed</th>
+                </tr>
+                [% FOR listing IN item.objects %]
+                    <tr>
+                        <td>[% listing.name %]</td>
+                        <td>[% listing.count %]</td>
+                        <td>[% listing.session_count %]</td>
+                    </tr>
+                [% END %]
+            </table>
+    [% END %]
+    <br />
+</div>
+[% END %]

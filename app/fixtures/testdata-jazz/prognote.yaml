@@ -1,0 +1,2276 @@
+---
+1001:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1001
+  client_id: 1002
+  created: 2005-07-18 16:00:00
+  data_entry_id: 1001
+  end_date: 2005-07-18 16:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2005-07-18 16:00:00
+  note_body: When confronted with a nightclub audience talking and clicking ice in their glasses while he performed Mingus stopped his band and loudly chastised the audience stating 'Isaac Stern doesn't have to put up with this shit.'
+  note_committed: 1
+  note_header: CALLED
+  note_location_id: 1
+  outcome_rating: 14
+  rec_id: 1001
+  staff_id: 1000
+  start_date: 2005-07-18 14:30:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1002:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1002
+  client_id: 1002
+  created: 2005-05-04 12:00:00
+  data_entry_id: 1002
+  end_date: 2005-05-04 12:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2005-05-04 12:00:00
+  note_body: Jackie McLean once stabbed Mingus after Mingus punched him fearing the bassist was about to kill him.
+  note_committed: 1
+  note_header: CALLED
+  note_location_id: 1001
+  outcome_rating: 15
+  rec_id: 1002
+  staff_id: 1000
+  start_date: 2005-05-04 11:00:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1003:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1002
+  created: 2005-02-14 17:00:00
+  data_entry_id: 1002
+  end_date: 2005-02-14 17:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2005-02-14 17:00:00
+  note_body: "Mingus' onstage destruction of an $800 bass prompted British rockers The Animals, avid fans who witnessed Mingus's characteristic explosion at a London show, to emulate the outburst starting a trend of rampant outro destruction of musical equipment in 'rock theater' popularized by Jimi Hendrix and The Who."
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: ~
+  rec_id: 1003
+  staff_id: 1002
+  start_date: 2005-02-14 13:30:00
+  unbillable_per_writer: 0
+  writer: Betty Clinician
+  previous_billing_status: ~
+1004:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1002
+  created: 2005-03-13 15:00:00
+  data_entry_id: 1002
+  end_date: 2005-03-13 15:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2005-03-13 15:00:00
+  note_body: While on stage at a memorial concert he reportedly attempted to crush his pianist's hands with the instrument's keyboard cover then punched trombonist Jimmy Knepper in the mouth.
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 12
+  rec_id: 1004
+  staff_id: 1002
+  start_date: 2005-03-13 14:00:00
+  unbillable_per_writer: 0
+  writer: Betty Clinician
+  previous_billing_status: ~
+1005:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1002
+  created: 2001-07-02 10:00:00
+  data_entry_id: 1001
+  end_date: 2001-07-02 09:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2001-07-02 10:00:00
+  note_body: Jackie McLean once stabbed Mingus after Mingus punched him fearing the bassist was about to kill him.
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: ~
+  rec_id: 1005
+  staff_id: 1003
+  start_date: 2001-07-02 07:00:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1006:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1003
+  created: 1975-06-27 09:00:00
+  data_entry_id: 1002
+  end_date: 1975-06-27 08:15:00
+  goal_id: 0
+  group_id: ~
+  modified: 1975-06-27 09:00:00
+  note_body: Monk's manner was idiosyncratic even for a jazz musician. He would seldom speak. He would wear odd clothes and hats and had an unusual percussive manner in playing piano. At times he would stop playing leave the piano and dance while the other musicians in the combo played.
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 7
+  rec_id: 1006
+  staff_id: 1002
+  start_date: 1975-06-27 07:15:00
+  unbillable_per_writer: 0
+  writer: Betty Clinician
+  previous_billing_status: ~
+1007:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1003
+  created: 1976-04-01 17:00:00
+  data_entry_id: 1003
+  end_date: 1976-04-01 17:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 1976-04-01 17:00:00
+  note_body: In August 1951 New York City police investigated a parked car occupied by Monk and friend Bud Powell. The police found narcotics in the car. Monk refused to testify against his friend so the police took his Cabaret card. Without it he was unable to play in New York venues where liquor was served.
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 9
+  rec_id: 1007
+  staff_id: 1002
+  start_date: 1976-04-01 16:00:00
+  unbillable_per_writer: 0
+  writer: Willy Writer
+  previous_billing_status: ~
+1008:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1003
+  created: 1971-11-20 16:00:00
+  data_entry_id: 1002
+  end_date: 1971-11-20 15:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 1971-11-20 16:00:00
+  note_body: I'm famous. Ain't that a bitch!
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 1
+  rec_id: 1008
+  staff_id: 1002
+  start_date: 1971-11-20 14:30:00
+  unbillable_per_writer: 0
+  writer: Betty Clinician
+  previous_billing_status: ~
+1009:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1003
+  created: 1978-09-23 12:00:00
+  data_entry_id: 1003
+  end_date: 1978-09-23 11:45:00
+  goal_id: 0
+  group_id: ~
+  modified: 1978-09-23 12:00:00
+  note_body: Miles'd got killed if he hit me.
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 9
+  rec_id: 1009
+  staff_id: 1002
+  start_date: 1978-09-23 10:00:00
+  unbillable_per_writer: 0
+  writer: Willy Writer
+  previous_billing_status: ~
+1010:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1003
+  created: 2003-10-09 06:00:00
+  data_entry_id: 1003
+  end_date: 2003-10-09 05:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2003-10-09 06:00:00
+  note_body: If you really understand the meaning of be-bop you understand the meaning of freedom.
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 8
+  rec_id: 1010
+  staff_id: 1003
+  start_date: 2003-10-09 04:30:00
+  unbillable_per_writer: 0
+  writer: Willy Writer
+  previous_billing_status: ~
+1011:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1004
+  created: 1999-07-05 19:00:00
+  data_entry_id: 1001
+  end_date: 1999-07-05 18:30:00
+  goal_id: 0
+  group_id: ~
+  modified: 1999-07-05 19:00:00
+  note_body: "Ella's later concerts were often enriched by some hilarious imitations of other singers: in particular she was able to render quite perfectly Marilyn Monroe's voice and typical gestures as well as Louis Armstrong's."
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 34
+  rec_id: 1011
+  staff_id: 1001
+  start_date: 1999-07-05 17:30:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1012:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1004
+  created: 2000-07-18 16:00:00
+  data_entry_id: 1001
+  end_date: 2000-01-02 09:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2000-07-18 16:00:00
+  note_body: "1970 Things Ain't What They Used to Be, 1967 Brighten the Corner, 1977 Montreux '77"
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: ~
+  rec_id: 1012
+  staff_id: 1000
+  start_date: 2000-01-02 08:00:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1013:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1004
+  created: 1999-01-31 14:00:00
+  data_entry_id: 1001
+  end_date: 1999-01-31 13:45:00
+  goal_id: 0
+  group_id: ~
+  modified: 1999-01-31 14:00:00
+  note_body: "'She had a vocal range so wide you needed an elevator to go from the top to the bottom. There's nobody to take her place.' - David Brinkley"
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 184
+  rec_id: 1013
+  staff_id: 1001
+  start_date: 1999-01-31 13:30:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1014:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1001
+  created: 2005-01-03 08:00:00
+  data_entry_id: 1003
+  end_date: 2005-01-03 07:30:00
+  goal_id: 0
+  group_id: ~
+  modified: 2005-01-03 08:00:00
+  note_body: "Don't play what's there, play what's not there."
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 77
+  rec_id: 1014
+  staff_id: 1003
+  start_date: 2005-01-03 06:45:00
+  unbillable_per_writer: 0
+  writer: Willy Writer
+  previous_billing_status: ~
+1015:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1001
+  created: 2005-02-05 23:45:00
+  data_entry_id: 1003
+  end_date: 2005-02-05 23:30:00
+  goal_id: 0
+  group_id: ~
+  modified: 2005-02-05 23:45:00
+  note_body: I'll play it first and tell you what it is later.
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 4
+  rec_id: 1015
+  staff_id: 1003
+  start_date: 2005-02-05 22:30:00
+  unbillable_per_writer: 0
+  writer: Willy Writer
+  previous_billing_status: ~
+1016:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1001
+  created: 2005-03-07 16:00:00
+  data_entry_id: 1003
+  end_date: 2005-03-07 15:15:00
+  goal_id: 0
+  group_id: ~
+  modified: 2005-03-07 16:00:00
+  note_body: My future starts when I wake up every morning... Every day I find something creative to do with my life.
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 8
+  rec_id: 1016
+  staff_id: 1003
+  start_date: 2005-03-07 15:00:00
+  unbillable_per_writer: 0
+  writer: Willy Writer
+  previous_billing_status: ~
+1017:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1001
+  created: 2005-04-11 22:00:00
+  data_entry_id: 1002
+  end_date: 2005-04-11 21:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2005-04-11 22:00:00
+  note_body: If you wear something in red the audience will love you even if you are not doing anything.
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 90
+  rec_id: 1017
+  staff_id: 1002
+  start_date: 2005-04-11 20:00:00
+  unbillable_per_writer: 0
+  writer: Betty Clinician
+  previous_billing_status: ~
+1018:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1001
+  created: 2005-05-13 10:00:00
+  data_entry_id: 1001
+  end_date: 2005-05-13 09:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2005-05-13 10:00:00
+  note_body: White guys are over taught and black guys are under taught.  That's why I make up my bands with both.
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 4
+  rec_id: 1018
+  staff_id: 1001
+  start_date: 2005-05-13 06:00:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1019:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1001
+  created: 2005-06-18 16:00:00
+  data_entry_id: 1002
+  end_date: 2005-06-17 00:15:00
+  goal_id: 0
+  group_id: ~
+  modified: 2005-06-18 16:00:00
+  note_body: Live Evil
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 2
+  rec_id: 1019
+  staff_id: 1001
+  start_date: 2005-06-17 00:00:00
+  unbillable_per_writer: 0
+  writer: Betty Clinician
+  previous_billing_status: ~
+1020:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1001
+  created: 2005-05-02 11:00:00
+  data_entry_id: 1002
+  end_date: 2005-05-02 09:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2005-05-02 11:00:00
+  note_body: "In 1987 Davis attended a reception in honor of Ray Charles at Ronald Reagan's White House. A Washington society lady, seated next to him, asked him what he had done to be invited. 'Well,' Davis replied, 'I've changed music four or five times. What have you done of any importance other than be white?'"
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 15
+  rec_id: 1020
+  staff_id: 1000
+  start_date: 2005-05-02 08:00:00
+  unbillable_per_writer: 0
+  writer: Betty Clinician
+  previous_billing_status: ~
+1021:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1001
+  created: 2005-10-26 10:00:00
+  data_entry_id: 1001
+  end_date: 2005-07-01 12:30:00
+  goal_id: 0
+  group_id: ~
+  modified: 2005-10-26 10:00:00
+  note_body: Do not fear mistakes. There are none.
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 28
+  rec_id: 1021
+  staff_id: 1001
+  start_date: 2005-07-01 11:30:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1022:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1001
+  created: 2005-10-26 10:00:00
+  data_entry_id: 1001
+  end_date: 2005-07-08 12:30:00
+  goal_id: 0
+  group_id: ~
+  modified: 2005-10-26 10:00:00
+  note_body: 'For me, music and life are all about style.'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 27
+  rec_id: 1022
+  staff_id: 1001
+  start_date: 2005-07-08 11:30:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1023:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1001
+  created: 2005-10-26 10:00:00
+  data_entry_id: 1001
+  end_date: 2005-07-15 12:30:00
+  goal_id: 0
+  group_id: ~
+  modified: 2005-10-26 10:00:00
+  note_body: Sometimes you have to play a long time to be able to play like yourself.
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 26
+  rec_id: 1023
+  staff_id: 1001
+  start_date: 2005-07-15 11:30:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1024:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1001
+  created: 2005-10-26 10:00:00
+  data_entry_id: 1001
+  end_date: 2005-07-22 12:30:00
+  goal_id: 0
+  group_id: ~
+  modified: 2005-10-26 10:00:00
+  note_body: A legend is an old man with a cane known for what he used to do. I'm still doing it.
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 25
+  rec_id: 1024
+  staff_id: 1001
+  start_date: 2005-07-22 11:30:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1025:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1001
+  created: 2005-10-26 10:00:00
+  data_entry_id: 1001
+  end_date: 2005-07-29 12:30:00
+  goal_id: 0
+  group_id: ~
+  modified: 2005-10-26 10:00:00
+  note_body: "I know what I've done for music, but don't call me a legend. Just call me Miles Davis."
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 24
+  rec_id: 1025
+  staff_id: 1001
+  start_date: 2005-07-29 11:30:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1026:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1001
+  created: 2005-10-26 10:00:00
+  data_entry_id: 1001
+  end_date: 2005-08-05 12:30:00
+  goal_id: 0
+  group_id: ~
+  modified: 2005-10-26 10:00:00
+  note_body: "It's always been a gift with me, hearing music the way I do. I don't know where it comes from, it's just there and I don't question it."
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 23
+  rec_id: 1026
+  staff_id: 1001
+  start_date: 2005-08-05 11:30:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1027:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1001
+  created: 2005-10-26 10:00:00
+  data_entry_id: 1001
+  end_date: 2005-08-12 12:30:00
+  goal_id: 0
+  group_id: ~
+  modified: 2005-10-26 10:00:00
+  note_body: "I never thought that the music called 'jazz' was ever meant to reach just a small group of people, or become a museum thing locked under glass like all other dead things that were once considered artistic."
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 22
+  rec_id: 1027
+  staff_id: 1001
+  start_date: 2005-08-12 11:30:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1028:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1001
+  created: 2005-10-26 10:00:00
+  data_entry_id: 1001
+  end_date: 2005-08-19 12:30:00
+  goal_id: 0
+  group_id: ~
+  modified: 2005-10-26 10:00:00
+  note_body: "The reason I don't play ballads? Because I love to play them."
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 21
+  rec_id: 1028
+  staff_id: 1001
+  start_date: 2005-08-19 11:30:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1029:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1001
+  created: 2005-10-26 10:00:00
+  data_entry_id: 1001
+  end_date: 2005-08-26 12:30:00
+  goal_id: 0
+  group_id: ~
+  modified: 2005-10-26 10:00:00
+  note_body: 'First you imitate, then you innovate.'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 20
+  rec_id: 1029
+  staff_id: 1001
+  start_date: 2005-08-26 11:30:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1030:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1001
+  created: 2005-10-26 10:00:00
+  data_entry_id: 1001
+  end_date: 2005-09-02 12:30:00
+  goal_id: 0
+  group_id: ~
+  modified: 2005-10-26 10:00:00
+  note_body: "During an interview, after growing aggravated about questions on the subject of race, he said, 'If somebody told me I only had an hour to live, Id spend it choking a white man. I'd do it nice and slow.'"
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 19
+  rec_id: 1030
+  staff_id: 1001
+  start_date: 2005-09-02 11:30:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1031:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1001
+  created: 2005-10-26 10:00:00
+  data_entry_id: 1001
+  end_date: 2005-09-09 12:30:00
+  goal_id: 0
+  group_id: ~
+  modified: 2005-10-26 10:00:00
+  note_body: "'Listen baby, when I say later, I mean it! Later!' - After being approached by a relentless interviewer."
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 18
+  rec_id: 1031
+  staff_id: 1001
+  start_date: 2005-09-09 11:30:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1032:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1001
+  created: 2005-10-26 10:00:00
+  data_entry_id: 1001
+  end_date: 2005-09-16 12:30:00
+  goal_id: 0
+  group_id: ~
+  modified: 2005-10-26 10:00:00
+  note_body: "Again demonstrating his eclecticism during this time period, Davis collaborated with a number of figures from the British new wave movement, including Scritti Politti and John Lydon's Public Image Ltd."
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 17
+  rec_id: 1032
+  staff_id: 1001
+  start_date: 2005-09-16 11:30:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1033:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1001
+  created: 2005-10-26 10:00:00
+  data_entry_id: 1001
+  end_date: 2005-09-23 12:30:00
+  goal_id: 0
+  group_id: ~
+  modified: 2005-10-26 10:00:00
+  note_body: "Having first taken part in the Artists United Against Apartheid recording, Davis signed with Warner Brothers records and reunited with Marcus Miller. The resulting record, Tutu (1986), would be his first to feature modern studio tools-programmed synthesizers, samples and drum loops-to create an entirely new setting for Davis's playing. Ecstatically reviewed on its release, the album would frequently be described as a modern version of the classic Sketches of Spain, and won a Grammy award in 1987."
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 16
+  rec_id: 1033
+  staff_id: 1001
+  start_date: 2005-09-23 11:30:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1034:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1001
+  created: 2005-10-26 10:00:00
+  data_entry_id: 1001
+  end_date: 2005-09-30 12:30:00
+  goal_id: 0
+  group_id: ~
+  modified: 2005-10-26 10:00:00
+  note_body: "Davis absented himself from the music industry for five years. For much of this time he was seriously ill, and a serious cocaine addiction was also beginning to take its toll. As Gil Evans said, 'His organism is tired. And after all the music he's contributed for 35 years, he needs a rest.' However, by the beginning of the 1980s he was back in good health and ready to assemble a new band."
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 15
+  rec_id: 1034
+  staff_id: 1001
+  start_date: 2005-09-30 11:30:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1035:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1001
+  created: 2005-10-26 10:00:00
+  data_entry_id: 1001
+  end_date: 2005-10-07 12:30:00
+  goal_id: 0
+  group_id: ~
+  modified: 2005-10-26 10:00:00
+  note_body: "Davis's first new studio album, The Man With The Horn (1981), was relatively poorly received. The same year, Davis prepared to tour again, and formed a touring band with largely different members from those who had played on the album. In May, they played two dates as part of the Newport Jazz Festival, and the concerts, as well as the live recording We Want Miles from the ensuing tour, were well reviewed."
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 14
+  rec_id: 1035
+  staff_id: 1001
+  start_date: 2005-10-07 11:30:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1036:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1001
+  created: 2005-10-26 10:00:00
+  data_entry_id: 1001
+  end_date: 2005-10-14 12:30:00
+  goal_id: 0
+  group_id: ~
+  modified: 2005-10-26 10:00:00
+  note_body: "While convalescing, Davis saw the fusion music that he had spearheaded over the past decade firmly enter into the mainstream. Whether played by Davis's many proteges, including Herbie Hancock, Chick Corea and John McLaughlin's Mahavishnu Orchestra and the Weather Report (founders Wayne Shorter and Joe Zawinul both spent time in Davis's bands), Davis's influence could be heard everywhere, much as it could after each of his previous revolutionary advances."
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 13
+  rec_id: 1036
+  staff_id: 1001
+  start_date: 2005-10-14 11:30:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1037:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1001
+  created: 2005-10-26 10:00:00
+  data_entry_id: 1001
+  end_date: 2005-10-21 12:30:00
+  goal_id: 0
+  group_id: ~
+  modified: 2005-10-26 10:00:00
+  note_body: 'That was my gift . . . having the ability to put certain guys together that would create a chemistry and then letting them go; letting them play what they knew, and above it.'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 12
+  rec_id: 1037
+  staff_id: 1001
+  start_date: 2005-10-21 11:30:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1038:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1001
+  created: 2005-11-02 10:00:00
+  data_entry_id: 1001
+  end_date: 2005-10-28 12:30:00
+  goal_id: 0
+  group_id: ~
+  modified: 2005-11-02 10:00:00
+  note_body: Nothing much today.
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 11
+  rec_id: 1038
+  staff_id: 1001
+  start_date: 2005-10-28 11:30:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1039:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1001
+  created: 2005-11-05 10:00:00
+  data_entry_id: 1001
+  end_date: 2005-11-04 12:30:00
+  goal_id: 0
+  group_id: ~
+  modified: 2005-11-05 10:00:00
+  note_body: Pretty quiet today.
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 10
+  rec_id: 1039
+  staff_id: 1001
+  start_date: 2005-11-04 11:30:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1040:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1001
+  created: 2005-11-14 10:00:00
+  data_entry_id: 1001
+  end_date: 2005-11-11 12:30:00
+  goal_id: 0
+  group_id: ~
+  modified: 2005-11-14 10:00:00
+  note_body: Same as usual.
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 9
+  rec_id: 1040
+  staff_id: 1001
+  start_date: 2005-11-11 11:30:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1041:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1
+  client_id: 1001
+  created: 2005-11-18 13:00:00
+  data_entry_id: 1001
+  end_date: 2005-11-18 12:30:00
+  goal_id: 0
+  group_id: ~
+  modified: 2005-11-18 13:00:00
+  note_body: No Change.
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 8
+  rec_id: 1041
+  staff_id: 1001
+  start_date: 2005-11-18 11:30:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1042:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1005
+  client_id: 1005
+  created: 2006-02-04 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-02-04 12:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-02-04 12:00:00
+  note_body: We talked about old country blues today.
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1002
+  outcome_rating: 15
+  rec_id: 1042
+  staff_id: 1003
+  start_date: 2006-02-04 11:00:00
+  unbillable_per_writer: 0
+  writer: Betty Clinician
+  previous_billing_status: ~
+1043:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1016
+  client_id: 1003
+  created: 2006-07-03 12:00:00
+  data_entry_id: 1001
+  end_date: 2006-07-03 12:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-07-03 12:00:00
+  note_body: 'When are you going to kick that habit, Monk?  You know it is bad for you.  Even Nancy Reagan said so.  If I type a long enough note here, I will end up with test data that overflows the bounds of the UI, which is what I want.  Then I will be able to design a correction.  You will notice that I am not using contractions.  Partly that is to make the text longer, and partly it is because this string is single-quoted in the test data, and I am too lazy to change the quoting.'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 15
+  rec_id: 1043
+  staff_id: 1002
+  start_date: 2006-07-03 11:00:00
+  unbillable_per_writer: 0
+  writer: Betty Clinician
+  previous_billing_status: ~
+1044:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1015
+  client_id: 1003
+  created: 2006-07-05 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-07-05 12:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-07-05 12:00:00
+  note_body: 'When are you going to kick that habit, Monk?'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 15
+  rec_id: 1044
+  staff_id: 1002
+  start_date: 2006-07-05 11:00:00
+  unbillable_per_writer: 0
+  writer: Betty Clinician
+  previous_billing_status: ~
+1045:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1005
+  client_id: 1003
+  created: 2006-07-07 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-07-07 12:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-07-07 12:00:00
+  note_body: 'When are you going to kick that habit, Monk?'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 15
+  rec_id: 1045
+  staff_id: 1002
+  start_date: 2006-07-07 11:00:00
+  unbillable_per_writer: 0
+  writer: Betty Clinician
+  previous_billing_status: ~
+1046:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1005
+  client_id: 1003
+  created: 2006-07-10 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-07-10 12:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-07-10 12:00:00
+  note_body: ~
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 15
+  rec_id: 1046
+  staff_id: 1002
+  start_date: 2006-07-10 11:00:00
+  unbillable_per_writer: 0
+  writer: Betty Clinician
+  previous_billing_status: ~
+1047:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1015
+  client_id: 1003
+  created: 2006-07-12 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-07-12 12:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-07-12 12:00:00
+  note_body: 'When are you going to kick that habit, Monk?'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 15
+  rec_id: 1047
+  staff_id: 1002
+  start_date: 2006-07-12 11:00:00
+  unbillable_per_writer: 0
+  writer: Betty Clinician
+  previous_billing_status: ~
+1048:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1016
+  client_id: 1003
+  created: 2006-07-14 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-07-14 12:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-07-14 12:00:00
+  note_body: 'When are you going to kick that habit, Monk?'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 15
+  rec_id: 1048
+  staff_id: 1002
+  start_date: 2006-07-14 11:00:00
+  unbillable_per_writer: 0
+  writer: Betty Clinician
+  previous_billing_status: ~
+1049:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1005
+  client_id: 1003
+  created: 2006-07-17 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-07-17 12:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-07-17 12:00:00
+  note_body: 'When are you going to kick that habit, Monk?'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 15
+  rec_id: 1049
+  staff_id: 1002
+  start_date: 2006-07-17 11:00:00
+  unbillable_per_writer: 0
+  writer: Betty Clinician
+  previous_billing_status: ~
+1050:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1016
+  client_id: 1003
+  created: 2006-07-19 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-07-19 12:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-07-19 12:00:00
+  note_body: 'When are you going to kick that habit, Monk?'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 15
+  rec_id: 1050
+  staff_id: 1002
+  start_date: 2006-07-19 11:00:00
+  unbillable_per_writer: 0
+  writer: Betty Clinician
+  previous_billing_status: ~
+1051:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1005
+  client_id: 1003
+  created: 2006-07-21 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-07-21 12:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-07-21 12:00:00
+  note_body: 'When are you going to kick that habit, Monk?'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 15
+  rec_id: 1051
+  staff_id: 1002
+  start_date: 2006-07-21 11:00:00
+  unbillable_per_writer: 0
+  writer: Betty Clinician
+  previous_billing_status: ~
+1052:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1005
+  client_id: 1003
+  created: 2006-07-24 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-07-24 12:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-07-24 12:00:00
+  note_body: 'When are you going to kick that habit, Monk?'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 15
+  rec_id: 1052
+  staff_id: 1002
+  start_date: 2006-07-24 11:00:00
+  unbillable_per_writer: 0
+  writer: Betty Clinician
+  previous_billing_status: ~
+1053:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1015
+  client_id: 1003
+  created: 2006-07-26 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-07-26 12:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-07-26 12:00:00
+  note_body: 'When are you going to kick that habit, Monk?'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 15
+  rec_id: 1053
+  staff_id: 1002
+  start_date: 2006-07-26 11:00:00
+  unbillable_per_writer: 0
+  writer: Betty Clinician
+  previous_billing_status: ~
+1054:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1005
+  client_id: 1003
+  created: 2006-07-28 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-07-28 12:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-07-28 12:00:00
+  note_body: 'When are you going to kick that habit, Monk?'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 15
+  rec_id: 1054
+  staff_id: 1002
+  start_date: 2006-07-28 11:00:00
+  unbillable_per_writer: 0
+  writer: Betty Clinician
+  previous_billing_status: ~
+1055:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1005
+  client_id: 1003
+  created: 2006-07-31 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-07-31 12:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-07-31 12:00:00
+  note_body: 'When are you going to kick that habit, Monk?'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 15
+  rec_id: 1055
+  staff_id: 1002
+  start_date: 2006-07-31 11:00:00
+  unbillable_per_writer: 0
+  writer: Betty Clinician
+  previous_billing_status: ~
+1056:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1005
+  client_id: 1004
+  created: 2006-07-03 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-07-03 12:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-07-03 12:00:00
+  note_body: ~
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1001
+  outcome_rating: 15
+  rec_id: 1056
+  staff_id: 1001
+  start_date: 2006-07-03 11:00:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1057:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1005
+  client_id: 1004
+  created: 2006-07-07 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-07-07 12:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-07-07 12:00:00
+  note_body: 'Ella, drugs are bad for you'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1001
+  outcome_rating: 15
+  rec_id: 1057
+  staff_id: 1001
+  start_date: 2006-07-07 11:00:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1058:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1005
+  client_id: 1004
+  created: 2006-07-10 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-07-10 12:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-07-10 12:00:00
+  note_body: 'Ella, drugs are bad for you'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1001
+  outcome_rating: 15
+  rec_id: 1058
+  staff_id: 1001
+  start_date: 2006-07-10 11:00:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1059:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1005
+  client_id: 1004
+  created: 2006-07-14 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-07-14 12:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-07-14 12:00:00
+  note_body: 'Ella, drugs are bad for you'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1001
+  outcome_rating: 15
+  rec_id: 1059
+  staff_id: 1001
+  start_date: 2006-07-14 11:00:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1060:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1005
+  client_id: 1004
+  created: 2006-07-17 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-07-17 12:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-07-17 12:00:00
+  note_body: ~
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1001
+  outcome_rating: 15
+  rec_id: 1060
+  staff_id: 1001
+  start_date: 2006-07-17 11:00:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1061:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1005
+  client_id: 1004
+  created: 2006-07-21 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-07-21 12:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-07-21 12:00:00
+  note_body: 'Ella, drugs are bad for you'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1001
+  outcome_rating: 15
+  rec_id: 1061
+  staff_id: 1001
+  start_date: 2006-07-21 11:00:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1062:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1005
+  client_id: 1004
+  created: 2006-07-24 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-07-24 12:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-07-24 12:00:00
+  note_body: 'Ella, drugs are bad for you'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1001
+  outcome_rating: 15
+  rec_id: 1062
+  staff_id: 1001
+  start_date: 2006-07-24 11:00:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1063:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1005
+  client_id: 1004
+  created: 2006-07-28 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-07-28 12:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-07-28 12:00:00
+  note_body: 'Ella, drugs are bad for you'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1001
+  outcome_rating: 15
+  rec_id: 1063
+  staff_id: 1001
+  start_date: 2006-07-28 11:00:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1064:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1005
+  client_id: 1004
+  created: 2006-07-31 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-07-31 12:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-07-31 12:00:00
+  note_body: 'Ella, drugs are bad for you'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1001
+  outcome_rating: 15
+  rec_id: 1064
+  staff_id: 1001
+  start_date: 2006-07-31 11:00:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1065:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1005
+  client_id: 1005
+  created: 2006-07-05 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-07-05 12:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-07-05 12:00:00
+  note_body: "Bud, can't you tell time?"
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1002
+  outcome_rating: 15
+  rec_id: 1065
+  staff_id: 1001
+  start_date: 2006-07-05 11:00:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1066:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1005
+  client_id: 1005
+  created: 2006-07-12 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-07-12 12:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-07-12 12:00:00
+  note_body: ~
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1002
+  outcome_rating: 15
+  rec_id: 1066
+  staff_id: 1001
+  start_date: 2006-07-12 11:00:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1067:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1005
+  client_id: 1005
+  created: 2006-07-19 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-07-19 12:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-07-19 12:00:00
+  note_body: "Bud, can't you tell time?"
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1003
+  outcome_rating: 15
+  rec_id: 1067
+  staff_id: 1001
+  start_date: 2006-07-19 11:00:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1068:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1005
+  client_id: 1005
+  created: 2006-07-26 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-07-26 12:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-07-26 12:00:00
+  note_body: ~
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1003
+  outcome_rating: 15
+  rec_id: 1068
+  staff_id: 1001
+  start_date: 2006-07-26 11:00:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1143:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 2
+  client_id: 1003
+  created: 2006-07-03 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-07-03 12:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-07-03 12:00:00
+  note_body: 'When are you going to kick that habit, Monk?'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1003
+  outcome_rating: 15
+  rec_id: 1143
+  staff_id: 1002
+  start_date: 2006-07-03 11:00:00
+  unbillable_per_writer: 0
+  writer: Betty Clinician
+  previous_billing_status: ~
+1144:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 2
+  client_id: 1003
+  created: 2006-07-03 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-07-03 11:30:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-07-03 12:00:00
+  note_body: 'When are you going to kick that habit, Monk?'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1003
+  outcome_rating: 15
+  rec_id: 1144
+  staff_id: 1002
+  start_date: 2006-07-03 10:00:00
+  unbillable_per_writer: 0
+  writer: Betty Clinician
+  previous_billing_status: ~
+1145:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 2
+  client_id: 1003
+  created: 2006-07-03 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-07-03 13:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-07-03 12:00:00
+  note_body: 'When are you going to kick that habit, Monk?'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1003
+  outcome_rating: 15
+  rec_id: 1145
+  staff_id: 1002
+  start_date: 2006-07-03 11:30:00
+  unbillable_per_writer: 0
+  writer: Betty Clinician
+  previous_billing_status: ~
+1157:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1005
+  client_id: 1004
+  created: 2006-07-07 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-07-07 12:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-07-07 12:00:00
+  note_body: 'Ella, drugs are bad for you'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1003
+  outcome_rating: 15
+  rec_id: 1157
+  staff_id: 1001
+  start_date: 2006-07-07 11:00:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1158:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1005
+  client_id: 1004
+  created: 2006-07-07 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-07-07 11:45:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-07-07 12:00:00
+  note_body: 'FOO BAR BAD Ella, drugs are bad for you'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1003
+  outcome_rating: 15
+  rec_id: 1158
+  staff_id: 1001
+  start_date: 2006-07-07 11:30:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1159:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1005
+  client_id: 1004
+  created: 2006-07-07 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-07-07 13:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-07-07 12:00:00
+  note_body: 'Ella, drugs are bad for you'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1003
+  outcome_rating: 15
+  rec_id: 1159
+  staff_id: 1001
+  start_date: 2006-07-07 10:00:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1243:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 2
+  client_id: 1003
+  created: 2006-08-03 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-08-03 12:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-08-03 12:00:00
+  note_body: 'When are you going to kick that habit, Monk?'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1003
+  outcome_rating: 15
+  rec_id: 1243
+  staff_id: 1002
+  start_date: 2006-08-03 11:00:00
+  unbillable_per_writer: 0
+  writer: Betty Clinician
+  previous_billing_status: ~
+1244:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 2
+  client_id: 1003
+  created: 2006-08-03 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-08-03 11:30:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-08-03 12:00:00
+  note_body: 'When are you going to kick that habit, Monk?'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1003
+  outcome_rating: 15
+  rec_id: 1244
+  staff_id: 1002
+  start_date: 2006-08-03 10:00:00
+  unbillable_per_writer: 0
+  writer: Betty Clinician
+  previous_billing_status: ~
+1245:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 2
+  client_id: 1003
+  created: 2006-08-03 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-08-03 13:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-08-03 12:00:00
+  note_body: 'When are you going to kick that habit, Monk?'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1003
+  outcome_rating: 15
+  rec_id: 1245
+  staff_id: 1002
+  start_date: 2006-08-03 11:30:00
+  unbillable_per_writer: 0
+  writer: Betty Clinician
+  previous_billing_status: ~
+1257:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1005
+  client_id: 1004
+  created: 2006-08-07 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-08-07 12:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-08-07 12:00:00
+  note_body: 'Ella, drugs are bad for you'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1003
+  outcome_rating: 15
+  rec_id: 1257
+  staff_id: 1001
+  start_date: 2006-08-07 11:00:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1258:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1005
+  client_id: 1004
+  created: 2006-08-07 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-08-07 11:45:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-08-07 12:00:00
+  note_body: 'FOO BAR BAD Ella, drugs are bad for you'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1003
+  outcome_rating: 15
+  rec_id: 1258
+  staff_id: 1001
+  start_date: 2006-08-07 11:30:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1259:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1005
+  client_id: 1004
+  created: 2006-08-07 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-08-07 13:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-08-07 12:00:00
+  note_body: 'Ella, drugs are bad for you'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1003
+  outcome_rating: 15
+  rec_id: 1259
+  staff_id: 1001
+  start_date: 2006-08-07 10:00:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1260:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1005
+  client_id: 1004
+  created: 2006-09-07 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-09-07 13:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-09-07 12:00:00
+  note_body: 'Ella, drugs are bad for you'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1003
+  outcome_rating: 15
+  rec_id: 1260
+  staff_id: 1001
+  start_date: 2006-09-07 10:00:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1350:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1016
+  client_id: 1003
+  created: 2006-09-07 13:00:00
+  data_entry_id: 1002
+  end_date: 2006-07-19 15:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-09-07 13:00:00
+  note_body: 'When are you going to kick that habit, Monk?'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 15
+  rec_id: 1350
+  staff_id: 1002
+  start_date: 2006-07-19 14:00:00
+  unbillable_per_writer: 0
+  writer: Betty Clinician
+  previous_billing_status: ~
+1351:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1005
+  client_id: 1003
+  created: 2006-09-07 13:00:00
+  data_entry_id: 1002
+  end_date: 2006-07-21 15:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-09-07 13:00:00
+  note_body: 'When are you going to kick that habit, Monk?'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 15
+  rec_id: 1351
+  staff_id: 1001
+  start_date: 2006-07-21 14:00:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1444:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1015
+  client_id: 1003
+  created: 2006-08-06 12:00:00
+  data_entry_id: 1002
+  end_date: 2006-08-05 15:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-08-06 12:00:00
+  note_body: 'Are you going to kick that habit, Monk?'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 15
+  rec_id: 1444
+  staff_id: 1002
+  start_date: 2006-08-05 14:00:00
+  unbillable_per_writer: 0
+  writer: Betty Clinician
+  previous_billing_status: ~
+1445:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: ~
+  charge_code_id: 1005
+  client_id: 1003
+  created: 2006-08-07 16:00:00
+  data_entry_id: 1002
+  end_date: 2006-08-07 15:00:00
+  goal_id: 0
+  group_id: ~
+  modified: 2006-08-07 16:00:00
+  note_body: 'Maybe you are going to kick that habit, Monk?'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 15
+  rec_id: 1445
+  staff_id: 1001
+  start_date: 2006-08-07 14:00:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: ~
+1646:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1005
+  client_id: 1001
+  created: 2008-08-07 16:00:00
+  data_entry_id: 1003
+  end_date: 2008-08-07 15:00:00
+  goal_id: 0
+  group_id: 1001
+  modified: 2008-08-07 16:00:00
+  note_body: 'Group note'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 15
+  rec_id: 1646
+  staff_id: 1001
+  start_date: 2008-08-07 14:00:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: Paid
+1647:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1005
+  client_id: 1003
+  created: 2008-08-07 16:00:00
+  data_entry_id: 1003
+  end_date: 2008-08-07 15:00:00
+  goal_id: 0
+  group_id: 1001
+  modified: 2008-08-07 16:00:00
+  note_body: 'Group note'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 15
+  rec_id: 1647
+  staff_id: 1003
+  start_date: 2008-08-07 14:00:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: Paid
+1648:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1005
+  client_id: 1003
+  created: 2008-08-07 16:00:00
+  data_entry_id: 1003
+  end_date: 2008-08-07 15:00:00
+  goal_id: 0
+  group_id: 1001
+  modified: 2008-08-07 16:00:00
+  note_body: 'Group note'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 15
+  rec_id: 1648
+  staff_id: 1003
+  start_date: 2008-08-07 14:00:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: Paid
+1649:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1005
+  client_id: 1001
+  created: 2008-08-07 16:00:00
+  data_entry_id: 1003
+  end_date: 2008-08-07 18:00:00
+  goal_id: 0
+  group_id: 1001
+  modified: 2008-08-07 16:00:00
+  note_body: 'Group note 2'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 15
+  rec_id: 1649
+  staff_id: 1001
+  start_date: 2008-08-07 14:00:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: Paid
+1650:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1005
+  client_id: 1003
+  created: 2008-08-07 16:00:00
+  data_entry_id: 1003
+  end_date: 2008-08-07 18:00:00
+  goal_id: 0
+  group_id: 1001
+  modified: 2008-08-07 16:00:00
+  note_body: 'Group note 2'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 15
+  rec_id: 1650
+  staff_id: 1003
+  start_date: 2008-08-07 14:00:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: Paid
+1651:
+  digital_signature: ~
+  digital_signer: ~
+  audit_trail: ~
+  bill_manually: 0
+  billing_status: Paid
+  charge_code_id: 1005
+  client_id: 1003
+  created: 2008-08-07 16:00:00
+  data_entry_id: 1003
+  end_date: 2008-08-07 18:00:00
+  goal_id: 0
+  group_id: 1001
+  modified: 2008-08-07 16:00:00
+  note_body: 'Group note 2'
+  note_committed: 1
+  note_header: ~
+  note_location_id: 1
+  outcome_rating: 15
+  rec_id: 1651
+  staff_id: 1003
+  start_date: 2008-08-07 14:00:00
+  unbillable_per_writer: 0
+  writer: Ima Therapist
+  previous_billing_status: Paid

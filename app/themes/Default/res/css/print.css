@@ -1,0 +1,62 @@
+body {
+    background-color : #fff;
+}
+#header,
+#nav,
+#footer,
+.print_head {
+    display : none !important;
+}
+.date {
+    font-family : Tahoma,Verdana,Helvetica,Arial,sans-serif;
+    font-weight : bold;
+    text-align : right;
+}
+p {
+    margin-bottom : 10px;
+}
+h2 {
+    font-family : Tahoma,Verdana,Helvetica,Arial,sans-serif;
+    color : #000;
+    float : none;
+    text-align : left;
+    width : 100%;
+    background : transparent;
+    margin : 0;
+}
+h2 + p {
+    font-size : 13px;
+    font-weight : normal;
+    padding : 0 0 5px 0;
+    margin : 3px 0 3px 0;
+}
+p.sigline {
+    font-size : 11px;
+    margin-top : 30px;
+    margin-bottom : 20px;
+    border-top : 2px solid #000;
+}
+h4 {
+    font-family : Tahoma,Verdana,Helvetica,Arial,sans-serif;
+    font-weight : bold;
+    border-bottom : 1px solid #333;
+}
+h5 {
+    font-size : 1em;
+    font-family : Tahoma,Verdana,Helvetica,Arial,sans-serif;
+    font-weight : bold;
+    text-decoration : underline;
+}
+tbody strong {
+    font-weight : normal !important;
+}
+hr.print_footer {
+    page-break-after : always;
+    visibility : hidden;
+}
+hr.div {
+    visibility : hidden;
+}
+hr.forcediv {
+    clear : both;
+}

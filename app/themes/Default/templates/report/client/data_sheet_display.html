@@ -1,0 +1,144 @@
+<table>
+    <thead>
+        <tr><td>
+            [% INCLUDE global/print_head.html
+                name    = 'Report'
+                a_href  = "$script?client_id=$client.id;report_track=$report_track"
+                a_label = 'Reporting'
+            %]
+            <strong>Client: [% client.lname %], [% client.fname %] [% client.mname %]</strong><br />
+            <strong>CPMS: [% client.state_specific_id %]</strong>
+        </td></tr>
+    </thead>
+    <tbody>
+        <tr><td>
+            <div class="force_on">[% INCLUDE global/client_head.html not_nav = 1 %]</div>
+        </td>
+        </tr>
+        <tr><td>
+            <h3>Insurance Information</h3>
+
+            [% IF data.insurances.0 %]
+            <table>
+                [% FOR insurer IN data.insurances %]
+                <tr [% rowclass %]>
+                    <td>[% insurer.type %]:</td>
+                    <td>[% insurer.provider %]</td>
+                    <td>[% insurer.rank %]</td>
+                    <td>ID: [% insurer.id %]</td>
+                    <td>Authorization Code: [% insurer.authorization.code %]</td>
+                    <td>Authorization End Date: [% insurer.authorization.end_date %]</td>
+                </tr>
+                [% END %]
+            </table>
+            [% ELSE %]
+            <p>No active insurance records for this client.</p>
+            <br />
+            [% END %]
+
+            <hr />
+
+            <h3>Diagnosis</h3>
+
+            <p>Axis 1 Primary: [% data.axis_1_primary %]</p>
+            <p>Axis 1 Secondary: [% data.axis_1_secondary %]</p>
+            <p>Axis 2: [% data.axis_2 %]</p>
+            <p>Axis 3: [% data.axis_3 %]</p>
+            <p>Axis 4: [% data.axis_4 %]</p>
+            <p>Axis 5: [% data.axis_5 %]</p>
+            <p>Comments: [% data.diagnosis_comments %]</p>
+
+            <hr />
+
+            [% IF data.medication_monitor OR data.healthcare_notes %]
+            <h3>Medical Information</h3>
+
+            <p>Medication monitor: [% data.medication_monitor %]</p>
+            <p>Healthcare notes: [% data.healthcare_notes %]</p>
+            [% END %]
+
+            [% IF data.allergies.0 %]
+            <h4>Allergy</h4>
+            <table>
+                [% FOR allergy IN data.allergies %]
+                <tr [% rowclass %]>
+                    <td>[% allergy.allergy %]</td>
+                    <td>[% allergy.active ? 'Active' : 'Not active' %]</td>
+                </tr>
+                [% END %]
+            </table>
+            <br />
+            [% END %]
+
+            [% IF data.medical_professionals.0 %]
+            <table>
+                <tr>
+                    <th colspan="4"><h4>Mental Health Providers</h4></th>
+                </tr>
+                <tr>
+                    <th>Dr Name</th>
+                    <th>Profession</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                </tr>
+                [% FOR mhp IN data.medical_professionals %]
+                <tr [% rowclass %]>
+                    <td>[% mhp.name %]</td>
+                    <td>[% mhp.profession %]</td>
+                    <td>
+                        [% mhp.addr %]
+                        [% mhp.addr_2 %]
+                        [% mhp.city %] [% mhp.state %], [% mhp.post_code %]
+                    </td>
+                    <td>[% mhp.phone %]</td>
+                </tr>
+                [% END %]
+            </table>
+            [% END %]
+            <br />
+
+        </td></tr>
+        <tr><td>
+            <br />
+            <h3>Rolodex Contacts</h3>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Type of Contact</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                </tr>
+                [% FOR entry IN data.rolodex_entries %]
+                <tr [% rowclass %]>
+                    <td>[% entry.name %]</td>
+                    <td>[% entry.type %]</td>
+                    <td>[% entry.phone %]</td>
+                    <td>[% entry.address %]</td>
+                </tr>
+                [% END %]
+            </table>
+
+            <hr />
+
+            <h3>Financial Information</h3>
+
+            <p>Employer: [% data.employer %]</p>
+            <p>Social Security Payee: [% data.soc_sec_payee %]</p>
+            <p>Money manager: [% data.money_manager %]</p>
+
+            <h4>Income Sources</h4>
+            <table>
+                <tr>
+                    <th>Income Type</th>
+                    <th>Amount</th>
+                </tr>
+                [% FOR entry IN data.income %]
+                <tr [% rowclass %]>
+                    <td>[% entry.income_source_type %]</td>
+                    <td>[% entry.amount %]</td>
+                </tr>
+                [% END %]
+            </table>
+        </td></tr>
+    </tbody>
+</table>

@@ -1,0 +1,42 @@
+#header {
+    padding-bottom : 0;
+    height : 27px;
+}
+#content {
+    background-color : #dede99;
+    padding : 10px 0 0 0;
+    height : 170px;
+}
+div.system_box {
+    width : 400px;
+    margin : 0 auto 0 auto;
+}
+form {
+    padding : 15px 0 0 0;
+    margin : 0 auto 0 auto;
+    width : 220px;
+}
+form p {
+    font-size : 14px;
+    font-weight : bold;
+    text-align : right;
+    margin : 0 0 7px 0;
+}
+form p.login_button {
+    margin-top : 20px;
+}
+input,
+input[type="text"],
+input[type="password"] {
+    font-size : 14px;
+    border : 1px solid #333;
+}
+p.error {
+    font-weight : bold;
+    color : #900;
+    text-align : center;
+}
+#nav ul,
+#current_user {
+    display : none;
+}

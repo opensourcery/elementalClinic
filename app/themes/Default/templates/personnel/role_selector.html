@@ -1,0 +1,15 @@
+[% RETURN UNLESS current_user.admin %]
+<ul id="role_selector">
+    [% FOR sec IN [
+        { field => 'supervisor', label => 'Supervisor' }
+        { field => 'service_coordinator', label => 'Service Coordinator' }
+        { field => 'writer', label => 'Writer' }
+        { field => 'financial', label => 'Financial' }
+    ]%]
+        <li class="role">
+            <a href="index.cgi?op=save_home_page_type;home_page_type=[% sec.field %]"
+            [%- ' class="active"' IF current_user.home_page_type == sec.field %]>
+            [%- sec.label %]</a>
+        </li>
+    [% END %]
+</ul>

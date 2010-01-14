@@ -1,0 +1,193 @@
+/*{{{ schedule main */
+#schedule_creation {
+    clear: both;
+}
+div.filters {
+    padding : .3em 0 .3em .3em;
+    border-bottom : 3px ridge #ffbb00;
+    /* height : 3em; */
+}
+div.filters div.filter_row {
+    clear: both;
+}
+div.filters p.control {
+    font-weight : normal;
+    padding : 0 0 0 1em;
+    margin : .1em 0 0 0;
+    font-size : 11px;
+}
+div.filters .label {
+    font-weight : bold;   
+    font-size : 11px;
+}
+div.filters select {
+    margin-left : .1em;
+    font-size : 11px;
+}
+#calendar_view div.filters {
+    /* height : 3em; */
+}
+#calendar_view div.filters p.label {
+    float : left;
+}
+#calendar_view div.filters p.control {
+    float : left;
+    margin-left: 4px;
+}
+#calendar {
+    position : relative;
+}
+table.calendar {
+    width : 100%;
+    border-collapse : collapse;
+}
+/*}}}*/
+/* week day header {{{*/
+table.calendar tr.day_names th {
+    color : #fff;
+    font-size : .5em;
+    background : #ffbb00;
+    padding-left : 1em;
+}
+/*}}}*/
+/*{{{ days */
+table.calendar td {
+    padding : 2px;
+    background : #BBB;
+    border : 1px solid #888;
+    width : 14%;
+    font-size : .5em
+}
+table.calendar td a {
+    display : block;
+    width : 100%;
+    height : 5em;
+}
+table.calendar td a:hover {
+    background : #eee;
+}
+table.calendar td.unavailable {
+    background : #ddd;
+    border : 1px solid #ffbb00;
+}
+table.calendar td.doc_scheduled {
+    background : #fff;
+    border : 1px solid #ffbb00;
+}
+table.calendar td.appointments {
+    background : #90B9F0;
+    border : 1px solid #ffbb00;
+}
+table.calendar td.current {
+    border-width : 3px;
+    padding : 0;
+}
+table.calendar td.scheduled a:hover {
+    background : #bbb;
+}
+/*}}}*/
+
+#left.client_box {
+  padding-bottom: 20px;
+}
+
+div.filters div.filter_row p {
+  padding: 0;
+  margin: 0;
+  margin-top: 4px;
+}
+
+div.filter_row p.control {
+  width: 70%;
+}
+
+#location_id {
+  width: 100%;
+}
+
+div.filter_row {
+  float: left;
+  width: 100%;
+}
+
+div.filter_row:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+div.filters:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+th.label {
+  height: 52px;
+  padding-bottom: 2px;
+}
+
+th.label a {
+  width: 45%;
+}
+
+th.label a span {
+  position: absolute;
+  text-align: center;
+  display: block;
+}
+
+th.label a.previous {
+  float: left;
+}
+
+th.label a.next {
+  float: right;
+}
+
+th.label a.previous span.label_previous,
+th.label a.next span.label_next {
+  top: 0;
+}
+
+th.label a.next span.label_next {
+  right: 0;
+}
+
+th.label a.previous span.pointy_previous {
+  left: 0;
+}
+th.label a.next span.pointy_next {
+  right: 0;
+}
+
+th.label span.current_sched {
+  position: absolute:
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+
+#key_head {
+    margin-top: 12px;
+}
+
+#key table.calendar td.key_text {
+    width: auto;
+    border: none;
+    padding-left: 8px;
+    background: #FFFFCC;
+    font-size: 1em;
+}
+
+#key table.calendar td.color {
+    height: 5em;
+    margin: 0px;
+    padding: 0;
+    width: 64px;
+}

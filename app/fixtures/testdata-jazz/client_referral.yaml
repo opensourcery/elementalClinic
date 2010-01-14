@@ -1,0 +1,19 @@
+---
+1001:
+  active: 1
+  agency_contact: Django
+  agency_type: Gypsy
+  client_id: 1003
+  client_placement_event_id: 1003
+  rec_id: 1001
+  rolodex_referral_id: 1001
+1002:
+  active: 1
+  agency_contact: amoeba
+  agency_type: shop
+  client_id: 1005
+  client_placement_event_id: 1005
+  rec_id: 1002
+  rolodex_referral_id: 1002
+
+

@@ -1,0 +1,104 @@
+<div id="content">
+
+[% INCLUDE util/errors.html %]
+[% INCLUDE intake/_header.html %]
+
+<form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+    <div class="client_column client_column_treater">
+        <h4>Primary care physician</h4>
+        <dl class="inline">
+            [% INCLUDE util/checkbox.html
+                name    = 'no_treater'
+                value   = no_treater
+                label   = 'No treater provided.'
+                dl      = 1
+                reverse = 1
+            %]
+        </dl>
+        <dl class="inline client_treater">
+            [% INCLUDE util/input_text.html
+                name    = 'client_primary_treater[0][name]'
+                label   = 'Organization'
+                value   = client.relationship_primary('treaters').rolodex.name
+                size    = 25
+                dl      = 1
+            %]
+            [% INCLUDE util/input_text.html
+                name    = 'client_primary_treater[0][fname]'
+                label   = 'First name'
+                value   = client.relationship_primary('treaters').rolodex.fname
+                size    = 25
+                dl      = 1
+                required = 1
+            %]
+            [% INCLUDE util/input_text.html
+                name    = 'client_primary_treater[0][lname]'
+                label   = 'Last name'
+                value   = client.relationship_primary('treaters').rolodex.lname
+                size    = 25
+                dl      = 1
+                required = 1
+            %]
+            [% INCLUDE util/composite/phone.html
+                name    = 'client_primary_treater_phone'
+                dl      = 1
+                default = client.relationship_primary('treaters').rolodex.phones.0
+                size    = 25
+                simple  = 1
+                ord     = 0
+                primary = 1
+            %]
+        </dl>
+
+        <dl class="inline section client_treater">
+            [% INCLUDE util/composite/address.html
+                name = 'client_primary_treater_address'
+                ord  = 0
+                default = objects.client_primary_treater_address.0 || client.relationship_primary('treaters').rolodex.addresses.0
+                dl = 1
+                liftzip = 1
+                primary = 1
+            %]
+        </dl>
+    </div>
+
+    <div class="client_column client_column_assessment">
+        [% IF current_assessment %]
+            <h4>Admission Assessment</h4>
+            [% INCLUDE assessment/form.html
+                op = 'create'
+                intake = 1
+            %]
+        [% ELSE %]
+            <div id="assessment">
+            <h4>No Active Assessment Template</h4>
+
+            [% IF current_user.admin %]
+                <p>
+                    There is currently no intake assessment template. Without a
+                    template it is impossible to create an assessment. Please 
+                    <a href="/admin_assessment_templates.cgi">click here</a> to 
+                    create a new template.
+                </p>
+            [% ELSE %]
+                <p>
+                    There is currently no intake assessment template. Without a
+                    template it is impossible to create an assessment. Templates must
+                    be created and activated by an administrator. Please contact your
+                    local administrator to create an intake template.
+                </p>
+            [% END %]
+
+            </div>
+        [% END %]
+    </div>
+
+    <hr />
+
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+        <p class="save"><input type="submit" name="submit" value="Next step" /> or <a href="/">Postpone this intake</a></p>
+        <input type="hidden" name="client_id" id="client_id" value="[% client.id %]" />
+        <input type="hidden" name="op" id="op" value="step4_save" />
+    </form>
+
+</div>

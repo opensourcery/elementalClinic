@@ -1,0 +1,119 @@
+[% SET view_prefix = "view_" %]
+[% SET delete_prefix = "delete_" %]
+[% pref_date_format = current_user.pref.date_format %]
+<div class="filters">
+    <p class="label">Appointments
+      [%~ IF Config.quick_schedule_availability =%]
+          for [% date FILTER date_format(pref_date_format) %]
+      [%~ END ~%]:
+    </p>
+    [% IF ! Config.quick_schedule_availability %]
+    <p class="control">
+        [% INCLUDE util/select_new.html
+            id      = 'schedule_availability_id'
+            name    = 'schedule_availability_id'
+            default = schedule_availability_id
+            values  = available_schedules
+            keyname = 'schedule_availability_id'
+          #  valname = 'detail'
+            valblock = 'schedule_availability_builder'
+            leading_blank = "Choose from the schedule..."
+        %]
+        [% BLOCK schedule_availability_builder;
+               tmp_date = value.date FILTER date_format(pref_date_format);
+               "$tmp_date : ${value.location} : ${value.doctor} : ${value.appointment_count}";
+           END;
+        %]
+    </p>
+    [% IF current_user.admin %]
+        [% IF schedule_availability.appointment_count == 0 %]
+    <p class="control delete">
+        <a href="[% script %]?op=delete_day&amp;schedule_availability_id=[% schedule_availability.rec_id %]"><span>delete from schedule</span></a>
+    </p>
+<!--    <p class="label">Delete [% schedule_availability.rolodex.name %] at [% schedule_availability.location %] on [% schedule_availability.date %].</p>-->
+        [% ELSE %]
+<!--    <p class="label">(has appointments)</p> -->
+        [% END %]
+    [% END %]
+    [% END %]
+</div>
+[% RETURN UNLESS appointments %]
+<div id="appointment_table">
+    <table border="0">
+    [% slot_used = 'xxx' %]
+    [% FOR appt IN appointments %]
+      [% # If the client has an appointment at this time do not show an empty slot.
+         # slot_used records the last appt time for the current client. If the
+         # time is the same as the new one, and the new one is empty (no client)
+         # it will nto display. This fixes thcf:#449. A client cannot have 2
+         # appointments at the same time with the same doctor.
+      UNLESS slot_used == (appt.appt_time || appt) && !appt.client_id %]
+       <tr [% IF appt.client_id %] class="appointment_client_[% appt.client_id %]" [% END %] >
+           <td class="time">[% (appt.appt_time || appt) FILTER time_format('12') %]:</td>
+           [% IF appt.client_id;
+               INCLUDE client_appointment;
+               IF appt.client_id == client.id;
+                 slot_used = appt.appt_time || appt;
+               END;
+           ELSE;
+               INCLUDE available_appointment
+               time = appt;
+           END %]
+       </tr>
+      [% END %]
+    [% END %]
+    </table>
+</div>
+
+[%- INCLUDE schedule/popup/appointment.html prefix="$view_prefix" %]
+[%- INCLUDE schedule/popup/delete.html prefix="$delete_prefix" %]
+
+[% BLOCK client_appointment %]
+    <td class="client">
+        [% IF (appclient = appt.client( current_user )) %]
+            <a href="[% script %]?op=appointment_edit&amp;rec_id=[% appt.rec_id %]" onclick="return edit_appointment( '[% script %]', [% appt.client_id %], [% appt.id %] )">[% appclient.lname %], [% appclient.fname %] [% appclient.mname %]</a>
+        [% ELSE %]
+            Booked - name hidden
+        [% END %]
+    </td>
+    
+    <td>[% appt.client( current_user ).phone.phone_number %]</td>
+    <td>[% appt.confirm_code %]</td>
+    <td>[% appt.payment_code %]</td>
+    <td>[% appt.rolodex.eman %]</td>
+    [% IF current_user.primary_role.has_client_permission( appt.client_id ) %]
+        <td class="delete">
+            [%
+                delete_name = appclient.lname _ ', ' _ appclient.fname;
+                delete_location = appt.schedule_availability.location;
+                delete_time = appt.appt_time FILTER time_format('12');
+                delete_doctor = appt.rolodex.eman;
+            %]
+            <a
+                href="[% script %]?op=appointment_remove&amp;rec_id=[% appt.rec_id %]"
+                onclick="return delete_appointment( '[% delete_prefix %]', event, [% appt.rec_id %], '[% delete_name %]', '[% delete_time %]m', '[% delete_doctor %]', '[% delete_location %]' )"
+                title="Delete appointment"
+            >
+                <span>delete</span>
+            </a>
+        </td>
+    [% END %]
+[% END %]
+
+[% BLOCK available_appointment %]
+<td colspan="5" class="slot">
+    [% IF client.id %]
+    <a
+      href="[% script %]?op=appointment_save;schedule_availability_id=[% schedule_availability.id %];appt_time=[% time %];client_id=[% client.id %]"
+      onclick="return add_appointment([% to_json(
+        prefix = view_prefix
+        schedule_availability_id = schedule_availability.id
+        appt_time = time
+        appt_time_display = time.time_format(12)
+        client_id = client.id
+      ) | html %]);">available</a>
+    [% ELSE %]
+    available
+    [% END %]
+</td>
+[% END %]

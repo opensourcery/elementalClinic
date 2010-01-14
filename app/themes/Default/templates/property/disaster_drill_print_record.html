@@ -1,0 +1,33 @@
+
+<html>
+<body>
+<body background="../images/backer.gif" bgcolor="#FFFFFF" text="BLACK">
+<center>
+<table align="center">
+<tr><td>
+<pre>
+<center><b>
+     [% firm %]
+     [% div %]
+     [% dept %]
+</b>
+
+<hr><b>Disaster Drill Report For Period: </b> [% search_start %] to [% search_end %] <hr>
+</center>
+<b>Date:</b> [% row_start_date %] <b>Time:</b> [% row_alarm_time %]
+<b>Unit:</b> [% row_unit_lname %]
+<b>Address:</b> [% row_addr %]
+<b>Drill Conducted By:</b> [% row_conductor %]
+<b>Disaster Scenario:</b> [% row_drill_type %]
+----------------------------------------------------------------------
+<b>Number of Staff:</b> [% row_amt_staff %] <b>Number of Patients:</b> [% row_amt_pts %]
+----------------------------------------------------------------------
+<b>Actions Taken/Notifications Made:</b>                      
+[% row_actions %]
+----------------------------------------------------------------------
+<b>Comments (Critique/Improvements Needed):</b>
+[% row_follow_up %]
+
+<b>Signature: ___________________________________________________________ </b>
+
+

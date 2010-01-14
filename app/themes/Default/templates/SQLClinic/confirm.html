@@ -1,0 +1,10 @@
+[%# Removed logo to prevent dupes.
+     print "<center>",img ({src=>"../images/logo.gif"}),"</center>"; 
+%]
+
+<h4><hr /> <font color="blue"><center> Your transaction has been committed. </center></font> <hr /></h4>
+[% IF href %]
+    <p />
+    <a href="[% href %]">[% href_string %]</a>
+    <br />
+[% END %]

@@ -1,0 +1,33 @@
+---
+1001:
+  active: 0
+  allergy: chocolate
+  client_id: 1001
+  created: 2005-04-05
+  rec_id: 1001
+1002:
+  active: 1
+  allergy: bee stings
+  client_id: 1001
+  created: 2005-03-04
+  rec_id: 1002
+1003:
+  active: 0
+  allergy: iodine
+  client_id: 1002
+  created: 2005-04-05
+  rec_id: 1003
+1004:
+  active: 1
+  allergy: sulfa drugs
+  client_id: 1005
+  created: 2005-10-28
+  rec_id: 1004
+1005:
+  active: 0
+  allergy: bee stings
+  client_id: 1005
+  created: 2005-10-28
+  rec_id: 1005
+
+

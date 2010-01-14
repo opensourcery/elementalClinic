@@ -1,0 +1,17 @@
+<p>Choose an insurer and a cut-off date to see unpaid claims billed before that date.</p>
+[% INCLUDE util/select_new.html
+    name    = 'rolodex_id'
+    label   = 'Insurer'
+    values  = insurers
+    default = current_payment.rolodex_id
+    keyname = 'id'
+    valname = 'name'
+    leading_blank   = 'Choose an insurer ...'
+    wraptag = 'p'
+%]
+[% INCLUDE util/date_picker.html
+    label   = 'Date'
+    name    = 'date'
+    value   = 'today'
+    wraptag = 'p'
+%]

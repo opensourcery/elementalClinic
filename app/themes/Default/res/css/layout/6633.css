@@ -1,0 +1,9 @@
+#left {
+    width : 610px;
+    float : left;
+    left : 0px;
+}
+#right {
+    width : 320px;
+    float : right;
+}

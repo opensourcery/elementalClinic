@@ -1,0 +1,8 @@
+<p>
+    [% is_married = edit ? current_item.is_married : 1;
+        INCLUDE util/checkbox.html
+        label = 'Is Married?'
+        name  = 'is_married'
+        value = is_married
+    %]
+</p>

@@ -1,0 +1,25 @@
+
+1: 
+  active: 1
+  dept_id: 1001
+  description: ~
+  name: No preference
+  rec_id: 1
+2: 
+  active: 1
+  dept_id: 1001
+  description: ~
+  name: Athiest
+  rec_id: 2
+3: 
+  active: 1
+  dept_id: 1001
+  description: ~
+  name: Pantheist
+  rec_id: 3
+4: 
+  active: 1
+  dept_id: 1001
+  description: ~
+  name: Monotheist
+  rec_id: 4

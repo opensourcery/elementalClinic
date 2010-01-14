@@ -1,0 +1,182 @@
+<div class="site_box">
+<h4 style="text-align:left;">Edit Rolodex entry</h4>
+
+<form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+
+<fieldset class="left">
+    <legend>Demographic Information</legend>
+
+    <div class="lefthalf">
+    <dl class="inline">
+    [% INCLUDE util/input_text.html
+        name    = 'fname'
+        label   = 'First'
+        value   = rolodex.fname
+        size    = 25
+        dl      = 1
+        required = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'lname'
+        label   = 'Last'
+        value   = rolodex.lname
+        size    = 25
+        dl      = 1
+        required = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'credentials'
+        label   = 'Credentials'
+        value   = rolodex.credentials
+        size    = 25
+        dl      = 1
+    %]
+    <hr class="subtle" />
+    [% INCLUDE util/input_text.html
+        name    = 'name'
+        label   = 'Organization'
+        value   = rolodex.name
+        size    = 25
+        dl      = 1
+    %]
+    </dl>
+
+    <hr class="subtle" />
+
+    [% INCLUDE util/textarea.html
+        name    = 'comment_text'
+        label   = 'Comment'
+        value   = rolodex.comment_text
+        cols    = 36
+        rows    = 3
+        wraptag = 'p'
+        break   = 1
+    %]
+    </div>
+
+    <div class="righthalf">
+    <dl class="inline">
+    <input type="hidden" name="address_id" value="[% rolodex.address.rec_id %]" />
+    <input type="hidden" name="phone_id" value="[% rolodex.phone.rec_id %]" />
+    [% INCLUDE util/input_text.html
+        name    = 'address1'
+        label   = 'Address'
+        value   = rolodex.address.address1
+        size    = 25
+        dl      = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'address2'
+        label   = 'Address 2'
+        value   = rolodex.address.address2
+        size    = 25
+        dl      = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'city'
+        label   = 'City'
+        value   = rolodex.address.city
+        size    = 25
+        dl      = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'state'
+        label   = 'State'
+        value   = rolodex.address.state
+        size    = 2
+        dl      = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'post_code'
+        label   = 'Zip'
+        value   = rolodex.address.post_code
+        size    = 10
+        dl      = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'phone_number'
+        label   = 'Phone'
+        value   = rolodex.phone.phone_number
+        size    = 15
+        dl      = 1
+    %]
+
+    <hr class="subtle" />
+
+    [% INCLUDE util/select_new.html
+        name    = 'claims_processor_id'
+        label = 'Claims Processor'
+        values  = claims_processors 
+        keyname = 'rec_id'
+        valname = 'name'
+        default = rolodex.claims_processor_id
+        leading_blank = 'No claims processor'
+    %]
+    </dl>
+    [% IF current_user.admin %]
+    <hr class="subtle" />
+    [% INCLUDE util/checkbox.html
+        name    = 'generic'
+        label   = 'Is generic?'
+        value   = rolodex.generic
+        wraptag = 'p'
+    %]
+    <p><strong>Generic</strong>: if this entry is generic, you must uncheck this box in order to save changes.</p>
+    [% END %]
+    </div>
+</fieldset>
+
+<fieldset class="right">
+    <legend>Roles</legend>
+    <ul class="checkbox" id="rolodex_role_selector">
+    [% FOR role IN rolodex_roles;
+        NEXT IF role.name == 'release';
+        IF in_roles;
+            INCLUDE util/checkbox.html
+                name      = role.name
+                id        = "role_$role.name"
+                value     = in_roles.${ role.name }
+                label     = role.description
+                wraptag   = 'li'
+                reverse   = 1;
+        ELSE;
+            in_method = "in_${ role.name }";
+            INCLUDE util/checkbox.html
+                name      = role.name
+                id        = "role_$role.name"
+                value     = rolodex.$in_method
+                label     = role.description
+                wraptag   = 'li'
+                reverse   = 1;
+        END;
+    END %]
+    </ul>
+    <hr />
+    <p>You won't be able to remove a role if another client has a relationship with that role.</p>
+</fieldset>
+
+    <hr class="div" />
+    
+    <input type="hidden" name="edit_rolodex_entry" id="edit_rolodex_entry" value="[% edit_rolodex_entry %]" />
+    <input type="hidden" name="client_id" id="client_id" value="[% client.id %]" />
+    <input type="hidden" name="rolodex_id" id="rolodex_id" value="[% rolodex.rec_id %]" />
+    [% IF dupsok %]
+    <p class="save"><input type="submit" name="op" id="op" value="Save Rolodex, ignoring duplicates" /></p>
+    <input type="hidden" name="dupsok" id="dupsok" value="[% dupsok %]" />
+    [% ELSE %]
+    <p class="save"><input type="submit" name="op" id="op" value="Save Rolodex" /></p>
+    [% END %]
+</form>
+[% INCLUDE util/form_cancel.html
+    extras = {
+        rolodex_id => rolodex.id,
+    }
+%]
+</div>

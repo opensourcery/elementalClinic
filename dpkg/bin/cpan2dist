@@ -1,0 +1,2 @@
+PERL5LIB="locallib/lib/perl5:locallib/lib/perl5/i486-linux-gnu-thread-multi" \
+perl locallib/bin/cpan2dist --format CPANPLUS::Dist::Deb --verbose --buildprereq $@

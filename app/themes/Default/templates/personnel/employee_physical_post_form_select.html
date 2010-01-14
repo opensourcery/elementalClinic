@@ -1,0 +1,28 @@
+[% IF data %]
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+<table border="0">
+    <tr>
+        <td><b>&#149; Select An Employee Record: </b></td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "select"
+    s_values  = data
+    s_size    = 5
+%]</td>
+        <td><input type="submit" name="go" value="Select" /></td>
+    </tr>
+    <tr>
+        <td><b>&#149; View Physical Exams By Unit: </b></td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "unit"
+    s_values  = units
+%]</td>
+        <td><input type="submit" name="go" value="View" /></td>
+    </tr>
+</table>
+<div></div></form>
+[% ELSE %]
+<h4>No Employee Records Found.</h4>
+<p />
+[% END %]

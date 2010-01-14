@@ -1,0 +1,43 @@
+---
+1001:
+  active: 1
+  audit_trail: ~
+  client_id: 1001
+  comment_text: ~
+  end_date: 2003-04-05
+  eval: ~
+  goal: to stop the drugs
+  goal_code: 2
+  goal_header: ~
+  goal_name: mmkay
+  goal_stat: ~
+  medicaid: ~
+  plan_id: 1001
+  problem_description: drugs
+  rec_id: 1001
+  rstat: 0
+  serv: ~
+  staff_id: 1001
+  start_date: 2000-01-02
+1002:
+  active: 1
+  audit_trail: ~
+  client_id: 1002
+  comment_text: Troubled
+  end_date: 2005-02-28
+  eval: Has trouble
+  goal: Make it
+  goal_code: 2
+  goal_header: ~
+  goal_name: Make it to the end of the month.
+  goal_stat: AT
+  medicaid: 0
+  plan_id: 1001
+  problem_description: Having trouble
+  rec_id: 1002
+  rstat: 0
+  serv: Counseling.
+  staff_id: 1001
+  start_date: 2005-02-01
+
+

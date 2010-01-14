@@ -1,0 +1,77 @@
+<!-- util/select_new BEGIN -->
+[%#
+REQUIRED
+    - name
+    - values: list of values
+
+OPTIONAL
+    keyname: if values is a list of hashes, the field that holds the key of the options list
+    valname: if values is a list of hashes, the field that holds the value for the options list
+    valblock: the name of a block in the parent file that is to be executed to produce the value for each option.  The block must set $this_val to whatever the value should be for the current row.  valblock will be called once for each value of $values.  This is useful if your values need to be some composite of multiple fields of a value hash.
+    default: default value; if not specified, behavior is UA-dependent
+    id: if not supplied, name is used
+    size
+    wraptag: tag to wrap the control
+    label
+    truncate_to: truncate values
+    leading_blank : adds a blank option at the top so nothing
+                    is selected by default.  value is the text to be displayed
+    no_choose_blank : Do not show the leading blank option if another option has
+                      already been selected
+    show_blank  : show the control even if there's no data
+    blankmsg : message to display if no data
+    required : required for controller validation 
+-%]
+[%
+    id = id || name;
+    size = " size=\"$size\"" IF size;
+    wraptag = ( wraptag == 'none' ) ? undef : wraptag;
+    wraptag = ( action == 'hidden' ) ? 0 : wraptag;
+    onchange = onchange ? " onchange=\"$onchange\"" : '';
+    required = required ? 'class="required"' : '';
+    IF dl;
+        dts = '<dt>'; dte = '</dt>';
+        dds = '<dd>'; dde = '</dd>';
+    END
+-%]
+[% IF( !show_blank && !values && blankmsg ); "<p>$blankmsg</p>"; RETURN; END %]
+[% "<$wraptag>" IF wraptag -%]
+[% IF action == 'display'; # FIXME oh man, this is ugly
+    FOREACH value IN values;
+        this_key = keyname ? value.$keyname : value;
+        IF this_key == default;
+            this_val = valname ? value.$valname : value;
+        END;
+        END
+    -%]
+    [% dts %][% "$label: " IF label %][% dte %] [% dds %]<strong>[% this_val %]</strong>[% dde %]
+[% ELSIF action == 'hidden' -%]
+    <input
+        type="hidden"
+        name="[% name %]"
+        value="[% default %]"
+        [% onchange ? 'onChange="' _ onchange _ '"' : "" %]
+    />
+[% ELSE -%]
+    [% IF label %][% dts %]<label for="[% id %]">[% label %]: </label>[% dte %][% END %]
+    [% dds %]<select [% required %] name="[% name %]" id="[% id %]"[% size %][% onchange %]>
+    [% IF leading_blank && !( no_choose_blank && default ) %]
+      <option value="">[% leading_blank %]</option>
+    [% END %]
+<!--     [% IF leading_hash %]<option value="[% leading_hash.value %]">[% leading_hash.name %]</option>[% END %] -->
+    [% FOREACH value IN values;
+        this_key = keyname ? value.$keyname : value;
+        IF valblock; 
+            this_val = INCLUDE $valblock;
+        ELSE;
+        this_val = valname ? value.$valname : value;
+        END;
+        -%]
+        <option value="[% this_key %]"[% ' selected="selected"' IF this_key == default %]>
+            [%- IF truncate_to; FILTER truncate( truncate_to ); this_val; END;
+                ELSE; this_val; END -%]</option>
+    [% END -%]
+    </select>[% dde %]
+[% END -%]
+[% "</$wraptag>" IF wraptag -%]
+<!-- util/select_new END -->

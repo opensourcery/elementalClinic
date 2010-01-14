@@ -1,0 +1,31 @@
+
+1: 
+  active: 1
+  dept_id: 1001
+  description: Contractual Obligations
+  name: CO
+  rec_id: 1
+2: 
+  active: 1
+  dept_id: 1001
+  description: Correction and Reversals
+  name: CR
+  rec_id: 2
+3: 
+  active: 1
+  dept_id: 1001
+  description: Other adjustments
+  name: OA
+  rec_id: 3
+4: 
+  active: 1
+  dept_id: 1001
+  description: Payor Initiated Reductions
+  name: PI
+  rec_id: 4
+5: 
+  active: 1
+  dept_id: 1001
+  description: Patient Responsibility
+  name: PR
+  rec_id: 5

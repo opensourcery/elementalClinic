@@ -1,0 +1,28 @@
+[% op_type = 'main' %]
+<div id="content">
+[% INCLUDE lookup/tabs.html
+    tab = 'main'
+%]
+<div class="system_box">
+[% INCLUDE util/errors.html %]
+    [% INCLUDE lookup/table_select.html %]
+
+    <p>Use this screen to edit lookup items and create lookup groups.</p>
+    <div id="table">
+        <div class="header">
+        [% INCLUDE lookup/edit_item.html IF current_table %]
+        </div>
+        [% IF current_table;
+            INCLUDE lookup/table_rows.html
+                row_edit = 1;
+        END %]
+    </div>
+
+    [% IF current_table;
+        INCLUDE lookup/groups.html
+    ; END %]
+
+    <hr class="div" />
+</div>
+</div>
+

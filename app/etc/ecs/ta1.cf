@@ -1,0 +1,34 @@
+[LOOPS]
+ISA
+TA1
+GS
+AK1
+AK9
+GE
+IEA
+
+#--- start of loop details ---#
+
+[ISA]
+segment=ISA:::ISA:R:1
+
+[TA1]
+segment=TA1:::TA1:R:1
+
+[GS]
+segment=GS:::GS:R:1
+
+#LOOP ID - AK1
+[AK1]
+segment=AK1:::Functional Group Response Header:S:1
+
+#LOOP ID - AK9
+[AK9]
+segment=AK9:::Functional Group Response Trailer:R:1
+
+[GE]
+segment=GE:::GE:R:1
+
+[IEA]
+segment=IEA:::IEA:R:1
+

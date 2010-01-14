@@ -1,0 +1,113 @@
+/* main display screen {{{ */
+#center {
+    margin : 0 20px;
+    width : 95%;
+    float : left;
+}
+div.cleanup_display {
+    background-color : #dedeff;
+    padding : 7px;
+    border : 1px solid #60c;
+    width : 500px;
+    float : left;
+    margin-right : 20px;
+}
+hr.subtle {
+    clear : both !important;
+    border-bottom : 1px dotted #fb0;
+}
+div.site_display hr.subtle {
+    border-color : #60c;
+    padding : 5px 0;
+}
+legend {
+    font-size : 14px;
+    font-weight : bold;
+    padding : 0;
+    border-bottom : 1px dotted #60c;
+}
+h4 {
+    font-size : 12px;
+    text-align : left;
+    padding : 2px 7px 2px 7px;
+    margin : 0 10px 4px 10px;
+    border : none;
+}
+h3 {
+    margin : 10px 10px 0 10px;
+}
+.plan_merge {
+    border-collapse : collapse;
+}
+/* }}} */
+/* rolodex cleanup entries {{{ */
+#cleanup_entries {
+    height : 300px;
+    border : 2px solid #06c;
+    overflow : auto;
+    margin : 0 10px 0 10px;
+    background : #ddd;
+}
+#cleanup_entries table {
+    background : #fff;
+    border-collapse : collapse;
+    width : 100%;
+}
+#cleanup_entries table td {
+    font-size : 11px;
+    border-bottom : 1px solid #666;
+}
+#cleanup_entries table td.merge {
+    font-weight : bold;
+    font-size : 14px;
+    border : none;
+}
+#cleanup_entries table td.name {
+    font-weight : bold;
+    border : none;
+}
+/* }}} */
+.entries {
+    background : #fff;
+    border-bottom : 1px solid #666;
+}
+.entry_cell {
+    border-left : 1px solid #ccc;
+}
+.entry_cell span {
+    text-align : right;
+    padding-right : 5px;
+    display : block;
+    float : left;
+    width : 7em;
+}
+.entry_cell span a {
+}
+.check {
+    text-align : center;
+}
+.final_top {
+    border-top : 1px solid #666;
+    border-right : 1px solid #666;
+    border-left : 1px solid #666;
+}
+.final_middle {
+    border-right : 1px solid #666;
+    border-left : 1px solid #666;
+}
+.final_bottom {
+    border-bottom : 1px solid #666;
+    border-right : 1px solid #666;
+    border-left : 1px solid #666;
+}
+p.edit {
+    text-align : right;
+    padding : 2px 6px 2px 6px;
+    background-color : #aaa;
+    border : 1px solid #333;
+    margin : 20px 10px 10px 10px;
+    clear : both;
+}
+.right {
+    margin : 0 10px 0 0;
+}

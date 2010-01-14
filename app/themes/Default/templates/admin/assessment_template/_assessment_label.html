@@ -1,0 +1,7 @@
+    <dt class="label">[% creating_new ? 'New section label' : 'Section label' %]:</dt>
+    <dd class="label"> asd asd asd asd 
+        [% INCLUDE util/input_text.html
+            name    = 'section_'_ section.id
+            value   = creating_new ? '' : section.label
+        %]
+    </dd>

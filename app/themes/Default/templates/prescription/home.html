@@ -1,0 +1,72 @@
+[% INCLUDE global/client_head.html
+    navsec = 'clinical'
+    navpage = 'prescription'
+%]
+[% UNLESS( current.rec_id || errors || op == 'create' ); current = client.medication_history.0; END %]
+[% prescriptions = client.medication_history %]
+<div id="[% ( op == 'edit' || op == 'create' ) ? 'center' : 'left' %]" class="client_box">
+    [% IF ( op == 'home' || op == 'view' || op == 'save' ) && current.rec_id %]
+    [% INCLUDE prescription/view.html %]
+
+    [% ELSIF op == 'edit' %]
+    <h4>Edit prescription</h4>
+    [% INCLUDE prescription/edit.html %]
+
+    [% ELSIF op == 'create' %]
+    <h4>New prescription</h4>
+    [% INCLUDE prescription/edit.html %]
+
+    [% END %]
+</div>
+
+[% UNLESS op == 'edit' || op == 'create' %]
+<div id="right" class="client_box">
+
+    <h4>Previous prescriptions</h4>
+    [% IF prescriptions %]
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+    <ul>
+        [% FOR scrip IN prescriptions %]
+        <li class="[% 'active' IF scrip.rec_id == current.rec_id %]">
+            [%# UNLESS( scrip.print_date OR ( scrip.rolodex_treaters_id != current_user.rolodex_treaters_id ) );
+                ok_to_print = 1 %]
+            [% IF( current_user.admin OR ( !scrip.print_date AND ( scrip.rolodex_treaters_id == current_user.rolodex_treaters_id )));
+                ok_to_print = 1 %]
+            <input type="checkbox" name="print_[% scrip.rec_id %]" id="print_[% scrip.rec_id %]" value="1"> 
+            <label for="print_[% scrip.rec_id %]">[% scrip.medication %]</label>,
+            [% ELSE %]
+            [% scrip.medication %],
+            [% END %]
+            <a href="[% script %]?op=view&prescription_id=[% scrip.rec_id %]&client_id=[% client.id %]">
+                [%- scrip.start_date %]</a>
+        </li>
+        [% END %]
+    </ul>
+        [% IF ok_to_print %]
+            <input type="hidden" name="client_id" id="client_id" value="[% client.client_id %]" />
+            <input type="hidden" name="op" id="op" value="print" />
+            <input type="submit" name="submit" id="submit" value="Print selected prescriptions" />
+        [% ELSE %]
+            <p>No prescriptions are printable.</p>
+        [% END %]
+    [% ELSE %]
+        <p>No previous prescriptions</p>
+    [% END %]
+    </form>
+
+<hr />
+
+[% IF current_user.rolodex_treaters_id %]
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+        <input type="hidden" name="client_id" id="client_id" value="[% client.client_id %]" />
+        <input type="hidden" name="op" id="op" value="create" />
+        <p class="save"><input type="submit" name="submit" id="submit" value="New prescription" /></p>
+    </form>
+[% ELSE %]
+    <p>Only treaters can write prescriptions; please see the site administrator if you think you should be in the system as a treater.</p>
+[% END %]
+
+</div>
+[% END %]
+
+

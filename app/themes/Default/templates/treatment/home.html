@@ -1,0 +1,64 @@
+[% INCLUDE global/client_head.html
+    navsec = 'clinical'
+    navpage = 'treatment'
+%]
+[% UNLESS current.rec_id; current = client.treatment_plans.0; END %]
+
+<div id="left" class="client_box">
+    <h4>Treatment Plans</h4>
+    [% IF( client_treatment_plans = client.treatment_plans ) %]
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" id="chooser" name="chooser">
+        <select name="plan_id" id="plan_id" size="1">
+            [% FOR plan IN client_treatment_plans;
+                selected = plan.rec_id == current.rec_id ? 'selected="selected"' : ''
+            %]
+            <option value="[% plan.rec_id %]" [% selected %]>[% plan.start_date || "No date (id: $startid)" %]</option>
+            [% END %]
+        </select>
+        <input type="hidden" name="client_id" value="[% client.id %]" />
+        <input type="submit" name="op" value="View Plan" />
+        <input type="submit" name="op" value="Clone Plan" />
+    </form>
+
+    <hr class="subtle" />
+    [% ELSE %]
+    <p>No treatment plans.</p>
+    [% END %]
+
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+        <input type="hidden" name="client_id" id="client_id" value="[% client.client_id %]" />
+        <input type="hidden" name="op" id="op" value="plan_new" />
+        <p class="new"><input type="submit" name="submit" id="submit" value="New Plan" /></p>
+    </form>
+
+    <hr class="subtle" />
+
+    [% IF current.rec_id;
+        INCLUDE treatment/plan_view.html
+            allow_edit      = 1
+            display_full    = 1;
+        END
+    %]
+</div>
+
+<div id="right" class="client_box">
+[% IF current.rec_id %]
+    <div id="goals">
+        <h4>Goals</h4>
+
+        <form method="[% Config.form_method %]" action="[% program %]" enctype="application/x-www-form-urlencoded">
+            <input type="hidden" name="client_id" value="[% client.id %]" />
+            <input type="hidden" name="plan_id" value="[% current.rec_id %]" />
+            <input type="hidden" name="op" id="op" value="goal_new" />
+            <p class="new"><input type="submit" name="new" id="new" value="New Goal" /></p>
+        </form>
+
+        [% IF current.goals.0.rec_id %]
+            [% INCLUDE treatment/goal_list.html %]
+        [% ELSE %]
+        <p>No goals.</p>
+        [% END %]
+    </div>
+[% END %]
+</div>
+

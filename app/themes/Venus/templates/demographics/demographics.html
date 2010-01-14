@@ -1,0 +1,157 @@
+[% current = current || client %]
+<div id="center" class="client_box">
+<form name="demographics" method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+    <div id="left">
+
+    <dl class="inline">
+        <dt>First:</dt>
+        <dd>
+        [% INCLUDE util/input_text.html 
+            name='fname' 
+            value=fname || current.fname 
+            size='20' %]
+        </dt>
+        <dt>Middle:</dt>
+        <dd>
+        [% INCLUDE util/input_text.html 
+            name='mname' 
+            value=mname || current.mname 
+            size='1' %]
+        </dd>
+
+        <dt>Last:</dt>
+        [% INCLUDE util/input_text.html 
+            name='lname' 
+            wraptag='dd' 
+            value=lname || current.lname 
+            size='20' %]
+
+        <dt>Birthdate:</dt>
+        [% INCLUDE util/date_picker.html
+            name    = 'dob'
+            value   = dob || current.dob
+            wraptag = 'dd'
+        %]
+    
+        <dt>Gender:</dt>
+        [% INCLUDE util/choose_valid_data.html
+            name   = "sex"
+            table  = '_sex'
+            type    = 'select'
+            default = sex || current.sex || 'Unknown'
+            wraptag = 'dd'
+        %]
+    </dl>
+
+    <hr class="subtle" />
+
+    <fieldset>
+    <legend>Emergency Contact</legend>
+        <dl class="inline">
+			<dt>First name:</dt>
+			[% INCLUDE util/input_text.html
+                name = "emergency_contact_rolodex_fname"
+                value = emergency_contact_rolodex_fname || emergency_contact_rolodex.fname
+				wraptag = 'dd'
+			%]
+            <dt>Last name:</dt>
+			[% INCLUDE util/input_text.html
+                name = "emergency_contact_rolodex_lname"
+                value = emergency_contact_rolodex_lname || emergency_contact_rolodex.lname
+				wraptag = 'dd'
+			%]
+            <dt>Relationship:</dt>
+            [% INCLUDE util/input_text.html
+                name = "emergency_contact_rolodex_comment_text"
+                value = emergency_contact_rolodex_comment_text || emergency_contact_rolodex.comment_text
+                wraptag = 'dd'
+            %]
+            <dt>Phone:</dt>
+            [% INCLUDE util/input_text.html
+                name = "emergency_contact_rolodex_phone_number"
+                value = emergency_contact_rolodex_phone_number || emergency_contact_rolodex.phones.0.phone_number
+                wraptag = 'dd'
+            %]
+        </dl>
+    </fieldset>
+    
+    </div>
+    
+    <div id="right">
+    
+    <dl class="inline">
+        <dt>Doctor:</dt>
+        [% INCLUDE util/select_new.html
+            name    = 'primary_treater_rolodex_id'
+            wraptag = 'dd' 
+            values  = rolodex_treaters
+            default = primary_treater_rolodex_id ||current.get_primary_treater.rolodex.rec_id
+            leading_blank = '(No Doctor)'
+            no_choose_blank = 1
+            keyname = 'rec_id'
+            valname = 'eman'
+        %]
+        <dt>Renewal Date:</dt>
+        [% INCLUDE util/date_picker.html
+            name    = 'renewal_date'
+            value   = renewal_date || current.renewal_date
+            wraptag = 'dd'
+        %]
+    </dl>
+
+    <hr class="subtle" />
+
+    <dl class="inline">
+        [% INCLUDE util/input_text.html name='address1' label='Address' dl=1 value=address1 || current.address.address1 size='35' %]
+        [% INCLUDE util/input_text.html name='address2' label='Address 2' dl=1 value=address2 || current.address.address2 size='35' %]
+
+        [% #INCLUDE util/input_text.html name='county' label='County' dl=1 value=county || current.address.county size='25' %]
+
+        [% INCLUDE util/input_text.html name='city' label='City' dl=1 value=city || current.address.city size='25' %]
+        <dt>State:</dt>
+        <dd>[% INCLUDE util/input_text.html name='state' value=state || current.address.state size='2' %]
+            [% INCLUDE util/input_text.html name='post_code' label='Zip' value=post_code || current.address.post_code size='10' %]
+        </dd>
+
+        [% INCLUDE util/input_text.html name='phone' label='Phone' dl=1 value=phone || current.phone.phone_number size='20' %]
+        [% INCLUDE util/input_text.html name='phone_2' label='Second Phone' dl=1 value=phone_2 || current.phones.1.phone_number size='20' %]
+        [% INCLUDE util/input_text.html name='email' label='Email' dl=1 value=email || current.email size='35' %]
+
+        <dt>Don't Call:</dt>
+        [% INCLUDE util/select_new.html
+            name    = 'dont_call'
+            wraptag = 'dd' 
+            values  = [
+                { id  => 0, label => 'No', },
+                { id  => 1, label => 'Yes', },
+            ]
+            default = dont_call || current.dont_call || 0
+            keyname = 'id'
+            valname = 'label'
+        %]
+    </dl>
+
+    </div>
+    <hr class="div" />
+
+    <hr class="subtle" />
+
+    [% INCLUDE util/textarea.html
+        name    = 'comment_text'
+        value   = comment_text || current.comment_text
+        label   = 'Comments'
+        break   = 1
+        wraptag = 'p'
+        rows    = 5
+        cols    = 100 
+    %]
+
+    <hr class="div" />
+
+    <input type="hidden" name="client_id" value="[% client.id %]" />
+    <p class="save"><input type="submit" name="op" id="op_save" value="Save Patient" /></p>
+
+</form>
+
+</div>
+

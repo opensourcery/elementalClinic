@@ -1,0 +1,42 @@
+[% IF current_user.admin && ! Config.quick_schedule_availability %]
+<div id="schedule_creation" class="system_box">
+<p class='highlight'>Add to Schedule (Only available to admins)</p>
+<form name='schedule_creation_form' method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+    <dl class="inline">
+    <dt>Doctor</dt>
+    [% INCLUDE util/select_new.html
+        id     = 'schedule_creation_rolodex_id'
+        name   = 'rolodex_id'
+        values = treaters
+        keyname = 'rec_id'
+        valname = 'eman'
+        type    = 'select'
+        default = current.doctor_id
+        use_id  = 1
+        wraptag = 'dd'
+        leading_blank = "Choose a Doctor..."
+    %]
+    <dt>Location</dt>
+    [% INCLUDE util/choose_valid_data.html
+        id     = 'schedule_creation_location_id'
+        name   = 'location_id'
+        table  = '_prognote_location'
+        type    = 'select'
+        default = current.location_id
+        use_id  = 1
+        wraptag = 'dd'
+        leading_hash = [ { value => '', name => 'Select a location', }, ]
+    %]
+    <dt>Date</dt>
+    [% INCLUDE util/date_picker.html
+                id      = 'schedule_creation_date'
+                name    = 'date'
+                value   = current_date
+                wraptag = 'dd'
+    %]
+    </dl>
+    <input type="hidden" name="op" id="schedule_creation_op" value="save" />
+    <p class="save"><input type="submit" name="submit" value="Create Schedule" /></p>
+</form>
+</div><!--schedule_creation-->
+[% END %]

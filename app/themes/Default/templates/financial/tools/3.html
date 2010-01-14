@@ -1,0 +1,40 @@
+[%
+    validation_rule_nav = validation_rule_nav || 'definition'
+%]
+<div class="submenu validation_rules">
+<h4>Validation Rules</h4>
+[% INCLUDE util/icon_add.html
+    href    = "$script?op=validation_rule_new;section=tools;step=3"
+    icon_label   = 'Add new validation rule'
+%]
+<ul>
+    [% FOR rule IN rules %]
+    <li[% ' class="active"' IF rule.id == current_rule.id %]>
+        <a href="[% script %]?section=tools;step=3;validation_rule_id=[% rule.id %]">[% rule.name %]</a>
+    </li>
+    [% END %]
+</ul>
+</div>
+
+<div id="validation_rule">
+    [% IF(( rule = current_rule ) || ( op == 'validation_rule_new' )) %]
+    [% rule_label = rule ? rule.name : 'Creating new rule' %]
+    <h4>[% rule_label %]</h4>
+
+    <ul class="toggle_menu">
+        <li[% ' class="active"' IF validation_rule_nav == 'definition' %]><a href="[% script %]?section=tools;step=3;validation_rule_id=[% current_rule.id %]">Definition</a></li>
+    [% IF current_rule.id %]
+        <li[% ' class="active"' IF validation_rule_nav == 'preview' %]><a href="[% script %]?op=validation_rule_preview;section=tools;step=3;validation_rule_id=[% current_rule.id %]">Preview</a></li>
+    [% END %]
+    </ul>
+
+    <div class="toggle_content">
+        [% IF( validation_rule_nav == 'definition' );
+            INCLUDE financial/tools/rule_definition.html;
+        ELSIF( validation_rule_nav == 'preview' );
+            INCLUDE financial/tools/rule_preview.html;
+        END %]
+    </div>
+    [% END %]
+</div>
+

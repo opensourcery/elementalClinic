@@ -1,0 +1,24 @@
+<div id="content">
+[% INCLUDE util/errors.html %]
+<div id="center" class="system_box">
+
+<div class="template_chooser">
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" name="chooser" id="chooser" style="float:left;">
+        <p class="view"><input type="submit" name="op" id="op" value="View Template" /> </p>
+        <select name="template_id" id="template_id" onchange="document.forms['chooser'].submit()" size="30">
+        [% FOREACH one = templates %]
+            <option value="[% one.rec_id %]"[% IF one.rec_id == template_id; ' selected="selected"'; END %]>[% one.name %]</option>
+        [% END %]
+        </select>
+        <br />
+        <p class="new"><input type="submit" name="op" id="op" value="New Template" /> </p>
+    </form>
+</div>
+
+[% IF template_id || op == 'create' || action == 'edit' %]
+    [% INCLUDE notification/home_notification.html %]
+[% END %]
+
+<hr class="div" />
+</div>
+</div>

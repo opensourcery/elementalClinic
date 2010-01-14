@@ -1,0 +1,23 @@
+[% IF( note.id && note.charge_code_id ); current_code = note.charge_code; END %]
+[% IF action == 'display' %]
+    <p id="valid_charge_codes">
+        Charge code: <strong>[% current_code.name %]</strong>: [% current_code.description %]
+    </p>
+    <input type="hidden" name="charge_code_id" id="charge_code_id" value="[% note.charge_code_id %]" />
+[% ELSE %]
+    <p id="valid_charge_codes">
+    [% IF valid_charge_codes %]
+        <label for="charge_code_id">Code:</label>
+        <select name="charge_code_id" id="charge_code_id" [% required ? 'class="required"' : '' %]>
+            [% '<option value="">Select a code...</option>' UNLESS note.charge_code_id %]
+            [% FOR code IN valid_charge_codes;
+                selected = ' selected="selected"' IF code.rec_id == note.charge_code_id
+            %]
+            <option value="[% code.rec_id %]" [% selected %]>[% "$code.name: $code.description" %]</option>
+            [% END %]
+        </select>
+    [% ELSE %]
+        Code: <strong>Choose date, location &amp; writer.</strong>
+    [% END %]
+    </p>
+[% END %]

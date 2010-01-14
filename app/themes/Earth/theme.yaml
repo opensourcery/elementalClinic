@@ -1,0 +1,63 @@
+---
+name: Earth
+description: 
+allowed_controllers:
+  - Admin
+  - AdminAssessmentTemplates
+  - Ajax
+  - Allergies
+  - Assessment
+  - Calendar
+  - ClientFilter
+  - ClientPermissions
+  - Demographics
+  - Diagnosis
+  - Discharge
+  - Entitlements
+  - Financial
+  - GroupNotes
+  - Groups
+  - Income
+  - Inpatient
+  - Insurance
+  - Intake
+  - Legal
+  - Letter
+  - Login
+  - Menu
+  - PersonnelHome
+  - Personnel
+  - PersonnelPrefs
+  - Placement
+  - Prescription
+  - ProgressNote
+  - ProgressNotesChargeCodes
+  - Report
+  - ROI
+  - RolodexCleanup
+  - RolodexFilter
+  - Rolodex
+  - Schedule
+  - TreaterSet
+  - Treatment
+  - ValidData
+allowed_reports:
+  - client/allergy
+  - client/client_prognote
+  - client/client_termination
+  - client/data_sheet
+  - client/legal
+  - client/medication
+  - client/prognote
+  - site/appointments
+  - site/client_list
+  - site/encounter
+  - site/hospital
+  - site/ins_reauth
+  - site/last_visit_bystaff
+  - site/mh_totals
+  - site/monthly_status
+  - site/site_prognote
+  - site/site_prognote_caseload
+  - site/uncommitted_prognotes
+  - site/zip_count

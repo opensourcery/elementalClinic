@@ -1,0 +1,38 @@
+<div class="submenu">
+    <table>
+        <tr>
+            <th>Payer</th>
+            <th>Last Received</th>
+            <th></th>
+        </tr>
+        [% FOR insurer IN insurers %]
+        <tr class="active">
+            <td>[% insurer.name %]</td>
+            <td>[% insurer.last_received_edi %]</td>
+            <td><a href="[% script %]?section=payments;step=4;rolodex_id=[% insurer.id %]">Connect and Check for New Files</a></td>
+        </tr>
+        [% END %]
+    </table>
+</div>
+
+[% IF receive_error %]
+<div class="subcontent">
+    <h4>Results of checking for new files:</h4>
+    <div class="connection_details">
+    [% receive_error %]
+    </div>
+</div>
+[% END %]
+
+[% INCLUDE financial/common/download_results.html %]
+
+[% IF connect_log %]
+<div class="subcontent">
+    <h4>Connection Results:</h4>
+    <div class="connection_details">
+        <pre>
+[% connect_log %]
+        </pre>
+    </div>
+</div>
+[% END %]

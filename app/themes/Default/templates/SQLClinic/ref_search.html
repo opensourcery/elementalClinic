@@ -1,0 +1,37 @@
+<!-- There was an additional logo and title message that was here 
+     causing duplicate logos on the page. Preserved below:
+
+     print "<center>",img ({src=>"../images/logo.gif"}),"</center>"; 
+     print h4(hr(), "<center>$Name</center>", hr() );
+-->
+
+<form method="post" action="[% program %]" enctype="application/x-www-form-urlencoded">
+<table border="0">
+    <tr>
+        <td>Last Name: </td>
+        <td><input type="text" name="LNAME"  /></td>
+    </tr>
+    <tr>
+        <td>First Name: </td>
+        <td><input type="text" name="FNAME"  /></td>
+    </tr>
+    <tr>
+        <td>Select Treatment Track: </td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "TID"
+    s_values  = track
+%]</td>
+    </tr>
+    <tr>
+        <td>Select Department: </td>
+        <td>
+[% INCLUDE util/select.html
+    s_name   = "DID"
+    s_values  = dept
+    s_default = Dept
+%]</td>
+    </tr>
+</table>
+<p />
+<input type="submit" name=".submit" /><p />

@@ -1,0 +1,75 @@
+[% IF confirm %]
+<h4><font color="blue">Your transaction was committed.</font></h4>
+[% END %]
+<p />
+
+
+<form method="[% Config.form_method %]"" action="[% program %]" enctype="application/x-www-form-urlencoded">
+
+<table border="0">
+    <tr>
+        <td><h4>&#149; Employee CDL Information</h4></td>
+    </tr>
+    <tr>
+        <td>Does Employee Have A Valid <br /> Commercial Drivers License: </td>
+        <td>[% INCLUDE util/radio.html
+            r_name   = "cdl_valid"
+            r_values  = [ 'Yes', 'No' ]
+            r_default = cdl.valid
+        %] </td>
+   </tr>
+    <tr>
+        <td>License ID Number: </td>
+        <td><input type="text" name="cdl_id" value="[% cdl.cdl_id %]" size="27" maxlength="25" /></td>
+    </tr>
+    <tr>
+        <td>Date License Was Issued: </td>
+        <td><input type="text" name="cdl_start_date" value="[% cdl.start_date %]" size="12" maxlength="10" /></td>
+    </tr>
+    <tr>
+        <td>Date License Expires: </td>
+        <td><input type="text" name="cdl_end_date" value="[% cdl.end_date %]" size="12" maxlength="10" /></td>
+    </tr>
+    <tr>
+        <td>Comment: </td>
+        <td><textarea name="cdl_log_notes" rows="5" cols="60">[% cdl.log_notes %]</textarea></td>
+    </tr>
+    <tr>
+        <td><h4>&#149; Employee DOT Information</h4></td>
+    </tr>
+    <tr>
+        <td>Does Employee Have A Valid <br /> Dept. of Transportation License: </td>
+    <td>
+    [% INCLUDE util/radio.html
+        r_name   = "dot_valid"
+        r_values  = [ 'Yes', 'No' ]
+        r_default = dot.valid
+    %]
+    <tr>
+        <td>License ID Number: </td>
+        <td><input type="text" name="dot_id" value="[% dot.dot_id %]" size="27" maxlength="25" /></td>
+    </tr>
+    <tr>
+        <td>Date License Was Issued: </td>
+        <td><input type="text" name="dot_start_date" value="[% dot.start_date %]" size="12" maxlength="10" /></td>
+    </tr>
+    <tr>
+        <td>Date License Expires : </td>
+        <td><input type="text" name="dot_end_date" value="[% dot.end_date %]" size="12" maxlength="10" /></td>
+    </tr>
+    <tr>
+        <td>Comment: </td>
+        <td><textarea name="dot_log_notes" rows="5" cols="60">[% dot.log_notes %]</textarea></td>
+    </tr>
+</table>
+
+<p />
+
+<input type="submit" name="go" value="Submit Query" />
+<input type="hidden" name="ID" value="[% id %]" />
+<div>
+<input type="hidden" name=".cgifields" value="cdl_valid" />
+<input type="hidden" name=".cgifields" value="dot_valid" />
+</div>
+</form>
+

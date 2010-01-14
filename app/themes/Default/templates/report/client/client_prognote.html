@@ -1,0 +1,22 @@
+[% INCLUDE util/select_new.html
+    name    = 'staff_id'
+    label   = 'Staff'
+    values  = data.staff
+    keyname = 'staff_id'
+    valname = 'eman'
+    leading_blank = 'All Staff'
+%]
+
+[% INCLUDE util/date_picker.html
+    label   = 'Start'
+    name    = 'start_date'
+    value   = 'today'
+    wraptag = 'p'
+%]
+
+[% INCLUDE util/date_picker.html
+    label   = 'End'
+    name    = 'end_date'
+    value   = 'today'
+    wraptag = 'p'
+%]

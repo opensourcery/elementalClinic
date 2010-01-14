@@ -1,0 +1,15 @@
+<p>
+    [% INCLUDE util/input_text.html name='number' label='Number' value=current_item.number size='20' %]
+    [% is_referral = edit ? current_item.is_referral : 1;
+        INCLUDE util/checkbox.html
+        label = 'Referral?'
+        name  = 'is_referral'
+        value = is_referral
+    %]
+</p>
+<p>
+    [% INCLUDE util/input_text.html name='addr'  label='Address' value=current_item.addr size='20' %]
+    [% INCLUDE util/input_text.html name='city'  label='City'    value=current_item.city size='20' %]
+    [% INCLUDE util/input_text.html name='state' label='State'   value=current_item.state size='5' %]
+    [% INCLUDE util/input_text.html name='zip'   label='Zip'     value=current_item.zip size='10' %]
+</p>

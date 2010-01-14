@@ -1,0 +1,309 @@
+[% INCLUDE global/client_head.html
+    navsec = 'home'
+    navpage = 'placement'
+%]
+[% SET action = 'display' IF( discharge.committed ) %]
+<div id="left" class="client_box">
+
+    <h4>Discharge</h4>
+    <p><a href="placement.cgi?client_id=[% client.id %]">&#171; Return to placement</a></p>
+
+    [% UNLESS placement %]
+        <p>Placement required.</p>
+    [% ELSE %]
+
+    [%- IF discharge.committed %]
+        <p class="highlight">This discharge record has been committed and may not be edited.</p>
+        <form method="[% Config.form_method %]" action="report.cgi" enctype="application/x-www-form-urlencoded">
+            <input type="hidden" name="report_name" value="client_termination">
+            <input type="hidden" name="type" value="client">
+            <input type="hidden" name="client_id" value="[% client.id %]">
+            <input type="hidden" name="event_date" value="[% discharge.placement_event.event_date %]">
+            <input type="hidden" name="op" value="run_report">
+            <p class="print"><input type="submit" name="submit" value="Print Termination Report" /></p>
+        </form>
+        <hr class="subtle" />
+    [%- ELSE %]
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+    [%- END %]
+        <p>Discharge date: <strong>[% discharge.placement_event.event_date %]</strong></p>
+
+        [% INCLUDE util/choose_valid_data.html
+            name    = 'termination_reason'
+            label   = 'Termination reason' 
+            table   = '_termination_reasons'
+            default = discharge.termination_reason
+            type    = 'select'
+            wraptag = 'p'
+            leading_hash = [ { value => '', name => ' ', }, ]
+        %]
+
+        <p class="manual">
+            [% INCLUDE util/input_text.html
+                name    = 'termination_reason_manual'
+                label   = 'Manual'
+                value   = discharge.termination_reason || discharge.termination_reason_manual
+                size    = 50
+            %]
+        </p>
+
+        [% INCLUDE util/date_picker.html
+            name    = 'last_contact_date'
+            label   = 'Last contact date'
+            value   = discharge.last_contact_date || last_contact_date_guess
+            wraptag = 'p'
+        %]
+        [% IF last_contact_date_guess && ! discharge.last_contact_date %]
+        <p class="manual">This <strong>last contact date</strong> is the date of the last progress note; you may need to change it.</p>
+        [% END %]
+
+        <hr class="subtle" />
+
+        <p>Staff name: <strong>[% discharge.staff_name %]</strong></p>
+        <input type="hidden" name="staff_name" value="[% discharge.staff_name %]" />
+
+        [% INCLUDE util/input_text.html
+            name    = 'physician'
+            label   = 'Licensed Medical Practitioner'
+            value   = discharge.physician
+            wraptag = 'p'
+        %]
+
+        [% INCLUDE util/date_picker.html
+            name    = 'termination_notice_sent_date'
+            label   = 'Termination notice sent'
+            value   =  discharge.termination_notice_sent_date || 'today'
+            wraptag = 'p'
+        %]
+
+        [% INCLUDE util/checkbox.html
+            name    = 'client_contests_termination'
+            label   = 'Client contests termination?'
+            value   = discharge.client_contests_termination
+            wraptag = 'p'
+        %]
+
+        <hr class="subtle" />
+
+        [% INCLUDE util/choose_valid_data.html
+            name   = 'employability_factor'
+            label  = 'Employability Factor' 
+            table  = '_employability'
+            default = discharge.employability_factor
+            type    = 'select'
+            wraptag = 'p'
+        %]
+
+        [% INCLUDE util/input_text.html
+            name    = 'education'
+            label   = 'Education'
+            value   = discharge.education || client.edu_level
+            wraptag = 'p'
+        %]
+
+        [% INCLUDE util/input_text.html
+            name    = 'income'
+            label   = 'Household monthly income'
+            value   = discharge.income
+            wraptag = 'p'
+        %]
+
+        [% INCLUDE util/select_new.html
+            name  = 'employment_status'
+            label = 'Employment status'
+            values = [
+                {
+                    key = 'F'
+                    val = 'Full-time'
+                },
+                {
+                    key = 'P'
+                    val = 'Part-time'
+                },
+                {
+                    key = 'U'
+                    val = 'Unemployed'
+                },
+            ]
+            keyname = 'key'
+            valname = 'val'
+            default = discharge.employment_status || client.working
+            wraptag = 'p'
+        %]
+
+        [% INCLUDE util/checkbox.html
+            name    = 'criminal_justice'
+            label   = 'Criminal justice?'
+            value   = ( discharge.criminal_justice == 0 || discharge.criminal_justice == 1 ) 
+                       ? discharge.criminal_justice 
+                       : ( client.legal_past_issues ? 1 : 0 )
+            wraptag = 'p'
+        %]
+
+        [% INCLUDE util/textarea.html
+            name    = 'discharge_note'
+            label   = 'Treatment/Discharge Summary'
+            value   = discharge.discharge_note
+            cols    = 50
+            rows    = 8
+            break   = 1
+            wraptag = 'p'
+        %]
+
+        <fieldset>
+        <legend>Aftercare Information</legend>
+
+        [% INCLUDE util/textarea.html
+            name    = 'after_care'
+            label   = 'Recommendations for future services/referrals and conditions (if any) for reinstatement of services'
+            value   = discharge.after_care
+            cols    = 50
+            rows    = 8
+            break   = 1
+            wraptag = 'p'
+        %]
+
+        [% INCLUDE util/textarea.html
+            name    = 'sent_to'
+            label   = 'Discharged to'
+            value   = discharge.sent_to
+            cols    = 50
+            rows    = 2
+            break   = 1
+            wraptag = 'p'
+        %]
+
+        [% INCLUDE util/input_text.html
+            name    = 'ref_cont'
+            label   = 'Contact'
+            value   = discharge.ref_cont
+            wraptag = 'p'
+        %]
+
+        [% INCLUDE util/input_text.html
+            name    = 'addr'
+            label   = 'Address'
+            value   = discharge.addr
+            wraptag = 'p'
+        %]
+
+        [% INCLUDE util/input_text.html
+            name    = 'addr_2'
+            label   = 'Address 2'
+            value   = discharge.addr_2
+            wraptag = 'p'
+        %]
+
+        [% INCLUDE util/input_text.html
+            name    = 'city'
+            label   = 'City'
+            value   = discharge.city
+            wraptag = 'p'
+            maxlength = 40
+        %]
+
+        [% INCLUDE util/input_text.html
+            name    = 'state'
+            label   = 'State'
+            value   = discharge.state
+            wraptag = 'p'
+            maxlength = 40
+        %]
+
+        [% INCLUDE util/input_text.html
+            name    = 'post_code'
+            label   = 'Zip'
+            value   = discharge.post_code
+            wraptag = 'p'
+            maxlength = 10
+        %]
+
+        [% INCLUDE util/input_text.html
+            name    = 'phone'
+            label   = 'Phone'
+            value   = discharge.phone
+            wraptag = 'p'
+            maxlength = 18
+        %]
+        </fieldset>
+
+    [% UNLESS discharge.committed %]
+        <input type="hidden" name="initial_diag_id" value="[% placement.initial_diagnosis.rec_id %]" />
+        <input type="hidden" name="final_diag_id" value="[% placement.final_diagnosis.rec_id %]" />
+
+        <input type="hidden" name="event_date" value="[% placement.event_date %]" />
+        <input type="hidden" name="client_placement_event_id" value="[% placement.event.rec_id %]" />
+        <input type="hidden" name="discharge_id" value="[% discharge.rec_id %]" />
+        <input type="hidden" name="client_id" value="[% client.id %]" />
+        <p class="save">
+            <input type="submit" name="op" id="op_save_temp" value="Save for later editing" />
+            <input type="submit" name="op" id="op_save_commit" value="Commit Discharge" />
+        </p>
+    </form>
+    [% END %]
+</div>
+
+
+<div id="right" class="client_box">
+    [% IF discharge.committed;
+        INCLUDE diagnosis_display
+            type    = 'Initial'
+            diag    = discharge.initial_diagnosis;
+        INCLUDE diagnosis_display
+            type    = 'Final'
+            diag    = discharge.final_diagnosis;
+    ELSE;
+        INCLUDE diagnosis_display
+            type    = 'Initial'
+            diag    = placement.initial_diagnosis;
+        INCLUDE diagnosis_display
+            type    = 'Final'
+            diag    = placement.final_diagnosis;
+    END %]
+[% END # main event-checking test %]
+</div>
+
+[% BLOCK diagnosis_display %]
+    [% IF diag %]
+    <h4><em>[% type %] diagnosis:</em> [% diag.diagnosis_date %]</h4>
+    <div class="axis">
+        <h5>Axis I</h5>
+        <p><strong>Primary:</strong> [% diag.diagnosis_1a %]</p>
+        <p><strong>Secondary:</strong> [% diag.diagnosis_1b %]</p>
+        <p><strong>Tertiary:</strong> [% diag.diagnosis_1c %]</p>
+        <hr class="subtle" />
+
+        <h5>Axis II</h5>
+        <p><strong>Primary:</strong> [% diag.diagnosis_2a %]</p>
+        <p><strong>Secondary:</strong> [% diag.diagnosis_2b %]</p>
+        <hr class="subtle" />
+
+        <p><strong>Axis III:</strong> [% diag.diagnosis_3 %]</p>
+        <p><strong>Axis IV:</strong> [% diag.diagnosis_4 %]</p>
+        <p><strong>GAF:</strong> [% diag.diagnosis_5_current %]</p>
+    </div>
+    [% ELSE %]
+    <h4><em>No [% type %] diagnosis.</em></h4>
+    [% END %]
+[% END %]
+
+<!-- NOT INCLUDED
+chart_id                     | character varying(16)  | 
+
+admit_note                   | text                   | 
+history_clinical             | text                   | 
+history_psych                | text                   | 
+history_medical              | text                   | 
+
+sent_summary                 | character(1)           | 
+sent_psycho_social           | character(1)           | 
+sent_mental_stat             | character(1)           | 
+sent_tx_plan                 | character(1)           | 
+sent_other                   | character varying(255) | 
+sent_physical                | character(1)           | 
+
+esof_id                      | integer                | 
+esof_date                    | date                   | 
+esof_name                    | character varying(50)  | 
+esof_note                    | character varying(255) | 
+-->

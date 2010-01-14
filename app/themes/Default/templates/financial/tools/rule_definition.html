@@ -1,0 +1,112 @@
+<h5>Validation Rule Editor</h5>
+<p>You may edit any existing rule or create a new rule.  Rules are just SQL queries that the system runs to select a group of progress notes.  Some parts of the query are written for you and cannot be changed.  Other parts may be edited by you.  On the "Preview" page you can see the full query the system will run.</p>
+<p>We suggest you first verify a rule directly on the database, then paste its parts here to test it.  The system tries to make sure you're not doing anything dangerous, but it does <strong>not</strong> guard against syntax errors.</p>
+
+        [% INCLUDE util/form.html %]
+
+        <h5>Rule Properties</h5>
+        <div class="minileft">
+        [% INCLUDE util/input_text.html
+            name    = 'name'
+            label   = 'Name'
+            value   = rule.name
+            size    = 50
+            break   = 1
+            wraptag = 'p'
+            class   = 'large'
+            required    = 1
+        %]
+        [% INCLUDE util/input_text.html
+            name    = 'error_message'
+            label   = 'Error Message'
+            value   = rule.error_message
+            size    = 50
+            break   = 1
+            wraptag = 'p'
+            required    = 1
+        %]
+        </div>
+        <div class="miniright">
+        [% INCLUDE util/select_new.html
+            name    = 'scope'
+            label   = 'Scope'
+            default = rule.scope || 'system'
+            values  = [
+                { key => 'system', val => 'System' },
+                { key => 'payer',  val => 'Payer' },
+            ],
+            keyname = 'key'
+            valname = 'val'
+            wraptag = 'p'
+            required    = 1
+        %]
+        [% INCLUDE util/radio_new.html
+            name    = 'selects_pass'
+            default = rule.selects_pass
+            values  = [
+                { key => 1, val => 'Selected notes <strong>pass</strong> validation' },
+                { key => 0, val => 'Selected notes <strong>fail</strong> validation' },
+            ]
+            keyname = 'key'
+            valname = 'val'
+            wraptag = 'p'
+            required    = 1
+        %]
+        </div>
+        <hr class="div" />
+
+        <h5>Rule Query</h5>
+        <p>Please enter query parts below.</p>
+        <p>For security reasons, you cannot use <strong>semicolons</strong> (<strong>;</strong>) or the following words in your query:<br />
+            <strong>SELECT</strong>, <strong>DELETE</strong>, <strong>DROP</strong>, <strong>UPDATE</strong>, <strong>INTO</strong>
+            (although <strong>SELECT</strong> is allowed in a <strong>WHERE</strong> clause, as a sub-select).
+        </p>
+
+        <h6>SELECT</h6>
+        <p class="query_part">[% validation_query.select %]</p>
+        [% INCLUDE util/textarea.html
+            name    = 'rule_select'
+            value   = rule.rule_select
+            rows    = 4
+            cols    = 60
+            break   = 1
+            wraptag = 'p'
+        %]
+
+        <h6>FROM</h6>
+        <p class="query_part">[% validation_query.from %]</p>
+        [% INCLUDE util/textarea.html
+            name    = 'rule_from'
+            value   = rule.rule_from
+            rows    = 4
+            cols    = 60
+            break   = 1
+            wraptag = 'p'
+        %]
+
+        <h6>WHERE</h6>
+        <p class="query_part">[% validation_query.where %]</p>
+        [% INCLUDE util/textarea.html
+            name    = 'rule_where'
+            value   = rule.rule_where
+            rows    = 4
+            cols    = 60
+            break   = 1
+            wraptag = 'p'
+        %]
+
+        <h6>ORDER BY</h6>
+        <p class="query_part">[% validation_query.order %]</p>
+        [% INCLUDE util/textarea.html
+            name    = 'rule_order'
+            value   = rule.rule_order
+            rows    = 4
+            cols    = 60
+            break   = 1
+            wraptag = 'p'
+        %]
+
+        <input type="hidden" name="validation_rule_id" value="[% rule.id %]" />
+        <p class="save"><input type="submit" name="op" value="Save Validation Rule" /></p>
+        [% INCLUDE financial/session.html %]
+        [% INCLUDE util/form_end.html %]

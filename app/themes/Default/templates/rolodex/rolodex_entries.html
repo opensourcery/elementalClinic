@@ -1,0 +1,20 @@
+[% role_name = role_name || current_role.name %]
+<table>
+[%- FOR entry IN rolodex_entries %]
+    <tr>
+        <td rowspan="2" class="relationship_new"><a href="[% script %]?op=relationship_new;client_id=[% client.id %];rolodex_id=[% entry.rec_id %];role_name=[% role_name %]" title="New relationship">&#171;</a></td>
+        <th colspan="1"><div>[% entry.eman %]</div></th>
+        [% IF (! rolodex.generic) || current_user.admin %]
+        <td class="edit"><a href="rolodex.cgi?op=rolodex_edit;client_id=[% client.id %];rolodex_id=[% entry.rec_id %]">|edit</a></td>
+        [% ELSE %]
+        <td class="view"><a href="rolodex.cgi?op=rolodex_edit;client_id=[% client.id %];rolodex_id=[% entry.rec_id %]">|view</a></td>
+        [% END %]
+    </tr>
+    <tr>
+        <td colspan="2">
+            [% entry.phone.phone_number_web %]
+            [% entry.address.address_web %]
+        </td>
+    </tr>
+[%- END %]
+</table>

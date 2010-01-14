@@ -1,0 +1,39 @@
+---
+1001:
+  active: 1
+  dept_id: 1001
+  description: $960
+  name: $960
+  rec_id: 1001
+1002:
+  active: 1
+  dept_id: 1001
+  description: $960 Renew
+  name: $960 Renew
+  rec_id: 1002
+1003:
+  active: 1
+  dept_id: 1001
+  description: $950 PPD
+  name: $950 PPD
+  rec_id: 1003
+1004:
+  active: 1
+  dept_id: 1001
+  description: $950 PPD/Renew
+  name: $950 PPD/Renew
+  rec_id: 1004
+1005:
+  active: 1
+  dept_id: 1001
+  description: $920 OHP
+  name: $920 OHP
+  rec_id: 1005
+1006:
+  active: 1
+  dept_id: 1001
+  description: $920 OHP/Renew
+  name: $920 OHP/Renew
+  rec_id: 1006
+
+

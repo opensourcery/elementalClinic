@@ -1,0 +1,21 @@
+        <table id="insurance_authorizations">
+        <tr>
+            <th>Client</th>
+            <th>Active authorization?</th>
+        </tr>
+        [% FOR this_client IN auths_all %]
+            <tr[% ' class="active"' IF client.id == this_client.id %]>
+                <td>[% this_client.eman %]</td>
+                <td class="requested[% ' not' UNLESS this_client.mental_health_provider.authorization %]">
+                    <a href="[% script %]?op=client_insurance_authorization_request;section=tools;step=1;client_id=[% this_client.id %]">
+                    [%- IF this_client.mental_health_provider.authorization %]
+                        <strong title="Make new request"><em>Expires</em> [% this_client.mental_health_provider.authorization.end_date %]</strong>
+                    [%- ELSE %]
+                        <strong title="Make new request">Expired</strong>
+                    [%- END %]
+                    &#187;
+                    </a>
+                </td>
+            </tr>
+        [% END %]
+        </table>

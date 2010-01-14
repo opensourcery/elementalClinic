@@ -1,0 +1,47 @@
+[%#
+  # NOTE that valid_data_charge_code is special-cased throughout this template
+  #
+%]
+[% has_default = current_user.valid_data.has_default( current_table.name ) %]
+            <table cellspacing="0">
+                [%- IF current_table.name == 'valid_data_charge_code'; INCLUDE lookup/valid_data_charge_code_header.html; ELSE %]
+                    <tr class="head">
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        [% IF has_default %]
+                            <th>Default</th>
+                        [% END %]
+                        [% extra_columns = current_user.valid_data.extra_columns( current_table.name ) %]
+                        [% IF extra_columns.size; INCLUDE "lookup/${ current_table.name }_header.html"; END %]
+                    </tr>
+                [%- END %]
+            [% rowclass = 0 %]
+            [% FOR row IN current_user.valid_data.list( current_table.name, 'all' ) %]
+                [%- rowclass = rowclass * -1 + 1 %]
+                [%- edit_link = row_edit
+                    ? "<a href=\"$script?op=edit_item;table_name=$current_table.name;group_id=$current_group.rec_id;rec_id=$row.rec_id;rolodex_id=$current_insurer.id\">"
+                    : '';
+                end_link = row_edit
+                    ? '</a>'
+                    : '';
+                %]
+                [%- IF current_table.name == 'valid_data_charge_code'; INCLUDE lookup/valid_data_charge_code_rows.html; ELSE %]
+                    <tr class="[% IF rowclass; "even"; ELSE; "odd"; END %]">
+                        [% INCLUDE lookup/table_row_active_indicator.html
+                            active  = row.active
+                        %]
+                        <td>[% edit_link %][% row.name %][% end_link %]</td>
+                        <td>[% row.description | replace('\\\n', "\n") %]</td>
+                        [% IF has_default %]
+                            <td>
+                            [% IF row.is_default %]
+                                Yes
+                            [% END %]
+                            </td>
+                        [% END %]    
+                        [% IF extra_columns.size; INCLUDE "lookup/${ current_table.name }_rows.html"; END %]
+                    </tr>
+                [% END %]
+            [% END %]
+            </table>

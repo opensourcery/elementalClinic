@@ -1,0 +1,36 @@
+= HOW TO MAKE EMC PACKAGES =
+
+Install the debian package tools:
+$ sudo aptitude install dpkg-dev dh-make debhelper
+
+You also need libpq-dev
+$ sudo aptitude install libpq-dev
+
+run the following:
+$ make packages
+
+this will create an ARCH-NAME dir with packages for emc and all dependancies.
+example dir name: i686-Hardy
+
+== Assumptions ==
+
+This script assumes there is a checkout of emc trunk/app in ../app. To specify
+one instead use CHECKOUT="..."
+
+== How it works ==
+
+First: locallib will bootstrap a local perl lib dir in the current directory. In
+this lib dir it will install all the perl modules required to build emc and its
+dependancies.
+
+Second: the emc build scripts will runa nd use CPANPLUS::Dist::Deb to build
+dependancy packages.
+
+Third: debian-package-builder (created specifically for this purpose, not on
+cpan) will be used to build the main elementalclinic debian package.
+
+Fourth: all the debs will be copied to a temporary directory, any package that
+already exists in ARCH-Name/ will be removed from the temp dir. Any remaining
+debs int he temp dir will be copied to ARCH-Name/
+
+Packages are ready!

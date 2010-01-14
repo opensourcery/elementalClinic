@@ -1,0 +1,104 @@
+/* some of this is pretty ugly, but we need to override lots of stuff */
+#client_selector_link.active {
+    color : #fff;
+    background : #811788;
+    height : 2em;
+}
+#client_selector_status {
+    font-size : 1.5em;
+    font-weight : bold;
+    background : url( "../img/spinner.gif" ) no-repeat 40px 40px;
+    height : 50px;
+    padding : 50px 0 0 100px;
+}
+#client_selector {
+    background : url( ../img/shadow_box.png ) right bottom no-repeat;
+    padding : 0 10px 10px 0;
+    display : block;
+    position : absolute;
+    top : 29px;
+    left : 20px;
+    z-index : 6;
+}
+#client_selector .inner {
+    background : #dedeff;
+    padding : 10px;
+    border : 2px solid #811788;
+    min-width : 300px;
+    min-height : 400px;
+}
+#client_selector #client_selector_body {
+    padding : 0;
+    margin : 0;
+    width : auto;
+    float : left;
+}
+#client_selector h3 {
+    font-size : 14px;
+    border-bottom : 1px solid #000;
+    margin-bottom : 15px;
+}
+#client_selector h4,
+#client_selector p.instructions,
+#client_selector #or {
+    display : none;
+}
+#client_selector #search_filter,
+#client_selector #client_results {
+    width : auto;
+    float : left;
+}
+#client_selector #search_filter {
+    padding-right : 20px;
+    border-right : 1px dotted #06c;
+    margin-right : 20px;
+}
+#client_selector #search_only,
+#client_selector #filter_only {
+    border : none;
+}
+#client_selector #search,
+#client_selector p.search {
+    float : left;
+}
+#client_selector #search {
+    font-size : 12px;
+    margin-top : 3px;
+}
+#client_selector p.search {
+    clear : right;
+}
+#client_selector h5 {
+    border : none;
+    padding : 0;
+    margin : 0;
+    clear : both;
+}
+#client_selector div.placement,
+#client_selector div.program {
+    float : left;
+}
+#client_selector div.placement {
+    clear : left;
+}
+#client_selector div.program {
+    padding-left : 20px;
+    border-left : 1px dotted #06c;
+    margin-left : 20px;
+}
+#client_selector #clientform {
+    padding : 0;
+}
+#client_selector #client_id {
+    display : block;
+    clear : right;
+}
+/* DEBUG {{{ */
+/* #client_selector { display : block !important; } */
+/* #client_selector_status { display : none !important; } */
+/*}}}*/
+#close_button {
+    position : absolute;
+    top : 7px;
+    right : 17px;
+}

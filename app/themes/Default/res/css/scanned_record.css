@@ -1,0 +1,46 @@
+.system_box {
+    float : left;
+}
+
+#file {
+    float : left;
+    margin : 0 0 20px 0;
+    padding : 10px;
+    width : 450px;
+    background-color : #cec;
+}
+#file img {
+    width : 400px;
+    padding-bottom : 5px;
+}
+#file_details {
+    float : left;
+    padding : 10px;
+    margin : 0 10px;
+    border : 0px solid blue;
+}
+#file_details textarea {
+    margin-bottom : 10px;
+}
+#client_search {
+    float : left;
+    border : 0px solid green;
+}
+#client_results {
+    float : left;
+    margin-left : 10px;
+    border : 0px solid yellow;
+}
+#associate {
+    padding-top : 20px;
+    clear : left;
+}
+input#invalid_file_button {
+    margin-top : 30px;
+}
+#file_details table td {
+    padding : 0 7px;
+}
+h4#history {
+    margin-top : 50px;
+}

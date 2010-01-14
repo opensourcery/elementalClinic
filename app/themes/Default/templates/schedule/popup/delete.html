@@ -1,0 +1,14 @@
+<div id="delete_appointment" style="display:none;">
+    <div class="content">
+        <h6>Delete <span id="delete_who"></span>'s <span id="delete_time"></span> appointment with <span id="delete_doctor"></span> at <span id="delete_location"></span>?</h6>
+
+        <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded">
+            <input type="hidden" name="rec_id" id="[% prefix %]appointment_id" />
+            <input type="hidden" name="op" value="appointment_remove" />
+            <input type="hidden" name="client_id" value="[% client.id %]" />
+            <input type="hidden" name="date" value="[% date %]" />
+            <p class="save"><input type="submit" value="Delete" /></p>
+        </form>
+        [% INCLUDE util/form_cancel.html %]
+    </div>
+</div>

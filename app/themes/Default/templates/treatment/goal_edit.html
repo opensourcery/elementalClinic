@@ -1,0 +1,99 @@
+[% INCLUDE global/client_head.html
+    navsec = 'clinical'
+    navpage = 'treatment'
+%]
+
+<div id="left" class="client_box">
+    [% INCLUDE treatment/plan_view.html
+        current = plan    
+        allow_edit  = 0
+        display_full    = 1
+    %]
+</div>
+
+
+<div id="right" class="client_box">
+
+    <h4>[% current.goal_name %]</h4>
+    <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" id="planform" name="planform">
+        [% INCLUDE util/input_text.html
+            name    = 'goal_name'
+            label   = 'Goal Name'
+            value   = current.goal_name
+            wraptag = 'p'
+            size    = 50
+            required = 1
+        %]
+
+        <p>
+            [% INCLUDE util/date_picker.html
+                label   = 'Start'
+                name    = 'start_date'
+                value   = current.start_date
+                required = 1
+            %]
+            |
+            [% INCLUDE util/date_picker.html
+                label   = 'End'
+                name    = 'end_date'
+                value   = current.end_date
+            %]
+        </p>
+
+        <p>
+            <label for="goal_stat">Status:</label>
+            [% INCLUDE util/select.html
+                s_name    = 'goal_stat'
+                s_values  = [
+                    {
+                        key => 'A'
+                        val => 'Active',
+                    },
+                    {
+                        key => 'AT'
+                        val => 'Attained',
+                    },
+                    {
+                        key => 'D'
+                        val => 'Discontinued'
+                    }]
+                s_default = current.goal_stat
+                s_keyname   = 'key'
+                s_valname   = 'val'
+            %]
+        </p>
+
+        <p>
+            <label for="problem_description">Problem description:</label><br />
+            <textarea name="problem_description" id="problem_description" cols="70" rows="4">[% current.problem_description %]</textarea>
+        </p>
+
+        <p>
+            <label for="eval">Evaluation:</label><br />
+            <textarea name="eval" id="eval" cols="70" rows="4">[% current.eval %]</textarea>
+        </p>
+
+        <p>
+            <label for="serv">Services provided:</label><br />
+            <textarea name="serv" id="serv" cols="70" rows="4">[% current.serv %]</textarea>
+        </p>
+
+        <p>
+            <label for="goal">Objective:</label><br />
+            <textarea name="goal" id="goal" cols="70" rows="4">[% current.goal %]</textarea>
+        </p>
+
+        <p>
+            <label for="comment_text">Comments:</label><br />
+            <textarea name="comment_text" id="comment_text" cols="70" rows="4">[% current.comment_text %]</textarea>
+        </p>
+
+        <input type="hidden" name="client_id" id="client_id" value="[% client.client_id %]" />
+        <input type="hidden" name="plan_id" id="plan_id" value="[% plan.rec_id %]" />
+        <input type="hidden" name="goal_id" id="goal_id" value="[% current.rec_id %]" />
+        <p class="save"><input type="submit" name="op" id="op_save" value="Save Goal" /></p>
+    </form>
+    [% INCLUDE util/form_cancel.html %]
+
+</div>
+

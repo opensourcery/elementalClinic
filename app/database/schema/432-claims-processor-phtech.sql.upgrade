@@ -1,0 +1,5 @@
+-- #1070
+UPDATE claims_processor
+  SET   sftp_host = 'sftp.phtech.com'
+  WHERE name = 'PHTECH'
+  AND   sftp_host = 'sftp.test.com';
