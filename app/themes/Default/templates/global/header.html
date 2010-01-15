@@ -75,7 +75,7 @@
 <ul>
     <li id="home"><a href="/" accesskey="h"><em>H</em>ome</a></li>
     <li><a id="client_selector_link" href="/" onclick="return client_selector( '[% eMC.controller %]' )" accesskey="c"><em>C</em>lients</a></li>
-    [% IF Config.Theme.controller_can('Schedule') %]
+    [% IF Config.Theme.controller_can('Schedule') && current_user.has_schedule %]
     <li><a href="/schedule.cgi?withclient=no" accesskey="s"><em>S</em>chedule</a></li>
     [% END %]
     <li><a href="/groups.cgi" accesskey="g"><em>G</em>roups</a></li>

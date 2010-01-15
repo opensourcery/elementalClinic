@@ -153,6 +153,12 @@ sub home {
     $current->{withclient} ||= 'yes' if $current->{client_id};
     $self->_update_from_session( @calendar_controls, 'schedule_availability_id', 'withclient' );
 
+    # If we are not a treater, and do not have the scheduler role then we have
+    # no schedule to show, except when viewing a client schedule.
+    return $self->no_schedule
+        if !$self->current_user->has_schedule
+           && (!$current->{withclient} || $current->{withclient} eq 'no');
+
     # For viewing the schedule without an associated client
     $self->template->vars({ client => eleMentalClinic::Client->new })
         if $current->{withclient} && $current->{withclient} eq 'no';
@@ -201,10 +207,11 @@ sub home {
 
     $self->filter_appointments( $appointments, $current );
 
+
     $self->template->process_page( 'schedule/home', {
         %$current,        
         rolodex         => $self->_get_rolodex || 0,
-        treaters        => eleMentalClinic::Rolodex->new->get_byrole( 'treaters' ) || 0,
+        treaters        => $self->treaters,
         available_schedules => eleMentalClinic::Schedule->available_schedules() || 0,
         appointments    => $appointments || 0,
         schedule_availability   => $Schedule->schedule_availability( $schedule_date->{day} ) || 0,
@@ -221,6 +228,13 @@ sub home {
     });
 }
 
+sub treaters {
+    my $self = shift;
+    return $self->current_user->scheduler ? eleMentalClinic::Rolodex->new->get_byrole( 'treaters' )
+                                          : $self->current_user->treater ? $self->current_user->treater->rolodex
+                                                                         : [];
+}
+
 # XXX: Ideally the appointments would be gathered and sorted in an SQL query,
 # however thus far it has been sorted and filtered in several places. I will
 # refactor this if it proves a performance issue.
@@ -229,9 +243,6 @@ sub filter_appointments {
     my ( $appointments, $current ) = @_;
     # Venus theme doesn't observe the scheduler role
     return if $self->config->Theme->open_schedule;
-    # Some users see the full schedule
-    return if eleMentalClinic::Role->special_role( 'scheduler' )
-        ->has_member( $self->current_user->primary_role );
 
     #remove the appointments that don't belong to the current user.
 
@@ -252,15 +263,21 @@ sub filter_client_appointments {
 sub filter_user_appointments {
     my $self = shift;
     my ( $appointments, $current ) = @_;
+    return if $self->current_user->scheduler;
     # Get the treater_rolodex_id for the current user
     # Filter appointments w/o that id.
-    my $id = $self->current_user->rolodex_treaters_id;
-    print STDERR "XXXX: " . Dumper( $id );
-    return unless $id;
+    my $treater = $self->current_user->treater;
+    return unless $treater and $treater->id;
+    my $id = $treater->rolodex_id;
     @$appointments = grep {
-        print STDERR Dumper( $_->schedule_availability->rolodex_id ) if ref( $_ );
-        !ref( $_ ) || $_->schedule_availability->rolodex_id == $id
+        (!ref( $_ )) || ($_->schedule_availability->rolodex_id == $id) ? 1 : 0;
     } @$appointments;
+}
+
+sub no_schedule {
+    my $self = shift;
+    $self->override_template_name( 'no_schedule' );
+    return { }
 }
 
 sub by_client {
@@ -638,12 +655,12 @@ sub _appointment_edit {
 
     $self->template->process_page( 'schedule/popup/appointment', {
         available_schedules => eleMentalClinic::Schedule->available_schedules() || 0,
-        appointment_times   => $schedule_availability->get_appointment_slots_tallied,
-        return_script => $return_script,
+        appointment_times   => $schedule_availability->get_appointment_slots_tallied || 0,
+        $return_script ? ( return_script => $return_script ) : (),
         ajax        => 1,
         appointment => $appointment,
         prefix      => "edit_",
-        treaters    => eleMentalClinic::Rolodex->new->get_byrole( 'treaters' ) || 0,
+        treaters    => $self->treaters,
         # default to 'no' because it will have been set to 'yes' by loading the
         # schedule page, just previously, if there was a client selected
         withclient  => $self->session->param('withclient') || 'no',

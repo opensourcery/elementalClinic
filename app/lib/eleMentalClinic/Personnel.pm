@@ -25,6 +25,7 @@ use eleMentalClinic::Lookup::Group;
 use eleMentalClinic::ProgressNote::Bounced;
 use eleMentalClinic::Group::Note;
 use eleMentalClinic::Role;
+use eleMentalClinic::Rolodex::Treater;
 use Date::Calc qw/ Today /;
 use Digest::SHA qw/ sha512_hex /;
 use Carp;
@@ -63,6 +64,12 @@ use Carp;
     sub security_roles {
         return eleMentalClinic::Role->get_by_( 'system_role', 1 );
     }
+
+    sub accessors_retrieve_one {
+        {
+            _treater => { rolodex_treaters_id => 'eleMentalClinic::Rolodex::Treater' },
+        };
+    }
 }
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -81,6 +88,12 @@ sub retrieve {
     my $proto = shift;
     my $self = $proto->SUPER::retrieve( @_ );
     return $self;
+}
+
+sub treater {
+    my $self = shift;
+    return unless $self->rolodex_treaters_id;
+    return $self->_treater;
 }
 
 # XXX FIXME: This is here for legacy support, this should be removed, anything
@@ -186,6 +199,15 @@ sub valid_data {
         dept_id => $self->dept_id,
     });
     return $self->{ valid_data };
+}
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+sub has_schedule {
+    my $self = shift;
+    return 1 if $self->treater;
+    return 1 if $self->scheduler;
+    return 0;
 }
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

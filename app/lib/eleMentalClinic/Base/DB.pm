@@ -603,7 +603,7 @@ sub build_one_to_one_accessors {
         no strict 'refs';
         *{ "$class\::$method" } = sub {
             my $self = shift;
-            die 'Must call on stored object'
+            croak 'Must call on stored object'
                 unless $self->$id;
             return $package->retrieve( $self->$id );
         };

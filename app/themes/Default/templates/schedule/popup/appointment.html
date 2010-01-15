@@ -47,7 +47,7 @@
                           values  = treaters
                           keyname = 'rec_id'
                           valname = 'lname'
-                          leading_blank = "Doctor..."
+                          leading_blank = treaters.size > 1 ? "Doctor..." : ""
                           required = 1
                       %] <br/>
                       [% INCLUDE select_location

@@ -69,19 +69,45 @@
 [%- INCLUDE schedule/popup/delete.html prefix="$delete_prefix" %]
 
 [% BLOCK client_appointment %]
+    [% can_edit = current_user.scheduler || current_user.treater.rolodex_id == appt.rolodex.id ? 1 : 0; %]
     <td class="client">
         [% IF (appclient = appt.client( current_user )) %]
-            <a href="[% script %]?op=appointment_edit&amp;rec_id=[% appt.rec_id %]" onclick="return edit_appointment( '[% script %]', [% appt.client_id %], [% appt.id %] )">[% appclient.lname %], [% appclient.fname %] [% appclient.mname %]</a>
+            [% IF can_edit %]
+                <a
+                    href="[% script %]?op=appointment_edit&amp;rec_id=[% appt.rec_id %]"
+                    onclick="return edit_appointment( '[% script %]', [% appt.client_id %], [% appt.id %] )"
+                >
+             [% END %]
+                [% IF client.id %]
+                    Scheduled
+                [% ELSE %]
+                    [% appclient.lname %], [% appclient.fname %] [% appclient.mname %]
+                [% END %]
+            [% IF can_edit %]
+                </a>
+            [% END %]
         [% ELSE %]
             Booked - name hidden
         [% END %]
     </td>
     
-    <td>[% appt.client( current_user ).phone.phone_number %]</td>
+    <td>
+        [% IF client.id %]
+            &nbsp;
+        [% ELSE %]
+            [% appt.client( current_user ).phone.phone_number %]
+        [% END %]
+    </td>
     <td>[% appt.confirm_code %]</td>
     <td>[% appt.payment_code %]</td>
-    <td>[% appt.rolodex.eman %]</td>
-    [% IF current_user.primary_role.has_client_permission( appt.client_id ) %]
+    <td>
+        [% IF client.id || current_user.scheduler %]
+            [% appt.rolodex.eman %]
+        [% ELSE %]
+            &nbsp;
+        [% END %]
+    </td>
+    [% IF current_user.primary_role.has_client_permission( appt.client_id ) && can_edit %]
         <td class="delete">
             [%
                 delete_name = appclient.lname _ ', ' _ appclient.fname;
@@ -102,7 +128,7 @@
 
 [% BLOCK available_appointment %]
 <td colspan="5" class="slot">
-    [% IF client.id %]
+    [% IF client.id && current_user.has_schedule %]
     <a
       href="[% script %]?op=appointment_save;schedule_availability_id=[% schedule_availability.id %];appt_time=[% time %];client_id=[% client.id %]"
       onclick="return add_appointment([% to_json(
