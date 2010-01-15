@@ -54,7 +54,7 @@ BEGIN {
 # theme config methods
     my @config_methods = qw/
         name description theme_index allowed_controllers
-        allowed_reports
+        allowed_reports open_schedule
     /;
     is_deeply( $one->theme_config_methods, \@config_methods );
     can_ok($one, @config_methods);

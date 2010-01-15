@@ -5,7 +5,7 @@
 use warnings;
 use strict;
 
-use Test::More tests => 107;
+use Test::More tests => 112;
 use Test::Exception;
 use Data::Dumper;
 use eleMentalClinic::Test;
