@@ -5,5 +5,6 @@ app/_build/
 app/config.yaml
 app/database/release/
 app/t/resource/tmp/
-var/
+app/var/
+app/blib
 *.compiled
