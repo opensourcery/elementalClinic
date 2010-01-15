@@ -64,3 +64,4 @@
 ^init$
 \.compiled$
 ^local/
+^MYMETA.yml$

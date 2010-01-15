@@ -51,3 +51,9 @@
   rec_id: 12
   staff_id: ~
   system_role: 1
+13:
+  name: scheduler
+  rec_id: 13
+  staff_id: ~
+  system_role: 1
+  special_name: scheduler

@@ -39,6 +39,7 @@ theme.yaml config file.
 sub theme_config_methods {[ qw/
     name description theme_index
     allowed_controllers allowed_reports
+    open_schedule
 /]}
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

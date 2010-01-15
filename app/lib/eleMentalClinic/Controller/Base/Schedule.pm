@@ -184,7 +184,7 @@ sub home {
     # probably be configurable somehow, but we don't yet know how.
     my $default_quick_slots = $Schedule->build_appointment_slots( 15 );
 
-    # Only generate an appointments list of this day is available for scheduling
+    # Only generate an appointments list if this day is available for scheduling
     my $appointments = $Schedule->appointment_slots_filled(
         $schedule_date->{day},
         $self->quick && $default_quick_slots,
@@ -198,6 +198,8 @@ sub home {
         'schedule_availability_id',
         'withclient',
     );
+
+    $self->filter_appointments( $appointments, $current );
 
     $self->template->process_page( 'schedule/home', {
         %$current,        
@@ -217,6 +219,48 @@ sub home {
         navpage => 'calendar',
         current_user => $self->current_user,
     });
+}
+
+# XXX: Ideally the appointments would be gathered and sorted in an SQL query,
+# however thus far it has been sorted and filtered in several places. I will
+# refactor this if it proves a performance issue.
+sub filter_appointments {
+    my $self = shift;
+    my ( $appointments, $current ) = @_;
+    # Venus theme doesn't observe the scheduler role
+    return if $self->config->Theme->open_schedule;
+    # Some users see the full schedule
+    return if eleMentalClinic::Role->special_role( 'scheduler' )
+        ->has_member( $self->current_user->primary_role );
+
+    #remove the appointments that don't belong to the current user.
+
+    if ( $current->{ withclient } and $current->{ withclient } eq 'yes' ) {
+        $self->filter_client_appointments( @_ );
+    }
+    else {
+        $self->filter_user_appointments( @_ );
+    }
+}
+
+sub filter_client_appointments {
+    my $self = shift;
+    my ( $appointments, $current ) = @_;
+    @$appointments = grep { !ref( $_ ) || $_->client_id == $self->param( 'client_id' ) } @$appointments;
+}
+
+sub filter_user_appointments {
+    my $self = shift;
+    my ( $appointments, $current ) = @_;
+    # Get the treater_rolodex_id for the current user
+    # Filter appointments w/o that id.
+    my $id = $self->current_user->rolodex_treaters_id;
+    print STDERR "XXXX: " . Dumper( $id );
+    return unless $id;
+    @$appointments = grep {
+        print STDERR Dumper( $_->schedule_availability->rolodex_id ) if ref( $_ );
+        !ref( $_ ) || $_->schedule_availability->rolodex_id == $id
+    } @$appointments;
 }
 
 sub by_client {

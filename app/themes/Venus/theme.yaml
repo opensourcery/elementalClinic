@@ -2,6 +2,7 @@
 name: Venus
 description: 
 theme_index: ClientOverview
+open_schedule: 1
 allowed_controllers:
   - Admin
   - Ajax
