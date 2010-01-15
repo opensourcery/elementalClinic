@@ -1,0 +1,9 @@
+app/.pgpass
+app/Build
+app/MYMETA.yml
+app/_build/
+app/config.yaml
+app/database/release/
+app/t/resource/tmp/
+var/
+*.compiled
