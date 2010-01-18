@@ -284,6 +284,14 @@ that is used in the main scheduling drop down.
 
 sub available_schedules {
     my $class = shift;
+    my ($staff) = @_;
+
+    my $where;
+    if ( $staff and !$staff->scheduler ) {
+        return [] unless $staff->treater;
+        my $rolodex_id = $staff->treater->rolodex_id;
+        $where = "WHERE r.rec_id = $rolodex_id";
+    }
 
     my $available_schedules = $class->new->db->do_sql(qq/
        select
@@ -299,6 +307,7 @@ sub available_schedules {
            on sa.rolodex_id = r.rec_id
            left outer join schedule_appointments as appt
            on sa.rec_id = appt.schedule_availability_id
+       $where
        group by
            sa.rec_id,
            sa.date,

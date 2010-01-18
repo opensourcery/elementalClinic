@@ -212,7 +212,7 @@ sub home {
         %$current,        
         rolodex         => $self->_get_rolodex || 0,
         treaters        => $self->treaters,
-        available_schedules => eleMentalClinic::Schedule->available_schedules() || 0,
+        available_schedules => eleMentalClinic::Schedule->available_schedules( $self->current_user ) || 0,
         appointments    => $appointments || 0,
         schedule_availability   => $Schedule->schedule_availability( $schedule_date->{day} ) || 0,
         # date is the date of the current availability OR the
