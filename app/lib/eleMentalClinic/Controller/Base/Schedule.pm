@@ -144,6 +144,11 @@ sub availability_date {
     };
 }
 
+sub open_schedule {
+    my $self = shift;
+    return $self->config->Theme->open_schedule
+}
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # TODO This could stand to be cleaned up.
 sub home {
@@ -156,7 +161,8 @@ sub home {
     # If we are not a treater, and do not have the scheduler role then we have
     # no schedule to show, except when viewing a client schedule.
     return $self->no_schedule
-        if !$self->current_user->has_schedule
+        if !$self->open_schedule
+           && !$self->current_user->has_schedule
            && (!$current->{withclient} || $current->{withclient} eq 'no');
 
     # For viewing the schedule without an associated client
@@ -212,7 +218,10 @@ sub home {
         %$current,        
         rolodex         => $self->_get_rolodex || 0,
         treaters        => $self->treaters,
-        available_schedules => eleMentalClinic::Schedule->available_schedules( $self->current_user ) || 0,
+        available_schedules => eleMentalClinic::Schedule->available_schedules(
+            $self->open_schedule ? ()
+                                 : $self->current_user
+        ) || 0,
         appointments    => $appointments || 0,
         schedule_availability   => $Schedule->schedule_availability( $schedule_date->{day} ) || 0,
         # date is the date of the current availability OR the
@@ -225,6 +234,7 @@ sub home {
         current_date    => $self->format_date( $self->current_date ),
         navpage => 'calendar',
         current_user => $self->current_user,
+        open_schedule => $self->open_schedule,
     });
 }
 
@@ -242,7 +252,7 @@ sub filter_appointments {
     my $self = shift;
     my ( $appointments, $current ) = @_;
     # Venus theme doesn't observe the scheduler role
-    return if $self->config->Theme->open_schedule;
+    return if $self->open_schedule;
 
     #remove the appointments that don't belong to the current user.
 
@@ -654,7 +664,10 @@ sub _appointment_edit {
     my $schedule_availability = $appointment->schedule_availability;
 
     $self->template->process_page( 'schedule/popup/appointment', {
-        available_schedules => eleMentalClinic::Schedule->available_schedules() || 0,
+        available_schedules => eleMentalClinic::Schedule->available_schedules(
+            $self->open_schedule ? ()
+                                 : $self->current_user
+        ) || 0,
         appointment_times   => $schedule_availability->get_appointment_slots_tallied || 0,
         $return_script ? ( return_script => $return_script ) : (),
         ajax        => 1,
@@ -664,6 +677,7 @@ sub _appointment_edit {
         # default to 'no' because it will have been set to 'yes' by loading the
         # schedule page, just previously, if there was a client selected
         withclient  => $self->session->param('withclient') || 'no',
+        open_schedule => $self->open_schedule,
     });
 }
 

@@ -48,7 +48,7 @@
 
         [% FOR role IN current.security_roles.sort_roles_by_homepage %]
             [% rname = role.name %]
-            [% UNLESS rname == 'financial' || rname == 'supervisor' %]
+            [% UNLESS rname == 'financial' || rname == 'supervisor' || rname == 'scheduler' %]
                 [% INCLUDE util/checkbox.html
                     name    = 'role_' _ role.id
                     value   = current.has_role( role )

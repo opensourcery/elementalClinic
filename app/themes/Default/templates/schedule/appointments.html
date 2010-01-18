@@ -69,7 +69,7 @@
 [%- INCLUDE schedule/popup/delete.html prefix="$delete_prefix" %]
 
 [% BLOCK client_appointment %]
-    [% can_edit = current_user.scheduler || current_user.treater.rolodex_id == appt.rolodex.id ? 1 : 0; %]
+    [% can_edit = open_schedule || current_user.scheduler || current_user.treater.rolodex_id == appt.rolodex.id ? 1 : 0; %]
     <td class="client">
         [% IF (appclient = appt.client( current_user )) %]
             [% IF can_edit %]
@@ -128,7 +128,7 @@
 
 [% BLOCK available_appointment %]
 <td colspan="5" class="slot">
-    [% IF client.id && current_user.has_schedule %]
+    [% IF client.id && (open_schedule || current_user.has_schedule) %]
     <a
       href="[% script %]?op=appointment_save;schedule_availability_id=[% schedule_availability.id %];appt_time=[% time %];client_id=[% client.id %]"
       onclick="return add_appointment([% to_json(
