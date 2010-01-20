@@ -4,9 +4,10 @@
 use warnings;
 use strict;
 
-use Test::More tests => 75;
+use Test::More tests => 77;
 use Data::Dumper;
 use eleMentalClinic::Test;
+use Object::Quick 'obj';
 
 our ($CLASS, $one);
 BEGIN {
@@ -67,6 +68,52 @@ BEGIN {
           location => $valid_data_prognote_location->{1001}->{name},
           doctor => $rolodex->{1011}->{name},
           appointment_count => 3 },
+        { schedule_availability_id => 1002, 
+          date => $schedule_availability->{1002}->{date},
+          location => $valid_data_prognote_location->{1002}->{name},
+          doctor => $rolodex->{1001}->{name},
+          appointment_count => 2 },
+    ]);
+
+    is_deeply( $one->available_schedules(obj( treater => obj( rolodex_id => 1011 ))), [
+        { schedule_availability_id => 1006, 
+          date => $schedule_availability->{1006}->{date},
+          location => $valid_data_prognote_location->{1002}->{name},
+          doctor => $rolodex->{1011}->{name},
+          appointment_count => 1 },
+        { schedule_availability_id => 1005, 
+          date => $schedule_availability->{1005}->{date},
+          location => $valid_data_prognote_location->{1002}->{name},
+          doctor => $rolodex->{1011}->{name},
+          appointment_count => 0 },
+        { schedule_availability_id => 1007, 
+          date => $schedule_availability->{1007}->{date},
+          location => $valid_data_prognote_location->{1001}->{name},
+          doctor => $rolodex->{1011}->{name},
+          appointment_count => 1 },
+        { schedule_availability_id => 1001, 
+          date => $schedule_availability->{1001}->{date},
+          location => $valid_data_prognote_location->{1001}->{name},
+          doctor => $rolodex->{1011}->{name},
+          appointment_count => 3 },
+    ]);
+
+    is_deeply( $one->available_schedules(obj( treater => obj( rolodex_id => 1001 ))), [
+        { schedule_availability_id => 1008, 
+          date => $schedule_availability->{1008}->{date},
+          location => $valid_data_prognote_location->{1002}->{name},
+          doctor => $rolodex->{1001}->{name},
+          appointment_count => 1 },
+        { schedule_availability_id => 1004, 
+          date => $schedule_availability->{1004}->{date},
+          location => $valid_data_prognote_location->{1001}->{name},
+          doctor => $rolodex->{1001}->{name},
+          appointment_count => 0 },
+        { schedule_availability_id => 1003,
+          date => $schedule_availability->{1003}->{date},
+          location => $valid_data_prognote_location->{1002}->{name},
+          doctor => $rolodex->{1001}->{name},
+          appointment_count => 0 },
         { schedule_availability_id => 1002, 
           date => $schedule_availability->{1002}->{date},
           location => $valid_data_prognote_location->{1002}->{name},
