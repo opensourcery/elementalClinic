@@ -277,10 +277,13 @@ sub filter_user_appointments {
     # Get the treater_rolodex_id for the current user
     # Filter appointments w/o that id.
     my $treater = $self->current_user->treater;
-    return unless $treater and $treater->id;
+    unless ( $treater and $treater->id ) {
+        @$appointments = ();
+        return;
+    }
     my $id = $treater->rolodex_id;
     @$appointments = grep {
-        (!ref( $_ )) || ($_->schedule_availability->rolodex_id == $id) ? 1 : 0;
+        !ref( $_ ) || $_->schedule_availability->rolodex_id == $id
     } @$appointments;
 }
 

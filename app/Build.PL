@@ -173,6 +173,7 @@ my $r = {
   },
   'test_requires' => {
     'Test::More' => 0,
+    'Object::Quick' => 0,
     'Getopt::Long' => 0,
     'Test::Warn' => 0,
     'Test::Exception' => 0,
