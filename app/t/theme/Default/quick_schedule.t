@@ -147,6 +147,7 @@ $mech->submit_form_ok(
         fields => {
             %ARGS,
             appt_time => '8:00',
+            client_id => 1001,
         },
     },
 );

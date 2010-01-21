@@ -4,7 +4,7 @@
 use warnings;
 use strict;
 
-use Test::More tests => 282;
+use Test::More tests => 279;
 use Test::Deep;
 use Test::Exception;
 use Test::Warn;
@@ -105,7 +105,6 @@ dbinit( 1 );
     is( ref $tmp->{ progress_notes }, 'ARRAY', 'is $tmp->progress_notes an array?' );
     is( $tmp->{ current }->{ start_date }, undef );
     is( $tmp->{ current }->{ end_date }, undef );
-
     # home, parameters passed in initialization
 
         $one = $CLASS->new_with_cgi_params(
@@ -172,14 +171,11 @@ dbinit( 1 );
         # otherwise fails as there is no session
     ok( $one->{ current_user } = eleMentalClinic::Personnel->retrieve( 1003 ));
 
-    TODO: {
-            local $TODO = "Is failing because weird warnings are coming up, only when full suite runs";
-        warning_is { $one->save } undef; #not needing to check for warnings
-        is_deeply( $one->errors, [
-            "<strong>Client</strong> is required.",
-            "<strong>Date</strong> is required.",
-        ]);
-    };
+    warning_is { $one->save } undef; #not needing to check for warnings
+    is_deeply( $one->errors, [
+        "<strong>Client</strong> is required.",
+        "<strong>Date</strong> is required.",
+    ]);
 
     # save, missing client, writer, date
     ok( $one = $CLASS->new_with_cgi_params( op => 'save' ));
@@ -434,10 +430,7 @@ dbinit( 1 );
         # otherwise fails as there is no session
         $one->{ current_user } = eleMentalClinic::Personnel->retrieve( 1004 );
 
-    TODO: {
-            local $TODO = "Should not call _note_action when parameters missing, currently dies and warns unnecessarily";
         warnings_like { $one->bounce_back } [];
-    };
 
     is_deeply( $one->errors, [
         '<strong>Goal</strong> is required unless you select a charge code in: N/A, No Show',
@@ -460,10 +453,7 @@ dbinit( 1 );
         # otherwise fails as there is no session
         $one->{ current_user } = eleMentalClinic::Personnel->retrieve( 1004 );
 
-    TODO: {
-            local $TODO = "Should not call _note_action when parameters missing, currently dies and warns unnecessarily";
         warnings_like { $one->bounce_back } [];
-    };
 
     is_deeply( $one->errors, [
         '<strong>Goal</strong> is required unless you select a charge code in: N/A, No Show',
@@ -487,11 +477,7 @@ dbinit( 1 );
         # otherwise fails as there is no session
         $one->{ current_user } = eleMentalClinic::Personnel->retrieve( 1004 );
 
-    TODO: {
-            local $TODO = "Should not call _note_action when parameters missing, currently dies and warns unnecessarily";
         dies_ok { $one->bounce_back } 'problem, next skip';
-        ok( undef, 'for TODO failure' );
-    };
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # charge_codes
@@ -504,16 +490,9 @@ dbinit( 1 );
         # otherwise fails as there is no session
         $one->{ current_user } = eleMentalClinic::Personnel->retrieve( 1004 );
 
-    TODO: {
-            local $TODO = "Failing with weird warnings when run only in full suite.";
-        warnings_like { $one->charge_codes } [
-            qr/Use of uninitialized value.*/,
-            qr/Use of uninitialized value.*/,
-        ];
         is_deeply( $one->errors, [
             '<strong>Writer</strong> is required.'
         ]);
-    };
 
     # good, writer
     ok( $one = $CLASS->new_with_cgi_params(
@@ -556,16 +535,9 @@ dbinit( 1 );
         # otherwise fails as there is no session
         $one->{ current_user } = eleMentalClinic::Personnel->retrieve( 1004 );
 
-    TODO: {
-            local $TODO = "Fails with weird warnings when run in whole test suite.";
-        warnings_like { $one->charge_codes_only } [
-            qr/Use of uninitialized value.*/,
-            qr/Use of uninitialized value.*/,
-        ];
         is_deeply( $one->errors, [
             '<strong>Writer</strong> is required.'
         ]);
-    };
 
     # with params
     ok( $one = $CLASS->new_with_cgi_params(
@@ -643,10 +615,8 @@ dbinit( 1 );
         # otherwise fails as there is no session
         $one->{ current_user } = eleMentalClinic::Personnel->retrieve( 1004 );
 
-    TODO: {
-            local $TODO = "Again, shouldn't warn uninitialized values when missing parameters";
         warnings_are { $one->commit } [];
-    };
+
     is_deeply( $one->errors, [
         '<strong>Goal</strong> is required unless you select a charge code in: N/A, No Show',
         '<strong>Location</strong> is required unless you select a charge code in: N/A, No Show',
@@ -700,8 +670,6 @@ dbinit( 1 );
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # view
-    TODO: {
-            local $TODO = "Should not call _note_action when parameters missing, dies doing so currently";
         ok( $one = $CLASS->new_with_cgi_params(
             op          => 'view',
         ));
@@ -714,7 +682,6 @@ dbinit( 1 );
         is_deeply( $one->errors, [
             '<strong>rec_id</strong> is required.',
         ]);
-    };
 
     # not dying is good
     ok( $one = $CLASS->new_with_cgi_params(
@@ -734,8 +701,6 @@ dbinit( 1 );
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # edit
-    TODO: {
-            local $TODO = "Should not call _note_action when parameters missing, dies doing so currently";
         ok( $one = $CLASS->new_with_cgi_params(
             op          => 'edit',
         ));
@@ -748,7 +713,6 @@ dbinit( 1 );
         is_deeply( $one->errors, [
             '<strong>rec_id</strong> is required.',
         ]);
-    };
 
     # not dying is good
     ok( $one = $CLASS->new_with_cgi_params(
