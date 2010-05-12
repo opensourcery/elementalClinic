@@ -50,18 +50,23 @@ CREATE TABLE personnel_role_group_permission(
 
 -- Special Roles
 
+-- Admin role (id 1)
 INSERT INTO personnel_role( name, system_role, special_name )
         VALUES( 'admin', TRUE, 'admin' );
 
+-- Client role (id 2)
 INSERT INTO personnel_role( name, system_role, special_name )
         VALUES( 'all clients', TRUE, 'all_clients' );
 
+-- Group role (id 3)
 INSERT INTO personnel_role( name, system_role, special_name )
         VALUES( 'all groups', TRUE, 'all_groups' );
 
+-- Admins have the client role
 INSERT INTO personnel_role_member( role_id, member_id )
         VALUES( 2, 1 );
 
+-- Admins have the group role
 INSERT INTO personnel_role_member( role_id, member_id )
         VALUES( 3, 1 );
 
