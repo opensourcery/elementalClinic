@@ -31,6 +31,21 @@ are installed.
 
 This will install all missing dependencies.
 
+If you don't already have one, create a Postgres user and database to
+test EMC with.  Either use something like pgAdmin or use psql as a
+Postgres admin.  Here's an example assuming that "postgres" is your
+postgres admin account.  It creats an account called "emctest" and a
+databsase "emctest" owned by it.
+
+  sudo -u postgres psql
+
+  postgres=# create user emctest with password 'changethis';
+  CREATE ROLE
+  postgres=# create database elementalclinic owner emctest;
+  CREATE DATABASE
+
+Now you can run
+
   ./Build dev-setup
 
 This will prompt you for a database user and password.
@@ -42,7 +57,7 @@ If your database is named something other than 'elementalclinic', or is on a
 different host or port, you can configure those parameters by running
 `elementalclinic_setup` manually:
 
-  perl -Ilib script/elementalclinic_setup --db-name myclinic --db-host db.myclinic.com
+  perl -Ilib script/elementalclinic_setup --dev --db-name myclinic --db-host db.myclinic.com
 
 See `script/elementalclinic_setup` for more details.
 
