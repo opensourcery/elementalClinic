@@ -1226,8 +1226,7 @@ dbinit( 1 );
     is( $file, $test_file_path );
     like( $edi_data, qr/ISA\*00\*          \*00\*          \*ZZ\*OR00000        \*ZZ\*00824          \*060629\*1604\*U\*00401\*000001002\*0\*T\*:\~/ );
 
-    ok( -f $test_file_path, "test file $test_file_path exists after write()." );
-    ok(`file $test_file_path` =~ /ASCII text/,  "$test_file_path is an ASCII text file");
+    is_file_type($test_file_path);
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # process the first billing cycle: process 835, create transactions

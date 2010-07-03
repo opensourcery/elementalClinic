@@ -45,6 +45,7 @@ use eleMentalClinic::Client::AssessmentTemplate;
 
 use base qw/ Exporter /;
 our @EXPORT = qw/ $test $STRICT @DATA
+        is_file_type
         is_pdf_file
         is_deeply_except
         filtered_is_deeply
@@ -217,15 +218,33 @@ sub is_pdf_file {
     my $file = shift;
     my $name = shift;
 
+    local $Test::Builder::Level = $Test::Builder::Level + 1;
+    return is_file_type($file, "PDF", $name);
+}
+
+
+=head2 is_file_type
+
+  my $ok = is_file_type($file, $type);
+  my $ok = is_file_type($file, $type, $name);
+
+Tests if the $file is the $type of file.
+
+=cut
+
+sub is_file_type {
+    my($file, $type, $name) = @_;
+
     my $builder = Test::More->builder;
 
-    $name ||= "$file is a PDF document";
+    $name ||= "$file is a $type file";
 
     $builder->ok( -f $file, "$file exists" );
 
     my $safe_file = quotemeta $file;
-    return $builder->like(`file $safe_file`, qr/PDF/, $name);
+    return $builder->like(`file $safe_file`, qr/$type/, $name);
 }
+
 
 sub filtered_is_deeply {
     my ( $got, $want, $comment ) = @_;
