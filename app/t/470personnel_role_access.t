@@ -65,9 +65,11 @@ dbinit( 1 );
     $one = $CLASS->get_one_by_( reason => 'group' );
     is( $one->reason, 'group', "Got group" );
     isa_ok( $one->fetch_reason, 'eleMentalClinic::Group' );
+    my $want_name = $one->fetch_reason->name;
+    $want_name =~ s/\s*group\s*$//;
     is(
         $one->reason_name,
-        "Writer (" . $one->fetch_reason->name . ")",
+        "Writer ($want_name)",
         "reason name - group"
     );
 
