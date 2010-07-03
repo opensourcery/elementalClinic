@@ -117,7 +117,7 @@ dbinit( 1 );
     }
     SKIP: {
         skip "This test assumes there is not a valid dialup connection in the database, but Device::Modem exists.", 1 if( $valid_connection or ! $one->modem );
-        throws_ok{ $one->disconnect } qr/Can't call method "purge_all" on an undefined value/;
+        throws_ok{ $one->disconnect } qr/(Can't call method "purge_all" on an undefined value|Not connected)/;
     }
     SKIP: {
         skip "Dialup won't work until there is a valid dialup connection in the database.", 2 unless $valid_connection;
@@ -170,7 +170,7 @@ dbinit( 1 );
     SKIP: {
         skip "These tests assume there is not a valid dialup connection in the database, but Device::Modem exists.", 2 if( $valid_connection or ! $one->modem );
         is( $one->get_new_files, undef );
-        throws_ok{ $one->receive_files } qr/Can't call method "read" on an undefined value/;
+        throws_ok{ $one->receive_files } qr/(Can't call method "read" on an undefined value|Not connected)/;
     }
     SKIP: {
         skip "Dialup won't work until there is a valid dialup connection in the database.", 1 unless $valid_connection;
