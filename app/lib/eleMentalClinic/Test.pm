@@ -458,8 +458,7 @@ sub db_fields {
     / );
     return unless $tmp->[0];
 
-    my @result;
-    push @result, $_->{ attname } for @$tmp;
+    my @result = sort map { $_->{attname} } @$tmp;
     return \@result;
 }
 
