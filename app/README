@@ -34,15 +34,14 @@ This will install all missing dependencies.
 If you don't already have one, create a Postgres user and database to
 test EMC with.  Either use something like pgAdmin or use psql as a
 Postgres admin.  Here's an example assuming that "postgres" is your
-postgres admin account.  It creats an account called "emctest" and a
-databsase "emctest" owned by it.
+postgres admin account.  It creats an account called "emctest" that
+can create databases (the EMC setup and migration process drops and
+creates its database a lot).
 
   sudo -u postgres psql
 
-  postgres=# create user emctest with password 'changethis';
+  postgres=# create user emctest with password 'changethis' createdb;
   CREATE ROLE
-  postgres=# create database elementalclinic owner emctest;
-  CREATE DATABASE
 
 Now you can run
 
@@ -74,7 +73,7 @@ This loads a set of test data, with appointments, progress notes, clients, etc.
 
 *** To run a test webserver:
 
-  script/elementalclinic_web_server.pl
+  ./script/elementalclinic_web_server.pl
 
 The test webserver starts on port 3000 by default.  To log on as the
 administrative user:
@@ -96,3 +95,7 @@ running the tests:
 
   ./Build db-clean-dev
   ./Build test
+
+Or just run one target which will take care of it for you:
+
+  ./Build db-clean-dev-test
