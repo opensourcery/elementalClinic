@@ -77,6 +77,7 @@ sub get_by_item_association {
             WHERE lookup_table_id = $table_id
             AND lookup_item_id = $item_id
         )
+        ORDER BY item_id
     /;
   0 and print STDERR $query;
     my $sth = $self->db->dbh->prepare( $query );
