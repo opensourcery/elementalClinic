@@ -79,13 +79,9 @@ sub get_by_item_association {
         )
         ORDER BY item_id
     /;
-  0 and print STDERR $query;
-    my $sth = $self->db->dbh->prepare( $query );
-    $sth->execute;
 
-    my( $row, @results );
-    push @results => $row->[ 0 ] while( $row = $sth->fetchrow_arrayref );
-    @results ? \@results : undef;
+    my $results = $self->db->dbh->selectcol_arrayref($query);
+    return @$results ? $results : undef;
 }
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
