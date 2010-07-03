@@ -45,6 +45,7 @@ use eleMentalClinic::Client::AssessmentTemplate;
 
 use base qw/ Exporter /;
 our @EXPORT = qw/ $test $STRICT @DATA
+        is_pdf_file
         is_deeply_except
         filtered_is_deeply
         ids
@@ -200,6 +201,30 @@ sub is_deeply_except {
     is_deeply( \@test_me, \@expected )
         or diag "Failure of 'is_deeply_except' above was called from $caller\n";
     return 1;
+}
+
+
+=head2 is_pdf_file
+
+  my $ok = is_pdf_file($file);
+  my $ok = is_pdf_file($file, $name);
+
+Tests if the $file is a PDF document.
+
+=cut
+
+sub is_pdf_file {
+    my $file = shift;
+    my $name = shift;
+
+    my $builder = Test::More->builder;
+
+    $name ||= "$file is a PDF document";
+
+    $builder->ok( -f $file, "$file exists" );
+
+    my $safe_file = quotemeta $file;
+    return $builder->like(`file $safe_file`, qr/PDF/, $name);
 }
 
 sub filtered_is_deeply {

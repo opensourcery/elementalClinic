@@ -75,8 +75,7 @@ dbinit( 1 );
     ok( $one->populate );
     ok( $tmp = $one->write );
     like( $tmp, qr/Client1004Auth112106-052106.pdf/ );
-    ok( -f $tmp, "test file $tmp exists after write()." );
-    ok( `file $tmp` =~ /PDF/,  "$tmp is a pdf file" );
+    is_pdf_file($tmp);
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # save and write again
@@ -84,8 +83,7 @@ dbinit( 1 );
         $one = $CLASS->retrieve( $tmp->id );
     ok( $tmp = $one->write );
     like( $tmp, qr/Client1004Auth112106-052106.pdf/ );
-    ok( -f $tmp, "test file $tmp exists after write()." );
-    ok( `file $tmp` =~ /PDF/,  "$tmp is a pdf file" );
+    is_pdf_file($tmp);
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # date_requested

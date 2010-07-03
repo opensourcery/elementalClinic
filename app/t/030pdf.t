@@ -55,11 +55,7 @@ BEGIN {
         my $output = $one->config->pdf_out_root . '/wacoauth.pdf';
     ok( $one->start_pdf( $output, 'wacoauth' ) );
     ok( $one->write_pdf( $fields ) );
-    ok( -f $output, "test file $output exists after write()." );
-
-    # In case the path contains spaces
-    my $safe_output = quotemeta $output;
-    ok(`file $safe_output` =~ /PDF/,  "$output is a pdf file");
+    is_pdf_file($safe_output);
 
     #cmp_pdf( $tmp, '/var/spool/elementalclinic/pdf_out/test.pdf' );
 

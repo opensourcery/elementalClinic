@@ -1432,8 +1432,7 @@ dbinit( 1 );
         $one->id( 1002 )->retrieve;
     is( $one->write_hcfas( 1001, '2006-06-29 16:04:25' ), $test_file_path );
 
-    ok( -f $test_file_path, "test file $test_file_path exists after write()." );
-    ok(`file $test_file_path` =~ /PDF/,  "$test_file_path is a pdf file");
+    is_pdf_file($test_file_path);
 
     #cmp_pdf( $test_file_path, 'templates/default/hcfa_billing/hcfa1500.pdf' );
 

@@ -296,8 +296,7 @@ dbinit( 1 );
 
     ok( $tmp = $one->write );
     like( $tmp, qr/MedicaidAdjustment1002.112906.pdf/ );
-    ok( -f $tmp, "test file $tmp exists after write()." );
-    ok( `file $tmp` =~ /PDF/,  "$tmp is a pdf file" );
+    is_pdf_file($tmp);
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # string_to_boxes
