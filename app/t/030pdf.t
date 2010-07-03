@@ -55,7 +55,7 @@ BEGIN {
         my $output = $one->config->pdf_out_root . '/wacoauth.pdf';
     ok( $one->start_pdf( $output, 'wacoauth' ) );
     ok( $one->write_pdf( $fields ) );
-    is_pdf_file($safe_output);
+    is_pdf_file($output);
 
     #cmp_pdf( $tmp, '/var/spool/elementalclinic/pdf_out/test.pdf' );
 
