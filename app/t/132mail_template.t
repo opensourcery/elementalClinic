@@ -36,7 +36,7 @@ dbinit( 1 );
     is_deeply( $one->fields, [ qw/ rec_id name subject message subject_attach message_attach clinic_attach / ]);
     is_deeply( $one->table, 'email_templates' );
 
-    my $one = $CLASS->new({
+    $one = $CLASS->new({
         name => 'Test A',
         subject => 'Test A',
         message => 'Test A',
