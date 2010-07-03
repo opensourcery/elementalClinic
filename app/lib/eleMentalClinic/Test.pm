@@ -45,7 +45,6 @@ use eleMentalClinic::Client::AssessmentTemplate;
 
 use base qw/ Exporter /;
 our @EXPORT = qw/ $test $STRICT @DATA
-        is_deeply_no_cache
         is_deeply_except
         filtered_is_deeply
         ids
