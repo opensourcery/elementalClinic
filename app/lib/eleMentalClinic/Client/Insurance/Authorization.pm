@@ -369,7 +369,7 @@ sub capitation_amount_percent {
 
     return unless $self->allowed_amount;
     return 0 unless $self->capitation_amount;
-    return sprintf( "%.0f" => $self->capitation_amount / ( $self->allowed_amount / 100 ));
+    return $self->_format_percent( $self->capitation_amount, $self->allowed_amount );
 }
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -390,7 +390,31 @@ sub capitation_time_percent {
     $today ||= $self->today;
     my $days_total = Delta_Days(( split /-/ => $self->end_date ), ( split /-/ => $self->start_date ));
     my $days_todate = Delta_Days(( split /-/ => $today ), ( split /-/ => $self->start_date ));
-    return sprintf( "%.0f" => $days_todate / ( $days_total / 100 ));
+
+    return $self->_format_percent($days_todate, $days_total);
+}
+
+
+=begin private
+
+    my $percent = $self->_format_percent( $numerator, $denominator );
+
+Will return a formatted integer percentage.
+
+=end private
+
+=cut
+
+sub _format_percent {
+    my $self = shift;
+    my($numer, $denom) = @_;
+
+    my $percent = sprintf( "%.0f" => $numer / ( $denom / 100 ));
+
+    # -0.12 will come out as -0 and that's weird.
+    $percent = 0 if $percent eq "-0";
+
+    return $percent;
 }
 
 
