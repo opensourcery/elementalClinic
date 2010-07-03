@@ -235,6 +235,9 @@ sub migrate {
             if ($output =~ /ERROR:/ or $output =~ /could not connect/) {
                 die "Error during migration -- aborting: $output";
             }
+            elsif( $output =~ /command not found/ ) {
+                die "Couldn't find your psql command";
+            }
         } elsif ( $type eq 'pl' ) {
             unless ( do $path ){
                 die "Can't compile $path: $@" if $@;
