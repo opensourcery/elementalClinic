@@ -173,6 +173,7 @@ my $r = {
   },
   'test_requires' => {
     'Class::MOP' => 0,
+    'DateTime'   => 0,
     'Getopt::Long' => 0,
     'HTML::Entities' => 0,
     'HTML::TreeBuilder' => 0,

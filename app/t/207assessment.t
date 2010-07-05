@@ -284,14 +284,32 @@ is_deeply(
     ]
 );
 
+
+# XXX This test is useless because the fixture data is fixed and they're now
+# all over a year old.  The fixture data is also used in a number of places so
+# adding to it is complicated.
+my @assessments = grep { $_->{staff_id} == 1001 && _how_old($_->{end_date})->years >= 1 }
+                       values %$client_assessment;
 is_deeply( 
     $one->get_staff_all({ staff_id => 1001, year_old => 1 }),
-    [
-        $client_assessment->{ 1003 },
-        $client_assessment->{ 1004 },
-        $client_assessment->{ 1005 },
-    ]
+    \@assessments
 );
+
+
+use DateTime;
+sub _how_old {
+    my $iso_date = shift;
+    my $now = DateTime->now;
+    my($year, $month, $day) = split /-/, $iso_date;
+    my $date = DateTime->new(
+        year    => $year,
+        month   => $month,
+        day     => $day
+    );
+
+    return $now - $date;
+}
+
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 dbinit( 1 );
