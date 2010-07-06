@@ -30,8 +30,12 @@
         <td colspan="3" />
     </tr>
     <tr>
-        <td>Phone :</td> 
-        <td><h4>[% client.phone %]</h4></td>
+        <td>Phone :</td>
+        [% TRY %]
+        <td><h4>[% client.phone.phone_number %]</h4></td>
+        [% CATCH %]
+        <td></td>
+        [% END %]
         <td colspan="3" />
     </tr>
     <tr>
