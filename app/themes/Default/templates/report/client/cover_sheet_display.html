@@ -20,8 +20,7 @@
     <tr>
         <td>First Name :</td>
         <td><b>[% client.fname %]</b></td>
-        <td>&nbsp;</td>
-        <td>MI :</td>
+        <td>Middle :</td>
         <td><b>[% client.mname %]</b></td>
     </tr>
     <tr>
@@ -32,7 +31,7 @@
     <tr>
         <td>Phone :</td>
         [% TRY %]
-        <td><h4>[% client.phone.phone_number %]</h4></td>
+        <td><b>[% client.phone.phone_number %]</b></td>
         [% CATCH %]
         <td></td>
         [% END %]
