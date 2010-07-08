@@ -1,6 +1,7 @@
 [%
     pref_date_format = current_user.pref.date_format;
     source_script = return_script || script;
+    is_edit = op.match('appointment_edit');
 -%]
 [% BLOCK select_location;
   INCLUDE util/choose_valid_data.html
@@ -20,7 +21,7 @@
     </div>
     <div class="content" id="appointment_content">
 [% END %]
-        [% IF op == 'appointment_edit' %]
+        [% IF is_edit %]
         <h6>Editing existing appointment for</h6>
         [% ELSE %]
         <h6>Creating new appointment for</h6>
@@ -73,7 +74,7 @@
             <div class="dynamic">
                 <input type="hidden" name="date" id="[% prefix %]appointment_date" value="[% appointment.schedule_availability.date || date %]" />
             
-                [% IF op == 'appointment_edit' %]
+                [% IF is_edit %]
                     [% IF ! Config.quick_schedule_availability %]
                     [% INCLUDE util/select_new.html
                         id      = "${prefix}schedule_availability_id"
