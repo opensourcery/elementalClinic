@@ -64,11 +64,6 @@ sub home {
 
         my $output;
 
-        $clients = [ sort {
-            my $get_val = sub { my $x = shift; join(undef, map { lc($x->{$_}) } qw/lname fname mname/ )};
-            $get_val->($a) cmp $get_val->($b);
-        } @$clients ];
-
         for( @$clients ) {
             $output .= qq(<option value="$_->{ client_id }">);
             $output .= qq($_->{ lname }, $_->{ fname } $_->{ mname });
