@@ -75,6 +75,7 @@ sub ops {
             ssn     => [ 'Social Security number', 'demographics::us_ssn(integer)' ],
             dob     => [ 'Birthdate', 'date::general' ],
             phone   => [ 'Phone', 'text::hippie', 'length(0,25)' ],
+            phone_2 => [ '2nd Phone', 'text::hippie', 'length(0,25)' ],
             email   => [ 'Email', 'email', 'length(0,64)' ],
             renewal_date  => [ 'Renewal Date', 'date::general' ],
             aka     => [ 'Alias', 'length(0,25)' ],
@@ -216,10 +217,10 @@ sub save {
     # required by an update to renewal_date
     $client->update({ $self->Vars, staff_id => $self->current_user->staff_id });
     my $vars = $self->Vars;
-    $self->save_phone(
+    $self->save_phones(
         $client,
-        $self->Vars->{ phone },
-        0,
+        $vars,
+        [ qw(phone phone_2) ],
     );
     $self->home;
 }

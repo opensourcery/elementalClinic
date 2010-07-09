@@ -77,7 +77,7 @@ a.mailsubject:hover {
   width: 98%;
 }
 
-#fname, #lname, #phone, #email {
+#fname, #lname, #phone, #phone_2, #email {
     width: 134px;
 }
 

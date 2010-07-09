@@ -59,7 +59,15 @@
               value=phone || current_client.phone_f
               size='20'
             %]
-            [%# INCLUDE util/input_text.html name='phone_2' label='2nd Phone' dl=1 value=current_client.phone2_f size='20' %]
+
+            [% INCLUDE util/input_text.html
+               name='phone_2'
+               label='2nd Phone'
+               dl=1
+               value=phone_2 || current_client.phones.1.phone_number
+               size='20'
+            %]
+
             [% INCLUDE util/input_text.html name='email' label='Email' dl=1 value=current_client.email size='20' %]
 
             <dt>Send Email Notifications:</dt>
