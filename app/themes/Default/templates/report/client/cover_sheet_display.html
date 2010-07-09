@@ -32,12 +32,12 @@
     </tr>
     <tr class="odd">
         <th>Phone :</th>
-        [% TRY %]
-        <td>[% client.phone.phone_number %]</td>
-        [% CATCH %]
-        <td></td>
+        <td>
+       [% FOREACH phone IN client.phones %]
+            [% phone.phone_number %]<br/>
         [% END %]
-    </tr>
+       </td>
+      </tr>
     <tr class="even">
         <th>Received Date :</th>
         <td>[% (client.received_date || today_ymd) FILTER date_format(pref_date_format) %]</td>
