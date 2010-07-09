@@ -1,3 +1,26 @@
+body {
+    height: 90%;
+    width: 100%;
+}
+
+.footer {
+      display: block;
+      position: fixed;
+      bottom: 0;
+}
+
+.footer li {
+    list-style-type: none;
+    display: inline;
+    padding-right: 5em;
+}
+
+.footer ul {
+    margin: 0;
+    padding: 0;
+}
+
+
 div.center,
 div.wrap0,
 div.wrap1,
@@ -75,6 +98,9 @@ table.page {
 table.first {
     page-break-before : avoid !important;
 }
+table.cover_sheet {
+    border: 0;
+}
 thead {
     display : table-header-group;
 }
@@ -83,6 +109,14 @@ tbody {
 }
 th {
     border-bottom : 2px solid #000;
+}
+table.cover_sheet th, table.cover_sheet td {
+    text-align: left;
+    padding: 10px;
+    border: 0;
+}
+table.cover_sheet td {
+    border-left : 2px solid #999;
 }
 td {
     border-left : 1px solid #999;

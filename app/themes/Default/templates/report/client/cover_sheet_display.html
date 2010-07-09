@@ -6,43 +6,50 @@
 [% pref_date_format = current_user.pref.date_format -%]
 <div id="cover_sheet_display">
 <h3>Receive File</h3>
-<p>[% client.id %]</p>
 
-<table>
-    <th>
-        <th colspan="5" />
-    </th>
-    <tr>
-        <td>Last Name :</td>
-        <td><b>[% client.lname %]</b></td>
-        <td colspan="3" />
+<table class="cover_sheet" width="100%">
+    <col width="40%" />
+    <col width="60%" />
+    <tr class="even">
+        <th>ID :</th>
+        <td>[% client.id %]</td>
     </tr>
-    <tr>
-        <td>First Name :</td>
-        <td><b>[% client.fname %]</b></td>
-        <td>Middle :</td>
-        <td><b>[% client.mname %]</b></td>
+    <tr class="odd">
+        <th>Last Name :</th>
+        <td>[% client.lname %]</td>
     </tr>
-    <tr>
-        <td>DOB :</td>
+    <tr class="even">
+        <th>First Name :</th>
+        <td>[% client.fname %]</td>
+    </tr>
+    <tr class="odd">
+        <th>Middle Name:</th>
+	<td>[% client.mname %]</td>
+    </tr>
+    <tr class="even">
+        <th>DOB :</th>
         <td>[% client.dob FILTER date_format(pref_date_format) %]</td>
-        <td colspan="3" />
     </tr>
-    <tr>
-        <td>Phone :</td>
+    <tr class="odd">
+        <th>Phone :</th>
         [% TRY %]
-        <td><b>[% client.phone.phone_number %]</b></td>
+        <td>[% client.phone.phone_number %]</td>
         [% CATCH %]
         <td></td>
         [% END %]
-        <td colspan="3" />
     </tr>
-    <tr>
-        <td>Received Date :</td>
+    <tr class="even">
+        <th>Received Date :</th>
         <td>[% (client.received_date || today_ymd) FILTER date_format(pref_date_format) %]</td>
-        <td colspan="3" />
     </tr>
 </table>
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-<h2>Approved:<u>&nbsp;&nbsp;&nbsp;</u>Yes<u>&nbsp;&nbsp;&nbsp;</u>No</h2>
+</div>
+
+
+<div class="footer">
+   <ul>
+   <li><strong>Approved</strong></li>
+   <li>Yes</li>
+   <li>No</li>
+  </ul>
 </div>
