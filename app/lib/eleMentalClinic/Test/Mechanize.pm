@@ -272,6 +272,7 @@ sub get_script_ok {
     my $self = shift;
     my( $script, %args ) = @_;
 
+    local $Test::Builder::Level = $Test::Builder::Level + 1;
     $self->get_ok( $self->uri_for( $script || '', \%args ) );
 }
 
@@ -279,6 +280,8 @@ sub get_script_ok {
 sub start_time {
     my $self = shift;
     my( $diag ) = @_;
+
+    local $Test::Builder::Level = $Test::Builder::Level + 1;
     ok( 1, $diag )
         if defined $diag;
     $self->{emc}{time} = [ gettimeofday ];
@@ -289,6 +292,7 @@ sub print_time {
     my $self = shift;
     my( $label ) = @_;
 
+    local $Test::Builder::Level = $Test::Builder::Level + 1;
     return ok( 0, 'No timer started' )
         unless my $start_time = $self->{emc}{time};
 
@@ -317,6 +321,8 @@ or fail.
 sub login_ok {
     my $self = shift;
     my( $expected_to_pass, $username, $password, $diag ) = @_;
+
+    local $Test::Builder::Level = $Test::Builder::Level + 1;
 
     Carp::croak 'first argument to login_ok must be defined'
         unless defined $expected_to_pass;
@@ -358,6 +364,8 @@ Use the test data's admin username and password to log in.
 
 sub admin_login_ok {
     my $self = shift;
+
+    local $Test::Builder::Level = $Test::Builder::Level + 1;
     $self->login_ok(1, 'clinic', 'dba');
 }
 
@@ -374,6 +382,8 @@ Object method.
 sub logout_ok {
     my $self = shift;
     my( $diag ) = @_;
+
+    local $Test::Builder::Level = $Test::Builder::Level + 1;
 
     $self->start_time( $diag );
     $self->get_script_ok( '' );
@@ -440,6 +450,7 @@ sub header_ok {
     my $self = shift;
     my ($url, $header, $expected) = @_;
 
+    local $Test::Builder::Level = $Test::Builder::Level + 1;
     $self->without_redirects(sub {
         my $self = shift;
         my $res = $self->get($url);
@@ -467,6 +478,7 @@ sub response_code_ok {
     my $self = shift;
     my ($url, $expected_code, $desc) = @_;
 
+    local $Test::Builder::Level = $Test::Builder::Level + 1;
     $self->without_redirects(sub {
         my $self = shift;
         $self->get($url);
@@ -491,6 +503,8 @@ sub get_and_return_ok {
     my $self = shift;
     my ( $url ) = @_;
     my $uri = $self->uri;
+
+    local $Test::Builder::Level = $Test::Builder::Level + 1;
     if ( eval { $self->get_ok( @_ ) } ) {
         my $rv = $self->res;
         $self->get( $uri );
@@ -517,6 +531,8 @@ sub follow_link_and_return_ok {
     my $self = shift;
     my ( $arg, $label ) = @_;
     my $uri = $self->uri;
+
+    local $Test::Builder::Level = $Test::Builder::Level + 1;
     if ( eval { $self->follow_link_ok( $arg, $label ) } ) {
         my $rv = $self->res;
         $self->get( $uri );
@@ -691,6 +707,8 @@ sub id_match {
 sub id_match_ok {
     my $self = shift;
     my ( $want, $label ) = @_;
+
+    local $Test::Builder::Level = $Test::Builder::Level + 1;
     $label ||= 'match ' . join(', ', sort keys %$want);
     ok( $self->id_match( $want ), $label )
 }
