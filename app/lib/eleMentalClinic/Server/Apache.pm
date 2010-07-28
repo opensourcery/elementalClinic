@@ -45,7 +45,7 @@ has tmpdir => (
     is      => 'ro',
     isa     => Str,
     lazy    => 1,
-    default => File::Spec->tmpdir,
+    default => "/tmp",
 );
 
 has config_file => (
@@ -98,7 +98,7 @@ sub start {
     }
     my $i = 0;
     while (! -e $self->pid_file) {
-        croak "Apache pid file does not exist after $i tries, giving up"
+        croak "Apache pid file @{[ $self->pid_file ]} does not exist after $i tries, giving up"
             if $i++ > 30;
         sleep 1;
     }
