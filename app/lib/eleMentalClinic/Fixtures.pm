@@ -10,7 +10,7 @@ package eleMentalClinic::Fixtures;
 use strict;
 use warnings;
 
-use Storable;
+use Data::Dumper;
 use YAML::Syck;
 use Template;
 use DBI;
@@ -282,11 +282,14 @@ Loads a fixture (optionally compiling if it does not exist) of
 sub load_fixture {
     my ($filename, $force_compile) = @_;
 
-    if ($force_compile || ! -f "$filename.compiled" ) {
-        compile_fixture($filename);
-    }
+    my $recompile = $force_compile || !-f "$filename.compiled";
 
-    return Storable::retrieve("$filename.compiled");
+    if( $recompile ) {
+        return compile_fixture($filename);
+    }
+    else {
+        return _retrieve("$filename.compiled");
+    }
 }
 
 =head2 compile_fixture($filename)
@@ -301,7 +304,8 @@ Unconditionally compiles a fixture. Stores it in a filename named
 sub compile_fixture {
     my $filename = shift;
     my $data = YAML::Syck::LoadFile( $filename ) or die( $! );
-    Storable::store( $data, "$filename.compiled" );
+    _store($data, "$filename.compiled");
+    return $data;
 }
 
 =head2 process_fixture( $file )
@@ -329,8 +333,31 @@ sub process_fixture {
 
     my $processed = '';
     $tt->process( $file, {}, \$processed );
-    return unless Storable::store( YAML::Syck::Load( $processed ), "$file.compiled" );
-    return Storable::retrieve( "$file.compiled" );
+    return unless _store( YAML::Syck::Load( $processed ), "$file.compiled" );
+    return _retrieve( "$file.compiled" );
+}
+
+
+sub _retrieve {
+    my $file = shift;
+
+    open my $fh, "<", $file
+      or croak "Can't open $file: $!";
+    my $data = do { local $/; <$fh> };
+    return eval $data;
+}
+
+sub _store {
+    my $data = shift;
+    my $file = shift;
+
+    my $dumper = Data::Dumper->new( [$data] );
+
+    open my $fh, ">", $file or
+      croak "Can't open $file: $!";
+    print $fh $dumper->Indent(1)->Terse(1)->Dump;
+
+    return 1;
 }
 
 =head2 insert_fixture_data( $path, $data )
