@@ -1227,7 +1227,7 @@ TODO: {
     dbinit( 1 );
 
         # create a progress note in the date range, with a charge code that's missing dollars_per_unit
-        my $tmp = $CLASS->new({
+        $tmp = $CLASS->new({
             client_id   => 1003,
             staff_id    => 1002,
             goal_id     => 0,

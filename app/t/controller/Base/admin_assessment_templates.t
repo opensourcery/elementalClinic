@@ -129,7 +129,7 @@ sub last_id {
     # Re-Running the test, the sequence is not reset, this id changes every time.
     # This lets us grab it and know it for the test.
 
-    my $tmp = eleMentalClinic::Client::AssessmentTemplate->retrieve( 1003 );
+    $tmp = eleMentalClinic::Client::AssessmentTemplate->retrieve( 1003 );
     $one = $CLASS->new_with_cgi_params(
         op => 'clone_template',
         assessment_id => $tmp->rec_id,
