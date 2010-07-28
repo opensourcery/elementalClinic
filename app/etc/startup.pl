@@ -1,4 +1,4 @@
-use lib qw({BRANCH});
+use lib q[{BRANCH}];
 
 use CGI ();
 CGI->compile();
