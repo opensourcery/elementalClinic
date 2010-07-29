@@ -75,7 +75,7 @@ BEGIN {
           appointment_count => 2 },
     ]);
 
-    is_deeply( $one->available_schedules(obj( treater => obj( rolodex_id => 1011 ))), [
+    is_deeply( $one->available_schedules(obj( treater => obj( rolodex_id => 1011 ), scheduler => '' )), [
         { schedule_availability_id => 1006, 
           date => $schedule_availability->{1006}->{date},
           location => $valid_data_prognote_location->{1002}->{name},
@@ -98,7 +98,7 @@ BEGIN {
           appointment_count => 3 },
     ]);
 
-    is_deeply( $one->available_schedules(obj( treater => obj( rolodex_id => 1001 ))), [
+    is_deeply( $one->available_schedules(obj( treater => obj( rolodex_id => 1001 ), scheduler => '' )), [
         { schedule_availability_id => 1008, 
           date => $schedule_availability->{1008}->{date},
           location => $valid_data_prognote_location->{1002}->{name},
