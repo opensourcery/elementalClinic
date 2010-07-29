@@ -9,7 +9,7 @@ use Test::Exception;
 use Data::Dumper;
 use eleMentalClinic::Test;
 
-our ($CLASS, $one, $tmp);
+our ($one, $tmp);
 
 my $CLASS = 'eleMentalClinic::Report';
 use eleMentalClinic::Report;
