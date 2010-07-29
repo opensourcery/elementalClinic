@@ -4,7 +4,7 @@
 use warnings;
 use strict;
 
-use Test::More tests => 166;
+use Test::More tests => 167;
 use Test::Exception;
 use Test::Warn;
 use Data::Dumper;
@@ -721,7 +721,12 @@ dbinit( 1 );
         $prognote->{ charge_code_id } = 2;  # No Show
         $prognote->save;
 
+    warnings_like {
         $test->financial_setup( 1 );
+    }
+    [qr/Error getting service line.* charge code is missing/,
+     qr/Error calculating amount_to_bill .* charge code is missing/
+    ];
         $billing_prognote = eleMentalClinic::Financial::BillingPrognote->retrieve( 1004 );
     is( $billing_prognote->prognote_id, 1044 );
     is( $billing_prognote->billing_service_id, 1004 );
