@@ -154,10 +154,6 @@ sub build_result {
     $result->{client} = $self->client->name
         if $self->client_id;
 
-
-    use Data::Dumper;
-    print STDERR Dumper( $result );
-
     return $result;
 }
 

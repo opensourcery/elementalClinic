@@ -65,9 +65,6 @@ sub build_result {
 
     $result->{physicians} ||= [ 'None listed' ];
 
-    use Data::Dumper;
-    print STDERR Dumper( $result );
-
     return $result;
 }
 
