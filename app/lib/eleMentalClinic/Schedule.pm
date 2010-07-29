@@ -286,7 +286,7 @@ sub available_schedules {
     my $class = shift;
     my ($staff) = @_;
 
-    my $where;
+    my $where = '';
     if ( $staff and !$staff->scheduler ) {
         return [] unless $staff->treater;
         my $rolodex_id = $staff->treater->rolodex_id;
