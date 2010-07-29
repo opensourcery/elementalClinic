@@ -61,6 +61,8 @@ Returns:
 sub build_result {
     my ($self) = @_;
 
+    $DB::single = 1;
+
     # global WHERE stuff.
     my $where_params = [];
     my $where = [];
@@ -174,6 +176,7 @@ sub access_list_from_field {
 
     my $query = "SELECT DISTINCT $field FROM $table";
     $query .= " WHERE " . join( ' AND ', @$where ) if ( @$where );
+    $query .= " ORDER BY $field";
 
     my $results = $self->db->do_sql(
         $query,
