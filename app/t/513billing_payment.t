@@ -509,10 +509,10 @@ dbinit( 1 );
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Test the prognotes, check the billing_status flag
 
-    is( eleMentalClinic::ProgressNote->retrieve( $_ )->billing_status, 'Paid' )
+    is( eleMentalClinic::ProgressNote->retrieve( $_ )->billing_status, 'Paid', "$_ was paid" )
         for ( qw/ 1043 1044 1045 1046 1047 1048 / );
 
-    is( eleMentalClinic::ProgressNote->retrieve( $_ )->billing_status, 'Billing' )
+    is( eleMentalClinic::ProgressNote->retrieve( $_ )->billing_status, 'Billing', "$_ is billing" )
         for ( qw/ 1056 1057 1058 1059 1065 1066 / );
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
