@@ -264,7 +264,16 @@ sub is_fully_paid {
 
     return 0 unless $total_paid;
 
-    return ($total_paid == $self->billed_amount) ? 1 : 0;
+    # Avoid floating point error
+    return $self->__about_equal($total_paid, $self->billed_amount) ? 1 : 0;
+}
+
+sub __about_equal {
+    my $self = shift;
+    my($this, $that, $epsilon) = @_;
+    $epsilon = 0.0000001 unless defined $epsilon;
+
+    return abs($this - $that) < $epsilon;
 }
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
