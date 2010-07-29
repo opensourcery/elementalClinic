@@ -197,10 +197,10 @@ sub run_cgi {
         local $CGI::PARAM_UTF8 = 1;
 
         my $cgi = CGI->new;
-        use Data::Dumper;
-        for my $key ( keys %$cgi ) {
+#        use Data::Dumper;
+#        for my $key ( keys %$cgi ) {
 #            print STDERR Dumper( $key, delete $cgi->{ $key }) if $key =~ m/^\./;
-        }
+#        }
         my $controller = eval {
             $controller_class->new({
                 request    => $c->can('apache') && $c->apache,
