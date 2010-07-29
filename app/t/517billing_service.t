@@ -1510,7 +1510,7 @@ dbinit(1);
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # is_fully_paid after second payment
    
-    is( $one->retrieve( 1003 )->is_fully_paid, 1 );
+    ok( $one->retrieve( 1003 )->is_fully_paid, "is_fully_paid after 2nd payment" );
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # get_other_insurances_paid_amount after second payment
