@@ -4,8 +4,9 @@
 use warnings;
 use strict;
 
-use Test::More tests => 157;
+use Test::More tests => 159;
 use Test::Exception;
+use Test::Warn;
 use Data::Dumper;
 use eleMentalClinic::Test;
 
@@ -859,10 +860,10 @@ dbinit(1);
         # Because the charge code info is missing, we assume it wasn't billed,
         # but we don't die.
         $one->retrieve( 1001 );
-    ok( $one->save_as_billed );
 
-        # TODO use Test::Warn
-        # warning_is qr/charge code is missing minutes_per_unit and\/or dollars_per_unit/ );
+    warning_like {
+        ok( $one->save_as_billed );
+    } qr/charge code is missing minutes_per_unit/;
 
         # the first service, charge code 1005, is not marked billed
         $tmp = eleMentalClinic::Financial::BillingService->retrieve( 1001 );
@@ -1069,7 +1070,11 @@ dbinit(1);
             $prognote->save;
         }
 
+    # Four charge codes missing dollars_per_unit, all should warn
+    warnings_like {
         $test->financial_setup( 1, undef, { no_payment => 1 });
+    } [(qr{charge code is missing .* dollars_per_unit}) x 4];
+
         $one->retrieve( 1003 );
     throws_ok{ $subdata = $CLASS->get_subscriber_data( [ $one ] ); } qr/No valid claims found/;
 
