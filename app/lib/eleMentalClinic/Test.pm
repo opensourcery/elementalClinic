@@ -235,6 +235,9 @@ Tests if the $file is the $type of file.
 sub is_file_type {
     my($file, $type, $name) = @_;
 
+    croak "is_file_type was not given a file" unless $file;
+    croak "is_file_type was not given a type" unless $type;
+
     my $builder = Test::More->builder;
 
     $name ||= "$file is a $type file";
