@@ -29,7 +29,6 @@ use eleMentalClinic::Department;
 use eleMentalClinic::Util;
 use eleMentalClinic::Mail;
 use Date::Calc qw/ check_date Add_Delta_Days Days_in_Month /;
-use Data::Dumper;
 use namespace::clean -except => 'meta';
 
 # namespace::autoclean would remove these; suffer through it for now
@@ -127,7 +126,6 @@ sub _build_report_class {
 }
 
 sub _build_report {
-    use Data::Dumper;
     return $_[0]->report_class->new( $_[0]->args );
 }
 
