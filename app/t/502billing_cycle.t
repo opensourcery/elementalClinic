@@ -1226,7 +1226,7 @@ dbinit( 1 );
     is( $file, $test_file_path );
     like( $edi_data, qr/ISA\*00\*          \*00\*          \*ZZ\*OR00000        \*ZZ\*00824          \*060629\*1604\*U\*00401\*000001002\*0\*T\*:\~/ );
 
-    is_file_type($test_file_path);
+    is_file_type($test_file_path, "ASCII text");
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # process the first billing cycle: process 835, create transactions
