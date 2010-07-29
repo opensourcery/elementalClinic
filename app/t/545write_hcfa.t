@@ -463,7 +463,6 @@ dbinit( 1 );
         my $test_file_path = $one->output_root . "/" . $one->make_filename( $billing_file->rec_id, 'Medicare' );
         unlink $test_file_path;
     is( $one->write, $test_file_path );
-    ok( -f $test_file_path, "test file $test_file_path exists after write()." );
     is_pdf_file($test_file_path);
     #cmp_pdf( $test_file_path, 'templates/default/hcfa_billing/hcfa1500.pdf' );
 
@@ -677,7 +676,7 @@ dbinit( 1 );
         $one->billing_file( eleMentalClinic::Financial::BillingFile->retrieve( 1001 ) );
     is( $one->generate_hcfas( $hcfa_data ), $test_file_path );
     
-    is_pdf_ok($test_file_path);
+    is_pdf_file($test_file_path);
 #    cmp_pdf( $test_file_path,  'sample.pdf' );
 
         # Add on 7 more services lines (total of 14), make sure we get 3 files
