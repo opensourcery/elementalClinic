@@ -296,9 +296,12 @@ sub get_all_by_client {
 sub id {
     my ($self, $value) = @_;
     my $key = $self->primary_key;
-    $key =~ s/\w+\.//;
-    croak "'$key' not found at Base::id"
-        unless $key and $self->can( $key );
+    $key =~ s/\w+\.// if defined $key;
+
+    unless( $key and $self->can( $key ) ) {
+        $key = defined $key ? q['$key'] : q[undef];
+        croak "key $key not found at Base::id";
+    }
     return $self->$key($value) if $value;
     return $self->$key;
 }
