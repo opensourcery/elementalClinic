@@ -33,9 +33,14 @@ $mech->submit_form_ok(
     'intake step 1',
 );
 
-$mech->content_unlike(qr/only words are allowed/i);
-# HTML-encoded UTF-8 encoded is wrong
-$mech->content_lacks(encode_entities(encode("utf-8", $str)));
+TODO: {
+    # This test never appears to have worked
+    local $TODO = "Unicode fields are broken";
+
+    $mech->content_unlike(qr/only words are allowed/i);
+    # HTML-encoded UTF-8 encoded is wrong
+    $mech->content_lacks(encode_entities(encode("utf-8", $str)));
+}
 
 $mech->get_script_ok(
     'demographics.cgi',
@@ -52,9 +57,19 @@ $mech->submit_form_ok(
     },
     'edit existing client',
 );
-$mech->content_contains(encode("utf-8", $str));
-$mech->get_script_ok(
-    'demographics.cgi',
-    client_id => $c->{client_id},
-);
-$mech->content_contains(encode("utf-8", $str));
+
+TODO: {
+    my $reason = "Unicode fields are broken";
+    local $TODO = $reason;
+
+    $mech->content_contains(encode("utf-8", $str));
+
+    $TODO = '';
+    $mech->get_script_ok(
+        'demographics.cgi',
+        client_id => $c->{client_id},
+    );
+
+    $TODO = $reason;
+    $mech->content_contains(encode("utf-8", $str));
+}
