@@ -185,6 +185,43 @@ sub look_down {
     return $self->tree->look_down(@_);
 }
 
+=head2 content_exceptions
+
+    my @exceptions = $mech->content_exceptions;
+
+Returns a list of exceptions encountered.
+
+=cut
+
+sub content_exceptions {
+    my $self = shift;
+
+    my $exceptions = $self->look_down(
+        _tag => 'div', id => 'exception_list'
+    );
+    return unless $exceptions;
+
+    return map { $_->as_trimmed_text } $exceptions->look_down( class => "report_link" );
+}
+
+=head2 no_content_exceptions_ok
+
+    $mech->no_content_exceptions_ok;
+
+Test that the content contains no exceptions.
+
+=cut
+
+sub no_content_exceptions_ok {
+    my $self = shift;
+
+    local $Test::Builder::Level = $Test::Builder::Level + 1;
+    my @exceptions = $self->content_exceptions;
+
+    return is_deeply \@exceptions, [], "no exceptions in the content";
+}
+
+
 =head2 content_errors
 
     my @errors = $mech->content_errors;
