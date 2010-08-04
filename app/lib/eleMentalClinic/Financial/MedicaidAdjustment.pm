@@ -9,7 +9,7 @@ eleMentalClinic::Financial::MedicaidAdjustment
 =head1 SYNOPSIS
 
 Writes Medicaid Claim Adjustment Form PDFs, specific to Oregon's Division
-of Medical Assistance Programs (DMAP). Child of L<eleMentalClinic::WriteClaim>.
+of Medical Assistance Programs (DMAP). Child of L<eleMentalClinic::Financial::WriteClaim>.
 
 DMAP 1036  Rev 01/07
 

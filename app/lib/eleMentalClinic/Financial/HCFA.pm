@@ -9,7 +9,7 @@ eleMentalClinic::Financial::HCFA
 =head1 SYNOPSIS
 
 Writes Health Insurance Claim Form PDFs - HCFAs. Child of 
-L<eleMentalClinic::WriteClaim>.
+L<eleMentalClinic::Financial::WriteClaim>.
 
 =head1 DESCRIPTION
 
