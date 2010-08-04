@@ -177,7 +177,6 @@ sub on_error {
         primary_treater   => eleMentalClinic::Rolodex->new({ 
             rec_id => $self->param('primary_treater_rolodex_id'),
         }),
-        remember_values => $self->gen_remember_values(),
     )->edit;
 }
 
