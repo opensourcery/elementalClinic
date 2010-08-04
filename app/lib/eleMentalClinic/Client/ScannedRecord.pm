@@ -43,7 +43,7 @@ and returns the oldest one.
 sub get_oldest_file {
     my $class = shift;
 
-    my $filepath = $class->config->scanned_record_root;
+    my $filepath = quotemeta $class->config->scanned_record_root;
   
     # look at all files, sort by oldest first
     # *.* will not pick up any files starting with dot
