@@ -23,6 +23,8 @@ use File::Spec;
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 {
+    use constant DEFAULT_GET_OLDEST_FILES => 20;
+
     sub table  { 'client_scanned_record' }
     sub fields { [ qw/
         rec_id client_id filename description created created_by
@@ -32,30 +34,44 @@ use File::Spec;
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-=head2 get_oldest_file()
+=head2 get_oldest_file
 
-Class method. Pulls a list of files in the scanned_record_root directory,
-and returns the oldest one.
+    my $file = $class->get_oldest_file;
+
+Returns the oldest files in the scanned_record_root.
+
+=head2 get_oldest_files
+
+    my $files = $class->get_oldest_files;
+    my $files = $class->get_oldest_files($howmany);
+
+Returns the oldest files in the scanned_record_root.  Its limited to
+$howmany or 25.
+
+If there are no files it will return an empty array ref.
 
 =cut
 
-# ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
-sub get_oldest_file {
+sub get_oldest_files {
     my $class = shift;
+    my $howmany = shift || DEFAULT_GET_OLDEST_FILES;
 
     my $filepath = quotemeta $class->config->scanned_record_root;
   
     # look at all files, sort by oldest first
     # *.* will not pick up any files starting with dot
-    my @files = sort { -M $b <=> -M $a } <$filepath/*.*>;
-    return unless $files[0];
-   
-    my $file = $files[0];
-    # strip the path off
-    $file =~ s/.*\/(.*)/$1/;
+    my @files = map  { s/.*\/(.*)/$1/; $_ }  # strip off the leading path
+                sort { -M $b <=> -M $a } <$filepath/*.*>;
 
-    return $file;
+    # Return only $howmany
+    return [grep { defined $_ } @files[0..$howmany-1]];
 }
+
+sub get_oldest_file {
+    my $class = shift;
+    return $class->get_oldest_files(1)->[0];
+}
+
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

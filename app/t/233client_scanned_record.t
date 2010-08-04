@@ -4,10 +4,12 @@
 use warnings;
 use strict;
 
-use Test::More tests => 68;
+use Test::More tests => 71;
 use Test::Exception;
 use Data::Dumper;
 use eleMentalClinic::Test;
+use Path::Class;
+use File::Temp qw(tempdir);
 
 our ($CLASS, $one, $tmp);
 BEGIN {
@@ -46,7 +48,7 @@ dbinit( 1 );
 # clean up in case this test file failed to run completely
 {
     unlink 't/resource/1003a.jpg';
-    unlink 't/resource/storetest/client1003/1003a.jpg';
+   unlink 't/resource/storetest/client1003/1003a.jpg';
     rmdir 't/resource/storetest/client1003';
     rmdir 't/resource/storetest';
     rmdir 't/resource/scantest';
@@ -64,7 +66,7 @@ dbinit( 1 );
 }
 
 
-# get_oldest_file
+# get_oldest_file/s
 {
     can_ok( $CLASS, 'get_oldest_file' );
 
@@ -73,17 +75,32 @@ dbinit( 1 );
     is( $CLASS->get_oldest_file, undef );
     $one->config->scanned_record_root( 'doesntactuallyexist' );
     is( $CLASS->get_oldest_file, undef );
+    is_deeply( $CLASS->get_oldest_files, [] );
+
+    my $tempdir = dir tempdir( CLEANUP => 1 );
+    $tempdir->file("log.conf")->touch;
+
+    $one->config->scanned_record_root( $tempdir );
+    
+    is( $CLASS->get_oldest_file,       'log.conf' );
+    is_deeply( $CLASS->get_oldest_files,     ['log.conf'] );
+    is_deeply( $CLASS->get_oldest_files(10), ['log.conf'] );
+
+    # .files are not supposed to show up
+    sleep 1;
+    $tempdir->file(".file")->touch;
+    sleep 1;
+    $tempdir->file("another.file")->touch;
+    sleep 1;
+    $tempdir->file("and.another")->touch;
+
+    # Test the limiter
+    is_deeply( $CLASS->get_oldest_files(2), [
+        "log.conf",
+        "another.file",
+    ]);
 
     $one->config->scanned_record_root( 't/resource' );
-    is( $CLASS->get_oldest_file, 'log.conf' );
-        
-    # create a test file there, to test that we get the older file
-    open( TESTFILE, ">> t/resource/a.new.file" );
-    print TESTFILE "something";
-    close TESTFILE;
-
-    is( $CLASS->get_oldest_file, 'log.conf' );
-
     unlink 't/resource/a.new.file';
 }
 

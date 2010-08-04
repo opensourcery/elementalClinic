@@ -55,7 +55,9 @@ sub home {
     my $self = shift;
     my( $vars ) = @_;
 
-    $vars->{ file } = eleMentalClinic::Client::ScannedRecord->get_oldest_file;
+    my $files = eleMentalClinic::Client::ScannedRecord->get_oldest_files;
+    $vars->{ file } = $files->[0];  # for compatibility
+    $vars->{ files } = $files;
     $vars->{ history } = eleMentalClinic::Client::ScannedRecord->get_history;
 
     # remember field values in case of error
