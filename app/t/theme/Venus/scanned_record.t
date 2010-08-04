@@ -4,30 +4,30 @@ use strict;
 use warnings;
 use lib 't/lib';
 use Venus::Mechanize;
-use Test::More tests => 22;
+use Test::More tests => 28;
 
-my $filename = 'sample_scan.1.jpg';
+my @files = (
+    'sample_scan.1.jpg',
+    'sample_scan.2.jpg'
+);
+
+# Find a file in the file selector
+sub find_file {
+    my($mech, $file) = @_;
+    return $mech->tree->look_down(id => "file")->look_down(_tag => 'input', value => $file);
+}
 
 sub fresh_start_ok {
-    my ( $mech ) = @_;
+    my ( $mech, @files ) = @_;
 
     $mech->get_script_ok( 'scanned_record.cgi' );
 
-    ok(
-        $mech->tree->look_down(_tag => 'img', alt => $filename),
-        'found scanned record',
-    );
-    is(
-        $mech->tree->look_down(id => 'file_details')
-            ->look_down(_tag => 'table')->as_trimmed_text,
-        '',
-        'no history yet',
-    );
-
-    $mech->follow_link_and_return_ok(
-        { text => $filename },
-        'view scanned file',
-    );
+    for my $file (@files) {
+        ok(
+            find_file($mech, $file),
+            "found scanned record $file",
+        );
+    }
 }
 
 my $mech = Venus::Mechanize->new_with_server;
@@ -35,7 +35,19 @@ my $mech = Venus::Mechanize->new_with_server;
 # use someone with admin=0 scanner=1
 $mech->login_ok( 1, 'whip', 'cracker' );
 
-fresh_start_ok( $mech );
+fresh_start_ok( $mech, @files );
+
+$mech->follow_link_and_return_ok(
+    { text => $files[0] },
+    'view scanned file',
+);
+
+is(
+    $mech->tree->look_down(id => 'file_details')
+               ->look_down(_tag => 'table')->as_trimmed_text,
+    '',
+    'no history yet',
+);
 
 # javascript for choosing a client means I have to fake a form submission
 $mech->post_ok(
@@ -44,12 +56,21 @@ $mech->post_ok(
         client_id => 1001,
         description => 'a scanned file',
         op => 'Associate File with Patient',
-        filename => $filename,
+        filename => $files[0],
     },
     'fake form post',
 );
 
-$mech->content_contains( 'No scanned files.' );
+# Is the associated file gone from the list?
+ok(
+    find_file($mech, $files[1]),
+    "found scanned record $files[1]",
+);
+ok(
+    !find_file($mech, $files[0]),
+    "associated file no longer in list",
+);
+
 
 my @history = $mech->tree->look_down(id => 'file_details')
     ->look_down(_tag => 'table')->look_down(_tag => 'tr');
@@ -62,7 +83,7 @@ is_deeply(
     ],
     [
         'Miles Davis',
-        $filename,
+        $files[0],
     ],
     'history item contents',
 );
@@ -99,7 +120,7 @@ $mech->follow_link_ok(
 );
 
 $mech->follow_link_and_return_ok(
-    { text => $filename },
+    { text => $files[0] },
     'view scanned record',
 );
 
@@ -116,5 +137,35 @@ is(
     'The patient has no scanned files.',
     'no files',
 );
+
+
+fresh_start_ok( $mech, @files );
+
+# Reassociate both files
+for my $file (@files) {
+    $mech->post_ok(
+        $mech->form_name( 'scanned_record_form' )->action,
+        {
+            client_id => 1001,
+            description => 'a scanned file',
+            op => 'Associate File with Patient',
+            filename => $file,
+        },
+        'fake form post',
+    );
+}
+
+
+# Now the list is empty
+$mech->content_contains( 'No scanned files.' );
+
+# Check history contains both items
+{
+    my @history = $mech->tree->look_down(id => 'file_details')
+                             ->look_down(_tag => 'table')
+                             ->look_down(_tag => 'tr');
+    is( @history, 2, 'two history items' );
+}
+
 
 fresh_start_ok( $mech );

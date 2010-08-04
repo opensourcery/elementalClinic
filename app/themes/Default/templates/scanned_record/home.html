@@ -5,17 +5,32 @@
 
 
 <div id="file">
-<h4>Next scanned file:</h4>
-[% IF file %]
-    <a target="_blank" href="[% script %]?op=view_file;filename=[% file %]">
-        <img src="[% script %]?op=view_file;filename=[% file %]" alt="[% file %]" />
-    </a><br />
-    [% file %]
+<h4>Next scanned files:</h4>
+
+[% IF files.0 %]
+ <ul>
+  [% FOREACH file IN files %]
+    <li>
+    <input class="file_selector" type="radio" name="filename" value="[% file %]" [%- "checked=\"checked\"" IF loop.first %] onselect="return change_filename('[% filename %]')"/>
+      <a target="_blank" href="[% script %]?op=view_file;filename=[% file %]">
+        [% file %]
+      </a><br/>
+   </li>
+  [% END %]
+  </ul>
 [% ELSE %]
     <p>No scanned files.</p>
 [% END %]
 </div>
-    
+
+<script>
+  <!-- Propogate the selected filename to the association form -->
+  $('.file_selector').change(function() {
+     $('input.file_to_associate').attr("value", $(this).val());
+     $('div.file_to_associate').text($(this).val());
+  });
+</script>
+
 <div id="file_details">
     
     <div id="client_search">
@@ -30,7 +45,6 @@
     </div>
 
     <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" id="scanned_record_form" name="scanned_record_form">
-        
         <div id="client_results">
             <h4>Results</h4>
             <p id="client_results_control">
@@ -49,7 +63,9 @@
             <h4>Description:</h4>
             <textarea name="description" id="description" rows="2" cols="40">[% description | replace('\\\n', "\n") %]</textarea>
             <br />
-            <input type="hidden" name="filename" value="[% file %]" />
+            <h4>File:</h4>
+            <div class="file_to_associate">[% files.0 %]</div>
+            <input class="file_to_associate" type="hidden" name="filename" value="[% files.0 %]" />
             <input type="submit" name="op" value="Associate File with Patient" />
             <br />
             <input type="submit" name="op" value="Invalid File" id="invalid_file_button" onclick="return confirmInvalid()" />

@@ -155,6 +155,10 @@ if ( $run_test ) {
         "$branch/t/resource/sample_scan.1.jpg",
         "$res_dir/scanned/sample_scan.1.jpg",
     );
+    File::Copy::copy(
+        "$branch/t/resource/sample_scan.2.jpg",
+        "$res_dir/scanned/sample_scan.2.jpg",
+    );
 }
 my $emc_config = "/tmp/emc.$port.config";
 YAML::Syck::DumpFile($emc_config, $c);
