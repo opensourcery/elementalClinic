@@ -798,11 +798,22 @@ sub income_history {
     })->get_all;
 }
 
+# List of fields which a duplicate should contain
+sub _dup_fields {
+    return ['client_id', 'lname', 'dob', 'fname', 'mname'];
+}
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # [Harry is dressed as an alien for Halloween]
 # Mamie Dubcek: Oh, Harry. You're an alien.
 # [Harry screams]
 # Harry Solomon: NO, I'M NOT! I mean, yes I am.
+#
+# Why is this method not just returning client objects?
+# Chad sez: To view a client object you need permissions. Returning
+# dups means returning a client you may not have access too, thus
+# access exception. So the dup returns the minimum you need to know
+# w/o sensitive data
 sub dup_check {
     my $self = shift;
     my $class = ref $self;
@@ -812,6 +823,8 @@ sub dup_check {
     my $lname = $self->lname;
     my $fname = $self->fname;
     my $dob = $self->dob;
+
+    my $dup_fields = $self->_dup_fields;
 
     my $duplicates = {
         ssn => undef,
@@ -828,7 +841,7 @@ sub dup_check {
         $where .= qq| AND client_id != $client_id|
             if $client_id;
         my $result = $self->db->select_one(
-            [ qw/ client_id lname dob fname /],
+            $dup_fields,
             'client',
             $where
         );
@@ -837,7 +850,7 @@ sub dup_check {
 
     if( $lname and $dob ) {
         my $data_holder = $self->db->select_many(
-            ['client_id', 'lname', 'dob', 'fname' ],
+            $dup_fields,
             'client',
             [ "WHERE lname = ? AND dob = ?", $lname, $dob ]
         );
@@ -852,7 +865,7 @@ sub dup_check {
 
     if ( $fname and $lname ) {
         my $data_holder = $self->db->select_many(
-            ['client_id', 'lname', 'dob', 'fname' ],
+            $dup_fields,
             'client',
             [ "WHERE lname = ? AND fname = ?", $lname, $fname ]
         );

@@ -197,20 +197,18 @@
 [% END %]
 
 [% BLOCK dup_client %]
-        <p><strong>[% dup.fname %] [% dup.mname %] [% dup.lname %]</strong> ([% dup.ssn_f %]; [% dup.dob %]; [% dup.state %] ) <a href="/demographics.cgi?client_id=[% dup.client_id %]">view</a> [% INCLUDE pronoun %].</p>
+        <p><strong>[% dup.fname %] [% dup.mname %] [% dup.lname %]</strong> ([% dup.dob %]) <a href="/demographics.cgi?client_id=[% dup.client_id %]">view</a></p>
 [% END %]
 
-[% BLOCK pronoun; dup.sex == 'Male' ? 'him' : 'her'; END %]
-
 [% BLOCK unused %]
-         <dt><strong>[% dup.fname %] [% dup.lname %]</strong> ([% dup.ssn_f %]; [% dup.dob %])</dt>
+         <dt><strong>[% dup.fname %] [% dup.mname %] [% dup.lname %]</strong> ([% dup.dob %])</dt>
         <dd>
            [%- IF dup.placement.is_admitted %]
-            This client is currently admitted; you may <a href="/demographics.cgi?client_id=[% dup.client_id %]">view</a> [% INCLUDE pronoun %].
+            This client is currently admitted; you may <a href="/demographics.cgi?client_id=[% dup.client_id %]">view</a> the client.
             [%- ELSIF dup.placement.is_referral %]
-            This client is an active referral; you may <a href="/demographics.cgi?client_id=[% dup.client_id %]">view</a> [% INCLUDE pronoun %].
+            This client is an active referral; you may <a href="/demographics.cgi?client_id=[% dup.client_id %]">view</a> the client.
             [%- ELSE %]
-            This client has been discharged; see client's <a href="placement.cgi?client_id=[% dup.client_id %]">placement screen</a> to reactivate [% INCLUDE pronoun %].
+            This client has been discharged; see client's <a href="placement.cgi?client_id=[% dup.client_id %]">placement screen</a> to reactivate the client.
             [%- END %]
         </dd>
 [% END %]

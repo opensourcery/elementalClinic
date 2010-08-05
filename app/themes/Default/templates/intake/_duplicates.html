@@ -35,12 +35,12 @@
 
 [% BLOCK dup_client %]
     [% IF dup.denied %]
-        <dt><strong>[% dup.fname %] [% dup.lname %]</strong> ([% dup.dob %])</dt>
+        <dt><strong>[% dup.fname %] [% dup.mname %] [% dup.lname %]</strong> ([% dup.dob %])</dt>
         <dd>
             You do not have access to the duplicate client, limited information is shown.
         </dd>
     [% ELSE %]
-        <dt><strong>[% dup.fname %] [% dup.lname %]</strong> ([% dup.ssn_f %]; [% dup.dob %])</dt>
+        <dt><strong>[% dup.fname %] [% dup.mname %] [% dup.lname %]</strong> ([% dup.dob %])</dt>
         <dd>
             [%- IF dup.is_partial_intake %]
             This client is in the middle of the intake process; you may <a href="/intake.cgi?client_id=[% dup.id %];op=step[% dup.intake_step + 1 %]">complete the intake</a>.

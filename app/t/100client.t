@@ -1323,10 +1323,10 @@ dbinit( 1 );
 # dup_check
 
     sub filter_dup {
-        my $dup = shift;
-        my $new = {};
-        $new->{ $_ } = $dup->{ $_ } for qw/fname lname dob client_id/;
-        return $new;
+        my $client = shift;
+        my $dup = {};
+        $dup->{ $_ } = $client->{ $_ } for @{ $CLASS->_dup_fields };
+        return $dup;
     }
 
         $one = $CLASS->new;
