@@ -23,7 +23,9 @@ sub dbinit {
 dbinit( 1 );
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+
 # constructor
+{
     ok( $one = $CLASS->new( {
         phone_number => '555-555-5555',
         rolodex_id   => 555,
@@ -45,9 +47,11 @@ dbinit( 1 );
             phone_type    => undef,
         },
     );
+}
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 # table info
+{
     is( $one->table, 'phone');
     is( $one->primary_key, 'rec_id');
     is_deeply( $one->fields, [ qw/ 
@@ -58,9 +62,11 @@ dbinit( 1 );
     is_deeply( [ sort @{$CLASS->fields} ], $test->db_fields( $CLASS->table ) );
     can_ok( $one, 'phone_number' );
     can_ok( $one, 'rolodex_id' );
+}
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+# Test nothing else gets populated by default
+{
     $one = $CLASS->new( {
         phone_number => '555-555-5555',
         rolodex_id   => 99,
@@ -81,5 +87,6 @@ dbinit( 1 );
         $one,
         $CLASS->get_one_by_( 'rolodex_id', 99 )
     );
+}
 
 dbinit( 1 );
