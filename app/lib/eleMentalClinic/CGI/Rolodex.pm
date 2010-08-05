@@ -67,6 +67,18 @@ sub _save_contact {
     return $contact->save;
 }
 
+
+sub _delete_contact {
+    my $self = shift;
+    my ( $rolodex, $contact_method, $index ) = @_;
+
+    my $contact = $rolodex->$contact_method->[ $index ||= 0 ];
+    return if !$contact;
+
+    return $contact->delete;
+}
+
+
 =head2 save_phone
 
     my $phone = $controller->save_phone(
@@ -86,14 +98,26 @@ sub save_phone {
     my $self = shift;
     my ( $rolodex, $phone_number, $index ) = @_;
 
-    return unless $phone_number;
+    # Don't delete the primary phone number.
+    return if !$phone_number and $index == 0;
 
-    return $self->_save_contact(
-        $rolodex,
-        'phones',
-        { phone_number => $phone_number },
-        $index,
-    );
+    if( $phone_number =~ /\S/ ) {
+        return $self->_save_contact(
+            $rolodex,
+            'phones',
+            { phone_number => $phone_number },
+            $index,
+        );
+    }
+    else {
+        return $self->_delete_contact(
+            $rolodex,
+            'phones',
+            $index,
+        );
+    }
+
+
 }
 
 =head2 save_phones

@@ -63,6 +63,33 @@ test sub {
             'found manual prognote',
         );
 
+
+        # Try deleting a 2nd phone number
+        {
+            $mech->get_script_ok('clientoverview.cgi' => (client_id => 1001));
+
+            # Give the client a 2nd phone number
+            $mech->submit_form_ok({
+                form_name => 'client_form',
+                fields => {
+                    phone_2     => '123-456-7890',
+                },
+                button => 'op',
+            });
+
+            $mech->id_match_ok({ phone_2 => "123-456-7890" });
+
+            # Now take it away
+            $mech->submit_form_ok({
+                form_name => 'client_form',
+                fields => {
+                    phone_2       => '',
+                },
+                button => 'op',
+            });
+
+            $mech->id_match_ok({ phone_2 => "" }, "2nd phone can be removed");
+        }
     }
 };
 
