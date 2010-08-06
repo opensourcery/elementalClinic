@@ -4,7 +4,7 @@
 use warnings;
 use strict;
 
-use Test::More tests => 32;
+use Test::More tests => 31;
 use Test::Deep;
 use Test::Exception;
 use Test::Warn;
@@ -91,7 +91,7 @@ dbinit( 1 );
 
     ok( $tmp = $one->home );
     is( ref $tmp->{ current }, 'eleMentalClinic::Client::Letter' );
-    is( $tmp->{ relationships }, undef );
+    is_deeply( $tmp->{ relationships }, [] );
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # view
@@ -103,11 +103,9 @@ dbinit( 1 );
         # otherwise fails as there is no session
         $one->{ current_user } = eleMentalClinic::Personnel->retrieve( 1003 );
 
-    warning_like { $tmp = $one->view } [
-        qr/Odd number of elements in anonymous hash.*/
-    ];
+    $tmp = $one->view;
     is( ref $tmp->{ current }, 'eleMentalClinic::Client::Letter' );
-    is( $tmp->{ relationships }, undef, 'relationships is undef' );
+    is_deeply( $tmp->{ relationships }, [], 'no relationships' );
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # rolodex_create_letter
@@ -127,7 +125,7 @@ dbinit( 1 );
             relationship_role       =>  undef,
             rolodex_relationship_id =>  undef
         },
-        relationships   =>  undef
+        relationships   =>  []
     });
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -142,7 +140,7 @@ dbinit( 1 );
 
     ok( $tmp = $one->edit );
     is( ref $tmp->{ current }, 'eleMentalClinic::Client::Letter' );
-    is( $tmp->{ relationships }, undef );
+    is_deeply( $tmp->{ relationships }, [] );
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

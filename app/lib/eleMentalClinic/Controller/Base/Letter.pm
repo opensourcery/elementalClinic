@@ -85,7 +85,7 @@ sub edit {
     my $self = shift;
     # FIXME -- doesn't know what do do if letter_id is missing
     my $letter = eleMentalClinic::Client::Letter->new({
-        rec_id => $self->param( 'letter_id' )
+        rec_id => scalar $self->param( 'letter_id' )
     })->retrieve;
 
     #$self->template->vars({ styles => [ 'layout/5050', 'roi' ]});
@@ -173,7 +173,7 @@ sub get_relationships {
     my( $letter ) = @_; # XXX do something with this
 
     my $all = $self->current_user->client_all_relationships_by_pref( $self->client->id );
-    return unless $all;
+    return [] unless $all;
 
     my @data;
     for my $type( keys %$all ) {
@@ -185,7 +185,7 @@ sub get_relationships {
         }
     }
     @data = sort { $b->{ val } cmp $a->{ val }} @data;
-    \@data;
+    return \@data;
 }
 
 
