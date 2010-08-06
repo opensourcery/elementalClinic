@@ -53,6 +53,7 @@ is_deeply(
         'Powell, Bud J',
         '', '',
         '$960 Renew',
+        'betty',
         'Clinician, Betty (MSW)',
         'delete',
     ],
