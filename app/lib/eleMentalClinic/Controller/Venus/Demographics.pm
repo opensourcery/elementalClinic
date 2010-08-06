@@ -98,7 +98,7 @@ sub ops {
             -on_error => 'edit',
             lname   => [ 'Last name', 'text::words', 'required', 'length(0,30)'],
             fname   => [ 'First name', 'text::words', 'required', 'length(0,30)'],
-            mname   => [ 'Middle name', 'text::words', 'required', 'length(0,30)'],
+            mname   => [ 'Middle name', 'text::words', 'length(0,30)'],
             state   => [ 'State', 'demographics::us_state2' ],
             post_code   => [ 'Zip code', 'number::integer' ],
             ssn     => [ 'Social Security number', 'demographics::us_ssn(integer)' ],
@@ -175,7 +175,7 @@ sub on_error {
             $self->emergency_contact_params
         ),
         primary_treater   => eleMentalClinic::Rolodex->new({ 
-            rec_id => $self->param('primary_treater_rolodex_id'),
+            rec_id => scalar $self->param('primary_treater_rolodex_id'),
         }),
     )->edit;
 }
@@ -186,7 +186,7 @@ sub on_success {
     my $ecp = $self->emergency_contact_params;
     $client->save_emergency_contact( $ecp ) if $ecp->{phone_number};
     $client->save_primary_treater({
-        primary_treater_rolodex_id => $self->param('primary_treater_rolodex_id')
+        primary_treater_rolodex_id => scalar $self->param('primary_treater_rolodex_id')
     });
 
     # staff id required by client update so that it can set a renewal progress

@@ -101,7 +101,7 @@ sub save_phone {
     # Don't delete the primary phone number.
     return if !$phone_number and $index == 0;
 
-    if( $phone_number =~ /\S/ ) {
+    if( defined $phone_number and $phone_number =~ /\S/ ) {
         return $self->_save_contact(
             $rolodex,
             'phones',
