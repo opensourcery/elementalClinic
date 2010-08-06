@@ -594,7 +594,7 @@ sub save_treater {
     # Throw an exception to protect against #1044
     my $info = $self->objects('client_primary_treater')->[0];
     die( "Address or phone number added to NULL treater" )
-        unless $info && join( '', values %$info );
+        unless $info && grep $_, values %$info;
 
     # Get existing rolodex, or create a new one.
     my $relationship = $self->client->relationship_primary('treaters');
@@ -622,7 +622,7 @@ sub save_treater {
     }
 
     for my $phone (@{$self->objects('client_primary_treater_phone')}) {
-        next unless join( '', values %$phone );
+        next unless grep $_, values %$phone;  # there's something true in here
         $phone->rec_id($rolodex->phones->[0]->rec_id) if $rolodex->phones->[0];
         $phone->rolodex_id($rolodex->id);
         $phone->active(1);
