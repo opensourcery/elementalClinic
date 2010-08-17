@@ -48,7 +48,6 @@ use eleMentalClinic::Personnel::Prefs;
 use eleMentalClinic::Report;
 use eleMentalClinic::Rolodex;
 use eleMentalClinic::Client;
-use eleMentalClinic::DispatchConfig;
 use eleMentalClinic::ProgressNote;
 use eleMentalClinic::Department;
 use eleMentalClinic::Group;
