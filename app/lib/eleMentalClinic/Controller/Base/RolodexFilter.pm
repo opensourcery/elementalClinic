@@ -1,4 +1,8 @@
-=head1 eleMentalClinic::DispatchConfig
+=head1 NAME
+
+eleMentalClinic::Controller::Base::RolodexFilter
+
+=head1 DESCRIPTION
 
 Rolodex Filter controller
 
