@@ -61,8 +61,6 @@ Returns:
 sub build_result {
     my ($self) = @_;
 
-    $DB::single = 1;
-
     # global WHERE stuff.
     my $where_params = [];
     my $where = [];
