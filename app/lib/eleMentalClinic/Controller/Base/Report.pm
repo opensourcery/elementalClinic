@@ -56,6 +56,7 @@ sub ops {
             area_code => ['Area code', 'number::integer'],
             state => ['State', 'demographics::us_state2' ],
         },
+        run_report_pdf => {}
     )
 }
 
@@ -325,6 +326,34 @@ sub get_all_ops {
     return %ops;
 }
 
+
+sub run_report_pdf {
+    my $self = shift;
+
+    $DB::single= 1;
+
+    my $report_name = $self->param( 'report_name' );
+    my $type = $self->report_track;
+    my $vars = $self->Vars;
+
+    return $self->home if $self->errors;
+
+    # get data so that explosions come from here instead of from the template
+    my $report = $self->get_report->with_data;
+
+    $self->template->vars({
+        styles => [ $self->report_styles ],
+        javascripts => [ 'email_report.js' ],
+        print_styles => [ 'report_print_new', 'progress_note_print' ],
+    });
+    $self->template->process_page( 'report/display', {
+        report  => $report,
+        report_template => "report/$type/$report_name\_display.html",
+        %$vars,
+    });
+}
+
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sub run_report {
     my $self = shift;
@@ -406,6 +435,7 @@ the theme's available reports and the report configuration.
 
 sub report_list {
     my $self = shift;
+
     my %available = map { $_ => 1 } @{
         eleMentalClinic::Theme->new->available_reports(
             $self->report_track

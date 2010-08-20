@@ -55,6 +55,7 @@ allowed_reports:
   - client/client_termination
   - client/cover_sheet
   - client/data_sheet
+  - client/health_history_questionnaire
   - client/legal
   - client/medication
   - client/prognote
