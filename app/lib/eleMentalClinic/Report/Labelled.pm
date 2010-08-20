@@ -5,6 +5,29 @@ use eleMentalClinic::Report::Meta::Attribute;
 use Moose::Util::MetaRole;
 use namespace::autoclean;
 
+
+=head1 NAME
+
+eleMentalClinic::Report::Labelled
+
+=head1 SYNOPSIS
+
+    package eleMentalClinic::Report::Plugin::Foo;
+
+    use Moose;
+    use eleMentalClinic::Report::Labelled;
+
+
+=head1 DESCRIPTION
+
+Adds the C<eleMentalClinic::Report::Meta::Attribute> to a meta
+role... or something.
+
+All I know is if you're making a report plugin it has to use this.
+
+
+=cut
+
 Moose::Exporter->setup_import_methods;
 
 sub init_meta {
