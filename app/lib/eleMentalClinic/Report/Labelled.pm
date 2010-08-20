@@ -20,8 +20,7 @@ eleMentalClinic::Report::Labelled
 
 =head1 DESCRIPTION
 
-Adds the C<eleMentalClinic::Report::Meta::Attribute> to a meta
-role... or something.
+Adds a "label" attribute to the Moose "has" attribute... I think.
 
 All I know is if you're making a report plugin it has to use this.
 
