@@ -18,7 +18,6 @@ with 'eleMentalClinic::Report::HasClient' => { required => 1 };
 
 sub build_result {
     my $self = shift;
-#    $DB::single = 1;
     return $self->client;
 }
 
