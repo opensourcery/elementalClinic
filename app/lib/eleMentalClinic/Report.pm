@@ -53,9 +53,10 @@ for my $report_type (qw(client site financial)) {
         is => 'ro',
         isa => ArrayRef[
             Dict[
-                name => Str,
+                name  => Str,
                 label => Str,
                 admin => Bool,
+                op    => Str,
             ],
         ],
         lazy => 1,

@@ -27,6 +27,12 @@ parameter admin => (
     default  => 0,
 );
 
+parameter op => (
+    isa         => 'Str',
+    default     => 'run_report',
+    required    => 1,
+);
+
 sub db { eleMentalClinic::DB->new }
 
 sub name {
@@ -41,7 +47,7 @@ sub name {
 
 sub as_hash_for_list {
     my ($self) = @_;
-    return { map {; $_ => $self->$_ } qw(name label admin) };
+    return { map {; $_ => $self->$_ } qw(name label admin op) };
 }
 
 sub report_args {

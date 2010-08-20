@@ -39,7 +39,7 @@ ELSE;
         [% INCLUDE "report/$report_track/${ report.name }.html" %]
 
         <input type="hidden" name="report_name" value="[% report.name %]">
-        <input type="hidden" name="op" value="run_report">
+        <input type="hidden" name="op" value="[% report.op %]">
         <input type="hidden" name="type" value="[% report_track %]">
         [% IF client.client_id %]<input type="hidden" name="client_id" value="[% client.client_id %]">[% END %]
         <p class="edit"><input type="submit" name="submit" value="Run Report" /></p>
