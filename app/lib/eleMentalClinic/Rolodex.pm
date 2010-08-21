@@ -15,13 +15,15 @@ Parent object for rolodex items: entities which are not employed or receiving se
 
 =cut
 
-use base qw/ eleMentalClinic::Rolodex::Base eleMentalClinic::DB::Object /; 
+use base qw/ eleMentalClinic::DB::Object /; 
+
+use eleMentalClinic::Util;
+use_moose_role("eleMentalClinic::Contact::HasContacts");
+
 use eleMentalClinic::ValidData;
 use eleMentalClinic::Client;
 use eleMentalClinic::Schedule;
 use eleMentalClinic::Lookup::ChargeCodes;
-use eleMentalClinic::Util;
-use Data::Dumper;
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 {

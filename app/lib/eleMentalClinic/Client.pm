@@ -52,7 +52,10 @@ use eleMentalClinic::Mail::Recipient;
 use eleMentalClinic::Role::Access;
 use eleMentalClinic::Role;
 
-use base qw/ eleMentalClinic::Rolodex::Base eleMentalClinic::DB::Object /;
+use base qw/ eleMentalClinic::DB::Object /;
+
+use_moose_role "eleMentalClinic::Contact::HasContacts";
+
 {
     # removed in placement refactor
     #   unit_id dept_id track_id active input_by

@@ -12,8 +12,7 @@ eleMentalClinic::CGI::Rolodex
 
 =head1 DESCRIPTION
 
-Base class for controllers that deal with rolodex entries (that is, objects
-inheriting from L<eleMentalClinic::Rolodex::Base>).
+Base class for controllers that deal with rolodex entries.
 
 =head1 METHODS
 
@@ -22,10 +21,10 @@ inheriting from L<eleMentalClinic::Rolodex::Base>).
 use base 'eleMentalClinic::CGI';
 
 # XXX it seems like some of this should maybe be in the rolodex model
-# (Rolodex::Base), but right now I'm putting it into the controller layer
-# because it strikes me as an adapter between the input and the model.  in the
-# future, perhaps the rolodex should be able to deal with this stuff on its
-# own.
+# but right now I'm putting it into the controller layer because it
+# strikes me as an adapter between the input and the model.  in the
+# future, perhaps the rolodex should be able to deal with this stuff
+# on its own.
 
 sub _rolodex_id {
     my $self = shift;
