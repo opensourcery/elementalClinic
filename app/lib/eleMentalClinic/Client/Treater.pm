@@ -8,7 +8,8 @@ eleMentalClinic::Client::Treater
 
 =head1 SYNOPSIS
 
-Rolodex objects with which the client has a treater relationship.
+Information about the relationship between a treater and a client such
+as their last visit, when they stared being treated and so on.
 
 =head1 METHODS
 

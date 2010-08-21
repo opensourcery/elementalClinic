@@ -9,6 +9,10 @@ eleMentalClinic::Rolodex::Treater
 =head1 SYNOPSIS
 
 
+=head1 DESCRIPTION
+
+Associates a treater with a rolodex entry.
+
 =head1 METHODS
 
 =cut
