@@ -228,7 +228,6 @@ my $r = {
     'Path::Class' => 0,
     'Pod::Usage' => 0,
     'Sub::Exporter' => 0,
-    'Sub::Name' => 0,
     'Template' => '2.10',
     'Time::HiRes' => 0,
     'URI' => 0,
