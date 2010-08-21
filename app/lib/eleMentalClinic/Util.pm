@@ -31,12 +31,33 @@ our @EXPORT = qw/
     _check_date
     date_month_name
     date_year
+    with_moose_role
 /;
 our @EXPORT_OK = qw/
     _quote
 /;
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+=head2 with_moose_role
+
+    with_moose_role(@roles);
+
+Allows a non-Moose class to use a Moose role.
+
+=cut
+
+sub with_moose_role {
+    my @roles = @_;
+
+    my $caller = caller;
+
+    require Moose::Util;
+    require Moose::Meta::Class;
+
+    my $metaclass = Moose::Meta::Class->initialize( $caller );
+    return Moose::Util::apply_all_roles( $metaclass, @roles );
+}
 
 =head2 _quote( $value ![, $data_type ] )
 
