@@ -330,8 +330,6 @@ sub get_all_ops {
 sub run_report_pdf {
     my $self = shift;
 
-    $DB::single= 1;
-
     my $report_name = $self->param( 'report_name' );
     my $type = $self->report_track;
     my $vars = $self->Vars;
