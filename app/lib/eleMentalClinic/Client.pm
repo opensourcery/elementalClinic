@@ -54,7 +54,7 @@ use eleMentalClinic::Role;
 
 use base qw/ eleMentalClinic::DB::Object /;
 
-use_moose_role "eleMentalClinic::Contact::HasContacts";
+with_moose_role "eleMentalClinic::Contact::HasContacts";
 
 {
     # removed in placement refactor

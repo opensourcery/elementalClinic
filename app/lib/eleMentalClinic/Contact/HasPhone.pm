@@ -13,7 +13,7 @@ eleMentalClinic::Contact::HasPhone - access a record's phone numbers
 
     package Foo::Bar;
     use eleMentalClinic::Util;
-    use_moose_role 'eleMentalClinic::Contact::HasAddress';
+    with_moose_role 'eleMentalClinic::Contact::HasAddress';
 
     # Or use it like a regular Moose::Role if you're a Moose class
 

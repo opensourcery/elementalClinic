@@ -13,7 +13,7 @@ eleMentalClinic::Contact::HasContacts - Add contact methods to a record
 =head1 SYNOPSIS
 
     use eleMentalClinic::Util;
-    use_moose_role("eleMentalClinic::Contact::HasContacts");
+    with_moose_role("eleMentalClinic::Contact::HasContacts");
 
     # or if you're a Moose class, use it like a normal Moose::Role
 

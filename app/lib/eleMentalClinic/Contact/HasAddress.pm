@@ -13,7 +13,7 @@ eleMentalClinic::Contact::HasAddress - access a record's addresses
 
     package Foo::Bar;
     use eleMentalClinic::Util;
-    use_moose_role 'eleMentalClinic::Contact::HasAddress';
+    with_moose_role 'eleMentalClinic::Contact::HasAddress';
 
     sub primary_key { ... }
     sub id { ... }

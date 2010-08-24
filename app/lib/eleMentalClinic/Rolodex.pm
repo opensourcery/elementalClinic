@@ -18,7 +18,7 @@ Parent object for rolodex items: entities which are not employed or receiving se
 use base qw/ eleMentalClinic::DB::Object /; 
 
 use eleMentalClinic::Util;
-use_moose_role("eleMentalClinic::Contact::HasContacts");
+with_moose_role("eleMentalClinic::Contact::HasContacts");
 
 use eleMentalClinic::ValidData;
 use eleMentalClinic::Client;
