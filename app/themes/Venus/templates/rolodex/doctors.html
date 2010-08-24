@@ -118,7 +118,31 @@
         size    = 15
         dl      = 1
     %]
-    </dl>
+
+    [% INCLUDE util/input_text.html
+        name    = 'license_ca'
+        label   = 'California License'
+        value   = rolodex.by_state('CA').license
+        size    = 20
+        dl      = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'license_or'
+        label   = 'Oregon License'
+        value   = rolodex.by_state('OR').license
+        size    = 20
+        dl      = 1
+    %]
+
+    [% INCLUDE util/input_text.html
+        name    = 'license_wa'
+        label   = 'Washington License'
+        value   = rolodex.by_state('WA').license
+        size    = 20
+        dl      = 1
+    %]
+   </dl>
 </div>
 
     <input type="hidden" name="treaters" id="role_treaters" value="1" />

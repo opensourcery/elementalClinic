@@ -47,6 +47,9 @@ sub ops {
             phone_2 => [ 'Second Phone', 'length(0,25)' ],
             name => [ 'Organization', 'length(0,80)' ],
             credentials => [ 'Credentials', 'length(0,80)' ],
+            license_wa  => [ 'WA License', 'length(0,80)' ],
+            license_or  => [ 'OR License', 'length(0,80)' ],
+            license_ca  => [ 'CA License', 'length(0,80)' ],
         },
     )
 }
@@ -113,6 +116,11 @@ sub rolodex_save {
             [ qw(phone phone_2) ],
         );
 
+        $self->save_licenses(
+            $rolodex,
+            $vars
+        );
+
         # don't use $vars, it's been fiddled with e.g. adding rec_id
         # But it also removes client_id, which is critical, now we have
         # $cleanvars for this.
@@ -132,6 +140,39 @@ sub rolodex_save {
         phone_1 => $self->param( 'phone' ),
     };
 }
+
+
+# Save each license_state entry as a ByState object
+sub save_licenses {
+    my $self = shift;
+    my($rolodex, $vars) = @_;
+
+    my $all = $rolodex->all_by_state;
+
+    for my $key (grep /^license_/, keys %$vars) {
+        my $val = $vars->{$key};
+        my($state) = uc( (split /_/, $key)[-1] );
+
+        my $by_state = $all->{$state};
+
+        if( $val ) {
+            if( $by_state and $val ne $by_state->license ) {
+                $by_state->license($val);
+                $by_state->save;
+            }
+            else {
+                $rolodex->add_by_state($state, { license => $val });
+            }
+        }
+        else {
+            next unless $by_state;
+
+            $by_state->license('');
+            $by_state->save;
+        }
+    }
+}
+
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sub relationship_new {
