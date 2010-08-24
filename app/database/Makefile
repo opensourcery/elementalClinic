@@ -15,7 +15,7 @@ PSQL    := env PGPASSFILE=$(PGPASSFILE) psql -d $(DB) -q $(DB_ARGS)
 # url is just a handy way of summarizing connect info, not actually used by any
 # programs
 URL     := postgres://$(DB_USER)@$(DB_HOST):$(DB_PORT)/$(DB)
-DEV_VERSION=442
+DEV_VERSION=443
 RELEASE_SQL := release/$(DB)-$(DEV_VERSION).sql
 
 DEPRECATED:

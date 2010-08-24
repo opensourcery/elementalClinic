@@ -19,6 +19,7 @@ use base qw/ eleMentalClinic::DB::Object /;
 
 use eleMentalClinic::Util;
 with_moose_role("eleMentalClinic::Contact::HasContacts");
+with_moose_role("eleMentalClinic::Rolodex::HasByState");
 
 use eleMentalClinic::ValidData;
 use eleMentalClinic::Client;
