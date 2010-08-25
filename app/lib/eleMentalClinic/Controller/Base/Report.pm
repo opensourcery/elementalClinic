@@ -60,7 +60,8 @@ sub ops {
     )
 }
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# Populate the template with useful information for configuring a report.
 sub home {
     my $self = shift;
 
@@ -89,6 +90,17 @@ sub home {
 sub ins_reauth {
     eleMentalClinic::Rolodex->new->list_byrole( 'mental_health_insurance' );
 }
+
+
+# Extra data for configuring AttendingPhysicianStatement
+sub attending_physician_statement {
+    my $self = shift;
+
+    return {
+        treaters => eleMentalClinic::Rolodex->new->get_byrole('treaters'),
+    }
+}
+
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sub client_termination {
@@ -352,7 +364,7 @@ sub run_report_pdf {
 }
 
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Run and display the report
 sub run_report {
     my $self = shift;
     my $type = $self->report_track;

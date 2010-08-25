@@ -51,6 +51,7 @@ allowed_controllers:
   - Notification
 allowed_reports:
 #  - client/allergy
+  - client/attending_physician_statement
   - client/client_prognote
   - client/client_termination
   - client/cover_sheet

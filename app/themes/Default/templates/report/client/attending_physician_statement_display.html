@@ -1,0 +1,7 @@
+[%
+   treater = data.treater
+   client = data.client
+-%]
+
+<p>Doctor: [% treater.eman %] [% treater.id %] [% treater.rolodex.id %]  Client: [% client.eman %]</p>
+<p>License: [% treater.rolodex.by_state("OR").license %]</p>

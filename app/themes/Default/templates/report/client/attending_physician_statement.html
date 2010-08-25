@@ -1,0 +1,10 @@
+Client: [% client.eman %]
+Treater: [% client.get_primary_treater.rolodex.rec_id %]
+
+[% INCLUDE util/select_new.html
+   name    = 'treater_id'
+   values  = data.treaters
+   default = client.get_primary_treater.id
+   keyname = 'id'
+   valname = 'eman'
+%]

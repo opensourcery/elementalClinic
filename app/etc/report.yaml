@@ -1,6 +1,7 @@
 # this is a list of all the reports in every theme.  commenting out a report from this list will disable it globally.
 ---
 - allergy
+- attending_physician_statement
 - client_list
 - client_prognote
 - client_termination
