@@ -22,8 +22,8 @@ sub _build_treater {
     my ($self) = @_;
     return unless $self->treater_id;
 
-    require eleMentalClinic::Client::Treater;
-    return eleMentalClinic::Client::Treater->retrieve( $self->treater_id );
+    require eleMentalClinic::Rolodex;
+    return eleMentalClinic::Rolodex->retrieve( $self->treater_id );
 }
 
 role {
