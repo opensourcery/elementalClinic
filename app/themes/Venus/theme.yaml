@@ -60,6 +60,7 @@ allowed_reports:
   - client/legal
   - client/medication
   - client/medical_release
+  - client/physical_exam
   - client/prognote
   - site/client_list
   - site/clinic_schedule
