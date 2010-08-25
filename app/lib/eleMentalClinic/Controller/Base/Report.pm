@@ -115,6 +115,17 @@ sub medical_release {
 }
 
 
+# Extra data for configuring ReviewPatientRecords
+sub review_patient_records {
+    my $self = shift;
+
+    return {
+        treaters => $self->_get_all_treaters
+    }
+}
+
+
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sub client_termination {
     my $self = shift;

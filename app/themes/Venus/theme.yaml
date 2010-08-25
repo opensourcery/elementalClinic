@@ -62,6 +62,7 @@ allowed_reports:
   - client/medical_release
   - client/physical_exam
   - client/prognote
+  - client/review_patient_records
   - site/client_list
   - site/clinic_schedule
   - site/email

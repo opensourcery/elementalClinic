@@ -21,6 +21,7 @@
 - physical_exam
 #- prognote
 - renewals
+- review_patient_records
 - site_prognote
 - site_prognote_caseload
 - uncommitted_prognotes
