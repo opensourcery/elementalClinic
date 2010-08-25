@@ -2,8 +2,11 @@
 package eleMentalClinic::Report::Plugin::AttendingPhysicianStatement;
 
 use Moose;
+
 use eleMentalClinic::Types qw(:all);
+use MooseX::Types::Moose qw(:all);
 use MooseX::Types::Structured qw(:all);
+
 use eleMentalClinic::Report::Labelled;
 use namespace::autoclean;
 
@@ -14,17 +17,25 @@ with 'eleMentalClinic::Report::Plugin' => {
     result_isa => Dict[
         treater => Treater,
         client  => Client,
+        state   => Str
     ],
 };
 
 with 'eleMentalClinic::Report::HasClient'     => { required => 1 };
 with 'eleMentalClinic::Report::HasTreater',   => { required => 1 };
 
+has state => (
+    is          => 'ro',
+    isa         => Str,
+    required    => 1,
+);
+
 sub build_result {
     my $self = shift;
     return {
         treater  => $self->treater,
         client   => $self->client,
+        state    => uc $self->state,
     }
 }
 
