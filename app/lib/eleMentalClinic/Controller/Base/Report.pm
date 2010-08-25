@@ -56,7 +56,6 @@ sub ops {
             area_code => ['Area code', 'number::integer'],
             state => ['State', 'demographics::us_state2' ],
         },
-        run_report_pdf => {}
     )
 }
 
@@ -336,31 +335,6 @@ sub get_all_ops {
         $ops{run_report}{$key} = $value if @$value;
     }
     return %ops;
-}
-
-
-sub run_report_pdf {
-    my $self = shift;
-
-    my $report_name = $self->param( 'report_name' );
-    my $type = $self->report_track;
-    my $vars = $self->Vars;
-
-    return $self->home if $self->errors;
-
-    # get data so that explosions come from here instead of from the template
-    my $report = $self->get_report->with_data;
-
-    $self->template->vars({
-        styles => [ $self->report_styles ],
-        javascripts => [ 'email_report.js' ],
-        print_styles => [ 'report_print_new', 'progress_note_print' ],
-    });
-    $self->template->process_page( 'report/display', {
-        report  => $report,
-        report_template => "report/$type/$report_name\_display.html",
-        %$vars,
-    });
 }
 
 

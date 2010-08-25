@@ -11,7 +11,6 @@ with 'eleMentalClinic::Report::Plugin' => {
     label => 'Health History Questionnaire',
     admin => 0,
     result_isa => Client,
-    op    => 'run_report_pdf',
 };
 
 with 'eleMentalClinic::Report::HasClient' => { required => 1 };
