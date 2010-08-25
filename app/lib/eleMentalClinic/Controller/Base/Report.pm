@@ -91,12 +91,26 @@ sub ins_reauth {
 }
 
 
+sub _get_all_treaters {
+    return eleMentalClinic::Rolodex->new->get_byrole('treaters');
+}
+
 # Extra data for configuring AttendingPhysicianStatement
 sub attending_physician_statement {
     my $self = shift;
 
     return {
-        treaters => eleMentalClinic::Rolodex->new->get_byrole('treaters'),
+        treaters => $self->_get_all_treaters
+    }
+}
+
+
+# Extra data for configuring MedicalRelease
+sub medical_release {
+    my $self = shift;
+
+    return {
+        treaters => $self->_get_all_treaters
     }
 }
 
