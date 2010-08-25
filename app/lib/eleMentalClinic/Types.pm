@@ -9,6 +9,7 @@ BEGIN { %class_types = (
   Client          => 'eleMentalClinic::Client',
   ClientAllergy   => 'eleMentalClinic::Client::Allergy',
   Personnel       => 'eleMentalClinic::Personnel',
+  Treater         => 'eleMentalClinic::Client::Treater',
   ClientInsurance => 'eleMentalClinic::Client::Insurance',
 ) }
 
