@@ -178,6 +178,29 @@ The template for configuring a report, choosing options and such, is
 F<$type/${name}.html>.  So if C<Plugin::ClientCoffee> is a C<client> type
 then it has a template called F<client/client_coffee.html>.
 
+
+=head3 Additional configuration variables
+
+Additional variables can be passed to the configuration template by
+defining a subroutine with the same name as the report's template in
+C<eleMentalClinic::Controller::Base::Report> (or a theme specific
+subclass).  So C<ClientCoffee> would define C<sub client_coffee>.
+
+This method returns a data structure which will be available as
+C<data> in the template.  For example:
+
+    sub client_coffee {
+        return {
+            styles => ["cold press", "french press", "vacuum press"],
+        }
+    }
+
+This would make C<data.styles> available to the configuration template
+F<client_coffee.html>.
+
+(Yes, this method should probably go in the plugin and not the controller)
+
+
 =head3 Display template
 
 The template for actually displaying the report is
