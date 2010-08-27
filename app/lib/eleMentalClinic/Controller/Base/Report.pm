@@ -95,6 +95,13 @@ sub _get_all_treaters {
     return eleMentalClinic::Rolodex->new->get_byrole('treaters');
 }
 
+
+sub client_intake_forms {
+    my $self = shift;
+    return $self->attending_physician_statement;
+}
+
+
 # Extra data for configuring AttendingPhysicianStatement
 sub attending_physician_statement {
     my $self = shift;

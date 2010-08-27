@@ -1,0 +1,20 @@
+<p>Client: [% client.eman %]</p>
+<p>Treater: [% data.treaters %]</p>
+
+<p>Treater: 
+[% INCLUDE util/select_new.html
+   name    = 'treater_id'
+   values  = data.treaters
+   default = client.get_primary_treater.id
+   keyname = 'id'
+   valname = 'eman'
+%]
+</p>
+
+<p>State: 
+[% INCLUDE util/input_text.html
+   name    = 'state'
+   value   = client.address.state
+   size    = 2
+%]
+</p>

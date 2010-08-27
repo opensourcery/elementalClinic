@@ -11,6 +11,9 @@ div.content {
     font-family : Tahoma,Verdana,Helvetica,Arial,sans-serif;
     font-size : 8pt;
 }
+div.page_break {
+    page-break-after : always;
+}
 #page {
     width : 100%;
 }

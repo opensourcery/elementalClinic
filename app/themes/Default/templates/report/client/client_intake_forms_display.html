@@ -1,0 +1,31 @@
+[%# Concatenate together all the forms necessary to take in a new client
+    so they can be printed out in one shot.
+
+    This assumes that they all use the same template data
+%]
+
+[% INCLUDE global/print_head.html
+    name    = 'Report'
+    a_href  = "$script?client_id=$client.id;report_track=$report_track"
+    a_label = 'Reporting'
+    date = ''
+    instructions_only = 1
+%]
+
+[% INCLUDE report/client/attending_physician_statement_display.html %]
+ 
+<div class="page_break"></div>
+
+[% INCLUDE report/client/medical_release_display.html %]
+
+<div class="page_break"></div>
+
+[% INCLUDE report/client/health_history_questionnaire_display.html %]
+
+<div class="page_break"></div>
+
+[% INCLUDE report/client/physical_exam_display.html %]
+
+<div class="page_break"></div>
+
+[% INCLUDE report/client/review_patient_records_display.html %]
