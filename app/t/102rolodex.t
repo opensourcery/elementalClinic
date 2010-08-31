@@ -4,7 +4,7 @@
 use warnings;
 use strict;
 
-use Test::More tests => 623;
+use Test::More tests => 629;
 use Test::Exception;
 use Data::Dumper;
 use eleMentalClinic::Test;
@@ -319,9 +319,22 @@ dbinit( 1 );
 # phone_f
     can_ok( $one, 'phone_f' );
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# name_f
-    can_ok( $one, 'name_f' );
+# name_f and full_name
+{
+    my $r = $CLASS->retrieve( 1001 );
+
+    ok $r->name;
+    is $r->name_f, $r->name,            "name_f matches name";
+    is $r->full_name, "Barbara Batts",  "full_name ignores name";
+
+    $r->name("");
+    ok !$r->name,                       "unset name";
+    is $r->name_f, "Barbara Batts";
+    is $r->full_name, $r->name_f;
+
+    $r->credentials("Esq");
+    is $r->full_name, "Barbara Batts, Esq",     "full_name with credentials";
+}
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # eman

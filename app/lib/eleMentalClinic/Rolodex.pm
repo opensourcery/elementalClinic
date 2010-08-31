@@ -479,11 +479,38 @@ sub client_roles {
     return \%roles;
 }
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+=head3 name_f
+
+  my $name = $rolodex->name_f;
+
+Returns C<< $rolodex->name >> if set, otherwise C<< $rolodex->full_name >>.
+
+=cut
+
 sub name_f {
     my $self = shift;
 
     return $self->name if $self->name;
+    return $self->full_name;
+}
+
+
+=head3 full_name
+
+   my $full_name = $rolodex->full_name;
+
+Returns the $rolodex's fname, lname and credentials in an
+intellegently formatted way.
+
+Call this instead of C<< name_f >> to avoid it being overridden by C<<
+$rolodex->name >>.
+
+=cut
+
+sub full_name {
+    my $self = shift;
+
     return unless $self->fname or $self->lname;
 
     my $name;
@@ -495,7 +522,8 @@ sub name_f {
         $name = $self->lname if $self->lname;
     }
     $name .= ', '. $self->credentials if $self->credentials;
-    $name;
+
+    return $name;
 }
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
