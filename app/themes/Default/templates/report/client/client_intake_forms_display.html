@@ -17,9 +17,16 @@
    no_print_header = 1
 %]
 
-[% INCLUDE report/client/attending_physician_statement_display.html %]
- 
-<div class="page_break"></div>
+[%# There is no default attending physician statement, so go through some effort
+    to avoid writing out a blank page.
+%]
+[% subtemplate = INCLUDE report/client/attending_physician_statement_display.html
+   quiet = 1
+%]
+[% IF subtemplate.match('\S') %]
+  [% subtemplate %]
+  <div class="page_break"></div>
+[% END %]
 
 [% INCLUDE report/client/medical_release_display.html %]
 
