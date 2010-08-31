@@ -12,6 +12,10 @@
     instructions_only = 1
 %]
 
+[% # Suppress the sub-templates from displaying their own print headers
+   no_print_header = 1
+%]
+
 [% INCLUDE report/client/attending_physician_statement_display.html %]
  
 <div class="page_break"></div>

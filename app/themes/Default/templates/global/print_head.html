@@ -1,3 +1,5 @@
+[% UNLESS no_print_header %]
+
 [% IF auto_print %]<script type="text/javascript">print()</script>[% END %]
 [% UNLESS header_only %]
 <fieldset class="print_head">
@@ -24,3 +26,5 @@
     [% IF date %]<p class="date">[% date %]</p>[% END %]
 [%- END %]
 [% END %]
+
+[%- END %]
