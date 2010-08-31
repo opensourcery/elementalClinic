@@ -8,3 +8,4 @@ app/t/resource/tmp/
 app/var/
 app/blib
 *.compiled
+.DS_Store
