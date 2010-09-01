@@ -2,8 +2,7 @@
     so they can be printed out in one shot.
 
     This assumes that they all use the same template data
-%]
-
+-%]
 [% INCLUDE global/print_head.html
     name    = 'Report'
     a_href  = "$script?client_id=$client.id;report_track=$report_track"
@@ -11,18 +10,25 @@
     date = ''
     instructions_only = 1
     auto_print = 1
-%]
-
+-%]
 [% # Suppress the sub-templates from displaying their own print headers
    no_print_header = 1
-%]
-
-[% INCLUDE report/client/attending_physician_statement_display.html
+-%]
+[%# There is no default attending physician statement, so go through some effort
+    to avoid writing out a blank page.
+-%]
+[% subtemplate = INCLUDE report/client/attending_physician_statement_display.html
    quiet = 1
-%]
+-%]
 
-[% INCLUDE report/client/health_history_questionnaire_display.html %]
-
-[% INCLUDE report/client/physical_exam_display.html %]
-
-[% INCLUDE report/client/review_patient_records_display.html %]
+<div class="multi_page_fix">
+  [% IF subtemplate.match('\S') %]
+    [% subtemplate %]
+    <div class="page_break"></div>
+  [% END %]
+  [% INCLUDE report/client/health_history_questionnaire_display.html %]
+  <div class="page_break"></div>
+  [% INCLUDE report/client/physical_exam_display.html %]
+  <div class="page_break"></div>
+  [% INCLUDE report/client/review_patient_records_display.html %]
+</div>

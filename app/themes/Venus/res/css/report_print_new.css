@@ -290,3 +290,11 @@ h2 {
     font-size : 16pt;
 }
 /* }}} */
+
+/* This works around Mozilla bug #154892 where it will only partially print absolute divs
+   https://bugzilla.mozilla.org/show_bug.cgi?id=154892#c22
+*/
+div.multi_page_fix {
+    white-space: pre;
+    line-height: 1px;
+}
