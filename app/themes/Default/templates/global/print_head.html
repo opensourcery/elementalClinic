@@ -1,7 +1,13 @@
 [% UNLESS no_print_header %]
 <div id="print_header">
 
-[% IF auto_print %]<script type="text/javascript">print()</script>[% END %]
+[% IF auto_print %]
+  <script type="text/javascript">
+    $(window).load(function () {
+        print()
+    });
+  </script>
+[% END %]
 [% UNLESS header_only %]
 <fieldset class="print_head">
     <legend>[% name %] notes</legend>
