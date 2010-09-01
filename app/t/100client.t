@@ -7,6 +7,7 @@ use strict;
 
 use Test::More tests => 567;
 use Test::Exception;
+use DateTime;
 use Data::Dumper;
 use eleMentalClinic::Test;
 use Carp qw(confess);
@@ -99,6 +100,22 @@ dbinit( 1 );
             is( $item->staff->lname . ', ' . $item->staff->fname, $name, "Correct name for item" )
         }
     }
+}
+
+
+# age
+{
+    my $client = $CLASS->retrieve( 1001 );
+    $client->dob("1975-03-01");
+
+    my $now = DateTime->now;
+    my $dob = DateTime->new(
+        year  => 1975,
+        month => 3,
+        day   => 1,
+    );
+    my $delta = $now - $dob;
+    is $client->age, $delta->years;
 }
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

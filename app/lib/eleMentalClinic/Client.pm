@@ -740,6 +740,32 @@ sub rolodex_getone {
     $r_info->{class}->new($hashref);
 }
 
+
+=head3 age
+
+    my $age = $client->age;
+
+Client's age, in years.
+
+=cut
+
+sub age {
+    my $self = shift;
+
+    my $dob = $self->dob;
+    my($year, $month, $day) = split /-/, $dob;
+    require DateTime;
+    $dob = DateTime->new(
+        year    => $year,
+        month   => $month,
+        day     => $day
+    );
+    my $delta = DateTime->now - $dob;
+
+    return $delta->years;
+}
+
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sub ssn_f {
     my $self = shift;
