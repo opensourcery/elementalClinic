@@ -1,1 +1,12 @@
-<p>This report requires no input.</p>
+<p>Client: [% client.eman %]</p>
+
+<p>Treater: 
+[% INCLUDE util/select_new.html
+   name    = 'treater_id'
+   values  = data.treaters
+   default = client.get_primary_treater.id
+   keyname = 'id'
+   valname = 'eman'
+%]
+</p>
+

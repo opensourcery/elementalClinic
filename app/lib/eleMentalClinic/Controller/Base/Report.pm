@@ -132,6 +132,16 @@ sub review_patient_records {
 }
 
 
+# Extra data for configuring PhysicalExam
+sub physical_exam {
+    my $self = shift;
+
+    return {
+        treaters => $self->_get_all_treaters
+    }
+}
+
+
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sub client_termination {
