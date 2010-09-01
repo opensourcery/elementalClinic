@@ -140,6 +140,13 @@ sub init_custom_methods {
         my ( $time, $format ) = @_;
         return dynamic_time_format_factory(undef, $format)->($time);
     };
+
+    $Template::Stash::SCALAR_OPS->{ pad_right } = sub {
+        my( $string, $padding, $length ) = @_;
+
+        my $num_padding = ($length - length $string) / length $padding;
+        return $string . $padding x $num_padding;
+    };
 }
 
 
