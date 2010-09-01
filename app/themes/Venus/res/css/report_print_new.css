@@ -284,9 +284,9 @@ p.sigline span.date {
 /* }}} */
 /* {{{ font sizing to 14pt */
 html * {
-    font-size : 14pt !important;
+    font-size : 14pt;
 }
 h2 {
-    font-size : 16pt !important;
+    font-size : 16pt;
 }
 /* }}} */
