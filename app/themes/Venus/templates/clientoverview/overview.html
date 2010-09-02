@@ -110,6 +110,16 @@
         <p class="save"><input type="submit" name="op" id="op_save" value="Save Patient" /></p>
     
     </form>
+
+    <form action="/report.cgi" method="[% Config.form_method %]" name="magic_button">
+        <input type="hidden" name="client_id"    value="[% current_client.id %]" />
+        <input type="hidden" name="treater_id"   value="[% current_client.get_primary_treater.rolodex.id %]" />
+        <input type="hidden" name="state"        value="[% current_client.address.state %]" />
+        <input type="hidden" name="report_name"  value="client_intake_forms" />
+        <input type="hidden" name="op"           value="run_report" />
+        <input type="hidden" name="report_track" value="client" />
+        <p style="text-align:right;"><input type="submit" value="Print Intake Forms"></p>
+    </form>
 </div> <!-- end client_details-->
 <div id="notes" class='client_box'>
     <form method="[% Config.form_method %]" action="[% script %]" enctype="application/x-www-form-urlencoded" name="notes_form">
