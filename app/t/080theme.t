@@ -19,11 +19,12 @@ Unit tests for the theme managment classes
 use warnings;
 use strict;
 
-use Test::More tests => 33;
+use Test::More tests => 36;
 use Test::Exception;
 use Data::Dumper;
 use eleMentalClinic::Theme;
 use eleMentalClinic::Test;
+use Path::Class;
 
 our ($CLASS, $one, $tmp);
 BEGIN {
@@ -194,3 +195,21 @@ is_deeply( $one->available_reports( 'site' ), [ qw/
   verifications
   zip_count
 / ] );
+
+
+# resource_path
+{
+    is $one->resource_path("i_do_not_exist"), undef;
+    is $one->resource_path("css/base.css"),
+       file($one->config->themes_dir, $one->config->theme, "res", "css/base.css");
+
+    my $local_dir = dir($one->config->themes_dir, "Local");
+    $local_dir->subdir("res", "css")->mkpath;
+    my $local = file($local_dir, "res", "css", "base.css");
+    $local->touch;
+    is $one->resource_path("css/base.css"), $local, "resource_path Local override";
+
+    $local_dir->rmtree
+}
+
+    

@@ -194,29 +194,24 @@ sub controller_can {
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 =head2 resource_path
 
+    my $file_path = $theme->resource_path($file); 
+
 Returns the resource path. If given a filename, will cascade to the default
 theme trying to find the file in the resource path, returning the first one
 that it finds. Undef is returned in this situation.
 
-If no filename is provided, will return the resource path.
-
 =cut
+
 sub resource_path {
     my $self = shift;
-
     my ($file) = @_;
 
-    my $resource_path = join("/", $self->config->themes_dir, $self->config->theme, "res");
+    my $themes_dir = $self->config->themes_dir;
 
-    return $resource_path unless $file;
-
-    my $full_path = join("/", $resource_path, $file);
-
-    return $full_path if (-f $full_path);
-
-    $full_path = join("/", $self->config->themes_dir, "Default", "res", $file);
-
-    return $full_path if (-f $full_path);
+    for my $theme ("Local", $self->config->theme, "Default") {
+        my $file_path = join("/", $themes_dir, $theme, "res", $file);
+        return $file_path if -f $file_path;
+    }
 
     return undef;
 }
