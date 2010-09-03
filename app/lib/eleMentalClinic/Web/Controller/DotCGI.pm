@@ -235,8 +235,18 @@ sub run_cgi {
             controller_class => $controller_class
         ) if $error;
 
-        print $cgi->header(-charset => 'UTF-8');
-        print Encode::encode('utf-8', $html);
+        my $type = $headers->{"Content-Type"};
+        my $is_text = !$type || $type =~ m{^text/}i;
+        my %header_opts;
+
+        if( $is_text ) {
+            print $cgi->header(-charset => 'UTF-8');
+            print Encode::encode('utf-8', $html);
+        }
+        else {
+            print $cgi->header;
+            print $html;
+        }
     } );
 
     my %override = map {; $_ => 1 } qw(

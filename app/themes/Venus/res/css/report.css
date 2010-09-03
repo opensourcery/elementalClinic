@@ -1,3 +1,20 @@
+body {
+      height: 90%;
+      width: 100%;
+}
+
+.footer li {
+    list-style-type: none;
+    display: inline;
+    padding-right: 5em;
+}
+
+.footer ul {
+    margin: 0;
+    padding: 0;
+}
+
+
 h2 {
     font-size : 14px;
     margin : 0;
@@ -27,6 +44,9 @@ tr.odd {
 th {
     padding : 0 20px 0 0;
     border-bottom : 2px solid #000;
+}
+table.cover_sheet th {
+    border: 0;
 }
 td {
     padding : 0 10px 0 5px;

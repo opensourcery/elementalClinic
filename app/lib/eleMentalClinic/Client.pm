@@ -311,7 +311,7 @@ sub list_all {
 
     my $fields = $client_fields;
 
-    my $order_by = q/ORDER BY client.lname, client.fname/;
+    my $order_by = q/ORDER BY client.lname, client.fname, client.mname/;
     my $where = 'WHERE 1=1';
     if( not( $args and $args->{ intake_incomplete })) {
         $where .= q/

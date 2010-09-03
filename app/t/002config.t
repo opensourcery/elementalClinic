@@ -4,7 +4,7 @@
 use warnings;
 use strict;
 
-use Test::More tests => 98;
+use Test::More tests => 99;
 use Test::Exception;
 use Data::Dumper;
 use eleMentalClinic::Test;
@@ -82,10 +82,11 @@ sub dbinit {
 
     my $defaults = { $one->defaults->stage1 };
 
-    is(
-        $one->template_path,
-        $defaults->{themes_dir}->subdir('Default/templates'),
-    );
+
+# template_path and friends
+{
+    is $one->template_path,
+       $defaults->{themes_dir}->subdir('Default/templates');
 
     # default template path
     can_ok( $one, 'default_template_path' );
@@ -93,18 +94,25 @@ sub dbinit {
         $one->default_template_path,
         $defaults->{themes_dir}->subdir('Default/templates'),
     );
-        $one->theme( 'foo' );
-    is( $one->theme, 'foo' );
 
-    is(
-        $one->template_path,
-        $defaults->{themes_dir}->subdir('foo/templates'),
-    );
-    is(
-        $one->default_template_path,
-        $defaults->{themes_dir}->subdir('Default/templates'),
-    );
-        $one->theme( 'Default' );
+    $one->theme( 'foo' );
+    is $one->theme, 'foo' , 'set the theme';
+
+    is $one->template_path,
+       $defaults->{themes_dir}->subdir('foo/templates'),
+       'theme change reflected in template_path';
+
+    is $one->default_template_path,
+       $defaults->{themes_dir}->subdir('Default/templates'),
+       '  default_template_path unchanged';
+
+    is $one->local_template_path,
+       $defaults->{themes_dir}->subdir('Local/templates'),
+       '  and local_template_path';
+
+    # Put the theme back
+    $one->theme( 'Default' );
+}
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # make sure stage1 isn't redone unless we force it

@@ -157,6 +157,7 @@ sub init_template {
     my $config = {
         INCLUDE_PATH => [
             List::MoreUtils::uniq(
+                $self->config->local_template_path,
                 $self->config->template_path,
                 $self->config->default_template_path,
             )

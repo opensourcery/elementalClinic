@@ -246,6 +246,8 @@ sub _build_stage2_data {
 
 Object method.  Returns the path to the templates for the active theme.
 
+Defaults to C<< $self->themes_dir/$self->theme/templates >>
+
 =cut
 
 # ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
@@ -261,6 +263,8 @@ sub template_path {
 
 Object method.  Returns the path to the templates for the Default theme.
 
+Defaults to C<< $self->themes_dir/Default/templates >>
+
 =cut
 
 # ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
@@ -269,6 +273,24 @@ sub default_template_path {
 
     return File::Spec->catfile( $self->themes_dir, 'Default', 'templates' );
 }
+
+=head2 local_template_path()
+
+Object method.  Returns the path to templates just for this installation.
+
+This is where you'd put your own templates to override any of the
+shipped theme's.
+
+Defaults to C<< $self->themes_dir/Local/templates >>
+
+=cut
+
+sub local_template_path {
+    my $self = shift;
+
+    return File::Spec->catfile( $self->themes_dir, 'Local', 'templates' );
+}
+
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sub save {
