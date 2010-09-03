@@ -1,7 +1,7 @@
 package eleMentalClinic;
 eval 'use eleMentalClinic::deps';
 
-our $VERSION = '5.06';
+our $VERSION = '5.08';
 
 1;
 

@@ -131,6 +131,7 @@ sub init {
     $vars{today_ymd}    = $self->today;
     $vars{department}   = eleMentalClinic::Department->new({ dept_id => 1001 });
     $vars{Config}       = $self->config;
+    $vars{EMC_Version}  = $eleMentalClinic::VERSION;
 
     my %default_vars = %{ &default_vars };
     while( my( $key, $value ) = each %default_vars ) {
