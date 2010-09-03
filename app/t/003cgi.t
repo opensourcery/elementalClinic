@@ -78,6 +78,7 @@ BEGIN {
     is( $one->op, 'home' ); # not 'add', since we haven't defined other ops
     is( $one->param( 'item' ), 'Cat food' );
     is( $one->param( 'date' ), '2004-09-29' );
+    is( $one->template->vars->{op}, "home" );
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # redirect_to

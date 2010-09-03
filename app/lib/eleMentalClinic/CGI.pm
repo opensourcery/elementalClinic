@@ -153,7 +153,7 @@ sub init {
         }
     }));
     # Since we call get_ops before buildign a template we have these values here.
-    $self->template->vars( $self->{template_vars} );
+    $self->apply_template_vars;
     $self->client if $self->param( 'client_id' );
 
 #    Log( 'query-variables', Dumper { $self->Vars } );
@@ -256,6 +256,14 @@ sub template_vars {
     my $self = shift;
     return $self->template->vars(@_) if $self->template;
     push( @{ $self->{ _template_vars }}, @_ );
+}
+
+# Apply any queued template vars and empty the queue
+sub apply_template_vars {
+    my $self = shift;
+    $self->template->vars($_) for @{$self->{_template_vars}};
+    $self->{_template_vars} = [];
+    return;
 }
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
