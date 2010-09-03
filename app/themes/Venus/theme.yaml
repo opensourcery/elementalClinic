@@ -51,19 +51,19 @@ allowed_controllers:
   - Notification
 allowed_reports:
 #  - client/allergy
-  - client/attending_physician_statement
-  - client/client_intake_forms
+#  - client/attending_physician_statement
+#  - client/client_intake_forms
   - client/client_prognote
   - client/client_termination
   - client/cover_sheet
   - client/data_sheet
-  - client/health_history_questionnaire
+#  - client/health_history_questionnaire
   - client/legal
   - client/medication
-  - client/medical_release
-  - client/physical_exam
+#  - client/medical_release
+#  - client/physical_exam
   - client/prognote
-  - client/review_patient_records
+#  - client/review_patient_records
   - site/client_list
   - site/clinic_schedule
   - site/email
