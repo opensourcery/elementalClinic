@@ -7,7 +7,7 @@ use warnings;
 use Data::Dumper;
 
 # Note: Adding or removing tables from the database will change this number, as one test is run for every element of %tables
-use Test::More tests => 344;
+use Test::More tests => 345;
 use Test::Exception;
 our ($CLASS, $one, %tables, $tmp);
 BEGIN {
