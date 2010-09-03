@@ -164,7 +164,7 @@ sub clean_dir {
     can_ok( $one, 'get_table_names' );
     is( ref( $one->get_table_names ), 'ARRAY' );
     is( ${ $one->get_table_names }[1], 'address' );
-    is( ${ $one->get_table_names }[15], 'client' );
+    is( ${ $one->get_table_names }[15], 'claims_processor' );
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # tests for get_field_names
