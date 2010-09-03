@@ -79,6 +79,8 @@ BEGIN {
     ok( $one->_load_report_config );
     is_deeply( $one->_load_report_config, [ qw/
         allergy
+        attending_physician_statement
+        client_intake_forms
         client_list
         client_prognote
         client_termination
@@ -87,13 +89,17 @@ BEGIN {
         data_sheet
         encounter
         hospital
+        health_history_questionnaire
         ins_reauth
         last_visit_bystaff
         legal
         medication
+        medical_release
         mh_totals
         monthly_status
+        physical_exam
         renewals
+        review_patient_records
         site_prognote
         site_prognote_caseload
         uncommitted_prognotes
