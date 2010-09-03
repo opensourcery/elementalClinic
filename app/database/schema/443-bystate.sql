@@ -1,5 +1,5 @@
 CREATE TABLE by_state (
-    rec_id              SERIAL,
+    rec_id              SERIAL PRIMARY KEY,
     rolodex_id          INTEGER REFERENCES rolodex(rec_id),
     state               TEXT    NOT NULL,
 
