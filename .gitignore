@@ -1,7 +1,9 @@
 app/.pgpass
 app/Build
+app/_build
+app/debs
 app/MYMETA.yml
-app/_build/
+app/_build
 app/config.yaml
 app/database/release/
 app/t/resource/tmp/
