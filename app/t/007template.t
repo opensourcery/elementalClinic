@@ -29,6 +29,7 @@ BEGIN {
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # include path
     is_deeply( $one->template->service->context->config->{ INCLUDE_PATH }, [
+        $one->config->themes_dir .'/Local/templates',
         $one->config->themes_dir .'/Default/templates',
     ]);
 
@@ -36,6 +37,7 @@ BEGIN {
 
     $one->init_template;
     is_deeply( $one->template->service->context->config->{ INCLUDE_PATH }, [
+        $one->config->themes_dir .'/Local/templates',
         $one->config->themes_dir .'/Earth/templates',
         $one->config->themes_dir .'/Default/templates',
     ]);
